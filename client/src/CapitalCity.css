@@ -1,0 +1,277 @@
+
+
+/* .butt{
+  max-height: 960px;
+  min-width: 960px;
+    background-image: url("./assets/maps/map 40x 40 w grid.png");
+    background-size: 1280px;
+    background-repeat: no-repeat;
+    background-position: var(--new);
+    background-color: green;
+    image-rendering: pixelated;
+    animation-iteration-count: 2;
+
+
+
+}
+.butt2{
+  max-height: 960px;
+  min-width: 960px;
+    background-image: url("./assets/maps/mapinside1.png");
+    background-size: 640px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: black;
+    image-rendering: pixelated;
+
+}
+
+.happy{
+  height: 42px;
+  position: absolute;
+  margin: 416px;
+}
+
+:root {
+  --pixel-size: 2px;
+  --grid-cell: calc(var(--pixel-size) * 16);
+  --bg: #070000;
+  --old: 63px 72px;
+  --new: 63px 72px;
+}
+
+@media(min-width: 700px) {
+  :root {
+      --pixel-size: 3px;
+  }
+}
+
+@media(min-width: 1000px) {
+  :root {
+      --pixel-size: 4px;
+  }
+}
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pixel-art {
+  image-rendering: pixelated;
+}
+
+.camera {
+  width: calc(var(--pixel-size) * 160);
+  height: calc(var(--pixel-size) * 144);
+  overflow: hidden;
+  background: #000a0b;
+  position: relative;
+}
+
+.map {
+  display: block;
+  max-height: 50000px;
+  min-width: 50000px;
+  image-rendering: pixelated;
+  background-image: url("./assets/maps/map 40x 40 w grid.png");
+  background-size: 10000px; 
+  width: calc(40 * var(--grid-cell));
+  height: calc(40 * var(--grid-cell)); 
+  background-position: 100% 100%;
+  position: absolute;
+}
+
+
+.character {
+  width: calc(var(--grid-cell)* 2);
+  height: calc(var(--grid-cell)* 2);
+  position: absolute;
+  overflow: hidden;
+  margin-top: 367px;
+  margin-left: 377px;
+}
+
+.characterDown {
+  position: center;
+  background: url("./assets/images/AjFP5.png") no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell)* 8);
+  height: calc(var(--grid-cell)* 8);
+}
+
+.characterRight {
+  position: center;
+  background: url("./assets/images/AjFP5.png") no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell)* 8);
+  height: calc(var(--grid-cell)* 8);
+  background-position-y: calc(var(--pixel-size) * -64);
+}
+
+.characterUp  {
+  position: center;
+  background: url("./assets/images/AjFP5.png") no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell)* 8);
+  height: calc(var(--grid-cell)* 8);
+  background-position-y: calc(var(--pixel-size) * -96);
+}
+
+.characterLeft {
+  position: center;
+  background: url("./assets/images/AjFP5.png") no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell)* 8);
+  height: calc(var(--grid-cell)* 8);
+  background-position-y: calc(var(--pixel-size) * -32);
+}
+
+.character[walking="true"] .character_spritesheet {
+  animation: walkAnimation 0.6s steps(4) infinite;
+}
+
+
+
+@keyframes walkAnimation {
+  from {
+      transform: translate3d(0%, 0%, 0);
+  }
+
+  to {
+      transform: translate3d(-100%, 0%, 0);
+  }
+}
+
+
+
+@keyframes mymove {
+  from {
+    background-position: var(--old) }
+
+  to {
+    background-position: var(--new) } 
+} */
+
+ 
+
+
+:root {
+    --pixel-size: 2px;
+    --grid-cell: calc(var(--pixel-size) * 12);
+    --bg: #070000;
+  
+  }
+  
+  @media(min-width: 700px) {
+    :root {
+        --pixel-size: 3px;
+    }
+  }
+  
+  @media(min-width: 1000px) {
+    :root {
+        --pixel-size:4px;
+    }
+  }
+  
+  .pixel-art {
+    image-rendering: pixelated;
+  }
+  
+  html,
+  body {
+    height: 100%;
+  }
+  
+  body {
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .pixel-art {
+    image-rendering: pixelated;
+  }
+  
+  .camera {
+    width: calc(var(--pixel-size) * 310);
+    height: calc(var(--pixel-size) * 184);
+  }
+  
+  .map {
+    image-rendering: pixelated;
+     max-height: 50000px;
+    min-width: 50000px;
+    background-image: url("./assets/maps/Capital City.png");
+    background-size: 12800px; 
+    width: calc(500 * var(--grid-cell));
+    height: calc(500 * var(--grid-cell)); 
+    position: absolute;
+    background-repeat:no-repeat;
+    overflow: visible;
+    /* overflow: hidden; */
+  
+  }
+  
+  .character {
+    width: calc(var(--grid-cell)* 2);
+    height: calc(var(--grid-cell)* 2);
+    overflow: hidden;
+    grid-column-start: 10;
+    grid-row-start: 5;
+  
+  
+  
+    /* margin-top: -58px;
+    margin-left: -45px; */
+  }
+  
+  .character_spritesheet {
+    position: absolute;
+    background: url("./assets/images/AjFP5.png") no-repeat no-repeat;
+    background-size: 100%;
+    width: calc(var(--grid-cell)* 8);
+    height: calc(var(--grid-cell)* 8);
+  
+  }
+  
+  .character[facing="right"] .character_spritesheet {
+    background-position-y: calc(var(--pixel-size) * -48);
+  }
+  
+  .character[facing="up"] .character_spritesheet {
+    background-position-y: calc(var(--pixel-size) * -72);
+  }
+  
+  .character[facing="left"] .character_spritesheet {
+    background-position-y: calc(var(--pixel-size) * -24);
+  }
+  
+  .character[walking="true"] .character_spritesheet {
+    animation: walkAnimation 0.6s steps(4) infinite;
+  }
+  
+  
+  @keyframes walkAnimation {
+    from {
+        transform: translate3d(0%, 0%, 0);
+    }
+  
+    to {
+        transform: translate3d(-100%, 0%, 0);
+    }
+  } 
+  
+  
+  
+  
