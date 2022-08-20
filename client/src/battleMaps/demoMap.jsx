@@ -51,39 +51,6 @@ for (let i=0; i<demons.length; i++){
 setSummoningList(summonsList)
 },[])
 
-useEffect(()=>{
-//hot key event listener
-    window.addEventListener('keydown', (e)=>{
-        if (e.key==='m'){
-            setMoveTrigger(true)
-
-        }
-        if (e.key==='a'){
-            setAttackTrigger(true)
-
-        }
-        if (e.key==='c'){
-            setCurseTrigger(true)
-
-        }
-        if (e.key==='s'){
-            setSummonTrigger(true)
-
-        }
-        if (e.key==='Escape'){
-            setMoveTrigger(false);
-            setAttackTrigger(false);
-            setCurseTrigger(false);
-            setSummonTrigger(false);
-            setCurrent(null);
-            setCurrentCoordinates(null);
-        }
-
-    })
-
-},[])
-
-
 let buttonArr=[];
 for (let y=0; y<mapState.length; y++){
   for (let x=0; x<mapState.length; x++){
@@ -111,6 +78,7 @@ buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); su
 }
 }
 function active(y,x){
+    
  if (mapState[y][x] !=0 && mapState[y][x].active===true) {
 setCurrent(mapState[y][x]);
     }
@@ -124,6 +92,7 @@ setCurrent(mapState[y][x]);
     setCurrentCoordinates(`${y}${x}`)
     setXCord(x);
     setYCord(y);
+
 
 
 }
@@ -166,9 +135,11 @@ while(mapState[upI][xCord]===0 && moveIterator<current.move){
     tempButton= document.getElementById(`${upI}${xCord}`);
     tempButton.style.backgroundColor= "red";
     moveIterator++;
-    upI-=1;
-    if (upI<0) break;
     legalSpaces.push(`${upI}${xCord}`)
+
+    upI-=1;
+
+    if (upI<0) break;
 }
 }
 moveIterator=0;
@@ -179,9 +150,10 @@ while(mapState[downI][xCord]===0 && moveIterator<current.move){
     tempButton= document.getElementById(`${downI}${xCord}`);
     tempButton.style.backgroundColor= "red";
     moveIterator++;
+    legalSpaces.push(`${downI}${xCord}`)
+
     downI++;
     if (downI>mapState.length-1) break;
-    legalSpaces.push(`${downI}${xCord}`)
 
 }
 }
@@ -192,9 +164,10 @@ while(mapState[yCord][leftI]===0 && moveIterator<current.move){
     tempButton= document.getElementById(`${yCord}${leftI}`);
     tempButton.style.backgroundColor= "red";
     moveIterator++;
+    legalSpaces.push(`${yCord}${leftI}`)
+
     leftI-=1;
     if (leftI<0) break;
-    legalSpaces.push(`${yCord}${leftI}`)
 
 }
 }
@@ -204,9 +177,10 @@ if (rightI<mapState.length){
         tempButton= document.getElementById(`${yCord}${rightI}`);
         tempButton.style.backgroundColor= "red";
         moveIterator++;
+        legalSpaces.push(`${yCord}${rightI}`)
+
         rightI++;
         if (rightI>mapState.length-1) break;
-        legalSpaces.push(`${yCord}${rightI}`)
 
     }
     }
@@ -297,3 +271,38 @@ function summonSpot(){
 };
 
 export default DemoMap;
+
+
+// useEffect(()=>{
+// //hot key event listener
+//     window.addEventListener('keydown', (e)=>{
+// //         if (e.key==='m'){
+// //             setMoveTrigger(true);
+// // console.log(current)
+
+// //         }
+// //         if (e.key==='a' && current){
+// //             setAttackTrigger(true)
+
+// //         }
+// //         if (e.key==='c' && current){
+// //             setCurseTrigger(true)
+
+// //         }
+// //         if (e.key==='s' && current){
+// //             setSummonTrigger(true)
+
+// //         }
+//         if (e.key==='Escape'){
+//             setMoveTrigger(false);
+//             setAttackTrigger(false);
+//             setCurseTrigger(false);
+//             setSummonTrigger(false);
+//             setCurrent(null);
+//             setCurrentCoordinates(null);
+//             setLegalMovesArray([])
+//         }
+
+//     })
+
+// },[])
