@@ -13,13 +13,13 @@ const DemoMap = (prop) => {
   //this sets the x Cordinate to transform the map and character location
 
   const updates = useRef(4);
-
+const [randomTrigger, setRandomTrigger]= useState(1)
 const [moveTrigger, setMoveTrigger]= useState(false);
 const [attackTrigger, setAttackTrigger]= useState(false);
 const [curseTrigger, setCurseTrigger]= useState(false);
 const [summonTrigger, setSummonTrigger]= useState(false);
-const [demons, SetDemons]= useState(prop.demonList)  
-const [soulBank, setSoulBank]= useState(0);
+const [demons, setDemons]= useState(prop.demonList);  
+const [soulBank, setSoulBank]= useState(20);
 const [current, setCurrent]= useState();
 const [currentCoordinates, setCurrentCoordinates]=useState();
 const [xCord, setXCord]= useState();
@@ -27,29 +27,33 @@ const [yCord, setYCord]= useState();
 const [display, setDisplay]= useState("Hi");
 const [summoningList, setSummoningList]= useState();
 const [legalMovesArray, setLegalMovesArray]= useState();
+const [legalSummoningArray, setLegalSummoningArray]= useState();
+const [playerCoodinates, setPlayerCoordinates]=useState([0,4])
+const [staticDemonsList, setStaticDemonsList]= useState(prop.demonList);
+const [activeDemonsList, setActiveDemonsList]= useState([prop.demonList[0],prop.demonList[1]])
 
 
 
-const [mapState, setMapState]= useState([[0,0,0,0,demons[0],1,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
+const [mapState, setMapState]= useState([[0,0,0,0,demons[0],0,0,0],[0,0,0,0,demons[1],0,1,0],[0,0,0,0,0,0,0,0],[0,0,0,0,1,0,0,0],[0,1,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
 
-const actionButtons= [<button className='actionButton' onClick={()=>moveButton()} style={{borderColor: "green",     opacity: ".6"
+const actionButtons= [<button className='actionButton' onClick={()=>moveButton()} style={{borderColor: "green", 
 }}><b>MOVE</b></button>,<button className='actionButton'   onClick={()=>attackButton()} style={{borderColor: "red"}} ><b>ATTACK</b></button>,<button className='actionButton'  onClick={()=>curseButton()} style={{borderColor: "purple"}}><b>CURSE</b></button>,<button className='actionButton'  onClick={()=>summonButton()}style={{borderColor: "gold"}}><b>SUMMON</b></button>]
-
-
-
+console.log(activeDemonsList)
 
 //loads initial summon List
 useEffect(()=>{
 
     let summonsList=[]
-for (let i=0; i<demons.length; i++){
-    summonsList.push(<b style={{color: "white"}}>  { demons[i].name }  </b>)
+for (let i=2; i<demons.length; i++){
+    summonsList.push(<button id={demons[i].name} style={{backgroundImage: `url(${demons[i].image})`, backgroundSize: '100%', backgroundRepeat: 'no-repeat', backgroundColor: 'transparent', border: 'none'}} onClick={()=>setCurrent(demons[i])}>  </button>)
 
     // summonsList.push(<button style={{color: "white"}}> {" ."} {demons[i].name} {" "} </button>)
 
 }
 setSummoningList(summonsList)
-},[])
+},[randomTrigger])
+
+
 
 let buttonArr=[];
 for (let y=0; y<mapState.length; y++){
@@ -61,7 +65,6 @@ buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); su
     color: "white"
 }}
 >
-    {y}-{x}
 </button>)
     }
     if (mapState[y][x] !=0){
@@ -69,14 +72,15 @@ buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); su
             gridColumn: x+1,
             gridRow: y+1,
             color: "white",
-            backgroundImage: `url(${mapState[y][x].image})` 
+            backgroundImage: `url(${mapState[y][x].image})`,
+            backgroundSize: '70%'
         }}
         >
-            {y}-{x}
         </button>)
             }
 }
 }
+
 function active(y,x){
     
  if (mapState[y][x] !=0 && mapState[y][x].active===true) {
@@ -93,30 +97,44 @@ setCurrent(mapState[y][x]);
     setXCord(x);
     setYCord(y);
 
+}
 
+function summoningListButton(){
 
 }
 
+
+//setsDisplay and cancel all array buttons
 useEffect(()=>{
 
 
     if (current){
 
 setDisplay([<div style={{backgroundImage:`url(${current.image})`, backgroundPosition: 'center', gridColumnStart: '1', gridRowStart: '1', backgroundSize: '70%', backgroundRepeat: 'no-repeat'}}></div> , <b style={{color: "black", gridColumnStart:"2", justifySelf: 'center', alignSelf: 'center' }}> Attack: {current.attack}</b>, <b style={{color: "black", gridColumnStart:"3", justifySelf: 'center', alignSelf: 'center'}}> Defense: {current.defense}</b>, <b style={{color: "black", gridColumnStart:"4", justifySelf: 'center', alignSelf: 'center'}}> Move: {current.move}</b>, <b style={{color: "black", gridColumn: "1 /span 4"}}> Description: {current.description}</b>, <b style={{color: "black", gridColumnStart: "4", gridRowStart: "3"}}>SOULS:{current.cost}</b>]);
-   
+
+
     }
     if (!current){
         setDisplay()
+      
     }
   
+    const array=document.getElementsByClassName(`demon`);
 
+    for (let i=0; i<array.length; i++){
+        array[i].style.backgroundColor='transparent'
+    }
+    setSummonTrigger(false);
+    setMoveTrigger(false);
+    setAttackTrigger(false);
+    setCurseTrigger(false)
    
 },[current])
 
 
 
 function moveButton(){
-    if (current){
+    if (activeDemonsList.includes(current)){
         setMoveTrigger(true)
 let tempButton=null;
 
@@ -198,17 +216,69 @@ function curseButton(){
 function attackButton(){
     setAttackTrigger(true)
 
+    
 }
 
 function summonButton(){
-    setSummonTrigger(true)
+
+    if (current){
+        if (!activeDemonsList.includes(current)){
+            let tempSummonArray=[];
+            if (soulBank>=current.cost){
+                setSummonTrigger(true);
+                if( playerCoodinates[0]-1>=0){
+                    if(mapState[playerCoodinates[0]-1][playerCoodinates[1]] === 0){
+                        document.getElementById(`${playerCoodinates[0]-1}${playerCoodinates[1]}`).style.backgroundColor="red"
+                            tempSummonArray.push(`${playerCoodinates[0]-1}${playerCoodinates[1]}`)
+                        ;}}
+                if(playerCoodinates[0]<mapState.length-1){
+                    if (mapState[playerCoodinates[0]+1][playerCoodinates[1]] ===0  ){
+                        document.getElementById(`${playerCoodinates[0]+1}${playerCoodinates[1]}`).style.backgroundColor="red";
+                        tempSummonArray.push(`${playerCoodinates[0]+1}${playerCoodinates[1]}`);
+                    }
+
+
+}
+                if ( playerCoodinates[1]-1>=0){
+                    if(mapState[playerCoodinates[0]][playerCoodinates[1]-1] ===0){
+                        document.getElementById(`${playerCoodinates[0]}${playerCoodinates[1]-1}`).style.backgroundColor="red";
+                        tempSummonArray.push(`${playerCoodinates[0]}${playerCoodinates[1]-1}`)}
+                      
+
+  }
+                if ( playerCoodinates[1]<mapState.length-1 ){
+                    if (mapState[playerCoodinates[0]][playerCoodinates[1]+1] ===0){
+
+                        document.getElementById(`${playerCoodinates[0]}${playerCoodinates[1]+1}`).style.backgroundColor="red";
+                        tempSummonArray.push(`${playerCoodinates[0]}${playerCoodinates[1]+1}`)
+                    }
+
+               
+}
+setLegalSummoningArray(tempSummonArray)
+
+}
+}
+}
+if (activeDemonsList.includes(current)){
+
+    const array=document.getElementsByClassName(`demon`);
+
+    for (let i=0; i<array.length; i++){
+        array[i].style.backgroundColor='transparent'
+    }
+    setSummonTrigger(false);
+    setMoveTrigger(false);
+    setAttackTrigger(false);
+    setCurseTrigger(false)
+}
 }
 
 function move(y,x){
 if (moveTrigger){
     let tempButton=null;
     if(legalMovesArray.includes(`${y}${x}`)){
-        console.log(legalMovesArray)
+
     let oldSpot= document.getElementById(`${currentCoordinates}`)
     oldSpot.style.backgroundImage= 'url(none)';
     let newSpot= document.getElementById(`${y}${x}`);
@@ -219,21 +289,18 @@ if (moveTrigger){
     setMapState(newMapArray)
     setCurrent(null);
     setMoveTrigger(false);
+    if (current.name=="Shilo"){
+        setPlayerCoordinates([y,x])
+    }
+
     for (let i=0; i<legalMovesArray.length; i++){
-        console.log(legalMovesArray[i])
+
         tempButton= document.getElementById(`${legalMovesArray[i]}`);
         tempButton.style.backgroundColor= "transparent";
     }
     } 
 }
-//is it 0?
-//is it in the range?
 
-   //temporary, this needs to be moved.
-//    let variable = document.getElementById(`${y}${x}`);
-//    variable.style.backgroundImage="url(none)";
-//switch to inactive
-//set curent to null
 }
 
 function attack(){
@@ -250,7 +317,32 @@ function curse(){
 
 }
 
-function summonSpot(){
+function summonSpot(y,x){
+    if (summonTrigger){
+        if (legalSummoningArray.includes(`${y}${x}`)){
+            let tempMapState=mapState;
+            document.getElementById(`${y}${x}`).style.backgroundImage=`url(${current.image})`;
+            for (let i=0; i<legalSummoningArray.length; i++){
+                document.getElementById(`${legalSummoningArray[i]}`).style.backgroundColor='transparent';
+            }
+            tempMapState[y][x]=current;
+            setMapState(tempMapState)
+            setDemons(x=>x.filter(el=> el != current));
+            setRandomTrigger(x=>x+1);
+            setSummonTrigger(false)
+            setSoulBank(prev=>prev-current.cost)
+            setActiveDemonsList(x=>x.concat(current))
+
+
+        }
+
+
+
+
+
+    }
+
+
 
 }
   return (
@@ -263,7 +355,7 @@ function summonSpot(){
 
 <div className='summonsList'>{summoningList}</div>
 
-<div className='actionButtonContainer'>{actionButtons}</div>
+<div className='actionButtonContainer'>{soulBank} {actionButtons}</div>
 </div>
 
       </div>

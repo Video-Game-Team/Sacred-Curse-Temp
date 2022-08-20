@@ -11,7 +11,7 @@
 
 .sidePanel{
     display: grid;
-    grid-template-rows: 3fr 2fr 1fr;
+    grid-template-rows: 5fr 2fr 1fr;
     width: 95%;
     margin-top: 10px;
     row-gap: 7%;
@@ -35,23 +35,39 @@
     
 
 }
-.summonsList{
+/* .summonsList{
 display: flex;
 flex-wrap: wrap;
 box-shadow: 0 2px 8px 4px white;
 
 
-    background-color: rgb(31, 32, 32);
+background-color: rgb(31, 32, 32);
    
 
 
-}
+} */
+
+ .summonsList{
+
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(8, 1fr);
+  box-shadow: 0 2px 8px 4px white;
+  background-color: rgb(31, 32, 32);
+  column-gap: 15px;
+     
+  
+  
+  }
+
+
 
 .actionButtonContainer{
 
     display: flex;
     justify-content: center;
     gap: 5%;
+    color: white;
     
 
 }
