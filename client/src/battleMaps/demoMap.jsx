@@ -12,7 +12,7 @@ import DragonImage from ".././assets/demonSprites/even-more-retro-dragonite-drag
 const DemoMap = (prop) => {
   //this sets the x Cordinate to transform the map and character location
 
-  const updates = useRef(4);
+const updates = useRef(4);
 const [randomTrigger, setRandomTrigger]= useState(1)
 const [moveTrigger, setMoveTrigger]= useState(false);
 const [attackTrigger, setAttackTrigger]= useState(false);
