@@ -1,0 +1,67 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2638
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww29080\viewh19180\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Mike G Map import:\
+\
+1. Add new map images into assets/maps folder\
+2. Add JSON file to JSON MAPS folder\
+3. Create a js component for the respective map\
+4. Create a CSS file\
+\
+5. Try to adjust map size = go to map class:\
+Background size = 64 times the largest number (width or length)\
+Width = 2 1/2 x the width\
+Height = 2 1/2 x the height\
+Change map name\
+\
+6.. Got to App.js import js file of respective map\
+7. Now go to line 31 and add and object with a key value property as seen previously\
+8. Stay in App.js and change current state value to respective map name \
+\
+ALL the intake is finished at this point\
+\
+  9. Got to your respective component and copy in all the data or boilerplate\
+10. IMport respective CSS file\
+10. Now go to CSS bin and make the array of arrays\
+11. Start changing all walkable areas to zeros\
+12. Copy this new array into the repescitve .js component and check and go back and forth until it works properly\
+\
+13. Stay in respective map .js component = change the xtransformVar  and the yTransformVar:\
+14. Place character at top left of map 0, 0 and then hit inspect (ON THE MAP, NOT THE CHARACTER) click on the map just in case it doesn\'92t show up (THIS IS ALL IN THE ELEMENTS TAB OF THE DEV TOOLS)\
+15. Write down the starting coordinates for transform and y tranform from the \'93STYLE TRANSFORM: TRANSLATE3D area of the elements devtools page\'94\
+16. Copy these numbers into the starting positions of starting into the respective js component into the xtransformVar and the ytransformVar\
+17. Got to const xPlayerIndex and yPlayerIndex and set both value to 0, 0 in the USeRef\
+18. Write a console.log statement underneath and log the xPlayerIndex.current and yPlayerIndex.current\
+\
+19. Walk to you where you want to start your character at on the map\
+20. Now grab the values of the translate 3d in the Elements tab of the chrome dev tools (map pixel art class or hit inspect on map again)\
+21. Now enter these values into the xTransformVar and the yTransformVar \
+\
+DO NOT HIT SAVE DURING THESE STEPS OR YOU WILL FUCK IT UP\
+\
+22. Now go to the CONSOLE in dev tools\
+23. Walk to where you want to start\
+24. Grab the xPlayer Index value and the yplayerIndex value from the console \
+25. Add the values in the component .js into the xPlayer Index and the yplayerIndex\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+5, 19. = tunnelentrance\
+22, 8 = Stable Entrance\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 22, 9 = Stable Entrance\
+\
+35, 18 Main House\
+35, 19 Main House}
