@@ -33,13 +33,6 @@ body {
     image-rendering: pixelated;
 }
 
-.camera {
-    width: calc(var(--pixel-size) * 400);
-    height: calc(var(--pixel-size) * 270);
-    overflow: hidden;
-    background: #000a0b;
-    position: relative;
-}
 
 .map {
     /* display: block; */
