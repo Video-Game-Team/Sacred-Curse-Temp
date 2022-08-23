@@ -1162,6 +1162,8 @@ dirArr.current[0]==='ArrowRight' ?  facing.current="right" :  dirArr.current[0]=
     }
   }, [tick]);
 
+  console.log([yPlayerIndex.current],[xPlayerIndex.current])
+
   //update the style for the mpa character by transforming it according the new x and y variables
   //map and character share the varaibles since they move together
   return (

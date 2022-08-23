@@ -39,7 +39,7 @@ body {
     max-height: 50000px;
     min-width: 50000px;
     background-image: url("./assets/maps/Town_Rock Path w grid.png");
-    background-size: 5504px;
+    background-size: 4544px;
     width: calc(215 * var(--grid-cell));
     height: calc(177.5 * var(--grid-cell));
     position: absolute;
