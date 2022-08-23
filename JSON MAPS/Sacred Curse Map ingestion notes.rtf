@@ -13,7 +13,7 @@
 4. Create a CSS file -  copy in \'93FarmMap.CSS\'94 biolerplate\
 \
 5. Try to adjust map size = go to map class:\
-Background size = 64 times the largest number (width or length)\
+Background size = 64 times the width\
 Width = 2 1/2 x the width\
 Height = 2 1/2 x the height\
 Change map name and alter the Map.CSS name to respective map class name\
@@ -29,6 +29,8 @@ ALL the intake is finished at this point\
 11. Got to your respective component and copy in all the data or boilerplate\
 12. IMport respective CSS file\
 13. Go through respective CSS file and rename properties:\
+14. Rename .map to mapTW\
+15. Go to respective .js file and change map class to the new name\
 \
 \
 \
@@ -36,10 +38,16 @@ ALL the intake is finished at this point\
 15. Start changing all walkable areas to zeros\
 16. Copy this new array into the repescitve .js component and check and go back and forth until it works properly\
 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tx21150\pardirnatural\partightenfactor0
+\cf0 Check the xplayerIndex and the yplayerIndex if the useRef is set to 0, then increase the number to something so that you can go walk to the left to get to the true 0, 0. (EVERYTHING HAS TO BE DIVISIBLE BY 4)\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
 17. Stay in respective map .js component = change the xtransformVar  and the yTransformVar:\
 18. Place character at top left of map 0, 0 and then hit inspect (ON THE MAP, NOT THE CHARACTER) click on the map just in case it doesn\'92t show up (THIS IS ALL IN THE ELEMENTS TAB OF THE DEV TOOLS)\
 19. Write down the starting coordinates for transform and y tranform from the \'93STYLE TRANSFORM: TRANSLATE3D area of the elements devtools page\'94\
 20. Copy these numbers into the starting positions of starting into the respective js component into the xtransformVar and the ytransformVar\
+\
 21. Got to const xPlayerIndex and yPlayerIndex and set both value to 0, 0 in the USeRef\
 22. Write a console.log statement underneath and log the xPlayerIndex.current and yPlayerIndex.current\
 \

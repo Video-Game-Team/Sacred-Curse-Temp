@@ -43,9 +43,9 @@ const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dra
 
 
 // console.log('POOP', mapsObj)
-console.log(<TheWall/>)
 
-const [current, setCurrent] = useState('theWall');
+
+const [current, setCurrent] = useState('farmMap');
 
   function tracker(x) {
     setCurrent(x);

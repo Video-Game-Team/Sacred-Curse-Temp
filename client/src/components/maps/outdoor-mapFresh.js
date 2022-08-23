@@ -26,7 +26,7 @@ const OutDoorMapFresh = (props) => {
   // const [facing.current, setFacing] = useState("right");
   const facing= useRef()
   //corresponds with a css class. determiines if the sprite gets animated or not
-  const [walker, setWalker] = useState('false');
+  const [walker, setWalker] = useState('up');
   // const [walkerArr, setWalkerkArr]= useState([])
   const dirArr = useRef([]);
 

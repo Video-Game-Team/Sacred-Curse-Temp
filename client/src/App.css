@@ -240,6 +240,7 @@ body {
 
 
 
+
   /* margin-top: -58px;
   margin-left: -45px; */
 }
@@ -250,6 +251,7 @@ body {
   background-size: 100%;
   width: calc(var(--grid-cell)* 8);
   height: calc(var(--grid-cell)* 8);
+
 
 }
 
