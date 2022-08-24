@@ -217,8 +217,8 @@ body {
 .map {
   image-rendering: pixelated;
   display: grid;
-  grid-template-columns: repeat(20, 64px);
-  grid-template-rows: repeat(12, 64px); 
+  grid-template-columns: repeat(40, 64px);
+  grid-template-rows: repeat(40, 64px); 
    max-height: 50000px;
   min-width: 50000px;
   background-image: url("./assets/maps/map 40x 40 w grid.png");

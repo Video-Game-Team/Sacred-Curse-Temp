@@ -2,7 +2,8 @@ import DragonImage from "./assets/demonSprites/even-more-retro-dragonite-dragoni
 import GoldFish from './assets/demonSprites/clipart1852670.png';
 import GrassMan from './assets/demonSprites/clipart937948.png';
 import RedMan from './assets/demonSprites/clipart1352153.png';
-import PlayerCard from './assets/demonSprites/Uchiha Sasuke by bebenciukas on DeviantArt.png'
+import PlayerCard from './assets/demonSprites/Uchiha Sasuke by bebenciukas on DeviantArt.png';
+import Hakara from './assets/demonSprites/Haku 2.png'
 
 // const haku ={
 //     attack: 5,
@@ -25,6 +26,9 @@ Player:{
     firstStrike: false,
     bloodLust: false,
     curse: null,
+    curseCost: null,
+    curseDescription: "Lay a trap for your foolish prey. Curse the spot so that the next enemy will die if they begin their turn here",
+
     description: "This establishes the main-axis, thus defining the direction flex items are placed in the flex container. Flexbox is (aside from optional wrapping) a single-direction layout concept. Think of flex items as primarily laying out either in horizontal rows or vertical columns. ",
     active: true,
     range: 1,
@@ -34,13 +38,16 @@ Player:{
 },
 
     Dragonite: {
-        name: 'dragonite',
+        name: '',
         attack: 4,
         defense: 4,
         move: 2,
         firstStrike: false,
         bloodLust: false,
-        curse: null,
+        curse: "Love Me",
+        curseCost: 2,
+        curseDescription: "Lay a trap for your foolish prey. Curse the spot so that the next enemy will die if they begin their turn here",
+
         description: "This establishes the main-axis, thus defining the direction flex items are placed in the flex container. Flexbox is (aside from optional wrapping) a single-direction layout concept. Think of flex items as primarily laying out either in horizontal rows or vertical columns. ",
         active: true,
         range: 1,
@@ -50,14 +57,17 @@ Player:{
 
     },
      Haku: {
-        name: "Haku",    
+        name: "KHak",    
         attack: 5,
             defesne: 2,
             move: 2,
             cost: 8,
             firstStrike: false,
             bloodLust: false,
-            curse: null,
+            curse: "Mirror Dream",
+            curseCost: 1,
+            curseDescription: "Lay a trap for your foolish prey. Curse the spot so that the next enemy will die if they begin their turn here",
+
             description: "The demon of the mist's sidekick",
             active: false,
             range: 1,
@@ -70,7 +80,7 @@ Player:{
 
         },
 Zabuza: {
-            name: "Zabuza",    
+            name: "The Shadow Web",    
 
             attack: 6,
             defesne: 2,
@@ -78,9 +88,11 @@ Zabuza: {
             cost: 9,
             firstStrike: true,
             bloodLust: true,
-            curse: null,
-            description: "The demon of the mist",
-            active: true,
+            curse: "Black Death",
+            curseCost:4,
+            curseDescription: "Lay a trap for your foolish prey. Curse the spot so that the next enemy will die if they begin their turn here",
+            description: "Seven Layers into the depths of hell, lays the spider queen. A ravenous queen who lures her pray into her web.",
+            active: false,
             range: 1,
             image: GrassMan,
             summoned: false,
@@ -96,9 +108,13 @@ Naruto:{
             move: 2,
             firstStrike: true,
             bloodLust: false,
-            curse: null,
+            curse: "Nine tails",
+            curseCost:4,
+            curseDescription: "Lay a trap for your foolish prey. Curse the spot so that the next enemy will die if they begin their turn here",
+
+
             description: "The unloved. A demon who has never known love",
-            active: true,
+            active: false,
             range: 1,
             image: RedMan,
             summoned: false,

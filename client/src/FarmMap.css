@@ -218,7 +218,11 @@ body {
     /* overflow: hidden; */
   
   }
-  
+  .numbers{
+display: grid;
+    size: 100%;
+    background: transparent;
+  }
   .character {
     width: calc(var(--grid-cell)* 2);
     height: calc(var(--grid-cell)* 2);

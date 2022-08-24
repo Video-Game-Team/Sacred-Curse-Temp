@@ -11,9 +11,10 @@ import DragonImage from ".././assets/demonSprites/even-more-retro-dragonite-drag
 
 const DemoMap = (prop) => {
   //this sets the x Cordinate to transform the map and character location
-
+console.log(Enemies.BlueInfantry)
   const updates = useRef(4);
-const [randomTrigger, setRandomTrigger]= useState(1)
+const [randomTrigger, setRandomTrigger]= useState(1);
+const [endTurn, setEndTurn]= useState(false)
 const [moveTrigger, setMoveTrigger]= useState(false);
 const [attackTrigger, setAttackTrigger]= useState(false);
 const [curseTrigger, setCurseTrigger]= useState(false);
@@ -30,15 +31,17 @@ const [legalMovesArray, setLegalMovesArray]= useState();
 const [legalSummoningArray, setLegalSummoningArray]= useState();
 const [playerCoodinates, setPlayerCoordinates]=useState([0,4])
 const [staticDemonsList, setStaticDemonsList]= useState(prop.demonList);
-const [activeDemonsList, setActiveDemonsList]= useState([prop.demonList[0],prop.demonList[1]])
-
+const [activeDemonsList, setActiveDemonsList]= useState([prop.demonList[0],prop.demonList[1]]);
+const [currentActionButton, setCurrentActionButton]= useState();
 
 
 const [mapState, setMapState]= useState([[0,0,0,0,demons[0],0,0,0],[0,0,0,0,demons[1],0,1,0],[0,0,0,0,0,0,0,0],[0,0,0,0,1,0,0,0],[0,1,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
 
-const actionButtons= [<button className='actionButton' onClick={()=>moveButton()} style={{borderColor: "green", 
-}}><b>MOVE</b></button>,<button className='actionButton'   onClick={()=>attackButton()} style={{borderColor: "red"}} ><b>ATTACK</b></button>,<button className='actionButton'  onClick={()=>curseButton()} style={{borderColor: "purple"}}><b>CURSE</b></button>,<button className='actionButton'  onClick={()=>summonButton()}style={{borderColor: "gold"}}><b>SUMMON</b></button>]
-console.log(activeDemonsList)
+const [curseMap, setCurseMap]= useState([[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,0],[0,0,0,0,0,0,0,0],[0,0,0,0,1,0,0,0],[0,1,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
+
+
+const actionButtons= [<button className='actionButton' onClick={()=>moveButton()} style={{borderColor: "lime", 
+}}><b>MOVE</b></button>,<button className='actionButton'   onClick={()=>attackButton()} style={{borderColor: "red"}} ><b>ATTACK</b></button>,<button className='actionButton'  onClick={()=>curseButton()} style={{borderColor: "darkorchid"}}><b>CURSE</b></button>,<button className='actionButton'  onClick={()=>summonButton()}style={{borderColor: "gold"}}><b>SUMMON</b></button>]
 
 //loads initial summon List
 useEffect(()=>{
@@ -73,7 +76,7 @@ buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); su
             gridRow: y+1,
             color: "white",
             backgroundImage: `url(${mapState[y][x].image})`,
-            backgroundSize: '70%'
+            backgroundSize: '110%'
         }}
         >
         </button>)
@@ -99,9 +102,6 @@ setCurrent(mapState[y][x]);
 
 }
 
-function summoningListButton(){
-
-}
 
 
 //setsDisplay and cancel all array buttons
@@ -110,7 +110,7 @@ useEffect(()=>{
 
     if (current){
 
-setDisplay([<div style={{backgroundImage:`url(${current.image})`, backgroundPosition: 'center', gridColumnStart: '1', gridRowStart: '1', backgroundSize: '70%', backgroundRepeat: 'no-repeat'}}></div> , <b style={{color: "black", gridColumnStart:"2", justifySelf: 'center', alignSelf: 'center' }}> Attack: {current.attack}</b>, <b style={{color: "black", gridColumnStart:"3", justifySelf: 'center', alignSelf: 'center'}}> Defense: {current.defense}</b>, <b style={{color: "black", gridColumnStart:"4", justifySelf: 'center', alignSelf: 'center'}}> Move: {current.move}</b>, <b style={{color: "black", gridColumn: "1 /span 4"}}> Description: {current.description}</b>, <b style={{color: "black", gridColumnStart: "4", gridRowStart: "3"}}>SOULS:{current.cost}</b>]);
+setDisplay([<div style={{backgroundImage:`url(${current.image})`, backgroundPosition: 'center', gridColumnStart: '1', gridRowStart: '1', backgroundSize: '70%', backgroundRepeat: 'no-repeat'}}></div> , <b style={{color: "black", gridColumnStart:"2", justifySelf: 'center', alignSelf: 'center' }}> Attack: {current.attack}</b>, <b style={{color: "black", gridColumnStart:"3", justifySelf: 'center', alignSelf: 'center'}}> Defense: {current.defense}</b>, <b style={{color: "black", gridColumnStart:"4", justifySelf: 'center', alignSelf: 'center'}}> Move: {current.move}</b>, <b style={{color: "black", gridColumn: "1 /span 4"}}> Description: {current.description} <b> Curse: {current.curse } {current.curseDescription} </b></b>, <b style={{color: "black", gridColumnStart: "4", gridRowStart: "3"}}>SOULS:{current.cost}</b>]);
 
 
     }
@@ -135,6 +135,7 @@ setDisplay([<div style={{backgroundImage:`url(${current.image})`, backgroundPosi
 
 function moveButton(){
     if (activeDemonsList.includes(current)){
+        setCurrentActionButton("move")
         setMoveTrigger(true)
 let tempButton=null;
 
@@ -210,20 +211,59 @@ if (rightI<mapState.length){
 
 }
 function curseButton(){
-    setCurseTrigger(true)
+    if (current){
+    if (current.curse && soulBank-current.curseCost>0 && activeDemonsList.includes(current)){
+
+        setSoulBank(prev=>prev-current.curseCost)
+        document.getElementById(`${currentCoordinates}`).style.borderColor="purple";
+        let newMap= curseMap;
+        newMap[yCord][xCord]=current.curse
+        setCurseMap(newMap)
+        let tempDemon=null;
+    for(let i=0; i<activeDemonsList.length;i++){
+        if (activeDemonsList[i]===current){
+             tempDemon=activeDemonsList[i];
+            tempDemon.active=false;
+        }
+    }
+setActiveDemonsList(e=>e.map(el=> el === current ? tempDemon : el))
+
+
+
+
+        }
+    }
+    
+
 }
 
 function attackButton(){
     setAttackTrigger(true)
+    setEndTurn(x=>x === true ? false : true)
 
     
 }
-
+useEffect(()=>{
+    {
+        let tempArray=[];
+        let tempDemon=null;
+        for(let i=0; i<activeDemonsList.length;i++){
+           
+                 tempDemon=activeDemonsList[i];
+                tempDemon.active=true;
+                tempArray.push(tempDemon)
+        
+        }
+    setActiveDemonsList(tempArray)   }
+},[endTurn])
+console.log('original', demons)
+console.log("active",activeDemonsList)
 function summonButton(){
 
     if (current){
         if (!activeDemonsList.includes(current)){
             let tempSummonArray=[];
+            setCurrentActionButton("summon")
             if (soulBank>=current.cost){
                 setSummonTrigger(true);
                 if( playerCoodinates[0]-1>=0){
@@ -289,6 +329,15 @@ if (moveTrigger){
     setMapState(newMapArray)
     setCurrent(null);
     setMoveTrigger(false);
+    let tempDemon=null;
+    for(let i=0; i<activeDemonsList.length;i++){
+        if (activeDemonsList[i]===current){
+             tempDemon=activeDemonsList[i];
+            tempDemon.active=false;
+        }
+    }
+setDemons(e=>e.map(el=> el === current ? tempDemon : el))
+
     if (current.name=="Shilo"){
         setPlayerCoordinates([y,x])
     }
@@ -342,9 +391,40 @@ function summonSpot(y,x){
 
     }
 
-
-
 }
+
+
+useEffect(()=>{
+
+    const keyDownHandler = (event) => {
+    console.log(event.key)
+    if (event.key==='Escape'){
+        setMoveTrigger(false);
+        setAttackTrigger(false);
+        setCurseTrigger(false);
+        setSummonTrigger(false);
+        setCurrent(null);
+        setCurrentCoordinates(null);
+        setLegalMovesArray([])
+    }
+
+         };
+    
+    window.addEventListener('keydown', keyDownHandler);
+    
+    
+    
+        return () => {
+          window.removeEventListener('keydown', keyDownHandler);
+        };
+    
+    
+    
+    //when the key is lifted it sets the current key to null to stop map movement and the walker to false to stop the animation
+    
+    },[])
+    
+
   return (
     <div className="camera">
         <div className="battleMap">
@@ -355,7 +435,7 @@ function summonSpot(y,x){
 
 <div className='summonsList'>{summoningList}</div>
 
-<div className='actionButtonContainer'>{soulBank} {actionButtons}</div>
+<div className='actionButtonContainer'> {actionButtons}</div>
 </div>
 
       </div>
@@ -365,36 +445,3 @@ function summonSpot(y,x){
 export default DemoMap;
 
 
-// useEffect(()=>{
-// //hot key event listener
-//     window.addEventListener('keydown', (e)=>{
-// //         if (e.key==='m'){
-// //             setMoveTrigger(true);
-// // console.log(current)
-
-// //         }
-// //         if (e.key==='a' && current){
-// //             setAttackTrigger(true)
-
-// //         }
-// //         if (e.key==='c' && current){
-// //             setCurseTrigger(true)
-
-// //         }
-// //         if (e.key==='s' && current){
-// //             setSummonTrigger(true)
-
-// //         }
-//         if (e.key==='Escape'){
-//             setMoveTrigger(false);
-//             setAttackTrigger(false);
-//             setCurseTrigger(false);
-//             setSummonTrigger(false);
-//             setCurrent(null);
-//             setCurrentCoordinates(null);
-//             setLegalMovesArray([])
-//         }
-
-//     })
-
-// },[])
