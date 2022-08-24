@@ -13,6 +13,7 @@ import FarmMap from './components/maps/farmMap.js';
 import TownMap1 from './components/maps/town1.js';
 import TheWall from './components/maps/theWall.js';
 import TrainTracksToTortous from './components/maps/trainTracksToTortous.js';
+import TrainTracksToValley from './components/maps/trainTracksToValley.js';
 
 import DemoMap from './battleMaps/demoMap.jsx';
 import DemonObjects from './demonObjects.js'
@@ -42,6 +43,9 @@ const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dra
     trainTracksToTortous: (
       <TrainTracksToTortous active={tracker} adder={addItem} />
     ),
+    trainTracksToValley: (
+      <TrainTracksToValley active={tracker} adder={addItem} />
+    ),
     demoMap: <DemoMap demonList={demonTeam} />,
   };
 
@@ -49,7 +53,7 @@ const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dra
 // console.log('POOP', mapsObj)
 
 
-const [current, setCurrent] = useState('theWall');
+const [current, setCurrent] = useState('trainTracksToValley');
 
   function tracker(x) {
     setCurrent(x);
