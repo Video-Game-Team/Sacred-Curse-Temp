@@ -25,7 +25,8 @@ function App() {
   })
 
   //delete Later
-const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dragonite, DemonObjects.Haku, DemonObjects.Zabuza, DemonObjects.Naruto])
+const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Suki, DemonObjects.Kipsie, DemonObjects.Mishi, DemonObjects.Oro, DemonObjects.Angelica,
+DemonObjects.Charlie, DemonObjects.CrawLord, DemonObjects.Dewy, DemonObjects.Hashi, DemonObjects.Hakara])
 
 
   const mapsObj = {

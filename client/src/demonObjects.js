@@ -3,11 +3,22 @@ import GoldFish from './assets/demonSprites/clipart1852670.png';
 import GrassMan from './assets/demonSprites/clipart937948.png';
 import RedMan from './assets/demonSprites/clipart1352153.png';
 import PlayerCard from './assets/demonSprites/Uchiha Sasuke by bebenciukas on DeviantArt.png';
-import Hakara from './assets/demonSprites/Haku 2.png'
+import Suki from './assets/demonSprites/Suki.png';
+import Kipsie from './assets/demonSprites/Kipsie.png';
+import Oro from './assets/demonSprites/Oro.png';
+import Mishi from './assets/demonSprites/Mishi Mishi.png';
+import Angelica from './assets/demonSprites/Angelica.png';
+import Byako from './assets/demonSprites/Byako.png';
+import Charlie from './assets/demonSprites/Charlie.png';
+import CrawLord from './assets/demonSprites/CrawLord.png';
+import Dewy from './assets/demonSprites/Dewy.png';
+import Hakara from './assets/demonSprites/Hakara.png';
+import Hashi from './assets/demonSprites/Hashi.png';
+import Jeff from './assets/demonSprites/Jeff.png';
 
 // const haku ={
 //     attack: 5,
-//     defesne: 2,
+//     defense: 2,
 //     move: 2,
 //     cost: 8,
 //     firstStrike: false,
@@ -34,102 +45,306 @@ Player:{
     range: 1,
     image: PlayerCard,
     summoned: true,
-    cost: 5
+    cost: 5,
+    type: "Me"
+
 },
 
-    Dragonite: {
-        name: '',
-        attack: 4,
-        defense: 4,
-        move: 2,
+   
+
+
+
+Suki:{
+    name: "Suki",
+    attack: 3,
+    defense: 6,
+    health: 6,
+    move: 2,
+    firstStrike: false,
+    bloodLust: false,
+    curse: "Blessing",
+    ability: null,
+    abilityDescription: null,
+
+    curseCost:2,
+    curseDescription: "Bless your current tile. Any demon occupying that tile heals 1 health at the start of your turn.",
+    description: "A demon who shines brightest in the moonlight. She promised her dear love that she would wait till the moon fell each night for him to return. Her only true curse; she kept her word.",
+
+    type: "Melee",
+    range: null,
+    image: Suki,
+    summoned: true,
+    active: true,
+    cost: 0,
+    type: "Demon"
+
+
+ 
+},
+Kipsie:{
+    name: "Kipsie",
+    attack: 4,
+    defense: 3,
+    health: 3,
+    move: 2,
+    firstStrike: true,
+    bloodLust: false,
+    curse: null,
+    ability: "Stealth",
+    abilityDescription: "Can attack before your opponent can do damage. If your opponent is killed, they will not you.",
+    curseCost: null,
+    curseDescription: null,
+    description: "A demon who was shunned before he took his first step. Feared by all. Cursed to wonder reality, seeking the love he has never known.",
+    active: true,
+    type: "Melee",
+    range: null,
+    image: Kipsie,
+    summoned: true,
+    cost: 0,
+    type: "Demon"
+
+
+},
+Mishi:{
+    name: "Mishi Mishi",
+    attack: 7,
+    defense: 5,
+    health: 5,
+    move: 2,
+    firstStrike: false,
+    bloodLust: false,
+    curse: null,
+    ability: null,
+    abilityDescription: null,
+    curseCost: null,
+    curseDescription: null,
+    description: "Worshipped as a fallen angel since birth. Loved by all, and revered as a prophetic. Until the world was taken from him. Now he seeks revenge to fill the scurge of pain in his heart ",
+    active: true,
+    type: "Melee",
+    range: null,
+    image: Mishi,
+    summoned: true,
+    cost: 0,
+    type: "Demon"
+
+
+},
+Oro:{
+    name: "Oro",
+    attack: 2,
+    defense: 6,
+    health: 6,
+    move: 3,
+    firstStrike: false,
+    bloodLust: false,
+    curse: null,
+    ability: null,
+    abilityDescription: null,
+    curseCost: null,
+    curseDescription: null,
+    description: "Hidden away since birth. Oro has learned protect itself at cost. It runs fast, and defends well.",
+    active: false,
+    type: "Melee",
+    range: null,
+    image: Oro,
+    summoned: false,
+    cost: 3,
+    type: "Demon"
+
+
+  
+    },
+  Angelica:{
+    name: "Angelica",
+    attack: 3,
+    defense: 3,
+    health: 3,
+    move: 2,
+    firstStrike: true,
+    bloodLust: false,
+    curse: null,
+    ability: "Stealth",
+    abilityDescription: "Can attack before your opponent can do damage. If your opponent is killed, they will not you.",
+    curseCost: null,
+    curseDescription: null,
+    description: "Never hesitates to act. She saw the power and took it without looking back. Now she's a monster willing to kill without a second thought",
+    active: false,
+    type: "Melee",
+    range: null,
+    image: Angelica,
+    summoned: false,
+    cost: 3,
+    type: "Demon"
+
+  },
+  Byako:{
+    name: "Byako",
+    attack: 2,
+    defense: 2,
+    health: 2,
+    move: 3,
+    firstStrike: false,
+    bloodLust: false,
+    curse: "Webbing",
+    ability: null,
+    abilityDescription: null,
+    curseCost: 3,
+    curseDescription: "Curse the tile you are on and trap the next enemy to end their turn on it.",
+    description: "A lost soul forever seeking a child. She is caught in an infinite samsara of trapping prey for her non existent children.",
+    active: false,
+    type: "Melee",
+    range: null,
+    image: Byako,
+    summoned: false,
+    cost: 3,
+    type: "Demon"
+
+  },
+
+  Charlie:{
+    name: "Charlie",
+    attack: 6,
+    defense: 5,
+    health: 5,
+    move: 1,
+    firstStrike: false,
+    bloodLust: true,
+    curse: null,
+    ability: "Blood Lust",
+    abilityDescription: "An evil soul with a bloodlust. Active immediately upon summoning.",
+    curseCost: null,
+    curseDescription: null,
+    description: "A monster from birth. With or without his curse, he would bring havok on everyone he encounters. A warlord with the sleepless desire to conquer.",
+    active: true,
+    type: "Melee",
+    range: null,
+    image: Charlie,
+    summoned: false,
+    cost: 4,
+    type: "Demon"
+
+  },
+
+  CrawLord:{
+    name: "Craw Lord",
+    attack: 2,
+    defense: 4,
+    health: 4,
+    move: 1,
+    firstStrike: false,
+    bloodLust: true,
+    curse: "Haunting",
+    ability: "Blood Lust",
+    abilityDescription: "An evil soul with a bloodlust. Active immediately upon summoning.",
+    curseCost: 4,
+    curseDescription: "Haunt your current tile. Any enemy occupying that tile loses 1 health at the start of your turn.",
+    description: "A monster from birth. With or without his curse, he would bring havok on everyone he encounters. A warlord with the sleepless desire to conquer.",
+    active: true,
+    type: "Melee",
+    range: null,
+    image: CrawLord,
+    summoned: false,
+    cost: 4,
+
+  },
+        
+  Dewy:{
+    name: "Dewy",
+    attack: 4,
+    defense: 1,
+    health: 1,
+    move: 2,
+    firstStrike: false,
+    bloodLust: false,
+    curse: null,
+    ability: null,
+    abilityDescription: null,
+    curseCost: null,
+    curseDescription: null,
+    description: "A musician and artist at heart, but was forced to trade his harp for a bow and arrow to defend his home. He uses his power to protect those he holds most dear. For all of eternity.",
+    active: false,
+    type: "Range",
+    range: 3,
+    image: Dewy,
+    summoned: false,
+    cost: 3,
+
+  },
+  Hakara:{
+    name: "Hakara",
+    attack: 1,
+    defense: 7,
+    health: 7,
+    move: 1,
+    firstStrike: false,
+    bloodLust: false,
+    curse: "Silent Night",
+    ability: null,
+    abilityDescription: null,
+    curseCost: 8,
+    curseDescription: "A dreadful and evil power. Curse the tile you occupy. The next opponent to end their turn on it will die before morning.",
+    description: "Nothing is known about this demon. Her past is vanishes as quickly as her victims.",
+    active: false,
+    type: "Melee",
+    range: null,
+    image: Hakara,
+    summoned: false,
+    cost: 3,
+
+  },
+
+  Hashi:{
+
+        name: "Hashi",
+        attack: 1,
+        defense: 6,
+        health: 7,
+        move: 1,
         firstStrike: false,
         bloodLust: false,
-        curse: "Love Me",
-        curseCost: 2,
-        curseDescription: "Lay a trap for your foolish prey. Curse the spot so that the next enemy will die if they begin their turn here",
+        curse: null,
+        ability: "Absorb",
+        abilityDescription: "Capture the attacking power of the first enemy you kill with this creature.",
+        curseCost: null,
+        curseDescription: null,
+        description: "A leech all of their lives. Simply stayed alive as long he could, and took what others had for his own",
+        active: false,
+        type: "Melee",
+        range: null,
+        image: Hashi,
+        summoned: false,
+        cost: 4,
+    
+  },
 
-        description: "This establishes the main-axis, thus defining the direction flex items are placed in the flex container. Flexbox is (aside from optional wrapping) a single-direction layout concept. Think of flex items as primarily laying out either in horizontal rows or vertical columns. ",
-        active: true,
-        range: 1,
-        image: DragonImage,
-        summoned: true,
-        cost: 5
+  Jeff:{
 
-    },
-     Haku: {
-        name: "KHak",    
-        attack: 5,
-            defesne: 2,
-            move: 2,
-            cost: 8,
-            firstStrike: false,
-            bloodLust: false,
-            curse: "Mirror Dream",
-            curseCost: 1,
-            curseDescription: "Lay a trap for your foolish prey. Curse the spot so that the next enemy will die if they begin their turn here",
+    name: "Jeff",
+    attack: 7,
+    defense: 3,
+    health: 3,
+    move: 1,
+    firstStrike: false,
+    bloodLust: true,
+    curse: null,
+    ability: "Blood Lust",
+    abilityDescription: "An evil soul with a bloodlust. Active immediately upon summoning.",
+    curseCost: null,
+    curseDescription: null,
+    description: "Some monster are simply understood. Other monsters are simply monsters. An evil soul, with an evil power.",
+    active: false,
+    type: "Melee",
+    range: null,
+    image: Jeff,
+    summoned: false,
+    cost: 4,
 
-            description: "The demon of the mist's sidekick",
-            active: false,
-            range: 1,
-            image: GoldFish,
-            summoned: false,
-
-            cost: 5,
-
-
-
-        },
-Zabuza: {
-            name: "The Shadow Web",    
-
-            attack: 6,
-            defesne: 2,
-            move: 2,
-            cost: 9,
-            firstStrike: true,
-            bloodLust: true,
-            curse: "Black Death",
-            curseCost:4,
-            curseDescription: "Lay a trap for your foolish prey. Curse the spot so that the next enemy will die if they begin their turn here",
-            description: "Seven Layers into the depths of hell, lays the spider queen. A ravenous queen who lures her pray into her web.",
-            active: false,
-            range: 1,
-            image: GrassMan,
-            summoned: false,
-
-            cost: 7
-
-
-        },
-Naruto:{
-        name: 'Naruto',
-            attack: 6,
-            defesne: 3,
-            move: 2,
-            firstStrike: true,
-            bloodLust: false,
-            curse: "Nine tails",
-            curseCost:4,
-            curseDescription: "Lay a trap for your foolish prey. Curse the spot so that the next enemy will die if they begin their turn here",
-
-
-            description: "The unloved. A demon who has never known love",
-            active: false,
-            range: 1,
-            image: RedMan,
-            summoned: false,
-
-            cost: 5
+},
 
 
 
 
-        },
-      
-    }
-        
 
-
-
+}
 
 export default DemonObjects;

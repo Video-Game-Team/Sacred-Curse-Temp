@@ -35,7 +35,7 @@ const [activeDemonsList, setActiveDemonsList]= useState([prop.demonList[0],prop.
 const [currentActionButton, setCurrentActionButton]= useState();
 
 
-const [mapState, setMapState]= useState([[0,0,0,0,demons[0],0,0,0],[0,0,0,0,demons[1],0,1,0],[0,0,0,0,0,0,0,0],[0,0,0,0,1,0,0,0],[0,1,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
+const [mapState, setMapState]= useState([[0,0,0,0,demons[0],0,0,0],[0,0,0,Enemies.BlueInfantry,demons[1],0,1,0],[0,0,0,0,0,0,0,0],[0,0,0,0,1,0,0,0],[0,1,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
 
 const [curseMap, setCurseMap]= useState([[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,0],[0,0,0,0,0,0,0,0],[0,0,0,0,1,0,0,0],[0,1,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
 
@@ -76,7 +76,7 @@ buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); su
             gridRow: y+1,
             color: "white",
             backgroundImage: `url(${mapState[y][x].image})`,
-            backgroundSize: '110%'
+            backgroundSize: '100%'
         }}
         >
         </button>)
