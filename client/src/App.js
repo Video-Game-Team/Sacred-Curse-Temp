@@ -25,7 +25,7 @@ import RanchHouse1 from './components/maps/ranchHouse1.js';
 import RanchHouse2 from './components/maps/ranchHouse2.js';
 import SecretLakeIndoorHouse from './components/maps/secretIndoorLakeHouse.js';
 import OldManCrawfordInside from './components/maps/oldManCrawfordInside.js';
-
+import IndoorHouse1 from './components/maps/indoorHouse1.js';
 
 
 import DemoMap from './battleMaps/demoMap.jsx';
@@ -76,6 +76,7 @@ const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dra
     oldManCrawfordInside: (
       <OldManCrawfordInside active={tracker} adder={addItem} />
     ),
+    indoorHouse1: <IndoorHouse1 active={tracker} adder={addItem} />,
     demoMap: <DemoMap demonList={demonTeam} />,
   };
 
@@ -83,7 +84,7 @@ const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dra
 // console.log('POOP', mapsObj)
 
 
-const [current, setCurrent] = useState('oldManCrawfordInside');
+const [current, setCurrent] = useState('indoorHouse1');
 
   function tracker(x) {
     setCurrent(x);
