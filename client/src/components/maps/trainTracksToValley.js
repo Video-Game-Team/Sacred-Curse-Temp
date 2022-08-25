@@ -10,9 +10,9 @@ import '../../trainTracksToValley.css';
 
 const TrainTracksToValley = (props) => {
   //this sets the x Cordinate to transform the map and character location
-  const [xTransformVar, setXTransformVar] = useState(-1204);
+  const [xTransformVar, setXTransformVar] = useState(-1241);
   //this sets the y Cordinate to transform the map and character location
-  const [yTransformVar, setYTransformVar] = useState(-8852);
+  const [yTransformVar, setYTransformVar] = useState(-8848);
   //
 
   const requestRef = useRef();
@@ -1478,26 +1478,26 @@ const TrainTracksToValley = (props) => {
   console.log("COORDINATE", yPlayerIndex.current, xPlayerIndex.current)
   console.log("VALUE Right", currentMap2[yPlayerIndex.current] [xPlayerIndex.current])
 
-//   useEffect(()=>{
-//     let tempGrid=[]
-//     for (let i=0; i<currentMap.length; i++){
-//       for (let j=0; j<currentMap[i].length; j++){
-//         tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-//           gridColumn: j+1,
-//           gridRow: i+1,
-//           color: "white",
-//       }}
-//       > {currentMap[i][j]}
+  // useEffect(()=>{
+  //   let tempGrid=[]
+  //   for (let i=0; i<currentMap.length; i++){
+  //     for (let j=0; j<currentMap[i].length; j++){
+  //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+  //         gridColumn: j+1,
+  //         gridRow: i+1,
+  //         color: "white",
+  //     }}
+  //     > {currentMap[i][j]}
 
-//       </button>)
+  //     </button>)
 
-//       }
-//     }
-//   setGridArray(tempGrid)
+  //     }
+  //   }
+  // setGridArray(tempGrid)
 
-//   },[])
+  // },[])
 
-  //create an array. If the current array does not contain the value. shift it.
+  // create an array. If the current array does not contain the value. shift it.
 
   // console.log(yPlayerIndex.current, xPlayerIndex.current)
   // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])

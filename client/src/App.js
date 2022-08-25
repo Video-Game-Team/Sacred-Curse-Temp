@@ -14,6 +14,13 @@ import TownMap1 from './components/maps/town1.js';
 import TheWall from './components/maps/theWall.js';
 import TrainTracksToTortous from './components/maps/trainTracksToTortous.js';
 import TrainTracksToValley from './components/maps/trainTracksToValley.js';
+import DunleaveyValley from './components/maps/dunleaveyValley.js';
+import SaintAnna from './components/maps/saintAnna.js';
+import MountainRoadTrainTracks from './components/maps/mountainRoadTrainTracks.js';
+import MansonRanch from './components/maps/mansonRanch.js';
+import MountainEntrance from './components/maps/mountainEntrance.js';
+import Sigele from './components/maps/sigele.js';
+
 
 import DemoMap from './battleMaps/demoMap.jsx';
 import DemonObjects from './demonObjects.js'
@@ -46,6 +53,14 @@ const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dra
     trainTracksToValley: (
       <TrainTracksToValley active={tracker} adder={addItem} />
     ),
+    dunleaveyValley: <DunleaveyValley active={tracker} adder={addItem} />,
+    saintAnna: <SaintAnna active={tracker} adder={addItem} />,
+    mountainRoadTrainTracks: (
+      <MountainRoadTrainTracks active={tracker} adder={addItem} />
+    ),
+    mansonRanch: <MansonRanch active={tracker} adder={addItem} />,
+    mountainEntrance: <MountainEntrance active={tracker} adder={addItem} />,
+    sigele: <Sigele active={tracker} adder={addItem} />,
     demoMap: <DemoMap demonList={demonTeam} />,
   };
 
@@ -53,7 +68,7 @@ const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dra
 // console.log('POOP', mapsObj)
 
 
-const [current, setCurrent] = useState('trainTracksToValley');
+const [current, setCurrent] = useState('sigele');
 
   function tracker(x) {
     setCurrent(x);

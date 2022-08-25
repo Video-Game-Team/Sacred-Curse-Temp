@@ -34,23 +34,25 @@ body {
 }
 
 
-.mapTTTV {
+.mapDV {
     image-rendering: pixelated;
-    max-height: 50000px;
-    min-width: 50000px;
-    background-image: url("./assets/maps/Train track Valley w grid.png");
-    background-size: 2944px;
-    width: calc(115 * var(--grid-cell));
-    height: calc(375 * var(--grid-cell));
+
+    /* max-height: 50000px;
+    min-width: 50000px; */
+    background-image: url("./assets/maps/Dunleavey Valley w grid.png");
+    background-size: 13440px;
+    width: calc(525 * var(--grid-cell));
+    height: calc(550 * var(--grid-cell));
     position: absolute;
     background-repeat: no-repeat;
     overflow: visible;
     /* display: grid;
-    grid-template-columns: repeat(46, 64px);
-    grid-template-rows: repeat(150, 64px); */
+    grid-template-columns: repeat(71, 64px);
+    grid-template-rows: repeat(86, 64px); */
 
 
 }
+
 /* 
 .numbers {
     size: 100%;
