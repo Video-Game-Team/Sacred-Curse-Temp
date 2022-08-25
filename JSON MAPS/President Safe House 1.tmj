@@ -1,0 +1,94 @@
+{ "compressionlevel":-1,
+ "height":15,
+ "infinite":false,
+ "layers":[
+        {
+         "data":[298, 299, 300, 4, 15542, 15543, 15544, 15545, 714, 715, 787, 787, 17648, 17697, 17698,
+            312, 313, 314, 18, 15558, 15559, 15560, 15561, 730, 731, 803, 803, 17664, 17713, 17714,
+            326, 327, 328, 78, 15574, 15575, 15576, 15577, 746, 747, 53, 53, 17680, 17729, 17730,
+            17648, 49, 50, 51, 52, 53, 53, 53, 53, 19434, 19435, 67, 53, 89, 716,
+            17664, 50, 51, 52, 53, 53, 67, 18947, 18948, 19453, 19454, 81, 67, 53, 732,
+            17680, 18818, 51, 52, 1440, 1442, 1442, 18965, 18966, 19472, 19473, 95, 81, 67, 48,
+            17733, 18836, 48, 49, 1472, 1265, 388, 389, 390, 1266, 1473, 95, 95, 10045, 10046,
+            17605, 17582, 47, 47, 1472, 1281, 404, 405, 406, 1282, 1473, 49, 50, 10166, 10167,
+            17676, 17598, 61, 61, 1472, 1265, 420, 421, 422, 1266, 1473, 49, 50, 10045, 10046,
+            17692, 17582, 75, 75, 1472, 1281, 1474, 1474, 1474, 1282, 1473, 51, 52, 10166, 10167,
+            17733, 17598, 89, 89, 1472, 1474, 1474, 1474, 1474, 1474, 1473, 51, 52, 53, 716,
+            17749, 48, 47, 47, 1456, 1458, 1458, 1458, 1458, 1458, 1457, 48, 49, 50, 732,
+            17664, 18482, 18483, 61, 75, 18482, 18483, 47, 48, 47, 61, 62, 63, 18947, 18948,
+            17680, 18501, 18502, 75, 89, 18501, 18502, 47, 47, 61, 75, 76, 1751, 18965, 18966,
+            61, 18520, 18521, 2684356397, 2684356381, 18520, 18521, 61, 61, 75, 89, 90, 1767, 1768, 93],
+         "height":15,
+         "id":1,
+         "name":"floors walls",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":15,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":12,
+ "nextobjectid":1,
+ "orientation":"orthogonal",
+ "renderorder":"right-down",
+ "tiledversion":"1.8.5",
+ "tileheight":48,
+ "tilesets":[
+        {
+         "firstgid":1,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor house 1\/Inside Floor 1.tsx"
+        }, 
+        {
+         "firstgid":183,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor house 1\/Inside Floor 2.tsx"
+        }, 
+        {
+         "firstgid":365,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor house 1\/Indoors 3.tsx"
+        }, 
+        {
+         "firstgid":1085,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor house 1\/Inddor 4.tsx"
+        }, 
+        {
+         "firstgid":2333,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor house 1\/NPC 4.tsx"
+        }, 
+        {
+         "firstgid":2656,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Tortous Map 1\/Exteriors 1.tsx"
+        }, 
+        {
+         "firstgid":15482,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor House 2\/Indoor House 2.tsx"
+        }, 
+        {
+         "firstgid":17194,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor House 2\/Indoor 6.tsx"
+        }, 
+        {
+         "firstgid":17450,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Inddor house 3\/Inddor 8.tsx"
+        }, 
+        {
+         "firstgid":18298,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/USEABLE_DEMON_GAME_ASSETS\/Time Fantasy All Assets\/timefantasy_characters\/timefantasy_characters\/RPGMAKERMV\/characters\/Military_1.tsx"
+        }, 
+        {
+         "firstgid":18640,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Inddor house 3\/NPC 1.tsx"
+        }, 
+        {
+         "firstgid":18946,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Inddor House 6\/NPC 2.tsx"
+        }, 
+        {
+         "firstgid":19252,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/President Safe House 1\/President 1.tsx"
+        }],
+ "tilewidth":48,
+ "type":"map",
+ "version":"1.8",
+ "width":15
+}

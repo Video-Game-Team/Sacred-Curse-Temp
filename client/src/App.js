@@ -20,6 +20,11 @@ import MountainRoadTrainTracks from './components/maps/mountainRoadTrainTracks.j
 import MansonRanch from './components/maps/mansonRanch.js';
 import MountainEntrance from './components/maps/mountainEntrance.js';
 import Sigele from './components/maps/sigele.js';
+import PresidentSafeHouse from './components/maps/presidentSafeHouse.js';
+import RanchHouse1 from './components/maps/ranchHouse1.js';
+import RanchHouse2 from './components/maps/ranchHouse2.js';
+import SecretLakeIndoorHouse from './components/maps/secretIndoorLakeHouse.js';
+
 
 
 import DemoMap from './battleMaps/demoMap.jsx';
@@ -61,6 +66,10 @@ const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dra
     mansonRanch: <MansonRanch active={tracker} adder={addItem} />,
     mountainEntrance: <MountainEntrance active={tracker} adder={addItem} />,
     sigele: <Sigele active={tracker} adder={addItem} />,
+    presidentSafeHouse: <PresidentSafeHouse active={tracker} adder={addItem} />,
+    ranchHouse1: <RanchHouse1 active={tracker} adder={addItem} />,
+    ranchHouse2: <RanchHouse2 active={tracker} adder={addItem} />,
+    secretLakeIndoorHouse: <SecretLakeIndoorHouse active={tracker} adder={addItem} />,
     demoMap: <DemoMap demonList={demonTeam} />,
   };
 
@@ -68,7 +77,7 @@ const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dra
 // console.log('POOP', mapsObj)
 
 
-const [current, setCurrent] = useState('sigele');
+const [current, setCurrent] = useState('secretLakeIndoorHouse');
 
   function tracker(x) {
     setCurrent(x);

@@ -1,0 +1,74 @@
+{ "compressionlevel":-1,
+ "height":15,
+ "infinite":false,
+ "layers":[
+        {
+         "data":[3, 298, 299, 300, 436, 437, 2645, 2646, 2581, 2582, 2583, 2645, 2646, 442, 443, 1097, 1098, 1099, 1100, 13,
+            17, 312, 313, 314, 452, 453, 2661, 2662, 2597, 2598, 2599, 2661, 2662, 458, 459, 1113, 1114, 1115, 1116, 27,
+            3221225513, 326, 327, 328, 468, 469, 2345, 2393, 2613, 2614, 2615, 1049, 2345, 474, 475, 1129, 1130, 1131, 1132, 41,
+            3221225513, 2362, 2361, 2362, 2361, 2362, 2361, 2409, 2629, 2630, 2631, 1065, 2361, 2362, 2361, 1145, 3635, 3636, 1148, 41,
+            3221225513, 2346, 2345, 2346, 2345, 2346, 2345, 2425, 2426, 2425, 2426, 2426, 2345, 2346, 2345, 2346, 3654, 3655, 237, 41,
+            3221225513, 2362, 2361, 2362, 1158, 1159, 1160, 1159, 1160, 1161, 2361, 2362, 2361, 2362, 2361, 2362, 2361, 2362, 251, 41,
+            3221225513, 2346, 2345, 2346, 1174, 1175, 1176, 1175, 1176, 1177, 2345, 2346, 2345, 2346, 2345, 2346, 2345, 2346, 265, 41,
+            3221225513, 1610613283, 1610613299, 2362, 1174, 1175, 1176, 1175, 1176, 1177, 2361, 2362, 2361, 2362, 2361, 2362, 2361, 2684355393, 2684355377, 41,
+            3221225513, 1610613282, 1610613298, 2346, 1174, 1894, 402, 403, 1929, 1177, 2345, 2346, 2345, 2346, 2345, 2346, 2345, 2684355394, 2684355378, 41,
+            3221225513, 1610613283, 1610613299, 2362, 1174, 1910, 418, 419, 1945, 1177, 2361, 2362, 2361, 2362, 2361, 2076, 1610614708, 2684355395, 2684355379, 41,
+            3221225513, 1610613282, 1610613298, 2346, 1174, 1175, 1176, 1175, 1176, 1177, 2345, 2346, 2345, 2346, 2345, 2092, 1610614707, 2684355393, 2684355377, 41,
+            3221225513, 2362, 2361, 2362, 1174, 1175, 1176, 1175, 1176, 1177, 2361, 2362, 2361, 2362, 2361, 2362, 2361, 2684355394, 2684355378, 41,
+            3221225513, 237, 2345, 2346, 1190, 1191, 1192, 1191, 1192, 1193, 2345, 2346, 2345, 2346, 2345, 2346, 2345, 2684355395, 2684355379, 41,
+            3221225513, 251, 2361, 2362, 2361, 2362, 2361, 2362, 2361, 2362, 2361, 2362, 2361, 2362, 2361, 2362, 2361, 2362, 2361, 41,
+            3221225513, 265, 2345, 2346, 2345, 2346, 229, 230, 2345, 2346, 2345, 2346, 2345, 2346, 2345, 2346, 2345, 2346, 2345, 41],
+         "height":15,
+         "id":17,
+         "name":"Background Layer",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":20,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":23,
+ "nextobjectid":1,
+ "orientation":"orthogonal",
+ "renderorder":"right-down",
+ "tiledversion":"1.8.5",
+ "tileheight":48,
+ "tilesets":[
+        {
+         "firstgid":1,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor house 1\/Inside Floor 1.tsx"
+        }, 
+        {
+         "firstgid":183,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor house 1\/Inside Floor 2.tsx"
+        }, 
+        {
+         "firstgid":365,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor house 1\/Indoors 3.tsx"
+        }, 
+        {
+         "firstgid":1085,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor house 1\/Inddor 4.tsx"
+        }, 
+        {
+         "firstgid":2333,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Inddor house 3\/Indoor 7.tsx"
+        }, 
+        {
+         "firstgid":2525,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor House 2\/Indoor 6.tsx"
+        }, 
+        {
+         "firstgid":2781,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Inddor house 3\/Inddor 8.tsx"
+        }, 
+        {
+         "firstgid":3629,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor house 1\/NPC 4.tsx"
+        }],
+ "tilewidth":48,
+ "type":"map",
+ "version":"1.8",
+ "width":20
+}

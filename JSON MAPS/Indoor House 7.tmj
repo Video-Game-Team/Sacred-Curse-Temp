@@ -1,0 +1,78 @@
+{ "compressionlevel":-1,
+ "height":15,
+ "infinite":false,
+ "layers":[
+        {
+         "data":[10, 10, 10, 752, 752, 667, 668, 10, 667, 668, 752, 752, 10, 11, 12,
+            1408, 1408, 24, 768, 768, 683, 696, 697, 683, 684, 768, 768, 24, 1409, 1410,
+            1424, 1424, 2377, 2378, 2377, 699, 712, 713, 699, 700, 2377, 2378, 2377, 1425, 1426,
+            2345, 2346, 2345, 2346, 2345, 2346, 2345, 2346, 2345, 2346, 2345, 2346, 2345, 2346, 2345,
+            2361, 2362, 2361, 2362, 2361, 2362, 2361, 2362, 2361, 2362, 2361, 2362, 2361, 2362, 2361,
+            2377, 2378, 2377, 2378, 2377, 2378, 2377, 2378, 2377, 2378, 2377, 2378, 2377, 2378, 2377,
+            2132, 2346, 2345, 2346, 1488, 1490, 5513, 5514, 1490, 1490, 1490, 1489, 2345, 2346, 2345,
+            1649, 2362, 2361, 2362, 1520, 1358, 5532, 5533, 1615, 1616, 1358, 1521, 2361, 2362, 2361,
+            1633, 2378, 2377, 2378, 1520, 1374, 1629, 1630, 1631, 1632, 1374, 1521, 2377, 2378, 2377,
+            1649, 2346, 2345, 2346, 1520, 1358, 1645, 1646, 1647, 1648, 1358, 1521, 2345, 2346, 2345,
+            1633, 2362, 2361, 2362, 1520, 1374, 1661, 1662, 1663, 1664, 1374, 1521, 2361, 2362, 2361,
+            2132, 2378, 2377, 2378, 1520, 1522, 1522, 1522, 1522, 1522, 1522, 1521, 2377, 2378, 2377,
+            2345, 2346, 2345, 2346, 1504, 1506, 1506, 1506, 1506, 1506, 1506, 1505, 2345, 2346, 2345,
+            2361, 2362, 2361, 2362, 2361, 2362, 2361, 2362, 2361, 2362, 2361, 2362, 2361, 2362, 2361,
+            2377, 2378, 2213, 2214, 2377, 2378, 2377, 2378, 2377, 2378, 2377, 2378, 2377, 2378, 2377],
+         "height":15,
+         "id":28,
+         "name":"Background Layer",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":15,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":35,
+ "nextobjectid":1,
+ "orientation":"orthogonal",
+ "renderorder":"right-down",
+ "tiledversion":"1.8.5",
+ "tileheight":48,
+ "tilesets":[
+        {
+         "firstgid":1,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor house 1\/Inside Floor 1.tsx"
+        }, 
+        {
+         "firstgid":183,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor house 1\/Inside Floor 2.tsx"
+        }, 
+        {
+         "firstgid":365,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor house 1\/Indoors 3.tsx"
+        }, 
+        {
+         "firstgid":1085,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor house 1\/Inddor 4.tsx"
+        }, 
+        {
+         "firstgid":2333,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Inddor house 3\/Indoor 7.tsx"
+        }, 
+        {
+         "firstgid":2525,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor House 2\/Indoor 6.tsx"
+        }, 
+        {
+         "firstgid":2781,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Inddor house 3\/Inddor 8.tsx"
+        }, 
+        {
+         "firstgid":3629,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor House 2\/Indoor House 2.tsx"
+        }, 
+        {
+         "firstgid":5341,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor house 1\/NPC 4.tsx"
+        }],
+ "tilewidth":48,
+ "type":"map",
+ "version":"1.8",
+ "width":15
+}

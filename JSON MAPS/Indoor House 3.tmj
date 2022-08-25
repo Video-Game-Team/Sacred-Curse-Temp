@@ -1,0 +1,78 @@
+{ "compressionlevel":-1,
+ "height":15,
+ "infinite":false,
+ "layers":[
+        {
+         "data":[4, 4611, 6, 4, 5, 6, 4, 4628, 4, 4, 4, 4, 4, 4611, 4,
+            18, 4627, 4563, 4717, 4565, 4740, 4741, 4644, 4740, 4741, 4558, 4719, 4560, 4627, 18,
+            75, 4643, 4808, 4733, 4581, 4756, 4757, 5342, 5343, 4757, 4574, 4735, 4840, 4643, 76,
+            48, 49, 4824, 4622, 4597, 4772, 4773, 5360, 5361, 4773, 4590, 4654, 4856, 89, 90,
+            49, 50, 51, 4638, 53, 53, 67, 67, 67, 67, 4606, 4670, 4608, 53, 48,
+            49, 50, 51, 52, 53, 67, 81, 81, 81, 81, 81, 95, 81, 67, 48,
+            47, 4659, 48, 49, 50, 51, 52, 53, 95, 95, 95, 95, 95, 4659, 48,
+            61, 4675, 47, 5504, 5505, 49, 50, 51, 52, 47, 48, 49, 50, 4675, 52,
+            75, 5109, 5110, 5522, 5523, 4986, 4828, 4912, 5018, 4826, 4915, 49, 50, 4745, 52,
+            89, 5125, 5126, 75, 4925, 4922, 4927, 4928, 4916, 4930, 4931, 51, 52, 4761, 53,
+            47, 5141, 5142, 89, 4941, 4938, 4820, 4944, 4932, 4788, 4947, 51, 52, 4777, 67,
+            47, 4861, 4862, 47, 4957, 4835, 4836, 4960, 4803, 4804, 4963, 48, 49, 5285, 51,
+            47, 4877, 4878, 61, 75, 89, 47, 47, 48, 47, 61, 62, 63, 5301, 65,
+            47, 4893, 4894, 75, 89, 90, 61, 47, 47, 61, 75, 76, 77, 78, 79,
+            61, 75, 89, 89, 90, 91, 4857, 4858, 61, 75, 89, 90, 91, 92, 93],
+         "height":15,
+         "id":16,
+         "name":"Tile Layer 7",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":15,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":22,
+ "nextobjectid":1,
+ "orientation":"orthogonal",
+ "renderorder":"right-down",
+ "tiledversion":"1.8.5",
+ "tileheight":48,
+ "tilesets":[
+        {
+         "firstgid":1,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor house 1\/Inside Floor 1.tsx"
+        }, 
+        {
+         "firstgid":183,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor house 1\/Inside Floor 2.tsx"
+        }, 
+        {
+         "firstgid":365,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor house 1\/Indoors 3.tsx"
+        }, 
+        {
+         "firstgid":1085,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor house 1\/Inddor 4.tsx"
+        }, 
+        {
+         "firstgid":2333,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor House 2\/Indoor 6.tsx"
+        }, 
+        {
+         "firstgid":2589,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Indoor House 2\/Indoor House 2.tsx"
+        }, 
+        {
+         "firstgid":4301,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Inddor house 3\/Indoor 7.tsx"
+        }, 
+        {
+         "firstgid":4493,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Inddor house 3\/Inddor 8.tsx"
+        }, 
+        {
+         "firstgid":5341,
+         "source":"..\/..\/..\/Volumes\/ProjectDriv\/DEMON_GAME\/DEMON_GAME_PROJECT_FILES\/DEMON_GAME_MAPS\/MANA_LUNA_MAPS\/Inddor house 3\/NPC 1.tsx"
+        }],
+ "tilewidth":48,
+ "type":"map",
+ "version":"1.8",
+ "width":15
+}
