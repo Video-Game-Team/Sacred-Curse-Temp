@@ -11,11 +11,13 @@ import Angelica from './assets/demonSprites/Angelica.png';
 import Byako from './assets/demonSprites/Byako.png';
 import Charlie from './assets/demonSprites/Charlie.png';
 import CrawLord from './assets/demonSprites/CrawLord.png';
+import Chidori from './assets/demonSprites/Chidori.png'
 import Dewy from './assets/demonSprites/Dewy.png';
 import Hakara from './assets/demonSprites/Hakara.png';
 import Hashi from './assets/demonSprites/Hashi.png';
 import Jeff from './assets/demonSprites/Jeff.png';
-
+import Wal from './assets/demonSprites/Wal.png';
+import Klarsfield from './assets/demonSprites/Klarsfield .png'
 // const haku ={
 //     attack: 5,
 //     defense: 2,
@@ -340,6 +342,53 @@ Oro:{
     cost: 4,
 
 },
+Chidori:{
+
+    name: "Chidori",
+    attack: 6,
+    defense: 1,
+    health: 1,
+    move: 2,
+    firstStrike: true,
+    bloodLust: false,
+    curse: null,
+    ability: "Stealth",
+    abilityDescription: "Can attack before your opponent can do damage. If your opponent is killed, they will not you.",
+    curseCost: null,
+    curseDescription: null,
+    description: "XXX",
+    active: false,
+    type: "Melee",
+    range: null,
+    image: Chidori,
+    summoned: false,
+    cost: 6,
+
+},
+Wal:{
+
+    name: "Wal",
+    attack: 1,
+    defense: 2,
+    health: 2,
+    move: 2,
+    firstStrike: false,
+    bloodLust: false,
+    curse: null,
+    ability: null,
+    abilityDescription: null,
+    curseCost: null,
+    curseDescription: null,
+    description: "XXX",
+    active: false,
+    type: "range",
+    range: 100,
+    image: Wal,
+    summoned: false,
+    cost: 3,
+
+},
+
 
 
 
