@@ -29,7 +29,7 @@ import IndoorHouse1 from './components/maps/indoorHouse1.js';
 import IndoorHouse2 from './components/maps/indoorHouse2.js';
 import IndoorHouse3 from './components/maps/indoorHouse3.js';
 import IndoorHouse4 from './components/maps/indoorHouse4.js';
-import IndoorHouse5 from './components/maps/indoorHouse4.js';
+import IndoorHouse5 from './components/maps/indoorHouse5.js';
 
 import DemoMap from './battleMaps/demoMap.jsx';
 import DemonObjects from './demonObjects.js'
