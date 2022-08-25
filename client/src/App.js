@@ -27,6 +27,9 @@ import SecretLakeIndoorHouse from './components/maps/secretIndoorLakeHouse.js';
 import OldManCrawfordInside from './components/maps/oldManCrawfordInside.js';
 import IndoorHouse1 from './components/maps/indoorHouse1.js';
 import IndoorHouse2 from './components/maps/indoorHouse2.js';
+import IndoorHouse3 from './components/maps/indoorHouse3.js';
+import IndoorHouse4 from './components/maps/indoorHouse4.js';
+import IndoorHouse5 from './components/maps/indoorHouse4.js';
 
 import DemoMap from './battleMaps/demoMap.jsx';
 import DemonObjects from './demonObjects.js'
@@ -78,6 +81,9 @@ const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dra
     ),
     indoorHouse1: <IndoorHouse1 active={tracker} adder={addItem} />,
     indoorHouse2: <IndoorHouse2 active={tracker} adder={addItem} />,
+    indoorHouse3: <IndoorHouse3 active={tracker} adder={addItem} />,
+    indoorHouse4: <IndoorHouse4 active={tracker} adder={addItem} />,
+    indoorHouse5: <IndoorHouse5 active={tracker} adder={addItem} />,
     demoMap: <DemoMap demonList={demonTeam} />,
   };
 
@@ -85,7 +91,7 @@ const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dra
 // console.log('POOP', mapsObj)
 
 
-const [current, setCurrent] = useState('indoorHouse2');
+const [current, setCurrent] = useState('indoorHouse5');
 
   function tracker(x) {
     setCurrent(x);
