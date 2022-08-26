@@ -48,7 +48,8 @@ Player:{
     image: PlayerCard,
     summoned: true,
     cost: 5,
-    type: "Me"
+    type: "Demon",
+    health: 2,
 
 },
 
@@ -72,7 +73,7 @@ Suki:{
     curseDescription: "Bless your current tile. Any demon occupying that tile heals 1 health at the start of your turn.",
     description: "A demon who shines brightest in the moonlight. She promised her dear love that she would wait till the moon fell each night for him to return. Her only true curse; she kept her word.",
 
-    type: "Melee",
+    attackType: "melee",
     range: null,
     image: Suki,
     summoned: true,
@@ -98,7 +99,7 @@ Kipsie:{
     curseDescription: null,
     description: "A demon who was shunned before he took his first step. Feared by all. Cursed to wonder reality, seeking the love he has never known.",
     active: true,
-    type: "Melee",
+    attackType: "melee",
     range: null,
     image: Kipsie,
     summoned: true,
@@ -122,7 +123,7 @@ Mishi:{
     curseDescription: null,
     description: "Worshipped as a fallen angel since birth. Loved by all, and revered as a prophetic. Until the world was taken from him. Now he seeks revenge to fill the scurge of pain in his heart ",
     active: true,
-    type: "Melee",
+    attackType: "melee",
     range: null,
     image: Mishi,
     summoned: true,
@@ -146,7 +147,7 @@ Oro:{
     curseDescription: null,
     description: "Hidden away since birth. Oro has learned protect itself at cost. It runs fast, and defends well.",
     active: false,
-    type: "Melee",
+    attackType: "melee",
     range: null,
     image: Oro,
     summoned: false,
@@ -171,7 +172,7 @@ Oro:{
     curseDescription: null,
     description: "Never hesitates to act. She saw the power and took it without looking back. Now she's a monster willing to kill without a second thought",
     active: false,
-    type: "Melee",
+    attackType: "melee",
     range: null,
     image: Angelica,
     summoned: false,
@@ -194,7 +195,7 @@ Oro:{
     curseDescription: "Curse the tile you are on and trap the next enemy to end their turn on it.",
     description: "A lost soul forever seeking a child. She is caught in an infinite samsara of trapping prey for her non existent children.",
     active: false,
-    type: "Melee",
+    attackType: "melee",
     range: null,
     image: Byako,
     summoned: false,
@@ -218,7 +219,7 @@ Oro:{
     curseDescription: null,
     description: "A monster from birth. With or without his curse, he would bring havok on everyone he encounters. A warlord with the sleepless desire to conquer.",
     active: true,
-    type: "Melee",
+    attackType: "melee",
     range: null,
     image: Charlie,
     summoned: false,
@@ -242,11 +243,13 @@ Oro:{
     curseDescription: "Haunt your current tile. Any enemy occupying that tile loses 1 health at the start of your turn.",
     description: "A monster from birth. With or without his curse, he would bring havok on everyone he encounters. A warlord with the sleepless desire to conquer.",
     active: true,
-    type: "Melee",
+    attackType: "melee",
     range: null,
     image: CrawLord,
     summoned: false,
     cost: 4,
+    type: "Demon"
+
 
   },
         
@@ -265,11 +268,13 @@ Oro:{
     curseDescription: null,
     description: "A musician and artist at heart, but was forced to trade his harp for a bow and arrow to defend his home. He uses his power to protect those he holds most dear. For all of eternity.",
     active: false,
-    type: "Range",
+    attackType: "Range",
     range: 3,
     image: Dewy,
     summoned: false,
     cost: 3,
+    type: "Demon"
+
 
   },
   Hakara:{
@@ -287,11 +292,12 @@ Oro:{
     curseDescription: "A dreadful and evil power. Curse the tile you occupy. The next opponent to end their turn on it will die before morning.",
     description: "Nothing is known about this demon. Her past is vanishes as quickly as her victims.",
     active: false,
-    type: "Melee",
+    attackType: "melee",
     range: null,
     image: Hakara,
     summoned: false,
     cost: 3,
+    type: "Demon"
 
   },
 
@@ -311,11 +317,13 @@ Oro:{
         curseDescription: null,
         description: "A leech all of their lives. Simply stayed alive as long he could, and took what others had for his own",
         active: false,
-        type: "Melee",
+        attackType: "melee",
         range: null,
         image: Hashi,
         summoned: false,
         cost: 4,
+        type: "Demon"
+
     
   },
 
@@ -335,11 +343,13 @@ Oro:{
     curseDescription: null,
     description: "Some monster are simply understood. Other monsters are simply monsters. An evil soul, with an evil power.",
     active: false,
-    type: "Melee",
+    attackType: "melee",
     range: null,
     image: Jeff,
     summoned: false,
     cost: 4,
+    type: "Demon"
+
 
 },
 Chidori:{
@@ -358,11 +368,13 @@ Chidori:{
     curseDescription: null,
     description: "XXX",
     active: false,
-    type: "Melee",
+    attackType: "melee",
     range: null,
     image: Chidori,
     summoned: false,
     cost: 6,
+    type: "Demon"
+
 
 },
 Wal:{
@@ -381,17 +393,39 @@ Wal:{
     curseDescription: null,
     description: "XXX",
     active: false,
-    type: "range",
+    attackType: "range",
     range: 100,
     image: Wal,
     summoned: false,
     cost: 3,
+    type: "Demon"
+
 
 },
+Klarsfield:{
 
+    name: "Klarsfield",
+    attack: 7,
+    defense: 7,
+    health: 7,
+    move: 1,
+    firstStrike: false,
+    bloodLust: false,
+    curse: null,
+    ability: null,
+    abilityDescription: null,
+    curseCost: null,
+    curseDescription: null,
+    description: "XXX",
+    active: false,
+    attackType: "melee",
+    range: null,
+    image: Klarsfield,
+    summoned: false,
+    cost: 6,
+    type: "Demon"
 
-
-
+}
 
 
 }

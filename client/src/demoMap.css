@@ -11,29 +11,26 @@
 
 .sidePanel{
     display: grid;
-    grid-template-rows: 5fr 2fr 1fr;
+    grid-template-rows: 11fr 4fr 2fr 2fr;
     width: 95%;
-    margin-top: 10px;
-    row-gap: 7%;
-    
+    /* margin-top: 10px; */
+    row-gap: 5%;
 
 }
 
 .displayCard{
     display: grid;
-    grid-template-rows: 3fr 2fr 1fr;
+    grid-template-rows: 1fr 5fr 2fr 2fr 1fr;
     grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 3%;
+    max-height: 345px;
 
     box-shadow: 0 2px 8px 4px white;
     color: black;
 
 
+
     background-color: rgb(207, 207, 207);
-   
-
-    
-
 }
 /* .summonsList{
 display: flex;
@@ -50,8 +47,8 @@ background-color: rgb(31, 32, 32);
  .summonsList{
 
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: auto;
   box-shadow: 0 2px 8px 4px white;
   background-color: rgb(207, 207, 207);
   column-gap: 15px;
@@ -72,7 +69,21 @@ background-color: rgb(31, 32, 32);
 
 }
 
+.playerContainer{
 
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  color: black;
+  align-items: center;
+
+}
+
+
+.playerStats{
+  color:white;
+  width: 80px;
+}
 .actionButton{
 
     background-color: rgb(34, 34, 34);

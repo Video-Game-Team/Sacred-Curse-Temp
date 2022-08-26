@@ -3,6 +3,8 @@ import '.././demoMap.css';
 import DemonObjects from '.././demonObjects.js'
 import Enemies from '.././enemies.js'
 import DragonImage from ".././assets/demonSprites/even-more-retro-dragonite-dragonite-sprite-gen-1212525.png"
+import Heart from '.././assets/battleMapAssets/heart-e1403272720870.png'
+import { proposalPlugins } from '@babel/preset-env/data/shipped-proposals';
 
 
 
@@ -11,7 +13,6 @@ import DragonImage from ".././assets/demonSprites/even-more-retro-dragonite-drag
 
 const DemoMap = (prop) => {
   //this sets the x Cordinate to transform the map and character location
-console.log(Enemies.BlueInfantry)
   const updates = useRef(4);
 const [randomTrigger, setRandomTrigger]= useState(1);
 const [endTurn, setEndTurn]= useState(false)
@@ -29,13 +30,15 @@ const [display, setDisplay]= useState("Hi");
 const [summoningList, setSummoningList]= useState();
 const [legalMovesArray, setLegalMovesArray]= useState();
 const [legalSummoningArray, setLegalSummoningArray]= useState();
-const [playerCoodinates, setPlayerCoordinates]=useState([0,4])
+const [playerCoodinates, setPlayerCoordinates]=useState([2,6])
 const [staticDemonsList, setStaticDemonsList]= useState(prop.demonList);
 const [activeDemonsList, setActiveDemonsList]= useState([prop.demonList[0],prop.demonList[1]]);
 const [currentActionButton, setCurrentActionButton]= useState();
+const [playerOptions, setPlayerOptions]= useState()
+const [activeEnemyList, setActiveEnemyList]=useState(Enemies.BlueInfantry, Enemies.GreenInfantry)
 
 
-const [mapState, setMapState]= useState([[0,0,0,0,demons[0],0,0,0],[0,0,0,Enemies.BlueInfantry,demons[1],0,1,0],[0,0,0,0,0,0,0,0],[0,0,0,0,1,0,0,0],[0,1,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
+const [mapState, setMapState]= useState([[0,0,0,0,Enemies.BlueInfantry,0,0,0],[0,0,0,0,demons[1],0,1,0],[0,0,0,0,0,0,demons[0],0],[0,0,0,0,1,0,0,0],[0,1,0,0,0,0,0,Enemies.GreenInfantry],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
 
 const [curseMap, setCurseMap]= useState([[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,0],[0,0,0,0,0,0,0,0],[0,0,0,0,1,0,0,0],[0,1,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
 
@@ -43,6 +46,18 @@ const [curseMap, setCurseMap]= useState([[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,0],[0,
 const actionButtons= [<button className='actionButton' onClick={()=>moveButton()} style={{borderColor: "lime", 
 }}><b>MOVE</b></button>,<button className='actionButton'   onClick={()=>attackButton()} style={{borderColor: "red"}} ><b>ATTACK</b></button>,<button className='actionButton'  onClick={()=>curseButton()} style={{borderColor: "darkorchid"}}><b>CURSE</b></button>,<button className='actionButton'  onClick={()=>summonButton()}style={{borderColor: "gold"}}><b>SUMMON</b></button>]
 
+
+useEffect(()=>{
+
+setPlayerOptions([[<div className="playerStats" style={{borderColor: "lime", backgroundImage: `${demons[0].image}`
+}}>{demons[0].name}</div>,<div  className="playerStats"  style={{borderColor: "lime",
+}}>Attack:{demons[0].attack}</div>,<div  className="playerStats" style={{borderColor: "lime", 
+}}> Health: {demons[0].health}/{demons[0].defense}</div>,<div className="playerStats" style={{borderColor: "lime", 
+}}>Move:{demons[0].move}</div>,<div className="playerStats" style={{borderColor: "lime", backgroundImage: `${demons[0].image}`
+}}>{soulBank}</div>,<button className='actionButton'  onClick={()=>{ setEndTurn(x=>x === true ? false : true)}} style={{borderColor: "silver", backgroundImage: `${demons[0].image}`
+}}>End Turn</button>]])
+
+},[demons])
 //loads initial summon List
 useEffect(()=>{
 
@@ -70,7 +85,7 @@ buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); su
 >
 </button>)
     }
-    if (mapState[y][x] !=0){
+    if (mapState[y][x].type != 0){
         buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); summonSpot(y,x); curse(y,x);attack(y,x)}} className="demon" style={{
             gridColumn: x+1,
             gridRow: y+1,
@@ -86,10 +101,10 @@ buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); su
 
 function active(y,x){
     
- if (mapState[y][x] !=0 && mapState[y][x].active===true) {
+ if (mapState[y][x] != 0 && mapState[y][x]!=1) {
 setCurrent(mapState[y][x]);
     }
-    if (mapState[y][x] ===0 || mapState[y][x].active !=true) {
+    if (mapState[y][x] ===0 || mapState[y][x] ===1) {
         //load player card
         //reveal available tiles
         
@@ -107,13 +122,19 @@ setCurrent(mapState[y][x]);
 //setsDisplay and cancel all array buttons
 useEffect(()=>{
 
+if(current){
+    if (current.type==="Demon"){
 
-    if (current){
-
-setDisplay([<div style={{backgroundImage:`url(${current.image})`, backgroundPosition: 'center', gridColumnStart: '1', gridRowStart: '1', backgroundSize: '70%', backgroundRepeat: 'no-repeat'}}></div> , <b style={{color: "black", gridColumnStart:"2", justifySelf: 'center', alignSelf: 'center' }}> Attack: {current.attack}</b>, <b style={{color: "black", gridColumnStart:"3", justifySelf: 'center', alignSelf: 'center'}}> Defense: {current.defense}</b>, <b style={{color: "black", gridColumnStart:"4", justifySelf: 'center', alignSelf: 'center'}}> Move: {current.move}</b>, <b style={{color: "black", gridColumn: "1 /span 4"}}> Description: {current.description} <b> Curse: {current.curse } {current.curseDescription} </b></b>, <b style={{color: "black", gridColumnStart: "4", gridRowStart: "3"}}>SOULS:{current.cost}</b>]);
-
+setDisplay([<div style={{backgroundImage:`url(${current.image})`, backgroundPosition: 'center', gridColumnStart: '1', gridRowStart: '2', backgroundSize: '73%', backgroundRepeat: 'no-repeat',}}></div>, <b style={{color: "black", gridColumnStart:"1", gridRowStart: "1", justifySelf: 'start', alignSelf: 'center' }}>{current.name}</b>,  <b style={{color: "black", gridColumnStart:"5", gridRowStart: "1", justifySelf: 'start', alignSelf: 'center' }}>{current.cost}</b>, <b style={{color: "black", gridColumnStart:"1", gridColumnEnd: "5", gridRowStart: "3", justifySelf: 'start', alignSelf: 'center', size: "100%" }}>{current.description}</b>, <b style={{color: "black", gridColumnStart:"1", gridColumnEnd: "5", gridRowStart: "3", justifySelf: 'start', alignSelf: 'center' }}>{current.description}</b>, <b style={{color: "black", gridColumnStart:"1", gridColumnEnd: "5", gridRowStart: "4", justifySelf: 'start', alignSelf: 'center' }}> {current.ability ? `Ability:${current.ability}` : current.curse ? current.curse : null} {current.curseCost ? current.curseCost : null}</b>, <b style={{color: "black", gridColumnStart:"2", gridColumnEnd: "5", gridRowStart: "4", justifySelf: 'start', alignSelf: 'center' }}> {current.abilityDescription ? current.abilityDescription : current.curseDescription ? current.curseDescription : null}</b>,  <b style={{color: "black", gridColumnStart:"2", gridRowStart: "2", justifySelf: 'start', alignSelf: 'center' }}>Attack:{current.attack}</b>, <b style={{color: "black", gridColumnStart:"3", gridRowStart: "2", justifySelf: 'start', alignSelf: 'center' }}>Health:{current.defense}/{current.health}</b>, <b style={{color: "black", gridColumnStart:"4", gridRowStart: "2", justifySelf: 'start', alignSelf: 'center' }}>Move:{current.move}</b>])
 
     }
+    if (current.type==="LandUnit"){
+        
+
+        setDisplay([<div style={{backgroundImage:`url(${current.image})`, backgroundPosition: 'center', gridColumnStart: '1', gridRowStart: '2', backgroundSize: '73%', backgroundRepeat: 'no-repeat',}}></div>, <b style={{color: "black", gridColumnStart:"1", gridRowStart: "1", justifySelf: 'start', alignSelf: 'center' }}>{current.name}</b>, <b style={{color: "black", gridColumnStart:"1", gridColumnEnd: "5", gridRowStart: "3", justifySelf: 'start', alignSelf: 'center', size: "100%" }}>{current.description}</b>,<b style={{color: "black", gridColumnStart:"2", gridRowStart: "2", justifySelf: 'start', alignSelf: 'center' }}>Attack:{current.attack}</b>, <b style={{color: "black", gridColumnStart:"3", gridRowStart: "2", justifySelf: 'start', alignSelf: 'center' }}>Health:{current.defense}/{current.health}</b>, <b style={{color: "black", gridColumnStart:"4", gridRowStart: "2", justifySelf: 'start', alignSelf: 'center' }}>Move:{current.move}</b>])
+        
+   }
+}
     if (!current){
         setDisplay()
       
@@ -134,9 +155,8 @@ setDisplay([<div style={{backgroundImage:`url(${current.image})`, backgroundPosi
 
 
 function moveButton(){
-    if (activeDemonsList.includes(current)){
+    if (activeDemonsList.includes(current)&& current.active){
         setCurrentActionButton("move")
-        setMoveTrigger(true)
 let tempButton=null;
 
     //logic gate to set
@@ -211,7 +231,7 @@ if (rightI<mapState.length){
 
 }
 function curseButton(){
-    if (current){
+    if (current && current.active){
     if (current.curse && soulBank-current.curseCost>0 && activeDemonsList.includes(current)){
 
         setSoulBank(prev=>prev-current.curseCost)
@@ -239,14 +259,121 @@ setActiveDemonsList(e=>e.map(el=> el === current ? tempDemon : el))
 
 function attackButton(){
     setAttackTrigger(true)
-    setEndTurn(x=>x === true ? false : true)
+    let tempButton=null;
 
+    //logic gate to set
+let upI=yCord-1;
+let downI=yCord+1;
+let rightI=xCord+1;
+let leftI=xCord-1;
+let moveIterator=0;
+let legalSpaces=[];
+if (current.attackType=="melee" && current.active){
+    if (upI>=0){
+
+       
+    while(mapState[upI][xCord]===0 && moveIterator<current.move) {
+    
+        tempButton= document.getElementById(`${upI}${xCord}`);
+        tempButton.style.backgroundColor= "red";
+        moveIterator++;
+        legalSpaces.push(`${upI}${xCord}`)
+    
+        upI-=1;
+    
+        if (upI<0) break;
+    }
+    if (upI>=0 && moveIterator<=current.move  && mapState[upI][xCord].type==="LandUnit"){
+        console.log("hi")
+        tempButton= document.getElementById(`${upI}${xCord}`);
+    tempButton.style.backgroundColor= "red";
+    moveIterator++;
+    legalSpaces.push(`${upI}${xCord}`)
+    }
+        
+    }
+moveIterator=0;
+if (downI<mapState.length){
+
+while(mapState[downI][xCord]===0 && moveIterator<current.move){
+
+    tempButton= document.getElementById(`${downI}${xCord}`);
+    tempButton.style.backgroundColor= "red";
+
+    legalSpaces.push(`${downI}${xCord}`)
+    moveIterator++;
+
+    downI++;
+    if (downI>mapState.length-1) break;
+
+}
+
+if (downI<mapState.length && moveIterator<=current.move  && mapState[downI][xCord].type==="LandUnit"){
+    console.log("hi")
+    tempButton= document.getElementById(`${downI}${xCord}`);
+tempButton.style.backgroundColor= "red";
+
+legalSpaces.push(`${downI}${xCord}`)
+}
+
+}
+moveIterator=0;
+
+if (leftI>=0){
+while(mapState[yCord][leftI]===0 && moveIterator<current.move){
+    tempButton= document.getElementById(`${yCord}${leftI}`);
+    tempButton.style.backgroundColor= "red";
+    moveIterator++;
+    legalSpaces.push(`${yCord}${leftI}`)
+
+    leftI-=1;
+    if (leftI<0) break;
+
+}
+if (leftI>=0 && moveIterator<=current.move  && mapState[yCord][leftI].type==="LandUnit"){
+    tempButton= document.getElementById(`${yCord}${leftI}`);
+tempButton.style.backgroundColor= "red";
+
+legalSpaces.push(`${yCord}${leftI}`)
+}
+
+
+}
+moveIterator=0;
+if (rightI<mapState.length){
+    while(mapState[yCord][rightI]===0 && moveIterator<current.move){
+        tempButton= document.getElementById(`${yCord}${rightI}`);
+        tempButton.style.backgroundColor= "red";
+        moveIterator++;
+        legalSpaces.push(`${yCord}${rightI}`)
+
+        rightI++;
+        if (rightI>mapState.length-1) break;
+
+    }
+    }
+    if (rightI<=mapState.length && moveIterator<=current.move  && mapState[yCord][rightI].type==="LandUnit"){
+        tempButton= document.getElementById(`${yCord}${rightI}`);
+    tempButton.style.backgroundColor= "red";
+    
+    legalSpaces.push(`${yCord}${rightI}`)
+    }
+    
+                   
+    setLegalMovesArray(legalSpaces)
+   
+}
     
 }
+
+//endTurn
+
+
 useEffect(()=>{
     {
         let tempArray=[];
         let tempDemon=null;
+        console.log(activeDemonsList)
         for(let i=0; i<activeDemonsList.length;i++){
            
                  tempDemon=activeDemonsList[i];
@@ -255,9 +382,9 @@ useEffect(()=>{
         
         }
     setActiveDemonsList(tempArray)   }
+    setCurrent(null);
 },[endTurn])
-console.log('original', demons)
-console.log("active",activeDemonsList)
+
 function summonButton(){
 
     if (current){
@@ -352,9 +479,100 @@ setDemons(e=>e.map(el=> el === current ? tempDemon : el))
 
 }
 
-function attack(){
+function attack(y,x){
 //initiate battle loop
+if (attackTrigger){
 
+    let enemy=mapState[y][x];
+    if(current.active){
+    if(enemy.type){
+        if(enemy.type==="LandUnit"){
+            if(current.ability!=="Stealth"){
+                let newDefense= enemy.attackType === "Direct" ? (current.defense-enemy.attack) : current.defense;
+                let newEnemyDefense=enemy.defense-current.attack;
+                if (newDefense<=0){
+                    let tempDemonsList=activeDemonsList.filter(el=> el.name != current.name);
+                    console.log(tempDemonsList)
+                    setActiveDemonsList(tempDemonsList);
+                    let tempMap=mapState;
+                    tempMap[yCord][xCord]=0;
+                    setMapState(tempMap);
+                }
+                if (newEnemyDefense<=0){           
+                    let tempMap=mapState;
+                    tempMap[yCord][xCord]=0;
+                    tempMap[y][x]=current;
+                    setMapState(tempMap);
+                }
+                if (newDefense>0){
+
+                    let tempDemonsList=[];
+                    for (let i=0; i<activeDemonsList.length; i++){
+                        if (activeDemonsList[i].name===current.name){
+                            let tempObject=current;
+                            tempObject.defense=newDefense;
+                            tempObject.active=false;
+                            tempDemonsList.push(tempObject);
+                        }
+                        else {
+                            tempDemonsList.push(activeDemonsList[i])
+                        }
+                        console.log(tempDemonsList)
+                        
+                    }
+                    setActiveDemonsList(tempDemonsList)
+
+
+                }
+
+                // if (newEnemyDefense>0){
+                //     let tempEnemiesList=[];
+                //     for (let i=0; i<activeEnemyList.length; i++){
+                //         if (activeEnemyList[i].name===enemy.name){
+                //             let tempObject=enemy;
+                //             tempObject.defense=newEnemyDefense;
+                //             tempEnemiesList.push(tempObject);
+                //         }
+                //         else {
+                //             tempEnemiesList.push(activeEnemyList[i])
+                //         }
+                     
+                        
+                //     }
+                //     setActiveEnemyList(tempEnemiesList);
+                //     tempMap=mapState;
+                //     tempMap.map(el=>el.name===tempObject.name ? tempObject : el)
+                //     setMapState(tempMap)
+
+
+                // }
+                for(let i=0; i<activeDemonsList.length;i++){
+        // if (activeDemonsList[i]===current){
+        //      tempDemon=activeDemonsList[i];
+        //     tempDemon.active=false;
+        // }
+    }
+
+
+            }
+            if (current.ability!="Stealth"){
+
+
+            }
+
+setCurrent(null);
+
+        }
+    }
+    }
+    if (mapState[y][x].type != "LandUnit"){
+        setMoveTrigger(false);
+        setAttackTrigger(false);
+        setCurseTrigger(false);
+        setSummonTrigger(false);
+        setCurrent(null);
+    }
+}
 //set curent to null
 
 }
@@ -397,7 +615,6 @@ function summonSpot(y,x){
 useEffect(()=>{
 
     const keyDownHandler = (event) => {
-    console.log(event.key)
     if (event.key==='Escape'){
         setMoveTrigger(false);
         setAttackTrigger(false);
@@ -436,6 +653,7 @@ useEffect(()=>{
 <div className='summonsList'>{summoningList}</div>
 
 <div className='actionButtonContainer'> {actionButtons}</div>
+<div className='playerContainer'>{playerOptions}</div>
 </div>
 
       </div>
