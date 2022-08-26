@@ -38,6 +38,7 @@ import IndoorHouse9 from './components/maps/indoorHouse9.js';
 import IndoorHouse10 from './components/maps/indoorHouse10.js';
 import MountainTown from './components/maps/mountainTown.js';
 import LuluMountainPass from './components/maps/luluMountainPass.js';
+import SaintAnnaHidden from './components/maps/saintAnnaHidden.js';
 
 import DemoMap from './battleMaps/demoMap.jsx';
 import DemonObjects from './demonObjects.js'
@@ -100,6 +101,7 @@ const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dra
     indoorHouse10: <IndoorHouse10 active={tracker} adder={addItem} />,
     mountainTown: <MountainTown active={tracker} adder={addItem} />,
     luluMountainPass: <LuluMountainPass active={tracker} adder={addItem} />,
+    saintAnnaHidden: <SaintAnnaHidden active={tracker} adder={addItem} />,
     demoMap: <DemoMap demonList={demonTeam} />,
   };
 
@@ -107,7 +109,7 @@ const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dra
 // console.log('POOP', mapsObj)
 
 
-const [current, setCurrent] = useState('luluMountainPass');
+const [current, setCurrent] = useState('saintAnnaHidden');
 
   function tracker(x) {
     setCurrent(x);
