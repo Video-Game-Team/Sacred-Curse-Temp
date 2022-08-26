@@ -125,7 +125,7 @@ const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dra
 // console.log('POOP', mapsObj)
 
 
-const [current, setCurrent] = useState('tortous');
+const [current, setCurrent] = useState('trainTracksToCapital');
 
   function tracker(x) {
     setCurrent(x);
