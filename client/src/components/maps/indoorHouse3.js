@@ -80,6 +80,7 @@ const IndoorHouse3 = (props) => {
     [0, 4877, 4878, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 65],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 79],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 93],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   ];
 
 //   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);

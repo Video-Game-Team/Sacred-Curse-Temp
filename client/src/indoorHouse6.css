@@ -33,19 +33,19 @@ body {
     image-rendering: pixelated;
 }
 
-.mapIH5 {
+.mapIH6 {
     image-rendering: pixelated;
     /* max-height: 50000px;
     min-width: 50000px; */
-    background-image: url("./assets/maps/Indoor House 5 w grid.png");
-    background-size: 1280px;
-    width: calc(50 * var(--grid-cell));
+    background-image: url("./assets/maps/Indoor House 6 w grid.png");
+    background-size: 960px;
+    width: calc(37.5 * var(--grid-cell));
     height: calc(37.5 * var(--grid-cell));
     position: absolute;
     background-repeat: no-repeat;
     overflow: visible;
     /* display: grid;
-    grid-template-columns: repeat(20, 64px);
+    grid-template-columns: repeat(15, 64px);
     grid-template-rows: repeat(15, 64px); */
 }
 

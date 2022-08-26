@@ -78,6 +78,7 @@ const IndoorHouse4 = (props) => {
       3221225594, 3221225594, 3221225595, 3221225594, 3221225594, 3221225590,
       3221225589, 3221225590,
     ],
+    
   ];
 
     // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);

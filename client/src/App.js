@@ -25,11 +25,17 @@ import RanchHouse1 from './components/maps/ranchHouse1.js';
 import RanchHouse2 from './components/maps/ranchHouse2.js';
 import SecretLakeIndoorHouse from './components/maps/secretIndoorLakeHouse.js';
 import OldManCrawfordInside from './components/maps/oldManCrawfordInside.js';
+import HotelIndoors from './components/maps/hotelIndoors.js';
 import IndoorHouse1 from './components/maps/indoorHouse1.js';
 import IndoorHouse2 from './components/maps/indoorHouse2.js';
 import IndoorHouse3 from './components/maps/indoorHouse3.js';
 import IndoorHouse4 from './components/maps/indoorHouse4.js';
 import IndoorHouse5 from './components/maps/indoorHouse5.js';
+import IndoorHouse6 from './components/maps/indoorHouse6.js';
+import IndoorHouse7 from './components/maps/indoorHouse7.js';
+import IndoorHouse8 from './components/maps/indoorHouse8.js';
+import IndoorHouse9 from './components/maps/indoorHouse9.js';
+import IndoorHouse10 from './components/maps/indoorHouse10.js';
 
 import DemoMap from './battleMaps/demoMap.jsx';
 import DemonObjects from './demonObjects.js'
@@ -79,11 +85,17 @@ const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dra
     oldManCrawfordInside: (
       <OldManCrawfordInside active={tracker} adder={addItem} />
     ),
+    hotelIndoors: <HotelIndoors active={tracker} adder={addItem} />,
     indoorHouse1: <IndoorHouse1 active={tracker} adder={addItem} />,
     indoorHouse2: <IndoorHouse2 active={tracker} adder={addItem} />,
     indoorHouse3: <IndoorHouse3 active={tracker} adder={addItem} />,
     indoorHouse4: <IndoorHouse4 active={tracker} adder={addItem} />,
     indoorHouse5: <IndoorHouse5 active={tracker} adder={addItem} />,
+    indoorHouse6: <IndoorHouse6 active={tracker} adder={addItem} />,
+    indoorHouse7: <IndoorHouse7 active={tracker} adder={addItem} />,
+    indoorHouse8: <IndoorHouse8 active={tracker} adder={addItem} />,
+    indoorHouse9: <IndoorHouse9 active={tracker} adder={addItem} />,
+    indoorHouse10: <IndoorHouse10 active={tracker} adder={addItem} />,
     demoMap: <DemoMap demonList={demonTeam} />,
   };
 
@@ -91,7 +103,7 @@ const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dra
 // console.log('POOP', mapsObj)
 
 
-const [current, setCurrent] = useState('indoorHouse5');
+const [current, setCurrent] = useState('indoorHouse10');
 
   function tracker(x) {
     setCurrent(x);

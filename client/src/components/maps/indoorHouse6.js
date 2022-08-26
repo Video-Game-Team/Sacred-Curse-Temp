@@ -6,13 +6,13 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
-import '../../secretIndoorLakeHouse.css';
+import '../../indoorHouse6.css';
 
-const SecretIndoorLakeHouse = (props) => {
+const IndoorHouse6 = (props) => {
   //this sets the x Cordinate to transform the map and character location
-  const [xTransformVar, setXTransformVar] = useState(360);
+  const [xTransformVar, setXTransformVar] = useState(364);
   //this sets the y Cordinate to transform the map and character location
-  const [yTransformVar, setYTransformVar] = useState(-532);
+  const [yTransformVar, setYTransformVar] = useState(-531);
   //
 
   const requestRef = useRef();
@@ -53,60 +53,51 @@ const SecretIndoorLakeHouse = (props) => {
   ];
 
   let currentMap = [
+    [4, 4, 4, 4, 1297, 1298, 2119, 2120, 2121, 0, 3689, 3690, 3691, 3692, 7],
     [
-      5216, 5211, 5215, 5216, 2464, 2465, 5216, 2436, 5215, 2461, 5217, 5215,
-      2455, 2456, 5216,
+      1408, 1409, 1410, 18, 1313, 1314, 2135, 2136, 2137, 2995, 3705, 3706,
+      3707, 3708, 21,
     ],
-    [
-      5216, 2334, 2334, 2432, 2555, 2556, 5216, 2452, 5215, 2552, 2550, 0, 2471,
-      2472, 5216,
-    ],
-    [5216, 2448, 2448, 2448, 2571, 2572, 0, 2468, 0, 2568, 2566, 0, 0, 0, 5216],
-    [5216, 2510, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2354, 0, 5216],
-    [5216, 2526, 2532, 0, 0, 0, 5525, 5526, 0, 0, 0, 2541, 2370, 2543, 5216],
-    [5216, 2510, 0, 0, 0, 0, 5544, 5545, 0, 0, 0, 2557, 2558, 2559, 5216],
-    [
-      5216, 2526, 0, 0, 0, 5346, 2684359914, 2684359914, 5427, 0, 0, 2573, 2354,
-      2575, 5216,
-    ],
-    [5216, 2510, 0, 0, 0, 5322, 5392, 5392, 3221230826, 0, 0, 0, 2370, 0, 5216],
-    [5216, 2526, 0, 0, 0, 5322, 5392, 5392, 3221230826, 0, 0, 0, 0, 0, 5216],
-    [
-      5216, 2510, 0, 0, 0, 5378, 1610618090, 1610618090, 5490, 0, 0, 2354, 0, 0,
-      5216,
-    ],
-    [5216, 2526, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2370, 0, 0, 5216],
-    [5216, 2510, 0, 0, 0, 0, 0, 0, 0, 0, 2344, 2488, 2346, 0, 5216],
-    [5216, 2526, 0, 0, 0, 0, 0, 0, 0, 0, 2360, 2354, 2362, 0, 5216],
-    [5216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2370, 0, 0, 5216],
-    [5216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5216],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 5827, 5828, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 5845, 5846, 0, 0, 0, 0, 0, 0, 0],
+    [2995, 0, 0, 0, 0, 0, 1166, 1167, 0, 0, 0, 0, 0, 0, 3146],
+    [0, 0, 0, 0, 1897, 0, 1182, 1183, 0, 1926, 0, 0, 0, 0, 3162],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3178],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [1546, 1547, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1546, 1547],
+    [1562, 1563, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1562, 1563],
+    [1578, 1579, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1578, 1579],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   ];
 
-    // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-    // console.log(
-    //   'VALUE Right',
-    //   currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-    // );
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+  );
 
-    //   useEffect(()=>{
-    //     let tempGrid=[]
-    //     for (let i=0; i<currentMap.length; i++){
-    //       for (let j=0; j<currentMap[i].length; j++){
-    //         tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-    //           gridColumn: j+1,
-    //           gridRow: i+1,
-    //           color: "white",
-    //       }}
-    //       > {currentMap2[i][j]}
+//     useEffect(()=>{
+//       let tempGrid=[]
+//       for (let i=0; i<currentMap.length; i++){
+//         for (let j=0; j<currentMap[i].length; j++){
+//           tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+//             gridColumn: j+1,
+//             gridRow: i+1,
+//             color: "white",
+//         }}
+//         > {currentMap2[i][j]}
 
-    //       </button>)
+//         </button>)
 
-    //       }
-    //     }
-    //   setGridArray(tempGrid)
+//         }
+//       }
+//     setGridArray(tempGrid)
 
-    //   },[])
+//     },[])
 
   //create an array. If the current array does not contain the value. shift it.
 
@@ -349,7 +340,7 @@ const SecretIndoorLakeHouse = (props) => {
       <div className="camera">
         <div>
           <div
-            className="mapSLIH pixel-art"
+            className="mapIH6 pixel-art"
             style={{
               transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`,
             }}
@@ -374,4 +365,4 @@ const SecretIndoorLakeHouse = (props) => {
   );
 };
 
-export default SecretIndoorLakeHouse;
+export default IndoorHouse6;

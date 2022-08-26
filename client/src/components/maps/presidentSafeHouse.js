@@ -79,19 +79,16 @@ const PresidentSafeHouse = (props) => {
       17680, 18501, 18502, 0, 0, 18501, 18502, 0, 0, 0, 0, 0, 1751, 18965,
       18966,
     ],
-    [
-      0, 18520, 18521, 2684356397, 2684356381, 18520, 18521, 0, 0, 0, 0, 0,
-      1767, 1768, 93,
-    ],
+    [0, 18520, 18521, 0, 0, 18520, 18521, 0, 0, 0, 0, 0, 1767, 1768, 93],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   ];
 
 
-
-//   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-//   console.log(
-//     'VALUE Right',
-//     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-//   );
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+  );
 
 //     useEffect(()=>{
 //       let tempGrid=[]
