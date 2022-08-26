@@ -34,7 +34,7 @@ const DunleaveyValley = (props) => {
   const xPlayerIndex = useRef(110);
   const [gridArray, setGridArray] = useState([]);
 
-  let currentMap = [
+  let currentMap2 = [
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -2458,7 +2458,7 @@ const DunleaveyValley = (props) => {
   ];
 
 
-  let currentMap2 = [
+  let currentMap = [
     [
       130, 0, 130, 0, 130, 0, 130, 0, 130, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
