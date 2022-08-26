@@ -42,6 +42,7 @@ import SaintAnnaHidden from './components/maps/saintAnnaHidden.js';
 import TrainTracksToCapital from './components/maps/trainTracksToCapital.js';
 import TortousTrainStation from './components/maps/tortousTrainStation.js';
 import TrainTracksToSaintAnna from './components/maps/trainTracksToSaintAnna.js';
+import TortousFork from './components/maps/tortousFork.js';
 
 import DemoMap from './battleMaps/demoMap.jsx';
 import DemonObjects from './demonObjects.js'
@@ -105,6 +106,7 @@ const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dra
     mountainTown: <MountainTown active={tracker} adder={addItem} />,
     luluMountainPass: <LuluMountainPass active={tracker} adder={addItem} />,
     saintAnnaHidden: <SaintAnnaHidden active={tracker} adder={addItem} />,
+    tortousFork: <TortousFork active={tracker} adder={addItem} />,
     trainTracksToCapital: (
       <TrainTracksToCapital active={tracker} adder={addItem} />
     ),
@@ -121,7 +123,7 @@ const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dra
 // console.log('POOP', mapsObj)
 
 
-const [current, setCurrent] = useState('trainTracksToSaintAnna');
+const [current, setCurrent] = useState('tortousFork');
 
   function tracker(x) {
     setCurrent(x);
