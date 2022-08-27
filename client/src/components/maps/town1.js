@@ -1158,61 +1158,63 @@ let currentMap = [
 //   }
 // setGridArray(tempGrid)
 
+
 // },[])
 
-
+  // console.log('poop');
+  // console.log(props.previousMap);
 //UseEffect for keeping track of the previous maps and maps/player positions
+
+
 useEffect(()=>{
   if (props.previousMap==="farmMap"){
+     console.log('no poop');
     //setYCord
-    yPlayerIndex.current = 78
+    yPlayerIndex.current = 76
     //setXcord
     xPlayerIndex.current = 36
     //set xTransform
     setXTransformVar(-1712)
     //set yTransform
     setYTransformVar(-4706)
+    facing.current = 'up';
   }
+  
   if (props.previousMap==='theWall'){
     //setYCord
-    yPlayerIndex.current = 27;
+    yPlayerIndex.current = 6;
     //setXcord
-    xPlayerIndex.current = 20;
+    xPlayerIndex.current = 35;
     //set xTransform
-    setXTransformVar(-662);
+    setXTransformVar(-1700);
     //set yTransform
-    setYTransformVar(-1428);
+    setYTransformVar(-98);
+     facing.current = 'down';
   }
 },[])
   
 
 // UseEffect Keeping track of player conditions
   useEffect(() => {
-    // yPlayerIndex up and down values
-    // TheWall Map check conditions
+    //yPlayerIndex up and down values
+   // TheWall Map check conditions
     if (
       (yPlayerIndex.current === 5 && xPlayerIndex.current === 35) ||
       (yPlayerIndex.current === 5 && xPlayerIndex.current === 36) ||
       (yPlayerIndex.current === 5 && xPlayerIndex.current === 37) 
     ) {
-      props.active('theWall');
+      props.active('theWall', 'townMap1');
+
     }
     
     // TheFarmMap check conditions
      if (yPlayerIndex.current === 79 && xPlayerIndex.current === 36) {
-       props.active('farmMap');
+       props.active('farmMap', 'townMap1');
      }
      
   }, [yPlayerIndex.current]);
   
 
-  //  useEffect(() => {
-  //   if (
-  //     (yPlayerIndex.current === 79 && xPlayerIndex.current === 36) 
-  //   ) {
-  //     props.active('farmMap');
-  //   }
-  // }, [yTransformVar]);
 
 
   //create an array. If the current array does not contain the value. shift it.

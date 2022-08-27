@@ -941,7 +941,7 @@ const FarmMap = (props) => {
   // UseEffect for transitiong between map Coordinates
   useEffect(() => {
     if (yPlayerIndex.current === 5 && xPlayerIndex.current === 19) {
-      props.active('townMap1');
+      props.active('townMap1', 'farmMap');
     }
   }, [yTransformVar]);
 
@@ -950,68 +950,11 @@ const FarmMap = (props) => {
   // console.log(yPlayerIndex.current, xPlayerIndex.current)
   // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
   //event listen for enter
-  useEffect(() => {
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        if (facing.current === 'up') {
-          if (
-            xBank.current + 32 > 64 &&
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
-              'door1'
-          ) {
-          }
-          if (
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
-              'sign1' &&
-            64 - xBank.current > 32
-          ) {
-            console.log('sign1');
-          }
-          if (
-            xBank.current + 32 > 64 &&
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
-              'sign2'
-          ) {
-            console.log('sign2');
-          }
-          if (
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
-              'sign2' &&
-            64 - xBank.current > 32
-          ) {
-            console.log('sign2');
-          }
-        }
-        if (facing.current == null) {
-          if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
-              'sign1' &&
-            xBank.current + 32 < 64
-          ) {
-            console.log('sign1');
-          }
-          if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current + 1] ===
-            'sign2'
-          ) {
-            console.log('poopshit');
-          }
-          if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
-              'sign2' &&
-            xBank.current + 32 < 64
-          ) {
-            console.log('sign2');
-          }
-        }
-      }
-    });
-  }, []);
+  
 
   //UseEffect for keeping track of the previous maps and maps/player positions
   useEffect(() => {
-    console.log("poop")
-    console.log(props.previousMap);
+    // console.log(props.previousMap);
     if (props.previousMap === 'townMap1') {
       //setYCord
       yPlayerIndex.current = 6;
@@ -1021,6 +964,7 @@ const FarmMap = (props) => {
       setXTransformVar(-1268);
       //set yTransform
       setYTransformVar(-96);
+      facing.current = "down"
     }
   }, []);
 
