@@ -10,9 +10,9 @@ import '../../town1.css';
 
 const TownMap1 = (props) => {
   //this sets the x Cordinate to transform the map and character location
-  const [xTransformVar, setXTransformVar] = useState(-1688);
+  const [xTransformVar, setXTransformVar] = useState(-1712);
   //this sets the y Cordinate to transform the map and character location
-  const [yTransformVar, setYTransformVar] = useState(-4688);
+  const [yTransformVar, setYTransformVar] = useState(-4642);
   //
 
 
@@ -33,7 +33,7 @@ const TownMap1 = (props) => {
 
   const xBank = useRef(0);
   const yBank = useRef(0);
-  const yPlayerIndex = useRef(78);
+  const yPlayerIndex = useRef(77);
   const xPlayerIndex = useRef(36);
   const [gridArray, setGridArray]= useState([])
 
@@ -1077,7 +1077,7 @@ let currentMap = [
     1567, 1568, 1569, 1570, 0, 1629, 1630, 0, 0, 0, 1629, 1630, 1615, 1616,
     1617, 1618, 1616, 1617, 1618, 1616, 1617, 1618, 1615, 1616, 1617, 1618,
     1615, 1616, 1617, 1618, 1616, 1617, 1618, 3221231122, 0, 3221229974,
-    3221229973, 3221229972, 0, 3221231122, 1615, 1616, 1617, 1618, 1615, 1616,
+    0, 3221229972, 0, 3221231122, 1615, 1616, 1617, 1618, 1615, 1616,
     1617, 1618, 1615, 1616, 1617, 1618, 0, 1616, 1617, 1615, 1616, 1617, 1618,
     1629, 1615, 1616, 1617, 1618, 1629, 1630, 1615, 0, 0, 0, 0,
   ],
@@ -1137,8 +1137,8 @@ let currentMap = [
   ],
 ];
   
-  // console.log("COORDINATE", yPlayerIndex.current, xPlayerIndex.current)
-  // console.log("VALUE Right", currentMap2[yPlayerIndex.current] [xPlayerIndex.current])
+  console.log("COORDINATE", yPlayerIndex.current, xPlayerIndex.current)
+  console.log("VALUE Right", currentMap2[yPlayerIndex.current] [xPlayerIndex.current])
 
 
 // useEffect(()=>{
@@ -1159,76 +1159,64 @@ let currentMap = [
 // setGridArray(tempGrid)
 
 // },[])
+
+
+//UseEffect for keeping track of the previous maps and maps/player positions
+useEffect(()=>{
+  if (props.previousMap==="farmMap"){
+    //setYCord
+    yPlayerIndex.current = 78
+    //setXcord
+    xPlayerIndex.current = 36
+    //set xTransform
+    setXTransformVar(-1712)
+    //set yTransform
+    setYTransformVar(-4706)
+  }
+  if (props.previousMap==='theWall'){
+    //setYCord
+    yPlayerIndex.current = 27;
+    //setXcord
+    xPlayerIndex.current = 20;
+    //set xTransform
+    setXTransformVar(-662);
+    //set yTransform
+    setYTransformVar(-1428);
+  }
+},[])
   
+
+// UseEffect Keeping track of player conditions
+  useEffect(() => {
+    // yPlayerIndex up and down values
+    // TheWall Map check conditions
+    if (
+      (yPlayerIndex.current === 5 && xPlayerIndex.current === 35) ||
+      (yPlayerIndex.current === 5 && xPlayerIndex.current === 36) ||
+      (yPlayerIndex.current === 5 && xPlayerIndex.current === 37) 
+    ) {
+      props.active('theWall');
+    }
+    
+    // TheFarmMap check conditions
+     if (yPlayerIndex.current === 79 && xPlayerIndex.current === 36) {
+       props.active('farmMap');
+     }
+     
+  }, [yPlayerIndex.current]);
   
-  
+
+  //  useEffect(() => {
+  //   if (
+  //     (yPlayerIndex.current === 79 && xPlayerIndex.current === 36) 
+  //   ) {
+  //     props.active('farmMap');
+  //   }
+  // }, [yTransformVar]);
 
 
   //create an array. If the current array does not contain the value. shift it.
 
-  // console.log(yPlayerIndex.current, xPlayerIndex.current)
-  // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
-  //event listen for enter
-  useEffect(() => {
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        if (facing.current === 'up') {
-          if (
-            xBank.current + 32 > 64 &&
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
-              'door1'
-          ) {
-          }
-          if (
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
-              'sign1' &&
-            64 - xBank.current > 32
-          ) {
-            console.log('sign1');
-          }
-          if (
-            xBank.current + 32 > 64 &&
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
-              'sign2'
-          ) {
-            console.log('sign2');
-          }
-          if (
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
-              'sign2' &&
-            64 - xBank.current > 32
-          ) {
-            console.log('sign2');
-          }
-        }
-        if (facing.current == null) {
-          if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
-              'sign1' &&
-            xBank.current + 32 < 64
-          ) {
-            console.log('sign1');
-          }
-          if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current + 1] ===
-            'sign2'
-          ) {
-            console.log('poopshit');
-          }
-          if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
-              'sign2' &&
-            xBank.current + 32 < 64
-          ) {
-            console.log('sign2');
-          }
-        }
-      }
-    });
-  }, []);
-
-  //listens for the current down key and saves it as the currentkey state
-  //wrapping in a useEffect prevents compounding event listeners
   useEffect(() => {
     const keyDownHandler = (event) => {
       // console.log(event.key)
@@ -1418,7 +1406,7 @@ let currentMap = [
               facing={facing.current}
               walking={walker}
               style={{
-                transform: `translate3d( ${600-xTransformVar}px, ${272-yTransformVar}px, 0 )`,
+                transform: `translate3d( ${578-xTransformVar}px, ${258-yTransformVar}px, 0 )`,
               }}
             >
               <div className="character_spritesheet pixel-art"></div>

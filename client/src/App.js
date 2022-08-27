@@ -59,75 +59,82 @@ function App() {
 
   })
 
+
   //delete Later
 const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dragonite, DemonObjects.Haku, DemonObjects.Zabuza, DemonObjects.Naruto])
+const [current, setCurrent] = useState('farmMap');
+const [tempCurrent, setTempCurrent]=useState('townMap1')
+const [previous,setPrevious]= useState(null)
 
 
   const mapsObj = {
-    outDoorMap1: <OutDoorMap1 active={tracker} adder={addItem} />,
-    indoorMap1: <Indoormap1 active={tracker} adder={addItem} />,
-    indoorMap2: <Indoormap2 active={tracker} adder={addItem} />,
-    outDoorMapFresh: <OutDoorMapFresh active={tracker} adder={addItem} />,
-    farmMap: <FarmMap active={tracker} adder={addItem} />,
-    townMap1: <TownMap1 active={tracker} adder={addItem} />,
-    theWall: <TheWall active={tracker} adder={addItem} />,
+    outDoorMap1: <OutDoorMap1 active={tracker} adder={addItem} previousMap={previous} />,
+    indoorMap1: <Indoormap1 active={tracker} adder={addItem} previousMap={previous} />,
+    indoorMap2: <Indoormap2 active={tracker} adder={addItem} previousMap={previous} />,
+    outDoorMapFresh: <OutDoorMapFresh active={tracker} adder={addItem} previousMap={previous}/>,
+    farmMap: <FarmMap active={tracker} adder={addItem} previousMap={previous} />,
+    townMap1: <TownMap1 active={tracker} adder={addItem} previousMap={previous} />,
+    theWall: <TheWall active={tracker} adder={addItem}previousMap={previous} />,
     trainTracksToTortous: (
-      <TrainTracksToTortous active={tracker} adder={addItem} />
+      <TrainTracksToTortous active={tracker} adder={addItem} previousMap={previous} />
     ),
     trainTracksToValley: (
-      <TrainTracksToValley active={tracker} adder={addItem} />
+      <TrainTracksToValley active={tracker} adder={addItem} previousMap={previous}/>
     ),
-    dunleaveyValley: <DunleaveyValley active={tracker} adder={addItem} />,
-    saintAnna: <SaintAnna active={tracker} adder={addItem} />,
+    dunleaveyValley: <DunleaveyValley active={tracker} adder={addItem} previousMap={previous} />,
+    saintAnna: <SaintAnna active={tracker} adder={addItem} previousMap={previous} />,
     mountainRoadTrainTracks: (
-      <MountainRoadTrainTracks active={tracker} adder={addItem} />
+      <MountainRoadTrainTracks active={tracker} adder={addItem} previousMap={previous} />
     ),
-    mansonRanch: <MansonRanch active={tracker} adder={addItem} />,
-    mountainEntrance: <MountainEntrance active={tracker} adder={addItem} />,
-    sigele: <Sigele active={tracker} adder={addItem} />,
-    presidentSafeHouse: <PresidentSafeHouse active={tracker} adder={addItem} />,
-    ranchHouse1: <RanchHouse1 active={tracker} adder={addItem} />,
-    ranchHouse2: <RanchHouse2 active={tracker} adder={addItem} />,
+    mansonRanch: <MansonRanch active={tracker} adder={addItem} previousMap={previous}/>,
+    mountainEntrance: <MountainEntrance active={tracker} adder={addItem} previousMap={previous}/>,
+    sigele: <Sigele active={tracker} adder={addItem} previousMap={previous} />,
+    presidentSafeHouse: <PresidentSafeHouse active={tracker} adder={addItem} previousMap={previous}/>,
+    ranchHouse1: <RanchHouse1 active={tracker} adder={addItem} previousMap={previous} />,
+    ranchHouse2: <RanchHouse2 active={tracker} adder={addItem} previousMap={previous}/>,
     secretLakeIndoorHouse: (
-      <SecretLakeIndoorHouse active={tracker} adder={addItem} />
+      <SecretLakeIndoorHouse active={tracker} adder={addItem} previousMap={previous}/>
     ),
     oldManCrawfordInside: (
-      <OldManCrawfordInside active={tracker} adder={addItem} />
+      <OldManCrawfordInside active={tracker} adder={addItem} previousMap={previous} />
     ),
-    hotelIndoors: <HotelIndoors active={tracker} adder={addItem} />,
-    indoorHouse1: <IndoorHouse1 active={tracker} adder={addItem} />,
-    indoorHouse2: <IndoorHouse2 active={tracker} adder={addItem} />,
-    indoorHouse3: <IndoorHouse3 active={tracker} adder={addItem} />,
-    indoorHouse4: <IndoorHouse4 active={tracker} adder={addItem} />,
-    indoorHouse5: <IndoorHouse5 active={tracker} adder={addItem} />,
-    indoorHouse6: <IndoorHouse6 active={tracker} adder={addItem} />,
-    indoorHouse7: <IndoorHouse7 active={tracker} adder={addItem} />,
-    indoorHouse8: <IndoorHouse8 active={tracker} adder={addItem} />,
-    indoorHouse9: <IndoorHouse9 active={tracker} adder={addItem} />,
-    indoorHouse10: <IndoorHouse10 active={tracker} adder={addItem} />,
-    mountainTown: <MountainTown active={tracker} adder={addItem} />,
-    luluMountainPass: <LuluMountainPass active={tracker} adder={addItem} />,
-    saintAnnaHidden: <SaintAnnaHidden active={tracker} adder={addItem} />,
-    tortousFork: <TortousFork active={tracker} adder={addItem} />,
-    tortous: <Tortous active={tracker} adder={addItem} />,
+    hotelIndoors: <HotelIndoors active={tracker} adder={addItem} previousMap={previous}/>,
+    indoorHouse1: <IndoorHouse1 active={tracker} adder={addItem} previousMap={previous} />,
+    indoorHouse2: <IndoorHouse2 active={tracker} adder={addItem} previousMap={previous}/>,
+    indoorHouse3: <IndoorHouse3 active={tracker} adder={addItem} previousMap={previous}/>,
+    indoorHouse4: <IndoorHouse4 active={tracker} adder={addItem} previousMap={previous}/>,
+    indoorHouse5: <IndoorHouse5 active={tracker} adder={addItem} previousMap={previous}/>,
+    indoorHouse6: <IndoorHouse6 active={tracker} adder={addItem} previousMap={previous}/>,
+    indoorHouse7: <IndoorHouse7 active={tracker} adder={addItem} previousMap={previous}/>,
+    indoorHouse8: <IndoorHouse8 active={tracker} adder={addItem} previousMap={previous}/>,
+    indoorHouse9: <IndoorHouse9 active={tracker} adder={addItem} previousMap={previous}/>,
+    indoorHouse10: <IndoorHouse10 active={tracker} adder={addItem} previousMap={previous}/>,
+    mountainTown: <MountainTown active={tracker} adder={addItem} previousMap={previous}/>,
+    luluMountainPass: <LuluMountainPass active={tracker} adder={addItem} previousMap={previous}/>,
+    saintAnnaHidden: <SaintAnnaHidden active={tracker} adder={addItem} previousMap={previous}/>,
+    tortousFork: <TortousFork active={tracker} adder={addItem} previousMap={previous}/>,
+    tortous: <Tortous active={tracker} adder={addItem} previousMap={previous}/>,
     trainTracksToCapital: (
-      <TrainTracksToCapital active={tracker} adder={addItem} />
+      <TrainTracksToCapital active={tracker} adder={addItem} previousMap={previous}/>
     ),
     tortousTrainStation: (
-      <TortousTrainStation active={tracker} adder={addItem} />
+      <TortousTrainStation active={tracker} adder={addItem}previousMap={previous} />
     ),
     trainTracksToSaintAnna: (
-      <TrainTracksToSaintAnna active={tracker} adder={addItem} />
+      <TrainTracksToSaintAnna active={tracker} adder={addItem} previousMap={previous}/>
     ),
-    crystalCaverns: <CrystalCaverns active={tracker} adder={addItem} />,
+    crystalCaverns: <CrystalCaverns active={tracker} adder={addItem} previousMap={previous} />,
     demoMap: <DemoMap demonList={demonTeam} />,
   };
 
 
 // console.log('POOP', mapsObj)
 
+useEffect(()=>{
+setPrevious(tempCurrent)
+setTempCurrent(current)
 
-const [current, setCurrent] = useState('crystalCaverns');
+},[current])
 
   function tracker(x) {
     setCurrent(x);
