@@ -35,10 +35,10 @@ const [staticDemonsList, setStaticDemonsList]= useState(prop.demonList);
 const [activeDemonsList, setActiveDemonsList]= useState([prop.demonList[0],prop.demonList[1]]);
 const [currentActionButton, setCurrentActionButton]= useState();
 const [playerOptions, setPlayerOptions]= useState()
-const [activeEnemyList, setActiveEnemyList]=useState(Enemies.BlueInfantry, Enemies.GreenInfantry)
+const [activeEnemyList, setActiveEnemyList]=useState(Enemies.BlueMegaTank, Enemies.GreenInfantry)
 
 
-const [mapState, setMapState]= useState([[0,0,0,0,Enemies.BlueInfantry,0,0,0],[0,0,0,0,demons[1],0,1,0],[0,0,0,0,0,0,demons[0],0],[0,0,0,0,1,0,0,0],[0,1,0,0,0,0,0,Enemies.GreenInfantry],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
+const [mapState, setMapState]= useState([[0,0,0,0,Enemies.BlueMediumTank,0,0,0],[0,0,0,0,demons[1],0,1,0],[0,0,0,0,0,0,demons[0],0],[0,0,0,0,1,0,0,0],[0,1,0,0,0,0,0,Enemies.GreenInfantry],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
 
 const [curseMap, setCurseMap]= useState([[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,0],[0,0,0,0,0,0,0,0],[0,0,0,0,1,0,0,0],[0,1,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
 
