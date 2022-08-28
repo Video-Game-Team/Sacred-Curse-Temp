@@ -297,10 +297,10 @@ const TortousFork = (props) => {
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
     [
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12939, 12940, 12941, 12939,
-      12943, 12941, 12939, 12940, 12941, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 12939, 12940, 12941, 12939, 12943, 12941, 12939, 12940, 12941, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12939, 12940, 12941, 0, 0, 0,
+      12939, 12940, 12941, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12939,
+      12940, 12941, 0, 0, 0, 12939, 12940, 12941, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0,
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13205, 13205, 13205, 13205, 0, 0, 0, 0, 0,
@@ -500,7 +500,7 @@ const TortousFork = (props) => {
 
       // },[])
 
-  //create an array. If the current array does not contain the value. shift it.
+
 
 
 
@@ -515,6 +515,17 @@ const TortousFork = (props) => {
      //set yTransform
      setYTransformVar(-1284);
      facing.current = 'down';
+   }
+   if (props.previousMap === 'trainTracksToSaintAnna') {
+     //setYCord
+     yPlayerIndex.current = 34;
+     //setXcord
+     xPlayerIndex.current = 30;
+     //set xTransform
+     setXTransformVar(-1304);
+     //set yTransform
+     setYTransformVar(-1876);
+     facing.current = 'up';
    }
  }, []);
 
@@ -533,6 +544,25 @@ const TortousFork = (props) => {
   }, [xPlayerIndex.current]);
  
 
+    useEffect(() => {
+      // yPlayerIndex up and down values
+      // trains Map check conditions
+      if (
+        (yPlayerIndex.current === 35 && xPlayerIndex.current === 29) ||
+        (yPlayerIndex.current === 35 && xPlayerIndex.current === 30) ||
+        (yPlayerIndex.current === 35 && xPlayerIndex.current === 31)
+      ) {
+        props.active('trainTracksToSaintAnna', 'tortousFork');
+      }
+
+       if (
+         (yPlayerIndex.current === 8 && xPlayerIndex.current === 17) ||
+         (yPlayerIndex.current === 8 && xPlayerIndex.current === 18) ||
+         (yPlayerIndex.current === 8 && xPlayerIndex.current === 19)
+       ) {
+         props.active('trainTracksToValley', 'tortousFork');
+       }
+    }, [yPlayerIndex.current]);
 
 
 

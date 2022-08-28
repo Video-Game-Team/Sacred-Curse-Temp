@@ -689,9 +689,9 @@ const TrainTracksToSaintAnna = (props) => {
       0, 693, 0, 0, 0, 0, 2697, 2698, 2699, 0, 0, 0,
     ],
     [
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 693, 3281, 3282, 3283, 3286, 3287, 3288,
-      2615, 2684355204, 2684355188, 2684355172, 2684355156, 2615, 0, 0, 0, 0, 0,
-      0, 693, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 693, 3281, 3282, 3283, 0, 0, 0, 2615,
+      2684355204, 2684355188, 2684355172, 2684355156, 2615, 0, 0, 0, 0, 0, 0,
+      693, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 693, 0, 0, 0, 0, 0, 0, 2615, 2684355204,
@@ -994,19 +994,19 @@ const TrainTracksToSaintAnna = (props) => {
       0, 0, 0, 693, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
     [
-      3250, 3251, 3249, 3250, 3251, 3249, 3250, 3251, 3249, 3250, 3251, 0, 0, 0,
-      0, 0, 0, 0, 2684355204, 2684355188, 2684355172, 2684355156, 2615, 0, 0, 0,
-      0, 0, 0, 693, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      3250, 3251, 3249, 3250, 3251, 3249, 3250, 3251, 3249, 3250, 0, 0, 0, 0, 0,
+      0, 0, 0, 2684355204, 2684355188, 2684355172, 2684355156, 2615, 0, 0, 0, 0,
+      0, 0, 693, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
     [
-      3266, 3267, 3265, 3266, 3267, 3265, 3266, 3267, 3265, 3266, 3267, 0, 0, 0,
-      0, 0, 0, 0, 2684355204, 2684355188, 2684355172, 2684355156, 2615, 0, 0, 0,
-      0, 0, 0, 693, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      3266, 3267, 3265, 3266, 3267, 3265, 3266, 3267, 3265, 3266, 0, 0, 0, 0, 0,
+      0, 0, 0, 2684355204, 2684355188, 2684355172, 2684355156, 2615, 0, 0, 0, 0,
+      0, 0, 693, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
     [
-      3282, 3283, 3281, 3282, 3283, 3281, 3282, 3283, 3281, 3282, 3283, 0, 0, 0,
-      0, 0, 0, 0, 2684355204, 2684355188, 2684355172, 2684355156, 2615, 0, 0, 0,
-      0, 0, 0, 693, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      3282, 3283, 3281, 3282, 3283, 3281, 3282, 3283, 3281, 3282, 0, 0, 0, 0, 0,
+      0, 0, 0, 2684355204, 2684355188, 2684355172, 2684355156, 2615, 0, 0, 0, 0,
+      0, 0, 693, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 693, 0, 0, 0, 0, 0, 0, 2615, 2684355204,
@@ -1399,35 +1399,88 @@ const TrainTracksToSaintAnna = (props) => {
     ],
   ];
 
-    // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-    // console.log(
-    //   'VALUE Right',
-    //   currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-    // );
+    console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+    console.log(
+      'VALUE Right',
+      currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+    );
 
-    //     useEffect(()=>{
-    //       let tempGrid=[]
-    //       for (let i=0; i<currentMap.length; i++){
-    //         for (let j=0; j<currentMap[i].length; j++){
-    //           tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-    //             gridColumn: j+1,
-    //             gridRow: i+1,
-    //             color: "black",
-    //         }}
-    //         > {currentMap2[i][j]}
+        // useEffect(()=>{
+        //   let tempGrid=[]
+        //   for (let i=0; i<currentMap.length; i++){
+        //     for (let j=0; j<currentMap[i].length; j++){
+        //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+        //         gridColumn: j+1,
+        //         gridRow: i+1,
+        //         color: "black",
+        //     }}
+        //     > {currentMap[i][j]}
 
-    //         </button>)
+        //     </button>)
 
-    //         }
-    //       }
-    //     setGridArray(tempGrid)
+        //     }
+        //   }
+        // setGridArray(tempGrid)
 
-    //     },[])
+        // },[])
 
   //create an array. If the current array does not contain the value. shift it.
 
   // console.log(yPlayerIndex.current, xPlayerIndex.current)
   // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+
+
+
+ useEffect(() => {
+   if (props.previousMap === 'luluMountainPass') {
+     //setYCord
+     yPlayerIndex.current = 72;
+     //setXcord
+     xPlayerIndex.current = 11;
+     //set xTransform
+     setXTransformVar(-88);
+     //set yTransform
+     setYTransformVar(-4304);
+     facing.current = 'right';
+   }
+ }, []);
+
+
+
+
+ useEffect(() => {
+   // yPlayerIndex up and down values
+   // trains Map check conditions
+   if (
+     (yPlayerIndex.current === 10 && xPlayerIndex.current === 14) ||
+     (yPlayerIndex.current === 10 && xPlayerIndex.current === 15) ||
+     (yPlayerIndex.current === 10 && xPlayerIndex.current === 16)
+   ) {
+     props.active('tortousFork', 'trainTracksToSaintAnna');
+   }
+ }, [yPlayerIndex.current]);
+
+
+ useEffect(() => {
+   // yPlayerIndex up and down values
+   // trains Map check conditions
+   if (
+     (yPlayerIndex.current === 71 && xPlayerIndex.current === 10) ||
+     (yPlayerIndex.current === 72 && xPlayerIndex.current === 10) ||
+     (yPlayerIndex.current === 73 && xPlayerIndex.current === 10)
+   ) {
+     props.active('luluMountainPass', 'trainTracksToSaintAnna');
+   }
+ }, [xPlayerIndex.current]);
+
+
+
+
+
+
+
+
+
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {

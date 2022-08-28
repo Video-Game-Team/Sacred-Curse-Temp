@@ -8,11 +8,13 @@ import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
 import '../../luluMountainPass.css';
 
+
+
 const LuluMountainPass = (props) => {
   //this sets the x Cordinate to transform the map and character location
-  const [xTransformVar, setXTransformVar] = useState(-24);
+  const [xTransformVar, setXTransformVar] = useState(-2328);
   //this sets the y Cordinate to transform the map and character location
-  const [yTransformVar, setYTransformVar] = useState(-1492);
+  const [yTransformVar, setYTransformVar] = useState(-792);
   //
 
   const requestRef = useRef();
@@ -30,8 +32,8 @@ const LuluMountainPass = (props) => {
 
   const xBank = useRef(0);
   const yBank = useRef(0);
-  const yPlayerIndex = useRef(28);
-  const xPlayerIndex = useRef(10);
+  const yPlayerIndex = useRef(17);
+  const xPlayerIndex = useRef(46);
   const [gridArray, setGridArray] = useState([]);
 
   let currentMap2 = [
@@ -350,9 +352,9 @@ const LuluMountainPass = (props) => {
       6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 6228, 6228,
       6228, 6228, 6228, 6228, 0, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228,
       6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228,
-      6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6215, 6228, 6228,
-      6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6220, 6220, 6220,
-      6220, 6220, 6220, 6220, 6220, 6220, 6220,
+      6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 0, 0, 0, 6228, 6228, 6228,
+      6228, 6228, 6228, 6228, 6228, 6228, 6228, 6220, 6220, 6220, 6220, 6220,
+      6220, 6220, 6220, 6220, 6220,
     ],
     [
       6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 0, 0, 0, 0, 0,
@@ -417,20 +419,20 @@ const LuluMountainPass = (props) => {
     [
       5254, 5252, 5253, 5254, 5252, 5253, 5254, 5252, 5253, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 413, 414, 0, 207, 208, 205, 205, 205, 0, 0,
-      361, 362, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      5252, 5253, 5254, 5252, 5253, 5254, 5252, 5253, 5254, 5252,
+      361, 362, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      5253, 5254, 5252, 5253, 5254, 5252, 5253, 5254, 5252,
     ],
     [
       5270, 5268, 5269, 5270, 5268, 5269, 5270, 5268, 5269, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 439, 440, 0, 233, 234, 231, 231, 231, 0, 0,
-      387, 388, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      5268, 5269, 5270, 5268, 5269, 5270, 5268, 5269, 5270, 5268,
+      387, 388, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      5269, 5270, 5268, 5269, 5270, 5268, 5269, 5270, 5268,
     ],
     [
       5286, 5284, 5285, 5286, 5284, 5285, 5286, 5284, 5285, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 283, 284, 285, 181, 182, 179, 179, 179, 411,
       0, 413, 414, 415, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      5284, 5285, 5286, 5284, 5285, 5286, 5284, 5285, 5286, 5284,
+      0, 5285, 5286, 5284, 5285, 5286, 5284, 5285, 5286, 5284,
     ],
     [
       6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 5160, 5160,
@@ -524,6 +526,18 @@ const LuluMountainPass = (props) => {
       setYTransformVar(-780);
       facing.current = 'down';
     }
+
+    if (props.previousMap === 'trainTracksToSaintAnna') {
+      //setYCord
+      yPlayerIndex.current = 27;
+      //setXcord
+      xPlayerIndex.current = 57;
+      //set xTransform
+      setXTransformVar(-3024);
+      //set yTransform
+      setYTransformVar(-1488);
+      facing.current = 'right';
+    }
   }, []);
 
   useEffect(() => {
@@ -536,15 +550,39 @@ const LuluMountainPass = (props) => {
     ) {
       props.active('trainTracksToTortous', 'luluMountainPass');
     }
+
+    if (
+      (yPlayerIndex.current === 27 && xPlayerIndex.current === 58) ||
+      (yPlayerIndex.current === 28 && xPlayerIndex.current === 58) ||
+      (yPlayerIndex.current === 29 && xPlayerIndex.current === 58)
+    ) {
+      props.active('trainTracksToSaintAnna', 'luluMountainPass');
+    }
   }, [xPlayerIndex.current]);
 
+
+  // UseEffect Keeping track of player conditions
   useEffect(() => {
     //yPlayerIndex up and down values
-    // Manson Map check conditions
-    if (yPlayerIndex.current === 16 && xPlayerIndex.current === 16) {
-      props.active('crystalCaverns', 'luluMountainPass');
-    }
+    // TheWall Map check conditions
+     if (yPlayerIndex.current === 16 && xPlayerIndex.current === 16) {
+       props.active('crystalCaverns', 'luluMountainPass');
+     }
+
+     if (
+       (yPlayerIndex.current === 16 && xPlayerIndex.current === 45) ||
+       (yPlayerIndex.current === 16 && xPlayerIndex.current === 46 ) ||
+       (yPlayerIndex.current === 16 && xPlayerIndex.current === 47)
+     ) {
+       props.active('crystalCaverns', 'luluMountainPass');
+     }
   }, [yPlayerIndex.current]);
+
+
+
+
+
+
 
   //event listen for enter
   useEffect(() => {

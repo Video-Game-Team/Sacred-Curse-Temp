@@ -716,7 +716,7 @@ const CrystalCaverns = (props) => {
   //         gridRow: i+1,
   //         color: "white",
   //     }}
-  //     > {currentMap2[i][j]}
+  //     > {currentMap[i][j]}
 
   //     </button>)
 
@@ -726,25 +726,38 @@ const CrystalCaverns = (props) => {
 
   // },[])
 
-  //create an array. If the current array does not contain the value. shift it.
 
-  // console.log(yPlayerIndex.current, xPlayerIndex.current)
-  // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
 
-  
+  useEffect(() => {
+    if (props.previousMap === 'luluMountainPass') {
+      //setYCord
+      yPlayerIndex.current = 52;
+      //setXcord
+      xPlayerIndex.current = 42;
+      //set xTransform
+      setXTransformVar(-2008);
+      //set yTransform
+      setYTransformVar(-3020);
+      facing.current = 'down';
+    }
+  }, []);
+
 
   // UseEffect Keeping track of player conditions
   useEffect(() => {
     //yPlayerIndex up and down values
     // TheWall Map check conditions
-    if (
-      (yPlayerIndex.current === 5 && xPlayerIndex.current === 16) ||
-      (yPlayerIndex.current === 5 && xPlayerIndex.current === 17) ||
-      (yPlayerIndex.current === 5 && xPlayerIndex.current === 18)
-    ) {
+    if ((yPlayerIndex.current === 53 && xPlayerIndex.current === 40) ||
+    (yPlayerIndex.current === 53 && xPlayerIndex.current === 41) ||
+    (yPlayerIndex.current === 53 && xPlayerIndex.current === 42) 
+     ) {
       props.active('luluMountainPass', 'crystalCaverns');
     }
   }, [yPlayerIndex.current]);
+
+
+
+
 
 
 

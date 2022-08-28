@@ -52,7 +52,6 @@ import DemonObjects from './demonObjects.js'
 import './App.css';
 
 function App() {
-
   // const character =  testRef.current.querySelector('characterUp');
   const [itemObj, setItemObj]=useState({
   
@@ -62,7 +61,7 @@ function App() {
 
   //delete Later
 const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dragonite, DemonObjects.Haku, DemonObjects.Zabuza, DemonObjects.Naruto])
-const [current, setCurrent] = useState('tortous');
+const [current, setCurrent] = useState('luluMountainPass');
 const [tempCurrent, setTempCurrent] = useState(null)
 const [previous,setPrevious]= useState(null)
 
