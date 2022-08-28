@@ -513,29 +513,29 @@ const LuluMountainPassRight = (props) => {
   // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
 
   useEffect(() => {
-    if (props.previousMap === 'crystalCaverns') {
+    if (props.previousMap === 'crystalCavernsRight') {
       //setYCord
       yPlayerIndex.current = 17;
       //setXcord
-      xPlayerIndex.current = 16;
+      xPlayerIndex.current = 46;
       //set xTransform
-      setXTransformVar(-412);
+      setXTransformVar(-2328);
       //set yTransform
-      setYTransformVar(-780);
+      setYTransformVar(-792);
       facing.current = 'down';
     }
 
-    // if (props.previousMap === 'trainTracksToSaintAnna') {
-    //   //setYCord
-    //   yPlayerIndex.current = 27;
-    //   //setXcord
-    //   xPlayerIndex.current = 57;
-    //   //set xTransform
-    //   setXTransformVar(-3024);
-    //   //set yTransform
-    //   setYTransformVar(-1488);
-    //   facing.current = 'right';
-    // }
+    if (props.previousMap === 'trainTracksToSaintAnna') {
+      //setYCord
+      yPlayerIndex.current = 27;
+      //setXcord
+      xPlayerIndex.current = 57;
+      //set xTransform
+      setXTransformVar(-3024);
+      //set yTransform
+      setYTransformVar(-1488);
+      facing.current = 'right';
+    }
   }, []);
 
   useEffect(() => {
@@ -546,7 +546,7 @@ const LuluMountainPassRight = (props) => {
       (yPlayerIndex.current === 28 && xPlayerIndex.current === 9) ||
       (yPlayerIndex.current === 29 && xPlayerIndex.current === 9)
     ) {
-      props.active('trainTracksToTortous', 'luluMountainPass');
+      props.active('trainTracksToTortous', 'luluMountainPassRight');
     }
 
     if (
@@ -554,7 +554,7 @@ const LuluMountainPassRight = (props) => {
       (yPlayerIndex.current === 28 && xPlayerIndex.current === 58) ||
       (yPlayerIndex.current === 29 && xPlayerIndex.current === 58)
     ) {
-      props.active('trainTracksToSaintAnna', 'luluMountainPass');
+      props.active('trainTracksToSaintAnna', 'luluMountainPassRight');
     }
   }, [xPlayerIndex.current]);
 
@@ -563,7 +563,7 @@ const LuluMountainPassRight = (props) => {
     //yPlayerIndex up and down values
     // TheWall Map check conditions
     if (yPlayerIndex.current === 16 && xPlayerIndex.current === 16) {
-      props.active('crystalCaverns', 'luluMountainPass');
+      props.active('crystalCavernsRight', 'luluMountainPassRight');
     }
 
     if (
@@ -571,7 +571,7 @@ const LuluMountainPassRight = (props) => {
       (yPlayerIndex.current === 16 && xPlayerIndex.current === 46) ||
       (yPlayerIndex.current === 16 && xPlayerIndex.current === 47)
     ) {
-      props.active('crystalCaverns', 'luluMountainPass');
+      props.active('crystalCavernsRight', 'luluMountainPassRight');
     }
   }, [yPlayerIndex.current]);
 

@@ -729,11 +729,11 @@ const CrystalCavernsRight = (props) => {
 
 
   useEffect(() => {
-    if (props.previousMap === 'luluMountainPass') {
+    if (props.previousMap === 'luluMountainPassRight') {
       //setYCord
       yPlayerIndex.current = 52;
       //setXcord
-      xPlayerIndex.current = 42;
+      xPlayerIndex.current = 41;
       //set xTransform
       setXTransformVar(-2008);
       //set yTransform
@@ -751,7 +751,7 @@ const CrystalCavernsRight = (props) => {
     (yPlayerIndex.current === 53 && xPlayerIndex.current === 41) ||
     (yPlayerIndex.current === 53 && xPlayerIndex.current === 42) 
      ) {
-      props.active('luluMountainPass', 'crystalCaverns');
+      props.active('luluMountainPassRight', 'crystalCavernsRight');
     }
   }, [yPlayerIndex.current]);
 

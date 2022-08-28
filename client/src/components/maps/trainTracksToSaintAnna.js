@@ -1469,7 +1469,7 @@ const TrainTracksToSaintAnna = (props) => {
      (yPlayerIndex.current === 72 && xPlayerIndex.current === 10) ||
      (yPlayerIndex.current === 73 && xPlayerIndex.current === 10)
    ) {
-     props.active('luluMountainPass', 'trainTracksToSaintAnna');
+     props.active('luluMountainPassRight', 'trainTracksToSaintAnna');
    }
  }, [xPlayerIndex.current]);
 
