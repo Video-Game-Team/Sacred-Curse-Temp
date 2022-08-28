@@ -349,11 +349,11 @@ const LuluMountainPass = (props) => {
     ],
     [
       6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 6228, 6228,
-      6228, 6228, 6228, 6228, 6215, 6228, 6228, 6228, 6228, 6228, 6228, 6228,
+      6228, 6228, 6228, 6228, 0, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228,
       6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228,
-      6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6215, 6228,
-      6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6220, 6220,
-      6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220,
+      6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6215, 6228, 6228,
+      6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6220, 6220, 6220,
+      6220, 6220, 6220, 6220, 6220, 6220, 6220,
     ],
     [
       6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 0, 0, 0, 0, 0,
@@ -416,22 +416,22 @@ const LuluMountainPass = (props) => {
       0, 0, 0, 5236, 5237, 5238, 5236, 5237, 5238, 5236, 5237, 5238, 5236,
     ],
     [
-      5254, 5252, 5253, 5254, 5252, 5253, 5254, 5252, 5253, 5254, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 413, 414, 0, 207, 208, 205, 205, 205, 0,
-      0, 361, 362, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      5254, 5252, 5253, 5254, 5252, 5253, 5254, 5252, 5253, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 413, 414, 0, 207, 208, 205, 205, 205, 0, 0,
+      361, 362, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       5252, 5253, 5254, 5252, 5253, 5254, 5252, 5253, 5254, 5252,
     ],
     [
-      5270, 5268, 5269, 5270, 5268, 5269, 5270, 5268, 5269, 5270, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 439, 440, 0, 233, 234, 231, 231, 231, 0,
-      0, 387, 388, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      5270, 5268, 5269, 5270, 5268, 5269, 5270, 5268, 5269, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 439, 440, 0, 233, 234, 231, 231, 231, 0, 0,
+      387, 388, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       5268, 5269, 5270, 5268, 5269, 5270, 5268, 5269, 5270, 5268,
     ],
     [
-      5286, 5284, 5285, 5286, 5284, 5285, 5286, 5284, 5285, 5286, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 283, 284, 285, 181, 182, 179, 179, 179,
-      411, 0, 413, 414, 415, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 5284, 5285, 5286, 5284, 5285, 5286, 5284, 5285, 5286, 5284,
+      5286, 5284, 5285, 5286, 5284, 5285, 5286, 5284, 5285, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 283, 284, 285, 181, 182, 179, 179, 179, 411,
+      0, 413, 414, 415, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      5284, 5285, 5286, 5284, 5285, 5286, 5284, 5285, 5286, 5284,
     ],
     [
       6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 5160, 5160,
@@ -484,35 +484,59 @@ const LuluMountainPass = (props) => {
   ];
 
 
-//   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-//   console.log(
-//     'VALUE Right',
-//     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-//   );
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+  );
 
-//       useEffect(()=>{
-//         let tempGrid=[]
-//         for (let i=0; i<currentMap.length; i++){
-//           for (let j=0; j<currentMap[i].length; j++){
-//             tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-//               gridColumn: j+1,
-//               gridRow: i+1,
-//               color: "white",
-//           }}
-//           > {currentMap2[i][j]}
+      // useEffect(()=>{
+      //   let tempGrid=[]
+      //   for (let i=0; i<currentMap.length; i++){
+      //     for (let j=0; j<currentMap[i].length; j++){
+      //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+      //         gridColumn: j+1,
+      //         gridRow: i+1,
+      //         color: "white",
+      //     }}
+      //     > {currentMap[i][j]}
 
-//           </button>)
+      //     </button>)
 
-//           }
-//         }
-//       setGridArray(tempGrid)
+      //     }
+      //   }
+      // setGridArray(tempGrid)
 
-//       },[])
+      // },[])
 
   //create an array. If the current array does not contain the value. shift it.
 
   // console.log(yPlayerIndex.current, xPlayerIndex.current)
   // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+
+
+
+
+
+useEffect(() => {
+  //yPlayerIndex up and down values
+  // Manson Map check conditions
+  if (
+    (yPlayerIndex.current === 27 && xPlayerIndex.current === 9) ||
+    (yPlayerIndex.current === 28 && xPlayerIndex.current === 9) ||
+    (yPlayerIndex.current === 29 && xPlayerIndex.current === 9)
+  ) {
+    props.active('trainTracksToTortous', 'luluMountainPass');
+  }
+}, [xPlayerIndex.current]);
+
+
+
+
+
+
+
+
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {

@@ -20137,17 +20137,17 @@ const TrainTracksToTortous = (props) => {
         setYTransformVar(-9604);
         facing.current = 'right';
       }
-      //  if (props.previousMap === 'crystalCaverns') {
-      //    //setYCord
-      //    yPlayerIndex.current = 87;
-      //    //setXcord
-      //    xPlayerIndex.current = 49;
-      //    //set xTransform
-      //    setXTransformVar(-2534);
-      //    //set yTransform
-      //    setYTransformVar(-5248);
-      //    facing.current = 'left';
-      //  }
+       if (props.previousMap === 'luluMountainPass') {
+         //setYCord
+         yPlayerIndex.current = 87;
+         //setXcord
+         xPlayerIndex.current = 49;
+         //set xTransform
+         setXTransformVar(-2534);
+         //set yTransform
+         setYTransformVar(-5248);
+         facing.current = 'left';
+       }
     }, []);
 
 
@@ -20164,15 +20164,15 @@ useEffect(() => {
     props.active('mansonRanch', 'trainTracksToTortous');
   }
 
-  // Crystal Cavernscheck conditions
+  // Lulu Mountain Pass conditions
   if (
     (yPlayerIndex.current === 86 && xPlayerIndex.current === 50) ||
     (yPlayerIndex.current === 87 && xPlayerIndex.current === 50) ||
     (yPlayerIndex.current === 88 && xPlayerIndex.current === 50)
   ) {
-    props.active('crystalCaverns', 'trainTracksToTortous');
+    props.active('luluMountainPass', 'trainTracksToTortous');
   }
-}, [yPlayerIndex.current]);
+}, [xPlayerIndex.current]);
   
 
 
