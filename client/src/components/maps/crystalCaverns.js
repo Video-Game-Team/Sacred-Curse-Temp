@@ -701,38 +701,66 @@ const CrystalCaverns = (props) => {
     ],
   ];
 
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+  );
 
+  // useEffect(()=>{
+  //   let tempGrid=[]
+  //   for (let i=0; i<currentMap.length; i++){
+  //     for (let j=0; j<currentMap[i].length; j++){
+  //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+  //         gridColumn: j+1,
+  //         gridRow: i+1,
+  //         color: "white",
+  //     }}
+  //     > {currentMap2[i][j]}
 
+  //     </button>)
 
-//   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-//   console.log(
-//     'VALUE Right',
-//     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-//   );
+  //     }
+  //   }
+  // setGridArray(tempGrid)
 
-//       useEffect(()=>{
-//         let tempGrid=[]
-//         for (let i=0; i<currentMap.length; i++){
-//           for (let j=0; j<currentMap[i].length; j++){
-//             tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-//               gridColumn: j+1,
-//               gridRow: i+1,
-//               color: "white",
-//           }}
-//           > {currentMap2[i][j]}
-
-//           </button>)
-
-//           }
-//         }
-//       setGridArray(tempGrid)
-
-//       },[])
+  // },[])
 
   //create an array. If the current array does not contain the value. shift it.
 
   // console.log(yPlayerIndex.current, xPlayerIndex.current)
   // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+
+  useEffect(() => {
+    if (props.previousMap === 'trainTracksToTortous') {
+      console.log("HIPPY JUICE")
+      //setYCord
+      yPlayerIndex.current = 87;
+      //setXcord
+      xPlayerIndex.current = 48;
+      //set xTransform
+      setXTransformVar(-2526);
+      //set yTransform
+      setYTransformVar(-5260);
+      facing.current = 'left';
+    }
+  }, []);
+
+  // UseEffect Keeping track of player conditions
+  useEffect(() => {
+    //yPlayerIndex up and down values
+    // TheWall Map check conditions
+    if (
+      (yPlayerIndex.current === 5 && xPlayerIndex.current === 16) ||
+      (yPlayerIndex.current === 5 && xPlayerIndex.current === 17) ||
+      (yPlayerIndex.current === 5 && xPlayerIndex.current === 18)
+    ) {
+      props.active('trainTracksToTortous', 'crystalCaverns');
+    }
+  }, [yPlayerIndex.current]);
+
+
+
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {

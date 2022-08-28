@@ -1166,6 +1166,7 @@ let currentMap = [
 
 useEffect(()=>{
   if (props.previousMap==="farmMap"){
+  
     //setYCord
     yPlayerIndex.current = 76
     //setXcord

@@ -6929,7 +6929,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      3379,
+      0,
       3380,
       3381,
       3379,
@@ -6991,7 +6991,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      3387,
+      0,
       3388,
       3389,
       3387,
@@ -7053,7 +7053,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      3395,
+      0,
       3396,
       3397,
       3395,
@@ -20093,7 +20093,6 @@ const TrainTracksToTortous = (props) => {
   ];
 
 
-
    console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
    console.log(
      'VALUE Right',
@@ -20138,6 +20137,17 @@ const TrainTracksToTortous = (props) => {
         setYTransformVar(-9604);
         facing.current = 'right';
       }
+      //  if (props.previousMap === 'crystalCaverns') {
+      //    //setYCord
+      //    yPlayerIndex.current = 87;
+      //    //setXcord
+      //    xPlayerIndex.current = 49;
+      //    //set xTransform
+      //    setXTransformVar(-2534);
+      //    //set yTransform
+      //    setYTransformVar(-5248);
+      //    facing.current = 'left';
+      //  }
     }, []);
 
 
@@ -20145,14 +20155,22 @@ const TrainTracksToTortous = (props) => {
 // UseEffect Keeping track of player conditions
 useEffect(() => {
   //yPlayerIndex up and down values
-  // TheWall Map check conditions
+  // Manson Map check conditions
   if (
     (yPlayerIndex.current === 154 && xPlayerIndex.current === 9) ||
     (yPlayerIndex.current === 155 && xPlayerIndex.current === 9) ||
-    (yPlayerIndex.current === 156 && xPlayerIndex.current === 9) 
-  ) 
-  {
+    (yPlayerIndex.current === 156 && xPlayerIndex.current === 9)
+  ) {
     props.active('mansonRanch', 'trainTracksToTortous');
+  }
+
+  // Crystal Cavernscheck conditions
+  if (
+    (yPlayerIndex.current === 86 && xPlayerIndex.current === 50) ||
+    (yPlayerIndex.current === 87 && xPlayerIndex.current === 50) ||
+    (yPlayerIndex.current === 88 && xPlayerIndex.current === 50)
+  ) {
+    props.active('crystalCaverns', 'trainTracksToTortous');
   }
 }, [yPlayerIndex.current]);
   
