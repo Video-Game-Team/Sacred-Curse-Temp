@@ -527,6 +527,17 @@ const TortousFork = (props) => {
      setYTransformVar(-1876);
      facing.current = 'up';
    }
+    if (props.previousMap === 'mountainRoadTrainTracks') {
+      //setYCord
+      yPlayerIndex.current = 9;
+      //setXcord
+      xPlayerIndex.current = 42;
+      //set xTransform
+      setXTransformVar(-2068);
+      //set yTransform
+      setYTransformVar(-264);
+      facing.current = 'down';
+    }
  }, []);
 
 
@@ -562,6 +573,15 @@ const TortousFork = (props) => {
        ) {
          props.active('trainTracksToValley', 'tortousFork');
        }
+
+        if (
+          (yPlayerIndex.current === 8 && xPlayerIndex.current === 41) ||
+          (yPlayerIndex.current === 8 && xPlayerIndex.current === 42) ||
+          (yPlayerIndex.current === 8 && xPlayerIndex.current === 43)
+        ) {
+          props.active('mountainRoadTrainTracks', 'tortousFork');
+        }
+        
     }, [yPlayerIndex.current]);
 
 

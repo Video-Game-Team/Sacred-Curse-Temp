@@ -641,9 +641,9 @@ const MountainRoadTrainTracks = (props) => {
       2214, 2215, 2216, 0, 0, 0, 0, 0,
     ],
     [
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 693, 0, 2657, 2658, 2659, 2657, 2658, 2659,
-      692, 2684355204, 2684355188, 2684355172, 2684355156, 692, 0, 0, 409, 410,
-      0, 0, 0, 693, 2229, 2230, 2231, 2232, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 693, 0, 2657, 2658, 0, 0, 2658, 2659, 692,
+      2684355204, 2684355188, 2684355172, 2684355156, 692, 0, 0, 409, 410, 0, 0,
+      0, 693, 2229, 2230, 2231, 2232, 0, 0, 0, 0, 0,
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 693, 0, 2665, 2670, 2667, 2665, 2670, 2667,
@@ -671,36 +671,77 @@ const MountainRoadTrainTracks = (props) => {
       0, 0, 693, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
   ];
+  
+  
+  
+  
+ console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+ console.log(
+   'VALUE Right',
+   currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+ );
 
-  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  console.log(
-    'VALUE Right',
-    currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-  );
 
-    // useEffect(()=>{
-    //   let tempGrid=[]
-    //   for (let i=0; i<currentMap.length; i++){
-    //     for (let j=0; j<currentMap[i].length; j++){
-    //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-    //         gridColumn: j+1,
-    //         gridRow: i+1,
-    //         color: "white",
-    //     }}
-    //     > {currentMap2[i][j]}
 
-    //     </button>)
+  // useEffect(()=>{
+  //   let tempGrid=[]
+  //   for (let i=0; i<currentMap.length; i++){
+  //     for (let j=0; j<currentMap[i].length; j++){
+  //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+  //         gridColumn: j+1,
+  //         gridRow: i+1,
+  //         color: "white",
+  //     }}
+  //     > {currentMap[i][j]}
 
-    //     }
-    //   }
-    // setGridArray(tempGrid)
+  //     </button>)
 
-    // },[])
+  //     }
+  //   }
+  // setGridArray(tempGrid)
+
+  // },[])
 
   //create an array. If the current array does not contain the value. shift it.
 
   // console.log(yPlayerIndex.current, xPlayerIndex.current)
   // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+
+
+
+
+ useEffect(() => {
+   if (props.previousMap === 'tortousFork') {
+     //setYCord
+     yPlayerIndex.current = 63;
+     //setXcord
+     xPlayerIndex.current = 14;
+     //set xTransform
+     setXTransformVar(-237);
+     //set yTransform
+     setYTransformVar(-3732);
+     facing.current = 'up';
+   }
+
+ }, []);
+
+
+
+ useEffect(() => {
+   // yPlayerIndex up and down values
+   // trains Map check conditions
+   if (
+     (yPlayerIndex.current === 64 && xPlayerIndex.current === 13) ||
+     (yPlayerIndex.current === 64 && xPlayerIndex.current === 14) 
+   ) {
+     props.active('tortousFork','mountainRoadTrainTracks');
+   }
+ }, [yPlayerIndex.current]);
+
+
+
+
+
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {

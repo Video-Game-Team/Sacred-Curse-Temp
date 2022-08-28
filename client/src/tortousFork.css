@@ -57,7 +57,7 @@
 
 
 
- */ .character {
+ .character {
      width: calc(var(--grid-cell)* 2);
      height: calc(var(--grid-cell)* 2);
      overflow: hidden;
