@@ -738,7 +738,7 @@ const CrystalCavernsRight = (props) => {
       setXTransformVar(-2008);
       //set yTransform
       setYTransformVar(-3020);
-      facing.current = 'down';
+      facing.current = 'up';
     }
   }, []);
 
@@ -995,7 +995,7 @@ const CrystalCavernsRight = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="camera">
+      <div className="camera fade-in" >
         <div>
           <div
             className="mapCC pixel-art"
