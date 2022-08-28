@@ -1714,7 +1714,7 @@ const Tortous = (props) => {
         }
         if (props.previousMap === 'tortousFork') {
           //setYCord
-          yPlayerIndex.current = 55;
+          yPlayerIndex.current = 54;
           //setXcord
           xPlayerIndex.current = 93;
           //set xTransform

@@ -504,18 +504,33 @@ const TortousFork = (props) => {
 
 
 
+ useEffect(() => {
+   if (props.previousMap === 'tortous') {
+     //setYCord
+     yPlayerIndex.current = 25;
+     //setXcord
+     xPlayerIndex.current = 10;
+     //set xTransform
+     setXTransformVar(-28);
+     //set yTransform
+     setYTransformVar(-1284);
+     facing.current = 'down';
+   }
+ }, []);
 
-// useEffect(() => {
-//   //yPlayerIndex up and down values
-//   // trains Map check conditions
-//   if (
-//     (yPlayerIndex.current === 53 && xPlayerIndex.current === 49) ||
-//     (yPlayerIndex.current === 34 && xPlayerIndex.current === 50)
-//   ) {
-//     props.active('tortous', 'tortousTrainStation');
-//   }
-// }, [yPlayerIndex.current]);
 
+
+  useEffect(() => {
+    //yPlayerIndex up and down values
+    // trains Map check conditions
+    if (
+      (yPlayerIndex.current === 24 && xPlayerIndex.current === 9) ||
+      (yPlayerIndex.current === 25 && xPlayerIndex.current === 9) ||
+      (yPlayerIndex.current === 26 && xPlayerIndex.current === 9)
+    ) {
+      props.active('tortous', 'tortousFork');
+    }
+  }, [xPlayerIndex.current]);
  
 
 
