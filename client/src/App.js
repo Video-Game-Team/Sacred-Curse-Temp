@@ -38,6 +38,7 @@ import IndoorHouse9 from './components/maps/indoorHouse9.js';
 import IndoorHouse10 from './components/maps/indoorHouse10.js';
 import MountainTown from './components/maps/mountainTown.js';
 import LuluMountainPass from './components/maps/luluMountainPass.js';
+import LuluMountainPassRight from './components/maps/luluMountainPassRight.js';
 import SaintAnnaHidden from './components/maps/saintAnnaHidden.js';
 import TrainTracksToCapital from './components/maps/trainTracksToCapital.js';
 import TortousTrainStation from './components/maps/tortousTrainStation.js';
@@ -45,6 +46,7 @@ import TrainTracksToSaintAnna from './components/maps/trainTracksToSaintAnna.js'
 import TortousFork from './components/maps/tortousFork.js';
 import Tortous from './components/maps/tortous.js';
 import CrystalCaverns from './components/maps/crystalCaverns.js';
+import CrystalCavernsRight from './components/maps/crystalCavernsRight.js';
 
 import DemoMap from './battleMaps/demoMap.jsx';
 import DemonObjects from './demonObjects.js'
@@ -61,7 +63,7 @@ function App() {
 
   //delete Later
 const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dragonite, DemonObjects.Haku, DemonObjects.Zabuza, DemonObjects.Naruto])
-const [current, setCurrent] = useState('tortousFork');
+const [current, setCurrent] = useState('luluMountainPass');
 const [tempCurrent, setTempCurrent] = useState(null)
 const [previous,setPrevious]= useState(null)
 
@@ -333,6 +335,14 @@ console.log("CURRENTMAP", current, "PREVIOUSMAP", previous)
         previousMap={previous}
       />
     ),
+    luluMountainPassRight: (
+      <LuluMountainPassRight
+        passed={previous}
+        active={tracker}
+        adder={addItem}
+        previousMap={previous}
+      />
+    ),
     saintAnnaHidden: (
       <SaintAnnaHidden
         passed={previous}
@@ -383,6 +393,14 @@ console.log("CURRENTMAP", current, "PREVIOUSMAP", previous)
     ),
     crystalCaverns: (
       <CrystalCaverns
+        passed={previous}
+        active={tracker}
+        adder={addItem}
+        previousMap={previous}
+      />
+    ),
+    crystalCavernsRight: (
+      <CrystalCavernsRight
         passed={previous}
         active={tracker}
         adder={addItem}

@@ -6,15 +6,13 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
-import '../../luluMountainPass.css';
+import '../../luluMountainPassRight.css';
 
-
-
-const LuluMountainPass = (props) => {
+const LuluMountainPassRight = (props) => {
   //this sets the x Cordinate to transform the map and character location
-  const [xTransformVar, setXTransformVar] = useState(-36);
+  const [xTransformVar, setXTransformVar] = useState(-2328);
   //this sets the y Cordinate to transform the map and character location
-  const [yTransformVar, setYTransformVar] = useState(-1484);
+  const [yTransformVar, setYTransformVar] = useState(-792);
   //
 
   const requestRef = useRef();
@@ -32,8 +30,8 @@ const LuluMountainPass = (props) => {
 
   const xBank = useRef(0);
   const yBank = useRef(0);
-  const yPlayerIndex = useRef(28);
-  const xPlayerIndex = useRef(10);
+  const yPlayerIndex = useRef(17);
+  const xPlayerIndex = useRef(46);
   const [gridArray, setGridArray] = useState([]);
 
   let currentMap2 = [
@@ -350,11 +348,11 @@ const LuluMountainPass = (props) => {
     ],
     [
       6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 6228, 6228,
-      6228, 6228, 6228, 0, 0, 0, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228,
+      6228, 6228, 6228, 6228, 0, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228,
       6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228,
-      6228, 6228, 6228, 6228, 6228, 6228, 6228, 0, 0, 0, 6228, 6228, 6228, 6228,
-      6228, 6228, 6228, 6228, 6228, 6228, 6220, 6220, 6220, 6220, 6220, 6220,
-      6220, 6220, 6220, 6220,
+      6228, 6228, 6228, 6228, 6228, 6228, 6228, 6228, 0, 0, 0, 6228, 6228, 6228,
+      6228, 6228, 6228, 6228, 6228, 6228, 6228, 6220, 6220, 6220, 6220, 6220,
+      6220, 6220, 6220, 6220, 6220,
     ],
     [
       6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 0, 0, 0, 0, 0,
@@ -527,17 +525,17 @@ const LuluMountainPass = (props) => {
       facing.current = 'down';
     }
 
-    if (props.previousMap === 'trainTracksToTortous') {
-      //setYCord
-      yPlayerIndex.current = 28;
-      //setXcord
-      xPlayerIndex.current = 10;
-      //set xTransform
-      setXTransformVar(-36);
-      //set yTransform
-      setYTransformVar(-1484);
-      facing.current = 'right';
-    }
+    // if (props.previousMap === 'trainTracksToSaintAnna') {
+    //   //setYCord
+    //   yPlayerIndex.current = 27;
+    //   //setXcord
+    //   xPlayerIndex.current = 57;
+    //   //set xTransform
+    //   setXTransformVar(-3024);
+    //   //set yTransform
+    //   setYTransformVar(-1488);
+    //   facing.current = 'right';
+    // }
   }, []);
 
   useEffect(() => {
@@ -560,33 +558,22 @@ const LuluMountainPass = (props) => {
     }
   }, [xPlayerIndex.current]);
 
-
   // UseEffect Keeping track of player conditions
   useEffect(() => {
     //yPlayerIndex up and down values
     // TheWall Map check conditions
-     if ((yPlayerIndex.current === 16 && xPlayerIndex.current === 15) ||
-     (yPlayerIndex.current === 16 && xPlayerIndex.current === 16) ||
-     (yPlayerIndex.current === 16 && xPlayerIndex.current === 17) 
-     )
-     {
-       props.active('crystalCaverns', 'luluMountainPass');
-     }
+    if (yPlayerIndex.current === 16 && xPlayerIndex.current === 16) {
+      props.active('crystalCaverns', 'luluMountainPass');
+    }
 
-     if (
-       (yPlayerIndex.current === 16 && xPlayerIndex.current === 45) ||
-       (yPlayerIndex.current === 16 && xPlayerIndex.current === 46 ) ||
-       (yPlayerIndex.current === 16 && xPlayerIndex.current === 47)
-     ) {
-       props.active('crystalCaverns', 'luluMountainPass');
-     }
+    if (
+      (yPlayerIndex.current === 16 && xPlayerIndex.current === 45) ||
+      (yPlayerIndex.current === 16 && xPlayerIndex.current === 46) ||
+      (yPlayerIndex.current === 16 && xPlayerIndex.current === 47)
+    ) {
+      props.active('crystalCaverns', 'luluMountainPass');
+    }
   }, [yPlayerIndex.current]);
-
-
-
-
-
-
 
   //event listen for enter
   useEffect(() => {
@@ -850,4 +837,4 @@ const LuluMountainPass = (props) => {
   );
 };
 
-export default LuluMountainPass;
+export default LuluMountainPassRight;

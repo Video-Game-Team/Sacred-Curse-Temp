@@ -37,7 +37,7 @@
      image-rendering: pixelated;
      /* max-height: 50000px;
     min-width: 50000px; */
-     background-image: url("./assets/maps/Lulu Mountain Pass w grid.png");
+     background-image: url("./assets/maps/Lulu Mountain Pass Right w grid.png");
      background-size: 4352px;
      width: calc(290 * var(--grid-cell));
      height: calc(170 * var(--grid-cell));
@@ -49,8 +49,8 @@
     grid-template-rows: repeat(36, 64px); */
  }
 
-/* 
- .numbers {
+
+ /* .numbers {
     size: 100%;
     background: transparent;
 }    */

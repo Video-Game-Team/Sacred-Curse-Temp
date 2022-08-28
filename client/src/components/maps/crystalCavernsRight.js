@@ -6,9 +6,9 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
-import '../../crystalCaverns.css';
+import '../../crystalCavernsRight.css';
 
-const CrystalCaverns = (props) => {
+const CrystalCavernsRight = (props) => {
   //this sets the x Cordinate to transform the map and character location
   const [xTransformVar, setXTransformVar] = useState(-472);
   //this sets the y Cordinate to transform the map and character location
@@ -731,13 +731,13 @@ const CrystalCaverns = (props) => {
   useEffect(() => {
     if (props.previousMap === 'luluMountainPass') {
       //setYCord
-      yPlayerIndex.current = 6;
+      yPlayerIndex.current = 52;
       //setXcord
-      xPlayerIndex.current = 17;
+      xPlayerIndex.current = 42;
       //set xTransform
-      setXTransformVar(-472);
+      setXTransformVar(-2008);
       //set yTransform
-      setYTransformVar(-84);
+      setYTransformVar(-3020);
       facing.current = 'down';
     }
   }, []);
@@ -747,9 +747,9 @@ const CrystalCaverns = (props) => {
   useEffect(() => {
     //yPlayerIndex up and down values
     // TheWall Map check conditions
-    if ((yPlayerIndex.current === 5 && xPlayerIndex.current === 16) ||
-    (yPlayerIndex.current === 5 && xPlayerIndex.current === 17) ||
-    (yPlayerIndex.current === 5 && xPlayerIndex.current === 18) 
+    if ((yPlayerIndex.current === 53 && xPlayerIndex.current === 40) ||
+    (yPlayerIndex.current === 53 && xPlayerIndex.current === 41) ||
+    (yPlayerIndex.current === 53 && xPlayerIndex.current === 42) 
      ) {
       props.active('luluMountainPass', 'crystalCaverns');
     }
@@ -1023,4 +1023,4 @@ const CrystalCaverns = (props) => {
   );
 };
 
-export default CrystalCaverns;
+export default CrystalCavernsRight;
