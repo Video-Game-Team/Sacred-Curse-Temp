@@ -380,21 +380,21 @@ const TortousFork = (props) => {
     ],
     [
       2684367851, 2684367851, 2684367851, 2684367851, 2684367851, 2684367851,
-      2684367851, 2684367851, 2684367851, 1610626045, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 1711, 1712, 0, 1711, 1712, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 13205, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      2684367851, 2684367851, 2684367851, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 1711, 1712, 0, 1711, 1712, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 13205, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
     [
-      13292, 13292, 13292, 13292, 13292, 13292, 13292, 13292, 13292, 13292, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1832, 1833, 0, 1832,
-      1833, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13205, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0,
+      13292, 13292, 13292, 13292, 13292, 13292, 13292, 13292, 13292, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1832, 1833, 0, 1832, 1833, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13205, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0,
     ],
     [
       1610626027, 1610626027, 1610626027, 1610626027, 1610626027, 1610626027,
-      1610626027, 1610626027, 1610626027, 1610626043, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 1953, 1954, 0, 1953, 1954, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 13205, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      1610626027, 1610626027, 1610626027, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 1953, 1954, 0, 1953, 1954, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 13205, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13205, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -439,9 +439,9 @@ const TortousFork = (props) => {
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13205, 13205, 13205, 13205, 13205, 13205,
       13205, 13205, 13205, 13205, 13205, 13205, 13205, 13205, 13205, 13205,
-      12891, 12892, 12893, 12891, 12892, 12893, 12891, 12892, 12893, 13205,
+      12891, 12892, 12893, 0, 0, 0, 12891, 12892, 12893, 13205, 13205, 13205,
       13205, 13205, 13205, 13205, 13205, 13205, 13205, 13205, 13205, 13205,
-      13205, 13205, 13205, 13205, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      13205, 13205, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 374, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -476,34 +476,53 @@ const TortousFork = (props) => {
   ];
 
   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-//   console.log(
-//     'VALUE Right',
-//     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-//   );
+  console.log(
+    'VALUE Right',
+    currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+  );
 
-//       useEffect(()=>{
-//         let tempGrid=[]
-//         for (let i=0; i<currentMap.length; i++){
-//           for (let j=0; j<currentMap[i].length; j++){
-//             tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-//               gridColumn: j+1,
-//               gridRow: i+1,
-//               color: "white",
-//           }}
-//           > {currentMap2[i][j]}
+      // useEffect(()=>{
+      //   let tempGrid=[]
+      //   for (let i=0; i<currentMap.length; i++){
+      //     for (let j=0; j<currentMap[i].length; j++){
+      //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+      //         gridColumn: j+1,
+      //         gridRow: i+1,
+      //         color: "white",
+      //     }}
+      //     > {currentMap[i][j]}
 
-//           </button>)
+      //     </button>)
 
-//           }
-//         }
-//       setGridArray(tempGrid)
+      //     }
+      //   }
+      // setGridArray(tempGrid)
 
-//       },[])
+      // },[])
 
   //create an array. If the current array does not contain the value. shift it.
 
-  // console.log(yPlayerIndex.current, xPlayerIndex.current)
-  // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+  console.log(yPlayerIndex.current, xPlayerIndex.current)
+  console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+
+
+// useEffect(() => {
+//   //yPlayerIndex up and down values
+//   // trains Map check conditions
+//   if (
+//     (yPlayerIndex.current === 53 && xPlayerIndex.current === 49) ||
+//     (yPlayerIndex.current === 34 && xPlayerIndex.current === 50)
+//   ) {
+//     props.active('tortous', 'tortousTrainStation');
+//   }
+// }, [yPlayerIndex.current]);
+
+ 
+
+
+
+
+
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {

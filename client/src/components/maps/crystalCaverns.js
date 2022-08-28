@@ -731,20 +731,7 @@ const CrystalCaverns = (props) => {
   // console.log(yPlayerIndex.current, xPlayerIndex.current)
   // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
 
-  // useEffect(() => {
-  //   if (props.previousMap === 'trainTracksToTortous') {
-  //     console.log("HIPPY JUICE")
-  //     //setYCord
-  //     yPlayerIndex.current = 86;
-  //     //setXcord
-  //     xPlayerIndex.current = 50;
-  //     //set xTransform
-  //     setXTransformVar(-2534);
-  //     //set yTransform
-  //     setYTransformVar(-5248);
-  //     facing.current = 'left';
-  //   }
-  // }, []);
+  
 
   // UseEffect Keeping track of player conditions
   useEffect(() => {
@@ -755,7 +742,7 @@ const CrystalCaverns = (props) => {
       (yPlayerIndex.current === 5 && xPlayerIndex.current === 17) ||
       (yPlayerIndex.current === 5 && xPlayerIndex.current === 18)
     ) {
-      props.active('trainTracksToTortous', 'crystalCaverns');
+      props.active('luluMountainPass', 'crystalCaverns');
     }
   }, [yPlayerIndex.current]);
 

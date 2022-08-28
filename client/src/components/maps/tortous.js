@@ -804,13 +804,12 @@ const Tortous = (props) => {
       16506, 16506, 16506, 16506, 16506, 16506, 16506, 16506, 16506, 16506,
       16506, 16506, 16506, 16506, 16506, 16506, 16506, 16506, 16506, 16506,
       16506, 16506, 16506, 16506, 16506, 16506, 16506, 16506, 16506, 16506,
-      16506, 16506, 16506, 16506, 16506, 16506, 16506, 16506, 16506, 13451,
-      13459, 13460, 13461, 13452, 13453, 16506, 16506, 16506, 16506, 16506,
+      16506, 16506, 16506, 16506, 16506, 16506, 16506, 16506, 16506, 13451, 0,
+      0, 0, 13452, 13453, 16506, 16506, 16506, 16506, 16506, 16506, 16506,
       16506, 16506, 16506, 16506, 16506, 16506, 16506, 16506, 16506, 16506,
       16506, 16506, 16506, 16506, 16506, 16506, 16506, 16506, 16506, 16506,
       16506, 16506, 16506, 16506, 16506, 16506, 16506, 16506, 16506, 16506,
-      16506, 16506, 16506, 14192, 1348, 1349, 14192, 1590, 1591, 1348, 1349,
-      1225, 1226,
+      16506, 14192, 1348, 1349, 14192, 1590, 1591, 1348, 1349, 1225, 1226,
     ],
     [
       862, 863, 1469, 1470, 1227, 1228, 1469, 1470, 14140, 14141, 0, 0, 0, 0, 0,
@@ -1218,29 +1217,29 @@ const Tortous = (props) => {
       14166, 1469, 1470, 14166, 14167, 1104, 1105,
     ],
     [
-      16900, 16900, 16901, 16902, 16900, 16901, 16900, 16901, 16902, 16903, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1235, 0, 0, 0, 0, 0, 9405,
-      9406, 9407, 9408, 9409, 9410, 9411, 0, 0, 0, 1024, 0, 5453, 5454, 5455,
-      5456, 5457, 5458, 5453, 5454, 5455, 5456, 5457, 5458, 5459, 5460, 5461,
-      5462, 5463, 5464, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9140, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 1235, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      16900, 16900, 16901, 16902, 16900, 16901, 16900, 16901, 16902, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1235, 0, 0, 0, 0, 0, 9405, 9406,
+      9407, 9408, 9409, 9410, 9411, 0, 0, 0, 1024, 0, 5453, 5454, 5455, 5456,
+      5457, 5458, 5453, 5454, 5455, 5456, 5457, 5458, 5459, 5460, 5461, 5462,
+      5463, 5464, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9140, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 1235, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
     [
-      862, 863, 16917, 16918, 862, 863, 16916, 16917, 16918, 16919, 0, 0, 0, 0,
-      0, 16506, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9526, 9527,
-      9528, 9529, 9530, 9531, 9532, 0, 0, 0, 0, 0, 5574, 5575, 5576, 5577, 5578,
-      5579, 5574, 5575, 5576, 5577, 5578, 5579, 5580, 5581, 5582, 5583, 5584,
-      5585, 0, 0, 0, 0, 0, 0, 7268, 7269, 7270, 7271, 7272, 7273, 9261, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17097, 17097, 17097,
-      1227, 1228, 17097, 17097, 1227, 1228,
+      862, 863, 16917, 16918, 862, 863, 16916, 16917, 16918, 0, 0, 0, 0, 0, 0,
+      16506, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9526, 9527, 9528,
+      9529, 9530, 9531, 9532, 0, 0, 0, 0, 0, 5574, 5575, 5576, 5577, 5578, 5579,
+      5574, 5575, 5576, 5577, 5578, 5579, 5580, 5581, 5582, 5583, 5584, 5585, 0,
+      0, 0, 0, 0, 0, 7268, 7269, 7270, 7271, 7272, 7273, 9261, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17097, 17097, 17097, 1227, 1228,
+      17097, 17097, 1227, 1228,
     ],
     [
-      983, 984, 16933, 16934, 983, 984, 16932, 16933, 16934, 16935, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 872, 873, 0, 0, 0, 0, 9647, 9648,
-      9649, 9650, 9651, 9652, 9653, 9412, 0, 0, 1024, 15120, 15121, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15120, 15121, 0, 0, 0, 0, 0, 7389,
-      7390, 7391, 7392, 7393, 7394, 9382, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1348, 1349, 0, 0, 1348, 1349,
+      983, 984, 16933, 16934, 983, 984, 16932, 16933, 16934, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 872, 873, 0, 0, 0, 0, 9647, 9648, 9649,
+      9650, 9651, 9652, 9653, 9412, 0, 0, 1024, 15120, 15121, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15120, 15121, 0, 0, 0, 0, 0, 7389, 7390,
+      7391, 7392, 7393, 7394, 9382, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 1348, 1349, 0, 0, 1348, 1349,
     ],
     [
       1104, 1105, 1227, 1228, 1104, 1105, 1227, 1228, 14192, 14193, 0, 0, 0, 0,
@@ -1574,12 +1573,11 @@ const Tortous = (props) => {
       14168, 1348, 1349, 14168, 1348, 1349, 14168, 1348, 1349, 14168, 1348,
       1349, 14168, 1348, 1349, 14168, 1348, 1349, 14168, 1348, 1349, 14168,
       1348, 1349, 14168, 1348, 1349, 14168, 1348, 1349, 14168, 983, 984, 14168,
-      14166, 983, 984, 16254, 16255, 16256, 16254, 16255, 16256, 16254, 16255,
-      16256, 14168, 983, 984, 983, 984, 14167, 1348, 1349, 14167, 1348, 1349,
-      14167, 1348, 1349, 14167, 1348, 1349, 14167, 1348, 1349, 14167, 1348,
+      14166, 983, 984, 16254, 16255, 16256, 0, 0, 0, 16254, 16255, 16256, 14168,
+      983, 984, 983, 984, 14167, 1348, 1349, 14167, 1348, 1349, 14167, 1348,
       1349, 14167, 1348, 1349, 14167, 1348, 1349, 14167, 1348, 1349, 14167,
-      1348, 1349, 14167, 1348, 1349, 14142, 14140, 1590, 1591, 1348, 1349, 1225,
-      1226,
+      1348, 1349, 14167, 1348, 1349, 14167, 1348, 1349, 14167, 1348, 1349,
+      14167, 1348, 1349, 14142, 14140, 1590, 1591, 1348, 1349, 1225, 1226,
     ],
     [
       862, 863, 1469, 1470, 983, 984, 14167, 1469, 1470, 14167, 1469, 1470,
@@ -1655,35 +1653,123 @@ const Tortous = (props) => {
     ],
   ];
 
-//   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-//     console.log(
-//       'VALUE Right',
-//       currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-//     );
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+  );
 
-//         useEffect(()=>{
-//           let tempGrid=[]
-//           for (let i=0; i<currentMap.length; i++){
-//             for (let j=0; j<currentMap[i].length; j++){
-//               tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-//                 gridColumn: j+1,
-//                 gridRow: i+1,
-//                 color: "white",
-//             }}
-//             > {currentMap2[i][j]}
+  // useEffect(()=>{
+  //   let tempGrid=[]
+  //   for (let i=0; i<currentMap.length; i++){
+  //     for (let j=0; j<currentMap[i].length; j++){
+  //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+  //         gridColumn: j+1,
+  //         gridRow: i+1,
+  //         color: "white",
+  //     }}
+  //     > {currentMap[i][j]}
 
-//             </button>)
+  //     </button>)
 
-//             }
-//           }
-//         setGridArray(tempGrid)
+  //     }
+  //   }
+  // setGridArray(tempGrid)
 
-//         },[])
+  // },[])
 
-  //create an array. If the current array does not contain the value. shift it.
+   useEffect(() => {
+     if (props.previousMap === 'trainTracksToTortous') {
+       //setYCord
+       yPlayerIndex.current = 6;
+       //setXcord
+       xPlayerIndex.current = 52;
+       //set xTransform
+       setXTransformVar(-271);
+       //set yTransform
+       setYTransformVar(-72);
+       facing.current = 'down';
+     }
+      if (props.previousMap === 'tortousTrainStation') {
+         //setYCord
+        yPlayerIndex.current = 54;
+        //setXcord
+          xPlayerIndex.current = 10;
+        //set xTransform
+        setXTransformVar(-24);
+          //set yTransform
+        setYTransformVar(-3136);
+        facing.current = 'right';
+        }
+        if (props.previousMap === 'trainTracksToCapital') {
+          //setYCord
+          yPlayerIndex.current = 6;
+          //setXcord
+          xPlayerIndex.current = 52;
+          //set xTransform
+          setXTransformVar(-2704);
+          //set yTransform
+          setYTransformVar(-84);
+          facing.current = 'down';
+        }
+        if (props.previousMap === 'tortousFork') {
+          //setYCord
+          yPlayerIndex.current = 55;
+          //setXcord
+          xPlayerIndex.current = 93;
+          //set xTransform
+          setXTransformVar(-5336);
+          //set yTransform
+          setYTransformVar(-3148);
+          facing.current = 'left';
+        }
+   }, []);
 
-  // console.log(yPlayerIndex.current, xPlayerIndex.current)
-  // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+  // UseEffect Keeping track of player conditions
+  useEffect(() => {
+    //yPlayerIndex up and down values
+    // trains Map check conditions
+    if (
+      (yPlayerIndex.current === 53 && xPlayerIndex.current === 9) ||
+      (yPlayerIndex.current === 54 && xPlayerIndex.current === 9) ||
+      (yPlayerIndex.current === 55 && xPlayerIndex.current === 9)
+    ) {
+      props.active('tortousTrainStation', 'tortous');
+    }
+    // 
+    if (
+      (yPlayerIndex.current === 53 && xPlayerIndex.current === 94) ||
+      (yPlayerIndex.current === 54 && xPlayerIndex.current === 94) ||
+      (yPlayerIndex.current === 55 && xPlayerIndex.current === 94)
+    ) {
+      props.active('tortousFork', 'tortous');
+    }
+  }, [xPlayerIndex.current]);
+
+
+ useEffect(() => {
+   //yPlayerIndex up and down values
+   // trains Map check conditions
+   if (
+     (yPlayerIndex.current === 5 && xPlayerIndex.current === 51) ||
+     (yPlayerIndex.current === 5 && xPlayerIndex.current === 52) ||
+     (yPlayerIndex.current === 5 && xPlayerIndex.current === 53)
+   ) {
+     props.active('trainTracksToCapital', 'tortous');
+   }
+
+   if (
+     (yPlayerIndex.current === 93 && xPlayerIndex.current === 52) ||
+     (yPlayerIndex.current === 93 && xPlayerIndex.current === 53) ||
+     (yPlayerIndex.current === 93 && xPlayerIndex.current === 54)
+   ) {
+     props.active('trainTracksToTortous', 'tortous');
+   }
+ }, [yPlayerIndex.current]);
+
+
+
+
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {

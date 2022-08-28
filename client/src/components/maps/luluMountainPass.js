@@ -217,7 +217,6 @@ const LuluMountainPass = (props) => {
     ],
   ];
 
-
   let currentMap = [
     [
       6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 6220, 6228, 6228,
@@ -483,59 +482,69 @@ const LuluMountainPass = (props) => {
     ],
   ];
 
-
   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
   console.log(
     'VALUE Right',
     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
   );
 
-      // useEffect(()=>{
-      //   let tempGrid=[]
-      //   for (let i=0; i<currentMap.length; i++){
-      //     for (let j=0; j<currentMap[i].length; j++){
-      //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-      //         gridColumn: j+1,
-      //         gridRow: i+1,
-      //         color: "white",
-      //     }}
-      //     > {currentMap[i][j]}
+  // useEffect(()=>{
+  //   let tempGrid=[]
+  //   for (let i=0; i<currentMap.length; i++){
+  //     for (let j=0; j<currentMap[i].length; j++){
+  //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+  //         gridColumn: j+1,
+  //         gridRow: i+1,
+  //         color: "white",
+  //     }}
+  //     > {currentMap[i][j]}
 
-      //     </button>)
+  //     </button>)
 
-      //     }
-      //   }
-      // setGridArray(tempGrid)
+  //     }
+  //   }
+  // setGridArray(tempGrid)
 
-      // },[])
+  // },[])
 
   //create an array. If the current array does not contain the value. shift it.
 
   // console.log(yPlayerIndex.current, xPlayerIndex.current)
   // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
 
+  useEffect(() => {
+    if (props.previousMap === 'crystalCaverns') {
+      //setYCord
+      yPlayerIndex.current = 17;
+      //setXcord
+      xPlayerIndex.current = 16;
+      //set xTransform
+      setXTransformVar(-412);
+      //set yTransform
+      setYTransformVar(-780);
+      facing.current = 'down';
+    }
+  }, []);
 
+  useEffect(() => {
+    //yPlayerIndex up and down values
+    // Manson Map check conditions
+    if (
+      (yPlayerIndex.current === 27 && xPlayerIndex.current === 9) ||
+      (yPlayerIndex.current === 28 && xPlayerIndex.current === 9) ||
+      (yPlayerIndex.current === 29 && xPlayerIndex.current === 9)
+    ) {
+      props.active('trainTracksToTortous', 'luluMountainPass');
+    }
+  }, [xPlayerIndex.current]);
 
-
-
-useEffect(() => {
-  //yPlayerIndex up and down values
-  // Manson Map check conditions
-  if (
-    (yPlayerIndex.current === 27 && xPlayerIndex.current === 9) ||
-    (yPlayerIndex.current === 28 && xPlayerIndex.current === 9) ||
-    (yPlayerIndex.current === 29 && xPlayerIndex.current === 9)
-  ) {
-    props.active('trainTracksToTortous', 'luluMountainPass');
-  }
-}, [xPlayerIndex.current]);
-
-
-
-
-
-
-
+  useEffect(() => {
+    //yPlayerIndex up and down values
+    // Manson Map check conditions
+    if (yPlayerIndex.current === 16 && xPlayerIndex.current === 16) {
+      props.active('crystalCaverns', 'luluMountainPass');
+    }
+  }, [yPlayerIndex.current]);
 
   //event listen for enter
   useEffect(() => {

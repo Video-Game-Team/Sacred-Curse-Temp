@@ -15,10 +15,6 @@ const TrainTracksToTortous = (props) => {
   const [yTransformVar, setYTransformVar] = useState(-18772);
   //
 
-
-
-
-
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
   const speedRef = useRef(4);
@@ -34,10 +30,9 @@ const TrainTracksToTortous = (props) => {
 
   const xBank = useRef(0);
   const yBank = useRef(0);
-    const yPlayerIndex = useRef(298);
-    const xPlayerIndex = useRef(19);
-    const [gridArray, setGridArray] = useState([]);
-    
+  const yPlayerIndex = useRef(298);
+  const xPlayerIndex = useRef(19);
+  const [gridArray, setGridArray] = useState([]);
 
   let currentMap2 = [
     [
@@ -1542,9 +1537,6 @@ const TrainTracksToTortous = (props) => {
     ],
   ];
 
-
-
-
   let currentMap = [
     [
       0,
@@ -2063,7 +2055,7 @@ const TrainTracksToTortous = (props) => {
       3404,
       3405,
       3406,
-      3407,
+      0,
       3408,
       3403,
       3404,
@@ -20092,16 +20084,15 @@ const TrainTracksToTortous = (props) => {
     ],
   ];
 
-
-   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-   console.log(
-     'VALUE Right',
-     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-   );
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+  );
 
   //  useEffect(() => {
   //    let tempGrid = [];
-  //    for (let i = 0; i < currentMap.length; i++) {
+  //   //  for (let i = 0; i < currentMap.length; i++) {
   //      for (let j = 0; j < currentMap[i].length; j++) {
   //        tempGrid.push(
   //          <button
@@ -20124,56 +20115,79 @@ const TrainTracksToTortous = (props) => {
   //    setGridArray(tempGrid);
   //  }, []);
 
-
-    useEffect(() => {
-      if (props.previousMap === 'mansonRanch') {
+  useEffect(() => {
+    if (props.previousMap === 'mansonRanch') {
+      //setYCord
+      yPlayerIndex.current = 155;
+      //setXcord
+      xPlayerIndex.current = 11;
+      //set xTransform
+      setXTransformVar(-30);
+      //set yTransform
+      setYTransformVar(-9604);
+      facing.current = 'right';
+    }
+    if (props.previousMap === 'luluMountainPass') {
+      //setYCord
+      yPlayerIndex.current = 87;
+      //setXcord
+      xPlayerIndex.current = 49;
+      //set xTransform
+      setXTransformVar(-2534);
+      //set yTransform
+      setYTransformVar(-5248);
+      facing.current = 'left';
+    }
+      if (props.previousMap === 'tortous') {
         //setYCord
-        yPlayerIndex.current = 155;
+        yPlayerIndex.current = 9;
         //setXcord
-        xPlayerIndex.current = 11;
+        xPlayerIndex.current = 20;
         //set xTransform
-        setXTransformVar(-30);
+        setXTransformVar(-670);
         //set yTransform
-        setYTransformVar(-9604);
-        facing.current = 'right';
+        setYTransformVar(-256);
+        facing.current = 'down';
       }
-       if (props.previousMap === 'luluMountainPass') {
-         //setYCord
-         yPlayerIndex.current = 87;
-         //setXcord
-         xPlayerIndex.current = 49;
-         //set xTransform
-         setXTransformVar(-2534);
-         //set yTransform
-         setYTransformVar(-5248);
-         facing.current = 'left';
-       }
-    }, []);
+  }, []);
+
+  // UseEffect Keeping track of player conditions
+  useEffect(() => {
+    //yPlayerIndex up and down values
+    // Manson Map check conditions
+    if (
+      (yPlayerIndex.current === 154 && xPlayerIndex.current === 9) ||
+      (yPlayerIndex.current === 155 && xPlayerIndex.current === 9) ||
+      (yPlayerIndex.current === 156 && xPlayerIndex.current === 9)
+    ) {
+      props.active('mansonRanch', 'trainTracksToTortous');
+    }
+
+    // Lulu Mountain Pass conditions
+    if (
+      (yPlayerIndex.current === 86 && xPlayerIndex.current === 50) ||
+      (yPlayerIndex.current === 87 && xPlayerIndex.current === 50) ||
+      (yPlayerIndex.current === 88 && xPlayerIndex.current === 50)
+    ) {
+      props.active('luluMountainPass', 'trainTracksToTortous');
+    }
+  }, [xPlayerIndex.current]);
 
 
+  // UseEffect Keeping track of player conditions
+  useEffect(() => {
+    //yPlayerIndex up and down values
+    // Manson Map check conditions
+    if (
+      (yPlayerIndex.current === 8 && xPlayerIndex.current === 19) ||
+      (yPlayerIndex.current === 8 && xPlayerIndex.current === 20) ||
+      (yPlayerIndex.current === 8 && xPlayerIndex.current === 21)
+    )
+      {
+      props.active('tortous', 'trainTracksToTortous');
+    }
+  }, [yPlayerIndex.current]);
 
-// UseEffect Keeping track of player conditions
-useEffect(() => {
-  //yPlayerIndex up and down values
-  // Manson Map check conditions
-  if (
-    (yPlayerIndex.current === 154 && xPlayerIndex.current === 9) ||
-    (yPlayerIndex.current === 155 && xPlayerIndex.current === 9) ||
-    (yPlayerIndex.current === 156 && xPlayerIndex.current === 9)
-  ) {
-    props.active('mansonRanch', 'trainTracksToTortous');
-  }
-
-  // Lulu Mountain Pass conditions
-  if (
-    (yPlayerIndex.current === 86 && xPlayerIndex.current === 50) ||
-    (yPlayerIndex.current === 87 && xPlayerIndex.current === 50) ||
-    (yPlayerIndex.current === 88 && xPlayerIndex.current === 50)
-  ) {
-    props.active('luluMountainPass', 'trainTracksToTortous');
-  }
-}, [xPlayerIndex.current]);
-  
 
 
 

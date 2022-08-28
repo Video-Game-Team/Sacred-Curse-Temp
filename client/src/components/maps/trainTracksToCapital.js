@@ -1646,10 +1646,10 @@ const TrainTracksToCapital = (props) => {
     ],
     [
       3379, 3379, 3379, 3379, 3379, 3379, 3379, 3379, 3379, 3379, 693, 693, 693,
-      693, 693, 693, 693, 3793, 3794, 3795, 3793, 3794, 3795, 693, 693, 693,
-      693, 692, 1, 1, 1, 1, 692, 693, 693, 693, 693, 693, 693, 693, 693, 693,
-      693, 693, 693, 693, 693, 693, 693, 693, 3379, 3379, 3379, 3379, 3379,
-      3379, 3379, 3379, 3379, 3379,
+      693, 693, 693, 693, 3793, 3794, 0, 0, 3794, 3795, 693, 693, 693, 693, 692,
+      1, 1, 1, 1, 692, 693, 693, 693, 693, 693, 693, 693, 693, 693, 693, 693,
+      693, 693, 693, 693, 693, 693, 3379, 3379, 3379, 3379, 3379, 3379, 3379,
+      3379, 3379, 3379,
     ],
     [
       3379, 3379, 3379, 3379, 3379, 3379, 3379, 3379, 3379, 3379, 0, 0, 0, 0, 0,
@@ -1701,35 +1701,67 @@ const TrainTracksToCapital = (props) => {
     ],
   ];
 
-    // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-    //   console.log(
-    //     'VALUE Right',
-    //     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-    //   );
+    console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+      console.log(
+        'VALUE Right',
+        currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+      );
 
-    //       useEffect(()=>{
-    //         let tempGrid=[]
-    //         for (let i=0; i<currentMap.length; i++){
-    //           for (let j=0; j<currentMap[i].length; j++){
-    //             tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-    //               gridColumn: j+1,
-    //               gridRow: i+1,
-    //               color: "white",
-    //           }}
-    //           > {currentMap2[i][j]}
+          // useEffect(()=>{
+          //   let tempGrid=[]
+          //   for (let i=0; i<currentMap.length; i++){
+          //     for (let j=0; j<currentMap[i].length; j++){
+          //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+          //         gridColumn: j+1,
+          //         gridRow: i+1,
+          //         color: "white",
+          //     }}
+          //     > {currentMap[i][j]}
 
-    //           </button>)
+          //     </button>)
 
-    //           }
-    //         }
-    //       setGridArray(tempGrid)
+          //     }
+          //   }
+          // setGridArray(tempGrid)
 
-    //       },[])
+          // },[])
 
   //create an array. If the current array does not contain the value. shift it.
 
   // console.log(yPlayerIndex.current, xPlayerIndex.current)
   // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+
+
+
+
+
+
+  
+
+
+ useEffect(() => {
+   //yPlayerIndex up and down values
+   // trains Map check conditions
+   if (
+     (yPlayerIndex.current === 141 && xPlayerIndex.current === 19) ||
+     (yPlayerIndex.current === 141 && xPlayerIndex.current === 20) 
+   ) {
+     props.active('tortous', 'trainTracksToCapital');
+   }
+ }, [yPlayerIndex.current]);
+
+
+
+
+
+
+
+
+
+
+
+
+
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {

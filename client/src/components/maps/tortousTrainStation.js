@@ -927,11 +927,11 @@ const TortousTrainStation = (props) => {
       15466, 15465, 15466, 15465, 15466, 15465, 2190, 2191, 2192, 15465, 15466,
       15465, 15466, 15465, 15466, 15465, 15466, 15465, 15466, 15465, 15466,
       15465, 15466, 15465, 15466, 2190, 2191, 2192, 15466, 0, 0, 0, 0, 0, 0, 0,
-      16340, 16341, 16342, 16340, 16341, 16342, 0, 0, 0, 0, 0, 0, 0, 15465,
-      2190, 2191, 2192, 15465, 15466, 15465, 15466, 15465, 15466, 15465, 15466,
-      15465, 15466, 15465, 15466, 15465, 15466, 2190, 2191, 2192, 15466, 15465,
-      15466, 15465, 15466, 15465, 15466, 1831, 15466, 15465, 15466, 15465,
-      15466, 15465, 15466, 2190, 2191, 2192, 15466,
+      16340, 16341, 0, 0, 16341, 16342, 0, 0, 0, 0, 0, 0, 0, 15465, 2190, 2191,
+      2192, 15465, 15466, 15465, 15466, 15465, 15466, 15465, 15466, 15465,
+      15466, 15465, 15466, 15465, 15466, 2190, 2191, 2192, 15466, 15465, 15466,
+      15465, 15466, 15465, 15466, 1831, 15466, 15465, 15466, 15465, 15466,
+      15465, 15466, 2190, 2191, 2192, 15466,
     ],
     [
       15481, 2311, 2312, 2313, 15481, 15482, 15481, 15482, 15481, 15482, 1831,
@@ -989,36 +989,58 @@ const TortousTrainStation = (props) => {
     ],
   ];
 
+    console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+    console.log(
+      'VALUE Right',
+      currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+    );
 
-//   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-//   console.log(
-//     'VALUE Right',
-//     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-//   );
+        // useEffect(()=>{
+        //   let tempGrid=[]
+        //   for (let i=0; i<currentMap.length; i++){
+        //     for (let j=0; j<currentMap[i].length; j++){
+        //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+        //         gridColumn: j+1,
+        //         gridRow: i+1,
+        //         color: "black",
+        //     }}
+        //     > {currentMap[i][j]}
 
-//       useEffect(()=>{
-//         let tempGrid=[]
-//         for (let i=0; i<currentMap.length; i++){
-//           for (let j=0; j<currentMap[i].length; j++){
-//             tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-//               gridColumn: j+1,
-//               gridRow: i+1,
-//               color: "black",
-//           }}
-//           > {currentMap2[i][j]}
+        //     </button>)
 
-//           </button>)
+        //     }
+        //   }
+        // setGridArray(tempGrid)
 
-//           }
-//         }
-//       setGridArray(tempGrid)
-
-//       },[])
+        // },[])
 
   //create an array. If the current array does not contain the value. shift it.
 
   // console.log(yPlayerIndex.current, xPlayerIndex.current)
   // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+
+
+ useEffect(() => {
+   //yPlayerIndex up and down values
+   // trains Map check conditions
+   if (
+     (yPlayerIndex.current === 34 && xPlayerIndex.current === 49) ||
+     (yPlayerIndex.current === 34 && xPlayerIndex.current === 50) 
+   ) {
+     props.active('tortous', 'tortousTrainStation');
+   }
+ }, [yPlayerIndex.current]);
+
+
+
+
+
+
+
+
+
+
+
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {
