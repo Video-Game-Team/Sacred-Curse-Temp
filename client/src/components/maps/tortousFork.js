@@ -502,8 +502,7 @@ const TortousFork = (props) => {
 
   //create an array. If the current array does not contain the value. shift it.
 
-  console.log(yPlayerIndex.current, xPlayerIndex.current)
-  console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+
 
 
 // useEffect(() => {

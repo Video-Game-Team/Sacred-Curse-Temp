@@ -1736,7 +1736,6 @@ const Tortous = (props) => {
     ) {
       props.active('tortousTrainStation', 'tortous');
     }
-    // 
     if (
       (yPlayerIndex.current === 53 && xPlayerIndex.current === 94) ||
       (yPlayerIndex.current === 54 && xPlayerIndex.current === 94) ||
