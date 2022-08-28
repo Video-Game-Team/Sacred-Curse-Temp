@@ -11,10 +11,13 @@ import '../../trainTracksToTortous.css';
 const TrainTracksToTortous = (props) => {
   //this sets the x Cordinate to transform the map and character location
   const [xTransformVar, setXTransformVar] = useState(-602);
-
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-18772);
   //
+
+
+
+
 
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
@@ -33,6 +36,8 @@ const TrainTracksToTortous = (props) => {
   const yBank = useRef(0);
     const yPlayerIndex = useRef(298);
     const xPlayerIndex = useRef(19);
+    const [gridArray, setGridArray] = useState([]);
+    
 
   let currentMap2 = [
     [
@@ -1536,6 +1541,9 @@ const TrainTracksToTortous = (props) => {
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
   ];
+
+
+
 
   let currentMap = [
     [
@@ -11096,7 +11104,7 @@ const TrainTracksToTortous = (props) => {
       3381,
       3379,
       3380,
-      3381,
+      0,
       0,
       0,
       0,
@@ -11158,7 +11166,7 @@ const TrainTracksToTortous = (props) => {
       3389,
       3387,
       3388,
-      3389,
+      0,
       0,
       0,
       0,
@@ -11220,7 +11228,7 @@ const TrainTracksToTortous = (props) => {
       3397,
       3395,
       3396,
-      3397,
+      0,
       0,
       0,
       0,
@@ -20086,16 +20094,71 @@ const TrainTracksToTortous = (props) => {
 
 
 
-  console.log("COORDINATE", yPlayerIndex.current, xPlayerIndex.current)
-  console.log(
-    'VALUE Right',
-    currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-  );
+   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+   console.log(
+     'VALUE Right',
+     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+   );
 
-  //create an array. If the current array does not contain the value. shift it.
+  //  useEffect(() => {
+  //    let tempGrid = [];
+  //    for (let i = 0; i < currentMap.length; i++) {
+  //      for (let j = 0; j < currentMap[i].length; j++) {
+  //        tempGrid.push(
+  //          <button
+  //            onClick={() => {
+  //              console.log(`Coordinates ${i} - ${j}`);
+  //            }}
+  //            className="numbers"
+  //            style={{
+  //              gridColumn: j + 1,
+  //              gridRow: i + 1,
+  //              color: 'white',
+  //            }}
+  //          >
+  //            {' '}
+  //            {currentMap[i][j]}
+  //          </button>
+  //        );
+  //      }
+  //    }
+  //    setGridArray(tempGrid);
+  //  }, []);
 
-  // console.log(yPlayerIndex.current, xPlayerIndex.current)
-  // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+
+    useEffect(() => {
+      if (props.previousMap === 'mansonRanch') {
+        //setYCord
+        yPlayerIndex.current = 155;
+        //setXcord
+        xPlayerIndex.current = 11;
+        //set xTransform
+        setXTransformVar(-30);
+        //set yTransform
+        setYTransformVar(-9604);
+        facing.current = 'right';
+      }
+    }, []);
+
+
+
+// UseEffect Keeping track of player conditions
+useEffect(() => {
+  //yPlayerIndex up and down values
+  // TheWall Map check conditions
+  if (
+    (yPlayerIndex.current === 154 && xPlayerIndex.current === 9) ||
+    (yPlayerIndex.current === 155 && xPlayerIndex.current === 9) ||
+    (yPlayerIndex.current === 156 && xPlayerIndex.current === 9) 
+  ) 
+  {
+    props.active('mansonRanch', 'trainTracksToTortous');
+  }
+}, [yPlayerIndex.current]);
+  
+
+
+
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {
@@ -20338,6 +20401,7 @@ const TrainTracksToTortous = (props) => {
               transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`,
             }}
           >
+            {gridArray}
             <div
               className="character pixel-art"
               facing={facing.current}

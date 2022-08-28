@@ -1137,8 +1137,8 @@ let currentMap = [
   ],
 ];
   
-  console.log("COORDINATE", yPlayerIndex.current, xPlayerIndex.current)
-  console.log("VALUE Right", currentMap2[yPlayerIndex.current] [xPlayerIndex.current])
+  // console.log("COORDINATE", yPlayerIndex.current, xPlayerIndex.current)
+  // console.log("VALUE Right", currentMap2[yPlayerIndex.current] [xPlayerIndex.current])
 
 
 // useEffect(()=>{
@@ -1157,8 +1157,6 @@ let currentMap = [
 //     }
 //   }
 // setGridArray(tempGrid)
-
-
 // },[])
 
   // console.log('poop');
@@ -1168,7 +1166,6 @@ let currentMap = [
 
 useEffect(()=>{
   if (props.previousMap==="farmMap"){
-     console.log('no poop');
     //setYCord
     yPlayerIndex.current = 76
     //setXcord

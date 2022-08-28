@@ -1211,9 +1211,6 @@ const TheWall = (props) => {
 
 
 
-  
-
-
   // // UseEffect Keeping track of player conditions
   useEffect(() => {
     // yPlayerIndex up and down values
@@ -1222,9 +1219,6 @@ const TheWall = (props) => {
       props.active('townMap1', 'theWall');
     }
   }, [yPlayerIndex.current]);
-
-
-
 
 
 

@@ -507,19 +507,19 @@ const MansonRanch = (props) => {
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4926, 0, 0, 0, 0, 0, 0, 0, 3964, 3965, 3966,
       3967, 3968, 3969, 3970, 0, 0, 0, 0, 0, 0, 4725, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 5222, 5223, 5224, 5222, 5223, 5224, 5222, 5223,
-      5224, 5222, 5223,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 5223, 5224, 5222, 5223, 5224, 5222, 5223, 5224,
+      5222, 5223,
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4926, 0, 0, 0, 0, 0, 0, 0, 3980, 3981, 3982,
       3983, 3984, 3985, 3986, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 5230, 5231, 5232, 5230, 5231, 5232, 5230, 5231, 5232,
+      0, 0, 0, 0, 0, 0, 0, 0, 5231, 5232, 5230, 5231, 5232, 5230, 5231, 5232,
       5230, 5231,
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4926, 0, 0, 0, 0, 0, 0, 0, 4037, 4038, 4039,
       4040, 4041, 4042, 4043, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 5238, 5239, 5240, 5238, 5239, 5240, 5238, 5239, 5240,
+      0, 0, 0, 0, 0, 0, 0, 0, 5239, 5240, 5238, 5239, 5240, 5238, 5239, 5240,
       5238, 5239,
     ],
     [
@@ -677,29 +677,53 @@ const MansonRanch = (props) => {
     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
   );
 
-//   useEffect(()=>{
-//     let tempGrid=[]
-//     for (let i=0; i<currentMap.length; i++){
-//       for (let j=0; j<currentMap[i].length; j++){
-//         tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-//           gridColumn: j+1,
-//           gridRow: i+1,
-//           color: "white",
-//       }}
-//       > {currentMap2[i][j]}
+  // useEffect(()=>{
+  //   let tempGrid=[]
+  //   for (let i=0; i<currentMap.length; i++){
+  //     for (let j=0; j<currentMap[i].length; j++){
+  //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+  //         gridColumn: j+1,
+  //         gridRow: i+1,
+  //         color: "white",
+  //     }}
+  //     > {currentMap[i][j]}
 
-//       </button>)
+  //     </button>)
 
-//       }
-//     }
-//   setGridArray(tempGrid)
+  //     }
+  //   }
+  // setGridArray(tempGrid)
 
-//   },[])
+  // },[])
 
   //create an array. If the current array does not contain the value. shift it.
 
   // console.log(yPlayerIndex.current, xPlayerIndex.current)
   // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+
+
+ 
+
+
+  // UseEffect Keeping track of player conditions
+  useEffect(() => {
+    //yPlayerIndex up and down values
+    // TheWall Map check conditions
+    if (
+      (yPlayerIndex.current === 30 && xPlayerIndex.current === 49) ||
+      (yPlayerIndex.current === 31 && xPlayerIndex.current === 49) ||
+      (yPlayerIndex.current === 32 && xPlayerIndex.current === 49)
+    ) {
+      props.active('trainTracksToTortous', 'mansonRanch');
+    }
+  }, [yPlayerIndex.current]);
+
+
+
+
+
+
+
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {

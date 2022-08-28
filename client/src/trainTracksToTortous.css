@@ -36,8 +36,8 @@ body {
 
 .mapTTTT {
     image-rendering: pixelated;
-    max-height: 50000px;
-    min-width: 50000px;
+    /* max-height: 50000px;
+    min-width: 50000px; */
     background-image: url("./assets/maps/Train track to Tortous w grid.png");
     background-size: 3840px;
     width: calc(150 * var(--grid-cell));
@@ -45,6 +45,58 @@ body {
     position: absolute;
     background-repeat: no-repeat;
     overflow: visible;
-    /* overflow: hidden; */
+    /* display: grid;
+    grid-template-columns: repeat(60, 64px);
+    grid-template-rows: repeat(300, 64px); */
+}
 
+
+/* .numbers {
+    size: 100%;
+    background: transparent;
+} */
+
+
+.character {
+    width: calc(var(--grid-cell)* 2);
+    height: calc(var(--grid-cell)* 2);
+    overflow: hidden;
+    /* margin-top: -58px;
+    margin-left: -45px; */
+}
+
+.character_spritesheet {
+    position: absolute;
+    background: url("./assets/images/AjFP5.png") no-repeat no-repeat;
+    background-size: 100%;
+    width: calc(var(--grid-cell)* 8);
+    height: calc(var(--grid-cell)* 8);
+
+}
+
+.character[facing="right"] .character_spritesheet {
+    background-position-y: calc(var(--pixel-size) * -48);
+}
+
+.character[facing="up"] .character_spritesheet {
+    background-position-y: calc(var(--pixel-size) * -72);
+}
+
+.character[facing="left"] .character_spritesheet {
+    background-position-y: calc(var(--pixel-size) * -24);
+}
+
+.character[walking="true"] .character_spritesheet {
+    animation: walkAnimation 0.6s steps(4) infinite;
+}
+
+
+@keyframes walkAnimation {
+    from {
+        transform: translate3d(0%, 0%, 0);
+    }
+
+    to {
+        transform: translate3d(-100%, 0%, 0);
+    }
 }
