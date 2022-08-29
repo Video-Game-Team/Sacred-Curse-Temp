@@ -1738,6 +1738,72 @@ const Tortous = (props) => {
           setYTransformVar(-3216);
           facing.current = 'down';
         }
+         if (props.previousMap === 'oldManCrawfordInside') {
+           //setYCord
+           yPlayerIndex.current = 70;
+           //setXcord
+           xPlayerIndex.current = 88;
+           //set xTransform
+           setXTransformVar(-5020);
+           //set yTransfor
+           setYTransformVar(-4180);
+           facing.current = 'down';
+         }
+         if (props.previousMap === 'indoorHouse1') {
+           //setYCord
+           yPlayerIndex.current = 81;
+           //setXcord
+           xPlayerIndex.current = 39;
+           //set xTransform
+           setXTransformVar(-1880);
+           //set yTransfor
+           setYTransformVar(-4880);
+           facing.current = 'down';
+         }
+         if (props.previousMap === 'indoorHouse3') {
+           //setYCord
+           yPlayerIndex.current = 24;
+           //setXcord
+           xPlayerIndex.current = 72;
+           //set xTransform
+           setXTransformVar(-3992);
+           //set yTransfor
+           setYTransformVar(-1232);
+           facing.current = 'down';
+         }
+          if (props.previousMap === 'indoorHouse7') {
+            //setYCord
+            yPlayerIndex.current = 89;
+            //setXcord
+            xPlayerIndex.current = 94;
+            //set xTransform
+            setXTransformVar(-4760);
+            //set yTransfor
+            setYTransformVar(-5392);
+            facing.current = 'down';
+          }
+          if (props.previousMap === 'indoorHouse8') {
+            //setYCord
+            yPlayerIndex.current = 89;
+            //setXcord
+            xPlayerIndex.current = 64;
+            //set xTransform
+            setXTransformVar(-3484);
+            //set yTransfor
+            setYTransformVar(-5396);
+            facing.current = 'down';
+          }
+          if (props.previousMap === 'indoorHouse2') {
+            //setYCord
+            yPlayerIndex.current = 89;
+            //setXcord
+            xPlayerIndex.current = 33;
+            //set xTransform
+            setXTransformVar(-1496);
+            //set yTransfor
+            setYTransformVar(-5396);
+            facing.current = 'down';
+          }
       }, []);
 
    
@@ -1787,18 +1853,40 @@ const Tortous = (props) => {
 
  //INDOOR USE EFFECT
   useEffect(() => {
+    //Hotel
     if (yPlayerIndex.current === 54 && xPlayerIndex.current === 51) {
       props.active('hotelIndoors', 'tortous');
     }
-
+    //OldManCrawfordInside
+    if (yPlayerIndex.current === 69 && xPlayerIndex.current === 88) {
+      props.active('oldManCrawfordInside', 'tortous');
+    }
+    //IndoorHouse 1
+    if (yPlayerIndex.current === 80 && xPlayerIndex.current === 39) {
+      props.active('indoorHouse1', 'tortous');
+    }
+    //IndoorHouse 3
     if (
-      (yPlayerIndex.current === 93 && xPlayerIndex.current === 52) ||
-      (yPlayerIndex.current === 93 && xPlayerIndex.current === 53) ||
-      (yPlayerIndex.current === 93 && xPlayerIndex.current === 54)
+      (yPlayerIndex.current === 23 && xPlayerIndex.current === 72) ||
+      (yPlayerIndex.current === 23 && xPlayerIndex.current === 73)
     ) {
-      props.active('trainTracksToTortous', 'tortous');
+      props.active('indoorHouse3', 'tortous');
+    }
+    //indoor house 7
+    if (yPlayerIndex.current === 88 && xPlayerIndex.current === 84) {
+      props.active('indoorHouse7', 'tortous');
+    }
+    // indoor house 8
+    if (yPlayerIndex.current === 88 && xPlayerIndex.current === 64) {
+      props.active('indoorHouse8', 'tortous');
+    }
+    // indoor house 2
+    if (yPlayerIndex.current === 88 && xPlayerIndex.current === 33) {
+      props.active('indoorHouse2', 'tortous');
     }
   }, [yPlayerIndex.current]);
+
+
 
 
 

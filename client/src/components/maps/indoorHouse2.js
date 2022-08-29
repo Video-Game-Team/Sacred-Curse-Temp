@@ -78,11 +78,11 @@ const IndoorHouse2 = (props) => {
   ];
 
 
-    // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-    // console.log(
-    //   'VALUE Right',
-    //   currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-    // );
+    console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+    console.log(
+      'VALUE Right',
+      currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+    );
 
     //   useEffect(()=>{
     //     let tempGrid=[]
@@ -103,11 +103,31 @@ const IndoorHouse2 = (props) => {
 
     //   },[])
 
-  //create an array. If the current array does not contain the value. shift it.
 
-  // console.log(yPlayerIndex.current, xPlayerIndex.current)
-  // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
-  //event listen for enter
+   useEffect(() => {
+     if (props.previousMap === 'tortous') {
+       //setYCord
+       yPlayerIndex.current = 13;
+       //setXcord
+       xPlayerIndex.current = 11;
+       //set xTransform
+       setXTransformVar(-88);
+       //set yTransform
+       setYTransformVar(-532);
+       facing.current = 'up';
+     }
+   }, []);
+
+
+  //  //  //INDOOR USE EFFECT
+   useEffect(() => {
+     if (yPlayerIndex.current === 14 && xPlayerIndex.current === 11) {
+       props.active('tortous', 'indoorHouse2');
+     }
+   }, [yPlayerIndex.current]);
+
+
+
   useEffect(() => {
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
@@ -341,7 +361,7 @@ const IndoorHouse2 = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="camera">
+      <div className="camera fade-in">
         <div>
           <div
             className="mapIH2 pixel-art"

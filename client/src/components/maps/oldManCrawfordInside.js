@@ -86,36 +86,59 @@ const OldManCrawfordInside = (props) => {
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   ];
 
+    console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+    console.log(
+      'VALUE Right',
+      currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+    );
 
-//   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-//   console.log(
-//     'VALUE Right',
-//     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-//   );
+  // useEffect(()=>{
+  //   let tempGrid=[]
+  //   for (let i=0; i<currentMap.length; i++){
+  //     for (let j=0; j<currentMap[i].length; j++){
+  //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+  //         gridColumn: j+1,
+  //         gridRow: i+1,
+  //         color: "white",
+  //     }}
+  //     > {currentMap2[i][j]}
 
-    // useEffect(()=>{
-    //   let tempGrid=[]
-    //   for (let i=0; i<currentMap.length; i++){
-    //     for (let j=0; j<currentMap[i].length; j++){
-    //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-    //         gridColumn: j+1,
-    //         gridRow: i+1,
-    //         color: "white",
-    //     }}
-    //     > {currentMap2[i][j]}
+  //     </button>)
 
-    //     </button>)
+  //     }
+  //   }
+  // setGridArray(tempGrid)
 
-    //     }
-    //   }
-    // setGridArray(tempGrid)
+  // },[])
 
-    // },[])
 
-  //create an array. If the current array does not contain the value. shift it.
 
-  // console.log(yPlayerIndex.current, xPlayerIndex.current)
-  // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+   useEffect(() => {
+     if (props.previousMap === 'tortous') {
+       //setYCord
+       yPlayerIndex.current = 13;
+       //setXcord
+       xPlayerIndex.current = 4;
+       //set xTransform
+       setXTransformVar(360);
+       //set yTransform
+       setYTransformVar(-532);
+       facing.current = 'up';
+     }
+   }, []);
+
+
+  //INDOOR USE EFFECT
+   useEffect(() => {
+     if 
+       (yPlayerIndex.current === 14 && xPlayerIndex.current === 4) {
+       props.active('tortous', 'oldManCrawfordInside');
+     }
+   }, [yPlayerIndex.current]);
+
+
+
+
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {
