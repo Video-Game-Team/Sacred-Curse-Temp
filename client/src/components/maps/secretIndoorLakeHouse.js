@@ -83,35 +83,55 @@ const SecretIndoorLakeHouse = (props) => {
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   ];
 
-    // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-    // console.log(
-    //   'VALUE Right',
-    //   currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-    // );
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+  );
 
-    //   useEffect(()=>{
-    //     let tempGrid=[]
-    //     for (let i=0; i<currentMap.length; i++){
-    //       for (let j=0; j<currentMap[i].length; j++){
-    //         tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-    //           gridColumn: j+1,
-    //           gridRow: i+1,
-    //           color: "white",
-    //       }}
-    //       > {currentMap2[i][j]}
+  //   useEffect(()=>{
+  //     let tempGrid=[]
+  //     for (let i=0; i<currentMap.length; i++){
+  //       for (let j=0; j<currentMap[i].length; j++){
+  //         tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+  //           gridColumn: j+1,
+  //           gridRow: i+1,
+  //           color: "white",
+  //       }}
+  //       > {currentMap2[i][j]}
 
-    //       </button>)
+  //       </button>)
 
-    //       }
-    //     }
-    //   setGridArray(tempGrid)
+  //       }
+  //     }
+  //   setGridArray(tempGrid)
 
-    //   },[])
+  //   },[])
 
-  //create an array. If the current array does not contain the value. shift it.
+  //  useEffect(() => {
+  //    if (props.previousMap === 'saintAnnaHidden') {
+  //      //setYCord
+  //      yPlayerIndex.current = 13;
+  //      //setXcord
+  //      xPlayerIndex.current = 7;
+  //      //set xTransform
+  //      setXTransformVar(168);
+  //      //set yTransform
+  //      setYTransformVar(-532);
+  //      facing.current = 'up';
+  //    }
+  //  }, []);
 
-  // console.log(yPlayerIndex.current, xPlayerIndex.current)
-  // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+  //  //INDOOR USE EFFECT
+  // useEffect(() => {
+  //   if (yPlayerIndex.current === 13 && xPlayerIndex.current === 4) {
+  //     props.active('saintAnnaHidden', 'secretIndoorLakeHouse');
+  //   }
+  // }, [yPlayerIndex.current]);
+
+
+
+
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {
@@ -346,7 +366,7 @@ const SecretIndoorLakeHouse = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="camera">
+      <div className="camera fade-in">
         <div>
           <div
             className="mapSLIH pixel-art"

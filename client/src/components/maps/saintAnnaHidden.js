@@ -237,6 +237,11 @@ const SaintAnnaHidden = (props) => {
     ],
   ];
 
+
+
+
+
+
   let currentMap = [
     [
       127, 128, 127, 128, 127, 128, 127, 128, 127, 128, 127, 128, 127, 128, 127,
@@ -359,9 +364,8 @@ const SaintAnnaHidden = (props) => {
     ],
     [
       32, 32, 32, 32, 32, 32, 32, 32, 32, 4129, 4130, 4131, 4132, 4133, 4130,
-      4131, 4132, 4133, 0, 0, 5409, 5410, 5411, 18631, 5413, 0, 4129, 4130,
-      4131, 4132, 4133, 4130, 4131, 4132, 4133, 1, 40, 32, 32, 32, 32, 32, 32,
-      32, 32,
+      4131, 4132, 4133, 0, 0, 5409, 5410, 5411, 0, 5413, 0, 4129, 4130, 4131,
+      4132, 4133, 4130, 4131, 4132, 4133, 1, 40, 32, 32, 32, 32, 32, 32, 32, 32,
     ],
     [
       32, 32, 32, 32, 32, 32, 32, 32, 32, 4145, 4146, 4147, 4148, 4149, 4146,
@@ -504,35 +508,61 @@ const SaintAnnaHidden = (props) => {
     ],
   ];
 
-    // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-    // console.log(
-    //   'VALUE Right',
-    //   currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-    // );
 
-    //     useEffect(()=>{
-    //       let tempGrid=[]
-    //       for (let i=0; i<currentMap.length; i++){
-    //         for (let j=0; j<currentMap[i].length; j++){
-    //           tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-    //             gridColumn: j+1,
-    //             gridRow: i+1,
-    //             color: "white",
-    //         }}
-    //         > {currentMap2[i][j]}
 
-    //         </button>)
 
-    //         }
-    //       }
-    //     setGridArray(tempGrid)
 
-    //     },[])
+    console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+    console.log(
+      'VALUE Right',
+      currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+    );
 
-  //create an array. If the current array does not contain the value. shift it.
+        // useEffect(()=>{
+        //   let tempGrid=[]
+        //   for (let i=0; i<currentMap.length; i++){
+        //     for (let j=0; j<currentMap[i].length; j++){
+        //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+        //         gridColumn: j+1,
+        //         gridRow: i+1,
+        //         color: "white",
+        //     }}
+        //     > {currentMap[i][j]}
 
-  // console.log(yPlayerIndex.current, xPlayerIndex.current)
-  // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+        //     </button>)
+
+        //     }
+        //   }
+        // setGridArray(tempGrid)
+        // },[])
+
+
+
+
+  // useEffect(() => {
+  //   if (props.previousMap === 'secretIndoorLakeHouse') {
+  //     //setYCord
+  //     yPlayerIndex.current = 23;
+  //     //setXcord
+  //     xPlayerIndex.current = 23;
+  //     //set xTransform
+  //     setXTransformVar(-860);
+  //     //set yTransform
+  //     setYTransformVar(-1172);
+  //     facing.current = 'down';
+  //   }
+  // }, []);
+
+  // //  // UseEffect Keeping track of player conditions
+  useEffect(() => {
+    //secretIndoorLakeHouse
+    if (yPlayerIndex.current === 22 && xPlayerIndex.current === 23) {
+      props.active('secretIndoorLakeHouse', 'saintAnnaHidden');
+    }
+  }, [yPlayerIndex.current]);    
+
+
+    
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {
@@ -767,7 +797,7 @@ const SaintAnnaHidden = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="camera">
+      <div className="camera fade-in">
         <div>
           <div
             className="mapSAH pixel-art"
