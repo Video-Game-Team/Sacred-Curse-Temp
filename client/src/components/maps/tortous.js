@@ -1675,20 +1675,20 @@ const Tortous = (props) => {
   //     }
   //   }
   // setGridArray(tempGrid)
-
   // },[])
+
 
    useEffect(() => {
      if (props.previousMap === 'trainTracksToTortous') {
        //setYCord
-       yPlayerIndex.current = 6;
+       yPlayerIndex.current = 91;
        //setXcord
-       xPlayerIndex.current = 52;
+       xPlayerIndex.current = 53;
        //set xTransform
-       setXTransformVar(-271);
+       setXTransformVar(-2776);
        //set yTransform
-       setYTransformVar(-72);
-       facing.current = 'down';
+       setYTransformVar(-5588);
+       facing.current = 'up';
      }
       if (props.previousMap === 'tortousTrainStation') {
          //setYCord

@@ -514,7 +514,7 @@ const TortousFork = (props) => {
      setXTransformVar(-28);
      //set yTransform
      setYTransformVar(-1284);
-     facing.current = 'down';
+     facing.current = 'right';
    }
    if (props.previousMap === 'trainTracksToSaintAnna') {
      //setYCord

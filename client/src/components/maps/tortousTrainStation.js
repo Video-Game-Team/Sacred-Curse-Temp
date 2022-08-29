@@ -575,8 +575,8 @@ const TortousTrainStation = (props) => {
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1831, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16364, 16365, 16366, 16364,
-      16365, 16366, 16364, 16365, 16366, 16364, 16365, 16366,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16365, 16366, 16364, 16365,
+      16366, 16364, 16365, 16366, 16364, 16365, 16366,
     ],
     [
       0,
@@ -667,7 +667,7 @@ const TortousTrainStation = (props) => {
       0,
       0,
       0,
-      'Barrier',
+      0,
       'Barrier',
       'Barrier',
       16372,
@@ -1014,22 +1014,39 @@ const TortousTrainStation = (props) => {
 
         // },[])
 
-  //create an array. If the current array does not contain the value. shift it.
 
-  // console.log(yPlayerIndex.current, xPlayerIndex.current)
-  // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+
+
+useEffect(() => {
+  if (props.previousMap === 'tortous') {
+    //setYCord
+    yPlayerIndex.current = 27;
+    //setXcord
+    xPlayerIndex.current = 87;
+    //set xTransform
+    setXTransformVar(-4948);
+    //set yTransform
+    setYTransformVar(-1427);
+    facing.current = 'left';
+  }  
+}, []);
+
+
+
+
+
 
 
  useEffect(() => {
    //yPlayerIndex up and down values
    // trains Map check conditions
    if (
-     (yPlayerIndex.current === 34 && xPlayerIndex.current === 49) ||
-     (yPlayerIndex.current === 34 && xPlayerIndex.current === 50) 
+     (yPlayerIndex.current === 26 && xPlayerIndex.current === 88) ||
+     (yPlayerIndex.current === 27 && xPlayerIndex.current === 88) 
    ) {
      props.active('tortous', 'tortousTrainStation');
    }
- }, [yPlayerIndex.current]);
+ }, [xPlayerIndex.current]);
 
 
 
