@@ -71,11 +71,11 @@ const IndoorHouse9 = (props) => {
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   ];
 
-    // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-    // console.log(
-    //   'VALUE Right',
-    //   currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-    // );
+    console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+    console.log(
+      'VALUE Right',
+      currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+    );
 
     //     useEffect(()=>{
     //       let tempGrid=[]
@@ -96,10 +96,39 @@ const IndoorHouse9 = (props) => {
 
     //     },[])
 
-  //create an array. If the current array does not contain the value. shift it.
+ 
 
-  // console.log(yPlayerIndex.current, xPlayerIndex.current)
-  // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+   useEffect(() => {
+     if (props.previousMap === 'mansonRanch') {
+       //setYCord
+       yPlayerIndex.current = 13;
+       //setXcord
+       xPlayerIndex.current = 6;
+       //set xTransform
+       setXTransformVar(236);
+       //set yTransform
+       setYTransformVar(-532);
+       facing.current = 'up';
+     }
+   }, []);
+
+  //  //  //INDOOR USE EFFECT
+   useEffect(() => {
+     if (
+     (yPlayerIndex.current === 14 && xPlayerIndex.current === 6) ||
+     (yPlayerIndex.current === 14 && xPlayerIndex.current === 7) 
+   )
+   {
+       props.active('mansonRanch', 'indoorHouse9');
+     }
+   }, [yPlayerIndex.current]);  
+
+
+
+
+
+
+
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {
@@ -334,7 +363,7 @@ const IndoorHouse9 = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="camera">
+      <div className="camera fade-in">
         <div>
           <div
             className="mapIH9 pixel-art"

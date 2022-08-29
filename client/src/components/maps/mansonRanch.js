@@ -337,6 +337,14 @@ const MansonRanch = (props) => {
     ],
   ];
 
+
+
+
+
+
+
+
+
   let currentMap = [
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -524,8 +532,8 @@ const MansonRanch = (props) => {
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4926, 0, 0, 0, 0, 0, 0, 0, 4053, 4054, 4055,
-      4056, 4057, 4058, 4059, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 5246, 5247, 5248, 5246, 5247, 5248, 5246, 5247, 5248,
+      4056, 0, 4058, 4059, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 5246, 5247, 5248, 5246, 5247, 5248, 5246, 5247, 5248,
       5246, 5247,
     ],
     [
@@ -671,11 +679,14 @@ const MansonRanch = (props) => {
     ],
   ];
 
+
+
   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
   console.log(
     'VALUE Right',
     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
   );
+
 
   // useEffect(()=>{
   //   let tempGrid=[]
@@ -695,38 +706,59 @@ const MansonRanch = (props) => {
   // setGridArray(tempGrid)
   // },[])
 
-  //create an array. If the current array does not contain the value. shift it.
 
-  // console.log(yPlayerIndex.current, xPlayerIndex.current)
-  // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
 
-useEffect(() => {
-  if (props.previousMap === 'trainTracksToTortous') {
-    //setYCord
-    yPlayerIndex.current = 31;
-    //setXcord
-    xPlayerIndex.current = 48;
-    //set xTransform
-    setXTransformVar(-2456);
-    //set yTransform
-    setYTransformVar(-1684);
-    facing.current = 'left';
-  }
-}, []);
+// useEffect(() => {
+//   if (props.previousMap === 'indoorHouse9') {
+//     //setYCord
+//     yPlayerIndex.current = 38;
+//     //setXcord
+//     xPlayerIndex.current = 86;
+//     //set xTransform
+//     setXTransformVar(-4892);
+//     //set yTransform
+//     setYTransformVar(-2132);
+//     facing.current = 'down';
+//   }
+// }, []);
+
+// useEffect(() => {
+//   //yPlayerIndex up and down values
+//   // trains Map check conditions
+//   if (yPlayerIndex.current === 37 && xPlayerIndex.current === 86) {
+//     props.active('indoorHouse9', 'mansonRanch');
+//   }
+// }, [yPlayerIndex.current]);
+
+
+
+
+
+
+ useEffect(() => {
+   if (props.previousMap === 'indoorHouse9') {
+     //setYCord
+     yPlayerIndex.current = 34;
+     //setXcord
+     xPlayerIndex.current = 22;
+     //set xTransform
+     setXTransformVar(-792);
+     //set yTransform
+     setYTransformVar(-1876);
+     facing.current = 'down';
+   }
+ }, []);
 
  
   // UseEffect Keeping track of player conditions
   useEffect(() => {
     //yPlayerIndex up and down values
     // TheWall Map check conditions
-    if (
-      (yPlayerIndex.current === 30 && xPlayerIndex.current === 49) ||
-      (yPlayerIndex.current === 31 && xPlayerIndex.current === 49) ||
-      (yPlayerIndex.current === 32 && xPlayerIndex.current === 49)
-    ) {
-      props.active('trainTracksToTortous', 'mansonRanch');
+    if (yPlayerIndex.current === 33 && xPlayerIndex.current === 22) 
+    {
+      props.active('indoorHouse9', 'mansonRanch');
     }
-  }, [xPlayerIndex.current]);
+  }, [yPlayerIndex.current]);
 
 
 
@@ -968,7 +1000,7 @@ useEffect(() => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="camera">
+      <div className="camera fade-in">
         <div>
           <div
             className="mapMR pixel-art"
