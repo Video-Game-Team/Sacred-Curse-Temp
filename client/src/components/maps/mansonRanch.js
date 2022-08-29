@@ -693,7 +693,6 @@ const MansonRanch = (props) => {
   //     }
   //   }
   // setGridArray(tempGrid)
-
   // },[])
 
   //create an array. If the current array does not contain the value. shift it.
@@ -701,10 +700,21 @@ const MansonRanch = (props) => {
   // console.log(yPlayerIndex.current, xPlayerIndex.current)
   // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
 
+useEffect(() => {
+  if (props.previousMap === 'trainTracksToTortous') {
+    //setYCord
+    yPlayerIndex.current = 31;
+    //setXcord
+    xPlayerIndex.current = 48;
+    //set xTransform
+    setXTransformVar(-2456);
+    //set yTransform
+    setYTransformVar(-1684);
+    facing.current = 'left';
+  }
+}, []);
 
  
-
-
   // UseEffect Keeping track of player conditions
   useEffect(() => {
     //yPlayerIndex up and down values
@@ -716,7 +726,7 @@ const MansonRanch = (props) => {
     ) {
       props.active('trainTracksToTortous', 'mansonRanch');
     }
-  }, [yPlayerIndex.current]);
+  }, [xPlayerIndex.current]);
 
 
 

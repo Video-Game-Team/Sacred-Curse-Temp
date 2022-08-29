@@ -20120,11 +20120,11 @@ const TrainTracksToTortous = (props) => {
       //setYCord
       yPlayerIndex.current = 155;
       //setXcord
-      xPlayerIndex.current = 11;
+      xPlayerIndex.current = 10;
       //set xTransform
-      setXTransformVar(-30);
+      setXTransformVar(-18);
       //set yTransform
-      setYTransformVar(-9604);
+      setYTransformVar(-9620);
       facing.current = 'right';
     }
     if (props.previousMap === 'luluMountainPass') {
