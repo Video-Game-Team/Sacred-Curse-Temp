@@ -38,7 +38,7 @@ const [playerOptions, setPlayerOptions]= useState()
 const [activeEnemyList, setActiveEnemyList]=useState([Enemies.BlueMegaTank, Enemies.GreenInfantry])
 
 
-const [mapState, setMapState]= useState([[0,0,0,demons[6],activeEnemyList[0],demons[2],0,0],[0,0,0,0,demons[1],0,1,0],[0,0,0,0,0,0,demons[0],0],[0,0,0,0,1,0,0,0],[0,1,0,0,0,0,0,activeEnemyList[1]],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
+const [mapState, setMapState]= useState([[0,0,0,0,activeEnemyList[0],0,0,0],[0,0,0,0,demons[1],0,1,0],[0,0,0,0,0,0,demons[0],0],[0,0,0,0,1,0,0,0],[0,1,0,0,0,0,0,activeEnemyList[1]],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
 
 const [curseMap, setCurseMap]= useState([[0,0,0,0,"Haunting",0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
 
@@ -63,6 +63,7 @@ useEffect(()=>{
 
     let summonsList=[]
 for (let i=2; i<demons.length; i++){
+    console.log(demons[i])
     summonsList.push(<button id={demons[i].name} style={{backgroundImage: `url(${demons[i].image})`, backgroundSize: '100%', backgroundRepeat: 'no-repeat', backgroundColor: 'transparent', border: 'none'}} onClick={()=>setCurrent(demons[i])}>  </button>)
 
     // summonsList.push(<button style={{color: "white"}}> {" ."} {demons[i].name} {" "} </button>)
@@ -77,7 +78,7 @@ setSummoningList(summonsList)
 //
 useEffect(()=>{
 
-    let tempDemonsList=demons;
+    let tempDemonsList=activeDemonsList;
     let tempEnemiesList=activeEnemyList;
     let tempMap=mapState
   
