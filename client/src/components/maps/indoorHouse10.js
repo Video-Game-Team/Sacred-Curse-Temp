@@ -10,9 +10,9 @@ import '../../indoorHouse10.css';
 
 const IndoorHouse10 = (props) => {
   //this sets the x Cordinate to transform the map and character location
-  const [xTransformVar, setXTransformVar] = useState(164);
+  const [xTransformVar, setXTransformVar] = useState(420);
   //this sets the y Cordinate to transform the map and character location
-  const [yTransformVar, setYTransformVar] = useState(-531);
+  const [yTransformVar, setYTransformVar] = useState(108);
   //
 
   const requestRef = useRef();
@@ -30,8 +30,8 @@ const IndoorHouse10 = (props) => {
 
   const xBank = useRef(0);
   const yBank = useRef(0);
-  const yPlayerIndex = useRef(13);
-  const xPlayerIndex = useRef(7);
+  const yPlayerIndex = useRef(3);
+  const xPlayerIndex = useRef(3);
   const [gridArray, setGridArray] = useState([]);
 
   let currentMap2 = [
@@ -74,35 +74,61 @@ const IndoorHouse10 = (props) => {
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   ];
 
-//   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-//   console.log(
-//     'VALUE Right',
-//     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-//   );
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+  );
 
-//       useEffect(()=>{
-//         let tempGrid=[]
-//         for (let i=0; i<currentMap.length; i++){
-//           for (let j=0; j<currentMap[i].length; j++){
-//             tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-//               gridColumn: j+1,
-//               gridRow: i+1,
-//               color: "white",
-//           }}
-//           > {currentMap2[i][j]}
+      // useEffect(()=>{
+      //   let tempGrid=[]
+      //   for (let i=0; i<currentMap.length; i++){
+      //     for (let j=0; j<currentMap[i].length; j++){
+      //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+      //         gridColumn: j+1,
+      //         gridRow: i+1,
+      //         color: "white",
+      //     }}
+      //     > {currentMap[i][j]}
 
-//           </button>)
+      //     </button>)
 
-//           }
-//         }
-//       setGridArray(tempGrid)
+      //     }
+      //   }
+      // setGridArray(tempGrid)
+      // },[])
 
-//       },[])
 
-  //create an array. If the current array does not contain the value. shift it.
+   useEffect(() => {
+     if (props.previousMap === 'farmMap') {
+       //setYCord
+       yPlayerIndex.current = 13;
+       //setXcord
+       xPlayerIndex.current = 7;
+       //set xTransform
+       setXTransformVar(168);
+       //set yTransform
+       setYTransformVar(-535);
+       facing.current = 'up';
+     }
+   }, []);
 
-  // console.log(yPlayerIndex.current, xPlayerIndex.current)
-  // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+  //  //  //INDOOR USE EFFECT
+   useEffect(() => {
+     if (
+       (yPlayerIndex.current === 14 && xPlayerIndex.current === 6) ||
+       (yPlayerIndex.current === 14 && xPlayerIndex.current === 7) ||
+       (yPlayerIndex.current === 14 && xPlayerIndex.current === 8) 
+     ) {
+       props.active('farmMap', 'indoorHouse10');
+     }
+   }, [yPlayerIndex.current]);
+
+
+
+
+
+
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {
@@ -337,7 +363,7 @@ const IndoorHouse10 = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="camera">
+      <div className="camera fade-in">
         <div>
           <div
             className="mapIH10 pixel-art"

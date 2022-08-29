@@ -456,9 +456,9 @@ const FarmMap = (props) => {
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 724, 724, 0, 4322, 4323, 4323, 0, 0,
-      0, 0, 0, 700, 701, 721, 0, 635, 636, 639, 640, 641, 636, 642, 722, 701,
-      702, 703, 0, 0, 0, 0, 1915, 1632, 1633, 1634, 0, 0, 0, 0, 3435, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 700, 701, 721, 0, 635, 636, 639, 0, 641, 636, 642, 722, 701, 702,
+      703, 0, 0, 0, 0, 1915, 1632, 1633, 1634, 0, 0, 0, 0, 3435, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0,
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 3317, 3318, 3319, 4340, 4341, 4341, 0,
@@ -521,7 +521,7 @@ const FarmMap = (props) => {
   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
   console.log(
     'VALUE Right',
-    currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+    currentMap[yPlayerIndex.current][xPlayerIndex.current]
   );
 
 
@@ -535,7 +535,7 @@ const FarmMap = (props) => {
     //         gridRow: i+1,
     //         color: "white",
     //     }}
-    //     > {currentMap2[i][j]}
+    //     > {currentMap[i][j]}
 
     //     </button>)
 
@@ -543,6 +543,7 @@ const FarmMap = (props) => {
     //   }
     // setGridArray(tempGrid)
     // },[])
+
 
 
   // UseEffect for transitiong between map Coordinates
@@ -554,14 +555,14 @@ const FarmMap = (props) => {
     ){
       props.active('townMap1', 'farmMap');
     }
+    //FARMMAP
+    if (
+      (yPlayerIndex.current === 35 && xPlayerIndex.current === 29) 
+    ) {
+      props.active('indoorHouse10', 'farmMap');
+    }
   }, [yTransformVar]);
 
-  //create an array. If the current array does not contain the value. shift it.
-
-  // console.log(yPlayerIndex.current, xPlayerIndex.current)
-  // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
-  //event listen for enter
-  
 
   //UseEffect for keeping track of the previous maps and maps/player positions
   useEffect(() => {
@@ -577,7 +578,22 @@ const FarmMap = (props) => {
       setYTransformVar(-80);
       facing.current = "down"
     }
+
+    //indoorhouse 10
+    if (props.previousMap === 'indoorHouse10') {
+      //setYCord
+      yPlayerIndex.current = 36;
+      //setXcord
+      xPlayerIndex.current = 29;
+      //set xTransform
+      setXTransformVar(-1244);
+      //set yTransform
+      setYTransformVar(-2004);
+      facing.current = 'down';
+    }
   }, []);
+
+
 
   //listens for the current down key and saves it as the currentkey state
   //wrapping in a useEffect prevents compounding event listeners
