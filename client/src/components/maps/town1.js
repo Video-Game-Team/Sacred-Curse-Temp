@@ -1168,7 +1168,7 @@ useEffect(()=>{
   if (props.previousMap==="farmMap"){
   
     //setYCord
-    yPlayerIndex.current = 78
+    yPlayerIndex.current = 77
     //setXcord
     xPlayerIndex.current = 36
     //set xTransform
@@ -1180,7 +1180,7 @@ useEffect(()=>{
   
   if (props.previousMap==='theWall'){
     //setYCord
-    yPlayerIndex.current = 6;
+    yPlayerIndex.current = 5;
     //setXcord
     xPlayerIndex.current = 36;
     //set xTransform
