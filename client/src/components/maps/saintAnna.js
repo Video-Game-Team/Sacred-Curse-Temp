@@ -387,6 +387,13 @@ const SaintAnna = (props) => {
     ],
   ];
 
+
+
+
+
+
+
+
   let currentMap = [
     [
       96, 95, 96, 95, 96, 95, 96, 95, 96, 95, 96, 95, 96, 95, 96, 95, 96, 95,
@@ -722,12 +729,11 @@ const SaintAnna = (props) => {
     ],
     [
       128, 127, 128, 127, 128, 127, 128, 127, 128, 127, 128, 127, 128, 127, 128,
-      127, 128, 127, 128, 127, 0, 0, 0, 0, 0, 0, 0, 4482, 4483, 4484, 4485,
-      4486, 4487, 4488, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5284, 5285, 3377, 3378, 3379, 0, 236,
-      237, 238, 239, 239, 240, 237, 238, 237, 238, 237, 237, 238, 239, 240, 239,
-      240, 237, 238, 239, 240, 238, 239, 240, 39, 40, 39, 40, 39, 40, 39, 40,
-      39, 40,
+      127, 128, 127, 128, 127, 0, 0, 0, 0, 0, 0, 0, 4482, 4483, 4484, 4485, 0,
+      4487, 4488, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5284, 5285, 3377, 3378, 3379, 0, 236, 237,
+      238, 239, 239, 240, 237, 238, 237, 238, 237, 237, 238, 239, 240, 239, 240,
+      237, 238, 239, 240, 238, 239, 240, 39, 40, 39, 40, 39, 40, 39, 40, 39, 40,
     ],
     [
       80, 79, 80, 79, 80, 79, 80, 79, 80, 79, 80, 79, 80, 79, 80, 79, 80, 79,
@@ -829,29 +835,57 @@ const SaintAnna = (props) => {
     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
   );
 
-  //   useEffect(()=>{
-  //     let tempGrid=[]
-  //     for (let i=0; i<currentMap.length; i++){
-  //       for (let j=0; j<currentMap[i].length; j++){
-  //         tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-  //           gridColumn: j+1,
-  //           gridRow: i+1,
-  //           color: "white",
-  //       }}
-  //       > {currentMap[i][j]}
+    // useEffect(()=>{
+    //   let tempGrid=[]
+    //   for (let i=0; i<currentMap.length; i++){
+    //     for (let j=0; j<currentMap[i].length; j++){
+    //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+    //         gridColumn: j+1,
+    //         gridRow: i+1,
+    //         color: "white",
+    //     }}
+    //     > {currentMap[i][j]}
 
-  //       </button>)
+    //     </button>)
 
-  //       }
-  //     }
-  //   setGridArray(tempGrid)
+    //     }
+    //   }
+    // setGridArray(tempGrid)
 
-  //   },[])
+    // },[])
 
-  //create an array. If the current array does not contain the value. shift it.
 
-  // console.log(yPlayerIndex.current, xPlayerIndex.current)
-  // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+  
+
+   useEffect(() => {
+     if (props.previousMap === 'indoorHouse6') {
+       //setYCord
+       yPlayerIndex.current = 39;
+       //setXcord
+       xPlayerIndex.current = 31;
+       //set xTransform
+       setXTransformVar(-1368);
+       //set yTransform
+       setYTransformVar(-2192);
+       facing.current = 'down';
+     }
+   }, []);
+
+ //  // UseEffect Keeping track of player conditions
+ useEffect(() => {
+   //yPlayerIndex up and down values
+   // TheWall Map check conditions
+   if (yPlayerIndex.current === 38 && xPlayerIndex.current === 31) {
+     props.active('indoorHouse6', 'saintAnna');
+   }
+ }, [yPlayerIndex.current]);    
+
+
+
+
+
+
+
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {
@@ -1087,7 +1121,7 @@ const SaintAnna = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="camera">
+      <div className="camera fade-in">
         <div>
           <div
             className="mapSA pixel-art"
