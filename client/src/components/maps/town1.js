@@ -10,9 +10,9 @@ import '../../town1.css';
 
 const TownMap1 = (props) => {
   //this sets the x Cordinate to transform the map and character location
-  const [xTransformVar, setXTransformVar] = useState(-1712);
+  const [xTransformVar, setXTransformVar] = useState(-1690);
   //this sets the y Cordinate to transform the map and character location
-  const [yTransformVar, setYTransformVar] = useState(-4642);
+  const [yTransformVar, setYTransformVar] = useState(-4690);
   //
 
 
@@ -33,7 +33,7 @@ const TownMap1 = (props) => {
 
   const xBank = useRef(0);
   const yBank = useRef(0);
-  const yPlayerIndex = useRef(77);
+  const yPlayerIndex = useRef(78);
   const xPlayerIndex = useRef(36);
   const [gridArray, setGridArray]= useState([])
 
@@ -1159,40 +1159,40 @@ let currentMap = [
 // setGridArray(tempGrid)
 // },[])
 
-  // console.log('poop');
-  // console.log(props.previousMap);
-//UseEffect for keeping track of the previous maps and maps/player positions
+  console.log('poop');
+  console.log(props.previousMap);
+
 
 
 useEffect(()=>{
   if (props.previousMap==="farmMap"){
   
     //setYCord
-    yPlayerIndex.current = 77
+    yPlayerIndex.current = 78
     //setXcord
     xPlayerIndex.current = 36
     //set xTransform
-    setXTransformVar(-1712)
+    setXTransformVar(-1690)
     //set yTransform
-    setYTransformVar(-4706)
+    setYTransformVar(-4690)
     facing.current = 'up';
   }
   
   if (props.previousMap==='theWall'){
     //setYCord
-    yPlayerIndex.current = 5;
+    yPlayerIndex.current = 6;
     //setXcord
     xPlayerIndex.current = 36;
     //set xTransform
-    setXTransformVar(-1710);
+    setXTransformVar(-1686);
     //set yTransform
-    setYTransformVar(-98);
+    setYTransformVar(-82);
      facing.current = 'down';
   }
 },[])
   
 
-// UseEffect Keeping track of player conditions
+
   useEffect(() => {
     //yPlayerIndex up and down values
    // TheWall Map check conditions
@@ -1206,7 +1206,7 @@ useEffect(()=>{
     }
     
     // TheFarmMap check conditions
-     if (yPlayerIndex.current === 78 && xPlayerIndex.current === 36) {
+     if (yPlayerIndex.current === 79 && xPlayerIndex.current === 36) {
        props.active('farmMap', 'townMap1');
      }
      
@@ -1406,7 +1406,7 @@ useEffect(()=>{
               facing={facing.current}
               walking={walker}
               style={{
-                transform: `translate3d( ${578-xTransformVar}px, ${258-yTransformVar}px, 0 )`,
+                transform: `translate3d( ${600-xTransformVar}px, ${272-yTransformVar}px, 0 )`,
               }}
             >
               <div className="character_spritesheet pixel-art"></div>

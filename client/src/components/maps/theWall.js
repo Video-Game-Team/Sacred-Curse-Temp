@@ -1145,29 +1145,31 @@ const TheWall = (props) => {
 
   console.log(currentMap2[yPlayerIndex.current][xPlayerIndex.current]);
 
-  //create an array. If the current array does not contain the value. shift it.
-
-  // console.log(yPlayerIndex.current, xPlayerIndex.current)
-  // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
-
-
-useEffect(() => {
-  if (props.previousMap === 'townMap1') {
-    //setYCord
-    yPlayerIndex.current = 27;
-    //setXcord
-    xPlayerIndex.current = 20;
-    //set xTransform
-    setXTransformVar(-662);
-    //set yTransform
-    setYTransformVar(-1428);
-    facing.current = 'up';
-  }
-}, []);
 
 
 
+  // useEffect(() => {
+  //   if (props.previousMap === 'townMap1') {
+  //     //setYCord
+  //     yPlayerIndex.current = 27;
+  //     //setXcord
+  //     xPlayerIndex.current = 20;
+  //     //set xTransform
+  //     setXTransformVar(-662);
+  //     //set yTransform
+  //     setYTransformVar(-1428);
+  //     facing.current = 'up';
+  //   }
+  // }, []);
 
+  // // UseEffect Keeping track of player conditions
+  useEffect(() => {
+    // yPlayerIndex up and down values
+    // TheWall Map check conditions
+    if (yPlayerIndex.current === 28 && xPlayerIndex.current === 20) {
+      props.active('townMap1', 'theWall');
+    }
+  }, [yPlayerIndex.current]);
 
 
 
@@ -1230,23 +1232,6 @@ useEffect(() => {
       }
     });
   }, []);
-
-
-
-
-  // // UseEffect Keeping track of player conditions
-  useEffect(() => {
-    // yPlayerIndex up and down values
-    // TheWall Map check conditions
-    if (yPlayerIndex.current === 28 && xPlayerIndex.current === 20) {
-      props.active('townMap1', 'theWall');
-    }
-  }, [yPlayerIndex.current]);
-
-
-
-
-
 
   //listens for the current down key and saves it as the currentkey state
   //wrapping in a useEffect prevents compounding event listeners
