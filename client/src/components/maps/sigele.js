@@ -1548,15 +1548,15 @@ const Sigele = (props) => {
       23, 24, 23, 24, 2279, 0, 0, 0, 0, 0, 2655, 0, 18162, 18165, 18193, 18165,
       18163, 18191, 18164, 0, 18162, 18165, 18193, 18165, 18163, 18192, 18164,
       0, 18162, 18165, 18193, 18165, 18163, 18192, 18164, 0, 18162, 18165,
-      18193, 18165, 18163, 18190, 18164, 0, 3380, 18165, 18193, 18165, 18163,
-      18190, 18164, 0, 0, 1673, 1674, 0, 0, 0, 0, 0, 0, 1323, 1324, 2756, 0, 0,
-      2756, 1323, 1324, 0, 0, 0, 0, 0, 0, 6552, 6553, 6554, 6554, 6555, 6555,
-      6556, 6552, 6555, 6097, 6098, 6099, 6100, 6552, 6553, 6554, 6555, 6556, 0,
-      6095, 6096, 6097, 6098, 6099, 6100, 6095, 6096, 6097, 6098, 6099, 6100, 0,
+      18193, 18165, 18163, 18190, 18164, 0, 3380, 18165, 0, 18165, 18163, 18190,
+      18164, 0, 0, 1673, 1674, 0, 0, 0, 0, 0, 0, 1323, 1324, 2756, 0, 0, 2756,
+      1323, 1324, 0, 0, 0, 0, 0, 0, 6552, 6553, 6554, 6554, 6555, 6555, 6556,
+      6552, 6555, 6097, 6098, 6099, 6100, 6552, 6553, 6554, 6555, 6556, 0, 6095,
+      6096, 6097, 6098, 6099, 6100, 6095, 6096, 6097, 6098, 6099, 6100, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 17111, 17112, 17113, 0, 0, 0, 0, 0, 0, 0, 0, 16478,
-      0, 0, 0, 16321, 16322, 0, 0, 0, 16478, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2279, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 17111, 17112, 17113, 0, 0, 0, 0, 0, 0, 0, 0, 16478, 0, 0,
+      0, 16321, 16322, 0, 0, 0, 16478, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2279, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0,
     ],
     [
       23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 7, 8, 0, 455, 456, 0, 0, 0, 0, 0,
@@ -2288,35 +2288,58 @@ const Sigele = (props) => {
   ];
 
 
-//   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-//   console.log(
-//     'VALUE Right',
-//     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-//   );
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+  );
 
-//   useEffect(()=>{
-//     let tempGrid=[]
-//     for (let i=0; i<currentMap.length; i++){
-//       for (let j=0; j<currentMap[i].length; j++){
-//         tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-//           gridColumn: j+1,
-//           gridRow: i+1,
-//           color: "black",
-//       }}
-//       > {currentMap2[i][j]}
+  // useEffect(()=>{
+  //   let tempGrid=[]
+  //   for (let i=0; i<currentMap.length; i++){
+  //     for (let j=0; j<currentMap[i].length; j++){
+  //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+  //         gridColumn: j+1,
+  //         gridRow: i+1,
+  //         color: "black",
+  //     }}
+  //     > {currentMap2[i][j]}
 
-//       </button>)
+  //     </button>)
 
-//       }
-//     }
-//   setGridArray(tempGrid)
+  //     }
+  //   }
+  // setGridArray(tempGrid)
+  // },[])
 
-//   },[])
 
-  //create an array. If the current array does not contain the value. shift it.
+useEffect(() => {
+  if (props.previousMap === 'indoorHouse4') {
+    //setYCord
+    yPlayerIndex.current = 38;
+    //setXcord
+    xPlayerIndex.current = 86;
+    //set xTransform
+    setXTransformVar(-4892);
+    //set yTransform
+    setYTransformVar(-2132);
+    facing.current = 'down';
+  }
+}, []);
 
-  // console.log(yPlayerIndex.current, xPlayerIndex.current)
-  // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+
+
+useEffect(() => {
+  //yPlayerIndex up and down values
+  // trains Map check conditions
+  if (yPlayerIndex.current === 37 && xPlayerIndex.current === 86)  {
+    props.active('indoorHouse4', 'sigele');
+  }
+}, [yPlayerIndex.current]);
+
+
+
+
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {
