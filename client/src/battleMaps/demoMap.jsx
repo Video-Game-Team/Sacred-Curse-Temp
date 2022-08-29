@@ -38,9 +38,9 @@ const [playerOptions, setPlayerOptions]= useState()
 const [activeEnemyList, setActiveEnemyList]=useState([Enemies.BlueMegaTank, Enemies.GreenInfantry])
 
 
-const [mapState, setMapState]= useState([[0,0,0,0,activeEnemyList[0],0,0,0],[0,0,0,0,demons[1],0,1,0],[0,0,0,0,0,0,activeEnemyList[1],0],[0,0,0,0,1,0,0,0],[0,1,0,0,0,0,0,Enemies.GreenInfantry],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
+const [mapState, setMapState]= useState([[0,0,0,demons[6],activeEnemyList[0],demons[2],0,0],[0,0,0,0,demons[1],0,1,0],[0,0,0,0,0,0,demons[0],0],[0,0,0,0,1,0,0,0],[0,1,0,0,0,0,0,activeEnemyList[1]],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
 
-const [curseMap, setCurseMap]= useState([[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,0],[0,0,0,0,0,0,0,0],[0,0,0,0,1,0,0,0],[0,1,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
+const [curseMap, setCurseMap]= useState([[0,0,0,0,"Haunting",0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
 
 
 const actionButtons= [<button className='actionButton' onClick={()=>moveButton()} style={{borderColor: "lime", 
@@ -72,6 +72,51 @@ setSummoningList(summonsList)
 },[randomTrigger])
 
 
+//turn Loopc
+// console.log(activeEnemyList)
+//
+useEffect(()=>{
+
+   let tempDemonsList=demons;
+   let tempEnemiesList=activeEnemyList;
+   let tempMap=mapState
+ 
+    for (let i=0; i<mapState.length; i++){
+        for (let j=0; j<mapState.length; j++)
+        if (mapState[i][j] != 0 && mapState[i][j] !=1){
+            if (curseMap[i][j]===0){
+                mapState[i][j].type === "Demon" ? tempDemonsList.push(mapState[i][j]) : tempEnemiesList.push(mapState[i][j])
+            }
+            if (curseMap[i][j]=="Blessing" && mapState[i][j].type==="Demon"){
+                
+                let newDemon=mapState[i][j];
+                newDemon.defense=(newDemon.defense+1);
+                if (newDemon.defense>newDemon.health){
+                    newDemon.defense=newDemon.health
+                } 
+                tempDemonsList.push(newDemon)
+            }
+            if (curseMap[i][j]=="Haunting" && mapState[i][j].type!="Demon"){
+                
+                let newEnemy=mapState[i][j];
+                newEnemy.defense=(newEnemy.defense-1);
+                if (newEnemy.defense<=0){
+                    tempMap[i][j]=0
+                }
+                else{
+                    tempEnemiesList.push(mapState[i][j])
+                }
+               
+
+            }
+        }
+    }
+
+    setMapState(tempMap)
+    setActiveDemonsList(tempDemonsList)
+    setActiveEnemyList(tempEnemiesList)
+
+},[endTurn])
 
 let buttonArr=[];
 for (let y=0; y<mapState.length; y++){
@@ -284,7 +329,7 @@ if (current.attackType=="melee" && current.active){
         if (upI<0) break;
     }
     if (upI>=0 && moveIterator<=current.move  && mapState[upI][xCord].type==="LandUnit"){
-        console.log("hi")
+
         tempButton= document.getElementById(`${upI}${xCord}`);
     tempButton.style.backgroundColor= "red";
     moveIterator++;
@@ -309,7 +354,7 @@ while(mapState[downI][xCord]===0 && moveIterator<current.move){
 }
 
 if (downI<mapState.length && moveIterator<=current.move  && mapState[downI][xCord].type==="LandUnit"){
-    console.log("hi")
+
     tempButton= document.getElementById(`${downI}${xCord}`);
 tempButton.style.backgroundColor= "red";
 
@@ -373,7 +418,7 @@ useEffect(()=>{
     {
         let tempArray=[];
         let tempDemon=null;
-        console.log(activeDemonsList)
+
         for(let i=0; i<activeDemonsList.length;i++){
            
                  tempDemon=activeDemonsList[i];
@@ -487,23 +532,39 @@ if (attackTrigger){
     if(current.active){
     if(enemy.type){
         if(enemy.type==="LandUnit"){
-            if(current.ability!=="Stealth"){
+            if(current.ability!=="Void"){
+
                 let newDefense= enemy.attackType === "Direct" ? (current.defense-enemy.attack) : current.defense;
+            
                 let newEnemyDefense=enemy.defense-current.attack;
-                if (newDefense<=0){
-                    let tempDemonsList=activeDemonsList.filter(el=> el.name != current.name);
-                    console.log(tempDemonsList)
-                    setActiveDemonsList(tempDemonsList);
-                    let tempMap=mapState;
-                    tempMap[yCord][xCord]=0;
-                    setMapState(tempMap);
-                }
-                if (newEnemyDefense<=0){           
+
+                if (newEnemyDefense<=0 && newDefense>0){           
                     let tempMap=mapState;
                     tempMap[yCord][xCord]=0;
                     tempMap[y][x]=current;
                     setMapState(tempMap);
                 }
+                if (newDefense<=0 && newEnemyDefense>0){
+                    let tempDemonsList=activeDemonsList.filter(el=> el.name != current.name);
+    
+                    setActiveDemonsList(tempDemonsList);
+                    let tempMap=mapState;
+                    tempMap[yCord][xCord]=0;
+
+                    setMapState(tempMap);
+                }
+                if (newDefense<0 && newEnemyDefense<0){
+                    let tempDemonsList=activeDemonsList.filter(el=> el.name != current.name);
+                    let tempActiveEnemiesList=activeEnemyList.filter(el=>el.name===enemy.name)
+                    setActiveDemonsList(tempDemonsList);
+                    setActiveEnemyList(tempActiveEnemiesList)
+                    let tempMap=mapState;
+                    tempMap[yCord][xCord]=0;
+                    tempMap[y][x]=0;
+                    setMapState(tempMap);
+                    
+                }
+
                 if (newDefense>0){
 
                     let tempDemonsList=[];
@@ -517,13 +578,34 @@ if (attackTrigger){
                         else {
                             tempDemonsList.push(activeDemonsList[i])
                         }
-                        console.log(tempDemonsList)
+                        // console.log(tempDemonsList)
                         
                     }
                     setActiveDemonsList(tempDemonsList)
 
 
                 }
+                if (newEnemyDefense>0){
+
+                    let tempEnemiesList=[];
+                    for (let i=0; i<activeEnemyList.length; i++){
+                        if (activeEnemyList[i].name===enemy.name){
+                            let tempObject=enemy;
+                            tempObject.defense=newEnemyDefense;
+                            tempObject.active=false;
+                            tempDemonsList.push(tempObject);
+                        }
+                        else {
+                            tempDemonsList.push(activeDemonsList[i])
+                        }
+                 
+                        
+                    }
+                    setActiveEnemyList(tempEnemiesList)
+
+
+                }
+
 
                 // if (newEnemyDefense>0){
                 //     let tempEnemiesList=[];
