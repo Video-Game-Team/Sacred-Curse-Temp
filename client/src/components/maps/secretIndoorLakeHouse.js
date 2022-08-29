@@ -34,7 +34,7 @@ const SecretIndoorLakeHouse = (props) => {
   const xPlayerIndex = useRef(4);
   const [gridArray, setGridArray] = useState([]);
 
-  let currentMap2 = [
+  let currentMap = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -52,7 +52,7 @@ const SecretIndoorLakeHouse = (props) => {
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   ];
 
-  let currentMap = [
+  let currentMap2 = [
     [
       5216, 5211, 5215, 5216, 2464, 2465, 5216, 2436, 5215, 2461, 5217, 5215,
       2455, 2456, 5216,
