@@ -77,46 +77,47 @@ setSummoningList(summonsList)
 //
 useEffect(()=>{
 
-   let tempDemonsList=demons;
-   let tempEnemiesList=activeEnemyList;
-   let tempMap=mapState
+    let tempDemonsList=demons;
+    let tempEnemiesList=activeEnemyList;
+    let tempMap=mapState
+  
+     for (let i=0; i<mapState.length; i++){
+         for (let j=0; j<mapState.length; j++)
+         if (mapState[i][j] != 0 && mapState[i][j] !=1){
+             if (curseMap[i][j]===0){
+                 mapState[i][j].type === "Demon" ? tempDemonsList.push(mapState[i][j]) : tempEnemiesList.push(mapState[i][j])
+             }
+             if (curseMap[i][j]=="Blessing" && mapState[i][j].type==="Demon"){
+                 
+                 let newDemon=mapState[i][j];
+                 newDemon.defense=(newDemon.defense+1);
+                 if (newDemon.defense>newDemon.health){
+                     newDemon.defense=newDemon.health
+                 } 
+                 tempDemonsList.push(newDemon)
+             }
+             if (curseMap[i][j]=="Haunting" && mapState[i][j].type!="Demon"){
+                 
+                 let newEnemy=mapState[i][j];
+                 newEnemy.defense=(newEnemy.defense-1);
+                 if (newEnemy.defense<=0){
+                     tempMap[i][j]=0
+                 }
+                 else{
+                     tempEnemiesList.push(mapState[i][j])
+                 }
+                
  
-    for (let i=0; i<mapState.length; i++){
-        for (let j=0; j<mapState.length; j++)
-        if (mapState[i][j] != 0 && mapState[i][j] !=1){
-            if (curseMap[i][j]===0){
-                mapState[i][j].type === "Demon" ? tempDemonsList.push(mapState[i][j]) : tempEnemiesList.push(mapState[i][j])
-            }
-            if (curseMap[i][j]=="Blessing" && mapState[i][j].type==="Demon"){
-                
-                let newDemon=mapState[i][j];
-                newDemon.defense=(newDemon.defense+1);
-                if (newDemon.defense>newDemon.health){
-                    newDemon.defense=newDemon.health
-                } 
-                tempDemonsList.push(newDemon)
-            }
-            if (curseMap[i][j]=="Haunting" && mapState[i][j].type!="Demon"){
-                
-                let newEnemy=mapState[i][j];
-                newEnemy.defense=(newEnemy.defense-1);
-                if (newEnemy.defense<=0){
-                    tempMap[i][j]=0
-                }
-                else{
-                    tempEnemiesList.push(mapState[i][j])
-                }
-               
+             }
+         }
+     }
+ 
+     setMapState(tempMap)
+     setActiveDemonsList(tempDemonsList)
+     setActiveEnemyList(tempEnemiesList)
+ 
+ },[endTurn])
 
-            }
-        }
-    }
-
-    setMapState(tempMap)
-    setActiveDemonsList(tempDemonsList)
-    setActiveEnemyList(tempEnemiesList)
-
-},[endTurn])
 
 let buttonArr=[];
 for (let y=0; y<mapState.length; y++){
@@ -553,7 +554,7 @@ if (attackTrigger){
 
                     setMapState(tempMap);
                 }
-                if (newDefense<0 && newEnemyDefense<0){
+                if (newDefense<=0 && newEnemyDefense<=0){
                     let tempDemonsList=activeDemonsList.filter(el=> el.name != current.name);
                     let tempActiveEnemiesList=activeEnemyList.filter(el=>el.name===enemy.name)
                     setActiveDemonsList(tempDemonsList);
@@ -596,7 +597,7 @@ if (attackTrigger){
                             tempDemonsList.push(tempObject);
                         }
                         else {
-                            tempDemonsList.push(activeDemonsList[i])
+                            tempEnemiesList.push(activeDemonsList[i])
                         }
                  
                         
