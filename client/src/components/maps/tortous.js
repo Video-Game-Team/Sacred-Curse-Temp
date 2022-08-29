@@ -1652,11 +1652,11 @@ const Tortous = (props) => {
     ],
   ];
 
-  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  console.log(
-    'VALUE Right',
-    currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-  );
+  // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  // console.log(
+  //   'VALUE Right',
+  //   currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+  // );
 
   // useEffect(()=>{
   //   let tempGrid=[]
@@ -1722,89 +1722,87 @@ const Tortous = (props) => {
           setYTransformVar(-3148);
           facing.current = 'left';
         }
-   }, []);
+           if (props.previousMap === 'hotelIndoors') {
+             //setYCord
+             yPlayerIndex.current = 55;
+             //setXcord
+             xPlayerIndex.current = 51;
+             //set xTransform
+             setXTransformVar(-2648);
+             //set yTransform
+             setYTransformVar(-3216);
+             facing.current = 'down';
+           }
+           if (props.previousMap === 'oldManCrawfordInside') {
+             //setYCord
+             yPlayerIndex.current = 70;
+             //setXcord
+             xPlayerIndex.current = 88;
+             //set xTransform
+             setXTransformVar(-5020);
+             //set yTransfor
+             setYTransformVar(-4180);
+             facing.current = 'down';
+           }
+           if (props.previousMap === 'indoorHouse1') {
+             //setYCord
+             yPlayerIndex.current = 81;
+             //setXcord
+             xPlayerIndex.current = 39;
+             //set xTransform
+             setXTransformVar(-1880);
+             //set yTransfor
+             setYTransformVar(-4880);
+             facing.current = 'down';
+           }
+           if (props.previousMap === 'indoorHouse3') {
+             //setYCord
+             yPlayerIndex.current = 24;
+             //setXcord
+             xPlayerIndex.current = 72;
+             //set xTransform
+             setXTransformVar(-3992);
+             //set yTransfor
+             setYTransformVar(-1232);
+             facing.current = 'down';
+           }
+           if (props.previousMap === 'indoorHouse7') {
+             //setYCord
+             yPlayerIndex.current = 89;
+             //setXcord
+             xPlayerIndex.current = 94;
+             //set xTransform
+             setXTransformVar(-4760);
+             //set yTransfor
+             setYTransformVar(-5392);
+             facing.current = 'down';
+           }
+           if (props.previousMap === 'indoorHouse8') {
+             //setYCord
+             yPlayerIndex.current = 89;
+             //setXcord
+             xPlayerIndex.current = 64;
+             //set xTransform
+             setXTransformVar(-3484);
+             //set yTransfor
+             setYTransformVar(-5396);
+             facing.current = 'down';
+           }
+           if (props.previousMap === 'indoorHouse2') {
+             //setYCord
+             yPlayerIndex.current = 89;
+             //setXcord
+             xPlayerIndex.current = 33;
+             //set xTransform
+             setXTransformVar(-1496);
+             //set yTransfor
+             setYTransformVar(-5396);
+             facing.current = 'down';
+           }
+         }, []);
 
 
-  //INDOOR USE EFFECT
-        useEffect(() => {
-        if (props.previousMap === 'hotelIndoors') {
-          //setYCord
-          yPlayerIndex.current = 55;
-          //setXcord
-          xPlayerIndex.current = 51;
-          //set xTransform
-          setXTransformVar(-2648);
-          //set yTransform
-          setYTransformVar(-3216);
-          facing.current = 'down';
-        }
-         if (props.previousMap === 'oldManCrawfordInside') {
-           //setYCord
-           yPlayerIndex.current = 70;
-           //setXcord
-           xPlayerIndex.current = 88;
-           //set xTransform
-           setXTransformVar(-5020);
-           //set yTransfor
-           setYTransformVar(-4180);
-           facing.current = 'down';
-         }
-         if (props.previousMap === 'indoorHouse1') {
-           //setYCord
-           yPlayerIndex.current = 81;
-           //setXcord
-           xPlayerIndex.current = 39;
-           //set xTransform
-           setXTransformVar(-1880);
-           //set yTransfor
-           setYTransformVar(-4880);
-           facing.current = 'down';
-         }
-         if (props.previousMap === 'indoorHouse3') {
-           //setYCord
-           yPlayerIndex.current = 24;
-           //setXcord
-           xPlayerIndex.current = 72;
-           //set xTransform
-           setXTransformVar(-3992);
-           //set yTransfor
-           setYTransformVar(-1232);
-           facing.current = 'down';
-         }
-          if (props.previousMap === 'indoorHouse7') {
-            //setYCord
-            yPlayerIndex.current = 89;
-            //setXcord
-            xPlayerIndex.current = 94;
-            //set xTransform
-            setXTransformVar(-4760);
-            //set yTransfor
-            setYTransformVar(-5392);
-            facing.current = 'down';
-          }
-          if (props.previousMap === 'indoorHouse8') {
-            //setYCord
-            yPlayerIndex.current = 89;
-            //setXcord
-            xPlayerIndex.current = 64;
-            //set xTransform
-            setXTransformVar(-3484);
-            //set yTransfor
-            setYTransformVar(-5396);
-            facing.current = 'down';
-          }
-          if (props.previousMap === 'indoorHouse2') {
-            //setYCord
-            yPlayerIndex.current = 89;
-            //setXcord
-            xPlayerIndex.current = 33;
-            //set xTransform
-            setXTransformVar(-1496);
-            //set yTransfor
-            setYTransformVar(-5396);
-            facing.current = 'down';
-          }
-      }, []);
+
 
    
 
