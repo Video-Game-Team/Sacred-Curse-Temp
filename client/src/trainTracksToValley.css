@@ -47,15 +47,13 @@ body {
     overflow: visible;
     /* display: grid;
     grid-template-columns: repeat(46, 64px);
-    grid-template-rows: repeat(150, 64px); */
-
-
+    grid-template-rows: repeat(150, 64px);  */
 }
-/* 
-.numbers {
+
+/* .numbers {
     size: 100%;
     background: transparent;
-} */
+}  */
 
 
 .character {

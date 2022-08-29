@@ -1440,8 +1440,8 @@ const TrainTracksToValley = (props) => {
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 692, 2684355204,
       2684355188, 2684355172, 2684355156, 692, 17247, 17248, 17249, 17247,
-      17248, 17249, 17247, 17248, 17249, 17247, 17248, 17249, 3221241901, 2614,
-      2775, 2776, 2615, 2616, 2616, 2615, 2616, 2615, 2615,
+      17248, 0, 0, 17248, 17249, 17247, 17248, 17249, 3221241901, 2614, 2775,
+      2776, 2615, 2616, 2616, 2615, 2616, 2615, 2615,
     ],
     [
       435, 436, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 692, 2684355204,
@@ -1494,13 +1494,42 @@ const TrainTracksToValley = (props) => {
   //     }
   //   }
   // setGridArray(tempGrid)
-
   // },[])
 
   // create an array. If the current array does not contain the value. shift it.
 
   // console.log(yPlayerIndex.current, xPlayerIndex.current)
   // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+
+
+ useEffect(() => {
+   if (props.previousMap === 'tortousFork') {
+     //setYCord
+     yPlayerIndex.current = 143;
+     //setXcord
+     xPlayerIndex.current = 29;
+     //set xTransform
+     setXTransformVar(-1241);
+     //set yTransform
+     setYTransformVar(-8848);
+     facing.current = 'up';
+   }
+ }, []);
+
+
+
+    useEffect(() => {
+      // yPlayerIndex up and down values
+      // trains Map check conditions
+      if (
+        (yPlayerIndex.current === 144 && xPlayerIndex.current === 28) ||
+        (yPlayerIndex.current === 144 && xPlayerIndex.current === 29) 
+      ) {
+        props.active('tortousFork', 'trainTracksToValley');
+      }
+    }, [yPlayerIndex.current]);
+
+
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {

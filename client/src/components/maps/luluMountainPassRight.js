@@ -527,14 +527,14 @@ const LuluMountainPassRight = (props) => {
 
     if (props.previousMap === 'trainTracksToSaintAnna') {
       //setYCord
-      yPlayerIndex.current = 27;
+      yPlayerIndex.current = 28;
       //setXcord
       xPlayerIndex.current = 57;
       //set xTransform
       setXTransformVar(-3024);
       //set yTransform
       setYTransformVar(-1488);
-      facing.current = 'right';
+      facing.current = 'left';
     }
   }, []);
 

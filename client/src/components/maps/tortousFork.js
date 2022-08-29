@@ -538,6 +538,17 @@ const TortousFork = (props) => {
       setYTransformVar(-264);
       facing.current = 'down';
     }
+      if (props.previousMap === 'trainTracksToValley') {
+        //setYCord
+        yPlayerIndex.current = 9;
+        //setXcord
+        xPlayerIndex.current = 18;
+        //set xTransform
+        setXTransformVar(-532);
+        //set yTransform
+        setYTransformVar(-272);
+        facing.current = 'down';
+      }
  }, []);
 
 

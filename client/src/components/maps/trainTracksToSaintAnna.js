@@ -1432,7 +1432,7 @@ const TrainTracksToSaintAnna = (props) => {
 
 
  useEffect(() => {
-   if (props.previousMap === 'luluMountainPass') {
+   if (props.previousMap === 'luluMountainPassRight') {
      //setYCord
      yPlayerIndex.current = 72;
      //setXcord
@@ -1715,7 +1715,7 @@ const TrainTracksToSaintAnna = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="camera">
+      <div className="camera fade-in">
         <div>
           <div
             className="mapTTTSA pixel-art"

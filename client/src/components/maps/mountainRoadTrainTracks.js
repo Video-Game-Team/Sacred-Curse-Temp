@@ -715,11 +715,11 @@ const MountainRoadTrainTracks = (props) => {
      //setYCord
      yPlayerIndex.current = 63;
      //setXcord
-     xPlayerIndex.current = 14;
+     xPlayerIndex.current = 13;
      //set xTransform
-     setXTransformVar(-237);
+     setXTransformVar(-217);
      //set yTransform
-     setYTransformVar(-3732);
+     setYTransformVar(-3728);
      facing.current = 'up';
    }
 
