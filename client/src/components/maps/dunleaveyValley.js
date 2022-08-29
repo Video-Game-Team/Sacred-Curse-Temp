@@ -5030,12 +5030,12 @@ const DunleaveyValley = (props) => {
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 19451, 19452, 19453, 19451, 19452, 19453, 19451, 19452,
-      19453, 19451, 19452, 19453, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 19451, 19452, 19453, 19451, 19452, 0, 0, 0, 19453,
+      19451, 19452, 19453, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13131, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13131, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0,
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13131, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -5135,35 +5135,52 @@ const DunleaveyValley = (props) => {
     ],
   ];
 
-  // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  // console.log(
-  //   'VALUE Right',
-  //   currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-  // );
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+  );
 
-  //   useEffect(()=>{
-  //     let tempGrid=[]
-  //     for (let i=0; i<currentMap.length; i++){
-  //       for (let j=0; j<currentMap[i].length; j++){
-  //         tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-  //           gridColumn: j+1,
-  //           gridRow: i+1,
-  //           color: "white",
-  //       }}
-  //       > {currentMap[i][j]}
+    // useEffect(()=>{
+    //   let tempGrid=[]
+    //   for (let i=0; i<currentMap.length; i++){
+    //     for (let j=0; j<currentMap[i].length; j++){
+    //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+    //         gridColumn: j+1,
+    //         gridRow: i+1,
+    //         color: "white",
+    //     }}
+    //     > {currentMap[i][j]}
 
-  //       </button>)
+    //     </button>)
 
-  //       }
-  //     }
-  //   setGridArray(tempGrid)
-
-  //   },[])
+    //     }
+    //   }
+    // setGridArray(tempGrid)
+    // },[])
 
   //create an array. If the current array does not contain the value. shift it.
 
   // console.log(yPlayerIndex.current, xPlayerIndex.current)
   // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+
+
+
+
+    useEffect(() => {
+      // yPlayerIndex up and down values
+      // trains Map check conditions
+      if (
+        (yPlayerIndex.current === 211 && xPlayerIndex.current === 109) ||
+        (yPlayerIndex.current === 211 && xPlayerIndex.current === 110) ||
+        (yPlayerIndex.current === 211 && xPlayerIndex.current === 111)
+      ) {
+        props.active('trainTracksToValley', 'dunleaveyValley');
+      }
+    }, [yPlayerIndex.current]);
+
+
+
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {

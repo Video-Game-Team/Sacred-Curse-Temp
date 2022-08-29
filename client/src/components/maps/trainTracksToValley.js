@@ -1514,6 +1514,18 @@ const TrainTracksToValley = (props) => {
      setYTransformVar(-8848);
      facing.current = 'up';
    }
+
+     if (props.previousMap === 'dunleaveyValley') {
+       //setYCord
+       yPlayerIndex.current = 10;
+       //setXcord
+       xPlayerIndex.current = 29;
+       //set xTransform
+       setXTransformVar(-1249);
+       //set yTransform
+       setYTransformVar(-328);
+       facing.current = 'down';
+     }
  }, []);
 
 
@@ -1526,6 +1538,14 @@ const TrainTracksToValley = (props) => {
         (yPlayerIndex.current === 144 && xPlayerIndex.current === 29) 
       ) {
         props.active('tortousFork', 'trainTracksToValley');
+      }
+
+      if (
+        (yPlayerIndex.current === 9 && xPlayerIndex.current === 28) ||
+        (yPlayerIndex.current === 9 && xPlayerIndex.current === 29) ||
+        (yPlayerIndex.current === 9 && xPlayerIndex.current === 30)
+      ) {
+        props.active('dunleaveyValley', 'trainTracksToValley');
       }
     }, [yPlayerIndex.current]);
 
