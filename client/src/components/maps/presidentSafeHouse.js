@@ -109,10 +109,36 @@ const PresidentSafeHouse = (props) => {
 
 //     },[])
 
-  //create an array. If the current array does not contain the value. shift it.
 
-  // console.log(yPlayerIndex.current, xPlayerIndex.current)
-  // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+
+   useEffect(() => {
+     if (props.previousMap === 'mountainTown') {
+       //setYCord
+       yPlayerIndex.current = 13;
+       //setXcord
+       xPlayerIndex.current = 4;
+       //set xTransform
+       setXTransformVar(360);
+       //set yTransform
+       setYTransformVar(-524);
+       facing.current = 'up';
+     }
+   }, []);
+
+  //  //  //  //INDOOR USE EFFECT
+   useEffect(() => {
+     if (
+      (yPlayerIndex.current === 14 && xPlayerIndex.current === 3) ||
+     (yPlayerIndex.current === 14 && xPlayerIndex.current === 4) 
+     ){
+       props.active('mountainTown', 'presidentSafeHouse');
+     }
+   }, [yPlayerIndex.current]);  
+
+
+
+
+
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {
@@ -347,7 +373,7 @@ const PresidentSafeHouse = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="camera">
+      <div className="camera fade-in">
         <div>
           <div
             className="mapPSH pixel-art"

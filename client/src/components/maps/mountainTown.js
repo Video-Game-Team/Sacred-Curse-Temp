@@ -597,6 +597,10 @@ const MountainTown = (props) => {
     ],
   ];
 
+
+
+
+
   let currentMap = [
     [
       15417, 15417, 15417, 15417, 15417, 15417, 15417, 15417, 15383, 15383,
@@ -973,10 +977,10 @@ const MountainTown = (props) => {
       15417, 15417, 15417, 15417, 15417, 15417, 15417, 15417, 15441, 15417, 0,
       0, 0, 0, 0, 15529, 983, 984, 0, 16509, 16510, 16511, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 1469, 1470, 0, 0, 0, 0, 0, 2557, 0, 0, 0, 15957, 15927, 15928,
-      15929, 15930, 15931, 15932, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 16106, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 15527, 0, 0, 15530, 0, 0, 0, 0, 15441, 15425,
-      15417, 15417, 15417, 15417, 15417, 15417, 15417, 15417,
+      15929, 0, 15931, 15932, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 16106, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 15527, 0, 0, 15530, 0, 0, 0, 0, 15441, 15425, 15417,
+      15417, 15417, 15417, 15417, 15417, 15417, 15417,
     ],
     [
       15417, 15417, 15417, 15417, 15417, 15417, 15417, 15417, 15433, 15417, 0,
@@ -1379,35 +1383,63 @@ const MountainTown = (props) => {
     ],
   ];
 
-    // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-    // console.log(
-    //   'VALUE Right',
-    //   currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-    // );
 
-    //     useEffect(()=>{
-    //       let tempGrid=[]
-    //       for (let i=0; i<currentMap.length; i++){
-    //         for (let j=0; j<currentMap[i].length; j++){
-    //           tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-    //             gridColumn: j+1,
-    //             gridRow: i+1,
-    //             color: "white",
-    //         }}
-    //         > {currentMap2[i][j]}
 
-    //         </button>)
+    console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+    console.log(
+      'VALUE Right',
+      currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+    );
 
-    //         }
-    //       }
-    //     setGridArray(tempGrid)
+        // useEffect(()=>{
+        //   let tempGrid=[]
+        //   for (let i=0; i<currentMap.length; i++){
+        //     for (let j=0; j<currentMap[i].length; j++){
+        //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+        //         gridColumn: j+1,
+        //         gridRow: i+1,
+        //         color: "white",
+        //     }}
+        //     > {currentMap[i][j]}
 
-    //     },[])
+        //     </button>)
 
-  //create an array. If the current array does not contain the value. shift it.
+        //     }
+        //   }
+        // setGridArray(tempGrid)
+        // },[])
 
-  // console.log(yPlayerIndex.current, xPlayerIndex.current)
-  // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+
+  
+ useEffect(() => {
+   if (props.previousMap === 'presidentSafeHouse') {
+     //setYCord
+     yPlayerIndex.current = 36;
+     //setXcord
+     xPlayerIndex.current = 48;
+     //set xTransform
+     setXTransformVar(-2456);
+     //set yTransform
+     setYTransformVar(-2007);
+     facing.current = 'down';
+   }
+ }, []);
+
+//  // UseEffect Keeping track of player conditions
+ useEffect(() => {
+   //yPlayerIndex up and down values
+   // TheWall Map check conditions
+   if (yPlayerIndex.current === 35 && xPlayerIndex.current === 48) {
+     props.active('presidentSafeHouse', 'mountainTown');
+   }
+ }, [yPlayerIndex.current]);    
+
+
+
+
+
+
+
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {
@@ -1642,7 +1674,7 @@ const MountainTown = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="camera">
+      <div className="camera fade-in">
         <div>
           <div
             className="mapMT pixel-art"
