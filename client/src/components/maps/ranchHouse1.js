@@ -89,29 +89,56 @@ const RanchHouse1 = (props) => {
       currentMap2[yPlayerIndex.current][xPlayerIndex.current]
     );
 
-    //   useEffect(()=>{
-    //     let tempGrid=[]
-    //     for (let i=0; i<currentMap.length; i++){
-    //       for (let j=0; j<currentMap[i].length; j++){
-    //         tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-    //           gridColumn: j+1,
-    //           gridRow: i+1,
-    //           color: "white",
-    //       }}
-    //       > {currentMap2[i][j]}
+      // useEffect(()=>{
+      //   let tempGrid=[]
+      //   for (let i=0; i<currentMap.length; i++){
+      //     for (let j=0; j<currentMap[i].length; j++){
+      //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+      //         gridColumn: j+1,
+      //         gridRow: i+1,
+      //         color: "white",
+      //     }}
+      //     > {currentMap2[i][j]}
 
-    //       </button>)
+      //     </button>)
 
-    //       }
-    //     }
-    //   setGridArray(tempGrid)
+      //     }
+      //   }
+      // setGridArray(tempGrid)
+      // },[])
 
-    //   },[])
 
-  //create an array. If the current array does not contain the value. shift it.
+  
+   useEffect(() => {
+     if (props.previousMap === 'dunleaveyValley') {
+       //setYCord
+       yPlayerIndex.current = 13;
+       //setXcord
+       xPlayerIndex.current = 4;
+       //set xTransform
+       setXTransformVar(360);
+       //set yTransform
+       setYTransformVar(-532);
+       facing.current = 'up';
+     }
+   }, []);
 
-  // console.log(yPlayerIndex.current, xPlayerIndex.current)
-  // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+   //  //  //INDOOR USE EFFECT
+   useEffect(() => {
+     if (
+       (yPlayerIndex.current === 14 && xPlayerIndex.current === 3) ||
+       (yPlayerIndex.current === 14 && xPlayerIndex.current === 4) ||
+       (yPlayerIndex.current === 14 && xPlayerIndex.current === 5)
+     ) {
+       props.active('dunleaveyValley', 'ranchHouse1');
+     }
+   }, [yPlayerIndex.current]);
+  
+
+
+
+
+
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {
@@ -346,7 +373,7 @@ const RanchHouse1 = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="camera">
+      <div className="camera fade-in">
         <div>
           <div
             className="mapRH1 pixel-art"

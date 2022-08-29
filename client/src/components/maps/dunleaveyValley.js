@@ -2457,7 +2457,6 @@ const DunleaveyValley = (props) => {
     ],
   ];
 
-
   let currentMap = [
     [
       130, 0, 130, 0, 130, 0, 130, 0, 130, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -2770,7 +2769,7 @@ const DunleaveyValley = (props) => {
     ],
     [
       13174, 13135, 13174, 13137, 13174, 13136, 13174, 13135, 13174, 13137,
-      13174, 13136, 13174, 0, 13131, 0, 0, 6862, 6863, 6864, 6865, 6866, 6867,
+      13174, 13136, 13174, 0, 13131, 0, 0, 6862, 6863, 0, 6865, 6866, 6867,
       6868, 6869, 0, 1226, 1227, 1228, 0, 6882, 6883, 6884, 6885, 6886, 6887,
       6888, 6889, 6890, 1230, 1226, 1227, 1228, 0, 1226, 1227, 1228, 0, 1226,
       1227, 1228, 13131, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -2783,7 +2782,7 @@ const DunleaveyValley = (props) => {
     ],
     [
       13174, 13151, 13174, 13153, 13174, 13152, 13174, 13151, 13174, 13153,
-      13174, 13152, 13174, 0, 13131, 0, 0, 6983, 6984, 6985, 6986, 6987, 6988,
+      13174, 13152, 13174, 0, 13131, 0, 0, 6983, 6984, 0, 6986, 6987, 6988,
       6989, 6990, 0, 1347, 1348, 1349, 0, 7003, 7004, 7005, 7006, 7007, 7008,
       7009, 7010, 7011, 0, 1347, 1348, 1349, 0, 1347, 1348, 1349, 0, 1347, 1348,
       1349, 13131, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -2796,7 +2795,7 @@ const DunleaveyValley = (props) => {
     ],
     [
       13174, 13167, 13174, 13169, 13174, 13168, 13174, 13167, 13174, 13169,
-      13174, 13168, 13174, 0, 13131, 0, 0, 7104, 7105, 7106, 7107, 7108, 7109,
+      13174, 13168, 13174, 0, 13131, 0, 0, 7104, 7105, 0, 7107, 7108, 7109,
       7110, 7111, 0, 1468, 1469, 1470, 0, 7124, 7125, 7126, 7127, 7128, 7129,
       7130, 7131, 7132, 0, 1468, 1469, 1470, 0, 1468, 1469, 1470, 0, 1468, 1469,
       1470, 13131, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -3215,7 +3214,7 @@ const DunleaveyValley = (props) => {
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13131, 0, 0,
       13220, 13220, 13220, 13220, 13220, 13220, 13220, 13220, 13220, 13220,
-      13220, 13220, 0, 13257, 0, 0, 0, 13182, 14092, 14093, 14094, 14095, 14096,
+      13220, 13220, 0, 13257, 0, 0, 0, 13182, 14092, 14093, 14094, 0, 14096,
       14097, 14098, 13183, 1468, 1469, 1470, 0, 13933, 13964, 13965, 13966,
       13967, 13968, 13969, 13938, 15149, 15150, 15151, 15152, 17926, 17927,
       13131, 0, 0, 0, 0, 0, 0, 0, 0, 13131, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -4451,9 +4450,9 @@ const DunleaveyValley = (props) => {
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13131, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 1832, 1833, 0, 6872, 6873, 6874, 6875, 6876, 6877,
-      6878, 6879, 1383, 13131, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13131, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 1832, 1833, 0, 6872, 6873, 0, 6875, 6876, 6877, 6878,
+      6879, 1383, 13131, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13131, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0,
     ],
     [
       251, 0, 251, 0, 251, 0, 251, 0, 251, 0, 0, 0, 0, 0, 16249, 0, 0, 0, 0, 0,
@@ -4463,9 +4462,9 @@ const DunleaveyValley = (props) => {
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13131, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 1953, 1954, 0, 6993, 6994, 6995, 6996, 6997, 6998,
-      6999, 7000, 7001, 13131, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13131, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 1953, 1954, 0, 6993, 6994, 0, 6996, 6997, 6998, 6999,
+      7000, 7001, 13131, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13131, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0,
     ],
     [
       130, 0, 130, 0, 130, 0, 130, 0, 130, 0, 0, 0, 0, 0, 16249, 0, 0, 0, 0, 0,
@@ -4475,9 +4474,9 @@ const DunleaveyValley = (props) => {
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13131, 0, 0, 940, 941, 942, 943, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7114, 7115, 7116, 7117, 7118, 7119,
-      7120, 7121, 1383, 13131, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13131, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7114, 7115, 0, 7117, 7118, 7119, 7120,
+      7121, 1383, 13131, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13131, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0,
     ],
     [
       251, 0, 251, 0, 251, 0, 251, 0, 251, 0, 0, 0, 0, 0, 16249, 0, 0, 0, 0, 0,
@@ -5141,45 +5140,76 @@ const DunleaveyValley = (props) => {
     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
   );
 
-    // useEffect(()=>{
-    //   let tempGrid=[]
-    //   for (let i=0; i<currentMap.length; i++){
-    //     for (let j=0; j<currentMap[i].length; j++){
-    //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-    //         gridColumn: j+1,
-    //         gridRow: i+1,
-    //         color: "white",
-    //     }}
-    //     > {currentMap[i][j]}
+  // useEffect(()=>{
+  //   let tempGrid=[]
+  //   for (let i=0; i<currentMap.length; i++){
+  //     for (let j=0; j<currentMap[i].length; j++){
+  //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+  //         gridColumn: j+1,
+  //         gridRow: i+1,
+  //         color: "white",
+  //     }}
+  //     > {currentMap[i][j]}
 
-    //     </button>)
+  //     </button>)
 
-    //     }
-    //   }
-    // setGridArray(tempGrid)
-    // },[])
-
-  //create an array. If the current array does not contain the value. shift it.
-
-  // console.log(yPlayerIndex.current, xPlayerIndex.current)
-  // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+  //     }
+  //   }
+  // setGridArray(tempGrid)
+  // },[])
 
 
 
 
-    useEffect(() => {
-      // yPlayerIndex up and down values
-      // trains Map check conditions
-      if (
-        (yPlayerIndex.current === 211 && xPlayerIndex.current === 109) ||
-        (yPlayerIndex.current === 211 && xPlayerIndex.current === 110) ||
-        (yPlayerIndex.current === 211 && xPlayerIndex.current === 111)
-      ) {
-        props.active('trainTracksToValley', 'dunleaveyValley');
-      }
-    }, [yPlayerIndex.current]);
+
+   useEffect(() => {
+     if (props.previousMap === 'ranchHouse1') {
+       //setYCord
+       yPlayerIndex.current = 26;
+       //setXcord
+       xPlayerIndex.current = 19;
+       //set xTransform
+       setXTransformVar(-600);
+       //set yTransform
+       setYTransformVar(-1356);
+       facing.current = 'down';
+     }
+   }, []);
 
 
+
+
+  useEffect(() => {
+    // yPlayerIndex up and down values
+    // trains Map check conditions
+    if (
+      (yPlayerIndex.current === 211 && xPlayerIndex.current === 109) ||
+      (yPlayerIndex.current === 211 && xPlayerIndex.current === 110) ||
+      (yPlayerIndex.current === 211 && xPlayerIndex.current === 111)
+    ) {
+      props.active('trainTracksToValley', 'dunleaveyValley');
+    }
+    //RICHEST HOUSE
+    if (yPlayerIndex.current === 25 && xPlayerIndex.current === 19) {
+      props.active('ranchHouse1', 'dunleaveyValley');
+    }
+
+    // if (
+    //   (yPlayerIndex.current === 211 && xPlayerIndex.current === 109) ||
+    //   (yPlayerIndex.current === 211 && xPlayerIndex.current === 110) ||
+    //   (yPlayerIndex.current === 211 && xPlayerIndex.current === 111)
+    // ) {
+    //   props.active('trainTracksToValley', 'dunleaveyValley');
+    // }
+
+    // if (
+    //   (yPlayerIndex.current === 211 && xPlayerIndex.current === 109) ||
+    //   (yPlayerIndex.current === 211 && xPlayerIndex.current === 110) ||
+    //   (yPlayerIndex.current === 211 && xPlayerIndex.current === 111)
+    // ) {
+    //   props.active('trainTracksToValley', 'dunleaveyValley');
+    // }
+  }, [yPlayerIndex.current]);
 
   //event listen for enter
   useEffect(() => {
@@ -5415,7 +5445,7 @@ const DunleaveyValley = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="camera">
+      <div className="camera fade-in">
         <div>
           <div
             className="mapDV pixel-art"
