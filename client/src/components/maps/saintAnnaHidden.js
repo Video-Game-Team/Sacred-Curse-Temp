@@ -539,19 +539,19 @@ const SaintAnnaHidden = (props) => {
 
 
 
-  // useEffect(() => {
-  //   if (props.previousMap === 'secretIndoorLakeHouse') {
-  //     //setYCord
-  //     yPlayerIndex.current = 23;
-  //     //setXcord
-  //     xPlayerIndex.current = 23;
-  //     //set xTransform
-  //     setXTransformVar(-860);
-  //     //set yTransform
-  //     setYTransformVar(-1172);
-  //     facing.current = 'down';
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (props.previousMap === 'secretIndoorLakeHouse') {
+      //setYCord
+      yPlayerIndex.current = 23;
+      //setXcord
+      xPlayerIndex.current = 23;
+      //set xTransform
+      setXTransformVar(-860);
+      //set yTransform
+      setYTransformVar(-1172);
+      facing.current = 'down';
+    }
+  }, []);
 
   // //  // UseEffect Keeping track of player conditions
   useEffect(() => {

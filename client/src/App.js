@@ -23,7 +23,7 @@ import Sigele from './components/maps/sigele.js';
 import PresidentSafeHouse from './components/maps/presidentSafeHouse.js';
 import RanchHouse1 from './components/maps/ranchHouse1.js';
 import RanchHouse2 from './components/maps/ranchHouse2.js';
-import SecretLakeIndoorHouse from './components/maps/secretIndoorLakeHouse.js';
+import SecretIndoorLakeHouse from './components/maps/secretIndoorLakeHouse.js';
 import OldManCrawfordInside from './components/maps/oldManCrawfordInside.js';
 import HotelIndoors from './components/maps/hotelIndoors.js';
 import IndoorHouse1 from './components/maps/indoorHouse1.js';
@@ -63,7 +63,7 @@ function App() {
 
   //delete Later
 const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dragonite, DemonObjects.Haku, DemonObjects.Zabuza, DemonObjects.Naruto])
-const [current, setCurrent] = useState('secretIndoorLakeHouse');
+const [current, setCurrent] = useState('saintAnnaHidden');
 const [tempCurrent, setTempCurrent] = useState(null)
 const [previous,setPrevious]= useState(null)
 
@@ -215,8 +215,8 @@ console.log("CURRENTMAP", current, "PREVIOUSMAP", previous)
         previousMap={previous}
       />
     ),
-    secretLakeIndoorHouse: (
-      <SecretLakeIndoorHouse
+    secretIndoorLakeHouse: (
+      <SecretIndoorLakeHouse
         passed={previous}
         active={tracker}
         adder={addItem}

@@ -34,7 +34,7 @@ const SecretIndoorLakeHouse = (props) => {
   const xPlayerIndex = useRef(4);
   const [gridArray, setGridArray] = useState([]);
 
-  let currentMap = [
+  let currentMap2 = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -52,7 +52,7 @@ const SecretIndoorLakeHouse = (props) => {
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   ];
 
-  let currentMap2 = [
+  let currentMap = [
     [
       5216, 5211, 5215, 5216, 2464, 2465, 5216, 2436, 5215, 2461, 5217, 5215,
       2455, 2456, 5216,
@@ -108,28 +108,30 @@ const SecretIndoorLakeHouse = (props) => {
 
   //   },[])
 
-  //  useEffect(() => {
-  //    if (props.previousMap === 'saintAnnaHidden') {
-  //      //setYCord
-  //      yPlayerIndex.current = 13;
-  //      //setXcord
-  //      xPlayerIndex.current = 7;
-  //      //set xTransform
-  //      setXTransformVar(168);
-  //      //set yTransform
-  //      setYTransformVar(-532);
-  //      facing.current = 'up';
-  //    }
-  //  }, []);
+   useEffect(() => {
+     if (props.previousMap === 'saintAnnaHidden') {
+       //setYCord
+       yPlayerIndex.current = 13;
+       //setXcord
+       xPlayerIndex.current = 4;
+       //set xTransform
+       setXTransformVar(360);
+       //set yTransform
+       setYTransformVar(-532);
+       facing.current = 'up';
+     }
+   }, []);
 
   //  //INDOOR USE EFFECT
-  // useEffect(() => {
-  //   if (yPlayerIndex.current === 13 && xPlayerIndex.current === 4) {
-  //     props.active('saintAnnaHidden', 'secretIndoorLakeHouse');
-  //   }
-  // }, [yPlayerIndex.current]);
-
-
+  useEffect(() => {
+    if (
+      (yPlayerIndex.current === 14 && xPlayerIndex.current === 3) ||
+    (yPlayerIndex.current === 14 && xPlayerIndex.current === 4) 
+    )
+    {
+      props.active('saintAnnaHidden', 'secretIndoorLakeHouse');
+    }
+  }, [yPlayerIndex.current]);
 
 
   //event listen for enter
