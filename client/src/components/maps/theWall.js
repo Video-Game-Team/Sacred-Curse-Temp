@@ -1149,6 +1149,29 @@ const TheWall = (props) => {
 
   // console.log(yPlayerIndex.current, xPlayerIndex.current)
   // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
+
+
+useEffect(() => {
+  if (props.previousMap === 'townMap1') {
+    //setYCord
+    yPlayerIndex.current = 27;
+    //setXcord
+    xPlayerIndex.current = 20;
+    //set xTransform
+    setXTransformVar(-662);
+    //set yTransform
+    setYTransformVar(-1428);
+    facing.current = 'up';
+  }
+}, []);
+
+
+
+
+
+
+
+
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {
@@ -1400,7 +1423,7 @@ const TheWall = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="camera">
+      <div className="camera fade-in">
         <div>
           <div
             className="mapTW pixel-art"

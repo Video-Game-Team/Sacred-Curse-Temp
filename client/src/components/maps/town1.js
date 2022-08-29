@@ -1137,8 +1137,8 @@ let currentMap = [
   ],
 ];
   
-  // console.log("COORDINATE", yPlayerIndex.current, xPlayerIndex.current)
-  // console.log("VALUE Right", currentMap2[yPlayerIndex.current] [xPlayerIndex.current])
+  console.log("COORDINATE", yPlayerIndex.current, xPlayerIndex.current)
+  console.log("VALUE Right", currentMap2[yPlayerIndex.current] [xPlayerIndex.current])
 
 
 // useEffect(()=>{
@@ -1168,7 +1168,7 @@ useEffect(()=>{
   if (props.previousMap==="farmMap"){
   
     //setYCord
-    yPlayerIndex.current = 76
+    yPlayerIndex.current = 78
     //setXcord
     xPlayerIndex.current = 36
     //set xTransform
@@ -1182,9 +1182,9 @@ useEffect(()=>{
     //setYCord
     yPlayerIndex.current = 6;
     //setXcord
-    xPlayerIndex.current = 35;
+    xPlayerIndex.current = 36;
     //set xTransform
-    setXTransformVar(-1700);
+    setXTransformVar(-1710);
     //set yTransform
     setYTransformVar(-98);
      facing.current = 'down';
@@ -1206,7 +1206,7 @@ useEffect(()=>{
     }
     
     // TheFarmMap check conditions
-     if (yPlayerIndex.current === 79 && xPlayerIndex.current === 36) {
+     if (yPlayerIndex.current === 78 && xPlayerIndex.current === 36) {
        props.active('farmMap', 'townMap1');
      }
      
@@ -1392,7 +1392,7 @@ useEffect(()=>{
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="camera">
+      <div className="camera fade-in">
         <div>
           <div
             className="mapTown1 pixel-art"
