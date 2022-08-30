@@ -81,54 +81,60 @@ const IndoorHouse10 = (props) => {
     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
   );
 
-      // useEffect(()=>{
-      //   let tempGrid=[]
-      //   for (let i=0; i<currentMap.length; i++){
-      //     for (let j=0; j<currentMap[i].length; j++){
-      //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-      //         gridColumn: j+1,
-      //         gridRow: i+1,
-      //         color: "white",
-      //     }}
-      //     > {currentMap[i][j]}
+  // useEffect(()=>{
+  //   let tempGrid=[]
+  //   for (let i=0; i<currentMap.length; i++){
+  //     for (let j=0; j<currentMap[i].length; j++){
+  //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+  //         gridColumn: j+1,
+  //         gridRow: i+1,
+  //         color: "white",
+  //     }}
+  //     > {currentMap[i][j]}
 
-      //     </button>)
+  //     </button>)
 
-      //     }
-      //   }
-      // setGridArray(tempGrid)
-      // },[])
+  //     }
+  //   }
+  // setGridArray(tempGrid)
+  // },[])
+
+  useEffect(() => {
+    if (props.previousMap === 'farmMap') {
+      //setYCord
+      yPlayerIndex.current = 13;
+      //setXcord
+      xPlayerIndex.current = 7;
+      //set xTransform
+      setXTransformVar(168);
+      //set yTransform
+      setYTransformVar(-535);
+      facing.current = 'up';
+    }
+  }, []);
 
 
-   useEffect(() => {
-     if (props.previousMap === 'farmMap') {
-       //setYCord
-       yPlayerIndex.current = 13;
-       //setXcord
-       xPlayerIndex.current = 7;
-       //set xTransform
-       setXTransformVar(168);
-       //set yTransform
-       setYTransformVar(-535);
-       facing.current = 'up';
-     }
-   }, []);
+  //TEXT LOGIC
+  if (
+    (facing.current = 'down') &&
+    (yPlayerIndex.current === 5) &&
+    (xPlayerIndex.current === 7)
+  ) {
+    console.log('EAT A TURKEY');
+  }
+
+  
 
   //  //  //INDOOR USE EFFECT
-   useEffect(() => {
-     if (
-       (yPlayerIndex.current === 14 && xPlayerIndex.current === 6) ||
-       (yPlayerIndex.current === 14 && xPlayerIndex.current === 7) ||
-       (yPlayerIndex.current === 14 && xPlayerIndex.current === 8) 
-     ) {
-       props.active('farmMap', 'indoorHouse10');
-     }
-   }, [yPlayerIndex.current]);
-
-
-
-
-
+  useEffect(() => {
+    if (
+      (yPlayerIndex.current === 14 && xPlayerIndex.current === 6) ||
+      (yPlayerIndex.current === 14 && xPlayerIndex.current === 7) ||
+      (yPlayerIndex.current === 14 && xPlayerIndex.current === 8)
+    ) {
+      props.active('farmMap', 'indoorHouse10');
+    }
+  }, [yPlayerIndex.current]);
 
   //event listen for enter
   useEffect(() => {

@@ -49,15 +49,14 @@
     grid-template-rows: repeat(15, 64px); */
  }
 
- 
- /* .numbers {
+/* .numbers {
     size: 100%;
     background: transparent;
 }   */
 
 
 
- */ .character {
+ .character {
      width: calc(var(--grid-cell)* 2);
      height: calc(var(--grid-cell)* 2);
      overflow: hidden;

@@ -1680,7 +1680,7 @@ const Tortous = (props) => {
    useEffect(() => {
      if (props.previousMap === 'trainTracksToTortous') {
        //setYCord
-       yPlayerIndex.current = 91;
+       yPlayerIndex.current = 92;
        //setXcord
        xPlayerIndex.current = 53;
        //set xTransform
