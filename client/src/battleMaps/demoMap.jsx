@@ -5,6 +5,7 @@ import Enemies from '.././enemies.js'
 import DragonImage from ".././assets/demonSprites/even-more-retro-dragonite-dragonite-sprite-gen-1212525.png"
 import Heart from '.././assets/battleMapAssets/heart-e1403272720870.png'
 import { proposalPlugins } from '@babel/preset-env/data/shipped-proposals';
+import e from 'express';
 
 
 //default for every component is a loading screen until the component did mount properly, thae
@@ -78,8 +79,10 @@ setSummoningList(summonsList)
 function enemyTrigger(){
 
     let tempCordsArr=[];
+    let enemiesMoveList=[]
     let tempScore;
     let moveValueArray=[]
+    let currentEnemiesArray=[]
     // for (let k=1; k<=mapState[i][j].move; k++){
     //     k-i>=0 ? tempCordsArr.push(mapState[k-i]) : null;
     //     k+i<mapState.length ? tempCordsArr.push(mapState[k+1] : )
@@ -102,7 +105,8 @@ for (let i=0; i<mapState.length; i++){
 
 
         if (mapState[i][j].type==="LandUnit"){
-             upI=i-1;
+            currentEnemiesArray.push(mapState[i][j])
+        upI=i-1;
              downI=i+1;
              rightI=j+1;
              leftI=j-1;
@@ -182,24 +186,53 @@ for (let i=0; i<mapState.length; i++){
                     }
 
                     //xxx
-                    if (rightI<mapState.length && moveIterator<=mapState[i][j].move  && mapState[i][rightI].type==="Demon"){
+                    if (rightI<mapState.length && moveIterator<mapState[i][j].move  && mapState[i][rightI].type==="Demon"){
                        
                     
                         tempCordsArr.push(`${i}${rightI}`)
                     }
                     }
+                    enemiesMoveList.push(tempCordsArr);
+                    tempCordsArr=[];
 
         }
         moveIterator=0
     }
     }
-for (let i=0; i<tempCordsArr.length; i++){
+
+    let decidedMoves=[];
+    let randomValue;
+for (let i=0; i<enemiesMoveList.length; i++){
+    for(let j=0; j<enemiesMoveList[i].length; j++){
+        if (mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].type==="Demon"){
+            if (mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].name==="Shilo"){
+                mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].defense <= currentEnemiesArray[i].attack ? tempScore+=20 :tempScore+=15;
+            }
+            else if(mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].defense<=currentEnemiesArray[i].attack){
+                currentEnemiesArray[i].defense> mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].attack ? tempScore+=15 :tempScore+=9;
+            }
+            else if(currentEnemiesArray[i].defense> mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].attack){
+                tempScore+=7
+            }
+            else if(currentEnemiesArray[i].defense<=mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].attack){
+                tempScore+=4
+            }
+            else{
+                randomValue=Math.ceil(Math.random() * 6);
+                tempScore+=randomValue;
+            }
+            moveValueArray.push(tempScore);
+            tempScore=0;
 
 
+        }
+
+
+    }
 
 }
 
-console.log(tempCordsArr)
+console.log(moveValueArray)
    
 }
 //turn Loopc
