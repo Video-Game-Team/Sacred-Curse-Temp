@@ -516,53 +516,268 @@ const FarmMap = (props) => {
     ],
   ];
 
-
-
   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
   console.log(
     'VALUE Right',
     currentMap[yPlayerIndex.current][xPlayerIndex.current]
   );
 
+  // useEffect(()=>{
+  //   let tempGrid=[]
+  //   for (let i=0; i<currentMap.length; i++){
+  //     for (let j=0; j<currentMap[i].length; j++){
+  //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+  //         gridColumn: j+1,
+  //         gridRow: i+1,
+  //         color: "white",
+  //     }}
+  //     > {i} - {j}
+
+  //     </button>)
+
+  //     }
+  //   }
+  // setGridArray(tempGrid)
+  // },[])
 
 
-    // useEffect(()=>{
-    //   let tempGrid=[]
-    //   for (let i=0; i<currentMap.length; i++){
-    //     for (let j=0; j<currentMap[i].length; j++){
-    //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-    //         gridColumn: j+1,
-    //         gridRow: i+1,
-    //         color: "white",
-    //     }}
-    //     > {currentMap[i][j]}
-
-    //     </button>)
-
-    //     }
-    //   }
-    // setGridArray(tempGrid)
-    // },[])
 
 
+
+
+
+
+
+
+
+//CHARACTER DIALOGUE USE EFFECT
+useEffect(() => {
+    const dialogueAction = (event) => {
+      if (event.key === 'a') {
+
+        //Facing up
+        if (facing.current === 'up') {
+          //Jim NPC
+          if (
+            (yPlayerIndex.current === 23 && xPlayerIndex.current === 21) ||
+            (yPlayerIndex.current === 23 && xPlayerIndex.current === 22)
+          ) {
+            console.log("Hi I'm jim");
+          }
+          //YO Mama NPC
+          if (
+            (yPlayerIndex.current === 29 && xPlayerIndex.current === 21) ||
+            (yPlayerIndex.current === 29 && xPlayerIndex.current === 22)
+          ) {
+            console.log("Hi I'm Yo Mama");
+          }
+        }
+
+        //Facing down
+        if (!facing.current) {
+          //Jim NPC
+          if (
+            (yPlayerIndex.current === 20 && xPlayerIndex.current === 21) ||
+            (yPlayerIndex.current === 20 && xPlayerIndex.current === 22)
+          ) {
+            console.log("Hi I'm jim");
+          }
+          //YO Mama NPC
+          if (
+            (yPlayerIndex.current === 26 && xPlayerIndex.current === 21) ||
+            (yPlayerIndex.current === 26 && xPlayerIndex.current === 22)
+          ) {
+            console.log("Hi I'm Yo Mama");
+          }
+        }
+
+        //Facing left
+        if (facing.current === 'left') {
+          if (
+            (yPlayerIndex.current === 21 && xPlayerIndex.current === 23) ||
+            (yPlayerIndex.current === 22 && xPlayerIndex.current === 23)
+          ) {
+            console.log("Hi I'm jim");
+          }
+          //YO Mama NPC
+          if (
+            (yPlayerIndex.current === 27 && xPlayerIndex.current === 23) || 
+            ( yPlayerIndex.current === 28 && xPlayerIndex.current === 23)
+          ) {
+            console.log("Hi I'm Yo Mama");
+          }
+        }
+
+        //Facing right
+        if (facing.current === 'right') {
+          if (
+            (yPlayerIndex.current === 21 && xPlayerIndex.current === 20) ||
+            (yPlayerIndex.current === 22 && xPlayerIndex.current === 20)
+          ) {
+            console.log("Hi I'm jim");
+          }
+          //YO Mama NPC
+          if (
+            (yPlayerIndex.current === 27 && xPlayerIndex.current === 20) || 
+            (yPlayerIndex.current === 28 && xPlayerIndex.current === 20)
+          ) {
+            console.log("Hi I'm Yo Mama");
+          }
+        }
+      }
+    }
+
+    window.addEventListener('keydown', dialogueAction);
+    return () => {
+      window.removeEventListener('keydown', dialogueAction);
+    };
+  }, []);
+
+
+
+  //KEEP CODE BELOW JUST IN CASE
+  // useEffect(() => {
+  //   console.log('hi');
+  //   const dialogueAction = (event) => {
+  //     // console.log(event.key)
+
+  //     if (event.key === 'a') {
+        
+  //       //Facing up
+  //       if (facing.current === 'up') {
+  //         if (
+  //           (yPlayerIndex.current === 23 && xPlayerIndex.current === 21) ||
+  //           (yPlayerIndex.current === 23 && xPlayerIndex.current === 22)
+  //         ) {
+  //           console.log("Hi I'm Jim");
+  //         }
+  //       }
+
+  //       // Facing down
+  //       if (facing.current === 'down') {
+  //         if (
+  //           (yPlayerIndex.current === 20 && xPlayerIndex.current === 21) ||
+  //           (yPlayerIndex.current === 20 && xPlayerIndex.current === 22)
+  //         ) {
+  //           console.log("Hi I'm Jim");
+  //         }
+  //       }
+
+  //       //Facing left
+  //       if (facing.current === 'left') {
+  //         if (
+  //           (yPlayerIndex.current === 20 && xPlayerIndex.current === 21) ||
+  //           (yPlayerIndex.current === 20 && xPlayerIndex.current === 22)
+  //         ) {
+  //           console.log("Hi I'm Jim");
+  //         }
+  //       }
+
+  //       //Facing right
+  //       if (facing.current === 'right') {
+  //         if (
+  //           (yPlayerIndex.current === 20 && xPlayerIndex.current === 21) ||
+  //           (yPlayerIndex.current === 20 && xPlayerIndex.current === 22)
+  //         ) {
+  //           console.log("Hi I'm Jim");
+  //         }
+  //       }
+  //     }
+
+  //       //  if ((facing.current === "up" && ((yPlayerIndex.current === 23 && xPlayerIndex.current === 21) || (yPlayerIndex.current === 23 && xPlayerIndex.current === 22))))
+  //       // }
+  //       // if (
+  //       //   facing.current === "left" && (yPlayerIndex.current === 21 && xPlayerIndex.current === 23) || (yPlayerIndex.current === 22 && xPlayerIndex.current === 23)
+  //       // )
+
+  //       //  if (
+  //       //   facing.current === "down" && yPlayerIndex.current === 20 && xPlayerIndex.current === 21 || yPlayerIndex.current === 20 && xPlayerIndex.current === 22
+  //       // )
+      
+  //   };
+
+  //   // if (yPlayerIndex.current === 29 && xPlayerIndex.current===21){
+  //   //   console.log("Hi I'm Yo Mama")
+  //   // }
+
+  //   window.addEventListener('keydown', dialogueAction);
+  //   return () => {
+  //     window.removeEventListener('keydown', dialogueAction);
+  //   };
+  // }, []);
+
+  useEffect(() => {
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        if (facing.current === 'up') {
+          if (
+            xBank.current + 32 > 64 &&
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
+              'door1'
+          ) {
+          }
+          if (
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
+              'sign1' &&
+            64 - xBank.current > 32
+          ) {
+            console.log('sign1');
+          }
+          if (
+            xBank.current + 32 > 64 &&
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
+              'sign2'
+          ) {
+            console.log('sign2');
+          }
+          if (
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
+              'sign2' &&
+            64 - xBank.current > 32
+          ) {
+            console.log('sign2');
+          }
+        }
+        if (facing.current == null) {
+          if (
+            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
+              'sign1' &&
+            xBank.current + 32 < 64
+          ) {
+            console.log('sign1');
+          }
+          if (
+            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current + 1] ===
+            'sign2'
+          ) {
+            console.log('poopshit');
+          }
+          if (
+            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
+              'sign2' &&
+            xBank.current + 32 < 64
+          ) {
+            console.log('sign2');
+          }
+        }
+      }
+    });
+  }, []);
 
   // UseEffect for transitiong between map Coordinates
   useEffect(() => {
     if (
       (yPlayerIndex.current === 5 && xPlayerIndex.current === 28) ||
-    (yPlayerIndex.current === 5 && xPlayerIndex.current === 29)  ||
-    (yPlayerIndex.current === 5 && xPlayerIndex.current === 30)
-    ){
+      (yPlayerIndex.current === 5 && xPlayerIndex.current === 29) ||
+      (yPlayerIndex.current === 5 && xPlayerIndex.current === 30)
+    ) {
       props.active('townMap1', 'farmMap');
     }
     //FARMMAP
-    if (
-      (yPlayerIndex.current === 35 && xPlayerIndex.current === 29) 
-    ) {
+    if (yPlayerIndex.current === 35 && xPlayerIndex.current === 29) {
       props.active('indoorHouse10', 'farmMap');
     }
   }, [yTransformVar]);
-
 
   //UseEffect for keeping track of the previous maps and maps/player positions
   useEffect(() => {
@@ -576,7 +791,7 @@ const FarmMap = (props) => {
       setXTransformVar(-1240);
       //set yTransform
       setYTransformVar(-80);
-      facing.current = "down"
+      facing.current = 'down';
     }
 
     //indoorhouse 10
@@ -593,7 +808,7 @@ const FarmMap = (props) => {
     }
   }, []);
 
-
+  //use effect
 
   //listens for the current down key and saves it as the currentkey state
   //wrapping in a useEffect prevents compounding event listeners
@@ -787,7 +1002,9 @@ const FarmMap = (props) => {
               facing={facing.current}
               walking={walker}
               style={{
-                transform: `translate3d( ${600 -xTransformVar}px, ${272 -yTransformVar}px, 0 )`,
+                transform: `translate3d( ${600 - xTransformVar}px, ${
+                  272 - yTransformVar
+                }px, 0 )`,
               }}
             >
               <div className="character_spritesheet pixel-art"></div>
