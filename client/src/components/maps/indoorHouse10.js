@@ -113,18 +113,6 @@ const IndoorHouse10 = (props) => {
     }
   }, []);
 
-
-  //TEXT LOGIC
-  if (
-    (facing.current = 'down') &&
-    (yPlayerIndex.current === 5) &&
-    (xPlayerIndex.current === 7)
-  ) {
-    console.log('EAT A TURKEY');
-  }
-
-  
-
   //  //  //INDOOR USE EFFECT
   useEffect(() => {
     if (
