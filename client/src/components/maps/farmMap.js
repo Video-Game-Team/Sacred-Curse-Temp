@@ -571,6 +571,13 @@ useEffect(() => {
           ) {
             console.log("Hi I'm Yo Mama");
           }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 37 && xPlayerIndex.current === 14) ||
+            (yPlayerIndex.current === 37 && xPlayerIndex.current === 15)
+          ) {
+            console.log("Hi I'm Hot girl");
+          }
         }
 
         //Facing down
@@ -589,6 +596,13 @@ useEffect(() => {
           ) {
             console.log("Hi I'm Yo Mama");
           }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 34 && xPlayerIndex.current === 14) ||
+            (yPlayerIndex.current === 34 && xPlayerIndex.current === 15)
+          ) {
+            console.log("Hi I'm Hot girl");
+          }
         }
 
         //Facing left
@@ -601,10 +615,17 @@ useEffect(() => {
           }
           //YO Mama NPC
           if (
-            (yPlayerIndex.current === 27 && xPlayerIndex.current === 23) || 
-            ( yPlayerIndex.current === 28 && xPlayerIndex.current === 23)
+            (yPlayerIndex.current === 27 && xPlayerIndex.current === 23) ||
+            (yPlayerIndex.current === 28 && xPlayerIndex.current === 23)
           ) {
             console.log("Hi I'm Yo Mama");
+          }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 35 && xPlayerIndex.current === 16) ||
+            (yPlayerIndex.current === 36 && xPlayerIndex.current === 16)
+          ) {
+            console.log("Hi I'm Hot girl");
           }
         }
 
@@ -618,10 +639,17 @@ useEffect(() => {
           }
           //YO Mama NPC
           if (
-            (yPlayerIndex.current === 27 && xPlayerIndex.current === 20) || 
+            (yPlayerIndex.current === 27 && xPlayerIndex.current === 20) ||
             (yPlayerIndex.current === 28 && xPlayerIndex.current === 20)
           ) {
             console.log("Hi I'm Yo Mama");
+          }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 35 && xPlayerIndex.current === 13) ||
+            (yPlayerIndex.current === 36 && xPlayerIndex.current === 13)
+          ) {
+            console.log("Hi I'm Hot girl");
           }
         }
       }
@@ -634,6 +662,7 @@ useEffect(() => {
   }, []);
 
 
+  
 
   //KEEP CODE BELOW JUST IN CASE
   // useEffect(() => {
