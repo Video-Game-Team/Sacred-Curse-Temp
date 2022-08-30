@@ -5163,6 +5163,18 @@ const DunleaveyValley = (props) => {
 
 
    useEffect(() => {
+    // traintrackstovalley
+      if (props.previousMap === 'trainTracksToValley') {
+        //setYCord
+        yPlayerIndex.current = 210;
+        //setXcord
+        xPlayerIndex.current = 110;
+        //set xTransform
+        setXTransformVar(-6424);
+        //set yTransform
+        setYTransformVar(-13140);
+        facing.current = 'up';
+      }
      if (props.previousMap === 'ranchHouse1') {
        //setYCord
        yPlayerIndex.current = 26;
