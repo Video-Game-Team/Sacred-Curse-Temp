@@ -5174,6 +5174,29 @@ const DunleaveyValley = (props) => {
        setYTransformVar(-1356);
        facing.current = 'down';
      }
+     // middle house
+     if (props.previousMap === 'indoorHouse5') {
+       //setYCord
+       yPlayerIndex.current = 59;
+       //setXcord
+       xPlayerIndex.current = 167;
+       //set xTransform
+       setXTransformVar(-10068);
+       //set yTransform
+       setYTransformVar(-3476);
+       facing.current = 'down';
+     }
+     if (props.previousMap === 'ranchHouse2') {
+       //setYCord
+       yPlayerIndex.current = 161;
+       //setXcord
+       xPlayerIndex.current = 180;
+       //set xTransform
+       setXTransformVar(-10904);
+       //set yTransform
+       setYTransformVar(-10004);
+       facing.current = 'down';
+     }
    }, []);
 
 
@@ -5193,23 +5216,20 @@ const DunleaveyValley = (props) => {
     if (yPlayerIndex.current === 25 && xPlayerIndex.current === 19) {
       props.active('ranchHouse1', 'dunleaveyValley');
     }
-
-    // if (
-    //   (yPlayerIndex.current === 211 && xPlayerIndex.current === 109) ||
-    //   (yPlayerIndex.current === 211 && xPlayerIndex.current === 110) ||
-    //   (yPlayerIndex.current === 211 && xPlayerIndex.current === 111)
-    // ) {
-    //   props.active('trainTracksToValley', 'dunleaveyValley');
-    // }
-
-    // if (
-    //   (yPlayerIndex.current === 211 && xPlayerIndex.current === 109) ||
-    //   (yPlayerIndex.current === 211 && xPlayerIndex.current === 110) ||
-    //   (yPlayerIndex.current === 211 && xPlayerIndex.current === 111)
-    // ) {
-    //   props.active('trainTracksToValley', 'dunleaveyValley');
-    // }
+    // indoor house 5
+    if (
+      (yPlayerIndex.current === 58 && xPlayerIndex.current === 167) 
+    ) {
+      props.active('indoorHouse5', 'dunleaveyValley');
+    }
+    // lowest ranch house
+    if (
+      (yPlayerIndex.current === 160 && xPlayerIndex.current === 180) 
+    ) {
+      props.active('ranchHouse2', 'dunleaveyValley');
+    }
   }, [yPlayerIndex.current]);
+
 
   //event listen for enter
   useEffect(() => {
