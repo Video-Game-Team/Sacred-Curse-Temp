@@ -80,7 +80,7 @@ const SecretIndoorLakeHouse = (props) => {
     [5216, 2526, 0, 0, 0, 0, 0, 0, 0, 0, 2360, 2354, 2362, 0, 5216],
     [5216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2370, 0, 0, 5216],
     [5216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5216],
-    [1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   ];
 
   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
@@ -126,14 +126,13 @@ const SecretIndoorLakeHouse = (props) => {
   useEffect(() => {
     if (
       (yPlayerIndex.current === 14 && xPlayerIndex.current === 3) ||
-    (yPlayerIndex.current === 14 && xPlayerIndex.current === 4) 
-    )
-    {
+      (yPlayerIndex.current === 14 && xPlayerIndex.current === 4)
+    ) {
       props.active('saintAnnaHidden', 'secretIndoorLakeHouse');
     }
-  }, [yPlayerIndex.current]);
+  }, [yPlayerIndex.current, xPlayerIndex.current]);
 
-
+  
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {

@@ -74,18 +74,18 @@ const IndoorHouse4 = (props) => {
     [1562, 1563, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2134, 41],
     [1578, 1579, 0, 0, 0, 0, 0, 0, 0, 0, 247, 248, 3177, 3178, 111],
     [
-      3221225528, 3221225595, 3221225594, 235, 236, 3221225594, 3221225594,
+      3221225528, 3221225595, 0, 0, 0, 3221225594, 3221225594,
       3221225594, 3221225594, 3221225595, 3221225594, 3221225594, 3221225590,
       3221225589, 3221225590,
     ],
-    
+    // [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   ];
 
-    // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-    // console.log(
-    //   'VALUE Right',
-    //   currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-    // );
+    console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+    console.log(
+      'VALUE Right',
+      currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+    );
 
     //   useEffect(()=>{
     //     let tempGrid=[]
@@ -123,7 +123,11 @@ const IndoorHouse4 = (props) => {
 
    //  //INDOOR USE EFFECT
    useEffect(() => {
-     if (yPlayerIndex.current === 13 && xPlayerIndex.current === 4) {
+     if (
+       (yPlayerIndex.current === 14 && xPlayerIndex.current === 2) ||
+       (yPlayerIndex.current === 14 && xPlayerIndex.current === 3) ||
+       (yPlayerIndex.current === 14 && xPlayerIndex.current === 4)
+     ) {
        props.active('sigele', 'indoorHouse4');
      }
    }, [yPlayerIndex.current]);  

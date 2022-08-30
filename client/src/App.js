@@ -63,7 +63,7 @@ function App() {
 
   //delete Later
 const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dragonite, DemonObjects.Haku, DemonObjects.Zabuza, DemonObjects.Naruto])
-const [current, setCurrent] = useState('indoorHouse10');
+const [current, setCurrent] = useState('secretIndoorLakeHouse');
 const [tempCurrent, setTempCurrent] = useState(null)
 const [previous,setPrevious]= useState(null)
 

@@ -121,7 +121,12 @@ const IndoorHouse2 = (props) => {
 
   //  //  //INDOOR USE EFFECT
    useEffect(() => {
-     if (yPlayerIndex.current === 14 && xPlayerIndex.current === 11) {
+     if (
+       (yPlayerIndex.current === 14 && xPlayerIndex.current === 10) ||
+       (
+         yPlayerIndex.current === 14 && xPlayerIndex.current === 11
+       )
+     ) {
        props.active('tortous', 'indoorHouse2');
      }
    }, [yPlayerIndex.current]);

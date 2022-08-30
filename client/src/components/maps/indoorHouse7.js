@@ -71,7 +71,7 @@ const IndoorHouse7 = (props) => {
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   ];
 
 
@@ -120,15 +120,13 @@ const IndoorHouse7 = (props) => {
 
   //  //  //INDOOR USE EFFECT
    useEffect(() => {
-     if (yPlayerIndex.current === 14 && xPlayerIndex.current === 7) {
+     if (
+       (yPlayerIndex.current === 14 && xPlayerIndex.current === 2) ||
+       (yPlayerIndex.current === 14 && xPlayerIndex.current === 3)
+     ) {
        props.active('tortous', 'indoorHouse7');
      }
    }, [yPlayerIndex.current]);
-
-
-
-
-
 
 
 

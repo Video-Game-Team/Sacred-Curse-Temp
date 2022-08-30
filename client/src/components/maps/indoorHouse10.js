@@ -50,7 +50,7 @@ const IndoorHouse10 = (props) => {
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1],
   ];
 
   let currentMap = [
@@ -72,7 +72,7 @@ const IndoorHouse10 = (props) => {
     [3221225513, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41],
     [3221225513, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41],
     [3221225513, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   ];
 
   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
@@ -118,7 +118,7 @@ const IndoorHouse10 = (props) => {
     if (
       (yPlayerIndex.current === 14 && xPlayerIndex.current === 6) ||
       (yPlayerIndex.current === 14 && xPlayerIndex.current === 7) ||
-      (yPlayerIndex.current === 14 && xPlayerIndex.current === 8)
+      (yPlayerIndex.current === 14 && xPlayerIndex.current === 8) 
     ) {
       props.active('farmMap', 'indoorHouse10');
     }

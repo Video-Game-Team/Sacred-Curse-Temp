@@ -83,7 +83,7 @@ const OldManCrawfordInside = (props) => {
     [3248, 4533, 4533, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4120, 3838, 3248],
     [3248, 4533, 4120, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4702, 4703, 3248],
     [3248, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4718, 4719, 3248],
-    [1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   ];
 
     console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
@@ -130,8 +130,10 @@ const OldManCrawfordInside = (props) => {
 
   //INDOOR USE EFFECT
    useEffect(() => {
-     if 
-       (yPlayerIndex.current === 14 && xPlayerIndex.current === 4) {
+     if (
+       (yPlayerIndex.current === 14 && xPlayerIndex.current === 4) ||
+       (yPlayerIndex.current === 14 && xPlayerIndex.current === 5)
+      ) {
        props.active('tortous', 'oldManCrawfordInside');
      }
    }, [yPlayerIndex.current]);

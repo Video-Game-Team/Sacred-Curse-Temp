@@ -10,7 +10,7 @@ import '../../indoorHouse8.css';
 
 const IndoorHouse8 = (props) => {
   //this sets the x Cordinate to transform the map and character location
-  const [xTransformVar, setXTransformVar] = useState(424);
+  const [xTransformVar, setXTransformVar] = useState(361);
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-531);
   //
@@ -31,7 +31,7 @@ const IndoorHouse8 = (props) => {
   const xBank = useRef(0);
   const yBank = useRef(0);
   const yPlayerIndex = useRef(13);
-  const xPlayerIndex = useRef(3);
+  const xPlayerIndex = useRef(4);
   const [gridArray, setGridArray] = useState([]);
 
   let currentMap2 = [
@@ -71,7 +71,7 @@ const IndoorHouse8 = (props) => {
     [3221225513, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41],
     [3221225513, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41],
     [3221225513, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41],
-    [1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   ];
 
 
@@ -108,9 +108,9 @@ const IndoorHouse8 = (props) => {
      //setYCord
      yPlayerIndex.current = 13;
      //setXcord
-     xPlayerIndex.current = 3;
+     xPlayerIndex.current = 4;
      //set xTransform
-     setXTransformVar(424);
+     setXTransformVar(360);
      //set yTransform
      setYTransformVar(-531);
      facing.current = 'up';
@@ -119,7 +119,11 @@ const IndoorHouse8 = (props) => {
 
  //  //INDOOR USE EFFECT
  useEffect(() => {
-   if (yPlayerIndex.current === 14 && xPlayerIndex.current === 3) {
+   if ( 
+    (yPlayerIndex.current === 14 && xPlayerIndex.current === 4) ||
+    (yPlayerIndex.current === 14 && xPlayerIndex.current === 5) 
+    )
+     {
      props.active('tortous', 'indoorHouse8');
    }
  }, [yPlayerIndex.current]);

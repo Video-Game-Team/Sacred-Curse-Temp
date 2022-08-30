@@ -80,7 +80,7 @@ const IndoorHouse3 = (props) => {
     [0, 4877, 4878, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 65],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 79],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 93],
-    [1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   ];
 
   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
@@ -130,7 +130,10 @@ const IndoorHouse3 = (props) => {
 
    //  //INDOOR USE EFFECT
    useEffect(() => {
-     if (yPlayerIndex.current === 14 && xPlayerIndex.current === 7) {
+     if (
+      (yPlayerIndex.current === 14 && xPlayerIndex.current === 6) ||
+      (yPlayerIndex.current === 14 && xPlayerIndex.current === 7) 
+     ){
        props.active('tortous', 'indoorHouse3');
      }
    }, [yPlayerIndex.current]);
