@@ -80,7 +80,7 @@ const IndoorHouse3 = (props) => {
     [0, 4877, 4878, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 65],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 79],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 93],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1],
   ];
 
   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
@@ -350,6 +350,7 @@ const IndoorHouse3 = (props) => {
     }
     requestRef.current = requestAnimationFrame(animate);
   };
+
 
   //every time the current key changes this runs
   useEffect(() => {

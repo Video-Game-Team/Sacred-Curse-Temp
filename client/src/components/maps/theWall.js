@@ -23,7 +23,7 @@ const TheWall = (props) => {
   const [tick, setTick] = useState(1);
   //correpsondds with a css class to tell it which version of the sprite to load. ie "left", "right"
   // const [facing.current, setFacing] = useState("right");
-  const facing = useRef();
+  const facing = useRef('up');
   //corresponds with a css class. determiines if the sprite gets animated or not
   const [walker, setWalker] = useState('false');
   // const [walkerArr, setWalkerkArr]= useState([])
@@ -1144,8 +1144,6 @@ const TheWall = (props) => {
   console.log(yPlayerIndex.current, xPlayerIndex.current);
 
   console.log(currentMap2[yPlayerIndex.current][xPlayerIndex.current]);
-
-
 
 
   // useEffect(() => {

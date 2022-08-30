@@ -80,7 +80,7 @@ const RanchHouse1 = (props) => {
     [3221225513, 1989, 1990, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1989, 1990, 41],
     [3221225513, 2005, 2006, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2005, 2006, 41],
     [3221225513, 2021, 2022, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2021, 2022, 41],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   ];
 
     console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
@@ -127,8 +127,7 @@ const RanchHouse1 = (props) => {
    useEffect(() => {
      if (
        (yPlayerIndex.current === 14 && xPlayerIndex.current === 3) ||
-       (yPlayerIndex.current === 14 && xPlayerIndex.current === 4) ||
-       (yPlayerIndex.current === 14 && xPlayerIndex.current === 5)
+       (yPlayerIndex.current === 14 && xPlayerIndex.current === 4) 
      ) {
        props.active('dunleaveyValley', 'ranchHouse1');
      }

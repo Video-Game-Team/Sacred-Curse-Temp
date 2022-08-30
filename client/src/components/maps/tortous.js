@@ -1871,9 +1871,9 @@ const Tortous = (props) => {
       props.active('indoorHouse3', 'tortous');
     }
     //indoor house 7
-    if (yPlayerIndex.current === 88 && xPlayerIndex.current === 84) {
-      props.active('indoorHouse7', 'tortous');
-    }
+    // if (yPlayerIndex.current === 88 && xPlayerIndex.current === 84) {
+    //   props.active('indoorHouse7', 'tortous');
+    // }
     // indoor house 8
     if (yPlayerIndex.current === 88 && xPlayerIndex.current === 64) {
       props.active('indoorHouse8', 'tortous');
