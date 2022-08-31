@@ -33,6 +33,7 @@ const Tortous = (props) => {
   const yPlayerIndex = useRef(92);
   const xPlayerIndex = useRef(53);
   const [gridArray, setGridArray] = useState([]);
+  const [textValue, setTextValue] = useState(null);
 
   let currentMap2 = [
     [
@@ -1652,159 +1653,164 @@ const Tortous = (props) => {
     ],
   ];
 
-  // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  // console.log(
-  //   'VALUE Right',
-  //   currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-  // );
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+  );
+
+
 
   // useEffect(()=>{
   //   let tempGrid=[]
   //   for (let i=0; i<currentMap.length; i++){
   //     for (let j=0; j<currentMap[i].length; j++){
-  //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-  //         gridColumn: j+1,
-  //         gridRow: i+1,
-  //         color: "white",
-  //     }}
-  //     > {currentMap[i][j]}
-
-  //     </button>)
-
+  //       tempGrid.push(
+  //         <button
+  //           onClick={() => {
+  //             console.log(`Coordinates ${i} - ${j}`);
+  //           }}
+  //           className="numbers"
+  //           style={{
+  //             gridColumn: j + 1,
+  //             gridRow: i + 1,
+  //             color: 'white',
+  //           }}
+  //         >
+  //           {i} - {j}
+  //           {/* {currentMap[i][j]} */}
+  //         </button>
+  //       );
   //     }
   //   }
   // setGridArray(tempGrid)
   // },[])
 
 
-   useEffect(() => {
-     if (props.previousMap === 'trainTracksToTortous') {
-       //setYCord
-       yPlayerIndex.current = 92;
-       //setXcord
-       xPlayerIndex.current = 53;
-       //set xTransform
-       setXTransformVar(-2776);
-       //set yTransform
-       setYTransformVar(-5588);
-       facing.current = 'up';
-     }
-      if (props.previousMap === 'tortousTrainStation') {
-         //setYCord
-        yPlayerIndex.current = 54;
-        //setXcord
-          xPlayerIndex.current = 10;
-        //set xTransform
-        setXTransformVar(-24);
-          //set yTransform
-        setYTransformVar(-3136);
-        facing.current = 'right';
-        }
-        if (props.previousMap === 'trainTracksToCapital') {
-          //setYCord
-          yPlayerIndex.current = 6;
-          //setXcord
-          xPlayerIndex.current = 52;
-          //set xTransform
-          setXTransformVar(-2704);
-          //set yTransform
-          setYTransformVar(-84);
-          facing.current = 'down';
-        }
-        if (props.previousMap === 'tortousFork') {
-          //setYCord
-          yPlayerIndex.current = 54;
-          //setXcord
-          xPlayerIndex.current = 93;
-          //set xTransform
-          setXTransformVar(-5336);
-          //set yTransform
-          setYTransformVar(-3148);
-          facing.current = 'left';
-        }
-           if (props.previousMap === 'hotelIndoors') {
-             //setYCord
-             yPlayerIndex.current = 55;
-             //setXcord
-             xPlayerIndex.current = 51;
-             //set xTransform
-             setXTransformVar(-2648);
-             //set yTransform
-             setYTransformVar(-3216);
-             facing.current = 'down';
-           }
-           if (props.previousMap === 'oldManCrawfordInside') {
-             //setYCord
-             yPlayerIndex.current = 70;
-             //setXcord
-             xPlayerIndex.current = 88;
-             //set xTransform
-             setXTransformVar(-5020);
-             //set yTransfor
-             setYTransformVar(-4180);
-             facing.current = 'down';
-           }
-           if (props.previousMap === 'indoorHouse1') {
-             //setYCord
-             yPlayerIndex.current = 81;
-             //setXcord
-             xPlayerIndex.current = 39;
-             //set xTransform
-             setXTransformVar(-1880);
-             //set yTransfor
-             setYTransformVar(-4880);
-             facing.current = 'down';
-           }
-           if (props.previousMap === 'indoorHouse3') {
-             //setYCord
-             yPlayerIndex.current = 24;
-             //setXcord
-             xPlayerIndex.current = 72;
-             //set xTransform
-             setXTransformVar(-3992);
-             //set yTransfor
-             setYTransformVar(-1232);
-             facing.current = 'down';
-           }
-           if (props.previousMap === 'indoorHouse7') {
-             //setYCord
-             yPlayerIndex.current = 89;
-             //setXcord
-             xPlayerIndex.current = 94;
-             //set xTransform
-             setXTransformVar(-4760);
-             //set yTransfor
-             setYTransformVar(-5392);
-             facing.current = 'down';
-           }
-           if (props.previousMap === 'indoorHouse8') {
-             //setYCord
-             yPlayerIndex.current = 89;
-             //setXcord
-             xPlayerIndex.current = 64;
-             //set xTransform
-             setXTransformVar(-3484);
-             //set yTransfor
-             setYTransformVar(-5396);
-             facing.current = 'down';
-           }
-           if (props.previousMap === 'indoorHouse2') {
-             //setYCord
-             yPlayerIndex.current = 89;
-             //setXcord
-             xPlayerIndex.current = 33;
-             //set xTransform
-             setXTransformVar(-1496);
-             //set yTransfor
-             setYTransformVar(-5396);
-             facing.current = 'down';
-           }
-         }, []);
 
-
-
-
-   
+  useEffect(() => {
+    if (props.previousMap === 'trainTracksToTortous') {
+      //setYCord
+      yPlayerIndex.current = 92;
+      //setXcord
+      xPlayerIndex.current = 53;
+      //set xTransform
+      setXTransformVar(-2776);
+      //set yTransform
+      setYTransformVar(-5588);
+      facing.current = 'up';
+    }
+    if (props.previousMap === 'tortousTrainStation') {
+      //setYCord
+      yPlayerIndex.current = 54;
+      //setXcord
+      xPlayerIndex.current = 10;
+      //set xTransform
+      setXTransformVar(-24);
+      //set yTransform
+      setYTransformVar(-3136);
+      facing.current = 'right';
+    }
+    if (props.previousMap === 'trainTracksToCapital') {
+      //setYCord
+      yPlayerIndex.current = 6;
+      //setXcord
+      xPlayerIndex.current = 52;
+      //set xTransform
+      setXTransformVar(-2704);
+      //set yTransform
+      setYTransformVar(-84);
+      facing.current = 'down';
+    }
+    if (props.previousMap === 'tortousFork') {
+      //setYCord
+      yPlayerIndex.current = 54;
+      //setXcord
+      xPlayerIndex.current = 93;
+      //set xTransform
+      setXTransformVar(-5336);
+      //set yTransform
+      setYTransformVar(-3148);
+      facing.current = 'left';
+    }
+    if (props.previousMap === 'hotelIndoors') {
+      //setYCord
+      yPlayerIndex.current = 55;
+      //setXcord
+      xPlayerIndex.current = 51;
+      //set xTransform
+      setXTransformVar(-2648);
+      //set yTransform
+      setYTransformVar(-3216);
+      facing.current = 'down';
+    }
+    if (props.previousMap === 'oldManCrawfordInside') {
+      //setYCord
+      yPlayerIndex.current = 70;
+      //setXcord
+      xPlayerIndex.current = 88;
+      //set xTransform
+      setXTransformVar(-5020);
+      //set yTransfor
+      setYTransformVar(-4180);
+      facing.current = 'down';
+    }
+    if (props.previousMap === 'indoorHouse1') {
+      //setYCord
+      yPlayerIndex.current = 81;
+      //setXcord
+      xPlayerIndex.current = 39;
+      //set xTransform
+      setXTransformVar(-1880);
+      //set yTransfor
+      setYTransformVar(-4880);
+      facing.current = 'down';
+    }
+    if (props.previousMap === 'indoorHouse3') {
+      //setYCord
+      yPlayerIndex.current = 24;
+      //setXcord
+      xPlayerIndex.current = 72;
+      //set xTransform
+      setXTransformVar(-3992);
+      //set yTransfor
+      setYTransformVar(-1232);
+      facing.current = 'down';
+    }
+    if (props.previousMap === 'indoorHouse7') {
+      //setYCord
+      yPlayerIndex.current = 89;
+      //setXcord
+      xPlayerIndex.current = 94;
+      //set xTransform
+      setXTransformVar(-4760);
+      //set yTransfor
+      setYTransformVar(-5392);
+      facing.current = 'down';
+    }
+    if (props.previousMap === 'indoorHouse8') {
+      //setYCord
+      yPlayerIndex.current = 89;
+      //setXcord
+      xPlayerIndex.current = 64;
+      //set xTransform
+      setXTransformVar(-3484);
+      //set yTransfor
+      setYTransformVar(-5396);
+      facing.current = 'down';
+    }
+    if (props.previousMap === 'indoorHouse2') {
+      //setYCord
+      yPlayerIndex.current = 89;
+      //setXcord
+      xPlayerIndex.current = 33;
+      //set xTransform
+      setXTransformVar(-1496);
+      //set yTransfor
+      setYTransformVar(-5396);
+      facing.current = 'down';
+    }
+  }, []);
 
   // UseEffect Keeping track of player conditions
   useEffect(() => {
@@ -1826,30 +1832,27 @@ const Tortous = (props) => {
     }
   }, [xPlayerIndex.current]);
 
+  useEffect(() => {
+    //yPlayerIndex up and down values
+    // trains Map check conditions
+    if (
+      (yPlayerIndex.current === 5 && xPlayerIndex.current === 51) ||
+      (yPlayerIndex.current === 5 && xPlayerIndex.current === 52) ||
+      (yPlayerIndex.current === 5 && xPlayerIndex.current === 53)
+    ) {
+      props.active('trainTracksToCapital', 'tortous');
+    }
 
- useEffect(() => {
-   //yPlayerIndex up and down values
-   // trains Map check conditions
-   if (
-     (yPlayerIndex.current === 5 && xPlayerIndex.current === 51) ||
-     (yPlayerIndex.current === 5 && xPlayerIndex.current === 52) ||
-     (yPlayerIndex.current === 5 && xPlayerIndex.current === 53)
-   ) {
-     props.active('trainTracksToCapital', 'tortous');
-   }
+    if (
+      (yPlayerIndex.current === 93 && xPlayerIndex.current === 52) ||
+      (yPlayerIndex.current === 93 && xPlayerIndex.current === 53) ||
+      (yPlayerIndex.current === 93 && xPlayerIndex.current === 54)
+    ) {
+      props.active('trainTracksToTortous', 'tortous');
+    }
+  }, [yPlayerIndex.current]);
 
-   if (
-     (yPlayerIndex.current === 93 && xPlayerIndex.current === 52) ||
-     (yPlayerIndex.current === 93 && xPlayerIndex.current === 53) ||
-     (yPlayerIndex.current === 93 && xPlayerIndex.current === 54)
-   ) {
-     props.active('trainTracksToTortous', 'tortous');
-   }
- }, [yPlayerIndex.current]);
-
-
-
- //INDOOR USE EFFECT
+  //INDOOR USE EFFECT
   useEffect(() => {
     //Hotel
     if (yPlayerIndex.current === 54 && xPlayerIndex.current === 51) {
@@ -1883,6 +1886,179 @@ const Tortous = (props) => {
       props.active('indoorHouse2', 'tortous');
     }
   }, [yPlayerIndex.current]);
+
+
+
+
+
+
+  //CHARACTER DIALOGUE USE EFFECT
+  useEffect(() => {
+    const dialogueAction = (event) => {
+      if (event.key === 'a') {
+        //Facing up
+        if (facing.current === 'up') {
+          //Guard 1 Lower left NPC
+          if (
+            (yPlayerIndex.current === 83 && xPlayerIndex.current === 24) ||
+            (yPlayerIndex.current === 83 && xPlayerIndex.current === 25)
+          ) {
+            setTextValue('Hi I am girl');
+            console.log('Hi I am girl');
+          }
+          //YO Mama NPC
+          if (
+            (yPlayerIndex.current === 57 && xPlayerIndex.current === 43) ||
+            (yPlayerIndex.current === 57 && xPlayerIndex.current === 44)
+          ) {
+            console.log("Hi I'm Guard 1");
+          }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 57 && xPlayerIndex.current === 61) ||
+            (yPlayerIndex.current === 57 && xPlayerIndex.current === 62)
+          ) {
+            console.log("Hi I'm Guard 2");
+          }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 30 && xPlayerIndex.current === 88) ||
+            (yPlayerIndex.current === 30 && xPlayerIndex.current === 89)
+          ) {
+            console.log("Hi I'm crazy yeling guy");
+          }
+          //Old Man
+          if (
+            (yPlayerIndex.current === 20 && xPlayerIndex.current === 22) ||
+            (yPlayerIndex.current === 20 && xPlayerIndex.current === 23)
+          ) {
+            console.log("Hi I'm old man");
+          }
+        }
+
+        //Facing down
+        if (!facing.current) {
+          //Jim NPC
+          // if (
+          //   (yPlayerIndex.current === 35 && xPlayerIndex.current === 32) ||
+          //   (yPlayerIndex.current === 35 && xPlayerIndex.current === 33)
+          // ) {
+          //   console.log('Hi I am girl');
+          // }
+          //YO Mama NPC
+          if (
+            (yPlayerIndex.current === 54 && xPlayerIndex.current === 43) ||
+            (yPlayerIndex.current === 52 && xPlayerIndex.current === 42)
+          ) {
+            console.log("Hi I'm Guard 1");
+          }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 54 && xPlayerIndex.current === 62) ||
+            (yPlayerIndex.current === 54 && xPlayerIndex.current === 61)
+          ) {
+            console.log("Hi I'm Guard 2");
+          }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 27 && xPlayerIndex.current === 88) ||
+            (yPlayerIndex.current === 27 && xPlayerIndex.current === 89)
+          ) {
+            console.log("Hi I'm crazy yeling guy");
+          }
+          //Old Man
+          if (
+            (yPlayerIndex.current === 17 && xPlayerIndex.current === 23) ||
+            (yPlayerIndex.current === 17 && xPlayerIndex.current === 22)
+          ) {
+            console.log("Hi I'm old man");
+          }
+        }
+
+        //Facing left
+        if (facing.current === 'left') {
+          if (
+            (yPlayerIndex.current === 81 && xPlayerIndex.current === 26) ||
+            (yPlayerIndex.current === 82 && xPlayerIndex.current === 26)
+          ) {
+            console.log('Hi I am girl');
+          }
+          //YO Mama NPC
+          if (
+            (yPlayerIndex.current === 55 && xPlayerIndex.current === 45) ||
+            (yPlayerIndex.current === 56 && xPlayerIndex.current === 45)
+          ) {
+            console.log("Hi I'm Guard 1");
+          }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 55 && xPlayerIndex.current === 63) ||
+            (yPlayerIndex.current === 56 && xPlayerIndex.current === 63)
+          ) {
+            console.log("Hi I'm Guard 2");
+          }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 28 && xPlayerIndex.current === 90) ||
+            (yPlayerIndex.current === 29 && xPlayerIndex.current === 90)
+          ) {
+            console.log("Hi I'm crazy yeling guy");
+          }
+          //Old Man
+          if (
+            (yPlayerIndex.current === 19 && xPlayerIndex.current === 24) ||
+            (yPlayerIndex.current === 20 && xPlayerIndex.current === 24)
+          ) {
+            console.log("Hi I'm old man");
+          }
+        }
+
+        //Facing right
+        if (facing.current === 'right') {
+          if (
+            (yPlayerIndex.current === 81 && xPlayerIndex.current === 23) ||
+            (yPlayerIndex.current === 82 && xPlayerIndex.current === 23)
+          ) {
+            console.log('Hi I am girl');
+          }
+          //YO Mama NPC
+          if (
+            (yPlayerIndex.current === 55 && xPlayerIndex.current === 42) ||
+            (yPlayerIndex.current === 56 && xPlayerIndex.current === 42)
+          ) {
+            console.log("Hi I'm Guard 1");
+          }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 55 && xPlayerIndex.current === 60) ||
+            (yPlayerIndex.current === 56 && xPlayerIndex.current === 60)
+          ) {
+            console.log("Hi I'm Guard 2");
+          }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 28 && xPlayerIndex.current === 87) ||
+            (yPlayerIndex.current === 29 && xPlayerIndex.current === 87)
+          ) {
+            console.log("Hi I'm crazy yeling guy");
+          }
+          //Old Man
+          if (
+            (yPlayerIndex.current === 19 && xPlayerIndex.current === 21) ||
+            (yPlayerIndex.current === 20 && xPlayerIndex.current === 21)
+          ) {
+            console.log("Hi I'm old man");
+          }
+        }
+      }
+    };
+    window.addEventListener('keydown', dialogueAction);
+    return () => {
+      window.removeEventListener('keydown', dialogueAction);
+    };
+  }, []);
+
+
 
 
 

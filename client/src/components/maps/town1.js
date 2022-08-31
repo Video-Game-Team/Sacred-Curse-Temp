@@ -1159,6 +1159,7 @@ const TownMap1 = (props) => {
   //   }
   // setGridArray(tempGrid)
   // },[])
+  
 
   console.log('poop');
   console.log(props.previousMap);

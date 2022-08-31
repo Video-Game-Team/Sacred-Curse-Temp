@@ -989,74 +989,64 @@ const TortousTrainStation = (props) => {
     ],
   ];
 
-    console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-    console.log(
-      'VALUE Right',
-      currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-    );
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+  );
+  
 
-        // useEffect(()=>{
-        //   let tempGrid=[]
-        //   for (let i=0; i<currentMap.length; i++){
-        //     for (let j=0; j<currentMap[i].length; j++){
-        //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-        //         gridColumn: j+1,
-        //         gridRow: i+1,
-        //         color: "black",
-        //     }}
-        //     > {currentMap[i][j]}
-
-        //     </button>)
-
-        //     }
-        //   }
-        // setGridArray(tempGrid)
-
-        // },[])
-
-
-
-
-useEffect(() => {
-  if (props.previousMap === 'tortous') {
-    //setYCord
-    yPlayerIndex.current = 27;
-    //setXcord
-    xPlayerIndex.current = 87;
-    //set xTransform
-    setXTransformVar(-4948);
-    //set yTransform
-    setYTransformVar(-1427);
-    facing.current = 'left';
-  }  
-}, []);
+  // useEffect(()=>{
+  //   let tempGrid=[]
+  //   for (let i=0; i<currentMap.length; i++){
+  //     for (let j=0; j<currentMap[i].length; j++){
+  //       tempGrid.push(
+  //         <button
+  //           onClick={() => {
+  //             console.log(`Coordinates ${i} - ${j}`);
+  //           }}
+  //           className="numbers"
+  //           style={{
+  //             gridColumn: j + 1,
+  //             gridRow: i + 1,
+  //             color: 'white',
+  //           }}
+  //         >
+  //           {i} - {j}
+  //           {/* {currentMap[i][j]} */}
+  //         </button>
+  //       );
+  //     }
+  //   }
+  // setGridArray(tempGrid)
+  // },[])
 
 
 
+  useEffect(() => {
+    if (props.previousMap === 'tortous') {
+      //setYCord
+      yPlayerIndex.current = 27;
+      //setXcord
+      xPlayerIndex.current = 87;
+      //set xTransform
+      setXTransformVar(-4948);
+      //set yTransform
+      setYTransformVar(-1427);
+      facing.current = 'left';
+    }
+  }, []);
 
-
-
-
- useEffect(() => {
-   //yPlayerIndex up and down values
-   // trains Map check conditions
-   if (
-     (yPlayerIndex.current === 26 && xPlayerIndex.current === 88) ||
-     (yPlayerIndex.current === 27 && xPlayerIndex.current === 88) 
-   ) {
-     props.active('tortous', 'tortousTrainStation');
-   }
- }, [xPlayerIndex.current]);
-
-
-
-
-
-
-
-
-
-
+  useEffect(() => {
+    //yPlayerIndex up and down values
+    // trains Map check conditions
+    if (
+      (yPlayerIndex.current === 26 && xPlayerIndex.current === 88) ||
+      (yPlayerIndex.current === 27 && xPlayerIndex.current === 88)
+    ) {
+      props.active('tortous', 'tortousTrainStation');
+    }
+  }, [xPlayerIndex.current]);
 
   //event listen for enter
   useEffect(() => {
