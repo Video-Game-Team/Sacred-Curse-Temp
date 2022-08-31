@@ -518,11 +518,11 @@ const FarmMap = (props) => {
   ];
 
 
-  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  console.log(
-    'VALUE Right',
-    currentMap[yPlayerIndex.current][xPlayerIndex.current]
-  );
+  // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  // console.log(
+  //   'VALUE Right',
+  //   currentMap[yPlayerIndex.current][xPlayerIndex.current]
+  // );
 
 
   //CSS GRID ON OFF USE EFFECT
@@ -545,8 +545,8 @@ const FarmMap = (props) => {
   // },[])
 
 
-  // Console Log to test npc interation
-  console.log(textValue)
+// Console Log to test npc interation
+console.log(textValue)
 
 
 //CHARACTER DIALOGUE USE EFFECT
@@ -562,7 +562,7 @@ useEffect(() => {
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 22)
           ) {
             setTextValue('Hi I am Jim')
-            // console.log("Hi I'm jim");
+            console.log("Hi I'm jim");
           }
           //YO Mama NPC
           if (
@@ -975,7 +975,7 @@ useEffect(() => {
             </div>
           </div>
         </div>
-        <dialog className="textBox typewriter" open>
+        <dialog className="textBox typewriter" close>
           <p>
             Have you seen the man with the weeping willow tree in front of his
             house? Be on 
