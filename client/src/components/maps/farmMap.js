@@ -975,7 +975,7 @@ useEffect(() => {
             </div>
           </div>
         </div>
-        <dialog className="textBox typewriter" close>
+        <dialog className="textBox typewriter" open>
           <p>
             Have you seen the man with the weeping willow tree in front of his
             house? Be on 

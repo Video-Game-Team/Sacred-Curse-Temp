@@ -33,6 +33,7 @@ const SaintAnna = (props) => {
   const yPlayerIndex = useRef(23);
   const xPlayerIndex = useRef(11);
   const [gridArray, setGridArray] = useState([]);
+  const [textValue, setTextValue] = useState(null);
 
   let currentMap2 = [
     [
@@ -386,13 +387,6 @@ const SaintAnna = (props) => {
       0, 0, 0, 0, 0,
     ],
   ];
-
-
-
-
-
-
-
 
   let currentMap = [
     [
@@ -835,53 +829,199 @@ const SaintAnna = (props) => {
     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
   );
 
-    // useEffect(()=>{
-    //   let tempGrid=[]
-    //   for (let i=0; i<currentMap.length; i++){
-    //     for (let j=0; j<currentMap[i].length; j++){
-    //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-    //         gridColumn: j+1,
-    //         gridRow: i+1,
-    //         color: "white",
-    //     }}
-    //     > {currentMap[i][j]}
-
-    //     </button>)
-
-    //     }
-    //   }
-    // setGridArray(tempGrid)
-
-    // },[])
 
 
-  
-
-   useEffect(() => {
-     if (props.previousMap === 'indoorHouse6') {
-       //setYCord
-       yPlayerIndex.current = 39;
-       //setXcord
-       xPlayerIndex.current = 31;
-       //set xTransform
-       setXTransformVar(-1368);
-       //set yTransform
-       setYTransformVar(-2192);
-       facing.current = 'down';
-     }
-   }, []);
-
- //  // UseEffect Keeping track of player conditions
- useEffect(() => {
-   //yPlayerIndex up and down values
-   // TheWall Map check conditions
-   if (yPlayerIndex.current === 38 && xPlayerIndex.current === 31) {
-     props.active('indoorHouse6', 'saintAnna');
-   }
- }, [yPlayerIndex.current]);    
+  // useEffect(() => {
+  //   let tempGrid = [];
+  //   for (let i = 0; i < currentMap.length; i++) {
+  //     for (let j = 0; j < currentMap[i].length; j++) {
+  //       tempGrid.push(
+  //         <button
+  //           onClick={() => {
+  //             console.log(`Coordinates ${i} - ${j}`);
+  //           }}
+  //           className="numbers"
+  //           style={{
+  //             gridColumn: j + 1,
+  //             gridRow: i + 1,
+  //             color: 'white',
+  //           }}
+  //         >
+  //           {i} - {j}
+  //           {/* {currentMap[i][j]} */}
+  //         </button>
+  //       );
+  //     }
+  //   }
+  //   setGridArray(tempGrid);
+  // }, []);
 
 
 
+  useEffect(() => {
+    if (props.previousMap === 'indoorHouse6') {
+      //setYCord
+      yPlayerIndex.current = 39;
+      //setXcord
+      xPlayerIndex.current = 31;
+      //set xTransform
+      setXTransformVar(-1368);
+      //set yTransform
+      setYTransformVar(-2192);
+      facing.current = 'down';
+    }
+  }, []);
+
+  //  // UseEffect Keeping track of player conditions
+  useEffect(() => {
+    //yPlayerIndex up and down values
+    // TheWall Map check conditions
+    if (yPlayerIndex.current === 38 && xPlayerIndex.current === 31) {
+      props.active('indoorHouse6', 'saintAnna');
+    }
+  }, [yPlayerIndex.current]);
+
+
+
+
+  //CHARACTER DIALOGUE USE EFFECT
+  useEffect(() => {
+    const dialogueAction = (event) => {
+      if (event.key === 'a') {
+        //Facing up
+        if (facing.current === 'up') {
+          // //Guard 1 Lower left NPC
+          // if (
+          //   (yPlayerIndex.current === 38 && xPlayerIndex.current === 32) ||
+          //   (yPlayerIndex.current === 38 && xPlayerIndex.current === 33)
+          // ) {
+          //   setTextValue('Hi I am Guard1');
+          //   console.log('Hi I am Guard1');
+          // }
+          //YO Mama NPC
+          if (
+            (yPlayerIndex.current ===41 && xPlayerIndex.current === 33) ||
+            (yPlayerIndex.current === 41 && xPlayerIndex.current === 34)
+          ) {
+            console.log("Hi I'm red shirt");
+          }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 25 && xPlayerIndex.current === 39) ||
+            (yPlayerIndex.current === 25 && xPlayerIndex.current === 38)
+          ) {
+            console.log("Hi I'm blonde girl");
+          }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 35 && xPlayerIndex.current === 78) ||
+            (yPlayerIndex.current === 35 && xPlayerIndex.current === 79) ||
+            (yPlayerIndex.current === 35 && xPlayerIndex.current === 80)
+          ) {
+            console.log("Hi I'm dock guy 2");
+          }
+        }
+
+        //Facing down
+        if (!facing.current) {
+          //Jim NPC
+          if (
+            (yPlayerIndex.current === 23 && xPlayerIndex.current === 18) ||
+            (yPlayerIndex.current === 23 && xPlayerIndex.current === 19)
+          ) {
+            console.log("Hi I'm Dock guy 1");
+          }
+          //YO Mama NPC
+          if (
+            (yPlayerIndex.current === 38 && xPlayerIndex.current === 34) ||
+            (yPlayerIndex.current === 38 && xPlayerIndex.current === 33)
+          ) {
+              console.log("Hi I'm blonde girl");
+          }
+          //Hot Girl
+          // if (
+          //   (yPlayerIndex.current === 34 && xPlayerIndex.current === 14) ||
+          //   (yPlayerIndex.current === 34 && xPlayerIndex.current === 15)
+          // ) {
+          //   console.log("Hi I'm Guard 3");
+          // }
+          //Hot Girl
+          // if (
+          //   (yPlayerIndex.current === 21 && xPlayerIndex.current === 33) ||
+          //   (yPlayerIndex.current === 21 && xPlayerIndex.current === 34)
+          // ) {
+          //   console.log("Hi I'm guard 4");
+          // }
+        }
+
+        //Facing left
+        if (facing.current === 'left') {
+          if (
+            (yPlayerIndex.current === 24 && xPlayerIndex.current === 20) ||
+            (yPlayerIndex.current === 25 && xPlayerIndex.current === 20)
+          ) {
+            console.log("Hi I'm Dock guy 1");
+          }
+          //YO Mama NPC
+          if (
+            (yPlayerIndex.current === 39 && xPlayerIndex.current === 35) ||
+            (yPlayerIndex.current === 40 && xPlayerIndex.current === 35)
+          ) {
+             console.log("Hi I'm red shirt");
+          }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 22 && xPlayerIndex.current === 40) ||
+            (yPlayerIndex.current === 23 && xPlayerIndex.current === 40)
+          ) {
+             console.log("Hi I'm blonde girl");
+          }
+          //Hot Girl
+          // if (
+          //   (yPlayerIndex.current === 22 && xPlayerIndex.current === 34) ||
+          //   (yPlayerIndex.current === 23 && xPlayerIndex.current === 34)
+          // ) {
+          //   console.log("Hi I'm guard 4");
+          // }
+        }
+
+        //Facing right
+        if (facing.current === 'right') {
+          if (
+            (yPlayerIndex.current === 24 && xPlayerIndex.current === 17) ||
+            (yPlayerIndex.current === 25 && xPlayerIndex.current === 17)
+          ) {
+            console.log("Hi I'm Dock guy 1");
+          }
+          //YO Mama NPC
+          if (
+            (yPlayerIndex.current === 39 && xPlayerIndex.current === 32) ||
+            (yPlayerIndex.current === 40 && xPlayerIndex.current === 32)
+          ) {
+             console.log("Hi I'm red shirt");
+          }
+          //Hot Girl
+          // if (
+          //   (yPlayerIndex.current === 22 && xPlayerIndex.current === 22) ||
+          //   (yPlayerIndex.current === 23 && xPlayerIndex.current === 22)
+          // ) {
+          //    console.log("Hi I'm blonde girl");
+          // }
+          //Hot Girl
+          // if (
+          //   (yPlayerIndex.current === 22 && xPlayerIndex.current === 32) ||
+          //   (yPlayerIndex.current === 23 && xPlayerIndex.current === 32)
+          // ) {
+          //   console.log("Hi I'm guard 4");
+          // }
+        }
+      }
+    };
+    window.addEventListener('keydown', dialogueAction);
+    return () => {
+      window.removeEventListener('keydown', dialogueAction);
+    };
+  }, []);
 
 
 
