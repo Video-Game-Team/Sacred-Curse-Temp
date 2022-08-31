@@ -36,9 +36,7 @@ body {
 
 .mapF {
   image-rendering: pixelated;
-   /* max-height: 50000px;
-  min-width: 50000px; */
-  background-image: url("./assets/maps/Farm_map_ROCK PATH w grid.png");
+  background-image: url("./assets/maps/Farm_map_ROCK PATH no grid.png");
   background-size: 3840px; 
   width: calc(150 * var(--grid-cell));
   height: calc(115 * var(--grid-cell)); 
@@ -60,8 +58,6 @@ body {
   width: calc(var(--grid-cell)* 2);
   height: calc(var(--grid-cell)* 2);
   overflow: hidden;
-  /* margin-top: -58px;
-    margin-left: -45px; */
 }
 
 .character_spritesheet {
