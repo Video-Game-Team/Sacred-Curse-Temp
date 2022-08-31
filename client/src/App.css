@@ -283,13 +283,12 @@ body {
   }
 }
 
-
 .textBox {
   font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
   border-radius: 15px;
   border: 3px solid;
   box-shadow: 1px -2px 10px 5px rgba(0, 0, 0, 0.5);
-  opacity: 0.93;
+  opacity: 0.94;
   font-size: 30px;
   font-weight: 500; 
   bottom: 23px;
@@ -298,6 +297,29 @@ body {
   color: rgb(0, 0, 0);
   background: rgb(173, 173, 173);
   background: linear-gradient(0deg, rgba(173, 173, 173, 1) 0%, rgba(212, 218, 217, 1) 55%);
-
 }
 
+p {
+  font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: rgb(0, 0, 0);
+  font-weight:500;
+  font-size: 30px;
+}
+
+.typewriter p {
+  overflow: hidden;
+  white-space: nowrap;
+  animation:
+  typing 3.5s steps(40, end),
+  .75s step-end infinite;
+}
+
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+  to {
+    width: 100%
+  }
+}

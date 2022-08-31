@@ -941,16 +941,15 @@ useEffect(() => {
   return (
     <div>
       <div className="camera fade-in">
-      {/* <button style={{height: "1000px", }} onClick={()=>{console.log("Mike is a poker king")}}>Hi</button> */}
+        {/* <button style={{height: "1000px", }} onClick={()=>{console.log("Mike is a poker king")}}>Hi</button> */}
 
         <div>
           <div
             className="mapF pixel-art"
             style={{
-              transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`, 
+              transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`,
             }}
           >
-
             {gridArray}
             <div
               className="character pixel-art"
@@ -961,21 +960,20 @@ useEffect(() => {
                   272 - yTransformVar
                 }px, 0 )`,
               }}
-            >             
-
-
+            >
               <div className="character_spritesheet pixel-art"></div>
-              
             </div>
-
           </div>
-
         </div>
-        <dialog className="textBox" open>Hi, my name is Matt. Have you seen my pet snake? He lives under a rock on the west side of the mountain......sometimes in my pants too!</dialog>
-
+        <dialog className="textBox typewriter" open>
+          <p>
+            Have you seen the man with the weeping willow tree in front of his
+            house? Be on 
+            the lookout for Wiggins hiding underneath your bed before you sleep.
+            Grab him and take him to the willow tree for a surprise from Mr. F.
+          </p>
+        </dialog>
       </div>
-     
-
     </div>
   );
 };
