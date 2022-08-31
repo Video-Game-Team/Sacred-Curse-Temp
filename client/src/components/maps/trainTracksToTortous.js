@@ -33,6 +33,7 @@ const TrainTracksToTortous = (props) => {
   const yPlayerIndex = useRef(298);
   const xPlayerIndex = useRef(19);
   const [gridArray, setGridArray] = useState([]);
+  const [textValue, setTextValue] = useState(null);
 
   let currentMap2 = [
     [
@@ -20090,30 +20091,31 @@ const TrainTracksToTortous = (props) => {
     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
   );
 
-  //  useEffect(() => {
-  //    let tempGrid = [];
-  //   //  for (let i = 0; i < currentMap.length; i++) {
-  //      for (let j = 0; j < currentMap[i].length; j++) {
-  //        tempGrid.push(
-  //          <button
-  //            onClick={() => {
-  //              console.log(`Coordinates ${i} - ${j}`);
-  //            }}
-  //            className="numbers"
-  //            style={{
-  //              gridColumn: j + 1,
-  //              gridRow: i + 1,
-  //              color: 'white',
-  //            }}
-  //          >
-  //            {' '}
-  //            {currentMap[i][j]}
-  //          </button>
-  //        );
-  //      }
-  //    }
-  //    setGridArray(tempGrid);
-  //  }, []);
+  // useEffect(()=>{
+  //   let tempGrid=[]
+  //   for (let i=0; i<currentMap.length; i++){
+  //     for (let j=0; j<currentMap[i].length; j++){
+  //       tempGrid.push(
+  //         <button
+  //           onClick={() => {
+  //             console.log(`Coordinates ${i} - ${j}`);
+  //           }}
+  //           className="numbers"
+  //           style={{
+  //             gridColumn: j + 1,
+  //             gridRow: i + 1,
+  //             color: 'white',
+  //           }}
+  //         >
+  //           {i} - {j}
+  //           {/* {currentMap[i][j]} */}
+  //         </button>
+  //       );
+  //     }
+  //   }
+  // setGridArray(tempGrid)
+  // },[])
+
 
   useEffect(() => {
     if (props.previousMap === 'mansonRanch') {
@@ -20138,17 +20140,17 @@ const TrainTracksToTortous = (props) => {
       setYTransformVar(-5248);
       facing.current = 'left';
     }
-      if (props.previousMap === 'tortous') {
-        //setYCord
-        yPlayerIndex.current = 9;
-        //setXcord
-        xPlayerIndex.current = 20;
-        //set xTransform
-        setXTransformVar(-670);
-        //set yTransform
-        setYTransformVar(-256);
-        facing.current = 'down';
-      }
+    if (props.previousMap === 'tortous') {
+      //setYCord
+      yPlayerIndex.current = 9;
+      //setXcord
+      xPlayerIndex.current = 20;
+      //set xTransform
+      setXTransformVar(-670);
+      //set yTransform
+      setYTransformVar(-256);
+      facing.current = 'down';
+    }
   }, []);
 
   // UseEffect Keeping track of player conditions
@@ -20173,7 +20175,6 @@ const TrainTracksToTortous = (props) => {
     }
   }, [xPlayerIndex.current]);
 
-
   // UseEffect Keeping track of player conditions
   useEffect(() => {
     //yPlayerIndex up and down values
@@ -20182,11 +20183,152 @@ const TrainTracksToTortous = (props) => {
       (yPlayerIndex.current === 8 && xPlayerIndex.current === 19) ||
       (yPlayerIndex.current === 8 && xPlayerIndex.current === 20) ||
       (yPlayerIndex.current === 8 && xPlayerIndex.current === 21)
-    )
-      {
+    ) {
       props.active('tortous', 'trainTracksToTortous');
     }
   }, [yPlayerIndex.current]);
+
+
+
+
+  //CHARACTER DIALOGUE USE EFFECT
+  useEffect(() => {
+    const dialogueAction = (event) => {
+      if (event.key === 'a') {
+        //Facing up
+        if (facing.current === 'up') {
+          //Guard 1 Lower left NPC
+          if (
+            (yPlayerIndex.current === 248 && xPlayerIndex.current === 17) ||
+            (yPlayerIndex.current === 248 && xPlayerIndex.current === 18)
+          ) {
+            setTextValue('Hi I am Girl1');
+            console.log('Hi I am Girl1');
+          }
+          // //YO Mama NPC
+          // if (
+          //   (yPlayerIndex.current === 35 && xPlayerIndex.current === 38) ||
+          //   (yPlayerIndex.current === 35 && xPlayerIndex.current === 39)
+          // ) {
+          //     console.log('Hi I am Girl2');
+          // }
+          // //Hot Girl
+          // if (
+          //   (yPlayerIndex.current === 24 && xPlayerIndex.current === 23) ||
+          //   (yPlayerIndex.current === 24 && xPlayerIndex.current === 24)
+          // ) {
+          //   console.log("Hi I'm Guard 3");
+          // }
+          // //Hot Girl
+          // if (
+          //   (yPlayerIndex.current === 24 && xPlayerIndex.current === 33) ||
+          //   (yPlayerIndex.current === 24 && xPlayerIndex.current === 34)
+          // ) {
+          //   console.log("Hi I'm guard 4");
+          // }
+        }
+
+        //Facing down
+        if (!facing.current) {
+          // //Jim NPC
+          // if (
+          //   (yPlayerIndex.current === 35 && xPlayerIndex.current === 32) ||
+          //   (yPlayerIndex.current === 35 && xPlayerIndex.current === 33)
+          // ) {
+          //    console.log('Hi I am Girl1');
+          // }
+          //YO Mama NPC
+          if (
+            (yPlayerIndex.current === 238 && xPlayerIndex.current === 17) ||
+            (yPlayerIndex.current === 238 && xPlayerIndex.current === 18)
+          ) {
+             console.log('Hi I am Girl2');
+          }
+          //Hot Girl
+          // if (
+          //   (yPlayerIndex.current === 34 && xPlayerIndex.current === 14) ||
+          //   (yPlayerIndex.current === 34 && xPlayerIndex.current === 15)
+          // ) {
+          //   console.log("Hi I'm Guard 3");
+          // }
+          //Hot Girl
+          // if (
+          //   (yPlayerIndex.current === 21 && xPlayerIndex.current === 33) ||
+          //   (yPlayerIndex.current === 21 && xPlayerIndex.current === 34)
+          // ) {
+          //   console.log("Hi I'm guard 4");
+          // }
+        //}
+
+        //Facing left
+        // if (facing.current === 'left') {
+        //   if (
+        //     (yPlayerIndex.current === 36 && xPlayerIndex.current === 34) ||
+        //     (yPlayerIndex.current === 37 && xPlayerIndex.current === 34)
+        //   ) {
+        //       console.log('Hi I am Girl1');
+        //   }
+        //   //YO Mama NPC
+        //   if (
+        //     (yPlayerIndex.current === 33 && xPlayerIndex.current === 40) ||
+        //     (yPlayerIndex.current === 34 && xPlayerIndex.current === 40)
+        //   ) {
+        //      console.log('Hi I am Girl2');
+        //   }
+          //Hot Girl
+          // if (
+          //   (yPlayerIndex.current === 35 && xPlayerIndex.current === 16) ||
+          //   (yPlayerIndex.current === 36 && xPlayerIndex.current === 16)
+          // ) {
+          //   console.log("Hi I'm Guard 3");
+          // }
+          //Hot Girl
+          // if (
+          //   (yPlayerIndex.current === 22 && xPlayerIndex.current === 34) ||
+          //   (yPlayerIndex.current === 23 && xPlayerIndex.current === 34)
+          // ) {
+          //   console.log("Hi I'm guard 4");
+          // }
+        //}
+
+        //Facing right
+        // if (facing.current === 'right') {
+        //   if (
+        //     (yPlayerIndex.current === 36 && xPlayerIndex.current === 31) ||
+        //     (yPlayerIndex.current === 37 && xPlayerIndex.current === 31)
+        //   ) {
+        //       console.log('Hi I am Girl1');
+        //   }
+        //   //YO Mama NPC
+        //   if (
+        //     (yPlayerIndex.current === 33 && xPlayerIndex.current === 37) ||
+        //     (yPlayerIndex.current === 34 && xPlayerIndex.current === 37)
+        //   ) {
+        //     console.log('Hi I am Girl2');
+        //   }
+          // //Hot Girl
+          // if (
+          //   (yPlayerIndex.current === 22 && xPlayerIndex.current === 22) ||
+          //   (yPlayerIndex.current === 23 && xPlayerIndex.current === 22)
+          // ) {
+          //   console.log("Hi I'm Guard 3");
+          // }
+          // //Hot Girl
+          // if (
+          //   (yPlayerIndex.current === 22 && xPlayerIndex.current === 32) ||
+          //   (yPlayerIndex.current === 23 && xPlayerIndex.current === 32)
+          // ) {
+          //   console.log("Hi I'm guard 4");
+          // }
+        }
+      }
+    };
+
+    window.addEventListener('keydown', dialogueAction);
+    return () => {
+      window.removeEventListener('keydown', dialogueAction);
+    };
+  }, []);
 
 
 
