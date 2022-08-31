@@ -20,7 +20,7 @@ const FarmMap = (props) => {
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
   const speedRef = useRef(4);
-
+  //
   const [tick, setTick] = useState(1);
   //correpsondds with a css class to tell it which version of the sprite to load. ie "left", "right"
   // const [facing.current, setFacing] = useState("right");
@@ -29,7 +29,6 @@ const FarmMap = (props) => {
   const [walker, setWalker] = useState('false');
   // const [walkerArr, setWalkerkArr]= useState([])
   const dirArr = useRef([]);
-
   const xBank = useRef(0);
   const yBank = useRef(0);
   const yPlayerIndex = useRef(14);
@@ -270,6 +269,7 @@ const FarmMap = (props) => {
     ],
   ];
 
+
   let currentMap = [
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -380,14 +380,14 @@ const FarmMap = (props) => {
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 859, 860, 651, 652, 653, 654, 655,
-      656, 657, 658, 4015, 4016, 4016, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 1581, 1582, 0, 1266, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      656, 657, 658, 4015, 4016, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 1581, 1582, 0, 1266, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 875, 876, 667, 668, 669, 670, 671,
-      672, 673, 674, 4034, 4035, 4035, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 1915, 1915, 0, 0, 1597, 1598, 0, 1266, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0,
+      672, 673, 674, 4034, 4035, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 1915, 1915, 0, 0, 1597, 1598, 0, 1266, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0,
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 1504, 864, 865, 0, 0, 0, 0, 0, 0, 0,
@@ -456,15 +456,15 @@ const FarmMap = (props) => {
       0, 0, 0, 0, 0,
     ],
     [
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 724, 724, 0, 4322, 4323, 4323, 0, 0,
-      0, 0, 0, 700, 701, 721, 0, 635, 636, 639, 0, 641, 636, 642, 722, 701, 702,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 724, 724, 0, 4322, 4323, 0, 0, 0, 0,
+      0, 0, 700, 701, 721, 0, 635, 636, 639, 0, 641, 636, 642, 722, 701, 702,
       703, 0, 0, 0, 0, 1915, 1632, 1633, 1634, 0, 0, 0, 0, 3435, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0,
     ],
     [
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 3317, 3318, 3319, 4340, 4341, 4341, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 3317, 3318, 3319, 4340, 4341, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 1565, 1566, 0, 1266, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 1565, 1566, 0, 1266, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 2264, 2264, 2266, 2266, 0, 0, 0, 0, 0,
@@ -523,6 +523,8 @@ const FarmMap = (props) => {
     currentMap[yPlayerIndex.current][xPlayerIndex.current]
   );
 
+
+  //CSS GRID ON OFF USE EFFECT
   // useEffect(()=>{
   //   let tempGrid=[]
   //   for (let i=0; i<currentMap.length; i++){
@@ -542,8 +544,10 @@ const FarmMap = (props) => {
   // },[])
 
 
-
+  // Console Log to test npc interation
   console.log(textValue)
+
+
 //CHARACTER DIALOGUE USE EFFECT
 useEffect(() => {
     const dialogueAction = (event) => {
@@ -716,6 +720,8 @@ useEffect(() => {
     });
   }, []);
 
+
+
   // UseEffect for transitiong between map Coordinates
   useEffect(() => {
     if (
@@ -730,6 +736,8 @@ useEffect(() => {
       props.active('indoorHouse10', 'farmMap');
     }
   }, [yTransformVar]);
+
+
 
   //UseEffect for keeping track of the previous maps and maps/player positions
   useEffect(() => {
@@ -760,7 +768,8 @@ useEffect(() => {
     }
   }, []);
 
-  //use effect
+  
+  
 
   //listens for the current down key and saves it as the currentkey state
   //wrapping in a useEffect prevents compounding event listeners
