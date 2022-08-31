@@ -5,7 +5,7 @@ import Enemies from '.././enemies.js'
 import DragonImage from ".././assets/demonSprites/even-more-retro-dragonite-dragonite-sprite-gen-1212525.png"
 import Heart from '.././assets/battleMapAssets/heart-e1403272720870.png'
 import { proposalPlugins } from '@babel/preset-env/data/shipped-proposals';
-import e from 'express';
+
 
 
 //default for every component is a loading screen until the component did mount properly, thae
@@ -33,34 +33,32 @@ const [legalSummoningArray, setLegalSummoningArray]= useState();
 const [playerCoodinates, setPlayerCoordinates]=useState([2,6])
 const [staticDemonsList, setStaticDemonsList]= useState(prop.demonList);
 const [activeDemonsList, setActiveDemonsList]= useState([prop.demonList[0],prop.demonList[1]]);
+const [enemyTurn, setEnemyTurn]= useState(0)
 
 const [currentActionButton, setCurrentActionButton]= useState();
-const [playerOptions, setPlayerOptions]= useState()
-const [activeEnemyList, setActiveEnemyList]=useState([Enemies.BlueMegaTank, Enemies.GreenInfantry])
+const [activeEnemyList, setActiveEnemyList]=useState([Enemies.BlueMegaTank, Enemies.GreenInfantry, Enemies.BlueMech, Enemies.GreenRecon])
 
 
-const [mapState, setMapState]= useState([[0,0,0,0,0,0,0,0],[0,0,0,0,demons[1],0,1,0],[0,0,0,0,activeEnemyList[0],0,demons[0],0],[0,0,0,0,1,0,0,0],[0,1,0,0,0,activeEnemyList[1],0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
+const [mapState, setMapState]= useState([[0,0,0,0,0,0,0,0],[0,0,0,0,demons[1],0,1,0],[0,0,0,0,activeEnemyList[0],0,demons[0],0],[0,0,0,0,1,0,0,0],[0,1,0,activeEnemyList[3],0,0,0,0],[0,0,0,activeEnemyList[2],0,0,0,0],[0,0,0,0,0,0,0,activeEnemyList[1]],[0,0,0,0,0,0,0,0]],)
 
-const [curseMap, setCurseMap]= useState([[0,0,0,0,"Haunting",0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
+const [curseMap, setCurseMap]= useState([[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
 
 
 const actionButtons= [<button className='actionButton' onClick={()=>moveButton()} style={{borderColor: "lime", 
 }}><b>MOVE</b></button>,<button className='actionButton'   onClick={()=>attackButton()} style={{borderColor: "red"}} ><b>ATTACK</b></button>,<button className='actionButton'  onClick={()=>curseButton()} style={{borderColor: "darkorchid"}}><b>CURSE</b></button>,<button className='actionButton'  onClick={()=>summonButton()}style={{borderColor: "gold"}}><b>SUMMON</b></button>]
 
 
-
+// console.log(mapState)
 //
-useEffect(()=>{
 
-setPlayerOptions([[<div className="playerStats" style={{borderColor: "lime", backgroundImage: `${demons[0].image}`
+const playerOptions=[[<div className="playerStats" style={{borderColor: "lime", backgroundImage: `${demons[0].image}`
 }}>{demons[0].name}</div>,<div  className="playerStats"  style={{borderColor: "lime",
 }}>Attack:{demons[0].attack}</div>,<div  className="playerStats" style={{borderColor: "lime", 
 }}> Health: {demons[0].health}/{demons[0].defense}</div>,<div className="playerStats" style={{borderColor: "lime", 
 }}>Move:{demons[0].move}</div>,<div className="playerStats" style={{borderColor: "lime", backgroundImage: `${demons[0].image}`
 }}>{soulBank}</div>,<button className='actionButton'  onClick={()=>{ enemyTrigger(), setEndTurn(x=>x === true ? false : true)}} style={{borderColor: "silver", backgroundImage: `${demons[0].image}`
-}}>End Turn</button>]])
+}}>End Turn</button>]]
 
-},[demons])
 //loads initial summon List
 useEffect(()=>{
 
@@ -80,9 +78,10 @@ function enemyTrigger(){
 
     let tempCordsArr=[];
     let enemiesMoveList=[]
-    let tempScore;
+    let tempScore=0;
     let moveValueArray=[]
     let currentEnemiesArray=[]
+    let originalEnemiesCoordinates=[];
     // for (let k=1; k<=mapState[i][j].move; k++){
     //     k-i>=0 ? tempCordsArr.push(mapState[k-i]) : null;
     //     k+i<mapState.length ? tempCordsArr.push(mapState[k+1] : )
@@ -105,25 +104,24 @@ for (let i=0; i<mapState.length; i++){
 
 
         if (mapState[i][j].type==="LandUnit"){
-            currentEnemiesArray.push(mapState[i][j])
-        upI=i-1;
+            currentEnemiesArray.push(mapState[i][j]);
+            originalEnemiesCoordinates.push(`${i}${j}`)
+
+            upI=i-1;
              downI=i+1;
              rightI=j+1;
              leftI=j-1;
-             console.log("hi",upI)
              moveIterator=0;
 
 
             if (upI>=0){
     
                 while(mapState[upI][j]===0 && moveIterator<mapState[i][j].move){
-                    console.log("run", moveIterator)
 
                     moveIterator++;
                     tempCordsArr.push(`${upI}${j}`)
                 
                     upI--;
-                    console.log(moveIterator)
 
                 
                     if (upI<0) break;
@@ -202,11 +200,13 @@ for (let i=0; i<mapState.length; i++){
 
     let decidedMoves=[];
     let randomValue;
+    let finalValues;
 for (let i=0; i<enemiesMoveList.length; i++){
     for(let j=0; j<enemiesMoveList[i].length; j++){
         if (mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].type==="Demon"){
             if (mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].name==="Shilo"){
                 mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].defense <= currentEnemiesArray[i].attack ? tempScore+=20 :tempScore+=15;
+             
             }
             else if(mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].defense<=currentEnemiesArray[i].attack){
                 currentEnemiesArray[i].defense> mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].attack ? tempScore+=15 :tempScore+=9;
@@ -217,69 +217,150 @@ for (let i=0; i<enemiesMoveList.length; i++){
             else if(currentEnemiesArray[i].defense<=mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].attack){
                 tempScore+=4
             }
-            else{
-                randomValue=Math.ceil(Math.random() * 6);
-                tempScore+=randomValue;
-            }
-            moveValueArray.push(tempScore);
-            tempScore=0;
+           
+         
 
 
         }
+        if (tempScore===0){
+
+            randomValue=Math.ceil(Math.random() * 5);
+            tempScore+=randomValue;
+        }
+        moveValueArray.push(tempScore);
+        tempScore=0;
 
 
     }
+    finalValues=(Math.max(...moveValueArray));
+
+    if (decidedMoves.includes(finalValues)){
+    }
+
+//make sure it's not already taken
+    decidedMoves.push(enemiesMoveList[i][moveValueArray.indexOf(finalValues)]);
+
+    moveValueArray=[];
+   
 
 }
+let newDefense;
+let newEnemyDefense;
+let tempDemon;
+let tempMap=mapState;
+let tempDemonsList=activeDemonsList;
+let currentSoldier;
+let newSoulBank=soulBank;
+for (let i=0; i < decidedMoves.length; i++){
+    
+    currentSoldier=currentEnemiesArray[i]
+    
+    if(tempMap[decidedMoves[i][0]][decidedMoves[i][1]]===0){
+        tempMap[decidedMoves[i][0]][decidedMoves[i][1]]=currentEnemiesArray[i];
+        tempMap[originalEnemiesCoordinates[i][0]][originalEnemiesCoordinates[i][1]]=0;
 
-console.log(moveValueArray)
+    }
+else{
+    tempDemon=tempMap[decidedMoves[i][0]][decidedMoves[i][1]];
+        // console.log(currentSoldier)
+
+     newDefense= tempDemon.defense-currentSoldier.attack;
+     newEnemyDefense=currentSoldier.defense-tempDemon.attack
+    
+     //if soldier dies but demon lives
+     if (newEnemyDefense<=0 && newDefense>0){    
+
+        for (let k=0; k<activeDemonsList.length; k++){
+            if (tempDemon.name===activeDemonsList[k].name){
+                tempDemonsList[k].health=newDefense
+
+            }
+        }
+        tempMap[originalEnemiesCoordinates[i][0]][originalEnemiesCoordinates[i][1]]=0;
+        newSoulBank+=currentSoldier.attack;
+
+    
+    };
+    //if demon dies but soldier lives
+    if (newDefense<=0 && newEnemyDefense>0){
+        tempMap[decidedMoves[i][0]][decidedMoves[i][1]]=currentEnemiesArray[i];
+        tempMap[originalEnemiesCoordinates[i][0]][originalEnemiesCoordinates[i][1]]=0;
+        tempDemonsList=activeDemonsList.filter(el=> el.name != tempDemon.name)};
+        currentSoldier.defense=newEnemyDefense;
+    //if both die
+    if (newEnemyDefense<=0 && newDefense<=0){
+        tempDemonsList=activeDemonsList.filter(el=> el.name != tempDemon.name)
+        tempMap[originalEnemiesCoordinates[i][0]][originalEnemiesCoordinates[i][1]]=0;
+        tempMap[decidedMoves[i][0]][decidedMoves[i][1]]=0
+        newSoulBank+=currentSoldier.attack;
+    };
+    if (newEnemyDefense>0 && newDefense>0){
+        currentSoldier.defense=newEnemyDefense;
+        for (let k=0; k<activeDemonsList.length; k++){
+            if (tempDemon.name===activeDemonsList[k].name){
+                tempDemonsList[k].defense=newDefense;
+                
+            }
+        }
+        
+    }    
+
+}
+}
+setMapState(tempMap)
+setActiveDemonsList(tempDemonsList)
+setSoulBank(newSoulBank)
+setEnemyTurn(x=>x+1)
+
+
    
 }
 //turn Loopc
 // console.log(activeEnemyList)
 //
-// useEffect(()=>{
-
-//     let tempDemonsList=activeDemonsList;
-//     let tempEnemiesList=activeEnemyList;
-//     let tempMap=mapState
+useEffect(()=>{
+console.log(curseMap)
+    let tempDemonsList=activeDemonsList;
+    let tempEnemiesList=activeEnemyList;
+    let tempMap=mapState
   
-//      for (let i=0; i<mapState.length; i++){
-//          for (let j=0; j<mapState.length; j++)
-//          if (mapState[i][j] != 0 && mapState[i][j] !=1){
-//              if (curseMap[i][j]===0){
-//                  mapState[i][j].type === "Demon" ? tempDemonsList.push(mapState[i][j]) : tempEnemiesList.push(mapState[i][j])
-//              }
-//              if (curseMap[i][j]=="Blessing" && mapState[i][j].type==="Demon"){
+     for (let i=0; i<mapState.length; i++){
+         for (let j=0; j<mapState.length; j++)
+         if (mapState[i][j] != 0 && mapState[i][j] !=1){
+             if (curseMap[i][j]===0){
+                 mapState[i][j].type === "Demon" ? tempDemonsList.push(mapState[i][j]) : tempEnemiesList.push(mapState[i][j])
+             }
+             if (curseMap[i][j]=="Blessing" && mapState[i][j].type==="Demon"){
                  
-//                  let newDemon=mapState[i][j];
-//                  newDemon.defense=(newDemon.defense+1);
-//                  if (newDemon.defense>newDemon.health){
-//                      newDemon.defense=newDemon.health
-//                  } 
-//                  tempDemonsList.push(newDemon)
-//              }
-//              if (curseMap[i][j]=="Haunting" && mapState[i][j].type!="Demon"){
+                 let newDemon=mapState[i][j];
+                 newDemon.defense=(newDemon.defense+1);
+                 if (newDemon.defense>newDemon.health){
+                     newDemon.defense=newDemon.health
+                 } 
+                 tempDemonsList.push(newDemon)
+             }
+             if (curseMap[i][j]=="Haunting" && mapState[i][j].type!="Demon"){
                  
-//                  let newEnemy=mapState[i][j];
-//                  newEnemy.defense=(newEnemy.defense-1);
-//                  if (newEnemy.defense<=0){
-//                      tempMap[i][j]=0
-//                  }
-//                  else{
-//                      tempEnemiesList.push(mapState[i][j])
-//                  }
+                 let newEnemy=mapState[i][j];
+                 newEnemy.defense=(newEnemy.defense-1);
+                 if (newEnemy.defense<=0){
+                     tempMap[i][j]=0
+                 }
+                 else{
+                     tempEnemiesList.push(mapState[i][j])
+                 }
                 
  
-//              }
-//          }
-//      }
+             }
+         }
+     }
  
-//      setMapState(tempMap)
-//      setActiveDemonsList(tempDemonsList)
-//      setActiveEnemyList(tempEnemiesList)
+     setMapState(tempMap)
+     setActiveDemonsList(tempDemonsList)
+     setActiveEnemyList(tempEnemiesList)
+
  
-//  },[endTurn])
+ },[enemyTurn])
 
 
 let buttonArr=[];
@@ -292,7 +373,7 @@ buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); su
     color: "white"
 }}
 >
-    {y}-{x}
+    {/* {y}-{x} */}
 </button>)
     }
     if (mapState[y][x].type != 0){
@@ -709,7 +790,9 @@ if (attackTrigger){
                     let tempMap=mapState;
                     tempMap[yCord][xCord]=0;
                     tempMap[y][x]=current;
+       
                     setMapState(tempMap);
+                    setSoulBank(x=>x+enemy.attack)
                 }
                 if (newDefense<=0 && newEnemyDefense>0){
                     let tempDemonsList=activeDemonsList.filter(el=> el.name != current.name);
@@ -729,6 +812,8 @@ if (attackTrigger){
                     tempMap[yCord][xCord]=0;
                     tempMap[y][x]=0;
                     setMapState(tempMap);
+                    setSoulBank(x=>x+enemy.attack)
+
                     
                 }
 

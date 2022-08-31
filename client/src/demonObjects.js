@@ -255,9 +255,9 @@ Oro:{
         
   Dewy:{
     name: "Dewy",
-    attack: 4,
-    defense: 1,
-    health: 1,
+    attack: 1,
+    defense: 3,
+    health: 3,
     move: 2,
     firstStrike: false,
     bloodLust: false,
