@@ -35,6 +35,7 @@ const FarmMap = (props) => {
   const yPlayerIndex = useRef(14);
   const xPlayerIndex = useRef(29);
   const [gridArray, setGridArray] = useState([]);
+  const [textValue, setTextValue] = useState(null);
 
   let currentMap2 = [
     [
@@ -542,14 +543,7 @@ const FarmMap = (props) => {
 
 
 
-
-
-
-
-
-
-
-
+  console.log(textValue)
 //CHARACTER DIALOGUE USE EFFECT
 useEffect(() => {
     const dialogueAction = (event) => {
@@ -562,7 +556,8 @@ useEffect(() => {
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 21) ||
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 22)
           ) {
-            console.log("Hi I'm jim");
+            setTextValue('Hi I am Jim')
+            // console.log("Hi I'm jim");
           }
           //YO Mama NPC
           if (
@@ -654,7 +649,6 @@ useEffect(() => {
         }
       }
     }
-
     window.addEventListener('keydown', dialogueAction);
     return () => {
       window.removeEventListener('keydown', dialogueAction);
@@ -662,78 +656,7 @@ useEffect(() => {
   }, []);
 
 
-  
 
-  //KEEP CODE BELOW JUST IN CASE
-  // useEffect(() => {
-  //   console.log('hi');
-  //   const dialogueAction = (event) => {
-  //     // console.log(event.key)
-
-  //     if (event.key === 'a') {
-        
-  //       //Facing up
-  //       if (facing.current === 'up') {
-  //         if (
-  //           (yPlayerIndex.current === 23 && xPlayerIndex.current === 21) ||
-  //           (yPlayerIndex.current === 23 && xPlayerIndex.current === 22)
-  //         ) {
-  //           console.log("Hi I'm Jim");
-  //         }
-  //       }
-
-  //       // Facing down
-  //       if (facing.current === 'down') {
-  //         if (
-  //           (yPlayerIndex.current === 20 && xPlayerIndex.current === 21) ||
-  //           (yPlayerIndex.current === 20 && xPlayerIndex.current === 22)
-  //         ) {
-  //           console.log("Hi I'm Jim");
-  //         }
-  //       }
-
-  //       //Facing left
-  //       if (facing.current === 'left') {
-  //         if (
-  //           (yPlayerIndex.current === 20 && xPlayerIndex.current === 21) ||
-  //           (yPlayerIndex.current === 20 && xPlayerIndex.current === 22)
-  //         ) {
-  //           console.log("Hi I'm Jim");
-  //         }
-  //       }
-
-  //       //Facing right
-  //       if (facing.current === 'right') {
-  //         if (
-  //           (yPlayerIndex.current === 20 && xPlayerIndex.current === 21) ||
-  //           (yPlayerIndex.current === 20 && xPlayerIndex.current === 22)
-  //         ) {
-  //           console.log("Hi I'm Jim");
-  //         }
-  //       }
-  //     }
-
-  //       //  if ((facing.current === "up" && ((yPlayerIndex.current === 23 && xPlayerIndex.current === 21) || (yPlayerIndex.current === 23 && xPlayerIndex.current === 22))))
-  //       // }
-  //       // if (
-  //       //   facing.current === "left" && (yPlayerIndex.current === 21 && xPlayerIndex.current === 23) || (yPlayerIndex.current === 22 && xPlayerIndex.current === 23)
-  //       // )
-
-  //       //  if (
-  //       //   facing.current === "down" && yPlayerIndex.current === 20 && xPlayerIndex.current === 21 || yPlayerIndex.current === 20 && xPlayerIndex.current === 22
-  //       // )
-      
-  //   };
-
-  //   // if (yPlayerIndex.current === 29 && xPlayerIndex.current===21){
-  //   //   console.log("Hi I'm Yo Mama")
-  //   // }
-
-  //   window.addEventListener('keydown', dialogueAction);
-  //   return () => {
-  //     window.removeEventListener('keydown', dialogueAction);
-  //   };
-  // }, []);
 
   useEffect(() => {
     window.addEventListener('keydown', (e) => {
@@ -1018,13 +941,16 @@ useEffect(() => {
   return (
     <div>
       <div className="camera fade-in">
+      {/* <button style={{height: "1000px", }} onClick={()=>{console.log("Mike is a poker king")}}>Hi</button> */}
+
         <div>
           <div
             className="mapF pixel-art"
             style={{
-              transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`,
+              transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`, 
             }}
           >
+
             {gridArray}
             <div
               className="character pixel-art"
@@ -1035,12 +961,21 @@ useEffect(() => {
                   272 - yTransformVar
                 }px, 0 )`,
               }}
-            >
+            >             
+
+
               <div className="character_spritesheet pixel-art"></div>
+              
             </div>
+
           </div>
+
         </div>
+        <dialog className="textBox" open>Hi, my name is Matt. Have you seen my pet snake? He lives under a rock on the west side of the mountain......sometimes in my pants too!</dialog>
+
       </div>
+     
+
     </div>
   );
 };
