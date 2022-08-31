@@ -1384,8 +1384,6 @@ const TownMap1 = (props) => {
       window.removeEventListener('keydown', keyDownHandler);
       window.removeEventListener('keyup', keyUpHandler);
     };
-
-    //when the key is lifted it sets the current key to null to stop map movement and the walker to false to stop the animation
   }, []);
 
   //facing logic. It needed to be removed from the animate because it was cuasing
