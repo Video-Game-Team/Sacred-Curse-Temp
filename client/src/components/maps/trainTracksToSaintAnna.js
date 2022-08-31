@@ -33,6 +33,7 @@ const TrainTracksToSaintAnna = (props) => {
   const yPlayerIndex = useRef(11);
   const xPlayerIndex = useRef(15);
   const [gridArray, setGridArray] = useState([]);
+  const [textValue, setTextValue] = useState(null);
 
   let currentMap2 = [
     [
@@ -1399,81 +1400,225 @@ const TrainTracksToSaintAnna = (props) => {
     ],
   ];
 
-    console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-    console.log(
-      'VALUE Right',
-      currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-    );
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+  );
 
-        // useEffect(()=>{
-        //   let tempGrid=[]
-        //   for (let i=0; i<currentMap.length; i++){
-        //     for (let j=0; j<currentMap[i].length; j++){
-        //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-        //         gridColumn: j+1,
-        //         gridRow: i+1,
-        //         color: "black",
-        //     }}
-        //     > {currentMap[i][j]}
-
-        //     </button>)
-
-        //     }
-        //   }
-        // setGridArray(tempGrid)
-
-        // },[])
-
-  //create an array. If the current array does not contain the value. shift it.
-
-  // console.log(yPlayerIndex.current, xPlayerIndex.current)
-  // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
-
-
-
- useEffect(() => {
-   if (props.previousMap === 'luluMountainPassRight') {
-     //setYCord
-     yPlayerIndex.current = 72;
-     //setXcord
-     xPlayerIndex.current = 11;
-     //set xTransform
-     setXTransformVar(-88);
-     //set yTransform
-     setYTransformVar(-4304);
-     facing.current = 'right';
-   }
- }, []);
+  // useEffect(()=>{
+  //   let tempGrid=[]
+  //   for (let i=0; i<currentMap.length; i++){
+  //     for (let j=0; j<currentMap[i].length; j++){
+  //       tempGrid.push(
+  //         <button
+  //           onClick={() => {
+  //             console.log(`Coordinates ${i} - ${j}`);
+  //           }}
+  //           className="numbers"
+  //           style={{
+  //             gridColumn: j + 1,
+  //             gridRow: i + 1,
+  //             color: 'white',
+  //           }}
+  //         >
+  //           {i} - {j}
+  //           {/* {currentMap[i][j]} */}
+  //         </button>
+  //       );
+  //     }
+  //   }
+  // setGridArray(tempGrid)
+  // },[])
 
 
 
+  useEffect(() => {
+    if (props.previousMap === 'luluMountainPassRight') {
+      //setYCord
+      yPlayerIndex.current = 72;
+      //setXcord
+      xPlayerIndex.current = 11;
+      //set xTransform
+      setXTransformVar(-88);
+      //set yTransform
+      setYTransformVar(-4304);
+      facing.current = 'right';
+    }
+  }, []);
 
- useEffect(() => {
-   // yPlayerIndex up and down values
-   // trains Map check conditions
-   if (
-     (yPlayerIndex.current === 10 && xPlayerIndex.current === 14) ||
-     (yPlayerIndex.current === 10 && xPlayerIndex.current === 15) ||
-     (yPlayerIndex.current === 10 && xPlayerIndex.current === 16)
-   ) {
-     props.active('tortousFork', 'trainTracksToSaintAnna');
-   }
- }, [yPlayerIndex.current]);
+  useEffect(() => {
+    // yPlayerIndex up and down values
+    // trains Map check conditions
+    if (
+      (yPlayerIndex.current === 10 && xPlayerIndex.current === 14) ||
+      (yPlayerIndex.current === 10 && xPlayerIndex.current === 15) ||
+      (yPlayerIndex.current === 10 && xPlayerIndex.current === 16)
+    ) {
+      props.active('tortousFork', 'trainTracksToSaintAnna');
+    }
+  }, [yPlayerIndex.current]);
+
+  useEffect(() => {
+    // yPlayerIndex up and down values
+    // trains Map check conditions
+    if (
+      (yPlayerIndex.current === 71 && xPlayerIndex.current === 10) ||
+      (yPlayerIndex.current === 72 && xPlayerIndex.current === 10) ||
+      (yPlayerIndex.current === 73 && xPlayerIndex.current === 10)
+    ) {
+      props.active('luluMountainPassRight', 'trainTracksToSaintAnna');
+    }
+  }, [xPlayerIndex.current]);
 
 
- useEffect(() => {
-   // yPlayerIndex up and down values
-   // trains Map check conditions
-   if (
-     (yPlayerIndex.current === 71 && xPlayerIndex.current === 10) ||
-     (yPlayerIndex.current === 72 && xPlayerIndex.current === 10) ||
-     (yPlayerIndex.current === 73 && xPlayerIndex.current === 10)
-   ) {
-     props.active('luluMountainPassRight', 'trainTracksToSaintAnna');
-   }
- }, [xPlayerIndex.current]);
 
 
+
+
+  //CHARACTER DIALOGUE USE EFFECT
+  useEffect(() => {
+    const dialogueAction = (event) => {
+      if (event.key === 'a') {
+        //Facing up
+        if (facing.current === 'up') {
+          //Guard 1 Lower left NPC
+          // if (
+          //   (yPlayerIndex.current === 38 && xPlayerIndex.current === 32) ||
+          //   (yPlayerIndex.current === 38 && xPlayerIndex.current === 33)
+          // ) {
+          //   setTextValue('Hi I am Guard1');
+          //   console.log('Hi I am Guard1');
+          // }
+          // //YO Mama NPC
+          // if (
+          //   (yPlayerIndex.current === 35 && xPlayerIndex.current === 38) ||
+          //   (yPlayerIndex.current === 35 && xPlayerIndex.current === 39)
+          // ) {
+          //   console.log("Hi I'm Guard 2");
+          // }
+          // //Hot Girl
+          // if (
+          //   (yPlayerIndex.current === 24 && xPlayerIndex.current === 23) ||
+          //   (yPlayerIndex.current === 24 && xPlayerIndex.current === 24)
+          // ) {
+          //   console.log("Hi I'm Guard 3");
+          // }
+          // //Hot Girl
+          // if (
+          //   (yPlayerIndex.current === 24 && xPlayerIndex.current === 33) ||
+          //   (yPlayerIndex.current === 24 && xPlayerIndex.current === 34)
+          // ) {
+          //   console.log("Hi I'm guard 4");
+          // }
+        }
+
+        //Facing down
+        if (!facing.current) {
+          //Jim NPC
+          // if (
+          //   (yPlayerIndex.current === 35 && xPlayerIndex.current === 32) ||
+          //   (yPlayerIndex.current === 35 && xPlayerIndex.current === 33)
+          // ) {
+          //   console.log("Hi I'm Guard1");
+          // }
+          // //YO Mama NPC
+          // if (
+          //   (yPlayerIndex.current === 32 && xPlayerIndex.current === 38) ||
+          //   (yPlayerIndex.current === 32 && xPlayerIndex.current === 39)
+          // ) {
+          //   console.log("Hi I'm Guard 2");
+          // }
+          // //Hot Girl
+          // // if (
+          // //   (yPlayerIndex.current === 34 && xPlayerIndex.current === 14) ||
+          // //   (yPlayerIndex.current === 34 && xPlayerIndex.current === 15)
+          // // ) {
+          // //   console.log("Hi I'm Guard 3");
+          // // }
+          // //Hot Girl
+          // if (
+          //   (yPlayerIndex.current === 21 && xPlayerIndex.current === 33) ||
+          //   (yPlayerIndex.current === 21 && xPlayerIndex.current === 34)
+          // ) {
+          //   console.log("Hi I'm guard 4");
+          // }
+        }
+
+        //Facing left
+        if (facing.current === 'left') {
+          if (
+            (yPlayerIndex.current === 136 && xPlayerIndex.current === 11) ||
+            (yPlayerIndex.current === 137 && xPlayerIndex.current === 11)
+          ) {
+            console.log("Hi I'm Guard");
+          }
+          //YO Mama NPC
+          if (
+            (yPlayerIndex.current === 141 && xPlayerIndex.current === 11) ||
+            (yPlayerIndex.current === 142 && xPlayerIndex.current === 11)
+          ) {
+            console.log("Hi I'm Guard 2");
+          }
+          // //Hot Girl
+          // if (
+          //   (yPlayerIndex.current === 35 && xPlayerIndex.current === 16) ||
+          //   (yPlayerIndex.current === 36 && xPlayerIndex.current === 16)
+          // ) {
+          //   console.log("Hi I'm Guard 3");
+          // }
+          // //Hot Girl
+          // if (
+          //   (yPlayerIndex.current === 22 && xPlayerIndex.current === 34) ||
+          //   (yPlayerIndex.current === 23 && xPlayerIndex.current === 34)
+          // ) {
+          //   console.log("Hi I'm guard 4");
+          // }
+        }
+
+        //Facing right
+        if (facing.current === 'right') {
+          // if (
+          //   (yPlayerIndex.current === 36 && xPlayerIndex.current === 31) ||
+          //   (yPlayerIndex.current === 37 && xPlayerIndex.current === 31)
+          // ) {
+          //   console.log("Hi I'm Guard1");
+          // }
+          // //YO Mama NPC
+          // if (
+          //   (yPlayerIndex.current === 33 && xPlayerIndex.current === 37) ||
+          //   (yPlayerIndex.current === 34 && xPlayerIndex.current === 37)
+          // ) {
+          //   console.log("Hi I'm Guard 2");
+          // }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 136 && xPlayerIndex.current === 28) ||
+            (yPlayerIndex.current === 137 && xPlayerIndex.current === 28)
+          ) {
+            console.log("Hi I'm Guard 3");
+          }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 140 && xPlayerIndex.current === 28) ||
+            (yPlayerIndex.current === 141 && xPlayerIndex.current === 28)
+          ) {
+            console.log("Hi I'm guard 4");
+          }
+          if (
+            (yPlayerIndex.current === 144 && xPlayerIndex.current === 20) ||
+            (yPlayerIndex.current === 145 && xPlayerIndex.current === 20)
+          ) {
+            console.log("Hi I'm dock guy");
+          }
+        }
+      }
+    };
+    window.addEventListener('keydown', dialogueAction);
+    return () => {
+      window.removeEventListener('keydown', dialogueAction);
+    };
+  }, []);
 
 
 
