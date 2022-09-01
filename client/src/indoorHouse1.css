@@ -36,8 +36,6 @@ body {
 
 .mapIH1 {
     image-rendering: pixelated;
-    /* max-height: 50000px;
-    min-width: 50000px; */
     background-image: url("./assets/maps/Indoor House 1 w grid.png");
     background-size: 960px;
     width: calc(37.5 * var(--grid-cell));
@@ -50,8 +48,8 @@ body {
     grid-template-rows: repeat(15, 64px); */
 }
 
-/* 
- .numbers {
+
+ /* .numbers {
     size: 100%;
     background: transparent;
 }  */

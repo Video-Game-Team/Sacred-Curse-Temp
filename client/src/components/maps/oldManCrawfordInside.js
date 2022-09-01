@@ -33,6 +33,7 @@ const OldManCrawfordInside = (props) => {
   const yPlayerIndex = useRef(13);
   const xPlayerIndex = useRef(4);
   const [gridArray, setGridArray] = useState([]);
+  const [textValue, setTextValue] = useState(null);
 
   let currentMap2 = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -86,60 +87,66 @@ const OldManCrawfordInside = (props) => {
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   ];
 
-    console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-    console.log(
-      'VALUE Right',
-      currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-    );
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+  );
 
-  // useEffect(()=>{
-  //   let tempGrid=[]
-  //   for (let i=0; i<currentMap.length; i++){
-  //     for (let j=0; j<currentMap[i].length; j++){
-  //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-  //         gridColumn: j+1,
-  //         gridRow: i+1,
-  //         color: "white",
-  //     }}
-  //     > {currentMap2[i][j]}
 
-  //     </button>)
+  
 
+  // useEffect(() => {
+  //   let tempGrid = [];
+  //   for (let i = 0; i < currentMap.length; i++) {
+  //     for (let j = 0; j < currentMap[i].length; j++) {
+  //       tempGrid.push(
+  //         <button
+  //           onClick={() => {
+  //             console.log(`Coordinates ${i} - ${j}`);
+  //           }}
+  //           className="numbers"
+  //           style={{
+  //             gridColumn: j + 1,
+  //             gridRow: i + 1,
+  //             color: 'white',
+  //           }}
+  //         >
+  //           {i} - {j}
+  //           {/* {currentMap[i][j]} */}
+  //         </button>
+  //       );
   //     }
   //   }
-  // setGridArray(tempGrid)
-
-  // },[])
-
+  //   setGridArray(tempGrid);
+  // }, []);
 
 
-   useEffect(() => {
-     if (props.previousMap === 'tortous') {
-       //setYCord
-       yPlayerIndex.current = 13;
-       //setXcord
-       xPlayerIndex.current = 4;
-       //set xTransform
-       setXTransformVar(360);
-       //set yTransform
-       setYTransformVar(-532);
-       facing.current = 'up';
-     }
-   }, []);
 
+
+  useEffect(() => {
+    if (props.previousMap === 'tortous') {
+      //setYCord
+      yPlayerIndex.current = 13;
+      //setXcord
+      xPlayerIndex.current = 4;
+      //set xTransform
+      setXTransformVar(360);
+      //set yTransform
+      setYTransformVar(-532);
+      facing.current = 'up';
+    }
+  }, []);
 
   //INDOOR USE EFFECT
-   useEffect(() => {
-     if (
-       (yPlayerIndex.current === 14 && xPlayerIndex.current === 4) ||
-       (yPlayerIndex.current === 14 && xPlayerIndex.current === 5)
-      ) {
-       props.active('tortous', 'oldManCrawfordInside');
-     }
-   }, [yPlayerIndex.current]);
-
-
-
+  useEffect(() => {
+    if (
+      (yPlayerIndex.current === 14 && xPlayerIndex.current === 4) ||
+      (yPlayerIndex.current === 14 && xPlayerIndex.current === 5)
+    ) {
+      props.active('tortous', 'oldManCrawfordInside');
+    }
+  }, [yPlayerIndex.current]);
 
   //event listen for enter
   useEffect(() => {

@@ -63,9 +63,10 @@ function App() {
 
   //delete Later
 const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dragonite, DemonObjects.Haku, DemonObjects.Zabuza, DemonObjects.Naruto])
-const [current, setCurrent] = useState('hotelIndoors');
+const [current, setCurrent] = useState('secretIndoorLakeHouse');
 const [tempCurrent, setTempCurrent] = useState(null)
 const [previous,setPrevious]= useState(null)
+const [textValue, setTextValue] = useState(null);
 
 console.log("CURRENTMAP", current, "PREVIOUSMAP", previous)
 

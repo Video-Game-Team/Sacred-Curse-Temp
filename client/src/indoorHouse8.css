@@ -35,8 +35,6 @@ body {
 
 .mapIH8 {
     image-rendering: pixelated;
-    /* max-height: 50000px;
-    min-width: 50000px; */
     background-image: url("./assets/maps/Indoor House 8 w grid.png");
     background-size: 960px;
     width: calc(37.5 * var(--grid-cell));
@@ -56,7 +54,7 @@ body {
 
 
 
-*/ .character {
+.character {
     width: calc(var(--grid-cell)* 2);
     height: calc(var(--grid-cell)* 2);
     overflow: hidden;

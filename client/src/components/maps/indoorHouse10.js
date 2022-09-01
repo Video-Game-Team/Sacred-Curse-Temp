@@ -33,6 +33,7 @@ const IndoorHouse10 = (props) => {
   const yPlayerIndex = useRef(3);
   const xPlayerIndex = useRef(3);
   const [gridArray, setGridArray] = useState([]);
+  const [textValue, setTextValue] = useState(null);
 
   let currentMap2 = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -81,23 +82,37 @@ const IndoorHouse10 = (props) => {
     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
   );
 
-  // useEffect(()=>{
-  //   let tempGrid=[]
-  //   for (let i=0; i<currentMap.length; i++){
-  //     for (let j=0; j<currentMap[i].length; j++){
-  //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-  //         gridColumn: j+1,
-  //         gridRow: i+1,
-  //         color: "white",
-  //     }}
-  //     > {currentMap[i][j]}
 
-  //     </button>)
 
+
+  // useEffect(() => {
+  //   let tempGrid = [];
+  //   for (let i = 0; i < currentMap.length; i++) {
+  //     for (let j = 0; j < currentMap[i].length; j++) {
+  //       tempGrid.push(
+  //         <button
+  //           onClick={() => {
+  //             console.log(`Coordinates ${i} - ${j}`);
+  //           }}
+  //           className="numbers"
+  //           style={{
+  //             gridColumn: j + 1,
+  //             gridRow: i + 1,
+  //             color: 'white',
+  //           }}
+  //         >
+  //           {i} - {j}
+  //           {/* {currentMap[i][j]} */}
+  //         </button>
+  //       );
   //     }
   //   }
-  // setGridArray(tempGrid)
-  // },[])
+  //   setGridArray(tempGrid);
+  // }, []);
+
+
+
+
 
   useEffect(() => {
     if (props.previousMap === 'farmMap') {
@@ -118,11 +133,12 @@ const IndoorHouse10 = (props) => {
     if (
       (yPlayerIndex.current === 14 && xPlayerIndex.current === 6) ||
       (yPlayerIndex.current === 14 && xPlayerIndex.current === 7) ||
-      (yPlayerIndex.current === 14 && xPlayerIndex.current === 8) 
+      (yPlayerIndex.current === 14 && xPlayerIndex.current === 8)
     ) {
       props.active('farmMap', 'indoorHouse10');
     }
   }, [yPlayerIndex.current]);
+  
 
   //event listen for enter
   useEffect(() => {
