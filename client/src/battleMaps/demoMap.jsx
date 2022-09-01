@@ -44,8 +44,8 @@ const [mapState, setMapState]= useState([[0,0,0,0,0,0,0,0],[0,0,0,0,demons[1],0,
 const [curseMap, setCurseMap]= useState([[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
 
 
-const actionButtons= [<button className='actionButton' onClick={()=>moveButton()} style={{borderColor: "lime", 
-}}><b>MOVE</b></button>,<button className='actionButton'   onClick={()=>attackButton()} style={{borderColor: "red"}} ><b>ATTACK</b></button>,<button className='actionButton'  onClick={()=>curseButton()} style={{borderColor: "darkorchid"}}><b>CURSE</b></button>,<button className='actionButton'  onClick={()=>summonButton()}style={{borderColor: "gold"}}><b>SUMMON</b></button>]
+const actionButtons= [<button className='actionButton glow-on-hover' onClick={()=>moveButton()} style={{borderColor: "lime", 
+}}><b>MOVE</b></button>,<button className='actionButton glow-on-hover'   onClick={()=>attackButton()} style={{borderColor: "red"}} ><b>ATTACK</b></button>,<button className='actionButton  glow-on-hover'  onClick={()=>curseButton()} style={{borderColor: "darkorchid"}}><b>CURSE</b></button>,<button className='actionButton glow-on-hover'  onClick={()=>summonButton()}style={{borderColor: "gold"}}><b>SUMMON</b></button>]
 
 
 // console.log(mapState)
@@ -367,7 +367,7 @@ let buttonArr=[];
 for (let y=0; y<mapState.length; y++){
   for (let x=0; x<mapState.length; x++){
     if (mapState[y][x]===0){
-buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); summonSpot(y,x); curse(y,x);attack(y,x)}} className="demon" style={{
+buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); summonSpot(y,x); curse(y,x);attack(y,x)}} className="demon glow-on-hover" style={{
     gridColumn: x+1,
     gridRow: y+1,
     color: "white"
@@ -377,7 +377,7 @@ buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); su
 </button>)
     }
     if (mapState[y][x].type != 0){
-        buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); summonSpot(y,x); curse(y,x);attack(y,x)}} className="demon" style={{
+        buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); summonSpot(y,x); curse(y,x);attack(y,x)}} className="demon glow-on-hover" style={{
             gridColumn: x+1,
             gridRow: y+1,
             color: "white",
