@@ -44,8 +44,8 @@ const [mapState, setMapState]= useState([[0,0,0,0,0,0,0,0],[0,0,0,0,demons[1],0,
 const [curseMap, setCurseMap]= useState([[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
 
 
-const actionButtons= [<button className='actionButton glow-on-hover' onClick={()=>moveButton()} style={{borderColor: "lime", 
-}}><b>MOVE</b></button>,<button className='actionButton glow-on-hover'   onClick={()=>attackButton()} style={{borderColor: "red"}} ><b>ATTACK</b></button>,<button className='actionButton  glow-on-hover'  onClick={()=>curseButton()} style={{borderColor: "darkorchid"}}><b>CURSE</b></button>,<button className='actionButton glow-on-hover'  onClick={()=>summonButton()}style={{borderColor: "gold"}}><b>SUMMON</b></button>]
+const actionButtons= [<button className='actionButton' onClick={()=>moveButton()} style={{borderColor: "lime", 
+}}><b>MOVE</b></button>,<button className='actionButton'   onClick={()=>attackButton()} style={{borderColor: "red"}} ><b>ATTACK</b></button>,<button className='actionButton '  onClick={()=>curseButton()} style={{borderColor: "darkorchid"}}><b>CURSE</b></button>,<button className='actionButton '  onClick={()=>summonButton()}style={{borderColor: "gold"}}><b>SUMMON</b></button>]
 
 
 // console.log(mapState)
@@ -56,7 +56,7 @@ const playerOptions=[[<div className="playerStats" style={{borderColor: "lime", 
 }}>Attack:{demons[0].attack}</div>,<div  className="playerStats" style={{borderColor: "lime", 
 }}> Health: {demons[0].health}/{demons[0].defense}</div>,<div className="playerStats" style={{borderColor: "lime", 
 }}>Move:{demons[0].move}</div>,<div className="playerStats" style={{borderColor: "lime", backgroundImage: `${demons[0].image}`
-}}>{soulBank}</div>,<button className='actionButton'  onClick={()=>{ enemyTrigger(), setEndTurn(x=>x === true ? false : true)}} style={{borderColor: "silver", backgroundImage: `${demons[0].image}`
+}}>{soulBank}</div>,<button className='actionButton glow-on-hover'  onClick={()=>{ enemyTrigger(), setEndTurn(x=>x === true ? false : true)}} style={{borderColor: "silver", backgroundImage: `${demons[0].image}`
 }}>End Turn</button>]]
 
 //loads initial summon List
@@ -272,7 +272,7 @@ else{
 
         for (let k=0; k<activeDemonsList.length; k++){
             if (tempDemon.name===activeDemonsList[k].name){
-                tempDemonsList[k].health=newDefense
+                tempDemonsList[k].defense=newDefense
 
             }
         }
@@ -430,12 +430,15 @@ setDisplay([<div style={{backgroundImage:`url(${current.image})`, backgroundPosi
         setDisplay()
       
     }
-  
-    const array=document.getElementsByClassName(`demon`);
 
-    for (let i=0; i<array.length; i++){
-        array[i].style.backgroundColor='transparent'
+    let classArray=document.getElementsByClassName(`demon`);
+    for (let i=0; i<classArray.length; i++){
+        classArray[i].classList.remove('move-glow', 'attack-glow', 'summon-glow')
+
+
     }
+
+
     setSummonTrigger(false);
     setMoveTrigger(false);
     setAttackTrigger(false);
@@ -463,7 +466,7 @@ if (upI>=0){
 while(mapState[upI][xCord]===0 && moveIterator<current.move){
 
     tempButton= document.getElementById(`${upI}${xCord}`);
-    tempButton.style.backgroundColor= "red";
+    tempButton.classList.add('move-glow')
     moveIterator++;
     legalSpaces.push(`${upI}${xCord}`)
 
@@ -478,7 +481,7 @@ if (downI<mapState.length){
 while(mapState[downI][xCord]===0 && moveIterator<current.move){
 
     tempButton= document.getElementById(`${downI}${xCord}`);
-    tempButton.style.backgroundColor= "red";
+    tempButton.classList.add('move-glow')
     moveIterator++;
     legalSpaces.push(`${downI}${xCord}`)
 
@@ -492,7 +495,7 @@ moveIterator=0;
 if (leftI>=0){
 while(mapState[yCord][leftI]===0 && moveIterator<current.move){
     tempButton= document.getElementById(`${yCord}${leftI}`);
-    tempButton.style.backgroundColor= "red";
+    tempButton.classList.add('move-glow')
     moveIterator++;
     legalSpaces.push(`${yCord}${leftI}`)
 
@@ -505,7 +508,7 @@ moveIterator=0;
 if (rightI<mapState.length){
     while(mapState[yCord][rightI]===0 && moveIterator<current.move){
         tempButton= document.getElementById(`${yCord}${rightI}`);
-        tempButton.style.backgroundColor= "red";
+        tempButton.classList.add('move-glow')
         moveIterator++;
         legalSpaces.push(`${yCord}${rightI}`)
 
@@ -566,7 +569,7 @@ if (current.attackType=="melee" && current.active){
     while(mapState[upI][xCord]===0 && moveIterator<current.move) {
     
         tempButton= document.getElementById(`${upI}${xCord}`);
-        tempButton.style.backgroundColor= "red";
+        tempButton.classList.add('attack-glow')
         moveIterator++;
         legalSpaces.push(`${upI}${xCord}`)
     
@@ -577,7 +580,7 @@ if (current.attackType=="melee" && current.active){
     if (upI>=0 && moveIterator<current.move  && mapState[upI][xCord].type==="LandUnit"){
 
         tempButton= document.getElementById(`${upI}${xCord}`);
-    tempButton.style.backgroundColor= "red";
+        tempButton.classList.add('attack-glow')
     moveIterator++;
     legalSpaces.push(`${upI}${xCord}`)
     }
@@ -589,7 +592,7 @@ if (downI<mapState.length){
 while(mapState[downI][xCord]===0 && moveIterator<current.move){
 
     tempButton= document.getElementById(`${downI}${xCord}`);
-    tempButton.style.backgroundColor= "red";
+    tempButton.classList.add('attack-glow')
 
     legalSpaces.push(`${downI}${xCord}`)
     moveIterator++;
@@ -602,7 +605,7 @@ while(mapState[downI][xCord]===0 && moveIterator<current.move){
 if (downI<mapState.length && moveIterator<current.move  && mapState[downI][xCord].type==="LandUnit"){
 
     tempButton= document.getElementById(`${downI}${xCord}`);
-tempButton.style.backgroundColor= "red";
+    tempButton.classList.add('attack-glow')
 
 legalSpaces.push(`${downI}${xCord}`)
 }
@@ -613,7 +616,7 @@ moveIterator=0;
 if (leftI>=0){
 while(mapState[yCord][leftI]===0 && moveIterator<current.move){
     tempButton= document.getElementById(`${yCord}${leftI}`);
-    tempButton.style.backgroundColor= "red";
+    tempButton.classList.add('attack-glow')
     moveIterator++;
     legalSpaces.push(`${yCord}${leftI}`)
 
@@ -623,7 +626,7 @@ while(mapState[yCord][leftI]===0 && moveIterator<current.move){
 }
 if (leftI>=0 && moveIterator<current.move  && mapState[yCord][leftI].type==="LandUnit"){
     tempButton= document.getElementById(`${yCord}${leftI}`);
-tempButton.style.backgroundColor= "red";
+    tempButton.classList.add('attack-glow')
 
 legalSpaces.push(`${yCord}${leftI}`)
 }
@@ -634,7 +637,7 @@ moveIterator=0;
 if (rightI<mapState.length){
     while(mapState[yCord][rightI]===0 && moveIterator<current.move){
         tempButton= document.getElementById(`${yCord}${rightI}`);
-        tempButton.style.backgroundColor= "red";
+        tempButton.classList.add('attack-glow')
         moveIterator++;
         legalSpaces.push(`${yCord}${rightI}`)
 
@@ -645,7 +648,7 @@ if (rightI<mapState.length){
     }
     if (rightI<mapState.length && moveIterator<current.move  && mapState[yCord][rightI].type==="LandUnit"){
         tempButton= document.getElementById(`${yCord}${rightI}`);
-    tempButton.style.backgroundColor= "red";
+        tempButton.classList.add('attack-glow')
     
     legalSpaces.push(`${yCord}${rightI}`)
     }
@@ -688,12 +691,12 @@ function summonButton(){
                 setSummonTrigger(true);
                 if( playerCoodinates[0]-1>=0){
                     if(mapState[playerCoodinates[0]-1][playerCoodinates[1]] === 0){
-                        document.getElementById(`${playerCoodinates[0]-1}${playerCoodinates[1]}`).style.backgroundColor="red"
+                        document.getElementById(`${playerCoodinates[0]-1}${playerCoodinates[1]}`).classList.add("summon-glow")
                             tempSummonArray.push(`${playerCoodinates[0]-1}${playerCoodinates[1]}`)
                         ;}}
                 if(playerCoodinates[0]<mapState.length-1){
                     if (mapState[playerCoodinates[0]+1][playerCoodinates[1]] ===0  ){
-                        document.getElementById(`${playerCoodinates[0]+1}${playerCoodinates[1]}`).style.backgroundColor="red";
+                        document.getElementById(`${playerCoodinates[0]+1}${playerCoodinates[1]}`).classList.add("summon-glow");
                         tempSummonArray.push(`${playerCoodinates[0]+1}${playerCoodinates[1]}`);
                     }
 
@@ -701,7 +704,7 @@ function summonButton(){
 }
                 if ( playerCoodinates[1]-1>=0){
                     if(mapState[playerCoodinates[0]][playerCoodinates[1]-1] ===0){
-                        document.getElementById(`${playerCoodinates[0]}${playerCoodinates[1]-1}`).style.backgroundColor="red";
+                        document.getElementById(`${playerCoodinates[0]}${playerCoodinates[1]-1}`).classList.add("summon-glow");
                         tempSummonArray.push(`${playerCoodinates[0]}${playerCoodinates[1]-1}`)}
                       
 
@@ -709,7 +712,7 @@ function summonButton(){
                 if ( playerCoodinates[1]<mapState.length-1 ){
                     if (mapState[playerCoodinates[0]][playerCoodinates[1]+1] ===0){
 
-                        document.getElementById(`${playerCoodinates[0]}${playerCoodinates[1]+1}`).style.backgroundColor="red";
+                        document.getElementById(`${playerCoodinates[0]}${playerCoodinates[1]+1}`).classList.add("summon-glow");
                         tempSummonArray.push(`${playerCoodinates[0]}${playerCoodinates[1]+1}`)
                     }
 
@@ -774,12 +777,17 @@ setDemons(e=>e.map(el=> el === current ? tempDemon : el))
 
 function attack(y,x){
 //initiate battle loop
+
+let stringCords=`${y}${x}`;
+
 if (attackTrigger){
+
 
     let enemy=mapState[y][x];
     if(current.active){
     if(enemy.type){
         if(enemy.type==="LandUnit"){
+            if (legalMovesArray.includes(stringCords)){
             if(current.ability!=="Void"){
 
                 let newDefense= enemy.attackType === "Direct" ? (current.defense-enemy.attack) : current.defense;
@@ -895,6 +903,7 @@ if (attackTrigger){
             }
 
 setCurrent(null);
+setLegalMovesArray(null)
 
         }
     }
@@ -905,10 +914,11 @@ setCurrent(null);
         setCurseTrigger(false);
         setSummonTrigger(false);
         setCurrent(null);
+        setLegalMovesArray(null)
     }
 }
 //set curent to null
-
+}
 }
 
 function curse(){
