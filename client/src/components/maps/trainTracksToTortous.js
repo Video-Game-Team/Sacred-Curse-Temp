@@ -20203,7 +20203,6 @@ const TrainTracksToTortous = (props) => {
             (yPlayerIndex.current === 248 && xPlayerIndex.current === 18)
           ) {
             setTextValue('Hi I am Girl1');
-            console.log('Hi I am Girl1');
           }
           // //YO Mama NPC
           // if (
@@ -20242,7 +20241,7 @@ const TrainTracksToTortous = (props) => {
             (yPlayerIndex.current === 238 && xPlayerIndex.current === 17) ||
             (yPlayerIndex.current === 238 && xPlayerIndex.current === 18)
           ) {
-             console.log('Hi I am Girl2');
+             setTextValue('Hi I am Girl2');
           }
           //Hot Girl
           // if (
@@ -20412,6 +20411,7 @@ const TrainTracksToTortous = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+        setTextValue(null);
       }
     };
 
@@ -20567,7 +20567,7 @@ const TrainTracksToTortous = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="camera">
+      <div className="camera fade-in">
         <div>
           <div
             className="mapTTTT pixel-art"
@@ -20590,6 +20590,14 @@ const TrainTracksToTortous = (props) => {
             </div>
           </div>
         </div>
+              { textValue ? 
+        <dialog className="textBox typewriter" open>
+          <p>
+         {textValue}
+          </p>
+        </dialog> 
+        : null
+}
       </div>
     </div>
   );

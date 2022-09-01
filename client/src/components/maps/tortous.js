@@ -1904,35 +1904,34 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 83 && xPlayerIndex.current === 25)
           ) {
             setTextValue('Hi I am girl');
-            console.log('Hi I am girl');
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 43) ||
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 44)
           ) {
-            console.log("Hi I'm Guard 1");
+            setTextValue("Hi I'm Guard 1");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 61) ||
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 62)
           ) {
-            console.log("Hi I'm Guard 2");
+            setTextValue("Hi I'm Guard 2");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 30 && xPlayerIndex.current === 88) ||
             (yPlayerIndex.current === 30 && xPlayerIndex.current === 89)
           ) {
-            console.log("Hi I'm crazy yeling guy");
+            setTextValue("Hi I'm crazy yeling guy");
           }
           //Old Man
           if (
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 22) ||
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 23)
           ) {
-            console.log("Hi I'm old man");
+            setTextValue("Hi I'm old man");
           }
         }
 
@@ -1950,28 +1949,28 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 54 && xPlayerIndex.current === 43) ||
             (yPlayerIndex.current === 52 && xPlayerIndex.current === 42)
           ) {
-            console.log("Hi I'm Guard 1");
+            setTextValue("Hi I'm Guard 1");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 54 && xPlayerIndex.current === 62) ||
             (yPlayerIndex.current === 54 && xPlayerIndex.current === 61)
           ) {
-            console.log("Hi I'm Guard 2");
+            setTextValue("Hi I'm Guard 2");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 27 && xPlayerIndex.current === 88) ||
             (yPlayerIndex.current === 27 && xPlayerIndex.current === 89)
           ) {
-            console.log("Hi I'm crazy yeling guy");
+            setTextValue("Hi I'm crazy yeling guy");
           }
           //Old Man
           if (
             (yPlayerIndex.current === 17 && xPlayerIndex.current === 23) ||
             (yPlayerIndex.current === 17 && xPlayerIndex.current === 22)
           ) {
-            console.log("Hi I'm old man");
+            setTextValue("Hi I'm old man");
           }
         }
 
@@ -1981,35 +1980,35 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 81 && xPlayerIndex.current === 26) ||
             (yPlayerIndex.current === 82 && xPlayerIndex.current === 26)
           ) {
-            console.log('Hi I am girl');
+            setTextValue('Hi I am girl');
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 55 && xPlayerIndex.current === 45) ||
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 45)
           ) {
-            console.log("Hi I'm Guard 1");
+            setTextValue("Hi I'm Guard 1");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 55 && xPlayerIndex.current === 63) ||
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 63)
           ) {
-            console.log("Hi I'm Guard 2");
+            setTextValue("Hi I'm Guard 2");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 28 && xPlayerIndex.current === 90) ||
             (yPlayerIndex.current === 29 && xPlayerIndex.current === 90)
           ) {
-            console.log("Hi I'm crazy yeling guy");
+            setTextValue("Hi I'm crazy yeling guy");
           }
           //Old Man
           if (
             (yPlayerIndex.current === 19 && xPlayerIndex.current === 24) ||
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 24)
           ) {
-            console.log("Hi I'm old man");
+            setTextValue("Hi I'm old man");
           }
         }
 
@@ -2019,35 +2018,35 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 81 && xPlayerIndex.current === 23) ||
             (yPlayerIndex.current === 82 && xPlayerIndex.current === 23)
           ) {
-            console.log('Hi I am girl');
+            setTextValue('Hi I am girl');
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 55 && xPlayerIndex.current === 42) ||
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 42)
           ) {
-            console.log("Hi I'm Guard 1");
+            setTextValue("Hi I'm Guard 1");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 55 && xPlayerIndex.current === 60) ||
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 60)
           ) {
-            console.log("Hi I'm Guard 2");
+            setTextValue("Hi I'm Guard 2");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 28 && xPlayerIndex.current === 87) ||
             (yPlayerIndex.current === 29 && xPlayerIndex.current === 87)
           ) {
-            console.log("Hi I'm crazy yeling guy");
+            setTextValue("Hi I'm crazy yeling guy");
           }
           //Old Man
           if (
             (yPlayerIndex.current === 19 && xPlayerIndex.current === 21) ||
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 21)
           ) {
-            console.log("Hi I'm old man");
+            setTextValue("Hi I'm old man");
           }
         }
       }
@@ -2143,6 +2142,7 @@ const Tortous = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+         setTextValue(null);
       }
     };
 
@@ -2321,6 +2321,14 @@ const Tortous = (props) => {
             </div>
           </div>
         </div>
+              { textValue ? 
+        <dialog className="textBox typewriter" open>
+          <p>
+         {textValue}
+          </p>
+        </dialog> 
+        : null
+}
       </div>
     </div>
   );

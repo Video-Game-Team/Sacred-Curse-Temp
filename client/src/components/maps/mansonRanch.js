@@ -753,8 +753,6 @@ const MansonRanch = (props) => {
     }
   }, [xPlayerIndex.current]);
 
-
-
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -767,28 +765,27 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 48 && xPlayerIndex.current === 38)
           ) {
             setTextValue('Hi I am Hippy Girl 1');
-            console.log('Hi I am Hippy Girl 1');
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 40 && xPlayerIndex.current === 17) ||
             (yPlayerIndex.current === 40 && xPlayerIndex.current === 18)
           ) {
-             console.log('Hi I am Hippy Girl 2');
+            setTextValue('Hi I am Hippy Girl 2');
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 12) ||
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 13)
           ) {
-            console.log("Hi I'm Crazy guy 1");
+            setTextValue("Hi I'm Crazy guy 1");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 31 && xPlayerIndex.current === 31) ||
             (yPlayerIndex.current === 31 && xPlayerIndex.current === 32)
           ) {
-            console.log("Hi I'm Crazy chick 1");
+            setTextValue("Hi I'm Crazy chick 1");
           }
         }
 
@@ -799,28 +796,28 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 45 && xPlayerIndex.current === 38) ||
             (yPlayerIndex.current === 45 && xPlayerIndex.current === 37)
           ) {
-            console.log('Hi I am Hippy Girl 1');
+            setTextValue('Hi I am Hippy Girl 1');
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 36 && xPlayerIndex.current === 17) ||
             (yPlayerIndex.current === 36 && xPlayerIndex.current === 18)
           ) {
-            console.log('Hi I am Hippy Girl 2');
+            setTextValue('Hi I am Hippy Girl 2');
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 12) ||
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 13)
           ) {
-             console.log("Hi I'm Crazy guy 1");
+            setTextValue("Hi I'm Crazy guy 1");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 28 && xPlayerIndex.current === 31) ||
             (yPlayerIndex.current === 28 && xPlayerIndex.current === 32)
           ) {
-           console.log("Hi I'm Crazy chick 1");
+            setTextValue("Hi I'm Crazy chick 1");
           }
         }
 
@@ -830,14 +827,14 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 46 && xPlayerIndex.current === 39) ||
             (yPlayerIndex.current === 47 && xPlayerIndex.current === 39)
           ) {
-             console.log('Hi I am Hippy Girl 1');
+            setTextValue('Hi I am Hippy Girl 1');
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 38 && xPlayerIndex.current === 19) ||
             (yPlayerIndex.current === 39 && xPlayerIndex.current === 19)
           ) {
-            console.log('Hi I am Hippy Girl 2');
+            setTextValue('Hi I am Hippy Girl 2');
           }
           //Hot Girl
           // if (
@@ -851,7 +848,7 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 29 && xPlayerIndex.current === 32) ||
             (yPlayerIndex.current === 30 && xPlayerIndex.current === 32)
           ) {
-            console.log("Hi I'm Crazy chick 1");
+            setTextValue("Hi I'm Crazy chick 1");
           }
         }
 
@@ -872,17 +869,17 @@ const MansonRanch = (props) => {
           // }
           //Hot Girl
           if (
-            (yPlayerIndex.current === 21 && xPlayerIndex.current === 11) ||
+            (yPlayerIndex.current === 23 && xPlayerIndex.current === 11) ||
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 11)
           ) {
-             console.log("Hi I'm Crazy guy 1");
+            setTextValue("Hi I'm Crazy guy 1");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 29 && xPlayerIndex.current === 30) ||
             (yPlayerIndex.current === 30 && xPlayerIndex.current === 30)
           ) {
-            console.log("Hi I'm Crazy chick 1");
+            setTextValue("Hi I'm Crazy chick 1");
           }
         }
       }
@@ -892,8 +889,6 @@ const MansonRanch = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
 
   //create an array. If the current array does not contain the value. shift it.
   useEffect(() => {
@@ -933,6 +928,9 @@ const MansonRanch = (props) => {
       window.removeEventListener('keyup', keyUpHandler);
     };
   }, []);
+
+
+
 
   //event listen for enter
   useEffect(() => {
@@ -1013,6 +1011,7 @@ const MansonRanch = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+        setTextValue(null);
       }
     };
 
@@ -1191,9 +1190,13 @@ const MansonRanch = (props) => {
             </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );
 };
-
 export default MansonRanch;

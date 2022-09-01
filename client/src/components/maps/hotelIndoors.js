@@ -118,8 +118,6 @@ const HotelIndoors = (props) => {
     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
   );
 
-
-
   // useEffect(() => {
   //   let tempGrid = [];
   //   for (let i = 0; i < currentMap.length; i++) {
@@ -145,8 +143,6 @@ const HotelIndoors = (props) => {
   //   setGridArray(tempGrid);
   // }, []);
 
-
-
   useEffect(() => {
     if (props.previousMap === 'tortous') {
       //setYCord
@@ -171,10 +167,6 @@ const HotelIndoors = (props) => {
     }
   }, [yPlayerIndex.current]);
 
-
-
-
-
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -187,14 +179,13 @@ const HotelIndoors = (props) => {
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 12)
           ) {
             setTextValue('Hi I am Guard1');
-            console.log('Hi I am Guard1');
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 4) ||
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 5)
           ) {
-            console.log("Hi I'm behind the counter");
+            setTextValue("Hi I'm behind the counter");
           }
           // //Hot Girl
           // if (
@@ -281,7 +272,7 @@ const HotelIndoors = (props) => {
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 10) ||
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 10)
           ) {
-            console.log("Hi I'm Guard1");
+            setTextValue("Hi I'm Guard1");
           }
           //YO Mama NPC
           // if (
@@ -312,11 +303,6 @@ const HotelIndoors = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
-
-
-
 
   //event listen for enter
   useEffect(() => {
@@ -397,6 +383,7 @@ const HotelIndoors = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+        setTextValue(null);
       }
     };
 
@@ -575,6 +562,11 @@ const HotelIndoors = (props) => {
             </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );

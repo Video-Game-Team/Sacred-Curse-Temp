@@ -93,9 +93,6 @@ const RanchHouse2 = (props) => {
     currentMap[yPlayerIndex.current][xPlayerIndex.current]
   );
 
-
-
-
   // useEffect(() => {
   //   let tempGrid = [];
   //   for (let i = 0; i < currentMap.length; i++) {
@@ -121,10 +118,6 @@ const RanchHouse2 = (props) => {
   //   setGridArray(tempGrid);
   // }, []);
 
-
-
-
-
   useEffect(() => {
     if (props.previousMap === 'dunleaveyValley') {
       //setYCord
@@ -149,10 +142,6 @@ const RanchHouse2 = (props) => {
     }
   }, [yPlayerIndex.current]);
 
-
-
-
-
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -165,7 +154,6 @@ const RanchHouse2 = (props) => {
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 10)
           ) {
             setTextValue('Hi I am Guard1');
-            console.log('Hi I am Guard1');
           }
           //YO Mama NPC
           // if (
@@ -228,7 +216,7 @@ const RanchHouse2 = (props) => {
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 11) ||
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 11)
           ) {
-            console.log("Hi I'm Guard");
+            setTextValue("Hi I'm Guard");
           }
           //YO Mama NPC
           // if (
@@ -259,7 +247,7 @@ const RanchHouse2 = (props) => {
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 8) ||
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 8)
           ) {
-            console.log("Hi I'm Guard1");
+            setTextValue("Hi I'm Guard1");
           }
           //YO Mama NPC
           // if (
@@ -290,10 +278,6 @@ const RanchHouse2 = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
-
-
 
   //event listen for enter
   useEffect(() => {
@@ -374,6 +358,7 @@ const RanchHouse2 = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+         setTextValue(null);
       }
     };
 
@@ -552,6 +537,11 @@ const RanchHouse2 = (props) => {
             </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );

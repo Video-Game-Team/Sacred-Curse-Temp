@@ -111,9 +111,6 @@ const IndoorHouse5 = (props) => {
     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
   );
 
-
-
-
   // useEffect(() => {
   //   let tempGrid = [];
   //   for (let i = 0; i < currentMap.length; i++) {
@@ -138,9 +135,6 @@ const IndoorHouse5 = (props) => {
   //   }
   //   setGridArray(tempGrid);
   // }, []);
-
-
-
 
   useEffect(() => {
     if (props.previousMap === 'dunleaveyValley') {
@@ -167,10 +161,6 @@ const IndoorHouse5 = (props) => {
     }
   }, [yPlayerIndex.current]);
 
-
-
-  
-
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -183,7 +173,6 @@ const IndoorHouse5 = (props) => {
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 17)
           ) {
             setTextValue('Hi I am Guard1');
-            console.log('Hi I am Guard1');
           }
           //YO Mama NPC
           // if (
@@ -277,7 +266,7 @@ const IndoorHouse5 = (props) => {
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 15) ||
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 15)
           ) {
-            console.log("Hi I'm Guard1");
+            setTextValue("Hi I'm Guard1");
           }
           //YO Mama NPC
           // if (
@@ -308,11 +297,6 @@ const IndoorHouse5 = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
-
-
-
 
   //event listen for enter
   useEffect(() => {
@@ -393,6 +377,7 @@ const IndoorHouse5 = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+        setTextValue(null);
       }
     };
 
@@ -571,6 +556,11 @@ const IndoorHouse5 = (props) => {
             </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );

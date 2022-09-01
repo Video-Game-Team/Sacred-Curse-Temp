@@ -1996,7 +1996,7 @@ const TrainTracksToCapital = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="camera">
+      <div className="camera fade-in">
         <div>
           <div
             className="mapTTTC pixel-art"

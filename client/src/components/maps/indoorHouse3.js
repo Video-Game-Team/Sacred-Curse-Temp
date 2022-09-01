@@ -90,8 +90,6 @@ const IndoorHouse3 = (props) => {
     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
   );
 
-
-
   // useEffect(() => {
   //   let tempGrid = [];
   //   for (let i = 0; i < currentMap.length; i++) {
@@ -117,9 +115,6 @@ const IndoorHouse3 = (props) => {
   //   setGridArray(tempGrid);
   // }, []);
 
-
-
-
   useEffect(() => {
     if (props.previousMap === 'tortous') {
       //setYCord
@@ -144,11 +139,6 @@ const IndoorHouse3 = (props) => {
     }
   }, [yPlayerIndex.current]);
 
-
-
-
-
-
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -161,14 +151,13 @@ const IndoorHouse3 = (props) => {
             (yPlayerIndex.current === 9 && xPlayerIndex.current === 4)
           ) {
             setTextValue('Hi I am blonde');
-            console.log('Hi I am blonde');
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 7) ||
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 8)
           ) {
-            console.log("Hi I'm the one with dark hair");
+            setTextValue("Hi I'm the one with dark hair");
           }
           // //Hot Girl
           // if (
@@ -193,7 +182,7 @@ const IndoorHouse3 = (props) => {
             (yPlayerIndex.current === 6 && xPlayerIndex.current === 3) ||
             (yPlayerIndex.current === 6 && xPlayerIndex.current === 4)
           ) {
-                 console.log('Hi I am blonde');
+            setTextValue('Hi I am blonde');
           }
           // //YO Mama NPC
           // if (
@@ -224,7 +213,7 @@ const IndoorHouse3 = (props) => {
             (yPlayerIndex.current === 7 && xPlayerIndex.current === 5) ||
             (yPlayerIndex.current === 8 && xPlayerIndex.current === 5)
           ) {
-                 console.log('Hi I am blonde');
+            setTextValue('Hi I am blonde');
           }
           //YO Mama NPC
           // if (
@@ -255,7 +244,7 @@ const IndoorHouse3 = (props) => {
             (yPlayerIndex.current === 7 && xPlayerIndex.current === 2) ||
             (yPlayerIndex.current === 8 && xPlayerIndex.current === 2)
           ) {
-             console.log('Hi I am blonde');
+            setTextValue('Hi I am blonde');
           }
           //YO Mama NPC
           // if (
@@ -286,11 +275,6 @@ const IndoorHouse3 = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
-
-
-
 
   //event listen for enter
   useEffect(() => {
@@ -371,6 +355,7 @@ const IndoorHouse3 = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+        setTextValue(null);
       }
     };
 
@@ -549,6 +534,11 @@ const IndoorHouse3 = (props) => {
             </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );

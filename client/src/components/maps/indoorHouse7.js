@@ -81,8 +81,6 @@ const IndoorHouse7 = (props) => {
     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
   );
 
-
-  
   // useEffect(() => {
   //   let tempGrid = [];
   //   for (let i = 0; i < currentMap.length; i++) {
@@ -108,10 +106,6 @@ const IndoorHouse7 = (props) => {
   //   setGridArray(tempGrid);
   // }, []);
 
-
-
-
-
   useEffect(() => {
     if (props.previousMap === 'tortous') {
       //setYCord
@@ -135,10 +129,6 @@ const IndoorHouse7 = (props) => {
       props.active('tortous', 'indoorHouse7');
     }
   }, [yPlayerIndex.current]);
-
-
-
-  
 
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
@@ -184,7 +174,7 @@ const IndoorHouse7 = (props) => {
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 6) ||
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 7)
           ) {
-            console.log("Hi I'm Guard1");
+            setTextValue("Hi I'm Guard1");
           }
           // //YO Mama NPC
           // if (
@@ -215,7 +205,7 @@ const IndoorHouse7 = (props) => {
             (yPlayerIndex.current === 6 && xPlayerIndex.current === 8) ||
             (yPlayerIndex.current === 7 && xPlayerIndex.current === 8)
           ) {
-            console.log("Hi I'm Guard");
+            setTextValue("Hi I'm Guard");
           }
           //YO Mama NPC
           // if (
@@ -246,7 +236,7 @@ const IndoorHouse7 = (props) => {
             (yPlayerIndex.current === 6 && xPlayerIndex.current === 5) ||
             (yPlayerIndex.current === 7 && xPlayerIndex.current === 5)
           ) {
-            console.log("Hi I'm Guard1");
+            setTextValue("Hi I'm Guard1");
           }
           //YO Mama NPC
           // if (
@@ -277,11 +267,6 @@ const IndoorHouse7 = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
-
-
-
 
   //event listen for enter
   useEffect(() => {
@@ -362,6 +347,7 @@ const IndoorHouse7 = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+        setTextValue(null);
       }
     };
 
@@ -540,6 +526,11 @@ const IndoorHouse7 = (props) => {
             </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );

@@ -133,11 +133,6 @@ const IndoorHouse2 = (props) => {
     }
   }, [yPlayerIndex.current]);
 
-
-
-
-
-
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -150,7 +145,6 @@ const IndoorHouse2 = (props) => {
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 12)
           ) {
             setTextValue('Hi I am Guard1');
-            console.log('Hi I am Guard1');
           }
           // //YO Mama NPC
           // if (
@@ -213,7 +207,7 @@ const IndoorHouse2 = (props) => {
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 13) ||
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 13)
           ) {
-            console.log("Hi I'm Guard");
+            setTextValue("Hi I'm Guard");
           }
           //YO Mama NPC
           // if (
@@ -244,7 +238,7 @@ const IndoorHouse2 = (props) => {
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 10) ||
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 10)
           ) {
-            console.log("Hi I'm Guard1");
+            setTextValue("Hi I'm Guard1");
           }
           //YO Mama NPC
           // if (
@@ -275,11 +269,6 @@ const IndoorHouse2 = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
-
-
-
 
   useEffect(() => {
     window.addEventListener('keydown', (e) => {
@@ -359,6 +348,7 @@ const IndoorHouse2 = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+           setTextValue(null);
       }
     };
 
@@ -537,9 +527,13 @@ const IndoorHouse2 = (props) => {
             </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );
 };
-
 export default IndoorHouse2;

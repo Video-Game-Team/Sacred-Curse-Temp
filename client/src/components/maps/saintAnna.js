@@ -829,8 +829,6 @@ const SaintAnna = (props) => {
     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
   );
 
-
-
   // useEffect(() => {
   //   let tempGrid = [];
   //   for (let i = 0; i < currentMap.length; i++) {
@@ -856,8 +854,6 @@ const SaintAnna = (props) => {
   //   setGridArray(tempGrid);
   // }, []);
 
-
-
   useEffect(() => {
     if (props.previousMap === 'indoorHouse6') {
       //setYCord
@@ -881,9 +877,6 @@ const SaintAnna = (props) => {
     }
   }, [yPlayerIndex.current]);
 
-
-
-
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -900,17 +893,17 @@ const SaintAnna = (props) => {
           // }
           //YO Mama NPC
           if (
-            (yPlayerIndex.current ===41 && xPlayerIndex.current === 33) ||
+            (yPlayerIndex.current === 41 && xPlayerIndex.current === 33) ||
             (yPlayerIndex.current === 41 && xPlayerIndex.current === 34)
           ) {
-            console.log("Hi I'm red shirt");
+            setTextValue("Hi I'm red shirt");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 25 && xPlayerIndex.current === 39) ||
             (yPlayerIndex.current === 25 && xPlayerIndex.current === 38)
           ) {
-            console.log("Hi I'm blonde girl");
+            setTextValue("Hi I'm blonde girl");
           }
           //Hot Girl
           if (
@@ -918,7 +911,7 @@ const SaintAnna = (props) => {
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 79) ||
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 80)
           ) {
-            console.log("Hi I'm dock guy 2");
+            setTextValue("Hi I'm dock guy 2");
           }
         }
 
@@ -929,14 +922,14 @@ const SaintAnna = (props) => {
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 18) ||
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 19)
           ) {
-            console.log("Hi I'm Dock guy 1");
+            setTextValue("Hi I'm Dock guy 1");
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 38 && xPlayerIndex.current === 34) ||
             (yPlayerIndex.current === 38 && xPlayerIndex.current === 33)
           ) {
-              console.log("Hi I'm blonde girl");
+            setTextValue("Hi I'm blonde girl");
           }
           //Hot Girl
           // if (
@@ -960,21 +953,21 @@ const SaintAnna = (props) => {
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 20) ||
             (yPlayerIndex.current === 25 && xPlayerIndex.current === 20)
           ) {
-            console.log("Hi I'm Dock guy 1");
+            setTextValue("Hi I'm Dock guy 1");
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 39 && xPlayerIndex.current === 35) ||
             (yPlayerIndex.current === 40 && xPlayerIndex.current === 35)
           ) {
-             console.log("Hi I'm red shirt");
+            setTextValue("Hi I'm red shirt");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 40) ||
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 40)
           ) {
-             console.log("Hi I'm blonde girl");
+            setTextValue("Hi I'm blonde girl");
           }
           //Hot Girl
           // if (
@@ -991,14 +984,14 @@ const SaintAnna = (props) => {
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 17) ||
             (yPlayerIndex.current === 25 && xPlayerIndex.current === 17)
           ) {
-            console.log("Hi I'm Dock guy 1");
+            setTextValue("Hi I'm Dock guy 1");
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 39 && xPlayerIndex.current === 32) ||
             (yPlayerIndex.current === 40 && xPlayerIndex.current === 32)
           ) {
-             console.log("Hi I'm red shirt");
+            setTextValue("Hi I'm red shirt");
           }
           //Hot Girl
           // if (
@@ -1022,9 +1015,6 @@ const SaintAnna = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
-
 
   //event listen for enter
   useEffect(() => {
@@ -1105,6 +1095,7 @@ const SaintAnna = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+         setTextValue(null);
       }
     };
 
@@ -1284,6 +1275,11 @@ const SaintAnna = (props) => {
             </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );

@@ -1159,7 +1159,6 @@ const TownMap1 = (props) => {
   //   }
   // setGridArray(tempGrid)
   // },[])
-  
 
   console.log('poop');
   console.log(props.previousMap);
@@ -1207,7 +1206,6 @@ const TownMap1 = (props) => {
     }
   }, [yPlayerIndex.current]);
 
-
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -1220,28 +1218,27 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 38 && xPlayerIndex.current === 33)
           ) {
             setTextValue('Hi I am Guard1');
-            console.log('Hi I am Guard1');
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 38) ||
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 39)
           ) {
-            console.log("Hi I'm Guard 2");
+            setTextValue("Hi I'm Guard 2");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 23) ||
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 24)
           ) {
-            console.log("Hi I'm Guard 3");
+            setTextValue("Hi I'm Guard 3");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 33) ||
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 34)
           ) {
-            console.log("Hi I'm guard 4");
+            setTextValue("Hi I'm guard 4");
           }
         }
 
@@ -1252,14 +1249,14 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 32) ||
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 33)
           ) {
-            console.log("Hi I'm Guard1");
+            setTextValue("Hi I'm Guard1");
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 32 && xPlayerIndex.current === 38) ||
             (yPlayerIndex.current === 32 && xPlayerIndex.current === 39)
           ) {
-            console.log("Hi I'm Guard 2");
+            setTextValue("Hi I'm Guard 2");
           }
           //Hot Girl
           // if (
@@ -1273,7 +1270,7 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 21 && xPlayerIndex.current === 33) ||
             (yPlayerIndex.current === 21 && xPlayerIndex.current === 34)
           ) {
-            console.log("Hi I'm guard 4");
+            setTextValue("Hi I'm guard 4");
           }
         }
 
@@ -1283,14 +1280,14 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 36 && xPlayerIndex.current === 34) ||
             (yPlayerIndex.current === 37 && xPlayerIndex.current === 34)
           ) {
-            console.log("Hi I'm Guard");
+            setTextValue("Hi I'm Guard");
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 33 && xPlayerIndex.current === 40) ||
             (yPlayerIndex.current === 34 && xPlayerIndex.current === 40)
           ) {
-            console.log("Hi I'm Guard 2");
+            setTextValue("Hi I'm Guard 2");
           }
           //Hot Girl
           // if (
@@ -1304,7 +1301,7 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 34) ||
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 34)
           ) {
-            console.log("Hi I'm guard 4");
+            setTextValue("Hi I'm guard 4");
           }
         }
 
@@ -1314,28 +1311,28 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 36 && xPlayerIndex.current === 31) ||
             (yPlayerIndex.current === 37 && xPlayerIndex.current === 31)
           ) {
-            console.log("Hi I'm Guard1");
+            setTextValue("Hi I'm Guard1");
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 33 && xPlayerIndex.current === 37) ||
             (yPlayerIndex.current === 34 && xPlayerIndex.current === 37)
           ) {
-            console.log("Hi I'm Guard 2");
+            setTextValue("Hi I'm Guard 2");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 22) ||
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 22)
           ) {
-            console.log("Hi I'm Guard 3");
+            setTextValue("Hi I'm Guard 3");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 32) ||
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 32)
           ) {
-            console.log("Hi I'm guard 4");
+            setTextValue("Hi I'm guard 4");
           }
         }
       }
@@ -1345,8 +1342,6 @@ const TownMap1 = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
 
   //create an array. If the current array does not contain the value. shift it.
   useEffect(() => {
@@ -1367,6 +1362,7 @@ const TownMap1 = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+         setTextValue(null);
       }
     };
 
@@ -1544,6 +1540,11 @@ const TownMap1 = (props) => {
             </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );

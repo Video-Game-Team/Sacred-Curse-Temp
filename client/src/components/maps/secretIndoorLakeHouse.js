@@ -90,8 +90,6 @@ const SecretIndoorLakeHouse = (props) => {
     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
   );
 
-
-
   // useEffect(() => {
   //   let tempGrid = [];
   //   for (let i = 0; i < currentMap.length; i++) {
@@ -117,9 +115,6 @@ const SecretIndoorLakeHouse = (props) => {
   //   setGridArray(tempGrid);
   // }, []);
 
-
-
-
   useEffect(() => {
     if (props.previousMap === 'saintAnnaHidden') {
       //setYCord
@@ -143,10 +138,6 @@ const SecretIndoorLakeHouse = (props) => {
       props.active('saintAnnaHidden', 'secretIndoorLakeHouse');
     }
   }, [yPlayerIndex.current, xPlayerIndex.current]);
-
-
-
-  
 
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
@@ -192,7 +183,7 @@ const SecretIndoorLakeHouse = (props) => {
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 6) ||
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 7)
           ) {
-            console.log("Hi I'm Guard1");
+            setTextValue("Hi I'm Guard1");
           }
           // //YO Mama NPC
           // if (
@@ -223,7 +214,7 @@ const SecretIndoorLakeHouse = (props) => {
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 8) ||
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 8)
           ) {
-            console.log("Hi I'm Guard");
+            setTextValue("Hi I'm Guard");
           }
           //YO Mama NPC
           // if (
@@ -254,7 +245,7 @@ const SecretIndoorLakeHouse = (props) => {
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 5) ||
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 5)
           ) {
-            console.log("Hi I'm Guard1");
+            setTextValue("Hi I'm Guard1");
           }
           //YO Mama NPC
           // if (
@@ -285,11 +276,6 @@ const SecretIndoorLakeHouse = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
-
-
-
 
   //event listen for enter
   useEffect(() => {
@@ -370,6 +356,7 @@ const SecretIndoorLakeHouse = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+        setTextValue(null);
       }
     };
 
@@ -548,9 +535,13 @@ const SecretIndoorLakeHouse = (props) => {
             </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );
 };
-
 export default SecretIndoorLakeHouse;

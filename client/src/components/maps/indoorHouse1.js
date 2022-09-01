@@ -133,10 +133,6 @@ const IndoorHouse1 = (props) => {
     }
   }, [yPlayerIndex.current]);
 
-
-
-
-
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -149,7 +145,6 @@ const IndoorHouse1 = (props) => {
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 12)
           ) {
             setTextValue('Hi I am Guard1');
-            console.log('Hi I am Guard1');
           }
           // //YO Mama NPC
           // if (
@@ -182,7 +177,6 @@ const IndoorHouse1 = (props) => {
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 7)
           ) {
             setTextValue('Hi I am here');
-            console.log('Hi I am here');
           }
           // //YO Mama NPC
           // if (
@@ -213,7 +207,7 @@ const IndoorHouse1 = (props) => {
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 7) ||
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 7)
           ) {
-             console.log('Hi I am here');
+            setTextValue('Hi I am here');
           }
           //YO Mama NPC
           // if (
@@ -244,7 +238,7 @@ const IndoorHouse1 = (props) => {
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 5) ||
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 5)
           ) {
-            console.log('Hi I am here');
+            setTextValue('Hi I am here');
           }
           //YO Mama NPC
           // if (
@@ -275,9 +269,6 @@ const IndoorHouse1 = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
-
 
   //event listen for enter
   useEffect(() => {
@@ -358,6 +349,7 @@ const IndoorHouse1 = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+        setTextValue(null);
       }
     };
 
@@ -536,6 +528,11 @@ const IndoorHouse1 = (props) => {
             </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );

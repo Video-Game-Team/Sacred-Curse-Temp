@@ -77,9 +77,6 @@ const IndoorHouse9 = (props) => {
     'VALUE Right',
     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
   );
-  
-
-
 
   // useEffect(() => {
   //   let tempGrid = [];
@@ -106,10 +103,6 @@ const IndoorHouse9 = (props) => {
   //   setGridArray(tempGrid);
   // }, []);
 
-
-
-
-
   useEffect(() => {
     if (props.previousMap === 'mansonRanch') {
       //setYCord
@@ -134,10 +127,6 @@ const IndoorHouse9 = (props) => {
     }
   }, [yPlayerIndex.current]);
 
-
-
-
-
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -150,14 +139,13 @@ const IndoorHouse9 = (props) => {
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 4)
           ) {
             setTextValue('Hi I am green');
-            console.log('Hi I am in green');
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 13 && xPlayerIndex.current === 12) ||
             (yPlayerIndex.current === 13 && xPlayerIndex.current === 13)
           ) {
-            console.log('Hi I am in blue');
+            setTextValue('Hi I am in blue');
           }
           // //Hot Girl
           // if (
@@ -213,7 +201,7 @@ const IndoorHouse9 = (props) => {
             (yPlayerIndex.current === 2 && xPlayerIndex.current === 5) ||
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 5)
           ) {
-            console.log('Hi I am in green');
+            setTextValue('Hi I am in green');
           }
           //YO Mama NPC
           // if (
@@ -251,7 +239,7 @@ const IndoorHouse9 = (props) => {
             (yPlayerIndex.current === 11 && xPlayerIndex.current === 11) ||
             (yPlayerIndex.current === 12 && xPlayerIndex.current === 11)
           ) {
-             console.log("Hi I'm in blue");
+            setTextValue("Hi I'm in blue");
           }
           //Hot Girl
           // if (
@@ -275,10 +263,6 @@ const IndoorHouse9 = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
-
-
 
   //event listen for enter
   useEffect(() => {
@@ -359,6 +343,7 @@ const IndoorHouse9 = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+        setTextValue(null);
       }
     };
 
@@ -537,6 +522,11 @@ const IndoorHouse9 = (props) => {
             </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );

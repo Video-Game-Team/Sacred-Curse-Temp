@@ -546,7 +546,7 @@ const FarmMap = (props) => {
 
 
 // Console Log to test npc interation
-console.log(textValue)
+// console.log(textValue)
 
 
 //CHARACTER DIALOGUE USE EFFECT
@@ -562,21 +562,21 @@ useEffect(() => {
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 22)
           ) {
             setTextValue('Hi I am Jim')
-            console.log("Hi I'm jim");
+       
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 29 && xPlayerIndex.current === 21) ||
             (yPlayerIndex.current === 29 && xPlayerIndex.current === 22)
           ) {
-            console.log("Hi I'm Yo Mama");
+           setTextValue("Hi I'm Yo Mama");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 37 && xPlayerIndex.current === 14) ||
             (yPlayerIndex.current === 37 && xPlayerIndex.current === 15)
           ) {
-            console.log("Hi I'm Hot girl");
+           setTextValue("Hi I'm Hot girl");
           }
         }
 
@@ -587,21 +587,21 @@ useEffect(() => {
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 21) ||
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 22)
           ) {
-            console.log("Hi I'm jim");
+           setTextValue('Hi I am Jim');
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 26 && xPlayerIndex.current === 21) ||
             (yPlayerIndex.current === 26 && xPlayerIndex.current === 22)
           ) {
-            console.log("Hi I'm Yo Mama");
+            setTextValue("Hi I'm Yo Mama");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 34 && xPlayerIndex.current === 14) ||
             (yPlayerIndex.current === 34 && xPlayerIndex.current === 15)
           ) {
-            console.log("Hi I'm Hot girl");
+            setTextValue("Hi I'm Hot girl");
           }
         }
 
@@ -611,21 +611,21 @@ useEffect(() => {
             (yPlayerIndex.current === 21 && xPlayerIndex.current === 23) ||
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 23)
           ) {
-            console.log("Hi I'm jim");
+            setTextValue('Hi I am Jim');
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 27 && xPlayerIndex.current === 23) ||
             (yPlayerIndex.current === 28 && xPlayerIndex.current === 23)
           ) {
-            console.log("Hi I'm Yo Mama");
+            setTextValue("Hi I'm Yo Mama");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 16) ||
             (yPlayerIndex.current === 36 && xPlayerIndex.current === 16)
           ) {
-            console.log("Hi I'm Hot girl");
+            setTextValue("Hi I'm Hot girl");
           }
         }
 
@@ -635,21 +635,21 @@ useEffect(() => {
             (yPlayerIndex.current === 21 && xPlayerIndex.current === 20) ||
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 20)
           ) {
-            console.log("Hi I'm jim");
+            setTextValue('Hi I am Jim');
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 27 && xPlayerIndex.current === 20) ||
             (yPlayerIndex.current === 28 && xPlayerIndex.current === 20)
           ) {
-            console.log("Hi I'm Yo Mama");
+            setTextValue("Hi I'm Yo Mama");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 13) ||
             (yPlayerIndex.current === 36 && xPlayerIndex.current === 13)
           ) {
-            console.log("Hi I'm Hot girl");
+            setTextValue("Hi I'm Hot girl");
           }
         }
       }
@@ -792,6 +792,7 @@ useEffect(() => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+        setTextValue(null)
       }
     };
 
@@ -975,14 +976,14 @@ useEffect(() => {
             </div>
           </div>
         </div>
+              { textValue ? 
         <dialog className="textBox typewriter" open>
           <p>
-            Have you seen the man with the weeping willow tree in front of his
-            house? Be on 
-            the lookout for Wiggins hiding underneath your bed before you sleep.
-            Grab him and take him to the willow tree for a surprise from Mr. F.
+         {textValue}
           </p>
-        </dialog>
+        </dialog> 
+        : null
+}
       </div>
     </div>
   );

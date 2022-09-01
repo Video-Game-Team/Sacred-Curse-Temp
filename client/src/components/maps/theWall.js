@@ -1146,7 +1146,6 @@ const TheWall = (props) => {
   // console.log(yPlayerIndex.current, xPlayerIndex.current);
   // console.log(currentMap2[yPlayerIndex.current][xPlayerIndex.current]);
 
-
   // useEffect(()=>{
   //   let tempGrid=[]
   //   for (let i=0; i<currentMap.length; i++){
@@ -1172,8 +1171,6 @@ const TheWall = (props) => {
   // setGridArray(tempGrid)
   // },[])
 
-
-
   // useEffect(() => {
   //   if (props.previousMap === 'townMap1') {
   //     //setYCord
@@ -1197,8 +1194,6 @@ const TheWall = (props) => {
     }
   }, [yPlayerIndex.current]);
 
-
-
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -1211,7 +1206,6 @@ const TheWall = (props) => {
             (yPlayerIndex.current === 14 && xPlayerIndex.current === 20)
           ) {
             setTextValue('Hi I am Guard1');
-            console.log('Hi I am Guard1');
           }
           // //YO Mama NPC
           // if (
@@ -1243,7 +1237,7 @@ const TheWall = (props) => {
             (yPlayerIndex.current === 10 && xPlayerIndex.current === 19) ||
             (yPlayerIndex.current === 10 && xPlayerIndex.current === 20)
           ) {
-            console.log("Hi I'm Guard1");
+            setTextValue("Hi I'm Guard1");
           }
           // //YO Mama NPC
           // if (
@@ -1274,7 +1268,7 @@ const TheWall = (props) => {
             (yPlayerIndex.current === 11 && xPlayerIndex.current === 21) ||
             (yPlayerIndex.current === 12 && xPlayerIndex.current === 21)
           ) {
-            console.log("Hi I'm Guard");
+            setTextValue("Hi I'm Guard");
           }
           // //YO Mama NPC
           // if (
@@ -1305,7 +1299,7 @@ const TheWall = (props) => {
             (yPlayerIndex.current === 11 && xPlayerIndex.current === 18) ||
             (yPlayerIndex.current === 12 && xPlayerIndex.current === 18)
           ) {
-            console.log("Hi I'm Guard1");
+            setTextValue("Hi I'm Guard1");
           }
           // //YO Mama NPC
           // if (
@@ -1416,6 +1410,7 @@ const TheWall = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+        setTextValue(null);
       }
     };
 
@@ -1594,6 +1589,11 @@ const TheWall = (props) => {
             </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );

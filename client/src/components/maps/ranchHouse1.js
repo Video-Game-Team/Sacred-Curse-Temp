@@ -33,6 +33,7 @@ const RanchHouse1 = (props) => {
   const yPlayerIndex = useRef(13);
   const xPlayerIndex = useRef(4);
   const [gridArray, setGridArray] = useState([]);
+  const [textValue, setTextValue] = useState(null);
 
   let currentMap2 = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -113,9 +114,6 @@ const RanchHouse1 = (props) => {
     }
   }, [yPlayerIndex.current, xPlayerIndex.current]);
 
-
-
-
   // useEffect(() => {
   //   let tempGrid = [];
   //   for (let i = 0; i < currentMap.length; i++) {
@@ -140,10 +138,6 @@ const RanchHouse1 = (props) => {
   //   }
   //   setGridArray(tempGrid);
   // }, []);
-
-
-
-
 
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
@@ -220,7 +214,7 @@ const RanchHouse1 = (props) => {
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 3) ||
             (yPlayerIndex.current === 2 && xPlayerIndex.current === 3)
           ) {
-            console.log("Hi I'm a guy");
+            setTextValue("Hi I'm a guy");
           }
           //YO Mama NPC
           // if (
@@ -251,7 +245,7 @@ const RanchHouse1 = (props) => {
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 11) ||
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 11)
           ) {
-            console.log("Hi I'm blonde");
+            setTextValue("Hi I'm blonde");
           }
           //YO Mama NPC
           // if (
@@ -282,12 +276,6 @@ const RanchHouse1 = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
-
-
-
-
 
   //event listen for enter
   useEffect(() => {
@@ -368,6 +356,7 @@ const RanchHouse1 = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+        setTextValue(null);
       }
     };
 
@@ -546,6 +535,11 @@ const RanchHouse1 = (props) => {
             </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );
