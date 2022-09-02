@@ -30,16 +30,23 @@ const [display, setDisplay]= useState("Hi");
 const [summoningList, setSummoningList]= useState();
 const [legalMovesArray, setLegalMovesArray]= useState();
 const [legalSummoningArray, setLegalSummoningArray]= useState();
-const [playerCoodinates, setPlayerCoordinates]=useState([2,6])
+const [playerCoodinates, setPlayerCoordinates]=useState([1,6])
 const [staticDemonsList, setStaticDemonsList]= useState(prop.demonList);
 const [activeDemonsList, setActiveDemonsList]= useState([prop.demonList[0],prop.demonList[1]]);
 const [enemyTurn, setEnemyTurn]= useState(0)
 
 const [currentActionButton, setCurrentActionButton]= useState();
-const [activeEnemyList, setActiveEnemyList]=useState([Enemies.BlueMegaTank, Enemies.GreenInfantry, Enemies.BlueMech, Enemies.GreenRecon])
+const [activeEnemyList, setActiveEnemyList]=useState([Enemies.BlueMegaTank, Enemies.GreenInfantry, Enemies.BlueMech, Enemies.GreenRecon, Enemies.BlueMissiles, Enemies.BlueMech])
+
+//desert logic
+const [mapState, setMapState]= useState([[0,0,0,1,1,0,0,0],[1,0,0,1,1,0, demons[0],0],[0,1,0,0,activeEnemyList[0],0,1,0],[0,1,0,0,0,0,1,0],[0,1,activeEnemyList[3],1,1,0,0,0],[0,1,activeEnemyList[2],1,1,0,1,0],[0,0,demons[1],0,0,0,0,activeEnemyList[1]],[0,0,0,0,0,0,0,0]],)
+
+//ice logic
+// const [mapState, setMapState]= useState([[1,1,0,0,0,0,0,0],[1,1,0,1,0,1,demons[0],0],[0,0,0,0,activeEnemyList[0],0,0,0],[0,0,1,0,1,0,0,0],[1,0,activeEnemyList[3],1,1,0,0,0],[0,activeEnemyList[2],1,0,0,0,0,0],[0,0,demons[1],0,0,activeEnemyList[1],0,0],[0,0,0,0,0,0,0,0]],)
 
 
-const [mapState, setMapState]= useState([[0,0,0,0,0,0,0,0],[0,0,0,0,demons[1],0,1,0],[0,0,0,0,activeEnemyList[0],0,demons[0],0],[0,0,0,0,1,0,0,0],[0,1,0,activeEnemyList[3],0,0,0,0],[0,0,0,activeEnemyList[2],0,0,0,0],[0,0,0,0,0,0,0,activeEnemyList[1]],[0,0,0,0,0,0,0,0]],)
+//fountain logic
+// const [mapState, setMapState]= useState([[0,0,0,0,0,0,0,0],[0,1,0,1,1,demons[0],1, 0],[0,0,1,1,1,1,activeEnemyList[0],0],[0,0,1,1,1,1,0,0],[0,activeEnemyList[3],1,1,1,1,activeEnemyList[4],0],[0,activeEnemyList[2],1,1,1,1,0,0],[0,1,demons[1],1,1,0,1,0],[0,0,0,0,0,activeEnemyList[1],0,0]],)
 
 const [curseMap, setCurseMap]= useState([[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
 
