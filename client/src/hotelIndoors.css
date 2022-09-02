@@ -35,7 +35,7 @@
 
  .mapHI {
      image-rendering: pixelated;
-     background-image: url("./assets/maps/Hotel indoors w grid.png");
+     background-image: url("./assets/maps/Hotel indoors no grid.png");
      background-size: 1024px;
      width: calc(40 * var(--grid-cell));
      height: calc(55 * var(--grid-cell));

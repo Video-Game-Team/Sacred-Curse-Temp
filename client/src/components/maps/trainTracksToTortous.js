@@ -20202,7 +20202,7 @@ const TrainTracksToTortous = (props) => {
             (yPlayerIndex.current === 248 && xPlayerIndex.current === 17) ||
             (yPlayerIndex.current === 248 && xPlayerIndex.current === 18)
           ) {
-            setTextValue('Hi I am Girl1');
+            setTextValue("Hello! Welcome to Lauren and Mariah's Boutique. I'm Lauren, please place your purchase with Mariah");
           }
           // //YO Mama NPC
           // if (
@@ -20241,7 +20241,7 @@ const TrainTracksToTortous = (props) => {
             (yPlayerIndex.current === 238 && xPlayerIndex.current === 17) ||
             (yPlayerIndex.current === 238 && xPlayerIndex.current === 18)
           ) {
-             setTextValue('Hi I am Girl2');
+            setTextValue("Did Lauren send you to me? Sorry, no one has programmed purchasing logic yet. Bye!");
           }
           //Hot Girl
           // if (

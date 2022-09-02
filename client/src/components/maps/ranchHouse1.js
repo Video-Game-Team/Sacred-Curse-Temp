@@ -35,23 +35,23 @@ const RanchHouse1 = (props) => {
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
 
-  let currentMap2 = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  ];
+  // let currentMap2 = [
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  // ];
 
   let currentMap = [
     [3, 381, 382, 5, 431, 432, 298, 299, 300, 431, 432, 10, 381, 382, 13],
@@ -84,11 +84,11 @@ const RanchHouse1 = (props) => {
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   ];
 
-  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  console.log(
-    'VALUE Right',
-    currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-  );
+  // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  // console.log(
+  //   'VALUE Right',
+  //   currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+  // );
 
   useEffect(() => {
     if (props.previousMap === 'dunleaveyValley') {
@@ -293,21 +293,21 @@ const RanchHouse1 = (props) => {
               'sign1' &&
             64 - xBank.current > 32
           ) {
-            console.log('sign1');
+            // console.log('sign1');
           }
           if (
             xBank.current + 32 > 64 &&
             currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
               'sign2'
           ) {
-            console.log('sign2');
+            // console.log('sign2');
           }
           if (
             currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
               'sign2' &&
             64 - xBank.current > 32
           ) {
-            console.log('sign2');
+            // console.log('sign2');
           }
         }
         if (facing.current == null) {
@@ -316,20 +316,20 @@ const RanchHouse1 = (props) => {
               'sign1' &&
             xBank.current + 32 < 64
           ) {
-            console.log('sign1');
+            // console.log('sign1');
           }
           if (
             currentMap[yPlayerIndex.current + 1][xPlayerIndex.current + 1] ===
             'sign2'
           ) {
-            console.log('poopshit');
+            // console.log('poopshit');
           }
           if (
             currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
               'sign2' &&
             xBank.current + 32 < 64
           ) {
-            console.log('sign2');
+            // console.log('sign2');
           }
         }
       }

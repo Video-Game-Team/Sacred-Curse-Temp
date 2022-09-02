@@ -35,7 +35,7 @@
 
  .mapTTTSA {
      image-rendering: pixelated;
-     background-image: url("./assets/maps/Train track to St Anna w grid.png");
+     background-image: url("./assets/maps/Train track to St Anna no grid.png");
      background-size: 2560px;
      width: calc(100 * var(--grid-cell));
      height: calc(375 * var(--grid-cell));

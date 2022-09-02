@@ -36,7 +36,7 @@ body {
 
 .mapME {
     image-rendering: pixelated;
-    background-image: url("./assets/maps/Mountain Entrance w grid.png");
+    background-image: url("./assets/maps/Mountain Entrance no grid.png");
     background-size: 4544px;
     width: calc(150 * var(--grid-cell));
     height: calc(177.50 * var(--grid-cell));

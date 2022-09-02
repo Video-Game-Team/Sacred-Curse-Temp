@@ -35,7 +35,7 @@ body {
 
 .mapIH6 {
     image-rendering: pixelated;
-    background-image: url("./assets/maps/Indoor House 6 w grid.png");
+    background-image: url("./assets/maps/Indoor House 6 no grid.png");
     background-size: 960px;
     width: calc(37.5 * var(--grid-cell));
     height: calc(37.5 * var(--grid-cell));

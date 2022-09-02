@@ -35,24 +35,24 @@ const IndoorHouse10 = (props) => {
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
 
-  let currentMap2 = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1],
-  ];
+  // let currentMap2 = [
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  //   [1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1],
+  // ];
 
   let currentMap = [
     [3, 4, 5, 1858, 1859, 1860, 2573, 2574, 2575, 2576, 5, 1855, 5, 2628, 13],
@@ -76,14 +76,11 @@ const IndoorHouse10 = (props) => {
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   ];
 
-  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  console.log(
-    'VALUE Right',
-    currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-  );
-
-
-
+  // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  // console.log(
+  //   'VALUE Right',
+  //   currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+  // );
 
   // useEffect(() => {
   //   let tempGrid = [];
@@ -110,10 +107,6 @@ const IndoorHouse10 = (props) => {
   //   setGridArray(tempGrid);
   // }, []);
 
-
-
-
-
   useEffect(() => {
     if (props.previousMap === 'farmMap') {
       //setYCord
@@ -138,7 +131,18 @@ const IndoorHouse10 = (props) => {
       props.active('farmMap', 'indoorHouse10');
     }
   }, [yPlayerIndex.current]);
-  
+
+
+
+  // //CHARACTER DIALOGUE USE EFFECT
+  useEffect(() => {
+          if (
+            (yPlayerIndex.current === 3 && xPlayerIndex.current === 3) 
+          ) {
+            setTextValue("Ahhhh, what a night. I feel really rested!");
+          }
+  }, []);
+
 
   //event listen for enter
   useEffect(() => {
@@ -219,6 +223,7 @@ const IndoorHouse10 = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+        setTextValue(null);
       }
     };
 
@@ -397,9 +402,15 @@ const IndoorHouse10 = (props) => {
             </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );
 };
+
 
 export default IndoorHouse10;

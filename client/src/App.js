@@ -63,12 +63,13 @@ function App() {
 
   //delete Later
 const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dragonite, DemonObjects.Haku, DemonObjects.Zabuza, DemonObjects.Naruto])
-const [current, setCurrent] = useState('secretIndoorLakeHouse');
+const [current, setCurrent] = useState('trainTracksToCapital');
 const [tempCurrent, setTempCurrent] = useState(null)
 const [previous,setPrevious]= useState(null)
 const [textValue, setTextValue] = useState(null);
+const [menu, setMenu]= useState(false)
 
-console.log("CURRENTMAP", current, "PREVIOUSMAP", previous)
+// console.log("CURRENTMAP", current, "PREVIOUSMAP", previous)
 
 
   const mapsObj = {
@@ -415,8 +416,25 @@ console.log("CURRENTMAP", current, "PREVIOUSMAP", previous)
 // console.log('POOP', mapsObj)
 
 useEffect(()=>{
-  console.log(current)
-  console.log(tempCurrent)
+  const menuListener= (event)=>{
+    // console.log(event.key)
+    if(event.key === "Enter"){
+    setMenu(true)
+    }
+    if(event.key==="Escape"){
+      setMenu(false)
+    }
+  }
+  window.addEventListener("keydown", menuListener);
+    return()=>{
+      window.removeEventListener("keydown", menuListener)
+    }
+  },[])
+
+
+useEffect(()=>{
+  // console.log(current)
+  // console.log(tempCurrent)
 setPrevious(tempCurrent)
 
 
@@ -437,7 +455,13 @@ setTempCurrent(current);
   }
 
   // whole map is a button - giving that button onkeyppress listener called wrap
-  return <body>{mapsObj[current]}</body>;
-}
+  return( <div><body>
+    {mapsObj[current]}
+    {menu===true ? <dialog className="mainMenu" open>
+      <button>MAP</button>
+
+
+    </dialog> : null}
+    </body></div>)}
 
 export default App;

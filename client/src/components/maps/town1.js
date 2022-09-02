@@ -1217,28 +1217,28 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 38 && xPlayerIndex.current === 32) ||
             (yPlayerIndex.current === 38 && xPlayerIndex.current === 33)
           ) {
-            setTextValue('Hi I am Guard1');
+            setTextValue('Tell Mike to find a non moving version of my sprite please.');
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 38) ||
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 39)
           ) {
-            setTextValue("Hi I'm Guard 2");
+            setTextValue("Out of all the garbage planets to be stationed on. This has to be shit's pajamas'.");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 23) ||
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 24)
           ) {
-            setTextValue("Hi I'm Guard 3");
+            setTextValue("The people's federation will eventually win this war. The Sun King army lacks cohesion.");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 33) ||
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 34)
           ) {
-            setTextValue("Hi I'm guard 4");
+            setTextValue("Shut your mouth when you're speaking to me peasent.");
           }
         }
 
@@ -1249,14 +1249,14 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 32) ||
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 33)
           ) {
-            setTextValue("Hi I'm Guard1");
+            setTextValue('Tell Mike to find a non moving version of my sprite please.');
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 32 && xPlayerIndex.current === 38) ||
             (yPlayerIndex.current === 32 && xPlayerIndex.current === 39)
           ) {
-            setTextValue("Hi I'm Guard 2");
+            setTextValue("Out of all the garbage planets to be stationed on. This has to be shit's pajamas'.");
           }
           //Hot Girl
           // if (
@@ -1270,7 +1270,7 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 21 && xPlayerIndex.current === 33) ||
             (yPlayerIndex.current === 21 && xPlayerIndex.current === 34)
           ) {
-            setTextValue("Hi I'm guard 4");
+            setTextValue("Shut your mouth when you're speaking to me peasent.");
           }
         }
 
@@ -1280,14 +1280,14 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 36 && xPlayerIndex.current === 34) ||
             (yPlayerIndex.current === 37 && xPlayerIndex.current === 34)
           ) {
-            setTextValue("Hi I'm Guard");
+            setTextValue('Tell Mike to find a non moving version of my sprite please.');
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 33 && xPlayerIndex.current === 40) ||
             (yPlayerIndex.current === 34 && xPlayerIndex.current === 40)
           ) {
-            setTextValue("Hi I'm Guard 2");
+            setTextValue("Out of all the garbage planets to be stationed on. This has to be shit's pajamas'.");
           }
           //Hot Girl
           // if (
@@ -1301,7 +1301,7 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 34) ||
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 34)
           ) {
-            setTextValue("Hi I'm guard 4");
+            setTextValue("Shut your mouth when you're speaking to me peasent.");
           }
         }
 
@@ -1311,28 +1311,28 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 36 && xPlayerIndex.current === 31) ||
             (yPlayerIndex.current === 37 && xPlayerIndex.current === 31)
           ) {
-            setTextValue("Hi I'm Guard1");
+            setTextValue('Tell Mike to find a non moving version of my sprite please.');
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 33 && xPlayerIndex.current === 37) ||
             (yPlayerIndex.current === 34 && xPlayerIndex.current === 37)
           ) {
-            setTextValue("Hi I'm Guard 2");
+            setTextValue("Out of all the garbage planets to be stationed on. This has to be shit's pajamas'.");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 22) ||
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 22)
           ) {
-            setTextValue("Hi I'm Guard 3");
+            setTextValue("The people's federation will eventually win this war. The Sun King army lacks cohesion.");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 32) ||
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 32)
           ) {
-            setTextValue("Hi I'm guard 4");
+            setTextValue("Shut your mouth when you're speaking to me peasent.");
           }
         }
       }

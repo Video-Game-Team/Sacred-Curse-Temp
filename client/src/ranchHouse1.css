@@ -36,7 +36,7 @@ body {
 
 .mapRH1 {
     image-rendering: pixelated;
-    background-image: url("./assets/maps/Ranch House 1 w grid.png");
+    background-image: url("./assets/maps/Ranch House 1 no grid.png");
     background-size: 960px;
     width: calc(37.5 * var(--grid-cell));
     height: calc(37.5 * var(--grid-cell));

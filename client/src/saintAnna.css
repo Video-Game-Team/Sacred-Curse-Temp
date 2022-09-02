@@ -39,7 +39,7 @@ body {
 
     max-height: 50000px;
     min-width: 50000px;
-    background-image: url("./assets/maps/Saint Anna Map w grid.png");
+    background-image: url("./assets/maps/Saint Anna Map no grid.png");
     background-size: 6720px;
     width: calc(262.5 * var(--grid-cell));
     height: calc(125 * var(--grid-cell));

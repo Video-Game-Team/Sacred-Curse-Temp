@@ -39,7 +39,7 @@ body {
 
     /* max-height: 50000px;
     min-width: 50000px; */
-    background-image: url("./assets/maps/Dunleavey Valley w grid.png");
+    background-image: url("./assets/maps/Dunleavey Valley no grid.png");
     background-size: 13440px;
     width: calc(525 * var(--grid-cell));
     height: calc(550 * var(--grid-cell));

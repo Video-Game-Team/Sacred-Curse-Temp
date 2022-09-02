@@ -1205,7 +1205,7 @@ const TheWall = (props) => {
             (yPlayerIndex.current === 14 && xPlayerIndex.current === 19) ||
             (yPlayerIndex.current === 14 && xPlayerIndex.current === 20)
           ) {
-            setTextValue('Hi I am Guard1');
+            setTextValue("By order of the virtuously elected chancellor of the People's Republic. This area is forbidden. ");
           }
           // //YO Mama NPC
           // if (
@@ -1237,7 +1237,7 @@ const TheWall = (props) => {
             (yPlayerIndex.current === 10 && xPlayerIndex.current === 19) ||
             (yPlayerIndex.current === 10 && xPlayerIndex.current === 20)
           ) {
-            setTextValue("Hi I'm Guard1");
+            setTextValue("By order of the virtuously elected chancellor of the People's Republic. This area is forbidden. ");
           }
           // //YO Mama NPC
           // if (
@@ -1268,7 +1268,7 @@ const TheWall = (props) => {
             (yPlayerIndex.current === 11 && xPlayerIndex.current === 21) ||
             (yPlayerIndex.current === 12 && xPlayerIndex.current === 21)
           ) {
-            setTextValue("Hi I'm Guard");
+            setTextValue("By order of the virtuously elected chancellor of the People's Republic. This area is forbidden. ");
           }
           // //YO Mama NPC
           // if (
@@ -1299,7 +1299,7 @@ const TheWall = (props) => {
             (yPlayerIndex.current === 11 && xPlayerIndex.current === 18) ||
             (yPlayerIndex.current === 12 && xPlayerIndex.current === 18)
           ) {
-            setTextValue("Hi I'm Guard1");
+            setTextValue("By order of the virtuously elected chancellor of the People's Republic. This area is forbidden. ");
           }
           // //YO Mama NPC
           // if (
