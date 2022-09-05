@@ -55,22 +55,23 @@ import './App.css';
 
 function App() {
   // const character =  testRef.current.querySelector('characterUp');
-  const [itemObj, setItemObj]=useState({
-  
-
-  })
-
+  const [itemObj, setItemObj] = useState({});
 
   //delete Later
-const [demonTeam, setDemonTeam]= useState([DemonObjects.Player, DemonObjects.Dragonite, DemonObjects.Haku, DemonObjects.Zabuza, DemonObjects.Naruto])
-const [current, setCurrent] = useState('trainTracksToCapital');
-const [tempCurrent, setTempCurrent] = useState(null)
-const [previous,setPrevious]= useState(null)
-const [textValue, setTextValue] = useState(null);
-const [menu, setMenu]= useState(false)
+  const [demonTeam, setDemonTeam] = useState([
+    DemonObjects.Player,
+    DemonObjects.Dragonite,
+    DemonObjects.Haku,
+    DemonObjects.Zabuza,
+    DemonObjects.Naruto,
+  ]);
+  const [current, setCurrent] = useState('tortous');
+  const [tempCurrent, setTempCurrent] = useState(null);
+  const [previous, setPrevious] = useState(null);
+  const [textValue, setTextValue] = useState(null);
+  const [menu, setMenu] = useState(false);
 
-// console.log("CURRENTMAP", current, "PREVIOUSMAP", previous)
-
+  // console.log("CURRENTMAP", current, "PREVIOUSMAP", previous)
 
   const mapsObj = {
     outDoorMap1: (
@@ -412,56 +413,56 @@ const [menu, setMenu]= useState(false)
     demoMap: <DemoMap demonList={demonTeam} />,
   };
 
+  // console.log('POOP', mapsObj)
 
-// console.log('POOP', mapsObj)
+  useEffect(() => {
+    const menuListener = (event) => {
+      // console.log(event.key)
+      if (event.key === 'Enter') {
+        setMenu(true);
+      }
+      if (event.key === 'Escape') {
+        setMenu(false);
+      }
+    };
+    window.addEventListener('keydown', menuListener);
+    return () => {
+      window.removeEventListener('keydown', menuListener);
+    };
+  }, []);
 
-useEffect(()=>{
-  const menuListener= (event)=>{
-    // console.log(event.key)
-    if(event.key === "Enter"){
-    setMenu(true)
-    }
-    if(event.key==="Escape"){
-      setMenu(false)
-    }
-  }
-  window.addEventListener("keydown", menuListener);
-    return()=>{
-      window.removeEventListener("keydown", menuListener)
-    }
-  },[])
+  useEffect(() => {
+    // console.log(current)
+    // console.log(tempCurrent)
+    setPrevious(tempCurrent);
+  }, [current]);
 
-
-useEffect(()=>{
-  // console.log(current)
-  // console.log(tempCurrent)
-setPrevious(tempCurrent)
-
-
-},[current])
-
-useEffect(() => {
-setTempCurrent(current);
-}, [previous])
-
+  useEffect(() => {
+    setTempCurrent(current);
+  }, [previous]);
 
   function tracker(x, y) {
     setCurrent(x);
-     setPrevious(y);
-  }  
+    setPrevious(y);
+  }
 
-  function addItem(x){
-    setItemObj(itemObj.poop=x)
+  function addItem(x) {
+    setItemObj((itemObj.poop = x));
   }
 
   // whole map is a button - giving that button onkeyppress listener called wrap
-  return( <div><body>
-    {mapsObj[current]}
-    {menu===true ? <dialog className="mainMenu" open>
-      <button>MAP</button>
-
-
-    </dialog> : null}
-    </body></div>)}
+  return (
+    <div>
+      <body>
+        {mapsObj[current]}
+        {menu === true ? (
+          <dialog className="mainMenu" open>
+            <button>MAP</button>
+          </dialog>
+        ) : null}
+      </body>
+    </div>
+  );
+}
 
 export default App;

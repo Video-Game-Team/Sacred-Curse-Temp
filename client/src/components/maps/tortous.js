@@ -6,6 +6,11 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
+
+import click1 from '../../audioclips/click1.mp3';
+import text from '../../audioclips/Text.mp3';
+import SnowMan from '../../audioclips/Snowman.mp3';
+
 import '../../tortous.css';
 
 const Tortous = (props) => {
@@ -34,6 +39,20 @@ const Tortous = (props) => {
   const xPlayerIndex = useRef(53);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+
+  //Music Playing 
+  const clickAudio1 = () => new Audio(SnowMan).play();
+
+  // //NPC Dialogue sound effect
+  const clickAudio2 = () => new Audio(text).play();
+
+
+  //Starts off Music Loop
+  useEffect(() => {
+    {clickAudio1()}
+  }, [])
+
+ 
 
   // let currentMap2 = [
   //   [
@@ -1687,7 +1706,6 @@ const Tortous = (props) => {
   // },[])
 
 
-
   useEffect(() => {
     if (props.previousMap === 'trainTracksToTortous') {
       //setYCord
@@ -1903,6 +1921,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 83 && xPlayerIndex.current === 24) ||
             (yPlayerIndex.current === 83 && xPlayerIndex.current === 25)
           ) {
+            clickAudio2();
             setTextValue('Hi I am girl');
           }
           //YO Mama NPC
@@ -1910,6 +1929,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 43) ||
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 44)
           ) {
+            clickAudio2();
             setTextValue("Hi I'm Guard 1");
           }
           //Hot Girl
@@ -1917,6 +1937,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 61) ||
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 62)
           ) {
+            clickAudio2();
             setTextValue("Hi I'm Guard 2");
           }
           //Hot Girl
@@ -1924,6 +1945,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 30 && xPlayerIndex.current === 88) ||
             (yPlayerIndex.current === 30 && xPlayerIndex.current === 89)
           ) {
+            clickAudio2();
             setTextValue("Hi I'm crazy yeling guy");
           }
           //Old Man
@@ -1931,6 +1953,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 22) ||
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 23)
           ) {
+            clickAudio2();
             setTextValue("Hi I'm old man");
           }
         }
@@ -1949,6 +1972,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 54 && xPlayerIndex.current === 43) ||
             (yPlayerIndex.current === 52 && xPlayerIndex.current === 42)
           ) {
+            clickAudio2();
             setTextValue("Hi I'm Guard 1");
           }
           //Hot Girl
@@ -1956,6 +1980,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 54 && xPlayerIndex.current === 62) ||
             (yPlayerIndex.current === 54 && xPlayerIndex.current === 61)
           ) {
+            clickAudio2();
             setTextValue("Hi I'm Guard 2");
           }
           //Hot Girl
@@ -1963,6 +1988,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 27 && xPlayerIndex.current === 88) ||
             (yPlayerIndex.current === 27 && xPlayerIndex.current === 89)
           ) {
+            clickAudio2();
             setTextValue("Hi I'm crazy yeling guy");
           }
           //Old Man
@@ -1970,6 +1996,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 17 && xPlayerIndex.current === 23) ||
             (yPlayerIndex.current === 17 && xPlayerIndex.current === 22)
           ) {
+            clickAudio2();
             setTextValue("Hi I'm old man");
           }
         }
@@ -1980,6 +2007,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 81 && xPlayerIndex.current === 26) ||
             (yPlayerIndex.current === 82 && xPlayerIndex.current === 26)
           ) {
+            clickAudio2();
             setTextValue('Hi I am girl');
           }
           //YO Mama NPC
@@ -1987,6 +2015,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 55 && xPlayerIndex.current === 45) ||
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 45)
           ) {
+            clickAudio2();
             setTextValue("Hi I'm Guard 1");
           }
           //Hot Girl
@@ -1994,6 +2023,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 55 && xPlayerIndex.current === 63) ||
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 63)
           ) {
+            clickAudio2();
             setTextValue("Hi I'm Guard 2");
           }
           //Hot Girl
@@ -2001,6 +2031,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 28 && xPlayerIndex.current === 90) ||
             (yPlayerIndex.current === 29 && xPlayerIndex.current === 90)
           ) {
+            clickAudio2();
             setTextValue("Hi I'm crazy yeling guy");
           }
           //Old Man
@@ -2008,6 +2039,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 19 && xPlayerIndex.current === 24) ||
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 24)
           ) {
+            clickAudio2();
             setTextValue("Hi I'm old man");
           }
         }
@@ -2018,6 +2050,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 81 && xPlayerIndex.current === 23) ||
             (yPlayerIndex.current === 82 && xPlayerIndex.current === 23)
           ) {
+            clickAudio2();
             setTextValue('Hi I am girl');
           }
           //YO Mama NPC
@@ -2025,6 +2058,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 55 && xPlayerIndex.current === 42) ||
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 42)
           ) {
+            clickAudio2();
             setTextValue("Hi I'm Guard 1");
           }
           //Hot Girl
@@ -2032,6 +2066,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 55 && xPlayerIndex.current === 60) ||
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 60)
           ) {
+            clickAudio2();
             setTextValue("Hi I'm Guard 2");
           }
           //Hot Girl
@@ -2039,6 +2074,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 28 && xPlayerIndex.current === 87) ||
             (yPlayerIndex.current === 29 && xPlayerIndex.current === 87)
           ) {
+            clickAudio2();
             setTextValue("Hi I'm crazy yeling guy");
           }
           //Old Man
@@ -2046,6 +2082,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 19 && xPlayerIndex.current === 21) ||
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 21)
           ) {
+            clickAudio2();
             setTextValue("Hi I'm old man");
           }
         }
@@ -2298,6 +2335,12 @@ const Tortous = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
+      {/* <button
+        className="button"
+        onClick={() => {
+          clickAudio2();
+        }}
+      ></button> */}
       <div className="camera fade-in">
         <div>
           <div
@@ -2321,14 +2364,11 @@ const Tortous = (props) => {
             </div>
           </div>
         </div>
-              { textValue ? 
-        <dialog className="textBox typewriter" open>
-          <p>
-         {textValue}
-          </p>
-        </dialog> 
-        : null
-}
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );
