@@ -20,6 +20,12 @@ const Tortous = (props) => {
   const [yTransformVar, setYTransformVar] = useState(-5588);
   //
 
+ const [xnpcTransformVar, setXnpcTransformVar] = useState(-2776);
+ //this sets the y Cordinate to transform the map and character location
+ const [ynpcTransformVar, setnpcYTransformVar] = useState(-5588);
+
+
+
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
   const speedRef = useRef(4);
@@ -2362,6 +2368,22 @@ const Tortous = (props) => {
             >
               <div className="character_spritesheet pixel-art"></div>
             </div>
+
+
+
+            <div
+              className="npc pixel-art"
+              style={{
+                transform: `translate3d( ${150 - xnpcTransformVar}px, ${
+                  272 - ynpcTransformVar
+                }px, 0 )`,
+              }}
+            >
+              <div className="npc_spritesheet pixel-art"></div>
+            </div>
+
+
+            
           </div>
         </div>
         {textValue ? (
