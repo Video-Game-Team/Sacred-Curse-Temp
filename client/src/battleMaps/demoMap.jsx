@@ -33,7 +33,8 @@ const [legalSummoningArray, setLegalSummoningArray]= useState();
 const [playerCoodinates, setPlayerCoordinates]=useState([1,6])
 const [staticDemonsList, setStaticDemonsList]= useState(prop.demonList);
 const [activeDemonsList, setActiveDemonsList]= useState([prop.demonList[0],prop.demonList[1]]);
-const [enemyTurn, setEnemyTurn]= useState(0)
+const [enemyTurn, setEnemyTurn]= useState(0);
+const [cursedSummoningSpots, setCursedSummoningSpots]=useState(["44"]);
 
 const [currentActionButton, setCurrentActionButton]= useState();
 const [activeEnemyList, setActiveEnemyList]=useState([Enemies.BlueMegaTank, Enemies.GreenInfantry, Enemies.BlueMech, Enemies.GreenRecon, Enemies.BlueMediumTank, Enemies.BlueMech, Enemies.BlueRecon, Enemies.BlueRecon])
@@ -42,7 +43,7 @@ const [activeEnemyList, setActiveEnemyList]=useState([Enemies.BlueMegaTank, Enem
 // const [mapState, setMapState]= useState([[activeEnemyList[6],activeEnemyList[6],0,1,1,7,0,0],[1,0,activeEnemyList[6],1,1,activeEnemyList[6],0,0],[0,1,0,0,activeEnemyList[0],0,1,0],[0,1,0,0,activeEnemyList[5],0,1,0],[0,1,activeEnemyList[4],1,1,activeEnemyList[6],0,0],[0,1,activeEnemyList[2],1,1,activeEnemyList[6],1,0],[0,0,activeEnemyList[2],0,0,0,0,activeEnemyList[1]],[0,0,0,0,0,0,0,0]],)
 
 // ice logic
-const [mapState, setMapState]= useState([[1,1,0,0,0,0,0,0],[1,1,0,1,0,1,demons[0],0],[0,0,0,0,activeEnemyList[0],0,0,0],[0,0,1,0,1,0,0,0],[1,0,activeEnemyList[3],1,1,0,0,0],[0,activeEnemyList[2],1,0,0,0,0,0],[0,0,demons[1],0,0,activeEnemyList[1],0,0],[0,0,0,0,0,0,0,0]],)
+const [mapState, setMapState]= useState([[1,1,0,0,0,0,0,0],[1,1,0,1,0,1,demons[0],0],[0,0,0,0,activeEnemyList[0],0,0,0],[0,0,1,0,1,0,0,0],[1,0,activeEnemyList[3],0,0,0,0,0],[0,activeEnemyList[2],1,0,0,0,0,0],[0,0,demons[1],0,0,activeEnemyList[1],0,0],[0,0,0,0,0,0,0,0]],)
 
 
 //fountain logic
@@ -50,11 +51,11 @@ const [mapState, setMapState]= useState([[1,1,0,0,0,0,0,0],[1,1,0,1,0,1,demons[0
 
 const [curseMap, setCurseMap]= useState([[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
 
-
+//sets action buttons
 const actionButtons= [<button className='actionButton' onClick={()=>moveButton()} style={{borderColor: "lime", 
 }}><b>MOVE</b></button>,<button className='actionButton'   onClick={()=>attackButton()} style={{borderColor: "red"}} ><b>ATTACK</b></button>,<button className='actionButton '  onClick={()=>curseButton()} style={{borderColor: "darkorchid"}}><b>CURSE</b></button>,<button className='actionButton '  onClick={()=>summonButton()}style={{borderColor: "gold"}}><b>SUMMON</b></button>]
 
-
+//sets player card
 const playerOptions=[[<div className="playerStats" style={{borderColor: "lime", backgroundImage: `${demons[0].image}`
 }}>{demons[0].name}</div>,<div  className="playerStats"  style={{borderColor: "lime",
 }}>Attack:{demons[0].attack}</div>,<div  className="playerStats" style={{borderColor: "lime", 
@@ -262,7 +263,7 @@ for (let i=0; i<enemiesMoveList.length; i++){
    
 
 }
-console.log(decidedMoves)
+
 
 let newDefense;
 let newEnemyDefense;
@@ -420,7 +421,7 @@ useEffect(()=>{
 
 let buttonArr=[];
 for (let y=0; y<mapState.length; y++){
-    console.log("running")
+
   for (let x=0; x<mapState.length; x++){
  
 //empty space and a curse
@@ -612,7 +613,6 @@ if (rightI<mapState.length){
 
 }
 function curseButton(){
-    console.log("dudud")
     if (current && current.active){
     if (current.curse && soulBank-current.curseCost>0 && activeDemonsList.includes(current)){
 
@@ -628,6 +628,12 @@ function curseButton(){
             tempDemon.active=false;
         }
     }
+    if(current.curse==="Seance"){
+        let newSummonSpotsArray=cursedSummoningSpots;
+        newSummonSpotsArray.push(`${yCord}${xCord}`)
+        setCursedSummoningSpots(newSummonSpotsArray)
+    }
+
 setActiveDemonsList(e=>e.map(el=> el === current ? tempDemon : el))
 
 
@@ -806,6 +812,18 @@ function summonButton(){
 
                
 }
+
+
+//adds the cursed spots to the array
+for (let i=0; i<cursedSummoningSpots.length; i++){
+    console.log("hittttt")
+    if (mapState[cursedSummoningSpots[i][0]][cursedSummoningSpots[i][1]]===0){
+    tempSummonArray.push(cursedSummoningSpots[i])
+    document.getElementById(`${cursedSummoningSpots[i][0]}${cursedSummoningSpots[i][1]}`).classList.add("summon-glow")
+    }
+}
+
+
 setLegalSummoningArray(tempSummonArray)
 
 }
@@ -876,8 +894,100 @@ if (attackTrigger){
     if(enemy.type){
         if(enemy.type==="LandUnit"){
             if (legalMovesArray.includes(stringCords)){
-            if(current.ability!=="Void"){
+            if(!current.ability){
+                let newDefense= current.defense-enemy.attack;
+            
+                let newEnemyDefense=enemy.defense-current.attack;
 
+                if (newEnemyDefense<=0 && newDefense>0){           
+                    let tempMap=mapState;
+                    tempMap[yCord][xCord]=0;
+                    tempMap[y][x]=current;
+       
+                    setMapState(tempMap);
+                    setSoulBank(x=>x+enemy.attack)
+                }
+                if (newDefense<=0 && newEnemyDefense>0){
+                    let tempDemonsList=activeDemonsList.filter(el=> el.name != current.name);
+    
+                    setActiveDemonsList(tempDemonsList);
+                    let tempMap=mapState;
+                    tempMap[yCord][xCord]=0;
+
+                    setMapState(tempMap);
+                }
+                if (newDefense<=0 && newEnemyDefense<=0){
+                    let tempDemonsList=activeDemonsList.filter(el=> el.name != current.name);
+                    let tempActiveEnemiesList=activeEnemyList.filter(el=>el.name===enemy.name)
+                    setActiveDemonsList(tempDemonsList);
+                    setActiveEnemyList(tempActiveEnemiesList)
+                    let tempMap=mapState;
+                    tempMap[yCord][xCord]=0;
+                    tempMap[y][x]=0;
+                    setMapState(tempMap);
+                    setSoulBank(x=>x+enemy.attack)
+
+                    
+                }
+
+                if (newDefense>0){
+
+                    let tempDemonsList=[];
+                    for (let i=0; i<activeDemonsList.length; i++){
+                        if (activeDemonsList[i].name===current.name){
+                            let tempObject=current;
+                            tempObject.defense=newDefense;
+                            tempObject.active=false;
+                            tempDemonsList.push(tempObject);
+                        }
+                        else {
+                            tempDemonsList.push(activeDemonsList[i])
+                        }
+                        // console.log(tempDemonsList)
+                        
+                    }
+                    setActiveDemonsList(tempDemonsList)
+
+
+                }
+                if (newEnemyDefense>0){
+
+                    let tempEnemiesList=[];
+                    for (let i=0; i<activeEnemyList.length; i++){
+                        if (activeEnemyList[i].name===enemy.name){
+                            let tempObject=enemy;
+                            tempObject.defense=newEnemyDefense;
+                            tempObject.active=false;
+                            tempDemonsList.push(tempObject);
+                        }
+                        else {
+                            tempEnemiesList.push(activeDemonsList[i])
+                        }
+                 
+                        
+                    }
+
+                    
+
+                    setActiveEnemyList(tempEnemiesList)
+
+
+                }
+
+
+            }
+            if(current.ability==="Stealth"){
+
+                if (current.attack>=enemy.defense){
+                    let tempMap=mapState;
+                    tempMap[yCord][xCord]=0;
+                    tempMap[y][x]=current;
+       
+                    setMapState(tempMap);
+                    setSoulBank(x=>x+enemy.attack)
+
+                }
+                if(current.attack< enemy.defense){
                 let newDefense= enemy.attackType === "Direct" ? (current.defense-enemy.attack) : current.defense;
             
                 let newEnemyDefense=enemy.defense-current.attack;
@@ -949,26 +1059,20 @@ if (attackTrigger){
                  
                         
                     }
+
+                    
+
                     setActiveEnemyList(tempEnemiesList)
 
 
                 }
 
 
-     
-                for(let i=0; i<activeDemonsList.length;i++){
-        // if (activeDemonsList[i]===current){
-        //      tempDemon=activeDemonsList[i];
-        //     tempDemon.active=false;
-        // }
-    }
-
-
             }
-            if (current.ability!="Stealth"){
-
-
-            }
+        }
+            
+            
+           
 
 setCurrent(null);
 setLegalMovesArray(null)
@@ -997,6 +1101,7 @@ function curse(){
 function summonSpot(y,x){
     if (summonTrigger){
         if (legalSummoningArray.includes(`${y}${x}`)){
+            console.log(legalSummoningArray)
             let tempMapState=mapState;
             document.getElementById(`${y}${x}`).style.backgroundImage=`url(${current.image})`;
             for (let i=0; i<legalSummoningArray.length; i++){

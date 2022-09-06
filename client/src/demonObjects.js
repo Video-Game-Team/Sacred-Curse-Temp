@@ -65,7 +65,7 @@ Suki:{
     move: 2,
     firstStrike: false,
     bloodLust: false,
-    curse: "Traumatize",
+    curse: "Seance",
     ability: null,
     abilityDescription: null,
 
