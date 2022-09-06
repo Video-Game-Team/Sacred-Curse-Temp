@@ -36,27 +36,24 @@ const [activeDemonsList, setActiveDemonsList]= useState([prop.demonList[0],prop.
 const [enemyTurn, setEnemyTurn]= useState(0)
 
 const [currentActionButton, setCurrentActionButton]= useState();
-const [activeEnemyList, setActiveEnemyList]=useState([Enemies.BlueMegaTank, Enemies.GreenInfantry, Enemies.BlueMech, Enemies.GreenRecon, Enemies.BlueMissiles, Enemies.BlueMech])
+const [activeEnemyList, setActiveEnemyList]=useState([Enemies.BlueMegaTank, Enemies.GreenInfantry, Enemies.BlueMech, Enemies.GreenRecon, Enemies.BlueMediumTank, Enemies.BlueMech, Enemies.BlueRecon, Enemies.BlueRecon])
 
 //desert logic
-const [mapState, setMapState]= useState([[0,0,0,1,1,0,0,0],[1,0,0,1,1,0, demons[0],0],[0,1,0,0,activeEnemyList[0],0,1,0],[0,1,0,0,0,0,1,0],[0,1,activeEnemyList[3],1,1,0,0,0],[0,1,activeEnemyList[2],1,1,0,1,0],[0,0,demons[1],0,0,0,0,activeEnemyList[1]],[0,0,0,0,0,0,0,0]],)
+// const [mapState, setMapState]= useState([[activeEnemyList[6],activeEnemyList[6],0,1,1,7,0,0],[1,0,activeEnemyList[6],1,1,activeEnemyList[6],0,0],[0,1,0,0,activeEnemyList[0],0,1,0],[0,1,0,0,activeEnemyList[5],0,1,0],[0,1,activeEnemyList[4],1,1,activeEnemyList[6],0,0],[0,1,activeEnemyList[2],1,1,activeEnemyList[6],1,0],[0,0,activeEnemyList[2],0,0,0,0,activeEnemyList[1]],[0,0,0,0,0,0,0,0]],)
 
-//ice logic
-// const [mapState, setMapState]= useState([[1,1,0,0,0,0,0,0],[1,1,0,1,0,1,demons[0],0],[0,0,0,0,activeEnemyList[0],0,0,0],[0,0,1,0,1,0,0,0],[1,0,activeEnemyList[3],1,1,0,0,0],[0,activeEnemyList[2],1,0,0,0,0,0],[0,0,demons[1],0,0,activeEnemyList[1],0,0],[0,0,0,0,0,0,0,0]],)
+// ice logic
+const [mapState, setMapState]= useState([[1,1,0,0,0,0,0,0],[1,1,0,1,0,1,demons[0],0],[0,0,0,0,activeEnemyList[0],0,0,0],[0,0,1,0,1,0,0,0],[1,0,activeEnemyList[3],1,1,0,0,0],[0,activeEnemyList[2],1,0,0,0,0,0],[0,0,demons[1],0,0,activeEnemyList[1],0,0],[0,0,0,0,0,0,0,0]],)
 
 
 //fountain logic
 // const [mapState, setMapState]= useState([[0,0,0,0,0,0,0,0],[0,1,0,1,1,demons[0],1, 0],[0,0,1,1,1,1,activeEnemyList[0],0],[0,0,1,1,1,1,0,0],[0,activeEnemyList[3],1,1,1,1,activeEnemyList[4],0],[0,activeEnemyList[2],1,1,1,1,0,0],[0,1,demons[1],1,1,0,1,0],[0,0,0,0,0,activeEnemyList[1],0,0]],)
 
-const [curseMap, setCurseMap]= useState([[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
+const [curseMap, setCurseMap]= useState([[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,"Traumatize",0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
 
 
 const actionButtons= [<button className='actionButton' onClick={()=>moveButton()} style={{borderColor: "lime", 
 }}><b>MOVE</b></button>,<button className='actionButton'   onClick={()=>attackButton()} style={{borderColor: "red"}} ><b>ATTACK</b></button>,<button className='actionButton '  onClick={()=>curseButton()} style={{borderColor: "darkorchid"}}><b>CURSE</b></button>,<button className='actionButton '  onClick={()=>summonButton()}style={{borderColor: "gold"}}><b>SUMMON</b></button>]
 
-
-// console.log(mapState)
-//
 
 const playerOptions=[[<div className="playerStats" style={{borderColor: "lime", backgroundImage: `${demons[0].image}`
 }}>{demons[0].name}</div>,<div  className="playerStats"  style={{borderColor: "lime",
@@ -197,6 +194,10 @@ for (let i=0; i<mapState.length; i++){
                         tempCordsArr.push(`${i}${rightI}`)
                     }
                     }
+                  
+                    
+                        tempCordsArr.push(`${i}${j}`)
+                    
                     enemiesMoveList.push(tempCordsArr);
                     tempCordsArr=[];
 
@@ -208,8 +209,14 @@ for (let i=0; i<mapState.length; i++){
     let decidedMoves=[];
     let randomValue;
     let finalValues;
+    let temp;
 for (let i=0; i<enemiesMoveList.length; i++){
+ 
     for(let j=0; j<enemiesMoveList[i].length; j++){
+        if (decidedMoves.includes(`${enemiesMoveList[i][j][0]}${enemiesMoveList[i][j][1]}`)){
+            tempScore=0;
+            moveValueArray.push(tempScore);
+        continue;}
         if (mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].type==="Demon"){
             if (mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].name==="Shilo"){
                 mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].defense <= currentEnemiesArray[i].attack ? tempScore+=20 :tempScore+=15;
@@ -234,23 +241,29 @@ for (let i=0; i<enemiesMoveList.length; i++){
             randomValue=Math.ceil(Math.random() * 5);
             tempScore+=randomValue;
         }
+
         moveValueArray.push(tempScore);
         tempScore=0;
-
+      
 
     }
+
     finalValues=(Math.max(...moveValueArray));
 
-    if (decidedMoves.includes(finalValues)){
-    }
 
 //make sure it's not already taken
+
     decidedMoves.push(enemiesMoveList[i][moveValueArray.indexOf(finalValues)]);
+
+                
+          
 
     moveValueArray=[];
    
 
 }
+console.log(decidedMoves)
+
 let newDefense;
 let newEnemyDefense;
 let tempDemon;
@@ -265,6 +278,10 @@ for (let i=0; i < decidedMoves.length; i++){
     if(tempMap[decidedMoves[i][0]][decidedMoves[i][1]]===0){
         tempMap[decidedMoves[i][0]][decidedMoves[i][1]]=currentEnemiesArray[i];
         tempMap[originalEnemiesCoordinates[i][0]][originalEnemiesCoordinates[i][1]]=0;
+
+    }
+    else if(tempMap[decidedMoves[i][0]][decidedMoves[i][1]].type != "Demon"){
+        continue;
 
     }
 else{
@@ -326,29 +343,32 @@ setEnemyTurn(x=>x+1)
 // console.log(activeEnemyList)
 //
 useEffect(()=>{
-console.log(curseMap)
+
     let tempDemonsList=activeDemonsList;
     let tempEnemiesList=activeEnemyList;
-    let tempMap=mapState
+    let tempMap=mapState;
+    let newCurseMap=curseMap;
   
      for (let i=0; i<mapState.length; i++){
-         for (let j=0; j<mapState.length; j++)
+         for (let j=0; j<mapState.length; j++){
          if (mapState[i][j] != 0 && mapState[i][j] !=1){
+            let newEnemy=mapState[i][j];
+            let newDemon=mapState[i][j];
+
+
              if (curseMap[i][j]===0){
                  mapState[i][j].type === "Demon" ? tempDemonsList.push(mapState[i][j]) : tempEnemiesList.push(mapState[i][j])
              }
              if (curseMap[i][j]=="Blessing" && mapState[i][j].type==="Demon"){
                  
-                 let newDemon=mapState[i][j];
                  newDemon.defense=(newDemon.defense+1);
                  if (newDemon.defense>newDemon.health){
                      newDemon.defense=newDemon.health
                  } 
                  tempDemonsList.push(newDemon)
              }
-             if (curseMap[i][j]=="Haunting" && mapState[i][j].type!="Demon"){
+             if (curseMap[i][j]=="Haunting" && mapState[i][j].type==="LandUnit"){
                  
-                 let newEnemy=mapState[i][j];
                  newEnemy.defense=(newEnemy.defense-1);
                  if (newEnemy.defense<=0){
                      tempMap[i][j]=0
@@ -356,12 +376,26 @@ console.log(curseMap)
                  else{
                      tempEnemiesList.push(mapState[i][j])
                  }
-                
- 
              }
+
+             if (curseMap[i][j]=="Petrify" && mapState[i][j].type==="LandUnit"){
+
+                newEnemy.move=0;
+                 ("move stuck")
+             }
+             if (curseMap[i][j]=="Traumatize" && mapState[i][j].type==="LandUnit"){
+
+                newEnemy.attack=0;
+                newCurseMap[i][j]=0
+             }
+             if (curseMap[i][j]=="Silent Death" && mapState[i][j].type==="LandUnit"){
+                tempMap[i][j]=0;
+
          }
+        }
+    }
      }
- 
+     setCurseMap(newCurseMap)
      setMapState(tempMap)
      setActiveDemonsList(tempDemonsList)
      setActiveEnemyList(tempEnemiesList)
@@ -372,28 +406,59 @@ console.log(curseMap)
 
 let buttonArr=[];
 for (let y=0; y<mapState.length; y++){
+    console.log("running")
   for (let x=0; x<mapState.length; x++){
-    if (mapState[y][x]===0){
+ 
+//empty space and a curse
+    if (mapState[y][x]===0 && curseMap[y][x] !=0){
 buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); summonSpot(y,x); curse(y,x);attack(y,x)}} className="demon glow-on-hover" style={{
     gridColumn: x+1,
     gridRow: y+1,
-    color: "white"
+    color: "pink",
+    borderColor: "purple"
 }}
 >
-    {/* {y}-{x} */}
+    {y}-{x}
 </button>)
     }
-    if (mapState[y][x].type != 0){
+    //empty state and no curse
+    if (mapState[y][x]===0 && curseMap[y][x] ==0){
+        buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); summonSpot(y,x); curse(y,x);attack(y,x)}} className="demon glow-on-hover" style={{
+            gridColumn: x+1,
+            gridRow: y+1,
+            color: "black"
+        }}
+        >
+            {y}-{x}
+        </button>)
+            }
+            //entity and curse
+    if (mapState[y][x].type != 0 && curseMap[y][x] !=0){
         buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); summonSpot(y,x); curse(y,x);attack(y,x)}} className="demon glow-on-hover" style={{
             gridColumn: x+1,
             gridRow: y+1,
             color: "white",
             backgroundImage: `url(${mapState[y][x].image})`,
-            backgroundSize: '100%'
+            backgroundSize: '100%',
+            color: "pink",
+            borderColor: "purple"
+
         }}
         >
         </button>)
             }
+            //entity and no curse
+            if (mapState[y][x].type != 0  && curseMap[y][x] ==0){
+                buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); summonSpot(y,x); curse(y,x);attack(y,x)}} className="demon glow-on-hover" style={{
+                    gridColumn: x+1,
+                    gridRow: y+1,
+                    color: "white",
+                    backgroundImage: `url(${mapState[y][x].image})`,
+                    backgroundSize: '100%'
+                }}
+                >
+                </button>)
+                    }
 }
 }
 
@@ -456,6 +521,7 @@ setDisplay([<div style={{backgroundImage:`url(${current.image})`, backgroundPosi
 
 
 function moveButton(){
+    
     if (activeDemonsList.includes(current)&& current.active){
         setCurrentActionButton("move")
 let tempButton=null;
@@ -532,11 +598,12 @@ if (rightI<mapState.length){
 
 }
 function curseButton(){
+    console.log("dudud")
     if (current && current.active){
     if (current.curse && soulBank-current.curseCost>0 && activeDemonsList.includes(current)){
 
         setSoulBank(prev=>prev-current.curseCost)
-        document.getElementById(`${currentCoordinates}`).style.borderColor="purple";
+        // document.getElementById(`${currentCoordinates}`).style.borderColor="purple";
         let newMap= curseMap;
         newMap[yCord][xCord]=current.curse
         setCurseMap(newMap)
@@ -966,6 +1033,7 @@ function summonSpot(y,x){
 useEffect(()=>{
 
     const keyDownHandler = (event) => {
+
     if (event.key==='Escape'){
         setMoveTrigger(false);
         setAttackTrigger(false);
@@ -975,6 +1043,7 @@ useEffect(()=>{
         setCurrentCoordinates(null);
         setLegalMovesArray([])
     }
+  
 
          };
     

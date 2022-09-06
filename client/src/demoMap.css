@@ -98,7 +98,7 @@ background-color: rgb(31, 32, 32);
 }
 
   .battleMap{
-    background-image: url("./assets/warMaps/Desertmap.jpeg");
+    background-image: url("./assets/warMaps/IceMap.jpeg");
     display: grid;
     size: 100%;
   grid-template-columns: repeat(8, 1fr);

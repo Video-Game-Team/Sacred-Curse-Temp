@@ -65,7 +65,7 @@ Suki:{
     move: 2,
     firstStrike: false,
     bloodLust: false,
-    curse: "Blessing",
+    curse: "Petrify",
     ability: null,
     abilityDescription: null,
 
