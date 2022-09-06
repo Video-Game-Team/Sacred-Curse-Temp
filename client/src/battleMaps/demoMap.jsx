@@ -34,7 +34,7 @@ const [playerCoodinates, setPlayerCoordinates]=useState([1,6])
 const [staticDemonsList, setStaticDemonsList]= useState(prop.demonList);
 const [activeDemonsList, setActiveDemonsList]= useState([prop.demonList[0],prop.demonList[1]]);
 const [enemyTurn, setEnemyTurn]= useState(0);
-const [cursedSummoningSpots, setCursedSummoningSpots]=useState(["44"]);
+const [cursedSummoningSpots, setCursedSummoningSpots]=useState([]);
 
 const [currentActionButton, setCurrentActionButton]= useState();
 const [activeEnemyList, setActiveEnemyList]=useState([Enemies.BlueMegaTank, Enemies.GreenInfantry, Enemies.BlueMech, Enemies.GreenRecon, Enemies.BlueMediumTank, Enemies.BlueMech, Enemies.BlueRecon, Enemies.BlueRecon])
@@ -387,7 +387,6 @@ useEffect(()=>{
                 newEnemy.move=0;
                 tempEnemiesList.push(mapState[i][j]);
 
-                 ("move stuck")
              }
              if (curseMap[i][j]=="Traumatize" && mapState[i][j].type==="LandUnit"){
 
