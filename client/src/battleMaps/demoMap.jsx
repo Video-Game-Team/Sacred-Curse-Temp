@@ -48,7 +48,7 @@ const [mapState, setMapState]= useState([[1,1,0,0,0,0,0,0],[1,1,0,1,0,1,demons[0
 //fountain logic
 // const [mapState, setMapState]= useState([[0,0,0,0,0,0,0,0],[0,1,0,1,1,demons[0],1, 0],[0,0,1,1,1,1,activeEnemyList[0],0],[0,0,1,1,1,1,0,0],[0,activeEnemyList[3],1,1,1,1,activeEnemyList[4],0],[0,activeEnemyList[2],1,1,1,1,0,0],[0,1,demons[1],1,1,0,1,0],[0,0,0,0,0,activeEnemyList[1],0,0]],)
 
-const [curseMap, setCurseMap]= useState([[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,"Traumatize",0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
+const [curseMap, setCurseMap]= useState([[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],)
 
 
 const actionButtons= [<button className='actionButton' onClick={()=>moveButton()} style={{borderColor: "lime", 
@@ -348,6 +348,7 @@ useEffect(()=>{
     let tempEnemiesList=activeEnemyList;
     let tempMap=mapState;
     let newCurseMap=curseMap;
+    let newSoulCount=soulBank
   
      for (let i=0; i<mapState.length; i++){
          for (let j=0; j<mapState.length; j++){
@@ -371,7 +372,9 @@ useEffect(()=>{
                  
                  newEnemy.defense=(newEnemy.defense-1);
                  if (newEnemy.defense<=0){
+                    newSoulCount+=newEnemy.attack
                      tempMap[i][j]=0
+                     
                  }
                  else{
                      tempEnemiesList.push(mapState[i][j])
@@ -381,20 +384,31 @@ useEffect(()=>{
              if (curseMap[i][j]=="Petrify" && mapState[i][j].type==="LandUnit"){
 
                 newEnemy.move=0;
+                tempEnemiesList.push(mapState[i][j]);
+
                  ("move stuck")
              }
              if (curseMap[i][j]=="Traumatize" && mapState[i][j].type==="LandUnit"){
 
                 newEnemy.attack=0;
                 newCurseMap[i][j]=0
+                tempEnemiesList.push(mapState[i][j]);
+
              }
-             if (curseMap[i][j]=="Silent Death" && mapState[i][j].type==="LandUnit"){
+             if (curseMap[i][j]=="Silent Night" && mapState[i][j].type==="LandUnit"){
+                newSoulCount+=newEnemy.attack
+ 
                 tempMap[i][j]=0;
+                
+                newCurseMap[i][j]=0
+
+
 
          }
         }
     }
      }
+     setSoulBank(newSoulCount)
      setCurseMap(newCurseMap)
      setMapState(tempMap)
      setActiveDemonsList(tempDemonsList)
@@ -941,27 +955,7 @@ if (attackTrigger){
                 }
 
 
-                // if (newEnemyDefense>0){
-                //     let tempEnemiesList=[];
-                //     for (let i=0; i<activeEnemyList.length; i++){
-                //         if (activeEnemyList[i].name===enemy.name){
-                //             let tempObject=enemy;
-                //             tempObject.defense=newEnemyDefense;
-                //             tempEnemiesList.push(tempObject);
-                //         }
-                //         else {
-                //             tempEnemiesList.push(activeEnemyList[i])
-                //         }
-                     
-                        
-                //     }
-                //     setActiveEnemyList(tempEnemiesList);
-                //     tempMap=mapState;
-                //     tempMap.map(el=>el.name===tempObject.name ? tempObject : el)
-                //     setMapState(tempMap)
-
-
-                // }
+     
                 for(let i=0; i<activeDemonsList.length;i++){
         // if (activeDemonsList[i]===current){
         //      tempDemon=activeDemonsList[i];
@@ -998,8 +992,6 @@ setLegalMovesArray(null)
 function curse(){
 //pay curse cost?
 //set curent to null
-
-
 }
 
 function summonSpot(y,x){
@@ -1020,10 +1012,6 @@ function summonSpot(y,x){
 
 
         }
-
-
-
-
 
     }
 
