@@ -428,11 +428,11 @@ for (let y=0; y<mapState.length; y++){
 buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); summonSpot(y,x); curse(y,x);attack(y,x)}} className="demon glow-on-hover" style={{
     gridColumn: x+1,
     gridRow: y+1,
-    color: "pink",
-    borderColor: "purple"
+ 
+    border: '2mm inset purple'
 }}
 >
-    {y}-{x}
+ {/* {current ? curseMap[y][x] : null}   */}
 </button>)
     }
     //empty state and no curse
@@ -443,7 +443,7 @@ buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); su
             color: "black"
         }}
         >
-            {y}-{x}
+        
         </button>)
             }
             //entity and curse
@@ -454,8 +454,7 @@ buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); su
             color: "white",
             backgroundImage: `url(${mapState[y][x].image})`,
             backgroundSize: '100%',
-            color: "pink",
-            borderColor: "purple"
+             border: '2mm inset purple'
 
         }}
         >
