@@ -36,6 +36,7 @@ Player:{
     attack: 2,
     defense: 2,
     move: 3,
+    attackType: "Direct",
     firstStrike: false,
     bloodLust: false,
     curse: null,
