@@ -21,7 +21,7 @@ const [attackTrigger, setAttackTrigger]= useState(false);
 const [curseTrigger, setCurseTrigger]= useState(false);
 const [summonTrigger, setSummonTrigger]= useState(false);
 const [demons, setDemons]= useState(prop.demonList);  
-const [soulBank, setSoulBank]= useState(20);
+const [soulBank, setSoulBank]= useState(0);
 const [current, setCurrent]= useState();
 const [currentCoordinates, setCurrentCoordinates]=useState();
 const [xCord, setXCord]= useState();
@@ -43,7 +43,7 @@ const [activeEnemyList, setActiveEnemyList]=useState([Enemies.BlueMegaTank, Enem
 // const [mapState, setMapState]= useState([[activeEnemyList[6],activeEnemyList[6],0,1,1,7,0,0],[1,0,activeEnemyList[6],1,1,activeEnemyList[6],0,0],[0,1,0,0,activeEnemyList[0],0,1,0],[0,1,0,0,activeEnemyList[5],0,1,0],[0,1,activeEnemyList[4],1,1,activeEnemyList[6],0,0],[0,1,activeEnemyList[2],1,1,activeEnemyList[6],1,0],[0,0,activeEnemyList[2],0,0,0,0,activeEnemyList[1]],[0,0,0,0,0,0,0,0]],)
 
 // ice logic
-const [mapState, setMapState]= useState([[1,1,1,1,1,1,1,1,1,1,1,1,1],[0,1,0,1,0,1,0,1,0,1,1,1,1],[0,1,0,1,0,1,activeEnemyList[0],1,0,1,0,1,0],[0,0,0,0,0,activeEnemyList[3],0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,1,1,1,0,0,0,0,0],[0,0,0,0,0,1,1,1,0,0,0,0,0],[0,0,0,0,0,1,1,1,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,activeEnemyList[3],0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,activeEnemyList[3],0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,activeEnemyList[1],0,0]])
+const [mapState, setMapState]= useState([[1,1,1,1,1,1,1,1,1,1,1,1,1],[0,1,0,1,0,1,0,1,0,1,1,1,1],[0,1,0,1,0,1,activeEnemyList[0],1,0,1,0,1,0],[0,0,0,0,0,activeEnemyList[3],0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,1,1,1,0,0,0,0,0],[0,0,0,0,0,1,1,1,0,0,0,0,0],[0,0,0,0,0,1,1,1,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,activeEnemyList[3],0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,activeEnemyList[3],0,0,0,0,0],[0,0,0,0,0,0,prop.demonList[1],0,0,0,0,0,0],[0,0,0,0,0,Enemies.BlueMegaTank,prop.demonList[0],Enemies.BlueMegaTank,0,0,activeEnemyList[1],0,0]])
 
 
 //fountain logic
@@ -61,7 +61,7 @@ const playerOptions=[[<div className="playerStats" style={{borderColor: "lime", 
 }}>Attack:{demons[0].attack}</div>,<div  className="playerStats" style={{borderColor: "lime", 
 }}> Health: {demons[0].health}/{demons[0].defense}</div>,<div className="playerStats" style={{borderColor: "lime", 
 }}>Move:{demons[0].move}</div>,<div className="playerStats" style={{borderColor: "lime", backgroundImage: `${demons[0].image}`
-}}>{soulBank}</div>,<button className='actionButton glow-on-hover'  onClick={()=>{ enemyTrigger(), setEndTurn(x=>x === true ? false : true)}} style={{borderColor: "silver", backgroundImage: `${demons[0].image}`
+}}>{soulBank}</div>,<button className='actionButton '  onClick={()=>{ enemyTrigger(), setEndTurn(x=>x === true ? false : true)}} style={{borderColor: "silver", backgroundImage: `${demons[0].image}`
 }}>End Turn</button>]]
 
 //loads initial summon List
@@ -89,6 +89,9 @@ function enemyTrigger(){
     let originalEnemiesCoordinates=[];
     let originalEnemiesCoordinatesSubArray=[];
     let tempEnemyOGCords;
+    let adjustEnemyMovesSubArray=[]
+    let perEnemyMovesArr=[];
+    let adjustEnemyMovesArray=[];
 
     // for (let k=1; k<=mapState[i][j].move; k++){
     //     k-i>=0 ? tempCordsArr.push(mapState[k-i]) : null;
@@ -228,16 +231,72 @@ for (let i=0; i<mapState.length; i++){
                     }
                     }
                   
-                    
-                        tempCordsArr.push(`${i}${j}`)
-                    
-                    enemiesMoveList.push(tempCordsArr);
+                    tempCordsArr.push(`${i}${j}`)
+
+                    // adjustEnemyMovesSubArray.push(`${i}${j}`)
+
+
+                    for(let k=0; k<tempCordsArr.length; k++){
+                        // console.log(i)
+                        if (tempCordsArr[k].length ===2){
+                            adjustEnemyMovesSubArray.push(tempCordsArr[k][0],tempCordsArr[k][1]);
+                            adjustEnemyMovesArray.push(adjustEnemyMovesSubArray)
+                            adjustEnemyMovesSubArray=[]
+
+                        }
+                        if (tempCordsArr[k].length ===3){
+
+                            if (tempCordsArr[k][0]<2){
+            
+                                adjustEnemyMovesSubArray.push(`${tempCordsArr[k][0]}${tempCordsArr[k][1]}`,tempCordsArr[k][2])
+                                adjustEnemyMovesArray.push(adjustEnemyMovesSubArray)
+                                adjustEnemyMovesSubArray=[]
+
+
+                             
+                            }
+                            if (tempCordsArr[k][0]>=2){
+                                
+            
+                                adjustEnemyMovesSubArray.push(tempCordsArr[k][0],`${tempCordsArr[k][1]}${tempCordsArr[k][2]}`)
+                                adjustEnemyMovesArray.push(adjustEnemyMovesSubArray)
+                                adjustEnemyMovesSubArray=[]
+
+
+                               
+                                }
+                            
+                        }
+                        if (tempCordsArr[k].length ===4){
+                            
+                            
+                            adjustEnemyMovesSubArray.push(`${tempCordsArr[k][0]}${tempCordsArr[k][1]}`,`${tempCordsArr[k][2]}${tempCordsArr[k][3]}`)
+                            adjustEnemyMovesArray.push(adjustEnemyMovesSubArray)
+                            adjustEnemyMovesSubArray=[]
+
+
+                            
+                        }
+                        // console.log(adjustEnemyMovesSubArray)
+
+                    }
+                  
+
+                    perEnemyMovesArr.push(adjustEnemyMovesArray);
+                    enemiesMoveList.push(perEnemyMovesArr);
+                    adjustEnemyMovesArray=[];
+                    perEnemyMovesArr=[];
                     tempCordsArr=[];
 
+
         }
+
+   
         moveIterator=0
     }
+    
     }
+ 
 
     let decidedMoves=[];
     let decidedMovesSubArray=[];
@@ -247,6 +306,7 @@ for (let i=0; i<mapState.length; i++){
     let randomValue;
     let finalValues;
     let temp;
+    console.log(enemiesMoveList)
 for (let i=0; i<enemiesMoveList.length; i++){
  
     for(let j=0; j<enemiesMoveList[i].length; j++){
@@ -255,6 +315,7 @@ for (let i=0; i<enemiesMoveList.length; i++){
             moveValueArray.push(tempScore);
         continue;}
         if (mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].type==="Demon"){
+
             if (mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].name==="Shilo"){
                 mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].defense <= currentEnemiesArray[i].attack ? tempScore+=20 :tempScore+=15;
              
@@ -288,12 +349,11 @@ for (let i=0; i<enemiesMoveList.length; i++){
     finalValues=(Math.max(...moveValueArray));
 
 
+
 //make sure it's not already taken
 tempDecideMoves=enemiesMoveList[i][moveValueArray.indexOf(finalValues)]
 
     decidedMoves.push(tempDecideMoves);
-    console.log(tempDecideMoves)
-    console.log(tempDecideMoves)
 
 
 
@@ -305,18 +365,16 @@ tempDecideMoves=enemiesMoveList[i][moveValueArray.indexOf(finalValues)]
     }
     if (tempDecideMoves.length ===3){
 
-console.log("hit me")
+
         if (tempDecideMoves[0]<2){
         decidedMovesSubArray.push(`${tempDecideMoves[0]}${tempDecideMoves[1]}`,tempDecideMoves[2])
         decidedMovesArray.push(decidedMovesSubArray);
-        console.log(decidedMovesSubArray)
         decidedMovesSubArray=[]
         }
         if (tempDecideMoves[0]>=2){
 
             decidedMovesSubArray.push(tempDecideMoves[0],`${tempDecideMoves[1]}${tempDecideMoves[2]}`)
             decidedMovesArray.push(decidedMovesSubArray);
-            console.log(decidedMovesSubArray)
 
             decidedMovesSubArray=[]
             }
@@ -347,7 +405,7 @@ let tempMap=mapState;
 let tempDemonsList=activeDemonsList;
 let currentSoldier;
 let newSoulBank=soulBank;
-console.log(originalEnemiesCoordinates)
+ 
 
 for (let i=0; i < decidedMoves.length; i++){
     if(decidedMoves[i].length){
@@ -368,7 +426,7 @@ for (let i=0; i < decidedMoves.length; i++){
     }
 else{
     tempDemon=tempMap[decidedMovesArray[i][0]][decidedMovesArray[i][1]];
-        // console.log(currentSoldier)
+
 
      newDefense= tempDemon.defense-currentSoldier.attack;
      newEnemyDefense=currentSoldier.defense-tempDemon.attack
@@ -513,7 +571,8 @@ buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); su
     border: '2mm inset purple'
 }}
 >
-    {y}-{x}
+{y}-{x}
+
  {/* {current ? curseMap[y][x] : null}   */}
 </button>)
     }
@@ -525,9 +584,9 @@ buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); su
             color: "black"
         }}
         >
-                {y}-{x}
 
-        
+
+        {y}-{x}
         </button>)
             }
             //entity and curse
@@ -542,7 +601,8 @@ buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); su
 
         }}
         >
-                {y}-{x}
+
+{y}-{x}
 
         </button>)
             }
@@ -556,7 +616,8 @@ buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); su
                     backgroundSize: '100%'
                 }}
                 >
-                        {y}-{x}
+
+{y}-{x}
 
                 </button>)
                     }
@@ -700,7 +761,7 @@ if (rightI<mapState.length){
 }
 function curseButton(){
     if (current && current.active){
-    if (current.curse && soulBank-current.curseCost>0 && activeDemonsList.includes(current)){
+    if (current.curse && soulBank-current.curseCost>=0 && activeDemonsList.includes(current)){
 
         setSoulBank(prev=>prev-current.curseCost)
         // document.getElementById(`${currentCoordinates}`).style.borderColor="purple";
@@ -902,7 +963,7 @@ function summonButton(){
 
 //adds the cursed spots to the array
 for (let i=0; i<cursedSummoningSpots.length; i++){
-    console.log("hittttt")
+ 
     if (mapState[cursedSummoningSpots[i][0]][cursedSummoningSpots[i][1]]===0){
     tempSummonArray.push(cursedSummoningSpots[i])
     document.getElementById(`${cursedSummoningSpots[i][0]}${cursedSummoningSpots[i][1]}`).classList.add("summon-glow")
@@ -980,7 +1041,7 @@ if (attackTrigger){
     if(enemy.type){
         if(enemy.type==="LandUnit"){
             if (legalMovesArray.includes(stringCords)){
-            if(!current.ability){
+            if(current.ability != "Stealth"){
                 let newDefense= current.defense-enemy.attack;
             
                 let newEnemyDefense=enemy.defense-current.attack;
@@ -1187,8 +1248,7 @@ function curse(){
 function summonSpot(y,x){
     if (summonTrigger){
         if (legalSummoningArray.includes(`${y}${x}`)){
-            console.log(legalSummoningArray)
-            let tempMapState=mapState;
+             let tempMapState=mapState;
             document.getElementById(`${y}${x}`).style.backgroundImage=`url(${current.image})`;
             for (let i=0; i<legalSummoningArray.length; i++){
                 document.getElementById(`${legalSummoningArray[i]}`).style.backgroundColor='transparent';
