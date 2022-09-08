@@ -306,27 +306,29 @@ for (let i=0; i<mapState.length; i++){
     let randomValue;
     let finalValues;
     let temp;
-    console.log(enemiesMoveList)
+   
 for (let i=0; i<enemiesMoveList.length; i++){
  
     for(let j=0; j<enemiesMoveList[i].length; j++){
-        if (decidedMoves.includes(`${enemiesMoveList[i][j][0]}${enemiesMoveList[i][j][1]}`)){
+       for (let k=0; k<enemiesMoveList[i][j].length; k++){
+        if (decidedMoves[0]===enemiesMoveList[i][j][k][0] && decidedMoves[1]===enemiesMoveList[i][j][k][1]){
+            console.log("cockk")
             tempScore=0;
             moveValueArray.push(tempScore);
         continue;}
-        if (mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].type==="Demon"){
+        if (mapState[enemiesMoveList[i][j][k][0]][enemiesMoveList[i][j][k][1]].type==="Demon"){
 
-            if (mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].name==="Shilo"){
-                mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].defense <= currentEnemiesArray[i].attack ? tempScore+=20 :tempScore+=15;
+            if (mapState[enemiesMoveList[i][j][k][0]][enemiesMoveList[i][j][k][1]].name==="Shilo"){
+                mapState[enemiesMoveList[i][j][k][0]][enemiesMoveList[i][j][k][1]].defense <= currentEnemiesArray[i].attack ? tempScore+=20 :tempScore+=15;
              
             }
-            else if(mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].defense<=currentEnemiesArray[i].attack){
-                currentEnemiesArray[i].defense> mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].attack ? tempScore+=15 :tempScore+=9;
+            else if(mapState[enemiesMoveList[i][j][k][0]][enemiesMoveList[i][j][k][1]].defense<=currentEnemiesArray[i].attack){
+                currentEnemiesArray[i].defense> mapState[enemiesMoveList[i][j][k][0]][enemiesMoveList[i][j][k][1]].attack ? tempScore+=15 :tempScore+=9;
             }
-            else if(currentEnemiesArray[i].defense> mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].attack){
+            else if(currentEnemiesArray[i].defense> mapState[enemiesMoveList[i][j][k][0]][enemiesMoveList[i][j][k][1]].attack){
                 tempScore+=7
             }
-            else if(currentEnemiesArray[i].defense<=mapState[enemiesMoveList[i][j][0]][enemiesMoveList[i][j][1]].attack){
+            else if(currentEnemiesArray[i].defense<=mapState[enemiesMoveList[i][j][k][0]][enemiesMoveList[i][j][k][1]].attack){
                 tempScore+=4
             }
            
@@ -341,52 +343,30 @@ for (let i=0; i<enemiesMoveList.length; i++){
         }
 
         moveValueArray.push(tempScore);
+        // console.log(tempScore)
         tempScore=0;
-      
+    }
+    finalValues=(Math.max(...moveValueArray));
+    tempDecideMoves=enemiesMoveList[i][j][moveValueArray.indexOf(finalValues)]
 
     }
 
-    finalValues=(Math.max(...moveValueArray));
+  
 
 
 
 //make sure it's not already taken
-tempDecideMoves=enemiesMoveList[i][moveValueArray.indexOf(finalValues)]
-
+ 
     decidedMoves.push(tempDecideMoves);
-
-
-
+ 
+ 
     if (tempDecideMoves.length ===2){
         decidedMovesSubArray.push(tempDecideMoves[0],tempDecideMoves[1])
         decidedMovesArray.push(decidedMovesSubArray);
         decidedMovesSubArray=[]
         
     }
-    if (tempDecideMoves.length ===3){
-
-
-        if (tempDecideMoves[0]<2){
-        decidedMovesSubArray.push(`${tempDecideMoves[0]}${tempDecideMoves[1]}`,tempDecideMoves[2])
-        decidedMovesArray.push(decidedMovesSubArray);
-        decidedMovesSubArray=[]
-        }
-        if (tempDecideMoves[0]>=2){
-
-            decidedMovesSubArray.push(tempDecideMoves[0],`${tempDecideMoves[1]}${tempDecideMoves[2]}`)
-            decidedMovesArray.push(decidedMovesSubArray);
-
-            decidedMovesSubArray=[]
-            }
-        }
-    
-    if (tempDecideMoves.length ===4){
-        
-            decidedMovesSubArray.push(`${tempDecideMoves[0]}${tempDecideMoves[1]}`,`${tempDecideMoves[2]}${tempDecideMoves[3]}`)
-            decidedMovesArray.push(decidedMovesSubArray);
-            decidedMovesSubArray=[]
-            
-    }
+     
 
 
                 
@@ -397,7 +377,7 @@ tempDecideMoves=enemiesMoveList[i][moveValueArray.indexOf(finalValues)]
 
 }
 
-
+console.log(decidedMovesArray)
 let newDefense;
 let newEnemyDefense;
 let tempDemon;
@@ -406,10 +386,10 @@ let tempDemonsList=activeDemonsList;
 let currentSoldier;
 let newSoulBank=soulBank;
  
+ 
 
-for (let i=0; i < decidedMoves.length; i++){
-    if(decidedMoves[i].length){
-    
+for (let i=0; i < decidedMovesArray.length; i++){
+  
     currentSoldier=currentEnemiesArray[i]
     if(tempMap[decidedMovesArray[i][0]][decidedMovesArray[i][1]]===0){
 
@@ -423,10 +403,9 @@ for (let i=0; i < decidedMoves.length; i++){
         continue;
 
     }
-    }
+    
 else{
     tempDemon=tempMap[decidedMovesArray[i][0]][decidedMovesArray[i][1]];
-
 
      newDefense= tempDemon.defense-currentSoldier.attack;
      newEnemyDefense=currentSoldier.defense-tempDemon.attack
