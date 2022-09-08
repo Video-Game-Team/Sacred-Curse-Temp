@@ -43,7 +43,7 @@ const [activeEnemyList, setActiveEnemyList]=useState([Enemies.BlueMegaTank, Enem
 // const [mapState, setMapState]= useState([[activeEnemyList[6],activeEnemyList[6],0,1,1,7,0,0],[1,0,activeEnemyList[6],1,1,activeEnemyList[6],0,0],[0,1,0,0,activeEnemyList[0],0,1,0],[0,1,0,0,activeEnemyList[5],0,1,0],[0,1,activeEnemyList[4],1,1,activeEnemyList[6],0,0],[0,1,activeEnemyList[2],1,1,activeEnemyList[6],1,0],[0,0,activeEnemyList[2],0,0,0,0,activeEnemyList[1]],[0,0,0,0,0,0,0,0]],)
 
 // ice logic
-const [mapState, setMapState]= useState([[1,1,1,1,1,1,1,1,1,1,1,1,1],[0,1,0,1,0,1,0,1,0,1,0,1,0],[0,1,0,1,0,1,activeEnemyList[0],1,0,1,0,1,0],[0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,1,1,1,0,0,0,0,0],[0,0,0,0,0,1,1,1,0,0,0,0,0],[0,0,0,0,0,1,1,1,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,activeEnemyList[1],0,0]])
+const [mapState, setMapState]= useState([[1,1,1,1,1,1,1,1,1,1,1,1,1],[0,1,0,1,0,1,0,1,0,1,1,1,1],[0,1,0,1,0,1,activeEnemyList[0],1,0,1,0,1,0],[0,0,0,0,0,activeEnemyList[3],0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,1,1,1,0,0,0,0,0],[0,0,0,0,0,1,1,1,0,0,0,0,0],[0,0,0,0,0,1,1,1,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,activeEnemyList[3],0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,activeEnemyList[3],0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,activeEnemyList[1],0,0]])
 
 
 //fountain logic
@@ -87,6 +87,9 @@ function enemyTrigger(){
     let moveValueArray=[]
     let currentEnemiesArray=[]
     let originalEnemiesCoordinates=[];
+    let originalEnemiesCoordinatesSubArray=[];
+    let tempEnemyOGCords;
+
     // for (let k=1; k<=mapState[i][j].move; k++){
     //     k-i>=0 ? tempCordsArr.push(mapState[k-i]) : null;
     //     k+i<mapState.length ? tempCordsArr.push(mapState[k+1] : )
@@ -106,12 +109,41 @@ let leftI;
 //legal enemy moves array builder
 for (let i=0; i<mapState.length; i++){
     for (let j=0; j<mapState[i].length; j++){
-
+       
 
         if (mapState[i][j].type==="LandUnit"){
             currentEnemiesArray.push(mapState[i][j]);
-            originalEnemiesCoordinates.push(`${i}${j}`)
 
+                    tempEnemyOGCords=`${i}${j}`
+
+            if (tempEnemyOGCords.length ===2){
+                originalEnemiesCoordinatesSubArray.push(tempEnemyOGCords[0],tempEnemyOGCords[1])
+                originalEnemiesCoordinates.push(originalEnemiesCoordinatesSubArray);
+                originalEnemiesCoordinatesSubArray=[]
+                
+            }
+            if (tempEnemyOGCords.length ===3){
+                if (tempEnemyOGCords[0]<2){
+
+                originalEnemiesCoordinatesSubArray.push(`${tempEnemyOGCords[0]}${tempEnemyOGCords[1]}`,tempEnemyOGCords[2])
+                originalEnemiesCoordinates.push(originalEnemiesCoordinatesSubArray);
+                originalEnemiesCoordinatesSubArray=[]
+                }
+                if (tempEnemyOGCords[0]>=2){
+
+                    originalEnemiesCoordinatesSubArray.push(tempEnemyOGCords[0],`${tempEnemyOGCords[1]}${tempEnemyOGCords[2]}`)
+                    originalEnemiesCoordinates.push(originalEnemiesCoordinatesSubArray);
+                    originalEnemiesCoordinatesSubArray=[]
+                    }
+                
+            }
+            if (tempEnemyOGCords.length ===4){
+                
+                originalEnemiesCoordinatesSubArray.push(`${tempEnemyOGCords[0]}${tempEnemyOGCords[1]}`,`${tempEnemyOGCords[2]}${tempEnemyOGCords[3]}`)
+                originalEnemiesCoordinates.push(originalEnemiesCoordinatesSubArray);
+                originalEnemiesCoordinatesSubArray=[]
+                    
+            }
             upI=i-1;
              downI=i+1;
              rightI=j+1;
@@ -260,6 +292,10 @@ for (let i=0; i<enemiesMoveList.length; i++){
 tempDecideMoves=enemiesMoveList[i][moveValueArray.indexOf(finalValues)]
 
     decidedMoves.push(tempDecideMoves);
+    console.log(tempDecideMoves)
+    console.log(tempDecideMoves)
+
+
 
     if (tempDecideMoves.length ===2){
         decidedMovesSubArray.push(tempDecideMoves[0],tempDecideMoves[1])
@@ -268,11 +304,24 @@ tempDecideMoves=enemiesMoveList[i][moveValueArray.indexOf(finalValues)]
         
     }
     if (tempDecideMoves.length ===3){
+
+console.log("hit me")
+        if (tempDecideMoves[0]<2){
         decidedMovesSubArray.push(`${tempDecideMoves[0]}${tempDecideMoves[1]}`,tempDecideMoves[2])
         decidedMovesArray.push(decidedMovesSubArray);
+        console.log(decidedMovesSubArray)
         decidedMovesSubArray=[]
-        
-    }
+        }
+        if (tempDecideMoves[0]>=2){
+
+            decidedMovesSubArray.push(tempDecideMoves[0],`${tempDecideMoves[1]}${tempDecideMoves[2]}`)
+            decidedMovesArray.push(decidedMovesSubArray);
+            console.log(decidedMovesSubArray)
+
+            decidedMovesSubArray=[]
+            }
+        }
+    
     if (tempDecideMoves.length ===4){
         
             decidedMovesSubArray.push(`${tempDecideMoves[0]}${tempDecideMoves[1]}`,`${tempDecideMoves[2]}${tempDecideMoves[3]}`)
@@ -289,7 +338,6 @@ tempDecideMoves=enemiesMoveList[i][moveValueArray.indexOf(finalValues)]
    
 
 }
-console.log("hi", decidedMovesArray)
 
 
 let newDefense;
@@ -299,20 +347,24 @@ let tempMap=mapState;
 let tempDemonsList=activeDemonsList;
 let currentSoldier;
 let newSoulBank=soulBank;
+console.log(originalEnemiesCoordinates)
 
 for (let i=0; i < decidedMoves.length; i++){
-    if(decidedMoves[i].length)
+    if(decidedMoves[i].length){
     
     currentSoldier=currentEnemiesArray[i]
-    
     if(tempMap[decidedMovesArray[i][0]][decidedMovesArray[i][1]]===0){
+
         tempMap[decidedMovesArray[i][0]][decidedMovesArray[i][1]]=currentEnemiesArray[i];
+      
+
         tempMap[originalEnemiesCoordinates[i][0]][originalEnemiesCoordinates[i][1]]=0;
 
     }
     else if(tempMap[decidedMovesArray[i][0]][decidedMovesArray[i][1]].type != "Demon"){
         continue;
 
+    }
     }
 else{
     tempDemon=tempMap[decidedMovesArray[i][0]][decidedMovesArray[i][1]];
@@ -526,7 +578,6 @@ setCurrent(mapState[y][x]);
     setCurrentCoordinates(`${y}${x}`)
     setXCord(x);
     setYCord(y);
-    console.log(x,y)
 
 }
 
