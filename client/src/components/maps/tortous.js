@@ -22,7 +22,7 @@ const Tortous = (props) => {
 
  const [xnpcTransformVar, setXnpcTransformVar] = useState(-2776);
  //this sets the y Cordinate to transform the map and character location
- const [ynpcTransformVar, setnpcYTransformVar] = useState(-5588);
+ const [ynpcTransformVar, setYnpcTransformVar] = useState(-5588);
 
 
 
@@ -2369,8 +2369,6 @@ const Tortous = (props) => {
               <div className="character_spritesheet pixel-art"></div>
             </div>
 
-
-
             <div
               className="npc pixel-art"
               style={{
@@ -2381,9 +2379,6 @@ const Tortous = (props) => {
             >
               <div className="npc_spritesheet pixel-art"></div>
             </div>
-
-
-            
           </div>
         </div>
         {textValue ? (
