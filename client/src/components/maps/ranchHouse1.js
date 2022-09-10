@@ -56,10 +56,7 @@ const RanchHouse1 = (props) => {
   let currentMap = [
     [3, 381, 382, 5, 431, 432, 298, 299, 300, 431, 432, 10, 381, 382, 13],
     [17, 397, 398, 2003, 447, 448, 312, 313, 314, 447, 448, 2003, 397, 398, 27],
-    [
-      3221225513, 6309, 6310, 2019, 463, 464, 326, 327, 328, 463, 464, 2019,
-      6014, 6015, 41,
-    ],
+    [3221225513, 6309, 6310, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6014, 6015, 41],
     [3221225513, 6328, 6329, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6033, 6034, 41],
     [
       3221225513, 3103, 3104, 3105, 3053, 3054, 0, 0, 0, 3053, 3054, 3055, 3056,
@@ -84,11 +81,40 @@ const RanchHouse1 = (props) => {
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   ];
 
-  // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  // console.log(
-  //   'VALUE Right',
-  //   currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-  // );
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap[yPlayerIndex.current][xPlayerIndex.current]
+  );
+
+  
+
+  // useEffect(() => {
+  //   let tempGrid = [];
+  //   for (let i = 0; i < currentMap.length; i++) {
+  //     for (let j = 0; j < currentMap[i].length; j++) {
+  //       tempGrid.push(
+  //         <button
+  //           onClick={() => {
+  //             console.log(`Coordinates ${i} - ${j}`);
+  //           }}
+  //           className="numbers"
+  //           style={{
+  //             gridColumn: j + 1,
+  //             gridRow: i + 1,
+  //             color: 'white',
+  //           }}
+  //         >
+  //           {/* {i} - {j} */}
+  //           {currentMap[i][j]}
+  //         </button>
+  //       );
+  //     }
+  //   }
+  //   setGridArray(tempGrid);
+  // }, []);
+
+
 
   useEffect(() => {
     if (props.previousMap === 'dunleaveyValley') {
@@ -113,31 +139,6 @@ const RanchHouse1 = (props) => {
       props.active('dunleaveyValley', 'ranchHouse1');
     }
   }, [yPlayerIndex.current, xPlayerIndex.current]);
-
-  // useEffect(() => {
-  //   let tempGrid = [];
-  //   for (let i = 0; i < currentMap.length; i++) {
-  //     for (let j = 0; j < currentMap[i].length; j++) {
-  //       tempGrid.push(
-  //         <button
-  //           onClick={() => {
-  //             console.log(`Coordinates ${i} - ${j}`);
-  //           }}
-  //           className="numbers"
-  //           style={{
-  //             gridColumn: j + 1,
-  //             gridRow: i + 1,
-  //             color: 'white',
-  //           }}
-  //         >
-  //           {i} - {j}
-  //           {/* {currentMap[i][j]} */}
-  //         </button>
-  //       );
-  //     }
-  //   }
-  //   setGridArray(tempGrid);
-  // }, []);
 
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
