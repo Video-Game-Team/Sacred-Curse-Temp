@@ -112,8 +112,8 @@ const OldManCrawfordInside = (props) => {
   //             color: 'white',
   //           }}
   //         >
-  //           {i} - {j}
-  //           {/* {currentMap[i][j]} */}
+  //           {/* {i} - {j} */}
+  //           {currentMap[i][j]}
   //         </button>
   //       );
   //     }
@@ -146,7 +146,7 @@ const OldManCrawfordInside = (props) => {
     ) {
       props.active('tortous', 'oldManCrawfordInside');
     }
-  }, [yPlayerIndex.current]);
+  }, [yPlayerIndex.current, xPlayerIndex.current]);
 
   //event listen for enter
   useEffect(() => {

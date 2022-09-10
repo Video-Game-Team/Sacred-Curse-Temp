@@ -475,58 +475,60 @@ const TortousFork = (props) => {
     ],
   ];
 
-  // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  // console.log(
-  //   'VALUE Right',
-  //   currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-  // );
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap[yPlayerIndex.current][xPlayerIndex.current]
+  );
 
-      // useEffect(()=>{
-      //   let tempGrid=[]
-      //   for (let i=0; i<currentMap.length; i++){
-      //     for (let j=0; j<currentMap[i].length; j++){
-      //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-      //         gridColumn: j+1,
-      //         gridRow: i+1,
-      //         color: "white",
-      //     }}
-      //     > {currentMap[i][j]}
+  // useEffect(() => {
+  //   let tempGrid = [];
+  //   for (let i = 0; i < currentMap.length; i++) {
+  //     for (let j = 0; j < currentMap[i].length; j++) {
+  //       tempGrid.push(
+  //         <button
+  //           onClick={() => {
+  //             console.log(`Coordinates ${i} - ${j}`);
+  //           }}
+  //           className="numbers"
+  //           style={{
+  //             gridColumn: j + 1,
+  //             gridRow: i + 1,
+  //             color: 'white',
+  //           }}
+  //         >
+  //           {/* {i} - {j} */}
+  //           {currentMap[i][j]}
+  //         </button>
+  //       );
+  //     }
+  //   }
+  //   setGridArray(tempGrid);
+  // }, []);
 
-      //     </button>)
-
-      //     }
-      //   }
-      // setGridArray(tempGrid)
-
-      // },[])
-
-
-
-
-
- useEffect(() => {
-   if (props.previousMap === 'tortous') {
-     //setYCord
-     yPlayerIndex.current = 25;
-     //setXcord
-     xPlayerIndex.current = 10;
-     //set xTransform
-     setXTransformVar(-28);
-     //set yTransform
-     setYTransformVar(-1284);
-     facing.current = 'right';
-   }
-   if (props.previousMap === 'trainTracksToSaintAnna') {
-     //setYCord
-     yPlayerIndex.current = 34;
-     //setXcord
-     xPlayerIndex.current = 30;
-     //set xTransform
-     setXTransformVar(-1304);
-     //set yTransform
-     setYTransformVar(-1876);
-     facing.current = 'up';
-   }
+  useEffect(() => {
+    if (props.previousMap === 'tortous') {
+      //setYCord
+      yPlayerIndex.current = 25;
+      //setXcord
+      xPlayerIndex.current = 10;
+      //set xTransform
+      setXTransformVar(-28);
+      //set yTransform
+      setYTransformVar(-1284);
+      facing.current = 'right';
+    }
+    if (props.previousMap === 'trainTracksToSaintAnna') {
+      //setYCord
+      yPlayerIndex.current = 34;
+      //setXcord
+      xPlayerIndex.current = 30;
+      //set xTransform
+      setXTransformVar(-1304);
+      //set yTransform
+      setYTransformVar(-1876);
+      facing.current = 'up';
+    }
     if (props.previousMap === 'mountainRoadTrainTracks') {
       //setYCord
       yPlayerIndex.current = 9;
@@ -538,20 +540,18 @@ const TortousFork = (props) => {
       setYTransformVar(-264);
       facing.current = 'down';
     }
-      if (props.previousMap === 'trainTracksToValley') {
-        //setYCord
-        yPlayerIndex.current = 9;
-        //setXcord
-        xPlayerIndex.current = 18;
-        //set xTransform
-        setXTransformVar(-532);
-        //set yTransform
-        setYTransformVar(-272);
-        facing.current = 'down';
-      }
- }, []);
-
-
+    if (props.previousMap === 'trainTracksToValley') {
+      //setYCord
+      yPlayerIndex.current = 9;
+      //setXcord
+      xPlayerIndex.current = 18;
+      //set xTransform
+      setXTransformVar(-532);
+      //set yTransform
+      setYTransformVar(-272);
+      facing.current = 'down';
+    }
+  }, []);
 
   useEffect(() => {
     //yPlayerIndex up and down values
@@ -564,39 +564,34 @@ const TortousFork = (props) => {
       props.active('tortous', 'tortousFork');
     }
   }, [xPlayerIndex.current]);
- 
 
-    useEffect(() => {
-      // yPlayerIndex up and down values
-      // trains Map check conditions
-      if (
-        (yPlayerIndex.current === 35 && xPlayerIndex.current === 29) ||
-        (yPlayerIndex.current === 35 && xPlayerIndex.current === 30) ||
-        (yPlayerIndex.current === 35 && xPlayerIndex.current === 31)
-      ) {
-        props.active('trainTracksToSaintAnna', 'tortousFork');
-      }
+  useEffect(() => {
+    // yPlayerIndex up and down values
+    // trains Map check conditions
+    if (
+      (yPlayerIndex.current === 35 && xPlayerIndex.current === 29) ||
+      (yPlayerIndex.current === 35 && xPlayerIndex.current === 30) ||
+      (yPlayerIndex.current === 35 && xPlayerIndex.current === 31)
+    ) {
+      props.active('trainTracksToSaintAnna', 'tortousFork');
+    }
 
-       if (
-         (yPlayerIndex.current === 8 && xPlayerIndex.current === 17) ||
-         (yPlayerIndex.current === 8 && xPlayerIndex.current === 18) ||
-         (yPlayerIndex.current === 8 && xPlayerIndex.current === 19)
-       ) {
-         props.active('trainTracksToValley', 'tortousFork');
-       }
+    if (
+      (yPlayerIndex.current === 8 && xPlayerIndex.current === 17) ||
+      (yPlayerIndex.current === 8 && xPlayerIndex.current === 18) ||
+      (yPlayerIndex.current === 8 && xPlayerIndex.current === 19)
+    ) {
+      props.active('trainTracksToValley', 'tortousFork');
+    }
 
-        if (
-          (yPlayerIndex.current === 8 && xPlayerIndex.current === 41) ||
-          (yPlayerIndex.current === 8 && xPlayerIndex.current === 42) ||
-          (yPlayerIndex.current === 8 && xPlayerIndex.current === 43)
-        ) {
-          props.active('mountainRoadTrainTracks', 'tortousFork');
-        }
-        
-    }, [yPlayerIndex.current]);
-
-
-
+    if (
+      (yPlayerIndex.current === 8 && xPlayerIndex.current === 41) ||
+      (yPlayerIndex.current === 8 && xPlayerIndex.current === 42) ||
+      (yPlayerIndex.current === 8 && xPlayerIndex.current === 43)
+    ) {
+      props.active('mountainRoadTrainTracks', 'tortousFork');
+    }
+  }, [yPlayerIndex.current]);
 
   //event listen for enter
   useEffect(() => {
@@ -858,6 +853,6 @@ const TortousFork = (props) => {
       </div>
     </div>
   );
-};
+};;
 
 export default TortousFork;
