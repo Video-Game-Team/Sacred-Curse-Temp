@@ -65,7 +65,7 @@ function App() {
     DemonObjects.Zabuza,
     DemonObjects.Naruto,
   ]);
-  const [current, setCurrent] = useState('mansonRanch');
+  const [current, setCurrent] = useState('mountainEntrance');
   const [tempCurrent, setTempCurrent] = useState(null);
   const [previous, setPrevious] = useState(null);
   const [textValue, setTextValue] = useState(null);
