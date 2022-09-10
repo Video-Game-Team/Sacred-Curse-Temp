@@ -125,7 +125,7 @@ const IndoorHouse1 = (props) => {
     ) {
       props.active('tortous', 'indoorHouse1');
     }
-  }, [yPlayerIndex.current]);
+  }, [yPlayerIndex.current, xPlayerIndex.current]);
 
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
