@@ -1701,66 +1701,52 @@ const TrainTracksToCapital = (props) => {
     ],
   ];
 
-    // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-    //   console.log(
-    //     'VALUE Right',
-    //     currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-    //   );
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap[yPlayerIndex.current][xPlayerIndex.current]
+  );
 
-          // useEffect(()=>{
-          //   let tempGrid=[]
-          //   for (let i=0; i<currentMap.length; i++){
-          //     for (let j=0; j<currentMap[i].length; j++){
-          //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-          //         gridColumn: j+1,
-          //         gridRow: i+1,
-          //         color: "white",
-          //     }}
-          //     > {currentMap[i][j]}
-
-          //     </button>)
-
-          //     }
-          //   }
-          // setGridArray(tempGrid)
-
-          // },[])
+  useEffect(()=>{
+    let tempGrid=[]
+    for (let i=0; i<currentMap.length; i++){
+      for (let j=0; j<currentMap[i].length; j++){
+        tempGrid.push(
+          <button
+            onClick={() => {
+              console.log(`Coordinates ${i} - ${j}`);
+            }}
+            className="numbers"
+            style={{
+              gridColumn: j + 1,
+              gridRow: i + 1,
+              color: 'white',
+            }}
+          >
+            {/* {i} - {j} */}
+            {currentMap[i][j]}
+          </button>
+        );
+      }
+    }
+  setGridArray(tempGrid)
+  },[])
 
   //create an array. If the current array does not contain the value. shift it.
 
   // console.log(yPlayerIndex.current, xPlayerIndex.current)
   // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
 
-
-
-
-
-
-  
-
-
- useEffect(() => {
-   //yPlayerIndex up and down values
-   // trains Map check conditions
-   if (
-     (yPlayerIndex.current === 141 && xPlayerIndex.current === 19) ||
-     (yPlayerIndex.current === 141 && xPlayerIndex.current === 20) 
-   ) {
-     props.active('tortous', 'trainTracksToCapital');
-   }
- }, [yPlayerIndex.current]);
-
-
-
-
-
-
-
-
-
-
-
-
+  useEffect(() => {
+    //yPlayerIndex up and down values
+    // trains Map check conditions
+    if (
+      (yPlayerIndex.current === 141 && xPlayerIndex.current === 19) ||
+      (yPlayerIndex.current === 141 && xPlayerIndex.current === 20)
+    ) {
+      props.active('tortous', 'trainTracksToCapital');
+    }
+  }, [yPlayerIndex.current]);
 
   //event listen for enter
   useEffect(() => {
@@ -2022,6 +2008,6 @@ const TrainTracksToCapital = (props) => {
       </div>
     </div>
   );
-};
+};;
 
 export default TrainTracksToCapital;
