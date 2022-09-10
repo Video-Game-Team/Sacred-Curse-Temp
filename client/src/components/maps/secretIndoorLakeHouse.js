@@ -62,7 +62,7 @@ const SecretIndoorLakeHouse = (props) => {
       5216, 2334, 2334, 2432, 2555, 2556, 5216, 2452, 5215, 2552, 2550, 0, 2471,
       2472, 5216,
     ],
-    [5216, 2448, 2448, 2448, 2571, 2572, 0, 2468, 0, 2568, 2566, 0, 0, 0, 5216],
+    [5216, 0, 0, 0, 2571, 2572, 0, 0, 0, 2568, 2566, 0, 0, 0, 5216],
     [5216, 2510, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2354, 0, 5216],
     [5216, 2526, 2532, 0, 0, 0, 5525, 5526, 0, 0, 0, 2541, 2370, 2543, 5216],
     [5216, 2510, 0, 0, 0, 0, 5544, 5545, 0, 0, 0, 2557, 2558, 2559, 5216],
@@ -84,11 +84,13 @@ const SecretIndoorLakeHouse = (props) => {
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   ];
 
-  // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  // console.log(
-  //   'VALUE Right',
-  //   currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-  // );
+
+  
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap[yPlayerIndex.current][xPlayerIndex.current]
+  );
 
   // useEffect(() => {
   //   let tempGrid = [];
@@ -106,8 +108,8 @@ const SecretIndoorLakeHouse = (props) => {
   //             color: 'white',
   //           }}
   //         >
-  //           {i} - {j}
-  //           {/* {currentMap[i][j]} */}
+  //           {/* {i} - {j} */}
+  //           {currentMap[i][j]}
   //         </button>
   //       );
   //     }
