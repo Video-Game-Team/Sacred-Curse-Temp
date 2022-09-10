@@ -45,28 +45,22 @@ body {
     position: absolute;
     background-repeat: no-repeat;
     overflow: visible;
-    /* display: grid;
+    display: grid;
     grid-template-columns: repeat(40, 64px);
-    grid-template-rows: repeat(70, 64px); */
+    grid-template-rows: repeat(70, 64px);
 }
 
 
-/* .numbers {
+.numbers {
     size: 100%;
     background: transparent;
-} */
+}
 
 
 .character {
     width: calc(var(--grid-cell)* 2);
     height: calc(var(--grid-cell)* 2);
     overflow: hidden;
-
-
-
-
-    /* margin-top: -58px;
-    margin-left: -45px; */
 }
 
 .character_spritesheet {
