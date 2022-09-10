@@ -237,11 +237,6 @@ const SaintAnnaHidden = (props) => {
   //   ],
   // ];
 
-
-
-
-
-
   let currentMap = [
     [
       127, 128, 127, 128, 127, 128, 127, 128, 127, 128, 127, 128, 127, 128, 127,
@@ -508,31 +503,36 @@ const SaintAnnaHidden = (props) => {
     ],
   ];
 
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap[yPlayerIndex.current][xPlayerIndex.current]
+  );
 
-    // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-    // console.log(
-    //   'VALUE Right',
-    //   currentMap[yPlayerIndex.current][xPlayerIndex.current]
-    // );
-
-        // useEffect(()=>{
-        //   let tempGrid=[]
-        //   for (let i=0; i<currentMap.length; i++){
-        //     for (let j=0; j<currentMap[i].length; j++){
-        //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-        //         gridColumn: j+1,
-        //         gridRow: i+1,
-        //         color: "white",
-        //     }}
-        //     > {currentMap[i][j]}
-
-        //     </button>)
-
-        //     }
-        //   }
-        // setGridArray(tempGrid)
-        // },[])
-
+  // useEffect(() => {
+  //   let tempGrid = [];
+  //   for (let i = 0; i < currentMap.length; i++) {
+  //     for (let j = 0; j < currentMap[i].length; j++) {
+  //       tempGrid.push(
+  //         <button
+  //           onClick={() => {
+  //             console.log(`Coordinates ${i} - ${j}`);
+  //           }}
+  //           className="numbers"
+  //           style={{
+  //             gridColumn: j + 1,
+  //             gridRow: i + 1,
+  //             color: 'white',
+  //           }}
+  //         >
+  //           {/* {i} - {j} */}
+  //           {currentMap[i][j]}
+  //         </button>
+  //       );
+  //     }
+  //   }
+  //   setGridArray(tempGrid);
+  // }, []);
 
 
 
@@ -556,14 +556,12 @@ const SaintAnnaHidden = (props) => {
     if (
       (yPlayerIndex.current === 22 && xPlayerIndex.current === 22) ||
       (yPlayerIndex.current === 22 && xPlayerIndex.current === 23) ||
-      (yPlayerIndex.current === 22 && xPlayerIndex.current === 24) 
-     ) {
+      (yPlayerIndex.current === 22 && xPlayerIndex.current === 24)
+    ) {
       props.active('secretIndoorLakeHouse', 'saintAnnaHidden');
     }
-  }, [yPlayerIndex.current]);    
+  }, [yPlayerIndex.current]);
 
-
-    
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {
@@ -824,6 +822,6 @@ const SaintAnnaHidden = (props) => {
       </div>
     </div>
   );
-};
+};;
 
 export default SaintAnnaHidden;
