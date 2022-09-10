@@ -76,11 +76,11 @@ const IndoorHouse10 = (props) => {
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   ];
 
-  // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  // console.log(
-  //   'VALUE Right',
-  //   currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-  // );
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap[yPlayerIndex.current][xPlayerIndex.current]
+  );
 
   // useEffect(() => {
   //   let tempGrid = [];
@@ -98,8 +98,8 @@ const IndoorHouse10 = (props) => {
   //             color: 'white',
   //           }}
   //         >
-  //           {i} - {j}
-  //           {/* {currentMap[i][j]} */}
+  //           {/* {i} - {j} */}
+  //           {currentMap[i][j]}
   //         </button>
   //       );
   //     }
@@ -130,7 +130,7 @@ const IndoorHouse10 = (props) => {
     ) {
       props.active('farmMap', 'indoorHouse10');
     }
-  }, [yPlayerIndex.current]);
+  }, [yPlayerIndex.current, xPlayerIndex.current]);
 
 
 
