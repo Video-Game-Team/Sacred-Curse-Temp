@@ -43,7 +43,7 @@ const [activeEnemyList, setActiveEnemyList]=useState([Enemies.BlueMegaTank, Enem
 // const [mapState, setMapState]= useState([[activeEnemyList[6],activeEnemyList[6],0,1,1,7,0,0],[1,0,activeEnemyList[6],1,1,activeEnemyList[6],0,0],[0,1,0,0,activeEnemyList[0],0,1,0],[0,1,0,0,activeEnemyList[5],0,1,0],[0,1,activeEnemyList[4],1,1,activeEnemyList[6],0,0],[0,1,activeEnemyList[2],1,1,activeEnemyList[6],1,0],[0,0,activeEnemyList[2],0,0,0,0,activeEnemyList[1]],[0,0,0,0,0,0,0,0]],)
 
 // ice logic
-const [mapState, setMapState]= useState([[1,1,1,1,1,1,1,1,1,1,1,1,1],[0,1,0,1,0,1,0,1,0,1,1,1,1],[0,1,0,1,0,1,activeEnemyList[0],1,0,1,0,1,0],[0,0,0,0,0,activeEnemyList[3],0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,1,1,1,0,0,0,0,0],[0,0,0,0,0,1,1,1,0,0,0,0,0],[0,0,0,0,0,1,1,1,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,activeEnemyList[3],0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,activeEnemyList[3],0,0,0,0,0],[0,0,0,0,0,0,prop.demonList[1],0,0,0,0,0,0],[0,0,0,0,0,Enemies.BlueMediumTank,prop.demonList[0],Enemies.BlueMegaTank,0,0,activeEnemyList[1],0,0]])
+const [mapState, setMapState]= useState([[1,1,1,1,1,1,1,1,1,1,1,1,1],[0,1,0,1,0,1,0,1,0,1,1,1,1],[0,1,0,1,0,1,activeEnemyList[0],1,0,1,0,1,0],[0,0,0,0,0,activeEnemyList[3],0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,1,1,1,0,0,0,0,0],[0,0,0,0,0,1,1,1,0,0,0,0,0],[0,0,0,0,0,1,1,1,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,activeEnemyList[2],0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,activeEnemyList[1],0,0,0,0,0],[0,0,0,0,0,0,prop.demonList[1],0,0,0,0,0,0],[0,0,0,0,0,0,prop.demonList[0],activeEnemyList[4],0,0,activeEnemyList[1],0,0]])
 
 
 //fountain logic
@@ -550,8 +550,7 @@ buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); su
     border: '2mm inset purple'
 }}
 >
-{y}-{x}
-
+ 
  {/* {current ? curseMap[y][x] : null}   */}
 </button>)
     }
@@ -565,8 +564,7 @@ buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); su
         >
 
 
-        {y}-{x}
-        </button>)
+         </button>)
             }
             //entity and curse
     if (mapState[y][x].type != 0 && curseMap[y][x] !=0){
@@ -581,8 +579,7 @@ buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); su
         }}
         >
 
-{y}-{x}
-
+ 
         </button>)
             }
             //entity and no curse
@@ -596,7 +593,7 @@ buttonArr.push(<button id={`${y}${x}`} onClick={()=> {active(y,x); move(y,x); su
                 }}
                 >
 
-{y}-{x}
+ 
 
                 </button>)
                     }
