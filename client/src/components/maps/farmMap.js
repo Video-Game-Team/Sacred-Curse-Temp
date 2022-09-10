@@ -269,7 +269,6 @@ const FarmMap = (props) => {
   //   ],
   // ];
 
-
   let currentMap = [
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -318,8 +317,8 @@ const FarmMap = (props) => {
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1662, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 4707, 319, 0, 0, 0, 0, 4707, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 4707, 0, 0, 0, 0, 0, 4707, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1659, 0, 0, 0, 0, 0, 0, 0,
@@ -360,8 +359,8 @@ const FarmMap = (props) => {
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 1504, 1504, 459, 460, 459, 460, 461,
-      459, 460, 461, 0, 1915, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1595, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1266, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      459, 460, 461, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1595, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 1266, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 0, 0, 475, 476, 475, 476, 477, 475,
@@ -386,13 +385,12 @@ const FarmMap = (props) => {
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 875, 876, 667, 668, 669, 670, 671,
       672, 673, 674, 4034, 4035, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 1915, 1915, 0, 0, 1597, 1598, 0, 1266, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0,
+      0, 0, 0, 1915, 0, 0, 0, 1597, 1598, 0, 1266, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 1504, 864, 865, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1915, 1915, 0, 0, 0,
-      0, 0, 1613, 1614, 0, 1266, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      1613, 1614, 0, 1266, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 877, 880, 881, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -405,26 +403,24 @@ const FarmMap = (props) => {
       1266, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
     [
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 0, 0, 1581, 1582, 1947, 0, 0, 0, 0, 0,
-      0, 731, 732, 701, 701, 702, 701, 701, 702, 701, 701, 702, 701, 701, 732,
-      734, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1266, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 0, 0, 1581, 1582, 0, 0, 0, 0, 0, 0, 0,
+      731, 732, 701, 701, 702, 701, 701, 702, 701, 701, 702, 701, 701, 732, 734,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1266, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 0, 0, 1597, 1598, 0, 0, 0, 0, 0, 0,
-      4015, 4016, 4016, 1442, 1947, 0, 0, 0, 0, 0, 0, 1915, 0, 0, 0, 747, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1266, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      4015, 4016, 4016, 1442, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 747, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 1266, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 0, 0, 1613, 1614, 0, 0, 0, 0, 0, 0,
       4034, 4035, 4035, 1458, 0, 0, 0, 453, 538, 455, 0, 0, 0, 0, 0, 763, 0, 0,
-      0, 0, 0, 1915, 1915, 0, 0, 0, 0, 0, 1266, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1266, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
     [
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 0, 1915, 1629, 1630, 1915, 0, 0, 0, 0,
-      0, 0, 747, 0, 0, 0, 467, 468, 469, 470, 471, 458, 0, 0, 1947, 0, 747, 0,
-      0, 1915, 1915, 0, 1502, 0, 0, 0, 0, 0, 0, 1266, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 0, 0, 1629, 1630, 0, 0, 0, 0, 0, 0, 0,
+      747, 0, 0, 0, 467, 468, 469, 470, 471, 458, 0, 0, 0, 0, 747, 0, 0, 0, 0,
+      0, 1502, 0, 0, 0, 0, 0, 0, 1266, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 763,
@@ -433,9 +429,8 @@ const FarmMap = (props) => {
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 747,
-      0, 1915, 0, 499, 500, 501, 502, 503, 504, 505, 0, 0, 1915, 747, 0, 0, 0,
-      0, 1915, 1568, 1569, 1570, 0, 0, 1502, 1502, 1266, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0,
+      0, 0, 0, 499, 500, 501, 502, 503, 504, 505, 0, 0, 0, 747, 0, 0, 0, 0, 0,
+      1568, 1569, 1570, 0, 0, 1502, 1502, 1266, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 2266, 2266, 2266, 2266, 2266, 0, 0, 0,
@@ -458,8 +453,8 @@ const FarmMap = (props) => {
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 724, 724, 0, 4322, 4323, 0, 0, 0, 0,
       0, 0, 700, 701, 721, 0, 635, 636, 639, 0, 641, 636, 642, 722, 701, 702,
-      703, 0, 0, 0, 0, 1915, 1632, 1633, 1634, 0, 0, 0, 0, 3435, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0,
+      703, 0, 0, 0, 0, 0, 1632, 1633, 1634, 0, 0, 0, 0, 3435, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0,
     ],
     [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1265, 3317, 3318, 3319, 4340, 4341, 0, 0, 0,
@@ -517,43 +512,44 @@ const FarmMap = (props) => {
     ],
   ];
 
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap[yPlayerIndex.current][xPlayerIndex.current]
+  );
 
-  // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  // console.log(
-  //   'VALUE Right',
-  //   currentMap[yPlayerIndex.current][xPlayerIndex.current]
-  // );
-
-
-  //CSS GRID ON OFF USE EFFECT
-  // useEffect(()=>{
-  //   let tempGrid=[]
-  //   for (let i=0; i<currentMap.length; i++){
-  //     for (let j=0; j<currentMap[i].length; j++){
-  //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-  //         gridColumn: j+1,
-  //         gridRow: i+1,
-  //         color: "white",
-  //     }}
-  //     > {i} - {j}
-
-  //     </button>)
-
+  // useEffect(() => {
+  //   let tempGrid = [];
+  //   for (let i = 0; i < currentMap.length; i++) {
+  //     for (let j = 0; j < currentMap[i].length; j++) {
+  //       tempGrid.push(
+  //         <button
+  //           onClick={() => {
+  //             console.log(`Coordinates ${i} - ${j}`);
+  //           }}
+  //           className="numbers"
+  //           style={{
+  //             gridColumn: j + 1,
+  //             gridRow: i + 1,
+  //             color: 'white',
+  //           }}
+  //         >
+  //           {/* {i} - {j} */}
+  //           {currentMap[i][j]}
+  //         </button>
+  //       );
   //     }
   //   }
-  // setGridArray(tempGrid)
-  // },[])
+  //   setGridArray(tempGrid);
+  // }, []);
 
+  // Console Log to test npc interation
+  // console.log(textValue)
 
-// Console Log to test npc interation
-// console.log(textValue)
-
-
-//CHARACTER DIALOGUE USE EFFECT
-useEffect(() => {
+  //CHARACTER DIALOGUE USE EFFECT
+  useEffect(() => {
     const dialogueAction = (event) => {
       if (event.key === 'a') {
-
         //Facing up
         if (facing.current === 'up') {
           //Jim NPC
@@ -561,15 +557,18 @@ useEffect(() => {
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 21) ||
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 22)
           ) {
-            setTextValue("It was bad enough before the war. Now it's just terrible.");
-       
+            setTextValue(
+              "It was bad enough before the war. Now it's just terrible."
+            );
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 29 && xPlayerIndex.current === 21) ||
             (yPlayerIndex.current === 29 && xPlayerIndex.current === 22)
           ) {
-           setTextValue("Mike should delete me. I am not supposed to be here. ");
+            setTextValue(
+              'Mike should delete me. I am not supposed to be here. '
+            );
           }
           //Hot Girl
           if (
@@ -587,14 +586,18 @@ useEffect(() => {
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 21) ||
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 22)
           ) {
-           setTextValue("It was bad enough before the war. Now it's just terrible.");
+            setTextValue(
+              "It was bad enough before the war. Now it's just terrible."
+            );
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 26 && xPlayerIndex.current === 21) ||
             (yPlayerIndex.current === 26 && xPlayerIndex.current === 22)
           ) {
-            setTextValue("Mike should delete me. I am not supposed to be here.");
+            setTextValue(
+              'Mike should delete me. I am not supposed to be here.'
+            );
           }
           //Hot Girl
           if (
@@ -611,23 +614,25 @@ useEffect(() => {
             (yPlayerIndex.current === 21 && xPlayerIndex.current === 23) ||
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 23)
           ) {
-         setTextValue(
-           "It was bad enough before the war. Now it's just terrible."
-         );
+            setTextValue(
+              "It was bad enough before the war. Now it's just terrible."
+            );
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 27 && xPlayerIndex.current === 23) ||
             (yPlayerIndex.current === 28 && xPlayerIndex.current === 23)
           ) {
-            setTextValue("Mike should delete me. I am not supposed to be here.");
+            setTextValue(
+              'Mike should delete me. I am not supposed to be here.'
+            );
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 16) ||
             (yPlayerIndex.current === 36 && xPlayerIndex.current === 16)
           ) {
-             setTextValue("We really appreciate your help. You're a god send! ");
+            setTextValue("We really appreciate your help. You're a god send! ");
           }
         }
 
@@ -637,16 +642,18 @@ useEffect(() => {
             (yPlayerIndex.current === 21 && xPlayerIndex.current === 20) ||
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 20)
           ) {
-        setTextValue(
-          "It was bad enough before the war. Now it's just terrible."
-        );
+            setTextValue(
+              "It was bad enough before the war. Now it's just terrible."
+            );
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 27 && xPlayerIndex.current === 20) ||
             (yPlayerIndex.current === 28 && xPlayerIndex.current === 20)
           ) {
-            setTextValue("Mike should delete me. I am not supposed to be here.");
+            setTextValue(
+              'Mike should delete me. I am not supposed to be here.'
+            );
           }
           //Hot Girl
           if (
@@ -657,15 +664,12 @@ useEffect(() => {
           }
         }
       }
-    }
+    };
     window.addEventListener('keydown', dialogueAction);
     return () => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
-
 
   useEffect(() => {
     window.addEventListener('keydown', (e) => {
@@ -725,8 +729,6 @@ useEffect(() => {
     });
   }, []);
 
-
-
   // UseEffect for transitiong between map Coordinates
   useEffect(() => {
     if (
@@ -741,8 +743,6 @@ useEffect(() => {
       props.active('indoorHouse10', 'farmMap');
     }
   }, [yTransformVar]);
-
-
 
   //UseEffect for keeping track of the previous maps and maps/player positions
   useEffect(() => {
@@ -773,9 +773,6 @@ useEffect(() => {
     }
   }, []);
 
-  
-  
-
   //listens for the current down key and saves it as the currentkey state
   //wrapping in a useEffect prevents compounding event listeners
   useEffect(() => {
@@ -796,7 +793,7 @@ useEffect(() => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
-        setTextValue(null)
+        setTextValue(null);
       }
     };
 
@@ -980,17 +977,14 @@ useEffect(() => {
             </div>
           </div>
         </div>
-              { textValue ? 
-        <dialog className="textBox typewriter" open>
-          <p>
-         {textValue}
-          </p>
-        </dialog> 
-        : null
-}
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );
-};
+};;
 
 export default FarmMap;
