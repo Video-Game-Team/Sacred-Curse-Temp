@@ -47,8 +47,8 @@
     grid-template-rows: repeat(22, 64px); */
  }
 
-/* 
- .numbers {
+
+ /* .numbers {
     size: 100%;
     background: transparent;
 }   */
@@ -59,8 +59,6 @@
      width: calc(var(--grid-cell)* 2);
      height: calc(var(--grid-cell)* 2);
      overflow: hidden;
-     /* margin-top: -58px;
-    margin-left: -45px; */
  }
 
  .character_spritesheet {
