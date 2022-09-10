@@ -3464,7 +3464,7 @@ const DunleaveyValley = (props) => {
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17907, 17908, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 940, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       13131, 0, 0, 0, 0, 0, 0, 0, 0, 13131, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
     [
@@ -5134,85 +5134,85 @@ const DunleaveyValley = (props) => {
     ],
   ];
 
-  // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  // console.log(
-  //   'VALUE Right',
-  //   currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-  // );
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap[yPlayerIndex.current][xPlayerIndex.current]
+  );
 
-  // useEffect(()=>{
-  //   let tempGrid=[]
-  //   for (let i=0; i<currentMap.length; i++){
-  //     for (let j=0; j<currentMap[i].length; j++){
-  //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-  //         gridColumn: j+1,
-  //         gridRow: i+1,
-  //         color: "white",
-  //     }}
-  //     > {currentMap[i][j]}
-
-  //     </button>)
-
+  // useEffect(() => {
+  //   let tempGrid = [];
+  //   for (let i = 0; i < currentMap.length; i++) {
+  //     for (let j = 0; j < currentMap[i].length; j++) {
+  //       tempGrid.push(
+  //         <button
+  //           onClick={() => {
+  //             console.log(`Coordinates ${i} - ${j}`);
+  //           }}
+  //           className="numbers"
+  //           style={{
+  //             gridColumn: j + 1,
+  //             gridRow: i + 1,
+  //             color: 'white',
+  //           }}
+  //         >
+  //           {/* {i} - {j} */}
+  //           {currentMap[i][j]}
+  //         </button>
+  //       );
   //     }
   //   }
-  // setGridArray(tempGrid)
-  // },[])
+  //   setGridArray(tempGrid);
+  // }, []);
 
-
-
-
-
-   useEffect(() => {
+  useEffect(() => {
     // traintrackstovalley
-      if (props.previousMap === 'trainTracksToValley') {
-        //setYCord
-        yPlayerIndex.current = 210;
-        //setXcord
-        xPlayerIndex.current = 110;
-        //set xTransform
-        setXTransformVar(-6424);
-        //set yTransform
-        setYTransformVar(-13140);
-        facing.current = 'up';
-      }
-     if (props.previousMap === 'ranchHouse1') {
-       //setYCord
-       yPlayerIndex.current = 26;
-       //setXcord
-       xPlayerIndex.current = 19;
-       //set xTransform
-       setXTransformVar(-600);
-       //set yTransform
-       setYTransformVar(-1356);
-       facing.current = 'down';
-     }
-     // middle house
-     if (props.previousMap === 'indoorHouse5') {
-       //setYCord
-       yPlayerIndex.current = 59;
-       //setXcord
-       xPlayerIndex.current = 167;
-       //set xTransform
-       setXTransformVar(-10068);
-       //set yTransform
-       setYTransformVar(-3476);
-       facing.current = 'down';
-     }
-     if (props.previousMap === 'ranchHouse2') {
-       //setYCord
-       yPlayerIndex.current = 161;
-       //setXcord
-       xPlayerIndex.current = 180;
-       //set xTransform
-       setXTransformVar(-10904);
-       //set yTransform
-       setYTransformVar(-10004);
-       facing.current = 'down';
-     }
-   }, []);
-
-
-
+    if (props.previousMap === 'trainTracksToValley') {
+      //setYCord
+      yPlayerIndex.current = 210;
+      //setXcord
+      xPlayerIndex.current = 110;
+      //set xTransform
+      setXTransformVar(-6424);
+      //set yTransform
+      setYTransformVar(-13140);
+      facing.current = 'up';
+    }
+    if (props.previousMap === 'ranchHouse1') {
+      //setYCord
+      yPlayerIndex.current = 26;
+      //setXcord
+      xPlayerIndex.current = 19;
+      //set xTransform
+      setXTransformVar(-600);
+      //set yTransform
+      setYTransformVar(-1356);
+      facing.current = 'down';
+    }
+    // middle house
+    if (props.previousMap === 'indoorHouse5') {
+      //setYCord
+      yPlayerIndex.current = 59;
+      //setXcord
+      xPlayerIndex.current = 167;
+      //set xTransform
+      setXTransformVar(-10068);
+      //set yTransform
+      setYTransformVar(-3476);
+      facing.current = 'down';
+    }
+    if (props.previousMap === 'ranchHouse2') {
+      //setYCord
+      yPlayerIndex.current = 161;
+      //setXcord
+      xPlayerIndex.current = 180;
+      //set xTransform
+      setXTransformVar(-10904);
+      //set yTransform
+      setYTransformVar(-10004);
+      facing.current = 'down';
+    }
+  }, []);
 
   useEffect(() => {
     // yPlayerIndex up and down values
@@ -5229,19 +5229,14 @@ const DunleaveyValley = (props) => {
       props.active('ranchHouse1', 'dunleaveyValley');
     }
     // indoor house 5
-    if (
-      (yPlayerIndex.current === 58 && xPlayerIndex.current === 167) 
-    ) {
+    if (yPlayerIndex.current === 58 && xPlayerIndex.current === 167) {
       props.active('indoorHouse5', 'dunleaveyValley');
     }
     // lowest ranch house
-    if (
-      (yPlayerIndex.current === 160 && xPlayerIndex.current === 180) 
-    ) {
+    if (yPlayerIndex.current === 160 && xPlayerIndex.current === 180) {
       props.active('ranchHouse2', 'dunleaveyValley');
     }
   }, [yPlayerIndex.current]);
-
 
   //event listen for enter
   useEffect(() => {
@@ -5503,6 +5498,6 @@ const DunleaveyValley = (props) => {
       </div>
     </div>
   );
-};
+};;;
 
 export default DunleaveyValley;
