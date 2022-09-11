@@ -35,7 +35,7 @@
 
  .mapLMP {
      image-rendering: pixelated;
-     background-image: url("./assets/maps/Lulu Mountain Pass no grid.png");
+     background-image: url("./assets/maps/LuLu Mountain Pass no grid.png");
      background-size: 4352px;
      width: calc(290 * var(--grid-cell));
      height: calc(170 * var(--grid-cell));

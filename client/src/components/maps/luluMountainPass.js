@@ -6,6 +6,11 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
+
+import click1 from '../../audioclips/click1.mp3';
+import text from '../../audioclips/Text.mp3';
+import SnowMan from '../../audioclips/Snowman.mp3';
+
 import '../../luluMountainPass.css';
 
 
@@ -35,6 +40,20 @@ const LuluMountainPass = (props) => {
   const yPlayerIndex = useRef(28);
   const xPlayerIndex = useRef(10);
   const [gridArray, setGridArray] = useState([]);
+  const [textValue, setTextValue] = useState(null);
+
+  //Music Playing
+  const clickAudio1 = () => new Audio(SnowMan).play();
+
+  // //NPC Dialogue sound effect
+  const clickAudio2 = () => new Audio(text).play();
+
+  //Starts off Music Loop
+  useEffect(() => {
+    {
+      clickAudio1();
+    }
+  }, []);
 
   // let currentMap2 = [
   //   [
@@ -560,33 +579,26 @@ const LuluMountainPass = (props) => {
     }
   }, [xPlayerIndex.current]);
 
-
   // UseEffect Keeping track of player conditions
   useEffect(() => {
     //yPlayerIndex up and down values
     // TheWall Map check conditions
-     if ((yPlayerIndex.current === 16 && xPlayerIndex.current === 15) ||
-     (yPlayerIndex.current === 16 && xPlayerIndex.current === 16) ||
-     (yPlayerIndex.current === 16 && xPlayerIndex.current === 17) 
-     )
-     {
-       props.active('crystalCaverns', 'luluMountainPass');
-     }
+    if (
+      (yPlayerIndex.current === 16 && xPlayerIndex.current === 15) ||
+      (yPlayerIndex.current === 16 && xPlayerIndex.current === 16) ||
+      (yPlayerIndex.current === 16 && xPlayerIndex.current === 17)
+    ) {
+      props.active('crystalCaverns', 'luluMountainPass');
+    }
 
-     if (
-       (yPlayerIndex.current === 16 && xPlayerIndex.current === 45) ||
-       (yPlayerIndex.current === 16 && xPlayerIndex.current === 46 ) ||
-       (yPlayerIndex.current === 16 && xPlayerIndex.current === 47)
-     ) {
-       props.active('crystalCaverns', 'luluMountainPass');
-     }
+    if (
+      (yPlayerIndex.current === 16 && xPlayerIndex.current === 45) ||
+      (yPlayerIndex.current === 16 && xPlayerIndex.current === 46) ||
+      (yPlayerIndex.current === 16 && xPlayerIndex.current === 47)
+    ) {
+      props.active('crystalCaverns', 'luluMountainPass');
+    }
   }, [yPlayerIndex.current]);
-
-
-
-
-
-
 
   //event listen for enter
   useEffect(() => {
@@ -667,6 +679,7 @@ const LuluMountainPass = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+         setTextValue(null);
       }
     };
 
@@ -845,6 +858,11 @@ const LuluMountainPass = (props) => {
             </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );

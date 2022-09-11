@@ -6,6 +6,11 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
+
+import click1 from '../../audioclips/click1.mp3';
+import text from '../../audioclips/Text.mp3';
+import SnowMan from '../../audioclips/Snowman.mp3';
+
 import '../../town1.css';
 
 const TownMap1 = (props) => {
@@ -34,6 +39,19 @@ const TownMap1 = (props) => {
   const xPlayerIndex = useRef(36);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+
+  //Music Playing
+  const clickAudio1 = () => new Audio(SnowMan).play();
+
+  // //NPC Dialogue sound effect
+  const clickAudio2 = () => new Audio(text).play();
+
+  //Starts off Music Loop
+  useEffect(() => {
+    {
+      clickAudio1();
+    }
+  }, []);
 
   // let currentMap2 = [
   //   [
@@ -1123,10 +1141,6 @@ const TownMap1 = (props) => {
     ],
   ];
 
-
-
-
-
   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
   console.log(
     'VALUE Right',
@@ -1215,21 +1229,27 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 38 && xPlayerIndex.current === 32) ||
             (yPlayerIndex.current === 38 && xPlayerIndex.current === 33)
           ) {
-            setTextValue('Tell Mike to find a non moving version of my sprite please.');
+            setTextValue(
+              'Tell Mike to find a non moving version of my sprite please.'
+            );
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 38) ||
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 39)
           ) {
-            setTextValue("Out of all the garbage planets to be stationed on. This has to be shit's pajamas'.");
+            setTextValue(
+              "Out of all the garbage planets to be stationed on. This has to be shit's pajamas'."
+            );
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 23) ||
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 24)
           ) {
-            setTextValue("The people's federation will eventually win this war. The Sun King army lacks cohesion.");
+            setTextValue(
+              "The people's federation will eventually win this war. The Sun King army lacks cohesion."
+            );
           }
           //Hot Girl
           if (
@@ -1247,14 +1267,18 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 32) ||
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 33)
           ) {
-            setTextValue('Tell Mike to find a non moving version of my sprite please.');
+            setTextValue(
+              'Tell Mike to find a non moving version of my sprite please.'
+            );
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 32 && xPlayerIndex.current === 38) ||
             (yPlayerIndex.current === 32 && xPlayerIndex.current === 39)
           ) {
-            setTextValue("Out of all the garbage planets to be stationed on. This has to be shit's pajamas'.");
+            setTextValue(
+              "Out of all the garbage planets to be stationed on. This has to be shit's pajamas'."
+            );
           }
           //Hot Girl
           // if (
@@ -1278,14 +1302,18 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 36 && xPlayerIndex.current === 34) ||
             (yPlayerIndex.current === 37 && xPlayerIndex.current === 34)
           ) {
-            setTextValue('Tell Mike to find a non moving version of my sprite please.');
+            setTextValue(
+              'Tell Mike to find a non moving version of my sprite please.'
+            );
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 33 && xPlayerIndex.current === 40) ||
             (yPlayerIndex.current === 34 && xPlayerIndex.current === 40)
           ) {
-            setTextValue("Out of all the garbage planets to be stationed on. This has to be shit's pajamas'.");
+            setTextValue(
+              "Out of all the garbage planets to be stationed on. This has to be shit's pajamas'."
+            );
           }
           //Hot Girl
           // if (
@@ -1309,21 +1337,27 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 36 && xPlayerIndex.current === 31) ||
             (yPlayerIndex.current === 37 && xPlayerIndex.current === 31)
           ) {
-            setTextValue('Tell Mike to find a non moving version of my sprite please.');
+            setTextValue(
+              'Tell Mike to find a non moving version of my sprite please.'
+            );
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 33 && xPlayerIndex.current === 37) ||
             (yPlayerIndex.current === 34 && xPlayerIndex.current === 37)
           ) {
-            setTextValue("Out of all the garbage planets to be stationed on. This has to be shit's pajamas'.");
+            setTextValue(
+              "Out of all the garbage planets to be stationed on. This has to be shit's pajamas'."
+            );
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 22) ||
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 22)
           ) {
-            setTextValue("The people's federation will eventually win this war. The Sun King army lacks cohesion.");
+            setTextValue(
+              "The people's federation will eventually win this war. The Sun King army lacks cohesion."
+            );
           }
           //Hot Girl
           if (
@@ -1331,6 +1365,68 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 32)
           ) {
             setTextValue("Shut your mouth when you're speaking to me peasent.");
+          }
+        }
+      }
+    };
+    window.addEventListener('keydown', dialogueAction);
+    return () => {
+      window.removeEventListener('keydown', dialogueAction);
+    };
+  }, []);
+
+  //DOOR LOCKED LOGIC
+  useEffect(() => {
+    const dialogueAction = (event) => {
+      if (event.key === 'b') {
+        //Facing up
+        if (facing.current === 'up') {
+          if (
+            (yPlayerIndex.current === 71 && xPlayerIndex.current === 27) ||
+            (yPlayerIndex.current === 71 && xPlayerIndex.current === 45) ||
+            (yPlayerIndex.current === 56 && xPlayerIndex.current === 47) ||
+            (yPlayerIndex.current === 51 && xPlayerIndex.current === 28)
+          ) {
+            clickAudio2();
+            setTextValue('This door is locked');
+          }
+        }
+      }
+    };
+    window.addEventListener('keydown', dialogueAction);
+    return () => {
+      window.removeEventListener('keydown', dialogueAction);
+    };
+  }, []);
+
+
+
+  //OVERWOLRD ITEM CHECK LOGIC
+  useEffect(() => {
+    const dialogueAction = (event) => {
+      if (event.key === 'b') {
+        //Facing up
+        if (facing.current === 'up') {
+          if (
+            (yPlayerIndex.current === 37 && xPlayerIndex.current === 35) ||
+            (yPlayerIndex.current === 37 && xPlayerIndex.current === 36) ||
+            (yPlayerIndex.current === 37 && xPlayerIndex.current === 37) ||
+            (yPlayerIndex.current === 51 && xPlayerIndex.current === 28)
+          ) {
+            clickAudio2();
+            setTextValue('Interesting statue. Hmmmm....I wonder...');
+          }
+        }
+
+        //Facing left
+        if (facing.current === 'left') {
+          if (
+            (yPlayerIndex.current === 77 && xPlayerIndex.current === 34) ||
+            (yPlayerIndex.current === 78 && xPlayerIndex.current === 34) ||
+            (yPlayerIndex.current === 7 && xPlayerIndex.current === 35) ||
+            (yPlayerIndex.current === 8 && xPlayerIndex.current === 35)
+          ) {
+            setTextValue('Welcome To Town');
           }
         }
       }
@@ -1360,7 +1456,7 @@ const TownMap1 = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
-         setTextValue(null);
+        setTextValue(null);
       }
     };
 

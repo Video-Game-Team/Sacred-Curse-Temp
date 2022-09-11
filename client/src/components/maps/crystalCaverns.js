@@ -6,6 +6,11 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
+
+import click1 from '../../audioclips/click1.mp3';
+import text from '../../audioclips/Text.mp3';
+import SnowMan from '../../audioclips/Snowman.mp3';
+
 import '../../crystalCaverns.css';
 
 const CrystalCaverns = (props) => {
@@ -33,6 +38,20 @@ const CrystalCaverns = (props) => {
   const yPlayerIndex = useRef(6);
   const xPlayerIndex = useRef(17);
   const [gridArray, setGridArray] = useState([]);
+  const [textValue, setTextValue] = useState(null);
+
+  //Music Playing
+  const clickAudio1 = () => new Audio(SnowMan).play();
+
+  // //NPC Dialogue sound effect
+  const clickAudio2 = () => new Audio(text).play();
+
+  //Starts off Music Loop
+  useEffect(() => {
+    {
+      clickAudio1();
+    }
+  }, []);
 
   // let currentMap2 = [
   //   [
@@ -707,26 +726,24 @@ const CrystalCaverns = (props) => {
     currentMap[yPlayerIndex.current][xPlayerIndex.current]
   );
 
-  useEffect(()=>{
-    let tempGrid=[]
-    for (let i=0; i<currentMap.length; i++){
-      for (let j=0; j<currentMap[i].length; j++){
-        tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-          gridColumn: j+1,
-          gridRow: i+1,
-          color: "white",
-      }}
-      > 
-      {/* {currentMap[i][j]} */}
-       {i} - {j}
-  
-      </button>)
-      }
-    }
-  setGridArray(tempGrid)
-  },[])
+  // useEffect(()=>{
+  //   let tempGrid=[]
+  //   for (let i=0; i<currentMap.length; i++){
+  //     for (let j=0; j<currentMap[i].length; j++){
+  //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
+  //         gridColumn: j+1,
+  //         gridRow: i+1,
+  //         color: "white",
+  //     }}
+  //     >
+  //     {/* {currentMap[i][j]} */}
+  //      {i} - {j}
 
-
+  //     </button>)
+  //     }
+  //   }
+  // setGridArray(tempGrid)
+  // },[])
 
   useEffect(() => {
     if (props.previousMap === 'luluMountainPass') {
@@ -742,24 +759,40 @@ const CrystalCaverns = (props) => {
     }
   }, []);
 
+  //OVERWOLRD ITEM CHECK LOGIC
+  useEffect(() => {
+    const dialogueAction = (event) => {
+      if (event.key === 'b') {
+        //Facing right
+        if (facing.current === 'up') {
+          if (
+            (yPlayerIndex.current === 7 && xPlayerIndex.current === 15) ||
+            (yPlayerIndex.current === 7 && xPlayerIndex.current === 14)
+          ) {
+            clickAudio2();
+            setTextValue('Welcome to Crystal Caverns');
+          }
+        }
+      }
+    };
+    window.addEventListener('keydown', dialogueAction);
+    return () => {
+      window.removeEventListener('keydown', dialogueAction);
+    };
+  }, []);
 
   // UseEffect Keeping track of player conditions
   useEffect(() => {
     //yPlayerIndex up and down values
     // TheWall Map check conditions
-    if ((yPlayerIndex.current === 5 && xPlayerIndex.current === 16) ||
-    (yPlayerIndex.current === 5 && xPlayerIndex.current === 17) ||
-    (yPlayerIndex.current === 5 && xPlayerIndex.current === 18) 
-     ) {
+    if (
+      (yPlayerIndex.current === 5 && xPlayerIndex.current === 16) ||
+      (yPlayerIndex.current === 5 && xPlayerIndex.current === 17) ||
+      (yPlayerIndex.current === 5 && xPlayerIndex.current === 18)
+    ) {
       props.active('luluMountainPass', 'crystalCaverns');
     }
   }, [yPlayerIndex.current]);
-
-
-
-
-
-
 
   //event listen for enter
   useEffect(() => {
@@ -840,6 +873,7 @@ const CrystalCaverns = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+             setTextValue(null);
       }
     };
 
@@ -1018,6 +1052,11 @@ const CrystalCaverns = (props) => {
             </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );

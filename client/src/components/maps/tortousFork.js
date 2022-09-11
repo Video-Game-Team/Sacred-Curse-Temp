@@ -6,6 +6,11 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
+
+import click1 from '../../audioclips/click1.mp3';
+import text from '../../audioclips/Text.mp3';
+import SnowMan from '../../audioclips/Snowman.mp3';
+
 import '../../tortousFork.css';
 
 const TortousFork = (props) => {
@@ -33,6 +38,20 @@ const TortousFork = (props) => {
   const yPlayerIndex = useRef(34);
   const xPlayerIndex = useRef(30);
   const [gridArray, setGridArray] = useState([]);
+  const [textValue, setTextValue] = useState(null);
+
+  //Music Playing
+  const clickAudio1 = () => new Audio(SnowMan).play();
+
+  // //NPC Dialogue sound effect
+  const clickAudio2 = () => new Audio(text).play();
+
+  //Starts off Music Loop
+  useEffect(() => {
+    {
+      clickAudio1();
+    }
+  }, []);
 
   // let currentMap2 = [
   //   [
@@ -593,6 +612,47 @@ const TortousFork = (props) => {
     }
   }, [yPlayerIndex.current]);
 
+
+
+
+
+  //OVERWOLRD ITEM CHECK LOGIC
+  useEffect(() => {
+    const dialogueAction = (event) => {
+      if (event.key === 'b') {
+        //Facing up
+        if (facing.current === 'up') {
+          if (
+            (yPlayerIndex.current === 24 && xPlayerIndex.current === 11) 
+          
+          ) {
+            setTextValue('Welcome To TortousFork');
+          }
+        }
+
+        //Facing left
+        if (facing.current === 'left') {
+          if (
+            (yPlayerIndex.current === 33 && xPlayerIndex.current === 27) ||
+            (yPlayerIndex.current === 10 && xPlayerIndex.current === 16) ||
+            (yPlayerIndex.current === 10 && xPlayerIndex.current === 40) ||
+            (yPlayerIndex.current === 11 && xPlayerIndex.current === 40)
+          ) {
+            setTextValue('Welcome To TortousFork');
+          }
+        }
+      }
+    };
+    window.addEventListener('keydown', dialogueAction);
+    return () => {
+      window.removeEventListener('keydown', dialogueAction);
+    };
+  }, []);
+
+
+
+
+
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {
@@ -672,6 +732,7 @@ const TortousFork = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+        setTextValue(null);
       }
     };
 
@@ -850,9 +911,14 @@ const TortousFork = (props) => {
             </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );
-};;
+};
 
 export default TortousFork;

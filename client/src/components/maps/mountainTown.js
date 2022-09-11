@@ -6,6 +6,11 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
+
+import click1 from '../../audioclips/click1.mp3';
+import text from '../../audioclips/Text.mp3';
+import SnowMan from '../../audioclips/Snowman.mp3';
+
 import '../../mountainTown.css';
 
 const MountainTown = (props) => {
@@ -33,6 +38,20 @@ const MountainTown = (props) => {
   const yPlayerIndex = useRef(72);
   const xPlayerIndex = useRef(53);
   const [gridArray, setGridArray] = useState([]);
+  const [textValue, setTextValue] = useState(null);
+
+  //Music Playing
+  const clickAudio1 = () => new Audio(SnowMan).play();
+
+  // //NPC Dialogue sound effect
+  const clickAudio2 = () => new Audio(text).play();
+
+  //Starts off Music Loop
+  useEffect(() => {
+    {
+      clickAudio1();
+    }
+  }, []);
 
   // let currentMap2 = [
   //   [
@@ -596,10 +615,6 @@ const MountainTown = (props) => {
   //     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
   //   ],
   // ];
-
-
-
-
 
   let currentMap = [
     [
@@ -1382,12 +1397,11 @@ const MountainTown = (props) => {
     ],
   ];
 
-
-   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-   console.log(
-     'VALUE Right',
-     currentMap[yPlayerIndex.current][xPlayerIndex.current]
-   );
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap[yPlayerIndex.current][xPlayerIndex.current]
+  );
 
   //  useEffect(() => {
   //    let tempGrid = [];
@@ -1414,34 +1428,76 @@ const MountainTown = (props) => {
   //    setGridArray(tempGrid);
   //  }, []);
 
+  useEffect(() => {
+    if (props.previousMap === 'presidentSafeHouse') {
+      //setYCord
+      yPlayerIndex.current = 36;
+      //setXcord
+      xPlayerIndex.current = 48;
+      //set xTransform
+      setXTransformVar(-2456);
+      //set yTransform
+      setYTransformVar(-2007);
+      facing.current = 'down';
+    }
+  }, []);
 
-  
- useEffect(() => {
-   if (props.previousMap === 'presidentSafeHouse') {
-     //setYCord
-     yPlayerIndex.current = 36;
-     //setXcord
-     xPlayerIndex.current = 48;
-     //set xTransform
-     setXTransformVar(-2456);
-     //set yTransform
-     setYTransformVar(-2007);
-     facing.current = 'down';
-   }
- }, []);
+  //  // UseEffect Keeping track of player conditions
+  useEffect(() => {
+    //yPlayerIndex up and down values
+    // TheWall Map check conditions
+    if (yPlayerIndex.current === 35 && xPlayerIndex.current === 48) {
+      props.active('presidentSafeHouse', 'mountainTown');
+    }
+  }, [yPlayerIndex.current]);
 
-//  // UseEffect Keeping track of player conditions
- useEffect(() => {
-   //yPlayerIndex up and down values
-   // TheWall Map check conditions
-   if (yPlayerIndex.current === 35 && xPlayerIndex.current === 48) {
-     props.active('presidentSafeHouse', 'mountainTown');
-   }
- }, [yPlayerIndex.current]);    
+  //DOOR LOCKED LOGIC
+  useEffect(() => {
+    const dialogueAction = (event) => {
+      if (event.key === 'b') {
+        //Facing up
+        if (facing.current === 'up') {
+          if (
+            (yPlayerIndex.current === 51 && xPlayerIndex.current === 24) ||
+            (yPlayerIndex.current === 25 && xPlayerIndex.current === 23) ||
+            (yPlayerIndex.current === 27 && xPlayerIndex.current === 92) ||
+            (yPlayerIndex.current === 45 && xPlayerIndex.current === 98)
+          ) {
+            clickAudio2();
+            setTextValue('This door is locked');
+          }
+        }
+      }
+    };
+    window.addEventListener('keydown', dialogueAction);
+    return () => {
+      window.removeEventListener('keydown', dialogueAction);
+    };
+  }, []);
 
 
 
-
+  //OVERWOLRD ITEM CHECK LOGIC
+  useEffect(() => {
+    const dialogueAction = (event) => {
+      if (event.key === 'b') {
+        //Facing right
+        if (facing.current === 'up') {
+          if (
+            (yPlayerIndex.current === 71 && xPlayerIndex.current === 50) ||
+            (yPlayerIndex.current === 71 && xPlayerIndex.current === 51)
+          ) {
+            clickAudio2();
+            setTextValue('Welcome to the Mountain Town');
+          }
+        }
+      }
+    };
+    window.addEventListener('keydown', dialogueAction);
+    return () => {
+      window.removeEventListener('keydown', dialogueAction);
+    };
+  }, []);
 
 
 
@@ -1524,6 +1580,7 @@ const MountainTown = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+        setTextValue(null);
       }
     };
 
@@ -1702,6 +1759,11 @@ const MountainTown = (props) => {
             </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );

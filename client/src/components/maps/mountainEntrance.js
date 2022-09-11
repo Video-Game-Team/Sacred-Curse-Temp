@@ -6,6 +6,11 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
+
+import click1 from '../../audioclips/click1.mp3';
+import text from '../../audioclips/Text.mp3';
+import SnowMan from '../../audioclips/Snowman.mp3';
+
 import '../../mountainEntrance.css';
 
 const MountainEntrance = (props) => {
@@ -34,6 +39,19 @@ const MountainEntrance = (props) => {
   const xPlayerIndex = useRef(39);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+
+  //Music Playing
+  const clickAudio1 = () => new Audio(SnowMan).play();
+
+  // //NPC Dialogue sound effect
+  const clickAudio2 = () => new Audio(text).play();
+
+  //Starts off Music Loop
+  useEffect(() => {
+    {
+      clickAudio1();
+    }
+  }, []);
 
   // let currentMap2 = [
   //   [
@@ -817,8 +835,6 @@ const MountainEntrance = (props) => {
   // setGridArray(tempGrid)
   // },[])
 
-
-
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -896,28 +912,28 @@ const MountainEntrance = (props) => {
           ) {
             console.log("Hi I'm Guard");
           }
-        //   //YO Mama NPC
-        //   if (
-        //     (yPlayerIndex.current === 33 && xPlayerIndex.current === 40) ||
-        //     (yPlayerIndex.current === 34 && xPlayerIndex.current === 40)
-        //   ) {
-        //     console.log("Hi I'm Guard 2");
-        //   }
-        //   //Hot Girl
-        //   // if (
-        //   //   (yPlayerIndex.current === 35 && xPlayerIndex.current === 16) ||
-        //   //   (yPlayerIndex.current === 36 && xPlayerIndex.current === 16)
-        //   // ) {
-        //   //   console.log("Hi I'm Guard 3");
-        //   // }
-        //   //Hot Girl
-        //   if (
-        //     (yPlayerIndex.current === 22 && xPlayerIndex.current === 34) ||
-        //     (yPlayerIndex.current === 23 && xPlayerIndex.current === 34)
-        //   ) {
-        //     console.log("Hi I'm guard 4");
-        //   }
-         }
+          //   //YO Mama NPC
+          //   if (
+          //     (yPlayerIndex.current === 33 && xPlayerIndex.current === 40) ||
+          //     (yPlayerIndex.current === 34 && xPlayerIndex.current === 40)
+          //   ) {
+          //     console.log("Hi I'm Guard 2");
+          //   }
+          //   //Hot Girl
+          //   // if (
+          //   //   (yPlayerIndex.current === 35 && xPlayerIndex.current === 16) ||
+          //   //   (yPlayerIndex.current === 36 && xPlayerIndex.current === 16)
+          //   // ) {
+          //   //   console.log("Hi I'm Guard 3");
+          //   // }
+          //   //Hot Girl
+          //   if (
+          //     (yPlayerIndex.current === 22 && xPlayerIndex.current === 34) ||
+          //     (yPlayerIndex.current === 23 && xPlayerIndex.current === 34)
+          //   ) {
+          //     console.log("Hi I'm guard 4");
+          //   }
+        }
 
         //Facing right
         if (facing.current === 'right') {
@@ -948,6 +964,28 @@ const MountainEntrance = (props) => {
           // ) {
           //   console.log("Hi I'm guard 4");
           // }
+        }
+      }
+    };
+    window.addEventListener('keydown', dialogueAction);
+    return () => {
+      window.removeEventListener('keydown', dialogueAction);
+    };
+  }, []);
+
+  //OVERWOLRD ITEM CHECK LOGIC
+  useEffect(() => {
+    const dialogueAction = (event) => {
+      if (event.key === 'b') {
+        //Facing right
+        if (facing.current === 'up') {
+          if (
+            (yPlayerIndex.current === 49 && xPlayerIndex.current === 35) ||
+            (yPlayerIndex.current === 49 && xPlayerIndex.current === 35) 
+          ) {
+            clickAudio2();
+            setTextValue('Welcome to the Mountain Entrance');
+          }
         }
       }
     };
@@ -1036,6 +1074,7 @@ const MountainEntrance = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+        setTextValue(null);
       }
     };
 
@@ -1214,9 +1253,15 @@ const MountainEntrance = (props) => {
             </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );
 };
+
 
 export default MountainEntrance;

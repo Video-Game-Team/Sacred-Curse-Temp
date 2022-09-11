@@ -6,6 +6,11 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
+
+import click1 from '../../audioclips/click1.mp3';
+import text from '../../audioclips/Text.mp3';
+import SnowMan from '../../audioclips/Snowman.mp3';
+
 import '../../trainTracksToValley.css';
 
 const TrainTracksToValley = (props) => {
@@ -33,6 +38,20 @@ const TrainTracksToValley = (props) => {
   const yPlayerIndex = useRef(143);
   const xPlayerIndex = useRef(29);
   const [gridArray, setGridArray] = useState([]);
+  const [textValue, setTextValue] = useState(null);
+
+  //Music Playing
+  const clickAudio1 = () => new Audio(SnowMan).play();
+
+  // //NPC Dialogue sound effect
+  const clickAudio2 = () => new Audio(text).play();
+
+  //Starts off Music Loop
+  useEffect(() => {
+    {
+      clickAudio1();
+    }
+  }, []);
 
   // let currentMap2 = [
   //   [
@@ -1466,8 +1485,6 @@ const TrainTracksToValley = (props) => {
     ],
   ];
 
-
-
   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
   console.log(
     'VALUE Right',
@@ -1549,6 +1566,35 @@ const TrainTracksToValley = (props) => {
     }
   }, [yPlayerIndex.current]);
 
+
+
+
+
+
+  //OVERWOLRD ITEM CHECK LOGIC
+  useEffect(() => {
+    const dialogueAction = (event) => {
+      if (event.key === 'b') {
+        //Facing left
+        if (facing.current === 'left') {
+          if (
+            (yPlayerIndex.current === 143 && xPlayerIndex.current === 27) ||
+            (yPlayerIndex.current === 12 && xPlayerIndex.current === 27)
+          ) {
+            setTextValue('Welcome To Train Tracks To Valley');
+          }
+        }
+      }
+    };
+    window.addEventListener('keydown', dialogueAction);
+    return () => {
+      window.removeEventListener('keydown', dialogueAction);
+    };
+  }, []);
+
+
+
+
   //event listen for enter
   useEffect(() => {
     window.addEventListener('keydown', (e) => {
@@ -1628,6 +1674,7 @@ const TrainTracksToValley = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+        setTextValue(null);
       }
     };
 
@@ -1807,9 +1854,14 @@ const TrainTracksToValley = (props) => {
             </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );
-};;
+};
 
 export default TrainTracksToValley;

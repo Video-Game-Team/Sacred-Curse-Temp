@@ -6,6 +6,11 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
+
+import click1 from '../../audioclips/click1.mp3';
+import text from '../../audioclips/Text.mp3';
+import SnowMan from '../../audioclips/Snowman.mp3';
+
 import '../../trainTracksToTortous.css';
 
 const TrainTracksToTortous = (props) => {
@@ -34,6 +39,19 @@ const TrainTracksToTortous = (props) => {
   const xPlayerIndex = useRef(19);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+
+  //Music Playing
+  const clickAudio1 = () => new Audio(SnowMan).play();
+
+  // //NPC Dialogue sound effect
+  const clickAudio2 = () => new Audio(text).play();
+
+  //Starts off Music Loop
+  useEffect(() => {
+    {
+      clickAudio1();
+    }
+  }, []);
 
   // let currentMap2 = [
   //   [
@@ -1537,8 +1555,6 @@ const TrainTracksToTortous = (props) => {
   //     0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
   //   ],
   // ];
-
-
 
   let currentMap = [
     [
@@ -20118,7 +20134,6 @@ const TrainTracksToTortous = (props) => {
   // setGridArray(tempGrid)
   // },[])
 
-
   useEffect(() => {
     if (props.previousMap === 'mansonRanch') {
       //setYCord
@@ -20190,9 +20205,6 @@ const TrainTracksToTortous = (props) => {
     }
   }, [yPlayerIndex.current]);
 
-
-
-
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -20204,7 +20216,9 @@ const TrainTracksToTortous = (props) => {
             (yPlayerIndex.current === 248 && xPlayerIndex.current === 17) ||
             (yPlayerIndex.current === 248 && xPlayerIndex.current === 18)
           ) {
-            setTextValue("Hello! Welcome to Lauren and Mariah's Boutique. I'm Lauren, please place your purchase with Mariah");
+            setTextValue(
+              "Hello! Welcome to Lauren and Mariah's Boutique. I'm Lauren, please place your purchase with Mariah"
+            );
           }
           // //YO Mama NPC
           // if (
@@ -20243,7 +20257,9 @@ const TrainTracksToTortous = (props) => {
             (yPlayerIndex.current === 238 && xPlayerIndex.current === 17) ||
             (yPlayerIndex.current === 238 && xPlayerIndex.current === 18)
           ) {
-            setTextValue("Did Lauren send you to me? Sorry, no one has programmed purchasing logic yet. Bye!");
+            setTextValue(
+              'Did Lauren send you to me? Sorry, no one has programmed purchasing logic yet. Bye!'
+            );
           }
           //Hot Girl
           // if (
@@ -20259,23 +20275,23 @@ const TrainTracksToTortous = (props) => {
           // ) {
           //   console.log("Hi I'm guard 4");
           // }
-        //}
+          //}
 
-        //Facing left
-        // if (facing.current === 'left') {
-        //   if (
-        //     (yPlayerIndex.current === 36 && xPlayerIndex.current === 34) ||
-        //     (yPlayerIndex.current === 37 && xPlayerIndex.current === 34)
-        //   ) {
-        //       console.log('Hi I am Girl1');
-        //   }
-        //   //YO Mama NPC
-        //   if (
-        //     (yPlayerIndex.current === 33 && xPlayerIndex.current === 40) ||
-        //     (yPlayerIndex.current === 34 && xPlayerIndex.current === 40)
-        //   ) {
-        //      console.log('Hi I am Girl2');
-        //   }
+          //Facing left
+          // if (facing.current === 'left') {
+          //   if (
+          //     (yPlayerIndex.current === 36 && xPlayerIndex.current === 34) ||
+          //     (yPlayerIndex.current === 37 && xPlayerIndex.current === 34)
+          //   ) {
+          //       console.log('Hi I am Girl1');
+          //   }
+          //   //YO Mama NPC
+          //   if (
+          //     (yPlayerIndex.current === 33 && xPlayerIndex.current === 40) ||
+          //     (yPlayerIndex.current === 34 && xPlayerIndex.current === 40)
+          //   ) {
+          //      console.log('Hi I am Girl2');
+          //   }
           //Hot Girl
           // if (
           //   (yPlayerIndex.current === 35 && xPlayerIndex.current === 16) ||
@@ -20290,23 +20306,23 @@ const TrainTracksToTortous = (props) => {
           // ) {
           //   console.log("Hi I'm guard 4");
           // }
-        //}
+          //}
 
-        //Facing right
-        // if (facing.current === 'right') {
-        //   if (
-        //     (yPlayerIndex.current === 36 && xPlayerIndex.current === 31) ||
-        //     (yPlayerIndex.current === 37 && xPlayerIndex.current === 31)
-        //   ) {
-        //       console.log('Hi I am Girl1');
-        //   }
-        //   //YO Mama NPC
-        //   if (
-        //     (yPlayerIndex.current === 33 && xPlayerIndex.current === 37) ||
-        //     (yPlayerIndex.current === 34 && xPlayerIndex.current === 37)
-        //   ) {
-        //     console.log('Hi I am Girl2');
-        //   }
+          //Facing right
+          // if (facing.current === 'right') {
+          //   if (
+          //     (yPlayerIndex.current === 36 && xPlayerIndex.current === 31) ||
+          //     (yPlayerIndex.current === 37 && xPlayerIndex.current === 31)
+          //   ) {
+          //       console.log('Hi I am Girl1');
+          //   }
+          //   //YO Mama NPC
+          //   if (
+          //     (yPlayerIndex.current === 33 && xPlayerIndex.current === 37) ||
+          //     (yPlayerIndex.current === 34 && xPlayerIndex.current === 37)
+          //   ) {
+          //     console.log('Hi I am Girl2');
+          //   }
           // //Hot Girl
           // if (
           //   (yPlayerIndex.current === 22 && xPlayerIndex.current === 22) ||
@@ -20325,6 +20341,42 @@ const TrainTracksToTortous = (props) => {
       }
     };
 
+    window.addEventListener('keydown', dialogueAction);
+    return () => {
+      window.removeEventListener('keydown', dialogueAction);
+    };
+  }, []);
+
+
+
+
+  //OVERWOLRD ITEM CHECK LOGIC
+  useEffect(() => {
+    const dialogueAction = (event) => {
+      if (event.key === 'b') {
+        //Facing up
+        if (facing.current === 'up') {
+          if (
+            (yPlayerIndex.current === 154 && xPlayerIndex.current === 12) ||
+            (yPlayerIndex.current === 10 && xPlayerIndex.current === 17) ||
+            (yPlayerIndex.current === 10 && xPlayerIndex.current === 18) ||
+            (yPlayerIndex.current === 10 && xPlayerIndex.current === 19) ||
+            (yPlayerIndex.current === 86 && xPlayerIndex.current === 45)
+          ) {
+            setTextValue('Welcome To Tortous');
+          }
+        }
+
+        //Facing left
+        if (facing.current === 'left') {
+          if (
+            (yPlayerIndex.current === 298 && xPlayerIndex.current === 17) 
+          ) {
+            setTextValue('Welcome To Tortous');
+          }
+        }
+      }
+    };
     window.addEventListener('keydown', dialogueAction);
     return () => {
       window.removeEventListener('keydown', dialogueAction);
@@ -20592,14 +20644,11 @@ const TrainTracksToTortous = (props) => {
             </div>
           </div>
         </div>
-              { textValue ? 
-        <dialog className="textBox typewriter" open>
-          <p>
-         {textValue}
-          </p>
-        </dialog> 
-        : null
-}
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );

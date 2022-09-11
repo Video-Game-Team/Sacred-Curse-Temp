@@ -6,6 +6,11 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
+
+import click1 from '../../audioclips/click1.mp3';
+import text from '../../audioclips/Text.mp3';
+import SnowMan from '../../audioclips/Snowman.mp3';
+
 import '../../mountainRoadTrainTracks.css';
 
 const MountainRoadTrainTracks = (props) => {
@@ -33,6 +38,20 @@ const MountainRoadTrainTracks = (props) => {
   const yPlayerIndex = useRef(63);
   const xPlayerIndex = useRef(13);
   const [gridArray, setGridArray] = useState([]);
+  const [textValue, setTextValue] = useState(null);
+
+  //Music Playing
+  const clickAudio1 = () => new Audio(SnowMan).play();
+
+  // //NPC Dialogue sound effect
+  const clickAudio2 = () => new Audio(text).play();
+
+  //Starts off Music Loop
+  useEffect(() => {
+    {
+      clickAudio1();
+    }
+  }, []);
 
   // let currentMap2 = [
   //   [
@@ -671,81 +690,89 @@ const MountainRoadTrainTracks = (props) => {
       0, 0, 693, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ],
   ];
-  
-  
-  
-  
- console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
- console.log(
-   'VALUE Right',
-   currentMap[yPlayerIndex.current][xPlayerIndex.current]
- );
 
- useEffect(() => {
-   let tempGrid = [];
-   for (let i = 0; i < currentMap.length; i++) {
-     for (let j = 0; j < currentMap[i].length; j++) {
-       tempGrid.push(
-         <button
-           onClick={() => {
-             console.log(`Coordinates ${i} - ${j}`);
-           }}
-           className="numbers"
-           style={{
-             gridColumn: j + 1,
-             gridRow: i + 1,
-             color: 'white',
-           }}
-         >
-           {/* {i} - {j} */}
-           {currentMap[i][j]}
-         </button>
-       );
-     }
-   }
-   setGridArray(tempGrid);
- }, []);
-  // },[])
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap[yPlayerIndex.current][xPlayerIndex.current]
+  );
+
+  //  useEffect(() => {
+  //    let tempGrid = [];
+  //    for (let i = 0; i < currentMap.length; i++) {
+  //      for (let j = 0; j < currentMap[i].length; j++) {
+  //        tempGrid.push(
+  //          <button
+  //            onClick={() => {
+  //              console.log(`Coordinates ${i} - ${j}`);
+  //            }}
+  //            className="numbers"
+  //            style={{
+  //              gridColumn: j + 1,
+  //              gridRow: i + 1,
+  //              color: 'white',
+  //            }}
+  //          >
+  //            {/* {i} - {j} */}
+  //            {currentMap[i][j]}
+  //          </button>
+  //        );
+  //      }
+  //    }
+  //    setGridArray(tempGrid);
+  //  }, []);
 
   //create an array. If the current array does not contain the value. shift it.
 
   // console.log(yPlayerIndex.current, xPlayerIndex.current)
   // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current])
 
+  useEffect(() => {
+    if (props.previousMap === 'tortousFork') {
+      //setYCord
+      yPlayerIndex.current = 63;
+      //setXcord
+      xPlayerIndex.current = 13;
+      //set xTransform
+      setXTransformVar(-217);
+      //set yTransform
+      setYTransformVar(-3728);
+      facing.current = 'up';
+    }
+  }, []);
 
+  //OVERWOLRD ITEM CHECK LOGIC
+  useEffect(() => {
+    const dialogueAction = (event) => {
+      if (event.key === 'b') {
+        //Facing right
+        if (facing.current === 'up') {
+          if (
+            (yPlayerIndex.current === 62 && xPlayerIndex.current === 10) ||
+            (yPlayerIndex.current === 62 && xPlayerIndex.current === 11)
+          ) {
+            clickAudio2();
+            setTextValue('Welcome to Mountain Road Train Tracks');
+          }
+        }
+      }
+    };
+    window.addEventListener('keydown', dialogueAction);
+    return () => {
+      window.removeEventListener('keydown', dialogueAction);
+    };
+  }, []);
 
-
- useEffect(() => {
-   if (props.previousMap === 'tortousFork') {
-     //setYCord
-     yPlayerIndex.current = 63;
-     //setXcord
-     xPlayerIndex.current = 13;
-     //set xTransform
-     setXTransformVar(-217);
-     //set yTransform
-     setYTransformVar(-3728);
-     facing.current = 'up';
-   }
-
- }, []);
-
-
-
- useEffect(() => {
-   // yPlayerIndex up and down values
-   // trains Map check conditions
-   if (
-     (yPlayerIndex.current === 64 && xPlayerIndex.current === 13) ||
-     (yPlayerIndex.current === 64 && xPlayerIndex.current === 14) 
-   ) {
-     props.active('tortousFork','mountainRoadTrainTracks');
-   }
- }, [yPlayerIndex.current]);
-
-
-
-
+  useEffect(() => {
+    // yPlayerIndex up and down values
+    // trains Map check conditions
+    if (
+      (yPlayerIndex.current === 64 && xPlayerIndex.current === 13) ||
+      (yPlayerIndex.current === 64 && xPlayerIndex.current === 14)
+    ) {
+      props.active('tortousFork', 'mountainRoadTrainTracks');
+    }
+  }, [yPlayerIndex.current]);
 
   //event listen for enter
   useEffect(() => {
@@ -826,6 +853,7 @@ const MountainRoadTrainTracks = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+        setTextValue(null);
       }
     };
 
@@ -1004,6 +1032,11 @@ const MountainRoadTrainTracks = (props) => {
             </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );

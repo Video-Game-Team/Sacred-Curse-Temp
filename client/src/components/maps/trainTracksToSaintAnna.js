@@ -6,6 +6,11 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
+
+import click1 from '../../audioclips/click1.mp3';
+import text from '../../audioclips/Text.mp3';
+import SnowMan from '../../audioclips/Snowman.mp3';
+
 import '../../trainTracksToSaintAnna.css';
 
 const TrainTracksToSaintAnna = (props) => {
@@ -34,6 +39,19 @@ const TrainTracksToSaintAnna = (props) => {
   const xPlayerIndex = useRef(15);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+
+  //Music Playing
+  const clickAudio1 = () => new Audio(SnowMan).play();
+
+  // //NPC Dialogue sound effect
+  const clickAudio2 = () => new Audio(text).play();
+
+  //Starts off Music Loop
+  useEffect(() => {
+    {
+      clickAudio1();
+    }
+  }, []);
 
   // let currentMap2 = [
   //   [
@@ -1424,8 +1442,6 @@ const TrainTracksToSaintAnna = (props) => {
   // setGridArray(tempGrid)
   // },[])
 
-
-
   useEffect(() => {
     if (props.previousMap === 'luluMountainPassRight') {
       //setYCord
@@ -1463,11 +1479,6 @@ const TrainTracksToSaintAnna = (props) => {
       props.active('luluMountainPassRight', 'trainTracksToSaintAnna');
     }
   }, [xPlayerIndex.current]);
-
-
-
-
-
 
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
@@ -1615,9 +1626,49 @@ const TrainTracksToSaintAnna = (props) => {
 
 
 
+  //OVERWOLRD ITEM CHECK LOGIC
+  useEffect(() => {
+    const dialogueAction = (event) => {
+      if (event.key === 'b') {
+        //Facing up
+        if (facing.current === 'up') {
+          if (
+            (yPlayerIndex.current === 70 && xPlayerIndex.current === 12) 
+        
+          ) {
+            setTextValue('Welcome To St Anna Tracks');
+          }
+        }
+
+        //Facing left
+        if (facing.current === 'left') {
+          if (
+            (yPlayerIndex.current === 11 && xPlayerIndex.current === 13) ||
+            (yPlayerIndex.current === 12 && xPlayerIndex.current === 13)
+          ) {
+           setTextValue('Welcome To St Anna Tracks');
+          }
+        }
+
+        //Facing right
+        if (facing.current === 'right') {
+          if (
+            (yPlayerIndex.current === 142 && xPlayerIndex.current === 21) 
+          ) {
+            setTextValue('Welcome To St Anna Tracks');
+          }
+        }
+      }
+    };
+    window.addEventListener('keydown', dialogueAction);
+    return () => {
+      window.removeEventListener('keydown', dialogueAction);
+    };
+  }, []);
 
 
 
+  
 
   //event listen for enter
   useEffect(() => {
@@ -1698,6 +1749,7 @@ const TrainTracksToSaintAnna = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+        setTextValue(null);
       }
     };
 
@@ -1876,6 +1928,11 @@ const TrainTracksToSaintAnna = (props) => {
             </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );

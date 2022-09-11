@@ -6,6 +6,11 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
+
+import click1 from '../../audioclips/click1.mp3';
+import text from '../../audioclips/Text.mp3';
+import SnowMan from '../../audioclips/Snowman.mp3';
+
 import '../../trainTracksToCapital.css';
 
 const TrainTracksToCapital = (props) => {
@@ -33,6 +38,20 @@ const TrainTracksToCapital = (props) => {
   const yPlayerIndex = useRef(140);
   const xPlayerIndex = useRef(19);
   const [gridArray, setGridArray] = useState([]);
+  const [textValue, setTextValue] = useState(null);
+
+  //Music Playing
+  const clickAudio1 = () => new Audio(SnowMan).play();
+
+  // //NPC Dialogue sound effect
+  const clickAudio2 = () => new Audio(text).play();
+
+  //Starts off Music Loop
+  useEffect(() => {
+    {
+      clickAudio1();
+    }
+  }, []);
 
   // let currentMap2 = [
   //   [
@@ -1707,30 +1726,30 @@ const TrainTracksToCapital = (props) => {
     currentMap[yPlayerIndex.current][xPlayerIndex.current]
   );
 
-  useEffect(()=>{
-    let tempGrid=[]
-    for (let i=0; i<currentMap.length; i++){
-      for (let j=0; j<currentMap[i].length; j++){
-        tempGrid.push(
-          <button
-            onClick={() => {
-              console.log(`Coordinates ${i} - ${j}`);
-            }}
-            className="numbers"
-            style={{
-              gridColumn: j + 1,
-              gridRow: i + 1,
-              color: 'white',
-            }}
-          >
-            {/* {i} - {j} */}
-            {currentMap[i][j]}
-          </button>
-        );
-      }
-    }
-  setGridArray(tempGrid)
-  },[])
+  // useEffect(()=>{
+  //   let tempGrid=[]
+  //   for (let i=0; i<currentMap.length; i++){
+  //     for (let j=0; j<currentMap[i].length; j++){
+  //       tempGrid.push(
+  //         <button
+  //           onClick={() => {
+  //             console.log(`Coordinates ${i} - ${j}`);
+  //           }}
+  //           className="numbers"
+  //           style={{
+  //             gridColumn: j + 1,
+  //             gridRow: i + 1,
+  //             color: 'white',
+  //           }}
+  //         >
+  //           {/* {i} - {j} */}
+  //           {currentMap[i][j]}
+  //         </button>
+  //       );
+  //     }
+  //   }
+  // setGridArray(tempGrid)
+  // },[])
 
   //create an array. If the current array does not contain the value. shift it.
 
@@ -1747,6 +1766,34 @@ const TrainTracksToCapital = (props) => {
       props.active('tortous', 'trainTracksToCapital');
     }
   }, [yPlayerIndex.current]);
+
+
+
+
+
+  //OVERWOLRD ITEM CHECK LOGIC
+  useEffect(() => {
+    const dialogueAction = (event) => {
+      if (event.key === 'b') {
+        //Facing left
+        if (facing.current === 'left') {
+          if (
+            (yPlayerIndex.current === 140 && xPlayerIndex.current === 17) ||
+            (yPlayerIndex.current === 139 && xPlayerIndex.current === 17)
+          ) {
+            setTextValue('Welcome To TrainTracksToCapital');
+          }
+        }
+      }
+    };
+    window.addEventListener('keydown', dialogueAction);
+    return () => {
+      window.removeEventListener('keydown', dialogueAction);
+    };
+  }, []);
+
+
+
 
   //event listen for enter
   useEffect(() => {
@@ -1827,6 +1874,7 @@ const TrainTracksToCapital = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+        setTextValue(null);
       }
     };
 
@@ -2005,9 +2053,14 @@ const TrainTracksToCapital = (props) => {
             </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog className="textBox typewriter" open>
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );
-};;
+};
 
 export default TrainTracksToCapital;

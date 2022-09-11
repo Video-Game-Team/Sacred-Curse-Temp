@@ -20,11 +20,9 @@ const Tortous = (props) => {
   const [yTransformVar, setYTransformVar] = useState(-5588);
   //
 
- const [xnpcTransformVar, setXnpcTransformVar] = useState(-2776);
- //this sets the y Cordinate to transform the map and character location
- const [ynpcTransformVar, setYnpcTransformVar] = useState(-5588);
-
-
+  const [xnpcTransformVar, setXnpcTransformVar] = useState(-2776);
+  //this sets the y Cordinate to transform the map and character location
+  const [ynpcTransformVar, setYnpcTransformVar] = useState(-5588);
 
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
@@ -46,19 +44,18 @@ const Tortous = (props) => {
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
 
-  //Music Playing 
+  //Music Playing
   const clickAudio1 = () => new Audio(SnowMan).play();
 
   // //NPC Dialogue sound effect
   const clickAudio2 = () => new Audio(text).play();
 
-
   //Starts off Music Loop
   useEffect(() => {
-    {clickAudio1()}
-  }, [])
-
- 
+    {
+      clickAudio1();
+    }
+  }, []);
 
   // let currentMap2 = [
   //   [
@@ -1681,8 +1678,6 @@ const Tortous = (props) => {
     currentMap[yPlayerIndex.current][xPlayerIndex.current]
   );
 
-
-
   // useEffect(()=>{
   //   let tempGrid=[]
   //   for (let i=0; i<currentMap.length; i++){
@@ -1699,15 +1694,14 @@ const Tortous = (props) => {
   //             color: 'white',
   //           }}
   //         >
-  //           {/* {i} - {j} */}
-  //           {currentMap[i][j]}
+  //           {i} - {j}
+  //           {/* {currentMap[i][j]} */}
   //         </button>
   //       );
   //     }
   //   }
   // setGridArray(tempGrid)
   // },[])
-
 
   useEffect(() => {
     if (props.previousMap === 'trainTracksToTortous') {
@@ -1909,10 +1903,6 @@ const Tortous = (props) => {
   }, [yPlayerIndex.current]);
 
 
-
-
-
-
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -2097,8 +2087,126 @@ const Tortous = (props) => {
     };
   }, []);
 
+  
 
+  //DOOR LOCKED LOGIC
+  useEffect(() => {
+    const dialogueAction = (event) => {
+      if (event.key === 'b') {
+        //Facing up
+        if (facing.current === 'up') {
+          if (
+            (yPlayerIndex.current === 89 && xPlayerIndex.current === 48) ||
+            (yPlayerIndex.current === 89 && xPlayerIndex.current === 47) ||
+            (yPlayerIndex.current === 88 && xPlayerIndex.current === 38) ||
+            (yPlayerIndex.current === 88 && xPlayerIndex.current === 43) ||
+            (yPlayerIndex.current === 88 && xPlayerIndex.current === 23) ||
+            (yPlayerIndex.current === 88 && xPlayerIndex.current === 28) ||
+            (yPlayerIndex.current === 88 && xPlayerIndex.current === 33) ||
+            (yPlayerIndex.current === 89 && xPlayerIndex.current === 38) ||
+            (yPlayerIndex.current === 89 && xPlayerIndex.current === 28) ||
+            (yPlayerIndex.current === 89 && xPlayerIndex.current === 23) ||
+            (yPlayerIndex.current === 81 && xPlayerIndex.current === 32) ||
+            (yPlayerIndex.current === 89 && xPlayerIndex.current === 23) ||
+            (yPlayerIndex.current === 81 && xPlayerIndex.current === 46) ||
+            (yPlayerIndex.current === 81 && xPlayerIndex.current === 32) ||
+            (yPlayerIndex.current === 70 && xPlayerIndex.current === 46) ||
+            (yPlayerIndex.current === 70 && xPlayerIndex.current === 39) ||
+            (yPlayerIndex.current === 70 && xPlayerIndex.current === 32) ||
+            (yPlayerIndex.current === 70 && xPlayerIndex.current === 18) ||
+            (yPlayerIndex.current === 60 && xPlayerIndex.current === 35) ||
+            (yPlayerIndex.current === 55 && xPlayerIndex.current === 45) ||
+            (yPlayerIndex.current === 55 && xPlayerIndex.current === 57) ||
+            (yPlayerIndex.current === 45 && xPlayerIndex.current === 35) ||
+            (yPlayerIndex.current === 45 && xPlayerIndex.current === 26) ||
+            (yPlayerIndex.current === 45 && xPlayerIndex.current === 17) ||
+            (yPlayerIndex.current === 19 && xPlayerIndex.current === 21) ||
+            (yPlayerIndex.current === 19 && xPlayerIndex.current === 26) ||
+            (yPlayerIndex.current === 24 && xPlayerIndex.current === 78) ||
+            (yPlayerIndex.current === 45 && xPlayerIndex.current === 70) ||
+            (yPlayerIndex.current === 45 && xPlayerIndex.current === 78) ||
+            (yPlayerIndex.current === 45 && xPlayerIndex.current === 86) ||
+            (yPlayerIndex.current === 61 && xPlayerIndex.current === 70) ||
+            (yPlayerIndex.current === 81 && xPlayerIndex.current === 58) ||
+            (yPlayerIndex.current === 81 && xPlayerIndex.current === 66) ||
+            (yPlayerIndex.current === 81 && xPlayerIndex.current === 73) ||
+            (yPlayerIndex.current === 89 && xPlayerIndex.current === 79) ||
+            (yPlayerIndex.current === 89 && xPlayerIndex.current === 74) ||
+            (yPlayerIndex.current === 89 && xPlayerIndex.current === 69) ||
+            (yPlayerIndex.current === 89 && xPlayerIndex.current === 43) ||
+            (yPlayerIndex.current === 70 && xPlayerIndex.current === 25) ||
+            (yPlayerIndex.current === 89 && xPlayerIndex.current === 59)
+          ) {
+            clickAudio2();
+            setTextValue('This door is locked');
+          }
+        }
+      }
+    };
+    window.addEventListener('keydown', dialogueAction);
+    return () => {
+      window.removeEventListener('keydown', dialogueAction);
+    };
+  }, []);
 
+  
+
+  //OVERWOLRD ITEM CHECK LOGIC
+  useEffect(() => {
+    const dialogueAction = (event) => {
+      if (event.key === 'b') {
+        //Facing up
+        if (facing.current === 'up') {
+          if (
+            (yPlayerIndex.current === 7 && xPlayerIndex.current === 50) ||
+            (yPlayerIndex.current === 7 && xPlayerIndex.current === 49)
+          ) {
+            setTextValue("Welcome To Tortous");
+          }
+        }
+
+        //Facing down
+        if (!facing.current) {
+          //Jim NPC
+          if (
+            (yPlayerIndex.current === 91 && xPlayerIndex.current === 56) ||
+            (yPlayerIndex.current === 91 && xPlayerIndex.current === 55)
+          ) {
+            setTextValue('Welcome To Tortous');
+          }
+        }
+
+        //Facing left
+        if (facing.current === 'left') {
+          if (
+            (yPlayerIndex.current === 55 && xPlayerIndex.current === 90) ||
+            (
+              yPlayerIndex.current === 56 && xPlayerIndex.current === 90
+            )
+          ) {
+            setTextValue('Welcome To Tortous');
+          }
+        }
+
+        //Facing right
+        if (facing.current === 'right') {
+          if (
+            (yPlayerIndex.current === 55 && xPlayerIndex.current === 12) ||
+            (
+              yPlayerIndex.current === 56 && xPlayerIndex.current === 12
+            )
+          ) {
+            setTextValue('Welcome To Tortous');
+          }
+         
+        }
+      }
+    };
+    window.addEventListener('keydown', dialogueAction);
+    return () => {
+      window.removeEventListener('keydown', dialogueAction);
+    };
+  }, []);
 
 
 
@@ -2182,7 +2290,7 @@ const Tortous = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
-         setTextValue(null);
+        setTextValue(null);
       }
     };
 

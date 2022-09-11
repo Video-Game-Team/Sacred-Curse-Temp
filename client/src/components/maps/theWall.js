@@ -6,6 +6,11 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
+
+import click1 from '../../audioclips/click1.mp3';
+import text from '../../audioclips/Text.mp3';
+import SnowMan from '../../audioclips/Snowman.mp3';
+
 import '../../theWall.css';
 
 const TheWall = (props) => {
@@ -35,6 +40,19 @@ const TheWall = (props) => {
   const xPlayerIndex = useRef(20);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+
+  //Music Playing
+  const clickAudio1 = () => new Audio(SnowMan).play();
+
+  // //NPC Dialogue sound effect
+  const clickAudio2 = () => new Audio(text).play();
+
+  //Starts off Music Loop
+  useEffect(() => {
+    {
+      clickAudio1();
+    }
+  }, []);
 
   // let currentMap2 = [
   //   [
@@ -1205,7 +1223,9 @@ const TheWall = (props) => {
             (yPlayerIndex.current === 14 && xPlayerIndex.current === 19) ||
             (yPlayerIndex.current === 14 && xPlayerIndex.current === 20)
           ) {
-            setTextValue("By order of the virtuously elected chancellor of the People's Republic. This area is forbidden. ");
+            setTextValue(
+              "By order of the virtuously elected chancellor of the People's Republic. This area is forbidden. "
+            );
           }
           // //YO Mama NPC
           // if (
@@ -1237,7 +1257,9 @@ const TheWall = (props) => {
             (yPlayerIndex.current === 10 && xPlayerIndex.current === 19) ||
             (yPlayerIndex.current === 10 && xPlayerIndex.current === 20)
           ) {
-            setTextValue("By order of the virtuously elected chancellor of the People's Republic. This area is forbidden. ");
+            setTextValue(
+              "By order of the virtuously elected chancellor of the People's Republic. This area is forbidden. "
+            );
           }
           // //YO Mama NPC
           // if (
@@ -1268,7 +1290,9 @@ const TheWall = (props) => {
             (yPlayerIndex.current === 11 && xPlayerIndex.current === 21) ||
             (yPlayerIndex.current === 12 && xPlayerIndex.current === 21)
           ) {
-            setTextValue("By order of the virtuously elected chancellor of the People's Republic. This area is forbidden. ");
+            setTextValue(
+              "By order of the virtuously elected chancellor of the People's Republic. This area is forbidden. "
+            );
           }
           // //YO Mama NPC
           // if (
@@ -1299,7 +1323,9 @@ const TheWall = (props) => {
             (yPlayerIndex.current === 11 && xPlayerIndex.current === 18) ||
             (yPlayerIndex.current === 12 && xPlayerIndex.current === 18)
           ) {
-            setTextValue("By order of the virtuously elected chancellor of the People's Republic. This area is forbidden. ");
+            setTextValue(
+              "By order of the virtuously elected chancellor of the People's Republic. This area is forbidden. "
+            );
           }
           // //YO Mama NPC
           // if (
@@ -1330,6 +1356,33 @@ const TheWall = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
+
+
+
+  //OVERWOLRD ITEM CHECK LOGIC
+  useEffect(() => {
+    const dialogueAction = (event) => {
+      if (event.key === 'b') {
+        //Facing right
+        if (facing.current === 'left') {
+          if (
+            (yPlayerIndex.current === 25 && xPlayerIndex.current === 19) ||
+            (yPlayerIndex.current === 26 && xPlayerIndex.current === 19) ||
+            (yPlayerIndex.current === 27 && xPlayerIndex.current === 19)
+          ) {
+            clickAudio2();
+            setTextValue('Welcome to The Wall');
+          }
+        }
+      }
+    };
+    window.addEventListener('keydown', dialogueAction);
+    return () => {
+      window.removeEventListener('keydown', dialogueAction);
+    };
+  }, []);
+
+
 
   //event listen for enter
   useEffect(() => {
