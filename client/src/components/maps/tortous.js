@@ -9,6 +9,7 @@ import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
 
 import click1 from '../../audioclips/click1.mp3';
 import text from '../../audioclips/Text.mp3';
+import itemPickup from '../../audioclips/itemPickup.mp3';
 import SnowMan from '../../audioclips/Snowman.mp3';
 
 import '../../tortous.css';
@@ -23,6 +24,10 @@ const Tortous = (props) => {
   const [xnpcTransformVar, setXnpcTransformVar] = useState(-2776);
   //this sets the y Cordinate to transform the map and character location
   const [ynpcTransformVar, setYnpcTransformVar] = useState(-5588);
+
+  const [xdemonTransformVar, setXdemonTransformVar] = useState(-2776);
+  //this sets the y Cordinate to transform the map and character location
+  const [ydemonTransformVar, setYdemonTransformVar] = useState(-5388);
 
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
@@ -49,6 +54,9 @@ const Tortous = (props) => {
 
   // //NPC Dialogue sound effect
   const clickAudio2 = () => new Audio(text).play();
+
+    // Item collection sound effect
+  const clickAudio3 = () => new Audio(itemPickup).play();
 
   //Starts off Music Loop
   useEffect(() => {
@@ -1902,7 +1910,6 @@ const Tortous = (props) => {
     }
   }, [yPlayerIndex.current]);
 
-
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -2087,8 +2094,6 @@ const Tortous = (props) => {
     };
   }, []);
 
-  
-
   //DOOR LOCKED LOGIC
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -2149,8 +2154,6 @@ const Tortous = (props) => {
     };
   }, []);
 
-  
-
   //OVERWOLRD ITEM CHECK LOGIC
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -2161,7 +2164,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 7 && xPlayerIndex.current === 50) ||
             (yPlayerIndex.current === 7 && xPlayerIndex.current === 49)
           ) {
-            setTextValue("Welcome To Tortous");
+            setTextValue('Welcome To Tortous');
           }
         }
 
@@ -2180,9 +2183,14 @@ const Tortous = (props) => {
         if (facing.current === 'left') {
           if (
             (yPlayerIndex.current === 55 && xPlayerIndex.current === 90) ||
-            (
-              yPlayerIndex.current === 56 && xPlayerIndex.current === 90
-            )
+            (yPlayerIndex.current === 56 && xPlayerIndex.current === 90)
+          ) {
+            setTextValue('Welcome To Tortous');
+          }
+
+          if (
+            (yPlayerIndex.current === 55 && xPlayerIndex.current === 90) ||
+            (yPlayerIndex.current === 56 && xPlayerIndex.current === 90)
           ) {
             setTextValue('Welcome To Tortous');
           }
@@ -2192,13 +2200,36 @@ const Tortous = (props) => {
         if (facing.current === 'right') {
           if (
             (yPlayerIndex.current === 55 && xPlayerIndex.current === 12) ||
-            (
-              yPlayerIndex.current === 56 && xPlayerIndex.current === 12
-            )
+            (yPlayerIndex.current === 56 && xPlayerIndex.current === 12)
           ) {
             setTextValue('Welcome To Tortous');
           }
-         
+        }
+      }
+    };
+    window.addEventListener('keydown', dialogueAction);
+    return () => {
+      window.removeEventListener('keydown', dialogueAction);
+    };
+  }, []);
+
+
+
+  //ITEM GRABBING LOGIC
+  useEffect(() => {
+    const dialogueAction = (event) => {
+      if (event.key === 'g') {
+        //Facing up
+        if (facing.current === 'left') {
+          if (
+            (yPlayerIndex.current === 90 && xPlayerIndex.current === 47) ||
+            (yPlayerIndex.current === 91 && xPlayerIndex.current === 47)
+          ) {
+            clickAudio3();
+            // setTextValue("Awesome, I've been ' one of these");
+            setXdemonTransformVar(null);
+            setYdemonTransformVar(null)
+          }
         }
       }
     };
@@ -2483,6 +2514,17 @@ const Tortous = (props) => {
               }}
             >
               <div className="npc_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="demon pixel-art"
+              style={{
+                transform: `translate3d( ${150 - xdemonTransformVar}px, ${
+                  272 - ydemonTransformVar
+                }px, 0 )`,
+              }}
+            >
+              <div className="demon_spritesheet pixel-art"></div>
             </div>
           </div>
         </div>

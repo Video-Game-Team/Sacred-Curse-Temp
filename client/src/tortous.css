@@ -121,3 +121,26 @@
   .npc .npc_spritesheet {
       animation: walkAnimation 0.6s steps(3) infinite;
   }
+
+
+
+
+
+
+
+
+
+  .demon {
+      width: calc(var(--grid-cell)* 2);
+      height: calc(var(--grid-cell)* 2);
+      overflow: hidden;
+  }
+
+  .demon_spritesheet {
+      position: absolute;
+      background: url("./assets/images/0.png") no-repeat no-repeat;
+      background-size: 100%;
+      width: calc(var(--grid-cell)* 2);
+      height: calc(var(--grid-cell)* 2);
+  }
+
