@@ -5134,11 +5134,11 @@ const DunleaveyValley = (props) => {
     ],
   ];
 
-  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  console.log(
-    'VALUE Right',
-    currentMap[yPlayerIndex.current][xPlayerIndex.current]
-  );
+  // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  // console.log(
+  //   'VALUE Right',
+  //   currentMap[yPlayerIndex.current][xPlayerIndex.current]
+  // );
 
   // useEffect(() => {
   //   let tempGrid = [];

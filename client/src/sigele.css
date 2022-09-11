@@ -36,8 +36,6 @@ body {
 
 .mapS {
     image-rendering: pixelated;
-    /* max-height: 50000px;
-    min-width: 50000px; */
     background-image: url("./assets/maps/Sigele no grid.png");
     background-size: 14080px;
     width: calc(550 * var(--grid-cell));
@@ -61,12 +59,6 @@ body {
     width: calc(var(--grid-cell)* 2);
     height: calc(var(--grid-cell)* 2);
     overflow: hidden;
-
-
-
-
-    /* margin-top: -58px;
-    margin-left: -45px; */
 }
 
 .character_spritesheet {

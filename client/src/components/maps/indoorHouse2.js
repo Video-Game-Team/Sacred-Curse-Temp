@@ -65,7 +65,7 @@ const IndoorHouse2 = (props) => {
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 80, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4317, 4318, 0, 1],
     [2341, 2395, 2343, 0, 0, 0, 0, 0, 0, 0, 0, 4336, 4337, 0, 2434],
-    [2357, 2411, 2359, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [2357, 2411, 2359, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1],
     [0, 0, 0, 0, 0, 0, 0, 2512, 0, 0, 0, 0, 0, 0, 2436],
     [0, 0, 0, 0, 0, 2510, 2544, 2528, 2546, 2509, 0, 0, 0, 0, 2452],
     [0, 0, 0, 0, 0, 2514, 2560, 2561, 2562, 2513, 0, 0, 0, 0, 0],
@@ -78,11 +78,12 @@ const IndoorHouse2 = (props) => {
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1],
   ];
 
-  // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  // console.log(
-  //   'VALUE Right',
-  //   currentMap[yPlayerIndex.current][xPlayerIndex.current]
-  // );
+  
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap[yPlayerIndex.current][xPlayerIndex.current]
+  );
 
   // useEffect(() => {
   //   let tempGrid = [];

@@ -281,7 +281,7 @@ const TheWall = (props) => {
       0,
       691,
       'Barrier',
-      693,
+      0,
       0,
       0,
       0,
@@ -1108,7 +1108,7 @@ const TheWall = (props) => {
     ],
     [
       691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691,
-      691, 691, 691, 0, 1889, 1890, 4000, 0, 691, 691, 691, 691, 691, 691, 691,
+      691, 691, 691, 0, 1889, 1890, 4000, 1, 691, 691, 691, 691, 691, 691, 691,
       691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691,
     ],
     [
@@ -1146,30 +1146,30 @@ const TheWall = (props) => {
   console.log(yPlayerIndex.current, xPlayerIndex.current);
   console.log(currentMap[yPlayerIndex.current][xPlayerIndex.current]);
 
-  useEffect(()=>{
-    let tempGrid=[]
-    for (let i=0; i<currentMap.length; i++){
-      for (let j=0; j<currentMap[i].length; j++){
-        tempGrid.push(
-          <button
-            onClick={() => {
-              console.log(`Coordinates ${i} - ${j}`);
-            }}
-            className="numbers"
-            style={{
-              gridColumn: j + 1,
-              gridRow: i + 1,
-              color: 'white',
-            }}
-          >
-            {/* {i} - {j} */}
-            {currentMap[i][j]}
-          </button>
-        );
-      }
-    }
-  setGridArray(tempGrid)
-  },[])
+  // useEffect(()=>{
+  //   let tempGrid=[]
+  //   for (let i=0; i<currentMap.length; i++){
+  //     for (let j=0; j<currentMap[i].length; j++){
+  //       tempGrid.push(
+  //         <button
+  //           onClick={() => {
+  //             console.log(`Coordinates ${i} - ${j}`);
+  //           }}
+  //           className="numbers"
+  //           style={{
+  //             gridColumn: j + 1,
+  //             gridRow: i + 1,
+  //             color: 'white',
+  //           }}
+  //         >
+  //           {/* {i} - {j} */}
+  //           {currentMap[i][j]}
+  //         </button>
+  //       );
+  //     }
+  //   }
+  // setGridArray(tempGrid)
+  // },[])
 
   // useEffect(() => {
   //   if (props.previousMap === 'townMap1') {

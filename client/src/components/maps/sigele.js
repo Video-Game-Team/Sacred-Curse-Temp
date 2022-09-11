@@ -2287,58 +2287,58 @@ const Sigele = (props) => {
     ],
   ];
 
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap[yPlayerIndex.current][xPlayerIndex.current]
+  );
 
-  // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  // console.log(
-  //   'VALUE Right',
-  //   currentMap2[yPlayerIndex.current][xPlayerIndex.current]
-  // );
-
-  // useEffect(()=>{
-  //   let tempGrid=[]
-  //   for (let i=0; i<currentMap.length; i++){
-  //     for (let j=0; j<currentMap[i].length; j++){
-  //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-  //         gridColumn: j+1,
-  //         gridRow: i+1,
-  //         color: "black",
-  //     }}
-  //     > {currentMap2[i][j]}
-
-  //     </button>)
-
+  // useEffect(() => {
+  //   let tempGrid = [];
+  //   for (let i = 0; i < currentMap.length; i++) {
+  //     for (let j = 0; j < currentMap[i].length; j++) {
+  //       tempGrid.push(
+  //         <button
+  //           onClick={() => {
+  //             console.log(`Coordinates ${i} - ${j}`);
+  //           }}
+  //           className="numbers"
+  //           style={{
+  //             gridColumn: j + 1,
+  //             gridRow: i + 1,
+  //             color: 'white',
+  //           }}
+  //         >
+  //           {/* {i} - {j} */}
+  //           {currentMap[i][j]}
+  //         </button>
+  //       );
   //     }
   //   }
-  // setGridArray(tempGrid)
-  // },[])
+  //   setGridArray(tempGrid);
+  // }, []);
 
+  useEffect(() => {
+    if (props.previousMap === 'indoorHouse4') {
+      //setYCord
+      yPlayerIndex.current = 38;
+      //setXcord
+      xPlayerIndex.current = 86;
+      //set xTransform
+      setXTransformVar(-4892);
+      //set yTransform
+      setYTransformVar(-2132);
+      facing.current = 'down';
+    }
+  }, []);
 
-useEffect(() => {
-  if (props.previousMap === 'indoorHouse4') {
-    //setYCord
-    yPlayerIndex.current = 38;
-    //setXcord
-    xPlayerIndex.current = 86;
-    //set xTransform
-    setXTransformVar(-4892);
-    //set yTransform
-    setYTransformVar(-2132);
-    facing.current = 'down';
-  }
-}, []);
-
-
-
-useEffect(() => {
-  //yPlayerIndex up and down values
-  // trains Map check conditions
-  if (yPlayerIndex.current === 37 && xPlayerIndex.current === 86)  {
-    props.active('indoorHouse4', 'sigele');
-  }
-}, [yPlayerIndex.current]);
-
-
-
+  useEffect(() => {
+    //yPlayerIndex up and down values
+    // trains Map check conditions
+    if (yPlayerIndex.current === 37 && xPlayerIndex.current === 86) {
+      props.active('indoorHouse4', 'sigele');
+    }
+  }, [yPlayerIndex.current]);
 
   //event listen for enter
   useEffect(() => {
@@ -2600,6 +2600,6 @@ useEffect(() => {
       </div>
     </div>
   );
-};
+};;
 
 export default Sigele;
