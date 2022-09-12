@@ -75,6 +75,14 @@ body {
   height: calc(var(--grid-cell)* 8);
 }
 
+.character_spritesheet2 {
+  position: absolute;
+  background: url("./assets/images/MainGuyLift.png") no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell)* 2);
+  height: calc(var(--grid-cell)* 2);
+}
+
 .character[facing="right"] .character_spritesheet {
   background-position-y: calc(var(--pixel-size) * -48);
 }

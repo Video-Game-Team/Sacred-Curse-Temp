@@ -48,6 +48,13 @@ const Tortous = (props) => {
   const xPlayerIndex = useRef(53);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+  const [playerFreeze, setPlayerFreeze] = useState(false);
+
+  // Sprtiesheet Toggle1 state
+  const [toggle1, setToggle1] = useState(false);
+
+  //Demon Toggle state
+  const [demonToggle1, demonSetToggle1] = useState(false);
 
   //Music Playing
   const clickAudio1 = () => new Audio(SnowMan).play();
@@ -55,7 +62,7 @@ const Tortous = (props) => {
   // //NPC Dialogue sound effect
   const clickAudio2 = () => new Audio(text).play();
 
-    // Item collection sound effect
+  // Item collection sound effect
   const clickAudio3 = () => new Audio(itemPickup).play();
 
   //Starts off Music Loop
@@ -1680,11 +1687,11 @@ const Tortous = (props) => {
     ],
   ];
 
-  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  console.log(
-    'VALUE Right',
-    currentMap[yPlayerIndex.current][xPlayerIndex.current]
-  );
+  // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  // console.log(
+  //   'VALUE Right',
+  //   currentMap[yPlayerIndex.current][xPlayerIndex.current]
+  // );
 
   // useEffect(()=>{
   //   let tempGrid=[]
@@ -1875,6 +1882,8 @@ const Tortous = (props) => {
     }
   }, [yPlayerIndex.current]);
 
+
+  
   //INDOOR USE EFFECT
   useEffect(() => {
     //Hotel
@@ -1909,6 +1918,8 @@ const Tortous = (props) => {
       props.active('indoorHouse2', 'tortous');
     }
   }, [yPlayerIndex.current]);
+
+
 
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
@@ -2094,6 +2105,8 @@ const Tortous = (props) => {
     };
   }, []);
 
+
+
   //DOOR LOCKED LOGIC
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -2153,6 +2166,8 @@ const Tortous = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
+
+
 
   //OVERWOLRD ITEM CHECK LOGIC
   useEffect(() => {
@@ -2214,7 +2229,6 @@ const Tortous = (props) => {
   }, []);
 
 
-
   //ITEM GRABBING LOGIC
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -2226,9 +2240,11 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 91 && xPlayerIndex.current === 47)
           ) {
             clickAudio3();
-            // setTextValue("Awesome, I've been ' one of these");
-            setXdemonTransformVar(null);
-            setYdemonTransformVar(null)
+            setTextValue('Hooray!!!!!!');
+            setXdemonTransformVar(-2844);
+            setYdemonTransformVar(-5338);
+            setToggle1(true);
+            demonSetToggle1(true);
           }
         }
       }
@@ -2238,7 +2254,6 @@ const Tortous = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
 
 
 
@@ -2301,12 +2316,13 @@ const Tortous = (props) => {
     });
   }, []);
 
+
+
   //listens for the current down key and saves it as the currentkey state
   //wrapping in a useEffect prevents compounding event listeners
   useEffect(() => {
     const keyDownHandler = (event) => {
       // console.log(event.key)
-
       if (
         event.key === 'ArrowRight' ||
         event.key === 'ArrowLeft' ||
@@ -2322,9 +2338,9 @@ const Tortous = (props) => {
           setTick((prevCount) => prevCount + 1);
         }
         setTextValue(null);
+        setToggle1(false);
       }
     };
-
     window.addEventListener('keydown', keyDownHandler);
 
     const keyUpHandler = (event) => {
@@ -2340,9 +2356,21 @@ const Tortous = (props) => {
       window.removeEventListener('keydown', keyDownHandler);
       window.removeEventListener('keyup', keyUpHandler);
     };
-
     //when the key is lifted it sets the current key to null to stop map movement and the walker to false to stop the animation
   }, []);
+
+
+
+  useEffect(() => {
+     if (demonToggle1 === true) {
+          setTimeout(() => {
+          setXdemonTransformVar(null);
+          setYdemonTransformVar(null);
+           }, 1500)
+  }
+  }, [demonToggle1])
+
+
 
   //facing logic. It needed to be removed from the animate because it was cuasing
   dirArr.current[0] === 'ArrowRight'
@@ -2355,10 +2383,10 @@ const Tortous = (props) => {
     ? (facing.current = null)
     : null;
 
+
   //animate is a reccursive function that takes the current key and updates the cordinate variables depending on which direction is pushed. It also sets which way the character is facing
   const animate = () => {
     //if current key is d, the x cordinate becomes  the previous state + the speed
-
     if (dirArr.current[0] === 'ArrowRight') {
       if (
         currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] === 0 ||
@@ -2477,12 +2505,6 @@ const Tortous = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      {/* <button
-        className="button"
-        onClick={() => {
-          clickAudio2();
-        }}
-      ></button> */}
       <div className="camera fade-in">
         <div>
           <div
@@ -2502,7 +2524,11 @@ const Tortous = (props) => {
                 }px, 0 )`,
               }}
             >
-              <div className="character_spritesheet pixel-art"></div>
+              {toggle1 === false ? (
+                <div className="character_spritesheet pixel-art"></div>
+              ) : (
+                <div className="character_spritesheet2 pixel-art"></div>
+              )}
             </div>
 
             <div
