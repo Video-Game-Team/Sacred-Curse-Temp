@@ -20,9 +20,9 @@ const CrystalCaverns = (props) => {
   const [yTransformVar, setYTransformVar] = useState(-84);
   //
 
-  const [xwaterTransformVar, setXWaterTransformVar] = useState(-472);
+  const [xwaterTransformVar, setXWaterTransformVar] = useState(-1124);
   //this sets the y Cordinate to transform the map and character location
-  const [ywaterTransformVar, setYwaterTransformVar] = useState(-84);
+  const [ywaterTransformVar, setYwaterTransformVar] = useState(52);
 
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
@@ -1060,7 +1060,7 @@ const CrystalCaverns = (props) => {
               className="water pixel-art"
               style={{
                 transform: `translate3d( ${600 - xwaterTransformVar}px, ${
-                  272 - ywaterTransformVar
+                  0 - ywaterTransformVar
                 }px, 0 )`,
               }}
             >

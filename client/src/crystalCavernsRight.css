@@ -61,12 +61,6 @@ body {
     width: calc(var(--grid-cell)* 2);
     height: calc(var(--grid-cell)* 2);
     overflow: hidden;
-
-
-
-
-    /* margin-top: -58px;
-    margin-left: -45px; */
 }
 
 .character_spritesheet {

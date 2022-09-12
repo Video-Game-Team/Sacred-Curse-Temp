@@ -97,24 +97,32 @@ body {
     }
 }
 
+@keyframes waterAnimation {
+    from {
+        transform: translate3d(0%, 0%, 0);
+    }
 
+    to {
+        transform: translate3d(0%, 1%, 0);
+    }
+}
 
 
 
  .water {
-     width: calc(var(--grid-cell)* 6);
-     height: calc(var(--grid-cell)* 5.6);
+     width: calc(var(--grid-cell) * 6.8);
+     height: calc(var(--grid-cell)* 100);
      overflow: hidden;
  }
 
  .water_spritesheet {
      position: absolute;
-     background: url("./assets/images/waterfall.png") no-repeat no-repeat;
+     background: url("./assets/images/river no grid.png") no-repeat no-repeat;
      background-size: 100%;
-     width: calc(var(--grid-cell)* 10);
-     height: calc(var(--grid-cell)* 10);
+     width: calc(var(--grid-cell)* 8);
+     height: calc(var(--grid-cell)* 100);
  }
 
  .water .water_spritesheet {
-     animation: walkAnimation 0.6s steps(3) infinite;
+     animation: waterAnimation 2s steps(4) infinite;
  }
