@@ -20,6 +20,10 @@ const CrystalCaverns = (props) => {
   const [yTransformVar, setYTransformVar] = useState(-84);
   //
 
+  const [xwaterTransformVar, setXWaterTransformVar] = useState(-472);
+  //this sets the y Cordinate to transform the map and character location
+  const [ywaterTransformVar, setYwaterTransformVar] = useState(-84);
+
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
   const speedRef = useRef(4);
@@ -1029,7 +1033,7 @@ const CrystalCaverns = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="camera">
+      <div className="camera fade-in">
         <div>
           <div
             className="mapCC pixel-art"
@@ -1050,6 +1054,21 @@ const CrystalCaverns = (props) => {
             >
               <div className="character_spritesheet pixel-art"></div>
             </div>
+
+
+            <div
+              className="water pixel-art"
+              style={{
+                transform: `translate3d( ${600 - xwaterTransformVar}px, ${
+                  272 - ywaterTransformVar
+                }px, 0 )`,
+              }}
+            >
+              <div className="water_spritesheet pixel-art"></div>
+            </div>
+
+
+          
           </div>
         </div>
         {textValue ? (

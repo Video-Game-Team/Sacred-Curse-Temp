@@ -2531,6 +2531,8 @@ const Tortous = (props) => {
               )}
             </div>
 
+
+
             <div
               className="npc pixel-art"
               style={{
@@ -2542,6 +2544,8 @@ const Tortous = (props) => {
               <div className="npc_spritesheet pixel-art"></div>
             </div>
 
+
+
             <div
               className="demon pixel-art"
               style={{
@@ -2552,6 +2556,8 @@ const Tortous = (props) => {
             >
               <div className="demon_spritesheet pixel-art"></div>
             </div>
+
+            
           </div>
         </div>
         {textValue ? (
