@@ -15,10 +15,14 @@ import '../../crystalCavernsRight.css';
 
 const CrystalCavernsRight = (props) => {
   //this sets the x Cordinate to transform the map and character location
-  const [xTransformVar, setXTransformVar] = useState(-472);
+  const [xTransformVar, setXTransformVar] = useState(-2009);
   //this sets the y Cordinate to transform the map and character location
-  const [yTransformVar, setYTransformVar] = useState(-84);
+  const [yTransformVar, setYTransformVar] = useState(-3027);
   //
+
+  const [xwaterTransformVar, setXWaterTransformVar] = useState(-1124);
+  //this sets the y Cordinate to transform the map and character location
+  const [ywaterTransformVar, setYwaterTransformVar] = useState(-288);
 
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
@@ -52,7 +56,6 @@ const CrystalCavernsRight = (props) => {
       clickAudio1();
     }
   }, []);
-
 
   // let currentMap2 = [
   //   [
@@ -720,31 +723,39 @@ const CrystalCavernsRight = (props) => {
       386, 386, 386, 386, 386, 386, 386, 386, 386, 386, 386, 386, 386, 386, 386,
     ],
   ];
-
   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
   console.log(
     'VALUE Right',
-    currentMap2[yPlayerIndex.current][xPlayerIndex.current]
+    currentMap[yPlayerIndex.current][xPlayerIndex.current]
   );
 
-  // useEffect(()=>{
-  //   let tempGrid=[]
-  //   for (let i=0; i<currentMap.length; i++){
-  //     for (let j=0; j<currentMap[i].length; j++){
-  //       tempGrid.push(<button onClick={()=> {console.log(`Coordinates ${i} - ${j}`)}} className="numbers" style={{
-  //         gridColumn: j+1,
-  //         gridRow: i+1,
-  //         color: "white",
-  //     }}
-  //     > {currentMap[i][j]}
 
-  //     </button>)
-
+  // useEffect(() => {
+  //   let tempGrid = [];
+  //   for (let i = 0; i < currentMap.length; i++) {
+  //     for (let j = 0; j < currentMap[i].length; j++) {
+  //       tempGrid.push(
+  //         <button
+  //           onClick={() => {
+  //             console.log(`Coordinates ${i} - ${j}`);
+  //           }}
+  //           className="numbers"
+  //           style={{
+  //             gridColumn: j + 1,
+  //             gridRow: i + 1,
+  //             color: 'white',
+  //           }}
+  //         >
+  //           {i} - {j}
+  //           {/* {currentMap[i][j]} */}
+  //         </button>
+  //       );
   //     }
   //   }
-  // setGridArray(tempGrid)
+  //   setGridArray(tempGrid);
+  // }, []);
 
-  // },[])
+
 
   useEffect(() => {
     if (props.previousMap === 'luluMountainPassRight') {
@@ -753,11 +764,35 @@ const CrystalCavernsRight = (props) => {
       //setXcord
       xPlayerIndex.current = 41;
       //set xTransform
-      setXTransformVar(-2008);
+      setXTransformVar(-2009);
       //set yTransform
-      setYTransformVar(-3020);
+      setYTransformVar(-3027);
       facing.current = 'up';
     }
+  }, []);
+
+  //OVERWOLRD ITEM CHECK LOGIC
+  useEffect(() => {
+    const dialogueAction = (event) => {
+      if (event.key === 'b') {
+        //Facing right
+        if (facing.current === 'right') {
+          if (
+            (yPlayerIndex.current === 52 && xPlayerIndex.current === 41) ||
+            (
+              yPlayerIndex.current === 52 && xPlayerIndex.current === 42
+            )
+          ) {
+            clickAudio2();
+            setTextValue('Welcome to Crystal Caverns');
+          }
+        }
+      }
+    };
+    window.addEventListener('keydown', dialogueAction);
+    return () => {
+      window.removeEventListener('keydown', dialogueAction);
+    };
   }, []);
 
   // UseEffect Keeping track of player conditions
@@ -789,21 +824,21 @@ const CrystalCavernsRight = (props) => {
               'sign1' &&
             64 - xBank.current > 32
           ) {
-            console.log('sign1');
+            // console.log('sign1');
           }
           if (
             xBank.current + 32 > 64 &&
             currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
               'sign2'
           ) {
-            console.log('sign2');
+            // console.log('sign2');
           }
           if (
             currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
               'sign2' &&
             64 - xBank.current > 32
           ) {
-            console.log('sign2');
+            // console.log('sign2');
           }
         }
         if (facing.current == null) {
@@ -812,20 +847,20 @@ const CrystalCavernsRight = (props) => {
               'sign1' &&
             xBank.current + 32 < 64
           ) {
-            console.log('sign1');
+            // console.log('sign1');
           }
           if (
             currentMap[yPlayerIndex.current + 1][xPlayerIndex.current + 1] ===
             'sign2'
           ) {
-            console.log('poopshit');
+            // console.log('poopshit');
           }
           if (
             currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
               'sign2' &&
             xBank.current + 32 < 64
           ) {
-            console.log('sign2');
+            // console.log('sign2');
           }
         }
       }
@@ -852,7 +887,7 @@ const CrystalCavernsRight = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
-            setTextValue(null);
+        setTextValue(null);
       }
     };
 
@@ -1011,7 +1046,7 @@ const CrystalCavernsRight = (props) => {
       <div className="camera fade-in">
         <div>
           <div
-            className="mapCC pixel-art"
+            className="mapCCR pixel-art"
             style={{
               transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`,
             }}
@@ -1029,6 +1064,17 @@ const CrystalCavernsRight = (props) => {
             >
               <div className="character_spritesheet pixel-art"></div>
             </div>
+
+            <div
+              className="water pixel-art"
+              style={{
+                transform: `translate3d( ${600 - xwaterTransformVar}px, ${
+                  0 - ywaterTransformVar
+                }px, 0 )`,
+              }}
+            >
+              <div className="water_spritesheet pixel-art"></div>
+            </div>
           </div>
         </div>
         {textValue ? (
@@ -1039,6 +1085,6 @@ const CrystalCavernsRight = (props) => {
       </div>
     </div>
   );
-};
+};;
 
 export default CrystalCavernsRight;

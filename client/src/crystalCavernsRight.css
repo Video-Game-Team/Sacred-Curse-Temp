@@ -34,11 +34,9 @@ body {
 }
 
 
-.mapCC {
+.mapCCR {
     image-rendering: pixelated;
-    /* max-height: 50000px;
-    min-width: 50000px; */
-    background-image: url("./assets/maps/Crystal Caverns no grid.png");
+    background-image: url("./assets/maps/Crystal Caverns Right no grid.png");
     background-size: 3840px;
     width: calc(150 * var(--grid-cell));
     height: calc(150 * var(--grid-cell));
@@ -98,67 +96,3 @@ body {
         transform: translate3d(-100%, 0%, 0);
     }
 }
-
-
-
-
-
-.fade-in {
-    animation: fadeIn ease 1s;
-    -webkit-animation: fadeIn ease 1s;
-    -moz-animation: fadeIn ease 1s;
-    -o-animation: fadeIn ease 1s;
-    -ms-animation: fadeIn ease 1s;
-}
-
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@-moz-keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@-webkit-keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@-o-keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@-ms-keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-

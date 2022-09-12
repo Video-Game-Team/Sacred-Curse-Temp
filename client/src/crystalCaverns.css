@@ -103,7 +103,7 @@ body {
     }
 
     to {
-        transform: translate3d(0%, 1%, 0);
+        transform: translate3d(0%, -1%, 0);
     }
 }
 
@@ -111,7 +111,7 @@ body {
 
  .water {
      width: calc(var(--grid-cell) * 6.8);
-     height: calc(var(--grid-cell)* 100);
+     height: calc(var(--grid-cell)* 62.7);
      overflow: hidden;
  }
 
@@ -120,9 +120,9 @@ body {
      background: url("./assets/images/river no grid.png") no-repeat no-repeat;
      background-size: 100%;
      width: calc(var(--grid-cell)* 8);
-     height: calc(var(--grid-cell)* 100);
+     height: calc(var(--grid-cell)* 80);
  }
 
  .water .water_spritesheet {
-     animation: waterAnimation 2s steps(4) infinite;
+     animation: waterAnimation .5s steps(4) infinite;
  }
