@@ -6,6 +6,11 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
+
+import click1 from '../../audioclips/click1.mp3';
+import text from '../../audioclips/Text.mp3';
+import SnowMan from '../../audioclips/Snowman.mp3';
+
 import '../../indoorHouse1.css';
 
 const IndoorHouse1 = (props) => {
@@ -14,6 +19,9 @@ const IndoorHouse1 = (props) => {
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-532);
   //
+  const [xgirl1TransformVar, setXgirl1TransformVar] = useState(-420);
+  //this sets the y Cordinate to transform the map and character location
+  const [ygirl1TransformVar, setYgirl1TransformVar] = useState(-180);
 
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
@@ -34,6 +42,19 @@ const IndoorHouse1 = (props) => {
   const xPlayerIndex = useRef(4);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+
+  //Music Playing
+  const clickAudio1 = () => new Audio(SnowMan).play();
+
+  // //NPC Dialogue sound effect
+  const clickAudio2 = () => new Audio(text).play();
+
+  //Starts off Music Loop
+  useEffect(() => {
+    {
+      clickAudio1();
+    }
+  }, []);
 
   // let currentMap2 = [
   //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -58,8 +79,8 @@ const IndoorHouse1 = (props) => {
     [17, 18, 19, 1874, 1875, 1876, 2589, 1, 2591, 2592, 1, 1, 1, 2644, 27],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1],
     [1, 0, 0, 0, 0, 1, 1, 5528, 1, 1, 0, 0, 0, 0, 1],
     [0, 0, 0, 0, 0, 1, 0, 5547, 5548, 1, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 1, 2536, 2537, 2538, 1, 0, 0, 0, 0, 0],
@@ -134,12 +155,6 @@ const IndoorHouse1 = (props) => {
         //Facing up
         if (facing.current === 'up') {
           //Guard 1 Lower left NPC
-          if (
-            (yPlayerIndex.current === 5 && xPlayerIndex.current === 11) ||
-            (yPlayerIndex.current === 5 && xPlayerIndex.current === 12)
-          ) {
-            setTextValue('Hi I am Guard1');
-          }
           // //YO Mama NPC
           // if (
           //   (yPlayerIndex.current === 3 && xPlayerIndex.current === 4) ||
@@ -170,7 +185,8 @@ const IndoorHouse1 = (props) => {
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 6) ||
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 7)
           ) {
-            setTextValue('Hi I am here');
+            clickAudio2();
+            setTextValue('Hi I am soft, squeeze me');
           }
           // //YO Mama NPC
           // if (
@@ -198,10 +214,10 @@ const IndoorHouse1 = (props) => {
         //Facing left
         if (facing.current === 'left') {
           if (
-            (yPlayerIndex.current === 4 && xPlayerIndex.current === 7) ||
-            (yPlayerIndex.current === 5 && xPlayerIndex.current === 7)
+            (yPlayerIndex.current === 5 && xPlayerIndex.current === 8) 
           ) {
-            setTextValue('Hi I am here');
+             clickAudio2();
+             setTextValue('Hi I am soft, squeeze me');
           }
           //YO Mama NPC
           // if (
@@ -229,10 +245,10 @@ const IndoorHouse1 = (props) => {
         //Facing right
         if (facing.current === 'right') {
           if (
-            (yPlayerIndex.current === 4 && xPlayerIndex.current === 5) ||
-            (yPlayerIndex.current === 5 && xPlayerIndex.current === 5)
+            (yPlayerIndex.current === 5 && xPlayerIndex.current === 6)
           ) {
-            setTextValue('Hi I am here');
+             clickAudio2();
+             setTextValue('Hi I am soft, squeeze me');
           }
           //YO Mama NPC
           // if (
@@ -520,10 +536,26 @@ const IndoorHouse1 = (props) => {
             >
               <div className="character_spritesheet pixel-art"></div>
             </div>
+
+            <div
+              className="girlIH3 pixel-art"
+              style={{
+                transform: `translate3d( ${0 - xgirl1TransformVar}px, ${
+                  0 - ygirl1TransformVar
+                }px, 0 )`,
+              }}
+            >
+              <div className="girlIH3_spritesheet pixel-art"></div>
+            </div>
           </div>
         </div>
+
         {textValue ? (
-          <dialog className="textBox typewriter" open>
+          <dialog
+            id="dialogStyle"
+            className="facegirlIH3 textBox typewriter"
+            open
+          >
             <p>{textValue}</p>
           </dialog>
         ) : null}

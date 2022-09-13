@@ -23,9 +23,9 @@ const IndoorHouse3 = (props) => {
   //this sets the y Cordinate to transform the map and character location
   const [ygirl1TransformVar, setYgirl1TransformVar] = useState(-23);
 
-  const [xgirl2TransformVar, setXgirl2TransformVar] = useState(-170);
+  const [xgirl2TransformVar, setXgirl2TransformVar] = useState(-175);
   //this sets the y Cordinate to transform the map and character location
-  const [ygirl2TransformVar, setYgirl2TransformVar] = useState(-215);
+  const [ygirl2TransformVar, setYgirl2TransformVar] = useState(-205);
 
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
@@ -585,6 +585,8 @@ const IndoorHouse3 = (props) => {
             </div>
           </div>
         </div>
+
+        
         {textValue ? (
           <dialog
             id="dialogStyle"

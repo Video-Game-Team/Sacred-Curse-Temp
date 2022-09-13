@@ -113,7 +113,7 @@ body {
    }
 
    .girl1 .girl1_spritesheet {
-       animation: walkAnimation 4.0s steps(15) infinite;
+       animation: walkAnimation 3.5s steps(15) infinite;
    }
 
 
@@ -142,7 +142,7 @@ body {
    }
 
    .girl2 .girl2_spritesheet {
-       animation: walkAnimation 8s steps(4) infinite;
+       animation: walkAnimation 20s steps(4) infinite;
    }
 
 
