@@ -186,7 +186,7 @@ const IndoorHouse1 = (props) => {
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 7)
           ) {
             clickAudio2();
-            setTextValue('Hi I am soft, squeeze me');
+            setTextValue('Wanna hookup tonight, but not hang out anymore?');
           }
           // //YO Mama NPC
           // if (
@@ -217,7 +217,7 @@ const IndoorHouse1 = (props) => {
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 8) 
           ) {
              clickAudio2();
-             setTextValue('Hi I am soft, squeeze me');
+            setTextValue('Wanna hookup tonight, but not hang out anymore?');
           }
           //YO Mama NPC
           // if (
@@ -248,7 +248,7 @@ const IndoorHouse1 = (props) => {
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 6)
           ) {
              clickAudio2();
-             setTextValue('Hi I am soft, squeeze me');
+             setTextValue('Wanna hookup tonight, but not hang out anymore?');
           }
           //YO Mama NPC
           // if (
