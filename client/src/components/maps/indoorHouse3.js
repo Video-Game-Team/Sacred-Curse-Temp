@@ -5,6 +5,11 @@ import UpWalker from '../../assets/images/upWalker.png';
 import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
+
+import click1 from '../../audioclips/click1.mp3';
+import text from '../../audioclips/Text.mp3';
+import SnowMan from '../../audioclips/Snowman.mp3';
+
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
 import '../../indoorHouse3.css';
 
@@ -14,6 +19,13 @@ const IndoorHouse3 = (props) => {
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-532);
   //
+  const [xgirl1TransformVar, setXgirl1TransformVar] = useState(-465);
+  //this sets the y Cordinate to transform the map and character location
+  const [ygirl1TransformVar, setYgirl1TransformVar] = useState(-23);
+
+  const [xgirl2TransformVar, setXgirl2TransformVar] = useState(-170);
+  //this sets the y Cordinate to transform the map and character location
+  const [ygirl2TransformVar, setYgirl2TransformVar] = useState(-215);
 
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
@@ -34,6 +46,20 @@ const IndoorHouse3 = (props) => {
   const xPlayerIndex = useRef(7);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+  // const [whichNPCFace, setwhichNPCFace] = useState();
+
+  //Music Playing
+  const clickAudio1 = () => new Audio(SnowMan).play();
+
+  // //NPC Dialogue sound effect
+  const clickAudio2 = () => new Audio(text).play();
+
+  //Starts off Music Loop
+  useEffect(() => {
+    {
+      clickAudio1();
+    }
+  }, []);
 
   // let currentMap2 = [
   //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -135,6 +161,8 @@ const IndoorHouse3 = (props) => {
     }
   }, [yPlayerIndex.current, xPlayerIndex.current]);
 
+  
+
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -147,13 +175,15 @@ const IndoorHouse3 = (props) => {
             (yPlayerIndex.current === 9 && xPlayerIndex.current === 4)
           ) {
             setTextValue('Hi I am blonde');
+            clickAudio2();
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 7) ||
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 8)
           ) {
-            setTextValue("Hi I'm the one with dark hair");
+            clickAudio2();
+            setTextValue('Hi, welcome to our sex chamber');
           }
           // //Hot Girl
           // if (
@@ -178,6 +208,7 @@ const IndoorHouse3 = (props) => {
             (yPlayerIndex.current === 6 && xPlayerIndex.current === 3) ||
             (yPlayerIndex.current === 6 && xPlayerIndex.current === 4)
           ) {
+             clickAudio2();
             setTextValue('Hi I am blonde');
           }
           // //YO Mama NPC
@@ -209,6 +240,7 @@ const IndoorHouse3 = (props) => {
             (yPlayerIndex.current === 7 && xPlayerIndex.current === 5) ||
             (yPlayerIndex.current === 8 && xPlayerIndex.current === 5)
           ) {
+             clickAudio2();
             setTextValue('Hi I am blonde');
           }
           //YO Mama NPC
@@ -240,6 +272,7 @@ const IndoorHouse3 = (props) => {
             (yPlayerIndex.current === 7 && xPlayerIndex.current === 2) ||
             (yPlayerIndex.current === 8 && xPlayerIndex.current === 2)
           ) {
+             clickAudio2();
             setTextValue('Hi I am blonde');
           }
           //YO Mama NPC
@@ -528,10 +561,36 @@ const IndoorHouse3 = (props) => {
             >
               <div className="character_spritesheet pixel-art"></div>
             </div>
+
+            <div
+              className="girl1 pixel-art"
+              style={{
+                transform: `translate3d( ${0 - xgirl1TransformVar}px, ${
+                  0 - ygirl1TransformVar
+                }px, 0 )`,
+              }}
+            >
+              <div className="girl1_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="girl2 pixel-art"
+              style={{
+                transform: `translate3d( ${0 - xgirl2TransformVar}px, ${
+                  0 - ygirl2TransformVar
+                }px, 0 )`,
+              }}
+            >
+              <div className="girl2_spritesheet pixel-art"></div>
+            </div>
           </div>
         </div>
         {textValue ? (
-          <dialog className="textBox typewriter" open>
+          <dialog
+            id="dialogStyle"
+            className="faceGirl1 textBox typewriter"
+            open
+          >
             <p>{textValue}</p>
           </dialog>
         ) : null}
