@@ -6,6 +6,11 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
+
+import click1 from '../../audioclips/click1.mp3';
+import text from '../../audioclips/Text.mp3';
+import SnowMan from '../../audioclips/Snowman.mp3';
+
 import '../../hotelIndoors.css';
 
 const HotelIndoors = (props) => {
@@ -14,6 +19,9 @@ const HotelIndoors = (props) => {
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-975);
   //
+  const [xguardTransformVar, setXguardTransformVar] = useState(-710);
+  //this sets the y Cordinate to transform the map and character location
+  const [yguardTransformVar, setYguardTransformVar] = useState(-75);
 
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
@@ -34,6 +42,19 @@ const HotelIndoors = (props) => {
   const xPlayerIndex = useRef(8);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+
+  //Music Playing
+  const clickAudio1 = () => new Audio(SnowMan).play();
+
+  // //NPC Dialogue sound effect
+  const clickAudio2 = () => new Audio(text).play();
+
+  //Starts off Music Loop
+  useEffect(() => {
+    {
+      clickAudio1();
+    }
+  }, []);
 
   // let currentMap2 = [
   //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -178,13 +199,15 @@ const HotelIndoors = (props) => {
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 11) ||
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 12)
           ) {
-            setTextValue('Hi I am Guard1');
+             clickAudio2();
+            setTextValue("Please don't come any closer to this painting");
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 4) ||
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 5)
           ) {
+             clickAudio2();
             setTextValue("Hi I'm behind the counter");
           }
           // //Hot Girl
@@ -272,6 +295,7 @@ const HotelIndoors = (props) => {
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 10) ||
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 10)
           ) {
+            clickAudio2();
             setTextValue("Hi I'm Guard1");
           }
           //YO Mama NPC
@@ -560,10 +584,25 @@ const HotelIndoors = (props) => {
             >
               <div className="character_spritesheet pixel-art"></div>
             </div>
+
+            <div
+              className="guard pixel-art"
+              style={{
+                transform: `translate3d( ${0 - xguardTransformVar}px, ${
+                  0 - yguardTransformVar
+                }px, 0 )`,
+              }}
+            >
+              <div className="guard_spritesheet pixel-art"></div>
+            </div>
           </div>
         </div>
         {textValue ? (
-          <dialog className="textBox typewriter" open>
+          <dialog
+            id="dialogStyle"
+            className="faceGuard textBox typewriter"
+            open
+          >
             <p>{textValue}</p>
           </dialog>
         ) : null}

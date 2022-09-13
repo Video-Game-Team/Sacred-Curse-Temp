@@ -95,13 +95,6 @@
      }
  }
 
-
-
-
-
-
-
-
  .npc {
      width: calc(var(--grid-cell)* 2);
      height: calc(var(--grid-cell)* 2);
@@ -123,13 +116,6 @@
   }
 
 
-
-
-
-
-
-
-
   .demon {
       width: calc(var(--grid-cell)* 2);
       height: calc(var(--grid-cell)* 2);
@@ -143,4 +129,3 @@
       width: calc(var(--grid-cell)* 2);
       height: calc(var(--grid-cell)* 2);
   }
-

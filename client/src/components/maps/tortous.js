@@ -49,6 +49,8 @@ const Tortous = (props) => {
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
   const [playerFreeze, setPlayerFreeze] = useState(false);
+  const ydemonIndex = useRef(91);
+  const xdemonIndex = useRef(46);
 
   // Sprtiesheet Toggle1 state
   const [toggle1, setToggle1] = useState(false);
@@ -1687,11 +1689,11 @@ const Tortous = (props) => {
     ],
   ];
 
-  // console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  // console.log(
-  //   'VALUE Right',
-  //   currentMap[yPlayerIndex.current][xPlayerIndex.current]
-  // );
+  console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
+  console.log(
+    'VALUE Right',
+    currentMap[yPlayerIndex.current][xPlayerIndex.current]
+  );
 
   // useEffect(()=>{
   //   let tempGrid=[]
@@ -2203,11 +2205,9 @@ const Tortous = (props) => {
             setTextValue('Welcome To Tortous');
           }
 
-          if (
-            (yPlayerIndex.current === 55 && xPlayerIndex.current === 90) ||
-            (yPlayerIndex.current === 56 && xPlayerIndex.current === 90)
-          ) {
-            setTextValue('Welcome To Tortous');
+          if (ydemonIndex.current === 91 && xdemonIndex.current === 46) {
+           
+            setTextValue('HOLA');
           }
         }
 

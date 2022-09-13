@@ -35,7 +35,7 @@
 
  .mapHI {
      image-rendering: pixelated;
-     background-image: url("./assets/maps/Hotel indoors no grid.png");
+     background-image: url("./assets/maps/Hotel indoors no grid npc.png");
      background-size: 1024px;
      width: calc(40 * var(--grid-cell));
      height: calc(55 * var(--grid-cell));
@@ -96,3 +96,28 @@
          transform: translate3d(-100%, 0%, 0);
      }
  }
+
+   .guard {
+       width: calc(var(--grid-cell)* 3);
+       height: calc(var(--grid-cell)* 3);
+       overflow: hidden;
+   }
+
+   .guard_spritesheet {
+       position: absolute;
+       background: url("./assets/images/Hotel Indoors guard 1.png") no-repeat no-repeat;
+       background-size: 100%;
+       width: calc(var(--grid-cell)* 5);
+       height: calc(var(--grid-cell)* 5);
+   }
+
+   .guard .guard_spritesheet {
+       animation: walkAnimation 8s steps(2) infinite;
+   }
+
+   .faceGuard {
+       background: url("./assets/images/Hotel Indoors Face 1.png") no-repeat no-repeat;
+       background-position: left top;
+       background-size: 12%;
+       background-size: content-box;
+   }
