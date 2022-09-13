@@ -1085,7 +1085,11 @@ const CrystalCavernsRight = (props) => {
         </div>
 
         {textValue ? (
-          <dialog id="dialogMike" className="textBox face1 typewriter" open>
+          <dialog
+            id="dialogStyle"
+            className="faceMainGuy textBox typewriter"
+            open
+          >
             <p>{textValue}</p>
           </dialog>
         ) : null}
