@@ -96,3 +96,11 @@ body {
         transform: translate3d(-100%, 0%, 0);
     }
 }
+
+
+.face1 {
+    background: url("./assets/images/MainGuyFace.png") no-repeat no-repeat;
+    background-position: left top;
+    background-size: 12%;
+    background-size: content-box;     
+}

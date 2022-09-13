@@ -729,7 +729,6 @@ const CrystalCavernsRight = (props) => {
     currentMap[yPlayerIndex.current][xPlayerIndex.current]
   );
 
-
   // useEffect(() => {
   //   let tempGrid = [];
   //   for (let i = 0; i < currentMap.length; i++) {
@@ -755,8 +754,6 @@ const CrystalCavernsRight = (props) => {
   //   setGridArray(tempGrid);
   // }, []);
 
-
-
   useEffect(() => {
     if (props.previousMap === 'luluMountainPassRight') {
       //setYCord
@@ -779,12 +776,21 @@ const CrystalCavernsRight = (props) => {
         if (facing.current === 'right') {
           if (
             (yPlayerIndex.current === 52 && xPlayerIndex.current === 41) ||
-            (
-              yPlayerIndex.current === 52 && xPlayerIndex.current === 42
-            )
+            (yPlayerIndex.current === 52 && xPlayerIndex.current === 42)
           ) {
             clickAudio2();
-            setTextValue('Welcome to Crystal Caverns');
+            setTextValue(`    Welcome to Crystal Caverns`);
+          }
+        }
+
+        if (facing.current === 'up') {
+          if (
+            (yPlayerIndex.current === 11 && xPlayerIndex.current === 36) ||
+            (yPlayerIndex.current === 11 && xPlayerIndex.current === 35) ||
+            (yPlayerIndex.current === 11 && xPlayerIndex.current === 34)
+          ) {
+            clickAudio2();
+            setTextValue('WTF? Look at all these flowers!');
           }
         }
       }
@@ -1077,8 +1083,9 @@ const CrystalCavernsRight = (props) => {
             </div>
           </div>
         </div>
+
         {textValue ? (
-          <dialog className="textBox typewriter" open>
+          <dialog id="dialogMike" className="textBox face1 typewriter" open>
             <p>{textValue}</p>
           </dialog>
         ) : null}
