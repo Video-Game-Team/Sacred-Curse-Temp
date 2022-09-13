@@ -46,6 +46,8 @@ const IndoorHouse3 = (props) => {
   const xPlayerIndex = useRef(7);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+  const [npcFace, setNpcFace]=useState()
+
   // const [whichNPCFace, setwhichNPCFace] = useState();
 
   //Music Playing
@@ -174,6 +176,7 @@ const IndoorHouse3 = (props) => {
             (yPlayerIndex.current === 9 && xPlayerIndex.current === 3) ||
             (yPlayerIndex.current === 9 && xPlayerIndex.current === 4)
           ) {
+            setNpcFace('faceGirl2')
             setTextValue('Hi I am blonde');
             clickAudio2();
           }
@@ -183,6 +186,7 @@ const IndoorHouse3 = (props) => {
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 8)
           ) {
             clickAudio2();
+            setNpcFace("faceGirl1")
             setTextValue('Hi, welcome to our sex chamber');
           }
           // //Hot Girl
@@ -576,7 +580,7 @@ const IndoorHouse3 = (props) => {
             <div
               className="girl2 pixel-art"
               style={{
-                transform: `translate3d( ${0 - xgirl2TransformVar}px, ${
+                transform: `translate3d( ${0 -xgirl2TransformVar}px, ${
                   0 - ygirl2TransformVar
                 }px, 0 )`,
               }}
@@ -586,16 +590,15 @@ const IndoorHouse3 = (props) => {
           </div>
         </div>
 
-        
-        {textValue ? (
+        {textValue ?
           <dialog
             id="dialogStyle"
-            className="faceGirl1 textBox typewriter"
+            className={`${npcFace} textBox typewriter`}
             open
           >
             <p>{textValue}</p>
           </dialog>
-        ) : null}
+         : null}
       </div>
     </div>
   );

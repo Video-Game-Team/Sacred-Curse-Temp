@@ -43,6 +43,8 @@ const IndoorHouse1 = (props) => {
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
 
+ const [npcFace, setNpcFace]=useState()
+
   //Music Playing
   const clickAudio1 = () => new Audio(SnowMan).play();
 
@@ -187,6 +189,7 @@ const IndoorHouse1 = (props) => {
           ) {
             clickAudio2();
             setTextValue('Wanna hookup tonight, but not hang out anymore?');
+            setNpcFace(facegirlIH3);
           }
           // //YO Mama NPC
           // if (
