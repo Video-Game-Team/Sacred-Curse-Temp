@@ -19,6 +19,13 @@ const MountainEntrance = (props) => {
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-2836);
   //
+  const [xmech1TransformVar, setXmech1TransformVar] = useState(-2240);
+  //this sets the y Cordinate to transform the map and character location
+  const [ymech1TransformVar, setmech1TransformVar] = useState(-1552);
+
+  const [xmech2TransformVar, setXmech2TransformVar] = useState(-1918);
+    //this sets the y Cordinate to transform the map and character location
+  const [ymech2TransformVar, setmech2TransformVar] = useState(-1360);
 
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
@@ -981,7 +988,7 @@ const MountainEntrance = (props) => {
         if (facing.current === 'up') {
           if (
             (yPlayerIndex.current === 49 && xPlayerIndex.current === 35) ||
-            (yPlayerIndex.current === 49 && xPlayerIndex.current === 35) 
+            (yPlayerIndex.current === 49 && xPlayerIndex.current === 35)
           ) {
             clickAudio2();
             setTextValue('Welcome to the Mountain Entrance');
@@ -1251,10 +1258,37 @@ const MountainEntrance = (props) => {
             >
               <div className="character_spritesheet pixel-art"></div>
             </div>
+
+            <div
+              className="mech1ME pixel-art"
+              style={{
+                transform: `translate3d( ${0 - xmech1TransformVar}px, ${
+                  0 - ymech1TransformVar
+                }px, 0 )`,
+              }}
+            >
+              <div className="mech1ME_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="mech2ME pixel-art"
+              style={{
+                transform: `translate3d( ${0 - xmech2TransformVar}px, ${
+                  0 - ymech2TransformVar
+                }px, 0 )`,
+              }}
+            >
+              <div className="mech2ME_spritesheet pixel-art"></div>
+            </div>
           </div>
         </div>
+
         {textValue ? (
-          <dialog className="textBox typewriter" open>
+          <dialog
+            id="dialogStyle"
+            className={`${npcFace} textBox typewriter`}
+            open
+          >
             <p>{textValue}</p>
           </dialog>
         ) : null}

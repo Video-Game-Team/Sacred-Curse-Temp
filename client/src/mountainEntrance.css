@@ -59,12 +59,6 @@ body {
     width: calc(var(--grid-cell)* 2);
     height: calc(var(--grid-cell)* 2);
     overflow: hidden;
-
-
-
-
-    /* margin-top: -58px;
-    margin-left: -45px; */
 }
 
 .character_spritesheet {
@@ -102,3 +96,42 @@ body {
         transform: translate3d(-100%, 0%, 0);
     }
 }
+
+
+
+   .mech1ME {
+       width: calc(var(--grid-cell) * 4);
+       height: calc(var(--grid-cell) * 4);
+       overflow: hidden;
+   }
+
+   .mech1ME_spritesheet {
+       position: absolute;
+       background: url("./assets/images/mech1.png") no-repeat no-repeat;
+       background-size: 100%;
+       width: calc(var(--grid-cell) * 12);
+       height: calc(var(--grid-cell) * 4);
+   }
+
+   .mech1ME .mech1ME_spritesheet {
+       animation: walkAnimation 1.2s steps(3) infinite;
+   }
+
+
+    .mech2ME {
+       width: calc(var(--grid-cell) * 4);
+       height: calc(var(--grid-cell) * 4);
+       overflow: hidden;
+   }
+
+   .mech2ME_spritesheet {
+       position: absolute;
+       background: url("./assets/images/mech2.png") no-repeat no-repeat;
+       background-size: 100%;
+       width: calc(var(--grid-cell) * 12);
+       height: calc(var(--grid-cell) * 4);
+   }
+
+   .mech2ME .mech2ME_spritesheet {
+       animation: walkAnimation 1s steps(3) infinite;
+   }
