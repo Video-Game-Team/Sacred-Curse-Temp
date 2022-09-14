@@ -6,6 +6,11 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
+
+import click1 from '../../audioclips/click1.mp3';
+import text from '../../audioclips/Text.mp3';
+import SnowMan from '../../audioclips/Snowman.mp3';
+
 import '../../indoorHouse2.css';
 
 const IndoorHouse2 = (props) => {
@@ -14,6 +19,9 @@ const IndoorHouse2 = (props) => {
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-532);
   //
+   const [xguyTransformVar, setXguyTransformVar] = useState(-683);
+   //this sets the y Cordinate to transform the map and character location
+   const [yguyTransformVar, setYguyTransformVar] = useState(-90);
 
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
@@ -34,6 +42,20 @@ const IndoorHouse2 = (props) => {
   const xPlayerIndex = useRef(11);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+  const [npcFace, setNpcFace] = useState();
+
+   //Music Playing
+   const clickAudio1 = () => new Audio(SnowMan).play();
+
+   // //NPC Dialogue sound effect
+   const clickAudio2 = () => new Audio(text).play();
+
+   //Starts off Music Loop
+   useEffect(() => {
+     {
+       clickAudio1();
+     }
+   }, []);
 
   // let currentMap2 = [
   //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -63,8 +85,8 @@ const IndoorHouse2 = (props) => {
       2400, 18,
     ],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 80, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4317, 4318, 0, 1],
-    [2341, 2395, 2343, 0, 0, 0, 0, 0, 0, 0, 0, 4336, 4337, 0, 2434],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4317, 0, 0, 1],
+    [2341, 2395, 2343, 0, 0, 0, 0, 0, 0, 0, 0, 4336, 0, 0, 2434],
     [2357, 2411, 2359, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1],
     [0, 0, 0, 0, 0, 0, 0, 2512, 0, 0, 0, 0, 0, 0, 2436],
     [0, 0, 0, 0, 0, 2510, 2544, 2528, 2546, 2509, 0, 0, 0, 0, 2452],
@@ -145,7 +167,9 @@ const IndoorHouse2 = (props) => {
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 11) ||
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 12)
           ) {
-            setTextValue('Hi I am Guard1');
+            setNpcFace('faceGuyIH2');
+            setTextValue('Howdy partner');
+            clickAudio2();
           }
           // //YO Mama NPC
           // if (
@@ -205,10 +229,12 @@ const IndoorHouse2 = (props) => {
         //Facing left
         if (facing.current === 'left') {
           if (
-            (yPlayerIndex.current === 3 && xPlayerIndex.current === 13) ||
-            (yPlayerIndex.current === 4 && xPlayerIndex.current === 13)
+            (yPlayerIndex.current === 3 && xPlayerIndex.current === 12) ||
+            (yPlayerIndex.current === 4 && xPlayerIndex.current === 12)
           ) {
-            setTextValue("Hi I'm Guard");
+             setNpcFace('faceGuyIH2');
+             setTextValue('Howdy partner');
+             clickAudio2();
           }
           //YO Mama NPC
           // if (
@@ -239,7 +265,9 @@ const IndoorHouse2 = (props) => {
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 10) ||
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 10)
           ) {
-            setTextValue("Hi I'm Guard1");
+             setNpcFace('faceGuyIH2');
+             setTextValue('Howdy partner');
+             clickAudio2();
           }
           //YO Mama NPC
           // if (
@@ -526,10 +554,25 @@ const IndoorHouse2 = (props) => {
             >
               <div className="character_spritesheet pixel-art"></div>
             </div>
+
+            <div
+              className="guyIH2 pixel-art"
+              style={{
+                transform: `translate3d( ${0 - xguyTransformVar}px, ${
+                  0 - yguyTransformVar
+                }px, 0 )`,
+              }}
+            >
+              <div className="guyIH2_spritesheet pixel-art"></div>
+            </div>
           </div>
         </div>
         {textValue ? (
-          <dialog className="textBox typewriter" open>
+          <dialog
+            id="dialogStyle"
+            className={`${npcFace} textBox typewriter`}
+            open
+          >
             <p>{textValue}</p>
           </dialog>
         ) : null}

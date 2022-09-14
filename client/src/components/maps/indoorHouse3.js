@@ -48,7 +48,6 @@ const IndoorHouse3 = (props) => {
   const [textValue, setTextValue] = useState(null);
   const [npcFace, setNpcFace]=useState()
 
-  // const [whichNPCFace, setwhichNPCFace] = useState();
 
   //Music Playing
   const clickAudio1 = () => new Audio(SnowMan).play();
@@ -599,6 +598,7 @@ const IndoorHouse3 = (props) => {
             <p>{textValue}</p>
           </dialog>
          : null}
+         
       </div>
     </div>
   );
