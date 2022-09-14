@@ -35,7 +35,7 @@ body {
 
 .mapIH6 {
     image-rendering: pixelated;
-    background-image: url("./assets/maps/Indoor House 6 no grid.png");
+    background-image: url("./assets/maps/Indoor House 6 w grid npc.png");
     background-size: 960px;
     width: calc(37.5 * var(--grid-cell));
     height: calc(37.5 * var(--grid-cell));
@@ -54,7 +54,7 @@ body {
 
 
 
-*/ .character {
+.character {
     width: calc(var(--grid-cell)* 2);
     height: calc(var(--grid-cell)* 2);
     overflow: hidden;
@@ -97,3 +97,29 @@ body {
         transform: translate3d(-100%, 0%, 0);
     }
 }
+
+ .girlIH6 {
+     width: calc(var(--grid-cell)* 2);
+     height: calc(var(--grid-cell)* 3);
+     overflow: hidden;
+ }
+
+ .girlIH6_spritesheet {
+     position: absolute;
+     background: url("./assets/images/Indoor House 6 girl.png") no-repeat no-repeat;
+     background-size: 100%;
+     width: calc(var(--grid-cell)*34);
+     height: calc(var(--grid-cell)* 3);
+ }
+
+ .girlIH6 .girlIH6_spritesheet {
+     animation: walkAnimation 3.5s steps(15) infinite;
+ }
+
+
+ .faceGirlIH6 {
+     background: url("./assets/images/Indoor House 6 girl face.png") no-repeat no-repeat;
+     background-position: left top;
+     background-size: 12%;
+     background-size: content-box;
+ }
