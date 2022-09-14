@@ -6,6 +6,11 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
+
+import click1 from '../../audioclips/click1.mp3';
+import text from '../../audioclips/Text.mp3';
+import SnowMan from '../../audioclips/Snowman.mp3';
+
 import '../../indoorHouse7.css';
 
 const IndoorHouse7 = (props) => {
@@ -14,6 +19,9 @@ const IndoorHouse7 = (props) => {
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-531);
   //
+  const [xguyTransformVar, setXguyTransformVar] = useState(-400);
+  //this sets the y Cordinate to transform the map and character location
+  const [yguyTransformVar, setYguyTransformVar] = useState(-250);
 
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
@@ -34,6 +42,20 @@ const IndoorHouse7 = (props) => {
   const xPlayerIndex = useRef(3);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+  const [npcFace, setNpcFace] = useState();
+
+  //Music Playing
+  const clickAudio1 = () => new Audio(SnowMan).play();
+
+  // //NPC Dialogue sound effect
+  const clickAudio2 = () => new Audio(text).play();
+
+  //Starts off Music Loop
+  useEffect(() => {
+    {
+      clickAudio1();
+    }
+  }, []);
 
   // let currentMap2 = [
   //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -62,7 +84,7 @@ const IndoorHouse7 = (props) => {
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0],
     [2132, 0, 0, 0, 0, 0, 1, 5514, 0, 0, 0, 0, 0, 0, 0, , , 0],
     [1649, 0, 0, 0, 0, 1, 0, 5533, 0, 0, 1358, 0, 0, 0, 0],
     [1633, 0, 0, 0, 0, 1374, 0, 1630, 1631, 0, 1374, 0, 0, 0, 0],
@@ -171,10 +193,26 @@ const IndoorHouse7 = (props) => {
         if (!facing.current) {
           //Jim NPC
           if (
-            (yPlayerIndex.current === 5 && xPlayerIndex.current === 6) ||
-            (yPlayerIndex.current === 5 && xPlayerIndex.current === 7)
+            (yPlayerIndex.current === 4 && xPlayerIndex.current === 6) ||
+            (yPlayerIndex.current === 4 && xPlayerIndex.current === 7)
           ) {
-            setTextValue("Hi I'm Guard1");
+            setNpcFace('faceGuyIH7');
+            setTextValue("Sorry, you're catching me during my meal.");
+            clickAudio2();
+
+            setTimeout(() => {
+              setNpcFace('faceMainGuy');
+              setTextValue("It's all right, i just ate.");
+              clickAudio2();
+            }, 4000);
+
+            setTimeout(() => {
+              setNpcFace('faceGuyIH7');
+              setTextValue(
+                "Oh, awesome. Let me finish and I'll tell you a story."
+              );
+              clickAudio2();
+            }, 8000);
           }
           // //YO Mama NPC
           // if (
@@ -205,8 +243,25 @@ const IndoorHouse7 = (props) => {
             (yPlayerIndex.current === 6 && xPlayerIndex.current === 8) ||
             (yPlayerIndex.current === 7 && xPlayerIndex.current === 8)
           ) {
-            setTextValue("Hi I'm Guard");
+            setNpcFace('faceGuyIH7');
+            setTextValue("Sorry, you're catching me during my meal.");
+            clickAudio2();
+
+            setTimeout(() => {
+              setNpcFace('faceMainGuy');
+              setTextValue("It's all right, i just ate.");
+              clickAudio2();
+            }, 4000);
+
+            setTimeout(() => {
+              setNpcFace('faceGuyIH7');
+              setTextValue(
+                "Oh, awesome. Let me finish and I'll tell you a story."
+              );
+              clickAudio2();
+            }, 8000);
           }
+           
           //YO Mama NPC
           // if (
           //   (yPlayerIndex.current === 33 && xPlayerIndex.current === 40) ||
@@ -236,7 +291,21 @@ const IndoorHouse7 = (props) => {
             (yPlayerIndex.current === 6 && xPlayerIndex.current === 5) ||
             (yPlayerIndex.current === 7 && xPlayerIndex.current === 5)
           ) {
-            setTextValue("Hi I'm Guard1");
+            setNpcFace('faceGuyIH7');
+            setTextValue("Sorry, you're catching me during my meal.");
+            clickAudio2();
+
+            setTimeout(() => {
+               setNpcFace('faceMainGuy');
+               setTextValue("It's all right, i just ate.");
+               clickAudio2();
+            }, 4000)
+
+            setTimeout(() => {
+              setNpcFace('faceGuyIH7');
+              setTextValue("Oh, awesome. Let me finish and I'll tell you a story.");
+              clickAudio2();
+            }, 8000);
           }
           //YO Mama NPC
           // if (
@@ -524,10 +593,26 @@ const IndoorHouse7 = (props) => {
             >
               <div className="character_spritesheet pixel-art"></div>
             </div>
+
+            <div
+              className="guyIH7 pixel-art"
+              style={{
+                transform: `translate3d( ${0 - xguyTransformVar}px, ${
+                  0 - yguyTransformVar
+                }px, 0 )`,
+              }}
+            >
+              <div className="guyIH7_spritesheet pixel-art"></div>
+            </div>
           </div>
         </div>
+
         {textValue ? (
-          <dialog className="textBox typewriter" open>
+          <dialog
+            id="dialogStyle"
+            className={`${npcFace} textBox typewriter`}
+            open
+          >
             <p>{textValue}</p>
           </dialog>
         ) : null}
