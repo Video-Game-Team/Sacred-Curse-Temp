@@ -65,7 +65,7 @@ function App() {
     DemonObjects.Zabuza,
     DemonObjects.Naruto,
   ]);
-  const [current, setCurrent] = useState('indoorHouse8');
+  const [current, setCurrent] = useState('indoorHouse9');
   const [tempCurrent, setTempCurrent] = useState(null);
   const [previous, setPrevious] = useState(null);
   const [textValue, setTextValue] = useState(null);

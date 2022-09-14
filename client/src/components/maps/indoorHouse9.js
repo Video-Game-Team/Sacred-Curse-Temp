@@ -6,6 +6,11 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
+
+import click1 from '../../audioclips/click1.mp3';
+import text from '../../audioclips/Text.mp3';
+import SnowMan from '../../audioclips/Snowman.mp3';
+
 import '../../indoorHouse9.css';
 
 const IndoorHouse9 = (props) => {
@@ -14,6 +19,13 @@ const IndoorHouse9 = (props) => {
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-531);
   //
+   const [xguy1TransformVar, setXguy1TransformVar] = useState(-195);
+   //this sets the y Cordinate to transform the map and character location
+   const [yguy1TransformVar, setYguy1TransformVar] = useState(-23);
+
+   const [xguy2TransformVar, setXguy2TransformVar] = useState(-755);
+   //this sets the y Cordinate to transform the map and character location
+   const [yguy2TransformVar, setYguy2TransformVar] = useState(-455);
 
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
@@ -34,6 +46,20 @@ const IndoorHouse9 = (props) => {
   const xPlayerIndex = useRef(6);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+  const [npcFace, setNpcFace] = useState();
+
+  //Music Playing
+  const clickAudio1 = () => new Audio(SnowMan).play();
+
+  // //NPC Dialogue sound effect
+  const clickAudio2 = () => new Audio(text).play();
+
+  //Starts off Music Loop
+  useEffect(() => {
+    {
+      clickAudio1();
+    }
+  }, []);
 
   // let currentMap2 = [
   //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -138,14 +164,18 @@ const IndoorHouse9 = (props) => {
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 3) ||
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 4)
           ) {
-            setTextValue('Hi I am green');
+               setNpcFace('faceGuy1IH9');
+               setTextValue('Hi I am a twin');
+               clickAudio2();
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 13 && xPlayerIndex.current === 12) ||
             (yPlayerIndex.current === 13 && xPlayerIndex.current === 13)
           ) {
-            setTextValue('Hi I am in blue');
+              setNpcFace('faceGuy1IH9');
+              setTextValue('Hi I am a twin');
+              clickAudio2();
           }
           // //Hot Girl
           // if (
@@ -201,7 +231,9 @@ const IndoorHouse9 = (props) => {
             (yPlayerIndex.current === 2 && xPlayerIndex.current === 5) ||
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 5)
           ) {
-            setTextValue('Hi I am in green');
+              setNpcFace('faceGuy1IH9');
+              setTextValue('Hi I am a twin');
+              clickAudio2();
           }
           //YO Mama NPC
           // if (
@@ -239,7 +271,9 @@ const IndoorHouse9 = (props) => {
             (yPlayerIndex.current === 11 && xPlayerIndex.current === 11) ||
             (yPlayerIndex.current === 12 && xPlayerIndex.current === 11)
           ) {
-            setTextValue("Hi I'm in blue");
+              setNpcFace('faceGuy1IH9');
+              setTextValue('Hi I am a twin');
+              clickAudio2();
           }
           //Hot Girl
           // if (
@@ -520,10 +554,39 @@ const IndoorHouse9 = (props) => {
             >
               <div className="character_spritesheet pixel-art"></div>
             </div>
+
+            <div
+              className="guy1IH9 pixel-art"
+              style={{
+                transform: `translate3d( ${0 - xguy1TransformVar}px, ${
+                  0 - yguy1TransformVar
+                }px, 0 )`,
+              }}
+            >
+              <div className="guy1IH9_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guy2IH9 pixel-art"
+              style={{
+                transform: `translate3d( ${0 - xguy2TransformVar}px, ${
+                  0 - yguy2TransformVar
+                }px, 0 )`,
+              }}
+            >
+              <div className="guy2IH9_spritesheet pixel-art"></div>
+            </div>
+
+
+
           </div>
         </div>
         {textValue ? (
-          <dialog className="textBox typewriter" open>
+          <dialog
+            id="dialogStyle"
+            className={`${npcFace} textBox typewriter`}
+            open
+          >
             <p>{textValue}</p>
           </dialog>
         ) : null}
