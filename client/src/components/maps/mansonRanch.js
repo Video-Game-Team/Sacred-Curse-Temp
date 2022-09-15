@@ -798,38 +798,48 @@ const MansonRanch = (props) => {
         if (facing.current === 'up') {
           //Guard 1 Lower left NPC
           if (
-            (yPlayerIndex.current === 48 && xPlayerIndex.current === 37) ||
-            (yPlayerIndex.current === 48 && xPlayerIndex.current === 38)
+            (yPlayerIndex.current === 48 && xPlayerIndex.current === 36) ||
+            (yPlayerIndex.current === 48 && xPlayerIndex.current === 37)
           ) {
-            setTextValue('Hi I am Hippy Girl 1');
+            setNpcFace('faceGirl2');
+            setTextValue('Hi I am blonde');
+            clickAudio2();
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 40 && xPlayerIndex.current === 17) ||
             (yPlayerIndex.current === 40 && xPlayerIndex.current === 18)
           ) {
-            setTextValue('Hi I am Hippy Girl 2');
+            setNpcFace('faceGirl2');
+            setTextValue('Hi I am blonde');
+            clickAudio2();
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 45) ||
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 46)
           ) {
-            setTextValue("Hi I'm Crazy guy 1");
+            setNpcFace('faceGirl2');
+            setTextValue('Hi I am blonde');
+            clickAudio2();
           }
 
            if (
              (yPlayerIndex.current === 24 && xPlayerIndex.current === 12) ||
              (yPlayerIndex.current === 24 && xPlayerIndex.current === 13)
            ) {
-             setTextValue("Hi I'm Crazy guy 1");
+             setNpcFace('faceGirl2');
+             setTextValue('Hi I am blonde');
+             clickAudio2();
            }
           //Hot Girl
           if (
             (yPlayerIndex.current === 31 && xPlayerIndex.current === 30) ||
             (yPlayerIndex.current === 31 && xPlayerIndex.current === 31)
           ) {
-            setTextValue("Hi I'm Crazy chick 1");
+            setNpcFace('faceGirl2');
+            setTextValue('Hi I am blonde');
+            clickAudio2();
           }
         }
 
@@ -840,36 +850,46 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 45 && xPlayerIndex.current === 38) ||
             (yPlayerIndex.current === 45 && xPlayerIndex.current === 37)
           ) {
-            setTextValue('Hi I am Hippy Girl 1');
+            setNpcFace('faceGirl2');
+            setTextValue('Hi I am blonde');
+            clickAudio2();
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 36 && xPlayerIndex.current === 17) ||
             (yPlayerIndex.current === 36 && xPlayerIndex.current === 18)
           ) {
-            setTextValue('Hi I am Hippy Girl 2');
+            setNpcFace('faceGirl2');
+            setTextValue('Hi I am blonde');
+            clickAudio2();
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 12) ||
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 13)
           ) {
-            setTextValue("Hi I'm Crazy guy 1");
+            setNpcFace('faceGirl2');
+            setTextValue('Hi I am blonde');
+            clickAudio2();
           }
 
            if (
              (yPlayerIndex.current === 21 && xPlayerIndex.current === 45) ||
              (yPlayerIndex.current === 20 && xPlayerIndex.current === 13)
            ) {
-             setTextValue("Hi I'm Crazy guy 1");
+             setNpcFace('faceGirl2');
+             setTextValue('Hi I am blonde');
+             clickAudio2();
            }
 
           //Hot Girl
           if (
-            (yPlayerIndex.current === 28 && xPlayerIndex.current === 31) ||
-            (yPlayerIndex.current === 28 && xPlayerIndex.current === 32)
+            (yPlayerIndex.current === 29 && xPlayerIndex.current === 30) ||
+            (yPlayerIndex.current === 29 && xPlayerIndex.current === 31)
           ) {
-            setTextValue("Hi I'm Crazy chick 1");
+            setNpcFace('faceGirl2');
+            setTextValue('Hi I am blonde');
+            clickAudio2();
           }
         }
 
@@ -879,28 +899,36 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 46 && xPlayerIndex.current === 39) ||
             (yPlayerIndex.current === 47 && xPlayerIndex.current === 39)
           ) {
-            setTextValue('Hi I am Hippy Girl 1');
+            setNpcFace('faceGirl2');
+            setTextValue('Hi I am blonde');
+            clickAudio2();
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 38 && xPlayerIndex.current === 19) ||
             (yPlayerIndex.current === 39 && xPlayerIndex.current === 19)
           ) {
-            setTextValue('Hi I am Hippy Girl 2');
+            setNpcFace('faceGirl2');
+            setTextValue('Hi I am blonde');
+            clickAudio2();
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 47) ||
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 47)
           ) {
-              setTextValue('Hi I am Hippy Girl 2');
+              setNpcFace('faceGirl2');
+              setTextValue('Hi I am blonde');
+              clickAudio2();
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 29 && xPlayerIndex.current === 32) ||
             (yPlayerIndex.current === 30 && xPlayerIndex.current === 32)
           ) {
-            setTextValue("Hi I'm Crazy chick 1");
+            setNpcFace('faceGirl2');
+            setTextValue('Hi I am blonde');
+            clickAudio2();
           }
         }
 
@@ -924,14 +952,18 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 11) ||
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 11)
           ) {
-            setTextValue("Hi I'm Crazy guy 1");
+            setNpcFace('faceGirl2');
+            setTextValue('Hi I am blonde');
+            clickAudio2();
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 29 && xPlayerIndex.current === 30) ||
             (yPlayerIndex.current === 30 && xPlayerIndex.current === 30)
           ) {
-            setTextValue("Hi I'm Crazy chick 1");
+            setNpcFace('faceGirl2');
+            setTextValue('Hi I am blonde');
+            clickAudio2();
           }
         }
       }
