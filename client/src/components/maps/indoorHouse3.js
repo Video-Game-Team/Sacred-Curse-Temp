@@ -565,6 +565,8 @@ const IndoorHouse3 = (props) => {
               <div className="character_spritesheet pixel-art"></div>
             </div>
 
+
+
             <div
               className="girl1 pixel-art"
               style={{
@@ -576,6 +578,9 @@ const IndoorHouse3 = (props) => {
               <div className="girl1_spritesheet pixel-art"></div>
             </div>
 
+
+
+
             <div
               className="girl2 pixel-art"
               style={{
@@ -586,6 +591,9 @@ const IndoorHouse3 = (props) => {
             >
               <div className="girl2_spritesheet pixel-art"></div>
             </div>
+
+
+
           </div>
         </div>
 

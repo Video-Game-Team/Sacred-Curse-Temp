@@ -121,3 +121,10 @@
        background-size: 12%;
        background-size: content-box;
    }
+
+   .faceGirlHI {
+       background: url("./assets/images/Indoor House 3 girl 1 face.png") no-repeat no-repeat;
+       background-position: left top;
+       background-size: 12%;
+       background-size: content-box;
+   }

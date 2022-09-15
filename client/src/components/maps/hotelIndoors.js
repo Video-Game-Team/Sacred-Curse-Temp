@@ -42,9 +42,7 @@ const HotelIndoors = (props) => {
   const xPlayerIndex = useRef(8);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
-
-  const [whichNPCFace, setwhichNPCFace] = useState()
-
+  const [npcFace, setNpcFace] = useState();
 
   //Music Playing
   const clickAudio1 = () => new Audio(SnowMan).play();
@@ -202,7 +200,7 @@ const HotelIndoors = (props) => {
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 11) ||
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 12)
           ) {
-             setwhichNPCFace('faceGuard');
+             setNpcFace('faceGuard');
              clickAudio2();
             setTextValue("Please don't come any closer to this painting");
           }
@@ -211,8 +209,8 @@ const HotelIndoors = (props) => {
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 4) ||
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 5)
           ) {
-            setwhichNPCFace('faceMainGuy');
-             clickAudio2();
+            setNpcFace('faceGirlHI');
+            clickAudio2();
             setTextValue("Hi I'm behind the counter");
           }
           // //Hot Girl
@@ -300,7 +298,7 @@ const HotelIndoors = (props) => {
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 10) ||
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 10)
           ) {
-            setwhichNPCFace('faceGuard');
+            setNpcFace('faceGuard');
             clickAudio2();
             setTextValue("Please don't come any closer to this painting");
           }
@@ -591,8 +589,6 @@ const HotelIndoors = (props) => {
               <div className="character_spritesheet pixel-art"></div>
             </div>
 
-
-
             <div
               className="guard pixel-art"
               style={{
@@ -602,16 +598,13 @@ const HotelIndoors = (props) => {
               }}
             >
               <div className="guard_spritesheet pixel-art"></div>
-
-
-
             </div>
           </div>
         </div>
         {textValue ? (
           <dialog
             id="dialogStyle"
-            className="faceGuard textBox typewriter"
+            className={`${npcFace} textBox typewriter`}
             open
           >
             <p>{textValue}</p>
