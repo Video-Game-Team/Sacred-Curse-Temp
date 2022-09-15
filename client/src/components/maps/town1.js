@@ -19,7 +19,6 @@ const TownMap1 = (props) => {
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-4690);
   //
-
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
   const speedRef = useRef(4);
@@ -39,6 +38,7 @@ const TownMap1 = (props) => {
   const xPlayerIndex = useRef(36);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+  const [npcFace, setNpcFace] = useState();
 
   //Music Playing
   const clickAudio1 = () => new Audio(SnowMan).play();
@@ -1229,34 +1229,36 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 38 && xPlayerIndex.current === 32) ||
             (yPlayerIndex.current === 38 && xPlayerIndex.current === 33)
           ) {
-            setTextValue(
-              'Tell Mike to find a non moving version of my sprite please.'
-            );
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 38) ||
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 39)
           ) {
-            setTextValue(
-              "Out of all the garbage planets to be stationed on. This has to be shit's pajamas'."
-            );
+             setNpcFace('faceGirl2');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 23) ||
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 24)
           ) {
-            setTextValue(
-              "The people's federation will eventually win this war. The Sun King army lacks cohesion."
-            );
+           setNpcFace('faceGirl2');
+           setTextValue('My dad is mad at me');
+           clickAudio2();
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 33) ||
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 34)
           ) {
-            setTextValue("Shut your mouth when you're speaking to me peasent.");
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
         }
 
@@ -1267,18 +1269,18 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 32) ||
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 33)
           ) {
-            setTextValue(
-              'Tell Mike to find a non moving version of my sprite please.'
-            );
+             setNpcFace('faceGirl2');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 32 && xPlayerIndex.current === 38) ||
             (yPlayerIndex.current === 32 && xPlayerIndex.current === 39)
           ) {
-            setTextValue(
-              "Out of all the garbage planets to be stationed on. This has to be shit's pajamas'."
-            );
+             setNpcFace('faceGirl2');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
           }
           //Hot Girl
           // if (
@@ -1292,7 +1294,9 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 21 && xPlayerIndex.current === 33) ||
             (yPlayerIndex.current === 21 && xPlayerIndex.current === 34)
           ) {
-            setTextValue("Shut your mouth when you're speaking to me peasent.");
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
         }
 
@@ -1302,18 +1306,18 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 36 && xPlayerIndex.current === 34) ||
             (yPlayerIndex.current === 37 && xPlayerIndex.current === 34)
           ) {
-            setTextValue(
-              'Tell Mike to find a non moving version of my sprite please.'
-            );
+             setNpcFace('faceGirl2');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 33 && xPlayerIndex.current === 40) ||
             (yPlayerIndex.current === 34 && xPlayerIndex.current === 40)
           ) {
-            setTextValue(
-              "Out of all the garbage planets to be stationed on. This has to be shit's pajamas'."
-            );
+             setNpcFace('faceGirl2');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
           }
           //Hot Girl
           // if (
@@ -1327,7 +1331,9 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 34) ||
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 34)
           ) {
-            setTextValue("Shut your mouth when you're speaking to me peasent.");
+             setNpcFace('faceGirl2');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
           }
         }
 
@@ -1337,34 +1343,36 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 36 && xPlayerIndex.current === 31) ||
             (yPlayerIndex.current === 37 && xPlayerIndex.current === 31)
           ) {
-            setTextValue(
-              'Tell Mike to find a non moving version of my sprite please.'
-            );
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 33 && xPlayerIndex.current === 37) ||
             (yPlayerIndex.current === 34 && xPlayerIndex.current === 37)
           ) {
-            setTextValue(
-              "Out of all the garbage planets to be stationed on. This has to be shit's pajamas'."
-            );
+             setNpcFace('faceGirl2');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 22) ||
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 22)
           ) {
-            setTextValue(
-              "The people's federation will eventually win this war. The Sun King army lacks cohesion."
-            );
+             setNpcFace('faceGirl2');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 32) ||
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 32)
           ) {
-            setTextValue("Shut your mouth when you're speaking to me peasent.");
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
         }
       }
@@ -1398,8 +1406,6 @@ const TownMap1 = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
 
   //OVERWOLRD ITEM CHECK LOGIC
   useEffect(() => {
@@ -1632,10 +1638,68 @@ const TownMap1 = (props) => {
             >
               <div className="character_spritesheet pixel-art"></div>
             </div>
+
+            <div
+              className="mainGuardTM pixel-art"
+              style={{
+                transform: `translate3d( ${2060}px, ${2200}px, 0 )`,
+              }}
+            >
+              <div className="mainGuardTM_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="mainGuardTM pixel-art"
+              style={{
+                transform: `translate3d( ${2420}px, ${2010}px, 0 )`,
+              }}
+            >
+              <div className="mainGuardTM_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="mainGuardTM pixel-art"
+              style={{
+                transform: `translate3d( ${2090}px, ${1300}px, 0 )`,
+              }}
+            >
+              <div className="mainGuardTM_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="mainGuardTM pixel-art"
+              style={{
+                transform: `translate3d( ${1510}px, ${1300}px, 0 )`,
+              }}
+            >
+              <div className="mainGuardTM_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="mainGuardTM pixel-art"
+              style={{
+                transform: `translate3d( ${450}px, ${175}px, 0 )`,
+              }}
+            >
+              <div className="mainGuardTM_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="mainGuardTM pixel-art"
+              style={{
+                transform: `translate3d( ${600}px, ${125}px, 0 )`,
+              }}
+            >
+              <div className="mainGuardTM_spritesheet pixel-art"></div>
+            </div>
           </div>
         </div>
         {textValue ? (
-          <dialog className="textBox typewriter" open>
+          <dialog
+            id="dialogStyle"
+            className={`${npcFace} textBox typewriter`}
+            open
+          >
             <p>{textValue}</p>
           </dialog>
         ) : null}
