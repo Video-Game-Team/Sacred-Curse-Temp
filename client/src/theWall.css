@@ -38,7 +38,7 @@ body {
     image-rendering: pixelated;
     max-height: 50000px;
     min-width: 50000px;
-    background-image: url("./assets/maps/The Wall no grid.png");
+    background-image: url("./assets/maps/The Wall w grid npc.png");
     background-size: 2688px;
     width: calc(105 * var(--grid-cell));
     height: calc(90 * var(--grid-cell));
@@ -54,3 +54,88 @@ body {
       size: 100%;
       background: transparent;
     }   */
+
+
+.mech1TW {
+    width: calc(var(--grid-cell) * 4);
+    height: calc(var(--grid-cell) * 4);
+    overflow: hidden;
+}
+
+.mech1TW_spritesheet {
+    position: absolute;
+    background: url("./assets/images/mech3.png") no-repeat no-repeat;
+    background-size: 100%;
+    width: calc(var(--grid-cell) * 12);
+    height: calc(var(--grid-cell) * 4);
+}
+
+.mech1TW .mech1TW_spritesheet {
+    animation: walkAnimation 1.2s steps(3) infinite;
+}
+
+
+.mech2TW {
+    width: calc(var(--grid-cell) * 4);
+    height: calc(var(--grid-cell) * 4);
+    overflow: hidden;
+}
+
+.mech2TW_spritesheet {
+    position: absolute;
+    background: url("./assets/images/mech4.png") no-repeat no-repeat;
+    background-size: 100%;
+    width: calc(var(--grid-cell) * 12);
+    height: calc(var(--grid-cell) * 12);
+}
+
+.mech2TW .mech2TW_spritesheet {
+    animation: walkAnimation 0.6s steps(3) infinite;
+}
+
+
+
+.mainGuardTW {
+    width: calc(var(--grid-cell)* 2.5);
+    height: calc(var(--grid-cell)* 2.5);
+    overflow: hidden;
+}
+
+.mainGuardTW_spritesheet {
+    position: fixed;
+    background: url("./assets/images/Mountain Entrance Main Guard.png") no-repeat no-repeat;
+    background-size: 100%;
+    width: calc(var(--grid-cell)* 7);
+    height: calc(var(--grid-cell)* 3);
+}
+
+.mainGuardTW .mainGuardTW_spritesheet {
+    animation: walkAnimation 1.6s steps(3) infinite;
+}
+
+
+.faceMainGuardTW {
+    background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+    background-position: left top;
+    background-size: 12%;
+    background-size: content-box;
+}
+
+
+.shots1TW {
+    width: calc(var(--grid-cell)* 2);
+    height: calc(var(--grid-cell)* 2);
+    overflow: hidden;
+}
+
+.shots1TW_spritesheet {
+    position: fixed;
+    background: url("./assets/images/Fighter Shots1.png") no-repeat no-repeat;
+    background-size: 100%;
+    width: calc(var(--grid-cell)* 17);
+    height: calc(var(--grid-cell)* 3);
+}
+
+.shots1TW .shots1TW_spritesheet {
+    animation: walkAnimation .6s steps(13) infinite;
+}

@@ -36,7 +36,7 @@ body {
 
 .mapMR {
     image-rendering: pixelated;
-    background-image: url("./assets/maps/Manson Ranch w grid npc.png");
+    background-image: url("./assets/maps/Manson Ranch no grid npc.png");
     background-size: 3840px;
     width: calc(150 * var(--grid-cell));
     height: calc(150 * var(--grid-cell));

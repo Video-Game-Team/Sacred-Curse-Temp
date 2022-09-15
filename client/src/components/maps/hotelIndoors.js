@@ -19,10 +19,6 @@ const HotelIndoors = (props) => {
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-975);
   //
-  const [xguardTransformVar, setXguardTransformVar] = useState(-710);
-  //this sets the y Cordinate to transform the map and character location
-  const [yguardTransformVar, setYguardTransformVar] = useState(-75);
-
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
   const speedRef = useRef(4);
@@ -592,9 +588,7 @@ const HotelIndoors = (props) => {
             <div
               className="guard pixel-art"
               style={{
-                transform: `translate3d( ${0 - xguardTransformVar}px, ${
-                  0 - yguardTransformVar
-                }px, 0 )`,
+                transform: `translate3d( ${710}px, ${75}px, 0 )`,
               }}
             >
               <div className="guard_spritesheet pixel-art"></div>

@@ -20,7 +20,6 @@ const TheWall = (props) => {
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-1428);
   //
-
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
   const speedRef = useRef(4);
@@ -40,6 +39,7 @@ const TheWall = (props) => {
   const xPlayerIndex = useRef(20);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+  const [npcFace, setNpcFace] = useState();
 
   //Music Playing
   const clickAudio1 = () => new Audio(SnowMan).play();
@@ -1357,8 +1357,6 @@ const TheWall = (props) => {
     };
   }, []);
 
-
-
   //OVERWOLRD ITEM CHECK LOGIC
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -1381,8 +1379,6 @@ const TheWall = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
 
   //event listen for enter
   useEffect(() => {
@@ -1640,10 +1636,52 @@ const TheWall = (props) => {
             >
               <div className="character_spritesheet pixel-art"></div>
             </div>
+
+            <div
+              className="mech1TW pixel-art"
+              style={{
+                transform: `translate3d( ${1355}px, ${475}px, 0 )`,
+              }}
+            >
+              <div className="mech1TW_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="mech2TW pixel-art"
+              style={{
+                transform: `translate3d( ${1035}px, ${285}px, 0 )`,
+              }}
+            >
+              <div className="mech2TW_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="mainGuardTW pixel-art"
+              style={{
+                transform: `translate3d( ${1235}px, ${275}px, 0 )`,
+              }}
+            >
+              <div className="mainGuardTW_spritesheet pixel-art"></div>
+            </div>
+
+            {/* <div
+              className="shots1TW pixel-art"
+              style={{
+                transform: `translate3d( ${1310}px, ${150}px, 0 )`,
+              }}
+            >
+              <div className="shots1TW_spritesheet pixel-art"></div>
+            </div> */}
+
+
           </div>
         </div>
         {textValue ? (
-          <dialog className="textBox typewriter" open>
+          <dialog
+            id="dialogStyle"
+            className={`${npcFace} textBox typewriter`}
+            open
+          >
             <p>{textValue}</p>
           </dialog>
         ) : null}

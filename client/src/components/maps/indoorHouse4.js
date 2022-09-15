@@ -19,10 +19,6 @@ const IndoorHouse4 = (props) => {
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-532);
   //
-  const [xguyTransformVar, setXguyTransformVar] = useState(-520);
-  //this sets the y Cordinate to transform the map and character location
-  const [yguyTransformVar, setYguyTransformVar] = useState(-470);
-
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
   const speedRef = useRef(4);
@@ -560,9 +556,7 @@ const IndoorHouse4 = (props) => {
             <div
               className="guyIH4 pixel-art"
               style={{
-                transform: `translate3d( ${0 - xguyTransformVar}px, ${
-                  0 - yguyTransformVar
-                }px, 0 )`,
+                transform: `translate3d( ${520}px, ${470}px, 0 )`,
               }}
             >
               <div className="guyIH4_spritesheet pixel-art"></div>

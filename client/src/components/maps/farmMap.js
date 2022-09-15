@@ -22,18 +22,6 @@ const FarmMap = (props) => {
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-596);
   //
-  const [xfarmer1TransformVar, setXfarmer1TransformVar] = useState(-1348);
-  //this sets the y Cordinate to transform the map and character location
-  const [yfarmer1TransformVar, setYfarmer1TransformVar] = useState(-1236);
-
-  const [xfarmer2TransformVar, setXfarmer2TransformVar] = useState(-1300);
-  //this sets the y Cordinate to transform the map and character location
-  const [yfarmer2TransformVar, setYfarmer2TransformVar] = useState(-1510);
-
-  const [xgirlTransformVar, setXgirlTransformVar] = useState(-915);
-    //this sets the y Cordinate to transform the map and character location
-  const [ygirlTransformVar, setYgirlTransformVar] = useState(-1896);
-
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
   const speedRef = useRef(4);
@@ -1068,43 +1056,32 @@ const FarmMap = (props) => {
               <div className="character_spritesheet pixel-art"></div>
             </div>
 
-
             <div
               className="farmer1FM pixel-art"
               style={{
-                transform: `translate3d( ${0 - xfarmer1TransformVar}px, ${
-                  0 - yfarmer1TransformVar
-                }px, 0 )`,
+                transform: `translate3d( ${1348}px, ${1236}px, 0 )`,
               }}
             >
               <div className="farmer1FM_spritesheet pixel-art"></div>
             </div>
 
-
             <div
               className="farmer2FM pixel-art"
               style={{
-                transform: `translate3d( ${0 - xfarmer2TransformVar}px, ${
-                  0 - yfarmer2TransformVar
-                }px, 0 )`,
+                transform: `translate3d( ${1300}px, ${1510}px, 0 )`,
               }}
             >
               <div className="farmer2FM_spritesheet pixel-art"></div>
             </div>
 
-
             <div
               className="girlFM pixel-art"
               style={{
-                transform: `translate3d( ${0 - xgirlTransformVar}px, ${
-                  0 - ygirlTransformVar
-                }px, 0 )`,
+                transform: `translate3d( ${915}px, ${1896}px, 0 )`,
               }}
             >
               <div className="girlFM_spritesheet pixel-art"></div>
             </div>
-
-
           </div>
         </div>
         {textValue ? (

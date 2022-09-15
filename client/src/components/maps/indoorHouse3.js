@@ -19,14 +19,6 @@ const IndoorHouse3 = (props) => {
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-532);
   //
-  const [xgirl1TransformVar, setXgirl1TransformVar] = useState(-465);
-  //this sets the y Cordinate to transform the map and character location
-  const [ygirl1TransformVar, setYgirl1TransformVar] = useState(-23);
-
-  const [xgirl2TransformVar, setXgirl2TransformVar] = useState(-175);
-  //this sets the y Cordinate to transform the map and character location
-  const [ygirl2TransformVar, setYgirl2TransformVar] = useState(-205);
-
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
   const speedRef = useRef(4);
@@ -565,28 +557,19 @@ const IndoorHouse3 = (props) => {
               <div className="character_spritesheet pixel-art"></div>
             </div>
 
-
-
             <div
               className="girl1 pixel-art"
               style={{
-                transform: `translate3d( ${0 - xgirl1TransformVar}px, ${
-                  0 - ygirl1TransformVar
-                }px, 0 )`,
+                transform: `translate3d( ${465}px, ${23}px, 0 )`,
               }}
             >
               <div className="girl1_spritesheet pixel-art"></div>
             </div>
 
-
-
-
             <div
               className="girl2 pixel-art"
               style={{
-                transform: `translate3d( ${0 -xgirl2TransformVar}px, ${
-                  0 - ygirl2TransformVar
-                }px, 0 )`,
+                transform: `translate3d( ${175}px, ${205}px, 0 )`,
               }}
             >
               <div className="girl2_spritesheet pixel-art"></div>
@@ -596,8 +579,7 @@ const IndoorHouse3 = (props) => {
 
           </div>
         </div>
-
-        {textValue ?
+        {textValue ? (
           <dialog
             id="dialogStyle"
             className={`${npcFace} textBox typewriter`}
@@ -605,8 +587,7 @@ const IndoorHouse3 = (props) => {
           >
             <p>{textValue}</p>
           </dialog>
-         : null}
-         
+        ) : null}
       </div>
     </div>
   );

@@ -19,10 +19,6 @@ const IndoorHouse1 = (props) => {
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-532);
   //
-  const [xgirl1TransformVar, setXgirl1TransformVar] = useState(-420);
-  //this sets the y Cordinate to transform the map and character location
-  const [ygirl1TransformVar, setYgirl1TransformVar] = useState(-180);
-
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
   const speedRef = useRef(4);
@@ -543,9 +539,7 @@ const IndoorHouse1 = (props) => {
             <div
               className="girlIH3 pixel-art"
               style={{
-                transform: `translate3d( ${0 - xgirl1TransformVar}px, ${
-                  0 - ygirl1TransformVar
-                }px, 0 )`,
+                transform: `translate3d( ${420}px, ${180}px, 0 )`,
               }}
             >
               <div className="girlIH3_spritesheet pixel-art"></div>

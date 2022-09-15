@@ -19,14 +19,6 @@ const MountainEntrance = (props) => {
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-2836);
   //
-  const [xmech1TransformVar, setXmech1TransformVar] = useState(-2240);
-  //this sets the y Cordinate to transform the map and character location
-  const [ymech1TransformVar, setmech1TransformVar] = useState(-1552);
-
-  const [xmech2TransformVar, setXmech2TransformVar] = useState(-1918);
-    //this sets the y Cordinate to transform the map and character location
-  const [ymech2TransformVar, setmech2TransformVar] = useState(-1360);
-
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
   const speedRef = useRef(4);
@@ -46,6 +38,7 @@ const MountainEntrance = (props) => {
   const xPlayerIndex = useRef(39);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+  const [npcFace, setNpcFace] = useState(null);
 
   //Music Playing
   const clickAudio1 = () => new Audio(SnowMan).play();
@@ -853,8 +846,9 @@ const MountainEntrance = (props) => {
             (yPlayerIndex.current === 28 && xPlayerIndex.current === 33) ||
             (yPlayerIndex.current === 28 && xPlayerIndex.current === 34)
           ) {
-            setTextValue('Hi I am Guard1');
-            console.log('Hi I am Guard1');
+            setNpcFace('faceMainGuardME');
+            setTextValue('Get the hell outta here!');
+            clickAudio2();
           }
           // //YO Mama NPC
           // if (
@@ -1262,9 +1256,7 @@ const MountainEntrance = (props) => {
             <div
               className="mech1ME pixel-art"
               style={{
-                transform: `translate3d( ${0 - xmech1TransformVar}px, ${
-                  0 - ymech1TransformVar
-                }px, 0 )`,
+                transform: `translate3d( ${2240}px, ${1552}px, 0 )`,
               }}
             >
               <div className="mech1ME_spritesheet pixel-art"></div>
@@ -1273,15 +1265,19 @@ const MountainEntrance = (props) => {
             <div
               className="mech2ME pixel-art"
               style={{
-                transform: `translate3d( ${0 - xmech2TransformVar}px, ${
-                  0 - ymech2TransformVar
-                }px, 0 )`,
+                transform: `translate3d( ${1918}px, ${1360}px, 0 )`,
               }}
             >
-              <div className="mech2ME_spritesheet pixel-art">
-                 <div className="tuna pixel-art"></div>
-              
-              </div>
+              <div className="mech2ME_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="mainGuardME pixel-art"
+              style={{
+                transform: `translate3d( ${2120}px, ${1175}px, 0 )`,
+              }}
+            >
+              <div className="mainGuardME_spritesheet pixel-art"></div>
             </div>
           </div>
         </div>

@@ -19,27 +19,6 @@ const MansonRanch = (props) => {
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-1616);
   //
-  const [xguyTransformVar, setXguyTransformVar] = useState(-760);
-  //this sets the y Cordinate to transform the map and character location
-  const [yguyTransformVar, setYguyTransformVar] = useState(-1295);
-
-  const [xgirl1TransformVar, setXgirl1TransformVar] = useState(-2885);
-  //this sets the y Cordinate to transform the map and character location
-  const [ygirl1TransformVar, setYgirl1TransformVar] = useState(-1180);
-
-  const [xgirl2TransformVar, setXgirl2TransformVar] = useState(-1964);
-  //this sets the y Cordinate to transform the map and character location
-  const [ygirl2TransformVar, setYgirl2TransformVar] = useState(-1505);
-
-  const [xgirl3TransformVar, setXgirl3TransformVar] = useState(-1102);
-  //this sets the y Cordinate to transform the map and character location
-  const [ygirl3TransformVar, setYgirl3TransformVar] = useState(-1970);
-
-  const [xgirl4TransformVar, setXgirl4TransformVar] = useState(-2379);
-  //this sets the y Cordinate to transform the map and character location
-  const [ygirl4TransformVar, setYgirl4TransformVar] = useState(-2353);
-
-
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
   const speedRef = useRef(4);
@@ -1321,9 +1300,7 @@ const MansonRanch = (props) => {
             <div
               className="crazyGuyMR pixel-art"
               style={{
-                transform: `translate3d( ${0 - xguyTransformVar}px, ${
-                  0 - yguyTransformVar
-                }px, 0 )`,
+                transform: `translate3d( ${760}px, ${1295}px, 0 )`,
               }}
             >
               <div className="crazyGuyMR_spritesheet pixel-art"></div>
@@ -1332,9 +1309,7 @@ const MansonRanch = (props) => {
             <div
               className="girlShiekMR pixel-art"
               style={{
-                transform: `translate3d( ${0 - xgirl1TransformVar}px, ${
-                  0 - ygirl1TransformVar
-                }px, 0 )`,
+                transform: `translate3d( ${2885}px, ${1180}px, 0 )`,
               }}
             >
               <div className="girlShiekMR_spritesheet pixel-art"></div>
@@ -1343,9 +1318,7 @@ const MansonRanch = (props) => {
             <div
               className="girlHippyPrettyMR pixel-art"
               style={{
-                transform: `translate3d( ${0 - xgirl2TransformVar}px, ${
-                  0 - ygirl2TransformVar
-                }px, 0 )`,
+                transform: `translate3d( ${1964}px, ${1505}px, 0 )`,
               }}
             >
               <div className="girlHippyPrettyMR_spritesheet pixel-art"></div>
@@ -1354,9 +1327,7 @@ const MansonRanch = (props) => {
             <div
               className="girlLaughingMR pixel-art"
               style={{
-                transform: `translate3d( ${0 - xgirl3TransformVar}px, ${
-                  0 - ygirl3TransformVar
-                }px, 0 )`,
+                transform: `translate3d( ${1102}px, ${1970}px, 0 )`,
               }}
             >
               <div className="girlLaughingMR_spritesheet pixel-art"></div>
@@ -1365,9 +1336,7 @@ const MansonRanch = (props) => {
             <div
               className="girlHippy1MR pixel-art"
               style={{
-                transform: `translate3d( ${0 - xgirl4TransformVar}px, ${
-                  0 - ygirl4TransformVar
-                }px, 0 )`,
+                transform: `translate3d( ${2379}px, ${2353}px, 0 )`,
               }}
             >
               <div className="girlHippy1MR_spritesheet pixel-art"></div>

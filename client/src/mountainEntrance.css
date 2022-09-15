@@ -36,7 +36,7 @@ body {
 
 .mapME {
     image-rendering: pixelated;
-    background-image: url("./assets/maps/Mountain Entrance no grid.png");
+    background-image: url("./assets/maps/Mountain Entrance no grid npc.png");
     background-size: 4544px;
     width: calc(150 * var(--grid-cell));
     height: calc(177.50 * var(--grid-cell));
@@ -136,18 +136,30 @@ body {
        animation: walkAnimation 0.6s steps(3) infinite;
    }
 
-/* 
 
-         .mech2ME .mech2ME_spritesheet {
-             animation: walk-cycle 2.6s steps(3) infinite;
-         }
-    
-         @keyframes walk-cycle {
-             0% {
-                 background-position: 0 0;
-             }
-    
-             100% {
-                 background-position: 0 -576px;
-             }
-         } */
+
+    .mainGuardME {
+        width: calc(var(--grid-cell)* 2.5);
+        height: calc(var(--grid-cell)* 2.5);
+       overflow: hidden;
+   }
+
+   .mainGuardME_spritesheet {
+       position: fixed;
+       background: url("./assets/images/Mountain Entrance Main Guard.png") no-repeat no-repeat;
+       background-size: 100%;
+        width: calc(var(--grid-cell)* 7);
+        height: calc(var(--grid-cell)* 3);
+   }
+
+   .mainGuardME .mainGuardME_spritesheet {
+    animation: walkAnimation 1.6s steps(3) infinite;
+   }
+
+
+   .faceMainGuardME {
+       background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+       background-position: left top;
+       background-size: 12%;
+       background-size: content-box;
+   }

@@ -19,14 +19,6 @@ const IndoorHouse9 = (props) => {
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-531);
   //
-   const [xguy1TransformVar, setXguy1TransformVar] = useState(-195);
-   //this sets the y Cordinate to transform the map and character location
-   const [yguy1TransformVar, setYguy1TransformVar] = useState(-23);
-
-   const [xguy2TransformVar, setXguy2TransformVar] = useState(-755);
-   //this sets the y Cordinate to transform the map and character location
-   const [yguy2TransformVar, setYguy2TransformVar] = useState(-455);
-
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
   const speedRef = useRef(4);
@@ -558,9 +550,7 @@ const IndoorHouse9 = (props) => {
             <div
               className="guy1IH9 pixel-art"
               style={{
-                transform: `translate3d( ${0 - xguy1TransformVar}px, ${
-                  0 - yguy1TransformVar
-                }px, 0 )`,
+                transform: `translate3d( ${195}px, ${23}px, 0 )`,
               }}
             >
               <div className="guy1IH9_spritesheet pixel-art"></div>
@@ -569,16 +559,11 @@ const IndoorHouse9 = (props) => {
             <div
               className="guy2IH9 pixel-art"
               style={{
-                transform: `translate3d( ${0 - xguy2TransformVar}px, ${
-                  0 - yguy2TransformVar
-                }px, 0 )`,
+                transform: `translate3d( ${755}px, ${455}px, 0 )`,
               }}
             >
               <div className="guy2IH9_spritesheet pixel-art"></div>
             </div>
-
-
-
           </div>
         </div>
         {textValue ? (
