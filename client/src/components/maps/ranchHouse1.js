@@ -6,6 +6,11 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
+
+import click1 from '../../audioclips/click1.mp3';
+import text from '../../audioclips/Text.mp3';
+import SnowMan from '../../audioclips/Snowman.mp3';
+
 import '../../ranchHouse1.css';
 
 const RanchHouse1 = (props) => {
@@ -34,6 +39,20 @@ const RanchHouse1 = (props) => {
   const xPlayerIndex = useRef(4);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+  const [npcFace, setNpcFace] = useState();
+
+    //Music Playing
+    const clickAudio1 = () => new Audio(SnowMan).play();
+
+    // //NPC Dialogue sound effect
+    const clickAudio2 = () => new Audio(text).play();
+
+    //Starts off Music Loop
+    useEffect(() => {
+      {
+        clickAudio1();
+      }
+    }, []);
 
   // let currentMap2 = [
   //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -87,8 +106,6 @@ const RanchHouse1 = (props) => {
     currentMap[yPlayerIndex.current][xPlayerIndex.current]
   );
 
-  
-
   // useEffect(() => {
   //   let tempGrid = [];
   //   for (let i = 0; i < currentMap.length; i++) {
@@ -113,8 +130,6 @@ const RanchHouse1 = (props) => {
   //   }
   //   setGridArray(tempGrid);
   // }, []);
-
-
 
   useEffect(() => {
     if (props.previousMap === 'dunleaveyValley') {
@@ -215,7 +230,9 @@ const RanchHouse1 = (props) => {
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 3) ||
             (yPlayerIndex.current === 2 && xPlayerIndex.current === 3)
           ) {
-            setTextValue("Hi I'm a guy");
+             setNpcFace('faceGirl2');
+             setTextValue('Kids, what a handfull!');
+             clickAudio2();
           }
           //YO Mama NPC
           // if (
@@ -246,7 +263,9 @@ const RanchHouse1 = (props) => {
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 11) ||
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 11)
           ) {
-            setTextValue("Hi I'm blonde");
+             setNpcFace('faceGirl2');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
           }
           //YO Mama NPC
           // if (
@@ -534,10 +553,36 @@ const RanchHouse1 = (props) => {
             >
               <div className="character_spritesheet pixel-art"></div>
             </div>
+
+
+            <div
+              className="guy1RH1 pixel-art"
+              style={{
+                transform: `translate3d( ${85}px, ${33}px, 0 )`,
+              }}
+            >
+              <div className="guy1RH1_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="girl1RH1 pixel-art"
+              style={{
+                transform: `translate3d( ${755}px, ${-60}px, 0 )`,
+              }}
+            >
+              <div className="girl1RH1_spritesheet pixel-art"></div>
+            </div>
+
+
+
           </div>
         </div>
         {textValue ? (
-          <dialog className="textBox typewriter" open>
+          <dialog
+            id="dialogStyle"
+            className={`${npcFace} textBox typewriter`}
+            open
+          >
             <p>{textValue}</p>
           </dialog>
         ) : null}

@@ -36,7 +36,7 @@ body {
 
 .mapPSH {
     image-rendering: pixelated;
-    background-image: url("./assets/maps/President Safe House 1 no grid.png");
+    background-image: url("./assets/maps/President Safe House w grid npc.png");
     background-size: 960px;
     width: calc(37.5 * var(--grid-cell));
     height: calc(37.5 * var(--grid-cell));
@@ -102,3 +102,107 @@ body {
         transform: translate3d(-100%, 0%, 0);
     }
 }
+
+
+
+ .guard1PSH {
+    position: absolute;
+     width: calc(var(--grid-cell)* 2.5);
+     height: calc(var(--grid-cell)* 2.5);
+     overflow: hidden;
+ }
+
+ .guard1PSH_spritesheet {
+   
+     background: url("./assets/images/President Safe House guard 1.png") no-repeat no-repeat;
+     background-size: 100%;
+     width: calc(var(--grid-cell)* 34);
+     height: calc(var(--grid-cell)* 3);
+ }
+
+ .guard1PSH .guard1PSH_spritesheet {
+     animation: walkAnimation 2.6s steps(15) infinite;
+ }
+
+
+ .faceGuard1PSH {
+     background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+     background-position: left top;
+     background-size: 12%;
+     background-size: content-box;
+ }
+
+
+
+  .guard2PSH {
+      position: absolute;
+      width: calc(var(--grid-cell)* 2.5);
+      height: calc(var(--grid-cell)* 2.5);
+      overflow: hidden;
+  }
+
+  .guard2PSH_spritesheet {
+      background: url("./assets/images/President Safe House guard 1.png") no-repeat no-repeat;
+      background-size: 100%;
+      width: calc(var(--grid-cell)* 34);
+      height: calc(var(--grid-cell)* 3);
+  }
+
+  .guard2PSH .guard2PSH_spritesheet {
+      animation: walkAnimation 4.6s steps(15) infinite;
+  }
+
+
+ .general1RH2 {
+     position: absolute;
+     width: calc(var(--grid-cell)* 2.5);
+     height: calc(var(--grid-cell)* 2.5);
+     overflow: hidden;
+ }
+
+ .general1RH2_spritesheet {
+     background: url("./assets/images/President Safe House General 1.png") no-repeat no-repeat;
+     background-size: 100%;
+     width: calc(var(--grid-cell)* 34);
+     height: calc(var(--grid-cell)* 3);
+ }
+
+ .general1RH2 .general1RH2_spritesheet {
+     animation: walkAnimation 3s steps(15) infinite;
+ }
+
+
+ .faceGeneral1RH2 {
+     background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+     background-position: left top;
+     background-size: 12%;
+     background-size: content-box;
+ }
+
+
+
+  .presidentRH2 {
+      position: absolute;
+      width: calc(var(--grid-cell)* 2.5);
+      height: calc(var(--grid-cell)* 2.5);
+      overflow: hidden;
+  }
+
+  .presidentRH2_spritesheet {
+      background: url("./assets/images/President Safe House President.png") no-repeat no-repeat;
+      background-size: 100%;
+      width: calc(var(--grid-cell)* 34);
+      height: calc(var(--grid-cell)* 3);
+  }
+
+  .presidentRH2 .presidentRH2_spritesheet {
+      animation: walkAnimation 2.7s steps(15) infinite;
+  }
+
+
+  .facePresidentRH2 {
+      background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+      background-position: left top;
+      background-size: 12%;
+      background-size: content-box;
+  }

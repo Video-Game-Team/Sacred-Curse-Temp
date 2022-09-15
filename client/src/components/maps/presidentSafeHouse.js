@@ -6,6 +6,11 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
+
+import click1 from '../../audioclips/click1.mp3';
+import text from '../../audioclips/Text.mp3';
+import SnowMan from '../../audioclips/Snowman.mp3';
+
 import '../../presidentSafeHouse.css';
 
 const PresidentSafeHouse = (props) => {
@@ -14,7 +19,6 @@ const PresidentSafeHouse = (props) => {
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-532);
   //
-
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
   const speedRef = useRef(4);
@@ -33,6 +37,21 @@ const PresidentSafeHouse = (props) => {
   const yPlayerIndex = useRef(13);
   const xPlayerIndex = useRef(4);
   const [gridArray, setGridArray] = useState([]);
+  const [textValue, setTextValue] = useState(null);
+  const [npcFace, setNpcFace] = useState();
+
+  //Music Playing
+  const clickAudio1 = () => new Audio(SnowMan).play();
+
+  // //NPC Dialogue sound effect
+  const clickAudio2 = () => new Audio(text).play();
+
+  //Starts off Music Loop
+  useEffect(() => {
+    {
+      clickAudio1();
+    }
+  }, []);
 
   // let currentMap2 = [
   //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -135,12 +154,6 @@ const PresidentSafeHouse = (props) => {
     }
   }, [yPlayerIndex.current]);
 
-
-
-
-
-
-
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -152,15 +165,18 @@ const PresidentSafeHouse = (props) => {
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 11) ||
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 12)
           ) {
-            setTextValue('Hi I am Guard1');
-            console.log('Hi I am Guard1');
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 4) ||
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 5)
           ) {
-            console.log("Hi I'm behind the counter");
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
           // //Hot Girl
           // if (
@@ -181,19 +197,22 @@ const PresidentSafeHouse = (props) => {
         //Facing down
         if (!facing.current) {
           //Jim NPC
-          // if (
-          //   (yPlayerIndex.current === 35 && xPlayerIndex.current === 32) ||
-          //   (yPlayerIndex.current === 35 && xPlayerIndex.current === 33)
-          // ) {
-          //   console.log("Hi I'm Guard1");
-          // }
+          if (
+            (yPlayerIndex.current === 4 && xPlayerIndex.current === 1) 
+          ) {
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
           // //YO Mama NPC
-          // if (
-          //   (yPlayerIndex.current === 32 && xPlayerIndex.current === 38) ||
-          //   (yPlayerIndex.current === 32 && xPlayerIndex.current === 39)
-          // ) {
-          //    console.log("Hi I'm behind the counter");
-          // }
+          if (
+            (yPlayerIndex.current === 3 && xPlayerIndex.current === 7) ||
+            (yPlayerIndex.current === 3 && xPlayerIndex.current === 8)
+          ) {
+             setNpcFace('faceGirl2');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
+          }
           //Hot Girl
           // if (
           //   (yPlayerIndex.current === 34 && xPlayerIndex.current === 14) ||
@@ -212,26 +231,32 @@ const PresidentSafeHouse = (props) => {
 
         //Facing left
         if (facing.current === 'left') {
-          // if (
-          //   (yPlayerIndex.current === 36 && xPlayerIndex.current === 34) ||
-          //   (yPlayerIndex.current === 37 && xPlayerIndex.current === 34)
-          // ) {
-          //   console.log("Hi I'm Guard");
-          // }
+          if (
+            (yPlayerIndex.current === 12 && xPlayerIndex.current === 3) ||
+            (yPlayerIndex.current === 13 && xPlayerIndex.current === 3)
+          ) {
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
           //YO Mama NPC
-          // if (
-          //   (yPlayerIndex.current === 33 && xPlayerIndex.current === 40) ||
-          //   (yPlayerIndex.current === 34 && xPlayerIndex.current === 40)
-          // ) {
-          //     console.log("Hi I'm behind the counter");
-          // }
+          if (
+            (yPlayerIndex.current === 5 && xPlayerIndex.current === 2) ||
+            (yPlayerIndex.current === 6 && xPlayerIndex.current === 2)
+          ) {
+             setNpcFace('faceGirl2');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
+          }
           //Hot Girl
-          // if (
-          //   (yPlayerIndex.current === 35 && xPlayerIndex.current === 16) ||
-          //   (yPlayerIndex.current === 36 && xPlayerIndex.current === 16)
-          // ) {
-          //   console.log("Hi I'm Guard 3");
-          // }
+          if (
+            (yPlayerIndex.current === 4 && xPlayerIndex.current === 11) ||
+            (yPlayerIndex.current === 5 && xPlayerIndex.current === 11)
+          ) {
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
           //Hot Girl
           // if (
           //   (yPlayerIndex.current === 22 && xPlayerIndex.current === 34) ||
@@ -244,25 +269,31 @@ const PresidentSafeHouse = (props) => {
         //Facing right
         if (facing.current === 'right') {
           if (
-            (yPlayerIndex.current === 3 && xPlayerIndex.current === 10) ||
-            (yPlayerIndex.current === 4 && xPlayerIndex.current === 10)
+            (yPlayerIndex.current === 13 && xPlayerIndex.current === 4) ||
+            (yPlayerIndex.current === 12 && xPlayerIndex.current === 4)
           ) {
-            console.log("Hi I'm Guard1");
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
           //YO Mama NPC
-          // if (
-          //   (yPlayerIndex.current === 33 && xPlayerIndex.current === 37) ||
-          //   (yPlayerIndex.current === 34 && xPlayerIndex.current === 37)
-          // ) {
-          //    console.log("Hi I'm behind the counter");
-          // }
+          if (
+            (yPlayerIndex.current === 5 && xPlayerIndex.current === 6) ||
+            (yPlayerIndex.current === 4 && xPlayerIndex.current === 6)
+          ) {
+              setNpcFace('faceGirl2');
+              setTextValue('My dad is mad at me');
+              clickAudio2();
+          }
           //Hot Girl
-          // if (
-          //   (yPlayerIndex.current === 22 && xPlayerIndex.current === 22) ||
-          //   (yPlayerIndex.current === 23 && xPlayerIndex.current === 22)
-          // ) {
-          //   console.log("Hi I'm Guard 3");
-          // }
+          if (
+            (yPlayerIndex.current === 13 && xPlayerIndex.current === 11) ||
+            (yPlayerIndex.current === 12 && xPlayerIndex.current === 11)
+          ) {
+           setNpcFace('faceGirl2');
+           setTextValue('My dad is mad at me');
+           clickAudio2();
+          }
           // //Hot Girl
           // if (
           //   (yPlayerIndex.current === 22 && xPlayerIndex.current === 32) ||
@@ -278,12 +309,6 @@ const PresidentSafeHouse = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
-
-
-  
-
 
   //event listen for enter
   useEffect(() => {
@@ -301,21 +326,21 @@ const PresidentSafeHouse = (props) => {
               'sign1' &&
             64 - xBank.current > 32
           ) {
-            console.log('sign1');
+            // console.log('sign1');
           }
           if (
             xBank.current + 32 > 64 &&
             currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
               'sign2'
           ) {
-            console.log('sign2');
+            // console.log('sign2');
           }
           if (
             currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
               'sign2' &&
             64 - xBank.current > 32
           ) {
-            console.log('sign2');
+            // console.log('sign2');
           }
         }
         if (facing.current == null) {
@@ -324,20 +349,20 @@ const PresidentSafeHouse = (props) => {
               'sign1' &&
             xBank.current + 32 < 64
           ) {
-            console.log('sign1');
+            // console.log('sign1');
           }
           if (
             currentMap[yPlayerIndex.current + 1][xPlayerIndex.current + 1] ===
             'sign2'
           ) {
-            console.log('poopshit');
+            // console.log('poopshit');
           }
           if (
             currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
               'sign2' &&
             xBank.current + 32 < 64
           ) {
-            console.log('sign2');
+            // console.log('sign2');
           }
         }
       }
@@ -364,6 +389,7 @@ const PresidentSafeHouse = (props) => {
           dirArr.current = newArr;
           setTick((prevCount) => prevCount + 1);
         }
+        setTextValue(null);
       }
     };
 
@@ -540,8 +566,72 @@ const PresidentSafeHouse = (props) => {
             >
               <div className="character_spritesheet pixel-art"></div>
             </div>
+
+            <div
+              className="guard1PSH pixel-art"
+              style={{
+                transform: `translate3d( ${100}px, ${640}px, 0 )`,
+              }}
+            >
+              <div className="guard1PSH_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guard2PSH pixel-art"
+              style={{
+                transform: `translate3d( ${300}px, ${640}px, 0 )`,
+              }}
+            >
+              <div className="guard2PSH_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guard2PSH pixel-art"
+              style={{
+                transform: `translate3d( ${50}px, ${230}px, 0 )`,
+              }}
+            >
+              <div className="guard2PSH_spritesheet pixel-art"></div>
+            </div>
+
+
+            <div
+              className="general1RH2 pixel-art"
+              style={{
+                transform: `translate3d( ${760}px, ${660}px, 0 )`,
+              }}
+            >
+              <div className="general1RH2_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="general1RH2 pixel-art"
+              style={{
+                transform: `translate3d( ${450}px, ${175}px, 0 )`,
+              }}
+            >
+              <div className="general1RH2_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="presidentRH2 pixel-art"
+              style={{
+                transform: `translate3d( ${600}px, ${125}px, 0 )`,
+              }}
+            >
+              <div className="presidentRH2_spritesheet pixel-art"></div>
+            </div>
           </div>
         </div>
+        {textValue ? (
+          <dialog
+            id="dialogStyle"
+            className={`${npcFace} textBox typewriter`}
+            open
+          >
+            <p>{textValue}</p>
+          </dialog>
+        ) : null}
       </div>
     </div>
   );
