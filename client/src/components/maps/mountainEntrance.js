@@ -1278,7 +1278,10 @@ const MountainEntrance = (props) => {
                 }px, 0 )`,
               }}
             >
-              <div className="mech2ME_spritesheet pixel-art"></div>
+              <div className="mech2ME_spritesheet pixel-art">
+                 <div className="tuna pixel-art"></div>
+              
+              </div>
             </div>
           </div>
         </div>

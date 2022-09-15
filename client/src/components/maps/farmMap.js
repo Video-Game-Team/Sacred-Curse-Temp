@@ -22,6 +22,18 @@ const FarmMap = (props) => {
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-596);
   //
+  const [xfarmer1TransformVar, setXfarmer1TransformVar] = useState(-1348);
+  //this sets the y Cordinate to transform the map and character location
+  const [yfarmer1TransformVar, setYfarmer1TransformVar] = useState(-1236);
+
+  const [xfarmer2TransformVar, setXfarmer2TransformVar] = useState(-1300);
+  //this sets the y Cordinate to transform the map and character location
+  const [yfarmer2TransformVar, setYfarmer2TransformVar] = useState(-1510);
+
+  const [xgirlTransformVar, setXgirlTransformVar] = useState(-915);
+    //this sets the y Cordinate to transform the map and character location
+  const [ygirlTransformVar, setYgirlTransformVar] = useState(-1896);
+
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
   const speedRef = useRef(4);
@@ -40,6 +52,7 @@ const FarmMap = (props) => {
   const xPlayerIndex = useRef(29);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+  const [npcFace, setNpcFace] = useState();
 
   //Music Playing
   const clickAudio1 = () => new Audio(SnowMan).play();
@@ -575,25 +588,27 @@ const FarmMap = (props) => {
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 21) ||
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 22)
           ) {
-            setTextValue(
-              "It was bad enough before the war. Now it's just terrible."
-            );
+            setNpcFace('faceGirl2');
+            setTextValue('Hi I am the main farmHand, Hank.');
+            clickAudio2();
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 29 && xPlayerIndex.current === 21) ||
             (yPlayerIndex.current === 29 && xPlayerIndex.current === 22)
           ) {
-            setTextValue(
-              'Mike should delete me. I am not supposed to be here. '
-            );
+            setNpcFace('faceGirl2');
+            setTextValue('This place is a mess!');
+            clickAudio2();
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 37 && xPlayerIndex.current === 14) ||
             (yPlayerIndex.current === 37 && xPlayerIndex.current === 15)
           ) {
-            setTextValue("We really appreciate your help. You're a god send! ");
+            setNpcFace('faceGirl2');
+            setTextValue('How do you like my flowers? Pretty, huh?');
+            clickAudio2();
           }
         }
 
@@ -604,25 +619,27 @@ const FarmMap = (props) => {
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 21) ||
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 22)
           ) {
-            setTextValue(
-              "It was bad enough before the war. Now it's just terrible."
-            );
+             setNpcFace('faceGirl2');
+             setTextValue('Hi I am the main farmHand, Hank.');
+             clickAudio2();
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 26 && xPlayerIndex.current === 21) ||
             (yPlayerIndex.current === 26 && xPlayerIndex.current === 22)
           ) {
-            setTextValue(
-              'Mike should delete me. I am not supposed to be here.'
-            );
+            setNpcFace('faceGirl2');
+            setTextValue('This place is a mess!');
+            clickAudio2();
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 34 && xPlayerIndex.current === 14) ||
             (yPlayerIndex.current === 34 && xPlayerIndex.current === 15)
           ) {
-            setTextValue("We really appreciate your help. You're a god send! ");
+             setNpcFace('faceGirl2');
+            setTextValue('How do you like my flowers? Pretty, huh?');
+             clickAudio2();
           }
         }
 
@@ -632,25 +649,27 @@ const FarmMap = (props) => {
             (yPlayerIndex.current === 21 && xPlayerIndex.current === 23) ||
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 23)
           ) {
-            setTextValue(
-              "It was bad enough before the war. Now it's just terrible."
-            );
+            setNpcFace('faceGirl2');
+             setTextValue('Hi I am the main farmHand, Hank.');
+            clickAudio2();
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 27 && xPlayerIndex.current === 23) ||
             (yPlayerIndex.current === 28 && xPlayerIndex.current === 23)
           ) {
-            setTextValue(
-              'Mike should delete me. I am not supposed to be here.'
-            );
+             setNpcFace('faceGirl2');
+             setTextValue('This place is a mess!');
+             clickAudio2();
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 16) ||
             (yPlayerIndex.current === 36 && xPlayerIndex.current === 16)
           ) {
-            setTextValue("We really appreciate your help. You're a god send! ");
+             setNpcFace('faceGirl2');
+             setTextValue('How do you like my flowers? Pretty, huh?');
+             clickAudio2();
           }
         }
 
@@ -660,25 +679,27 @@ const FarmMap = (props) => {
             (yPlayerIndex.current === 21 && xPlayerIndex.current === 20) ||
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 20)
           ) {
-            setTextValue(
-              "It was bad enough before the war. Now it's just terrible."
-            );
+            setNpcFace('faceGirl2');
+             setTextValue('Hi I am the main farmHand, Hank.');
+            clickAudio2();
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 27 && xPlayerIndex.current === 20) ||
             (yPlayerIndex.current === 28 && xPlayerIndex.current === 20)
           ) {
-            setTextValue(
-              'Mike should delete me. I am not supposed to be here.'
-            );
+            setNpcFace('faceGirl2');
+            setTextValue('This place is a mess!');
+            clickAudio2();
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 13) ||
             (yPlayerIndex.current === 36 && xPlayerIndex.current === 13)
           ) {
-            setTextValue("We really appreciate your help. You're a god send! ");
+             setNpcFace('faceGirl2');
+            setTextValue('How do you like my flowers? Pretty, huh?');
+             clickAudio2();
           }
         }
       }
@@ -831,8 +852,6 @@ const FarmMap = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
 
   //listens for the current down key and saves it as the currentkey state
   //wrapping in a useEffect prevents compounding event listeners
@@ -1036,16 +1055,58 @@ const FarmMap = (props) => {
             >
               <div className="character_spritesheet pixel-art"></div>
             </div>
+
+
+            <div
+              className="farmer1FM pixel-art"
+              style={{
+                transform: `translate3d( ${0 - xfarmer1TransformVar}px, ${
+                  0 - yfarmer1TransformVar
+                }px, 0 )`,
+              }}
+            >
+              <div className="farmer1FM_spritesheet pixel-art"></div>
+            </div>
+
+
+            <div
+              className="farmer2FM pixel-art"
+              style={{
+                transform: `translate3d( ${0 - xfarmer2TransformVar}px, ${
+                  0 - yfarmer2TransformVar
+                }px, 0 )`,
+              }}
+            >
+              <div className="farmer2FM_spritesheet pixel-art"></div>
+            </div>
+
+
+            <div
+              className="girlFM pixel-art"
+              style={{
+                transform: `translate3d( ${0 - xgirlTransformVar}px, ${
+                  0 - ygirlTransformVar
+                }px, 0 )`,
+              }}
+            >
+              <div className="girlFM_spritesheet pixel-art"></div>
+            </div>
+
+
           </div>
         </div>
         {textValue ? (
-          <dialog className="textBox typewriter" open>
+          <dialog
+            id="dialogStyle"
+            className={`${npcFace} textBox typewriter`}
+            open
+          >
             <p>{textValue}</p>
           </dialog>
         ) : null}
       </div>
     </div>
   );
-};;
+};
 
 export default FarmMap;
