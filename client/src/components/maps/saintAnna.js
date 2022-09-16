@@ -39,6 +39,7 @@ const SaintAnna = (props) => {
   const xPlayerIndex = useRef(11);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+  const [npcFace, setNpcFace] = useState();
 
   //Music Playing
   const clickAudio1 = () => new Audio(SnowMan).play();
@@ -1030,8 +1031,6 @@ const SaintAnna = (props) => {
     };
   }, []);
 
-
-
   //OVERWOLRD ITEM CHECK LOGIC
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -1045,13 +1044,13 @@ const SaintAnna = (props) => {
             clickAudio2();
             setTextValue('Welcome to Saint Anna');
           }
-           if (
-             (yPlayerIndex.current === 20 && xPlayerIndex.current === 21) ||
-             (yPlayerIndex.current === 20 && xPlayerIndex.current === 20)
-           ) {
-             clickAudio2();
-             setTextValue('< This way to the Docks');
-           }
+          if (
+            (yPlayerIndex.current === 20 && xPlayerIndex.current === 21) ||
+            (yPlayerIndex.current === 20 && xPlayerIndex.current === 20)
+          ) {
+            clickAudio2();
+            setTextValue('< This way to the Docks');
+          }
         }
       }
     };
@@ -1060,9 +1059,6 @@ const SaintAnna = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
-
 
   //event listen for enter
   useEffect(() => {
@@ -1346,10 +1342,62 @@ const SaintAnna = (props) => {
             >
               <div className="character_spritesheet pixel-art"></div>
             </div>
+
+            <div
+              className="dockguy1SA pixel-art"
+              style={{
+                transform: `translate3d( ${1120}px, ${1436}px, 0 )`,
+              }}
+            >
+              <div className="dockguy1SA_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="brunetteSA pixel-art"
+              style={{
+                transform: `translate3d( ${2442}px, ${1362}px, 0 )`,
+              }}
+            >
+              <div className="brunetteSA_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="squatterSA pixel-art"
+              style={{
+                transform: `translate3d( ${2120}px, ${2380}px, 0 )`,
+              }}
+            >
+              <div className="squatterSA_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="pizzaGuySA pixel-art"
+              style={{
+                transform: `translate3d( ${4176}px, ${2330}px, 0 )`,
+              }}
+            >
+              <div className="pizzaGuySA_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="dockguy1SA pixel-art"
+              style={{
+                transform: `translate3d( ${5062}px, ${2080}px, 0 )`,
+              }}
+            >
+              <div className="dockguy1SA_spritesheet pixel-art"></div>
+            </div>
+
+
+
           </div>
         </div>
         {textValue ? (
-          <dialog className="textBox typewriter" open>
+          <dialog
+            id="dialogStyle"
+            className={`${npcFace} textBox typewriter`}
+            open
+          >
             <p>{textValue}</p>
           </dialog>
         ) : null}
