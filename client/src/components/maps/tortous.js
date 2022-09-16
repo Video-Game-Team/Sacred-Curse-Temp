@@ -6,8 +6,8 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
-
 import click1 from '../../audioclips/click1.mp3';
+
 import text from '../../audioclips/Text.mp3';
 import itemPickup from '../../audioclips/itemPickup.mp3';
 import SnowMan from '../../audioclips/Snowman.mp3';
@@ -20,11 +20,6 @@ const Tortous = (props) => {
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-5588);
   //
-
-  const [xnpcTransformVar, setXnpcTransformVar] = useState(-2776);
-  //this sets the y Cordinate to transform the map and character location
-  const [ynpcTransformVar, setYnpcTransformVar] = useState(-5588);
-
   const [xdemonTransformVar, setXdemonTransformVar] = useState(-2776);
   //this sets the y Cordinate to transform the map and character location
   const [ydemonTransformVar, setYdemonTransformVar] = useState(-5388);
@@ -48,10 +43,9 @@ const Tortous = (props) => {
   const xPlayerIndex = useRef(53);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
-  const [playerFreeze, setPlayerFreeze] = useState(false);
   const ydemonIndex = useRef(91);
   const xdemonIndex = useRef(46);
-
+  const [npcFace, setNpcFace] = useState();
   // Sprtiesheet Toggle1 state
   const [toggle1, setToggle1] = useState(false);
 
@@ -1884,8 +1878,6 @@ const Tortous = (props) => {
     }
   }, [yPlayerIndex.current]);
 
-
-  
   //INDOOR USE EFFECT
   useEffect(() => {
     //Hotel
@@ -1920,8 +1912,6 @@ const Tortous = (props) => {
       props.active('indoorHouse2', 'tortous');
     }
   }, [yPlayerIndex.current]);
-
-
 
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
@@ -2107,8 +2097,6 @@ const Tortous = (props) => {
     };
   }, []);
 
-
-
   //DOOR LOCKED LOGIC
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -2169,8 +2157,6 @@ const Tortous = (props) => {
     };
   }, []);
 
-
-
   //OVERWOLRD ITEM CHECK LOGIC
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -2206,7 +2192,6 @@ const Tortous = (props) => {
           }
 
           if (ydemonIndex.current === 91 && xdemonIndex.current === 46) {
-           
             setTextValue('HOLA');
           }
         }
@@ -2227,7 +2212,6 @@ const Tortous = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
 
   //ITEM GRABBING LOGIC
   useEffect(() => {
@@ -2254,8 +2238,6 @@ const Tortous = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
 
   //event listen for enter
   useEffect(() => {
@@ -2316,8 +2298,6 @@ const Tortous = (props) => {
     });
   }, []);
 
-
-
   //listens for the current down key and saves it as the currentkey state
   //wrapping in a useEffect prevents compounding event listeners
   useEffect(() => {
@@ -2359,18 +2339,14 @@ const Tortous = (props) => {
     //when the key is lifted it sets the current key to null to stop map movement and the walker to false to stop the animation
   }, []);
 
-
-
   useEffect(() => {
-     if (demonToggle1 === true) {
-          setTimeout(() => {
-          setXdemonTransformVar(null);
-          setYdemonTransformVar(null);
-           }, 1500)
-  }
-  }, [demonToggle1])
-
-
+    if (demonToggle1 === true) {
+      setTimeout(() => {
+        setXdemonTransformVar(null);
+        setYdemonTransformVar(null);
+      }, 1500);
+    }
+  }, [demonToggle1]);
 
   //facing logic. It needed to be removed from the animate because it was cuasing
   dirArr.current[0] === 'ArrowRight'
@@ -2382,7 +2358,6 @@ const Tortous = (props) => {
     : dirArr.current[0] == 'ArrowDown'
     ? (facing.current = null)
     : null;
-
 
   //animate is a reccursive function that takes the current key and updates the cordinate variables depending on which direction is pushed. It also sets which way the character is facing
   const animate = () => {
@@ -2531,20 +2506,68 @@ const Tortous = (props) => {
               )}
             </div>
 
-
-
             <div
-              className="npc pixel-art"
+              className="sweeperGuyTT pixel-art"
               style={{
-                transform: `translate3d( ${150 - xnpcTransformVar}px, ${
-                  272 - ynpcTransformVar
-                }px, 0 )`,
+                transform: `translate3d( ${5646}px, ${5402}px, 0 )`,
               }}
             >
-              <div className="npc_spritesheet pixel-art"></div>
+              <div className="sweeperGuyTT_spritesheet pixel-art"></div>
             </div>
 
+            <div
+              className="brideTT pixel-art"
+              style={{
+                transform: `translate3d( ${1545}px, ${5080}px, 0 )`,
+              }}
+            >
+              <div className="brideTT_spritesheet pixel-art"></div>
+            </div>
 
+            <div
+              className="redheadTT pixel-art"
+              style={{
+                transform: `translate3d( ${4232}px, ${3600}px, 0 )`,
+              }}
+            >
+              <div className="redheadTT_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="brunetteTT pixel-art"
+              style={{
+                transform: `translate3d( ${1800}px, ${2760}px, 0 )`,
+              }}
+            >
+              <div className="brunetteTT_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="crazyGuyTT pixel-art"
+              style={{
+                transform: `translate3d( ${4232}px, ${1738}px, 0 )`,
+              }}
+            >
+              <div className="crazyGuyTT_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="coinFlipperTT pixel-art"
+              style={{
+                transform: `translate3d( ${5646}px, ${1688}px, 0 )`,
+              }}
+            >
+              <div className="coinFlipperTT_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="blackSmithTT pixel-art"
+              style={{
+                transform: `translate3d( ${2976}px, ${1604}px, 0 )`,
+              }}
+            >
+              <div className="blackSmithTT_spritesheet pixel-art"></div>
+            </div>
 
             <div
               className="demon pixel-art"
@@ -2556,12 +2579,14 @@ const Tortous = (props) => {
             >
               <div className="demon_spritesheet pixel-art"></div>
             </div>
-
-            
           </div>
         </div>
         {textValue ? (
-          <dialog className="textBox typewriter" open>
+          <dialog
+            id="dialogStyle"
+            className={`${npcFace} textBox typewriter`}
+            open
+          >
             <p>{textValue}</p>
           </dialog>
         ) : null}

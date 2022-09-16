@@ -1631,7 +1631,7 @@ const TownMap1 = (props) => {
               facing={facing.current}
               walking={walker}
               style={{
-                transform: `translate3d( ${600 - xTransformVar}px, ${
+                transform: `translate3d( ${600 - 1960}px, ${
                   272 - yTransformVar
                 }px, 0 )`,
               }}
