@@ -39,12 +39,16 @@ const MountainTown = (props) => {
   const xPlayerIndex = useRef(53);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+  const [npcFace, setNpcFace] = useState();
 
   //Music Playing
   const clickAudio1 = () => new Audio(SnowMan).play();
 
   // //NPC Dialogue sound effect
   const clickAudio2 = () => new Audio(text).play();
+
+  // Item collection sound effect
+  const clickAudio3 = () => new Audio(itemPickup).play();
 
   //Starts off Music Loop
   useEffect(() => {
@@ -1475,8 +1479,6 @@ const MountainTown = (props) => {
     };
   }, []);
 
-
-
   //OVERWOLRD ITEM CHECK LOGIC
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -1498,8 +1500,6 @@ const MountainTown = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
 
   //event listen for enter
   useEffect(() => {
@@ -1757,10 +1757,68 @@ const MountainTown = (props) => {
             >
               <div className="character_spritesheet pixel-art"></div>
             </div>
+
+            <div
+              className="girl1MT pixel-art"
+              style={{
+                transform: `translate3d( ${2800}px, ${3880}px, 0 )`,
+              }}
+            >
+              <div className="girl1MT_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="eaterMT pixel-art"
+              style={{
+                transform: `translate3d( ${972}px, ${3093}px, 0 )`,
+              }}
+            >
+              <div className="eaterMT_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="girl2MT pixel-art"
+              style={{
+                transform: `translate3d( ${4204}px, ${3033}px, 0 )`,
+              }}
+            >
+              <div className="girl2MT_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guy1MT pixel-art"
+              style={{
+                transform: `translate3d( ${6154}px, ${1958}px, 0 )`,
+              }}
+            >
+              <div className="guy1MT_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guyBaldMT pixel-art"
+              style={{
+                transform: `translate3d( ${3332}px, ${1494}px, 0 )`,
+              }}
+            >
+              <div className="guyBaldMT_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="rancherMT pixel-art"
+              style={{
+                transform: `translate3d( ${950}px, ${1243}px, 0 )`,
+              }}
+            >
+              <div className="rancherMT_spritesheet pixel-art"></div>
+            </div>
           </div>
         </div>
         {textValue ? (
-          <dialog className="textBox typewriter" open>
+          <dialog
+            id="dialogStyle"
+            className={`${npcFace} textBox typewriter`}
+            open
+          >
             <p>{textValue}</p>
           </dialog>
         ) : null}
