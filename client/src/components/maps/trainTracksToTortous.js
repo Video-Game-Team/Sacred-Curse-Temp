@@ -39,6 +39,7 @@ const TrainTracksToTortous = (props) => {
   const xPlayerIndex = useRef(19);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+  const [npcFace, setNpcFace] = useState();
 
   //Music Playing
   const clickAudio1 = () => new Audio(SnowMan).play();
@@ -20205,6 +20206,9 @@ const TrainTracksToTortous = (props) => {
     }
   }, [yPlayerIndex.current]);
 
+
+
+
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -20216,9 +20220,9 @@ const TrainTracksToTortous = (props) => {
             (yPlayerIndex.current === 248 && xPlayerIndex.current === 17) ||
             (yPlayerIndex.current === 248 && xPlayerIndex.current === 18)
           ) {
-            setTextValue(
-              "Hello! Welcome to Lauren and Mariah's Boutique. I'm Lauren, please place your purchase with Mariah"
-            );
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
           // //YO Mama NPC
           // if (
@@ -20257,9 +20261,9 @@ const TrainTracksToTortous = (props) => {
             (yPlayerIndex.current === 238 && xPlayerIndex.current === 17) ||
             (yPlayerIndex.current === 238 && xPlayerIndex.current === 18)
           ) {
-            setTextValue(
-              'Did Lauren send you to me? Sorry, no one has programmed purchasing logic yet. Bye!'
-            );
+             setNpcFace('faceGirl2');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
           }
           //Hot Girl
           // if (
@@ -20275,41 +20279,45 @@ const TrainTracksToTortous = (props) => {
           // ) {
           //   console.log("Hi I'm guard 4");
           // }
-          //}
+          }
 
           //Facing left
-          // if (facing.current === 'left') {
-          //   if (
-          //     (yPlayerIndex.current === 36 && xPlayerIndex.current === 34) ||
-          //     (yPlayerIndex.current === 37 && xPlayerIndex.current === 34)
-          //   ) {
-          //       console.log('Hi I am Girl1');
-          //   }
-          //   //YO Mama NPC
-          //   if (
-          //     (yPlayerIndex.current === 33 && xPlayerIndex.current === 40) ||
-          //     (yPlayerIndex.current === 34 && xPlayerIndex.current === 40)
-          //   ) {
-          //      console.log('Hi I am Girl2');
-          //   }
-          //Hot Girl
-          // if (
-          //   (yPlayerIndex.current === 35 && xPlayerIndex.current === 16) ||
-          //   (yPlayerIndex.current === 36 && xPlayerIndex.current === 16)
-          // ) {
-          //   console.log("Hi I'm Guard 3");
-          // }
-          //Hot Girl
-          // if (
-          //   (yPlayerIndex.current === 22 && xPlayerIndex.current === 34) ||
-          //   (yPlayerIndex.current === 23 && xPlayerIndex.current === 34)
-          // ) {
-          //   console.log("Hi I'm guard 4");
-          // }
-          //}
-
+      if (facing.current === 'left') {
+        //Guard 1 Lower left NPC
+        if (
+          (yPlayerIndex.current === 247 && xPlayerIndex.current === 21) ||
+          (yPlayerIndex.current === 248 && xPlayerIndex.current === 21)
+        ) {
+          setNpcFace('faceGirl2');
+          setTextValue('My dad is mad at me');
+          clickAudio2();
+        }
+        // //YO Mama NPC
+        if (
+          (yPlayerIndex.current === 240 && xPlayerIndex.current === 21) ||
+          (yPlayerIndex.current === 241 && xPlayerIndex.current === 21)
+        ) {
+           setNpcFace('faceGirl2');
+           setTextValue('My dad is mad at me');
+           clickAudio2();
+        }
+        // //Hot Girl
+        // if (
+        //   (yPlayerIndex.current === 24 && xPlayerIndex.current === 23) ||
+        //   (yPlayerIndex.current === 24 && xPlayerIndex.current === 24)
+        // ) {
+        //   console.log("Hi I'm Guard 3");
+        // }
+        // //Hot Girl
+        // if (
+        //   (yPlayerIndex.current === 24 && xPlayerIndex.current === 33) ||
+        //   (yPlayerIndex.current === 24 && xPlayerIndex.current === 34)
+        // ) {
+        //   console.log("Hi I'm guard 4");
+        // }
+      }
           //Facing right
-          // if (facing.current === 'right') {
+          if (facing.current === 'right') {
           //   if (
           //     (yPlayerIndex.current === 36 && xPlayerIndex.current === 31) ||
           //     (yPlayerIndex.current === 37 && xPlayerIndex.current === 31)
@@ -20347,9 +20355,6 @@ const TrainTracksToTortous = (props) => {
     };
   }, []);
 
-
-
-
   //OVERWOLRD ITEM CHECK LOGIC
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -20369,9 +20374,7 @@ const TrainTracksToTortous = (props) => {
 
         //Facing left
         if (facing.current === 'left') {
-          if (
-            (yPlayerIndex.current === 298 && xPlayerIndex.current === 17) 
-          ) {
+          if (yPlayerIndex.current === 298 && xPlayerIndex.current === 17) {
             setTextValue('Welcome To Tortous');
           }
         }
@@ -20382,9 +20385,6 @@ const TrainTracksToTortous = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
-
 
   //event listen for enter
   useEffect(() => {
@@ -20642,10 +20642,32 @@ const TrainTracksToTortous = (props) => {
             >
               <div className="character_spritesheet pixel-art"></div>
             </div>
+
+            <div
+              className="blondeTTTV pixel-art"
+              style={{
+                transform: `translate3d( ${1086}px, ${15620}px, 0 )`,
+              }}
+            >
+              <div className="blondeTTTV_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="brunnetteTTTV pixel-art"
+              style={{
+                transform: `translate3d( ${1086}px, ${15188}px, 0 )`,
+              }}
+            >
+              <div className="brunnetteTTTV_spritesheet pixel-art"></div>
+            </div>
           </div>
         </div>
         {textValue ? (
-          <dialog className="textBox typewriter" open>
+          <dialog
+            id="dialogStyle"
+            className={`${npcFace} textBox typewriter`}
+            open
+          >
             <p>{textValue}</p>
           </dialog>
         ) : null}

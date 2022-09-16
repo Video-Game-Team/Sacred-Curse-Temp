@@ -39,12 +39,16 @@ const TrainTracksToSaintAnna = (props) => {
   const xPlayerIndex = useRef(15);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+  const [npcFace, setNpcFace] = useState();
 
   //Music Playing
   const clickAudio1 = () => new Audio(SnowMan).play();
 
   // //NPC Dialogue sound effect
   const clickAudio2 = () => new Audio(text).play();
+
+  // Item collection sound effect
+  const clickAudio3 = () => new Audio(itemPickup).play();
 
   //Starts off Music Loop
   useEffect(() => {
@@ -1624,18 +1628,13 @@ const TrainTracksToSaintAnna = (props) => {
     };
   }, []);
 
-
-
   //OVERWOLRD ITEM CHECK LOGIC
   useEffect(() => {
     const dialogueAction = (event) => {
       if (event.key === 'b') {
         //Facing up
         if (facing.current === 'up') {
-          if (
-            (yPlayerIndex.current === 70 && xPlayerIndex.current === 12) 
-        
-          ) {
+          if (yPlayerIndex.current === 70 && xPlayerIndex.current === 12) {
             setTextValue('Welcome To St Anna Tracks');
           }
         }
@@ -1646,15 +1645,13 @@ const TrainTracksToSaintAnna = (props) => {
             (yPlayerIndex.current === 11 && xPlayerIndex.current === 13) ||
             (yPlayerIndex.current === 12 && xPlayerIndex.current === 13)
           ) {
-           setTextValue('Welcome To St Anna Tracks');
+            setTextValue('Welcome To St Anna Tracks');
           }
         }
 
         //Facing right
         if (facing.current === 'right') {
-          if (
-            (yPlayerIndex.current === 142 && xPlayerIndex.current === 21) 
-          ) {
+          if (yPlayerIndex.current === 142 && xPlayerIndex.current === 21) {
             setTextValue('Welcome To St Anna Tracks');
           }
         }
@@ -1665,10 +1662,6 @@ const TrainTracksToSaintAnna = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
-
-  
 
   //event listen for enter
   useEffect(() => {
@@ -1926,10 +1919,59 @@ const TrainTracksToSaintAnna = (props) => {
             >
               <div className="character_spritesheet pixel-art"></div>
             </div>
+
+            <div
+              className="guardTTSA pixel-art"
+              style={{
+                transform: `translate3d( ${620}px, ${8892}px, 0 )`,
+              }}
+            >
+              <div className="guardTTSA_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guardTTSA pixel-art"
+              style={{
+                transform: `translate3d( ${620}px, ${8628}px, 0 )`,
+              }}
+            >
+              <div className="guardTTSA_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guardTTSA pixel-art"
+              style={{
+                transform: `translate3d( ${1836}px, ${8892}px, 0 )`,
+              }}
+            >
+              <div className="guardTTSA_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guardTTSA pixel-art"
+              style={{
+                transform: `translate3d( ${1836}px, ${8628}px, 0 )`,
+              }}
+            >
+              <div className="guardTTSA_spritesheet pixel-art"></div>
+            </div>
+
+            {/* <div
+              className="brideTT pixel-art"
+              style={{
+                transform: `translate3d( ${1545}px, ${5080}px, 0 )`,
+              }}
+            >
+              <div className="brideTT_spritesheet pixel-art"></div>
+            </div> */}
           </div>
         </div>
         {textValue ? (
-          <dialog className="textBox typewriter" open>
+          <dialog
+            id="dialogStyle"
+            className={`${npcFace} textBox typewriter`}
+            open
+          >
             <p>{textValue}</p>
           </dialog>
         ) : null}

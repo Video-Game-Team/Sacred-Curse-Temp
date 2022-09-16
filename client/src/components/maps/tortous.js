@@ -1924,40 +1924,45 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 83 && xPlayerIndex.current === 24) ||
             (yPlayerIndex.current === 83 && xPlayerIndex.current === 25)
           ) {
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
             clickAudio2();
-            setTextValue('Hi I am girl');
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 43) ||
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 44)
           ) {
-            clickAudio2();
-            setTextValue("Hi I'm Guard 1");
+         setNpcFace('faceGirl2');
+         setTextValue('My dad is mad at me');
+         clickAudio2();
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 61) ||
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 62)
           ) {
-            clickAudio2();
-            setTextValue("Hi I'm Guard 2");
+           setNpcFace('faceGirl2');
+           setTextValue('My dad is mad at me');
+           clickAudio2();
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 30 && xPlayerIndex.current === 88) ||
             (yPlayerIndex.current === 30 && xPlayerIndex.current === 89)
           ) {
-            clickAudio2();
-            setTextValue("Hi I'm crazy yeling guy");
+             setNpcFace('faceGirl2');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
           }
           //Old Man
           if (
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 22) ||
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 23)
           ) {
-            clickAudio2();
-            setTextValue("Hi I'm old man");
+           setNpcFace('faceGirl2');
+           setTextValue('My dad is mad at me');
+           clickAudio2();
           }
         }
 
@@ -1975,32 +1980,36 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 54 && xPlayerIndex.current === 43) ||
             (yPlayerIndex.current === 52 && xPlayerIndex.current === 42)
           ) {
-            clickAudio2();
-            setTextValue("Hi I'm Guard 1");
+             setNpcFace('faceGirl2');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 54 && xPlayerIndex.current === 62) ||
             (yPlayerIndex.current === 54 && xPlayerIndex.current === 61)
           ) {
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
             clickAudio2();
-            setTextValue("Hi I'm Guard 2");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 27 && xPlayerIndex.current === 88) ||
             (yPlayerIndex.current === 27 && xPlayerIndex.current === 89)
           ) {
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
             clickAudio2();
-            setTextValue("Hi I'm crazy yeling guy");
           }
           //Old Man
           if (
             (yPlayerIndex.current === 17 && xPlayerIndex.current === 23) ||
             (yPlayerIndex.current === 17 && xPlayerIndex.current === 22)
           ) {
-            clickAudio2();
-            setTextValue("Hi I'm old man");
+          setNpcFace('faceGirl2');
+          setTextValue('My dad is mad at me');
+          clickAudio2();
           }
         }
 
@@ -2010,40 +2019,45 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 81 && xPlayerIndex.current === 26) ||
             (yPlayerIndex.current === 82 && xPlayerIndex.current === 26)
           ) {
-            clickAudio2();
-            setTextValue('Hi I am girl');
+             setNpcFace('faceGirl2');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 55 && xPlayerIndex.current === 45) ||
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 45)
           ) {
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
             clickAudio2();
-            setTextValue("Hi I'm Guard 1");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 55 && xPlayerIndex.current === 63) ||
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 63)
           ) {
-            clickAudio2();
-            setTextValue("Hi I'm Guard 2");
+             setNpcFace('faceGirl2');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 28 && xPlayerIndex.current === 90) ||
             (yPlayerIndex.current === 29 && xPlayerIndex.current === 90)
           ) {
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
             clickAudio2();
-            setTextValue("Hi I'm crazy yeling guy");
           }
           //Old Man
           if (
             (yPlayerIndex.current === 19 && xPlayerIndex.current === 24) ||
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 24)
           ) {
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
             clickAudio2();
-            setTextValue("Hi I'm old man");
           }
         }
 
@@ -2053,40 +2067,45 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 81 && xPlayerIndex.current === 23) ||
             (yPlayerIndex.current === 82 && xPlayerIndex.current === 23)
           ) {
-            clickAudio2();
-            setTextValue('Hi I am girl');
+             setNpcFace('faceGirl2');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 55 && xPlayerIndex.current === 42) ||
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 42)
           ) {
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
             clickAudio2();
-            setTextValue("Hi I'm Guard 1");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 55 && xPlayerIndex.current === 60) ||
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 60)
           ) {
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
             clickAudio2();
-            setTextValue("Hi I'm Guard 2");
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 28 && xPlayerIndex.current === 87) ||
             (yPlayerIndex.current === 29 && xPlayerIndex.current === 87)
           ) {
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
             clickAudio2();
-            setTextValue("Hi I'm crazy yeling guy");
           }
           //Old Man
           if (
             (yPlayerIndex.current === 19 && xPlayerIndex.current === 21) ||
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 21)
           ) {
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
             clickAudio2();
-            setTextValue("Hi I'm old man");
           }
         }
       }

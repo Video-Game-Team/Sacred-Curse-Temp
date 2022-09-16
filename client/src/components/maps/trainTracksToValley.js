@@ -39,6 +39,7 @@ const TrainTracksToValley = (props) => {
   const xPlayerIndex = useRef(29);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+  const [npcFace, setNpcFace] = useState();
 
   //Music Playing
   const clickAudio1 = () => new Audio(SnowMan).play();
@@ -1566,11 +1567,6 @@ const TrainTracksToValley = (props) => {
     }
   }, [yPlayerIndex.current]);
 
-
-
-
-
-
   //OVERWOLRD ITEM CHECK LOGIC
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -1591,9 +1587,6 @@ const TrainTracksToValley = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
-
 
   //event listen for enter
   useEffect(() => {
@@ -1852,10 +1845,15 @@ const TrainTracksToValley = (props) => {
             >
               <div className="character_spritesheet pixel-art"></div>
             </div>
+            
           </div>
         </div>
         {textValue ? (
-          <dialog className="textBox typewriter" open>
+          <dialog
+            id="dialogStyle"
+            className={`${npcFace} textBox typewriter`}
+            open
+          >
             <p>{textValue}</p>
           </dialog>
         ) : null}

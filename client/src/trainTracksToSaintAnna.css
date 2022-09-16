@@ -35,7 +35,7 @@
 
  .mapTTTSA {
      image-rendering: pixelated;
-     background-image: url("./assets/maps/Train track to St Anna no grid.png");
+     background-image: url("./assets/maps/Train track to St Anna w grid npc.png");
      background-size: 2560px;
      width: calc(100 * var(--grid-cell));
      height: calc(375 * var(--grid-cell));
@@ -95,4 +95,64 @@
      to {
          transform: translate3d(-100%, 0%, 0);
      }
+ }
+
+
+
+
+
+
+ .guardTTSA {
+     position: absolute;
+     width: calc(var(--grid-cell)* 2.5);
+     height: calc(var(--grid-cell)* 2.5);
+     overflow: hidden;
+ }
+
+ .guardTTSA_spritesheet {
+     background: url("./assets/images/Train Tracks To Saint Anna guard.png") no-repeat no-repeat;
+     background-size: 100%;
+     width: calc(var(--grid-cell)* 34);
+     height: calc(var(--grid-cell)* 3);
+ }
+
+ .guardTTSA .guardTTSA_spritesheet {
+     animation: walkAnimation 1.6s steps(15) infinite;
+ }
+
+
+ .faceGuardTTSA {
+     background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+     background-position: left top;
+     background-size: 12%;
+     background-size: content-box;
+ }
+
+
+
+
+ .brideTT {
+     position: absolute;
+     width: calc(var(--grid-cell)* 2.5);
+     height: calc(var(--grid-cell)* 2.5);
+     overflow: hidden;
+ }
+
+ .brideTT_spritesheet {
+     background: url("./assets/images/Tortous bride.png") no-repeat no-repeat;
+     background-size: 100%;
+     width: calc(var(--grid-cell)* 7);
+     height: calc(var(--grid-cell)* 3);
+ }
+
+ .brideTT .brideTT_spritesheet {
+     animation: walkAnimation 1.6s steps(3) infinite;
+ }
+
+
+ .faceBrideTT {
+     background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+     background-position: left top;
+     background-size: 12%;
+     background-size: content-box;
  }

@@ -1223,9 +1223,9 @@ const TheWall = (props) => {
             (yPlayerIndex.current === 14 && xPlayerIndex.current === 19) ||
             (yPlayerIndex.current === 14 && xPlayerIndex.current === 20)
           ) {
-            setTextValue(
-              "By order of the virtuously elected chancellor of the People's Republic. This area is forbidden. "
-            );
+             setNpcFace('faceGirl2');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
           }
           // //YO Mama NPC
           // if (
@@ -1257,9 +1257,9 @@ const TheWall = (props) => {
             (yPlayerIndex.current === 10 && xPlayerIndex.current === 19) ||
             (yPlayerIndex.current === 10 && xPlayerIndex.current === 20)
           ) {
-            setTextValue(
-              "By order of the virtuously elected chancellor of the People's Republic. This area is forbidden. "
-            );
+             setNpcFace('faceGirl2');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
           }
           // //YO Mama NPC
           // if (
@@ -1290,9 +1290,9 @@ const TheWall = (props) => {
             (yPlayerIndex.current === 11 && xPlayerIndex.current === 21) ||
             (yPlayerIndex.current === 12 && xPlayerIndex.current === 21)
           ) {
-            setTextValue(
-              "By order of the virtuously elected chancellor of the People's Republic. This area is forbidden. "
-            );
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
           // //YO Mama NPC
           // if (
@@ -1323,9 +1323,9 @@ const TheWall = (props) => {
             (yPlayerIndex.current === 11 && xPlayerIndex.current === 18) ||
             (yPlayerIndex.current === 12 && xPlayerIndex.current === 18)
           ) {
-            setTextValue(
-              "By order of the virtuously elected chancellor of the People's Republic. This area is forbidden. "
-            );
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
           // //YO Mama NPC
           // if (
