@@ -35,7 +35,7 @@
 
  .mapTTS {
      image-rendering: pixelated;
-     background-image: url("./assets/maps/Tortous Train Station no grid.png");
+     background-image: url("./assets/maps/Tortous Train Station w grid npc.png");
      background-size: 6400px;
      width: calc(250 * var(--grid-cell));
      height: calc(100 * var(--grid-cell));
@@ -52,8 +52,6 @@
     size: 100%;
     background: transparent;
 }    */
-
-
 
  .character {
      width: calc(var(--grid-cell)* 2);
@@ -95,4 +93,91 @@
      to {
          transform: translate3d(-100%, 0%, 0);
      }
+ }
+
+
+
+ .guard1TTTS {
+     position: absolute;
+     width: calc(var(--grid-cell)* 2.5);
+     height: calc(var(--grid-cell)* 2.5);
+     overflow: hidden;
+ }
+
+ .guard1TTTS_spritesheet {
+     background: url("./assets/images/Tortous Train Station army 1.png") no-repeat no-repeat;
+     background-size: 100%;
+     width: calc(var(--grid-cell)* 7);
+     height: calc(var(--grid-cell)* 3);
+ }
+
+ .guard1TTTS .guard1TTTS_spritesheet {
+     animation: walkAnimation 0.6s steps(3) infinite;
+ }
+
+
+ .faceGuard1TTTS {
+     background: url("./assets/images/Tortous Train Station army 1.png") no-repeat no-repeat;
+     background-position: left top;
+     background-size: 12%;
+     background-size: content-box;
+ }
+
+
+
+
+ .generalTTTS {
+     position: absolute;
+     width: calc(var(--grid-cell)* 2.5);
+     height: calc(var(--grid-cell)* 2.5);
+     overflow: hidden;
+ }
+
+ .generalTTTS_spritesheet {
+     background: url("./assets/images/Tortous Train Station General.png") no-repeat no-repeat;
+     background-size: 100%;
+     width: calc(var(--grid-cell)* 7);
+     height: calc(var(--grid-cell)* 3);
+ }
+
+ .generalTTTS .generalTTTS_spritesheet {
+     animation: walkAnimation .5s steps(3) infinite;
+ }
+
+
+ .faceGeneralTTTS {
+     background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+     background-position: left top;
+     background-size: 12%;
+     background-size: content-box;
+ }
+
+
+
+
+
+ .redheadTT {
+     position: absolute;
+     width: calc(var(--grid-cell)* 2);
+     height: calc(var(--grid-cell)* 3);
+     overflow: hidden;
+ }
+
+ .redheadTT_spritesheet {
+     background: url("./assets/images/Indoor house 1 girl.png") no-repeat no-repeat;
+     background-size: 100%;
+     width: calc(var(--grid-cell)* 36);
+     height: calc(var(--grid-cell)* 3);
+ }
+
+ .redheadTT .redheadTT_spritesheet {
+     animation: walkAnimation 3.6s steps(15) infinite;
+ }
+
+
+ .faceRedheadTT {
+     background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+     background-position: left top;
+     background-size: 12%;
+     background-size: content-box;
  }

@@ -39,6 +39,7 @@ const TortousTrainStation = (props) => {
   const xPlayerIndex = useRef(49);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+  const [npcFace, setNpcFace] = useState();
 
   //Music Playing
   const clickAudio1 = () => new Audio(SnowMan).play();
@@ -1064,19 +1065,13 @@ const TortousTrainStation = (props) => {
     }
   }, [xPlayerIndex.current]);
 
-
-
-
   //OVERWOLRD ITEM CHECK LOGIC
   useEffect(() => {
     const dialogueAction = (event) => {
       if (event.key === 'b') {
         //Facing up
         if (facing.current === 'up') {
-          if (
-            (yPlayerIndex.current === 26 && xPlayerIndex.current === 86) 
-
-          ) {
+          if (yPlayerIndex.current === 26 && xPlayerIndex.current === 86) {
             setTextValue('Welcome To Hub Haviv');
           }
         }
@@ -1085,9 +1080,7 @@ const TortousTrainStation = (props) => {
         if (facing.current === 'left') {
           if (
             (yPlayerIndex.current === 32 && xPlayerIndex.current === 48) ||
-            (
-              yPlayerIndex.current === 32 && xPlayerIndex.current === 47
-            )
+            (yPlayerIndex.current === 32 && xPlayerIndex.current === 47)
           ) {
             setTextValue('Welcome To Hub Haviv');
           }
@@ -1099,9 +1092,6 @@ const TortousTrainStation = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
-
 
   //event listen for enter
   useEffect(() => {
@@ -1359,10 +1349,95 @@ const TortousTrainStation = (props) => {
             >
               <div className="character_spritesheet pixel-art"></div>
             </div>
+
+            <div
+              className="guard1TTTS pixel-art"
+              style={{
+                transform: `translate3d( ${2700}px, ${1300}px, 0 )`,
+              }}
+            >
+              <div className="guard1TTTS_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guard1TTTS pixel-art"
+              style={{
+                transform: `translate3d( ${2820}px, ${1300}px, 0 )`,
+              }}
+            >
+              <div className="guard1TTTS_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guard1TTTS pixel-art"
+              style={{
+                transform: `translate3d( ${2940}px, ${1300}px, 0 )`,
+              }}
+            >
+              <div className="guard1TTTS_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guard1TTTS pixel-art"
+              style={{
+                transform: `translate3d( ${3060}px, ${1300}px, 0 )`,
+              }}
+            >
+              <div className="guard1TTTS_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guard1TTTS pixel-art"
+              style={{
+                transform: `translate3d( ${3180}px, ${1300}px, 0 )`,
+              }}
+            >
+              <div className="guard1TTTS_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guard1TTTS pixel-art"
+              style={{
+                transform: `translate3d( ${3300}px, ${1300}px, 0 )`,
+              }}
+            >
+              <div className="guard1TTTS_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guard1TTTS pixel-art"
+              style={{
+                transform: `translate3d( ${3420}px, ${1300}px, 0 )`,
+              }}
+            >
+              <div className="guard1TTTS_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guard1TTTS pixel-art"
+              style={{
+                transform: `translate3d( ${3540}px, ${1300}px, 0 )`,
+              }}
+            >
+              <div className="guard1TTTS_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="generalTTTS pixel-art"
+              style={{
+                transform: `translate3d( ${3140}px, ${1174}px, 0 )`,
+              }}
+            >
+              <div className="generalTTTS_spritesheet pixel-art"></div>
+            </div>
           </div>
         </div>
         {textValue ? (
-          <dialog className="textBox typewriter" open>
+          <dialog
+            id="dialogStyle"
+            className={`${npcFace} textBox typewriter`}
+            open
+          >
             <p>{textValue}</p>
           </dialog>
         ) : null}
