@@ -39,12 +39,16 @@ const TrainTracksToCapital = (props) => {
   const xPlayerIndex = useRef(19);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+  const [npcFace, setNpcFace] = useState();
 
   //Music Playing
   const clickAudio1 = () => new Audio(SnowMan).play();
 
   // //NPC Dialogue sound effect
   const clickAudio2 = () => new Audio(text).play();
+
+  // Item collection sound effect
+  const clickAudio3 = () => new Audio(itemPickup).play();
 
   //Starts off Music Loop
   useEffect(() => {
@@ -1767,10 +1771,6 @@ const TrainTracksToCapital = (props) => {
     }
   }, [yPlayerIndex.current]);
 
-
-
-
-
   //OVERWOLRD ITEM CHECK LOGIC
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -1791,9 +1791,6 @@ const TrainTracksToCapital = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
-
 
   //event listen for enter
   useEffect(() => {
@@ -2051,10 +2048,122 @@ const TrainTracksToCapital = (props) => {
             >
               <div className="character_spritesheet pixel-art"></div>
             </div>
+
+            <div
+              className="guard1TTTC pixel-art"
+              style={{
+                transform: `translate3d( ${1200}px, ${8000}px, 0 )`,
+              }}
+            >
+              <div className="guard1TTTC_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guard1TTTC pixel-art"
+              style={{
+                transform: `translate3d( ${1200}px, ${6123}px, 0 )`,
+              }}
+            >
+              <div className="guard1TTTC_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guard1TTTC pixel-art"
+              style={{
+                transform: `translate3d( ${900}px, ${700}px, 0 )`,
+              }}
+            >
+              <div className="guard1TTTC_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guard1TTTC pixel-art"
+              style={{
+                transform: `translate3d( ${723}px, ${4000}px, 0 )`,
+              }}
+            >
+              <div className="guard1TTTC_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guard1TTTC pixel-art"
+              style={{
+                transform: `translate3d( ${1444}px, ${7220}px, 0 )`,
+              }}
+            >
+              <div className="guard1TTTC_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guard1TTTC pixel-art"
+              style={{
+                transform: `translate3d( ${912}px, ${2000}px, 0 )`,
+              }}
+            >
+              <div className="guard1TTTC_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guard1TTTC pixel-art"
+              style={{
+                transform: `translate3d( ${800}px, ${1000}px, 0 )`,
+              }}
+            >
+              <div className="guard1TTTC_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guard1TTTC pixel-art"
+              style={{
+                transform: `translate3d( ${1600}px, ${500}px, 0 )`,
+              }}
+            >
+              <div className="guard1TTTC_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guard1TTTC pixel-art"
+              style={{
+                transform: `translate3d( ${1234}px, ${6543}px, 0 )`,
+              }}
+            >
+              <div className="guard1TTTC_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guard1TTTC pixel-art"
+              style={{
+                transform: `translate3d( ${1000}px, ${4532}px, 0 )`,
+              }}
+            >
+              <div className="guard1TTTC_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guard1TTTC pixel-art"
+              style={{
+                transform: `translate3d( ${850}px, ${7765}px, 0 )`,
+              }}
+            >
+              <div className="guard1TTTC_spritesheet pixel-art"></div>
+            </div>
+
+            <div
+              className="guard1TTTC pixel-art"
+              style={{
+                transform: `translate3d( ${1655}px, ${3245}px, 0 )`,
+              }}
+            >
+              <div className="guard1TTTC_spritesheet pixel-art"></div>
+            </div>
           </div>
         </div>
         {textValue ? (
-          <dialog className="textBox typewriter" open>
+          <dialog
+            id="dialogStyle"
+            className={`${npcFace} textBox typewriter`}
+            open
+          >
             <p>{textValue}</p>
           </dialog>
         ) : null}

@@ -102,26 +102,25 @@
 
 
 
- .guardTTSA {
+ .guardRTTSA {
      position: absolute;
      width: calc(var(--grid-cell)* 2.5);
      height: calc(var(--grid-cell)* 2.5);
      overflow: hidden;
  }
 
- .guardTTSA_spritesheet {
-     background: url("./assets/images/Train Tracks To Saint Anna guard.png") no-repeat no-repeat;
+ .guardRTTSA_spritesheet {
+     background: url("./assets/images/Train Tracks To Saint Anna guard R.png") no-repeat no-repeat;
      background-size: 100%;
      width: calc(var(--grid-cell)* 34);
      height: calc(var(--grid-cell)* 3);
  }
 
- .guardTTSA .guardTTSA_spritesheet {
-     animation: walkAnimation 1.6s steps(15) infinite;
+ .guardRTTSA .guardRTTSA_spritesheet {
+     animation: walkAnimation 3.6s steps(15) infinite;
  }
 
-
- .faceGuardTTSA {
+ .faceGuardRTTSA {
      background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
      background-position: left top;
      background-size: 12%;
@@ -131,28 +130,54 @@
 
 
 
- .brideTT {
+ .guardLTTSA {
      position: absolute;
      width: calc(var(--grid-cell)* 2.5);
      height: calc(var(--grid-cell)* 2.5);
      overflow: hidden;
  }
 
- .brideTT_spritesheet {
-     background: url("./assets/images/Tortous bride.png") no-repeat no-repeat;
+ .guardLTTSA_spritesheet {
+     background: url("./assets/images/Train Tracks To Saint Anna guard L.png") no-repeat no-repeat;
      background-size: 100%;
-     width: calc(var(--grid-cell)* 7);
+     width: calc(var(--grid-cell)* 34);
      height: calc(var(--grid-cell)* 3);
  }
 
- .brideTT .brideTT_spritesheet {
-     animation: walkAnimation 1.6s steps(3) infinite;
+ .guardLTTSA .guardLTTSA_spritesheet {
+     animation: walkAnimation 3.6s steps(15) infinite;
  }
 
-
- .faceBrideTT {
+ .faceGuardLTTSA {
      background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
      background-position: left top;
      background-size: 12%;
      background-size: content-box;
  }
+
+
+
+.dockguyTTSA {
+    position: absolute;
+    width: calc(var(--grid-cell)* 2.5);
+    height: calc(var(--grid-cell)* 3);
+    overflow: hidden;
+}
+
+.dockguyTTSA_spritesheet {
+    background: url("./assets/images/Indoor House 2 guy.png") no-repeat no-repeat;
+    background-size: 100%;
+    width: calc(var(--grid-cell)* 34);
+    height: calc(var(--grid-cell)* 3);
+}
+
+.dockguyTTSA .dockguyTTSA_spritesheet {
+    animation: walkAnimation 2.6s steps(5) infinite;
+}
+
+.faceDockguyTTSA {
+    background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+    background-position: left top;
+    background-size: 12%;
+    background-size: content-box;
+}

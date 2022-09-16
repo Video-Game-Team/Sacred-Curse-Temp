@@ -1921,49 +1921,49 @@ const TrainTracksToSaintAnna = (props) => {
             </div>
 
             <div
-              className="guardTTSA pixel-art"
+              className="guardRTTSA pixel-art"
               style={{
                 transform: `translate3d( ${620}px, ${8892}px, 0 )`,
               }}
             >
-              <div className="guardTTSA_spritesheet pixel-art"></div>
+              <div className="guardRTTSA_spritesheet pixel-art"></div>
             </div>
 
             <div
-              className="guardTTSA pixel-art"
+              className="guardRTTSA pixel-art"
               style={{
                 transform: `translate3d( ${620}px, ${8628}px, 0 )`,
               }}
             >
-              <div className="guardTTSA_spritesheet pixel-art"></div>
+              <div className="guardRTTSA_spritesheet pixel-art"></div>
             </div>
 
             <div
-              className="guardTTSA pixel-art"
+              className="guardLTTSA pixel-art"
               style={{
                 transform: `translate3d( ${1836}px, ${8892}px, 0 )`,
               }}
             >
-              <div className="guardTTSA_spritesheet pixel-art"></div>
+              <div className="guardLTTSA_spritesheet pixel-art"></div>
             </div>
 
             <div
-              className="guardTTSA pixel-art"
+              className="guardLTTSA pixel-art"
               style={{
                 transform: `translate3d( ${1836}px, ${8628}px, 0 )`,
               }}
             >
-              <div className="guardTTSA_spritesheet pixel-art"></div>
+              <div className="guardLTTSA_spritesheet pixel-art"></div>
             </div>
 
-            {/* <div
-              className="brideTT pixel-art"
+            <div
+              className="dockguyTTSA pixel-art"
               style={{
-                transform: `translate3d( ${1545}px, ${5080}px, 0 )`,
+                transform: `translate3d( ${1360}px, ${9060}px, 0 )`,
               }}
             >
-              <div className="brideTT_spritesheet pixel-art"></div>
-            </div> */}
+              <div className="dockguyTTSA_spritesheet pixel-art"></div>
+            </div>
           </div>
         </div>
         {textValue ? (
