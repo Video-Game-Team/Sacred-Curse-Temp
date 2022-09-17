@@ -1913,6 +1913,8 @@ const Tortous = (props) => {
     }
   }, [yPlayerIndex.current]);
 
+
+
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -1924,7 +1926,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 83 && xPlayerIndex.current === 24) ||
             (yPlayerIndex.current === 83 && xPlayerIndex.current === 25)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceBrideTT');
             setTextValue('My dad is mad at me');
             clickAudio2();
           }
@@ -1933,7 +1935,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 43) ||
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 44)
           ) {
-         setNpcFace('faceGirl2');
+         setNpcFace('faceGuard1TT');
          setTextValue('My dad is mad at me');
          clickAudio2();
           }
@@ -1942,7 +1944,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 61) ||
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 62)
           ) {
-           setNpcFace('faceGirl2');
+           setNpcFace('faceGuard1TT');
            setTextValue('My dad is mad at me');
            clickAudio2();
           }
@@ -1951,7 +1953,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 30 && xPlayerIndex.current === 88) ||
             (yPlayerIndex.current === 30 && xPlayerIndex.current === 89)
           ) {
-             setNpcFace('faceGirl2');
+             setNpcFace('faceCoinFlipperTT');
              setTextValue('My dad is mad at me');
              clickAudio2();
           }
@@ -1960,7 +1962,52 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 22) ||
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 23)
           ) {
-           setNpcFace('faceGirl2');
+           setNpcFace('faceGuard1TT');
+           setTextValue('My dad is mad at me');
+           clickAudio2();
+          }
+
+          if (
+            (yPlayerIndex.current === 88 && xPlayerIndex.current === 88) ||
+            (yPlayerIndex.current === 88 && xPlayerIndex.current === 87)
+          ) {
+           setNpcFace('facesweeperGuyTT');
+           setTextValue('My dad is mad at me');
+           clickAudio2();
+          }
+
+            if (
+            (yPlayerIndex.current === 60 && xPlayerIndex.current === 66) ||
+            (yPlayerIndex.current === 60 && xPlayerIndex.current === 65)
+          ) {
+           setNpcFace('faceRedheadTT');
+           setTextValue('My dad is mad at me');
+           clickAudio2();
+          }
+
+            if (
+            (yPlayerIndex.current === 47 && xPlayerIndex.current === 28) ||
+            (yPlayerIndex.current === 47 && xPlayerIndex.current === 27)
+          ) {
+           setNpcFace('faceGuard1TT');
+           setTextValue('My dad is mad at me');
+           clickAudio2();
+          }
+
+          if (
+            (yPlayerIndex.current === 41 && xPlayerIndex.current === 41) ||
+            (yPlayerIndex.current === 41 && xPlayerIndex.current === 42)
+          ) {
+           setNpcFace('faceGuard1TT');
+           setTextValue('My dad is mad at me');
+           clickAudio2();
+          }
+
+        if (
+            (yPlayerIndex.current === 41 && xPlayerIndex.current === 63) ||
+            (yPlayerIndex.current === 41 && xPlayerIndex.current === 62)
+          ) {
+           setNpcFace('faceGuard1TT');
            setTextValue('My dad is mad at me');
            clickAudio2();
           }
@@ -1969,12 +2016,14 @@ const Tortous = (props) => {
         //Facing down
         if (!facing.current) {
           //Jim NPC
-          // if (
-          //   (yPlayerIndex.current === 35 && xPlayerIndex.current === 32) ||
-          //   (yPlayerIndex.current === 35 && xPlayerIndex.current === 33)
-          // ) {
-          //   console.log('Hi I am girl');
-          // }
+          if (
+            (yPlayerIndex.current === 85 && xPlayerIndex.current === 89) ||
+            (yPlayerIndex.current === 85 && xPlayerIndex.current === 88)
+          ) {
+            setNpcFace('facesweeperGuyTT');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
+          }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 54 && xPlayerIndex.current === 43) ||
@@ -1998,7 +2047,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 27 && xPlayerIndex.current === 88) ||
             (yPlayerIndex.current === 27 && xPlayerIndex.current === 89)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceCoinFlipperTT');
             setTextValue('My dad is mad at me');
             clickAudio2();
           }
@@ -2007,7 +2056,35 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 17 && xPlayerIndex.current === 23) ||
             (yPlayerIndex.current === 17 && xPlayerIndex.current === 22)
           ) {
-          setNpcFace('faceGirl2');
+          setNpcFace('faceGuard1TT');
+          setTextValue('My dad is mad at me');
+          clickAudio2();
+          }
+
+           //Old Man
+          if (
+            (yPlayerIndex.current === 57 && xPlayerIndex.current === 66) ||
+            (yPlayerIndex.current === 57 && xPlayerIndex.current === 65)
+          ) {
+          setNpcFace('faceRedheadTT');
+          setTextValue('My dad is mad at me');
+          clickAudio2();
+          }
+           //Old Man
+          if (
+            (yPlayerIndex.current === 38 && xPlayerIndex.current === 41) ||
+            (yPlayerIndex.current === 38 && xPlayerIndex.current === 42)
+          ) {
+          setNpcFace('faceGuard1TT');
+          setTextValue('My dad is mad at me');
+          clickAudio2();
+          }
+            //Old Man
+          if (
+            (yPlayerIndex.current === 38 && xPlayerIndex.current === 63) ||
+            (yPlayerIndex.current === 38 && xPlayerIndex.current === 64)
+          ) {
+          setNpcFace('faceGuard1TT');
           setTextValue('My dad is mad at me');
           clickAudio2();
           }
@@ -2019,7 +2096,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 81 && xPlayerIndex.current === 26) ||
             (yPlayerIndex.current === 82 && xPlayerIndex.current === 26)
           ) {
-             setNpcFace('faceGirl2');
+             setNpcFace('faceBrideTT');
              setTextValue('My dad is mad at me');
              clickAudio2();
           }
@@ -2028,7 +2105,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 55 && xPlayerIndex.current === 45) ||
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 45)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceGuard1TT');
             setTextValue('My dad is mad at me');
             clickAudio2();
           }
@@ -2037,7 +2114,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 55 && xPlayerIndex.current === 63) ||
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 63)
           ) {
-             setNpcFace('faceGirl2');
+             setNpcFace('faceGuard1TT');
              setTextValue('My dad is mad at me');
              clickAudio2();
           }
@@ -2046,7 +2123,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 28 && xPlayerIndex.current === 90) ||
             (yPlayerIndex.current === 29 && xPlayerIndex.current === 90)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceCoinFlipperTT');
             setTextValue('My dad is mad at me');
             clickAudio2();
           }
@@ -2055,7 +2132,44 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 19 && xPlayerIndex.current === 24) ||
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 24)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceGuard1TT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
+            //Old Man
+          if (
+            (yPlayerIndex.current === 87 && xPlayerIndex.current === 90) ||
+            (yPlayerIndex.current === 86 && xPlayerIndex.current === 90)
+          ) {
+            setNpcFace('facesweeperGuyTT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
+
+              //Old Man
+          if (
+            (yPlayerIndex.current === 47 && xPlayerIndex.current === 30) ||
+            (yPlayerIndex.current === 46 && xPlayerIndex.current === 30)
+          ) {
+            setNpcFace('faceGuard1TT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
+               //Old Man
+          if (
+            (yPlayerIndex.current === 40 && xPlayerIndex.current === 43) ||
+            (yPlayerIndex.current === 41 && xPlayerIndex.current === 43)
+          ) {
+            setNpcFace('faceGuard1TT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
+                //Old Man
+          if (
+            (yPlayerIndex.current === 40 && xPlayerIndex.current === 65) ||
+            (yPlayerIndex.current === 41 && xPlayerIndex.current === 65)
+          ) {
+            setNpcFace('faceGuard1TT');
             setTextValue('My dad is mad at me');
             clickAudio2();
           }
@@ -2067,7 +2181,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 81 && xPlayerIndex.current === 23) ||
             (yPlayerIndex.current === 82 && xPlayerIndex.current === 23)
           ) {
-             setNpcFace('faceGirl2');
+             setNpcFace('faceBrideTT');
              setTextValue('My dad is mad at me');
              clickAudio2();
           }
@@ -2076,7 +2190,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 55 && xPlayerIndex.current === 42) ||
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 42)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceGuard1TT');
             setTextValue('My dad is mad at me');
             clickAudio2();
           }
@@ -2085,7 +2199,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 55 && xPlayerIndex.current === 60) ||
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 60)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceGuard1TT');
             setTextValue('My dad is mad at me');
             clickAudio2();
           }
@@ -2094,7 +2208,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 28 && xPlayerIndex.current === 87) ||
             (yPlayerIndex.current === 29 && xPlayerIndex.current === 87)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceCoinFlipperTT');
             setTextValue('My dad is mad at me');
             clickAudio2();
           }
@@ -2103,7 +2217,53 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 19 && xPlayerIndex.current === 21) ||
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 21)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceGuard1TT');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
+          }
+           //Old Man
+          if (
+            (yPlayerIndex.current === 87 && xPlayerIndex.current === 87) ||
+            (yPlayerIndex.current === 86 && xPlayerIndex.current === 87)
+          ) {
+            setNpcFace('facesweeperGuyTT');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
+          }
+            //Old Man
+          if (
+            (yPlayerIndex.current === 59 && xPlayerIndex.current === 65) ||
+            (yPlayerIndex.current === 60 && xPlayerIndex.current === 65)
+          ) {
+            setNpcFace('faceRedheadTT');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
+          }
+
+             //Old Man
+          if (
+            (yPlayerIndex.current === 46 && xPlayerIndex.current === 27) ||
+            (yPlayerIndex.current === 45 && xPlayerIndex.current === 27)
+          ) {
+            setNpcFace('faceGuard1TT');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
+          }
+               //Old Man
+          if (
+            (yPlayerIndex.current === 40 && xPlayerIndex.current === 40) ||
+            (yPlayerIndex.current === 41 && xPlayerIndex.current === 40)
+          ) {
+            setNpcFace('faceGuard1TT');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
+          }
+               //Old Man
+          if (
+            (yPlayerIndex.current === 40 && xPlayerIndex.current === 62) ||
+            (yPlayerIndex.current === 41 && xPlayerIndex.current === 62)
+          ) {
+            setNpcFace('faceGuard1TT');
              setTextValue('My dad is mad at me');
              clickAudio2();
           }
@@ -2587,6 +2747,55 @@ const Tortous = (props) => {
             >
               <div className="blackSmithTT_spritesheet pixel-art"></div>
             </div>
+
+             <div
+              className="guard1TT pixel-art"
+              style={{
+                transform: `translate3d( ${3910}px, ${3408}px, 0 )`,
+              }}
+            >
+              <div className="guard1TT_spritesheet pixel-art"></div>
+            </div>
+
+              <div
+              className="guard1TT pixel-art"
+              style={{
+                transform: `translate3d( ${2770}px, ${3408}px, 0 )`,
+              }}
+            >
+              <div className="guard1TT_spritesheet pixel-art"></div>
+            </div>
+
+
+              <div
+              className="guard1TT pixel-art"
+              style={{
+                transform: `translate3d( ${4035}px, ${2390}px, 0 )`,
+              }}
+            >
+              <div className="guard1TT_spritesheet pixel-art"></div>
+            </div>
+
+
+               <div
+              className="guard1TT pixel-art"
+              style={{
+                transform: `translate3d( ${265}px, ${2390}px, 0 )`,
+              }}
+            >
+              <div className="guard1TT_spritesheet pixel-art"></div>
+            </div>
+
+
+            <div
+              className="roofGuardTT pixel-art"
+              style={{
+                transform: `translate3d( ${3242}px, ${2636}px, 0 )`,
+              }}
+            >
+              <div className="roofGuardTT_spritesheet pixel-art"></div>
+            </div>
+
 
             <div
               className="demon pixel-art"

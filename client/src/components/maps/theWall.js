@@ -1223,8 +1223,8 @@ const TheWall = (props) => {
             (yPlayerIndex.current === 14 && xPlayerIndex.current === 19) ||
             (yPlayerIndex.current === 14 && xPlayerIndex.current === 20)
           ) {
-             setNpcFace('faceGirl2');
-             setTextValue('My dad is mad at me');
+             setNpcFace('faceMainGuardTW');
+             setTextValue('Eat lead villager!');
              clickAudio2();
           }
           // //YO Mama NPC
@@ -1253,14 +1253,14 @@ const TheWall = (props) => {
         //Facing down
         if (!facing.current) {
           //Jim NPC
-          if (
-            (yPlayerIndex.current === 10 && xPlayerIndex.current === 19) ||
-            (yPlayerIndex.current === 10 && xPlayerIndex.current === 20)
-          ) {
-             setNpcFace('faceGirl2');
-             setTextValue('My dad is mad at me');
-             clickAudio2();
-          }
+          // if (
+          //   (yPlayerIndex.current === 10 && xPlayerIndex.current === 19) ||
+          //   (yPlayerIndex.current === 10 && xPlayerIndex.current === 20)
+          // ) {
+          //    setNpcFace('faceMainGuardTW');
+          //    setTextValue('My dad is mad at me');
+          //    clickAudio2();
+          // }
           // //YO Mama NPC
           // if (
           //   (yPlayerIndex.current === 32 && xPlayerIndex.current === 38) ||
@@ -1287,11 +1287,11 @@ const TheWall = (props) => {
         //Facing left
         if (facing.current === 'left') {
           if (
-            (yPlayerIndex.current === 11 && xPlayerIndex.current === 21) ||
+            (yPlayerIndex.current === 13 && xPlayerIndex.current === 21) ||
             (yPlayerIndex.current === 12 && xPlayerIndex.current === 21)
           ) {
-            setNpcFace('faceGirl2');
-            setTextValue('My dad is mad at me');
+            setNpcFace('faceMainGuardTW');
+            setTextValue('Eat lead villager!');
             clickAudio2();
           }
           // //YO Mama NPC
@@ -1319,14 +1319,14 @@ const TheWall = (props) => {
 
         //Facing right
         if (facing.current === 'right') {
-          if (
-            (yPlayerIndex.current === 11 && xPlayerIndex.current === 18) ||
-            (yPlayerIndex.current === 12 && xPlayerIndex.current === 18)
-          ) {
-            setNpcFace('faceGirl2');
-            setTextValue('My dad is mad at me');
-            clickAudio2();
-          }
+          // if (
+          //   (yPlayerIndex.current === 11 && xPlayerIndex.current === 18) ||
+          //   (yPlayerIndex.current === 12 && xPlayerIndex.current === 18)
+          // ) {
+          //   setNpcFace('faceGirl2');
+          //   setTextValue('My dad is mad at me');
+          //   clickAudio2();
+          // }
           // //YO Mama NPC
           // if (
           //   (yPlayerIndex.current === 33 && xPlayerIndex.current === 37) ||

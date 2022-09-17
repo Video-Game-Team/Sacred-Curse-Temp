@@ -121,7 +121,7 @@
  }
 
  .faceGuardRTTSA {
-     background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+      background: url("./assets/images/Ranch House 1 guy face.png") no-repeat no-repeat;
      background-position: left top;
      background-size: 12%;
      background-size: content-box;
@@ -138,7 +138,7 @@
  }
 
  .guardLTTSA_spritesheet {
-     background: url("./assets/images/Train Tracks To Saint Anna guard L.png") no-repeat no-repeat;
+   background: url("./assets/images/Train Tracks To Saint Anna guard L.png") no-repeat no-repeat;
      background-size: 100%;
      width: calc(var(--grid-cell)* 34);
      height: calc(var(--grid-cell)* 3);
@@ -149,7 +149,7 @@
  }
 
  .faceGuardLTTSA {
-     background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+     background: url("./assets/images/Ranch House 1 guy face.png") no-repeat no-repeat;
      background-position: left top;
      background-size: 12%;
      background-size: content-box;
@@ -176,7 +176,7 @@
 }
 
 .faceDockguyTTSA {
-    background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+    background: url("./assets/images/Indoor House 2 guy face.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;

@@ -1556,17 +1556,21 @@ const TrainTracksToSaintAnna = (props) => {
         //Facing left
         if (facing.current === 'left') {
           if (
-            (yPlayerIndex.current === 136 && xPlayerIndex.current === 11) ||
+            (yPlayerIndex.current === 138 && xPlayerIndex.current === 11) ||
             (yPlayerIndex.current === 137 && xPlayerIndex.current === 11)
           ) {
-            console.log("Hi I'm Guard");
+             setNpcFace('faceGuardLTTSA');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 141 && xPlayerIndex.current === 11) ||
             (yPlayerIndex.current === 142 && xPlayerIndex.current === 11)
           ) {
-            console.log("Hi I'm Guard 2");
+             setNpcFace('faceGuardLTTSA');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
           // //Hot Girl
           // if (
@@ -1601,23 +1605,29 @@ const TrainTracksToSaintAnna = (props) => {
           // }
           //Hot Girl
           if (
-            (yPlayerIndex.current === 136 && xPlayerIndex.current === 28) ||
+            (yPlayerIndex.current === 138 && xPlayerIndex.current === 28) ||
             (yPlayerIndex.current === 137 && xPlayerIndex.current === 28)
           ) {
-            console.log("Hi I'm Guard 3");
+             setNpcFace('faceGuardLTTSA');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
           //Hot Girl
           if (
-            (yPlayerIndex.current === 140 && xPlayerIndex.current === 28) ||
+            (yPlayerIndex.current === 142 && xPlayerIndex.current === 28) ||
             (yPlayerIndex.current === 141 && xPlayerIndex.current === 28)
           ) {
-            console.log("Hi I'm guard 4");
+             setNpcFace('faceGuardLTTSA');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
           if (
             (yPlayerIndex.current === 144 && xPlayerIndex.current === 20) ||
             (yPlayerIndex.current === 145 && xPlayerIndex.current === 20)
           ) {
-            console.log("Hi I'm dock guy");
+             setNpcFace('faceDockguyTTSA');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
         }
       }

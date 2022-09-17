@@ -1229,7 +1229,7 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 38 && xPlayerIndex.current === 32) ||
             (yPlayerIndex.current === 38 && xPlayerIndex.current === 33)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceMainGuardTM');
             setTextValue('My dad is mad at me');
             clickAudio2();
           }
@@ -1238,7 +1238,7 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 38) ||
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 39)
           ) {
-             setNpcFace('faceGirl2');
+             setNpcFace('faceMainGuardTM');
              setTextValue('My dad is mad at me');
              clickAudio2();
           }
@@ -1247,7 +1247,7 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 23) ||
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 24)
           ) {
-           setNpcFace('faceGirl2');
+           setNpcFace('faceMainGuardTM');
            setTextValue('My dad is mad at me');
            clickAudio2();
           }
@@ -1256,7 +1256,7 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 33) ||
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 34)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceMainGuardTM');
             setTextValue('My dad is mad at me');
             clickAudio2();
           }
@@ -1269,7 +1269,7 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 32) ||
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 33)
           ) {
-             setNpcFace('faceGirl2');
+             setNpcFace('faceMainGuardTM');
              setTextValue('My dad is mad at me');
              clickAudio2();
           }
@@ -1278,7 +1278,7 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 32 && xPlayerIndex.current === 38) ||
             (yPlayerIndex.current === 32 && xPlayerIndex.current === 39)
           ) {
-             setNpcFace('faceGirl2');
+             setNpcFace('faceMainGuardTM');
              setTextValue('My dad is mad at me');
              clickAudio2();
           }
@@ -1294,7 +1294,7 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 21 && xPlayerIndex.current === 33) ||
             (yPlayerIndex.current === 21 && xPlayerIndex.current === 34)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceMainGuardTM');
             setTextValue('My dad is mad at me');
             clickAudio2();
           }
@@ -1306,7 +1306,7 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 36 && xPlayerIndex.current === 34) ||
             (yPlayerIndex.current === 37 && xPlayerIndex.current === 34)
           ) {
-             setNpcFace('faceGirl2');
+             setNpcFace('faceMainGuardTM');
              setTextValue('My dad is mad at me');
              clickAudio2();
           }
@@ -1315,7 +1315,7 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 33 && xPlayerIndex.current === 40) ||
             (yPlayerIndex.current === 34 && xPlayerIndex.current === 40)
           ) {
-             setNpcFace('faceGirl2');
+             setNpcFace('faceMainGuardTM');
              setTextValue('My dad is mad at me');
              clickAudio2();
           }
@@ -1331,7 +1331,7 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 34) ||
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 34)
           ) {
-             setNpcFace('faceGirl2');
+             setNpcFace('faceMainGuardTM');
              setTextValue('My dad is mad at me');
              clickAudio2();
           }
@@ -1343,7 +1343,7 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 36 && xPlayerIndex.current === 31) ||
             (yPlayerIndex.current === 37 && xPlayerIndex.current === 31)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceMainGuardTM');
             setTextValue('My dad is mad at me');
             clickAudio2();
           }
@@ -1352,7 +1352,7 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 33 && xPlayerIndex.current === 37) ||
             (yPlayerIndex.current === 34 && xPlayerIndex.current === 37)
           ) {
-             setNpcFace('faceGirl2');
+             setNpcFace('faceMainGuardTM');
              setTextValue('My dad is mad at me');
              clickAudio2();
           }
@@ -1361,7 +1361,7 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 22) ||
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 22)
           ) {
-             setNpcFace('faceGirl2');
+             setNpcFace('faceMainGuardTM');
              setTextValue('My dad is mad at me');
              clickAudio2();
           }
@@ -1370,7 +1370,7 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 32) ||
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 32)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceMainGuardTM');
             setTextValue('My dad is mad at me');
             clickAudio2();
           }
@@ -1631,7 +1631,7 @@ const TownMap1 = (props) => {
               facing={facing.current}
               walking={walker}
               style={{
-                transform: `translate3d( ${600 - 1960}px, ${
+                transform: `translate3d( ${600 - xTransformVar}px, ${
                   272 - yTransformVar
                 }px, 0 )`,
               }}
@@ -1692,6 +1692,8 @@ const TownMap1 = (props) => {
             >
               <div className="mainGuardTM_spritesheet pixel-art"></div>
             </div>
+
+            
           </div>
         </div>
         {textValue ? (

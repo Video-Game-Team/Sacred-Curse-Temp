@@ -117,7 +117,7 @@
 
 
  .faceGuard1TTTS {
-     background: url("./assets/images/Tortous Train Station army 1.png") no-repeat no-repeat;
+     background: url("./assets/images/Train Station guard 1.png") no-repeat no-repeat;
      background-position: left top;
      background-size: 12%;
      background-size: content-box;
@@ -146,7 +146,7 @@
 
 
  .faceGeneralTTTS {
-     background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+     background: url("./assets/images/Train Station General face.png") no-repeat no-repeat;
      background-position: left top;
      background-size: 12%;
      background-size: content-box;
@@ -155,29 +155,3 @@
 
 
 
-
- .redheadTT {
-     position: absolute;
-     width: calc(var(--grid-cell)* 2);
-     height: calc(var(--grid-cell)* 3);
-     overflow: hidden;
- }
-
- .redheadTT_spritesheet {
-     background: url("./assets/images/Indoor house 1 girl.png") no-repeat no-repeat;
-     background-size: 100%;
-     width: calc(var(--grid-cell)* 36);
-     height: calc(var(--grid-cell)* 3);
- }
-
- .redheadTT .redheadTT_spritesheet {
-     animation: walkAnimation 3.6s steps(15) infinite;
- }
-
-
- .faceRedheadTT {
-     background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
-     background-position: left top;
-     background-size: 12%;
-     background-size: content-box;
- }

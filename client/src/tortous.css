@@ -135,7 +135,7 @@
 
 
    .facesweeperGuyTT {
-       background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+       background: url("./assets/images/Indoor House 4 face.png") no-repeat no-repeat;
        background-position: left top;
        background-size: 12%;
        background-size: content-box;
@@ -164,7 +164,7 @@
 
 
 .faceBrideTT {
-    background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+    background: url("./assets/images/Tortous bride face.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;
@@ -194,7 +194,7 @@
 
 
 .faceRedheadTT {
-    background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+    background: url("./assets/images/Indoor house 3 girl face.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;
@@ -282,8 +282,8 @@
 }
 
 
-.faceCoinFlipperTT{
-    background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+.faceCoinFlipperTT {
+    background: url("./assets/images/Tortous Coin Flipper face.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;
@@ -313,6 +313,62 @@
 
 .faceBlackSmithTT{
     background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+    background-position: left top;
+    background-size: 12%;
+    background-size: content-box;
+} 
+
+
+
+
+.guard1TT {
+    position: absolute;
+    width: calc(var(--grid-cell)* 2);
+    height: calc(var(--grid-cell)* 3);
+    overflow: hidden;
+}
+
+.guard1TT_spritesheet {
+    background: url("./assets/images/Tortous guard 1.png") no-repeat no-repeat;
+    background-size: 100%;
+    width: calc(var(--grid-cell)* 7);
+    height: calc(var(--grid-cell)* 3);
+}
+
+.guard1TT .guard1TT_spritesheet {
+    animation: walkAnimation 4.7s steps(3) infinite;
+}
+
+
+.faceGuard1TT {
+    background: url("./assets/images/Tortous guard 1 face.png") no-repeat no-repeat;
+    background-position: left top;
+    background-size: 12%;
+    background-size: content-box;
+} 
+
+
+.roofGuardTT {
+    position: absolute;
+    width: calc(var(--grid-cell)* 5);
+    height: calc(var(--grid-cell)* 10);
+    overflow: hidden;
+}
+
+.roofGuardTT_spritesheet {
+    background: url("./assets/images/Tortous roof guard.png") no-repeat no-repeat;
+    background-size: 100%;
+    width: calc(var(--grid-cell)* 20);
+    height: calc(var(--grid-cell)* 10);
+}
+
+.roofGuardTT .roofGuardTT_spritesheet {
+    animation: walkAnimation 0.7s steps(3) infinite;
+}
+
+
+.faceRoofGuardTT {
+    background: url("./assets/images/Tortous guard 1 face.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;

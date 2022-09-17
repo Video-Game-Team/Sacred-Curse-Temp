@@ -20220,7 +20220,7 @@ const TrainTracksToTortous = (props) => {
             (yPlayerIndex.current === 248 && xPlayerIndex.current === 17) ||
             (yPlayerIndex.current === 248 && xPlayerIndex.current === 18)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceBlondeTTTV');
             setTextValue('My dad is mad at me');
             clickAudio2();
           }
@@ -20261,7 +20261,7 @@ const TrainTracksToTortous = (props) => {
             (yPlayerIndex.current === 238 && xPlayerIndex.current === 17) ||
             (yPlayerIndex.current === 238 && xPlayerIndex.current === 18)
           ) {
-             setNpcFace('faceGirl2');
+             setNpcFace('faceBrunnetteTTTV');
              setTextValue('My dad is mad at me');
              clickAudio2();
           }
@@ -20288,7 +20288,7 @@ const TrainTracksToTortous = (props) => {
           (yPlayerIndex.current === 247 && xPlayerIndex.current === 21) ||
           (yPlayerIndex.current === 248 && xPlayerIndex.current === 21)
         ) {
-          setNpcFace('faceGirl2');
+          setNpcFace('faceBlondeTTTV');
           setTextValue('My dad is mad at me');
           clickAudio2();
         }
