@@ -35,6 +35,7 @@
 
  .mapT {
      image-rendering: pixelated;
+    /* background-image: url("./assets/maps/Tortous no npc special black door.png"); */
      background-image: url("./assets/maps/Tortous w grid npc.png");
      background-size: 6656px;
      width: calc(260 * var(--grid-cell));
@@ -373,3 +374,18 @@
     background-size: 12%;
     background-size: content-box;
 } 
+
+
+.redDoor1TT {
+     position: absolute;
+     width: calc(var(--grid-cell)* 24);
+     height: calc(var(--grid-cell)* 24);
+     overflow: hidden;
+ }
+
+ .redDoor1TT_spritesheet {
+     background: url("./assets/images/Tortous red house door 1.gif") no-repeat no-repeat;
+     background-size: 50%;
+     width: calc(var(--grid-cell)* 2.7);
+     height: calc(var(--grid-cell)* 4.2);
+ }

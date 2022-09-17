@@ -48,6 +48,7 @@ const Tortous = (props) => {
   const [npcFace, setNpcFace] = useState();
   // Sprtiesheet Toggle1 state
   const [toggle1, setToggle1] = useState(false);
+  const [doorToggle1, setdoorToggle1] = useState(false);
 
   //Demon Toggle state
   const [demonToggle1, demonSetToggle1] = useState(false);
@@ -1909,10 +1910,11 @@ const Tortous = (props) => {
     }
     // indoor house 2
     if (yPlayerIndex.current === 88 && xPlayerIndex.current === 33) {
+      
       props.active('indoorHouse2', 'tortous');
+     
     }
   }, [yPlayerIndex.current]);
-
 
 
   //CHARACTER DIALOGUE USE EFFECT
@@ -2327,6 +2329,16 @@ const Tortous = (props) => {
             clickAudio2();
             setTextValue('This door is locked');
           }
+          
+
+       if (
+        (yPlayerIndex.current === 89 && xPlayerIndex.current === 33) ||
+        (yPlayerIndex.current === 89 && xPlayerIndex.current === 32)  
+       )
+        {
+        setdoorToggle1(true)
+        }
+
         }
       }
     };
@@ -2795,6 +2807,22 @@ const Tortous = (props) => {
             >
               <div className="roofGuardTT_spritesheet pixel-art"></div>
             </div>
+
+
+            <div
+              className="redDoor1TT pixel-art"
+              style={{
+                transform: `translate3d( ${2112}px, ${5472}px, 0 )`,
+              }}
+            >
+              {doorToggle1 === true ? (
+                <div className="redDoor1TT_spritesheet pixel-art"></div>
+              ) : (
+                null
+              )}
+            </div>
+            
+            
 
 
             <div

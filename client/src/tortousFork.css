@@ -35,7 +35,7 @@
 
  .mapTF {
      image-rendering: pixelated;
-     background-image: url("./assets/maps/Tortous Fork no grid.png");
+     background-image: url("./assets/maps/Tortous Fork no fountains w grid.png");
      background-size: 3840px;
      width: calc(150 * var(--grid-cell));
      height: calc(105 * var(--grid-cell));
@@ -95,4 +95,64 @@
      to {
          transform: translate3d(-100%, 0%, 0);
      }
+ }
+
+
+   .fountainTTF {
+     position: absolute;
+     width: calc(var(--grid-cell)* 24);
+     height: calc(var(--grid-cell)* 24);
+     overflow: hidden;
+ }
+
+ .fountainTTF_spritesheet {
+     background: url("./assets/images/fountain.gif") no-repeat no-repeat;
+     background-size: 100%;
+     width: calc(var(--grid-cell)* 2.7);
+     height: calc(var(--grid-cell)* 4.2);
+ }
+
+
+.pigeon1TTF {
+     position: absolute;
+     z-index: 1;
+     width: calc(var(--grid-cell)* 2);
+     height: calc(var(--grid-cell)* 2);
+     overflow: hidden;
+ }
+
+ .pigeon1TTF_spritesheet {
+     background: url("./assets/images/Pigeon 1.gif") no-repeat no-repeat;
+     background-size: 100%;
+     width: calc(var(--grid-cell)* 1);
+     height: calc(var(--grid-cell)* 1);
+ }
+
+
+ .pigeon2TTF {
+     position: absolute;
+     width: calc(var(--grid-cell)* 2);
+     height: calc(var(--grid-cell)* 2);
+     overflow: hidden;
+ }
+
+ .pigeon2TTF_spritesheet {
+     background: url("./assets/images/Pigeon 2.gif") no-repeat no-repeat;
+     background-size: 100%;
+     width: calc(var(--grid-cell)* 1);
+     height: calc(var(--grid-cell)* 1);
+ }
+
+ .statue1TTF {
+     position: absolute;
+     width: calc(var(--grid-cell) * 6);
+     height: calc(var(--grid-cell)* 8);
+     overflow: hidden;
+ }
+
+ .statue1TTF_spritesheet {
+     background: url("./assets/images/boss statue west 1.png") no-repeat no-repeat;
+     background-size: 100%;
+     width: calc(var(--grid-cell)* 25);
+     height: calc(var(--grid-cell)* 20);
  }

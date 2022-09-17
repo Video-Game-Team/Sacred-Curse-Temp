@@ -1659,9 +1659,6 @@ const TortousTrainStation = (props) => {
             </div>
 
 
-
-
-
           </div>
         </div>
         {textValue ? (

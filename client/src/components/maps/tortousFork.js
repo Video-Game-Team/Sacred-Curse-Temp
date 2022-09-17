@@ -909,6 +909,89 @@ const TortousFork = (props) => {
             >
               <div className="character_spritesheet pixel-art"></div>
             </div>
+   
+
+
+             <div
+              className="fountainTTF pixel-art"
+              style={{
+                transform: `translate3d( ${1792}px, ${1440}px, 0 )`,
+              }}
+            >
+              <div className="fountainTTF_spritesheet pixel-art"></div>
+            </div>
+
+
+             <div
+              className="fountainTTF pixel-art"
+              style={{
+                transform: `translate3d( ${1984}px, ${1440}px, 0 )`,
+              }}
+            >
+              <div className="fountainTTF_spritesheet pixel-art"></div>
+            </div>
+
+
+                    <div
+              className="pigeon1TTF pixel-art"
+              style={{
+                transform: `translate3d( ${2084}px, ${2180}px, 0 )`,
+              }}
+            >
+              <div className="pigeon1TTF_spritesheet pixel-art"></div>
+            </div>
+
+
+            <div
+              className="pigeon1TTF pixel-art"
+              style={{
+                transform: `translate3d( ${1884}px, ${664}px, 0 )`,
+              }}
+            >
+              <div className="pigeon1TTF_spritesheet pixel-art"></div>
+            </div>
+
+
+                <div
+              className="pigeon1TTF pixel-art"
+              style={{
+                transform: `translate3d( ${784}px, ${1342}px, 0 )`,
+              }}
+            >
+              <div className="pigeon1TTF_spritesheet pixel-art"></div>
+            </div>
+
+
+               <div
+              className="pigeon1TTF pixel-art"
+              style={{
+                transform: `translate3d( ${1832}px, ${1428}px, 0 )`,
+              }}
+            >
+              <div className="pigeon1TTF_spritesheet pixel-art"></div>
+            </div>
+
+
+             <div
+              className="pigeon2TTF pixel-art"
+              style={{
+                transform: `translate3d( ${2584}px, ${1300}px, 0 )`,
+              }}
+            >
+              <div className="pigeon2TTF_spritesheet pixel-art"></div>
+            </div>
+
+
+                <div
+              className="statue1TTF pixel-art"
+              style={{
+                transform: `translate3d( ${1764}px, ${630}px, 0 )`,
+              }}
+            >
+              <div className="statue1TTF_spritesheet pixel-art"></div>
+            </div>
+
+
           </div>
         </div>
         {textValue ? (
