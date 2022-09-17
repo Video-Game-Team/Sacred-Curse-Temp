@@ -126,7 +126,7 @@ body {
 
 
  .faceGuard1PSH {
-     background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+     background: url("./assets/images/President Guard 1 Face.png") no-repeat no-repeat;
      background-position: left top;
      background-size: 12%;
      background-size: content-box;
@@ -153,6 +153,8 @@ body {
   }
 
 
+
+
  .general1RH2 {
      position: absolute;
      width: calc(var(--grid-cell)* 2.5);
@@ -173,7 +175,7 @@ body {
 
 
  .faceGeneral1RH2 {
-     background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+     background: url("./assets/images/President Guard 2 Face.png") no-repeat no-repeat;
      background-position: left top;
      background-size: 12%;
      background-size: content-box;
@@ -201,7 +203,7 @@ body {
 
 
   .facePresidentRH2 {
-      background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+      background: url("./assets/images/Manson Ranch Crazy Guy Face.png") no-repeat no-repeat;
       background-position: left top;
       background-size: 12%;
       background-size: content-box;

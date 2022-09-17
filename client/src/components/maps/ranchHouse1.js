@@ -230,7 +230,7 @@ const RanchHouse1 = (props) => {
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 3) ||
             (yPlayerIndex.current === 2 && xPlayerIndex.current === 3)
           ) {
-             setNpcFace('faceGirl2');
+             setNpcFace('faceGuy1RH1');
              setTextValue('Kids, what a handfull!');
              clickAudio2();
           }
@@ -263,7 +263,7 @@ const RanchHouse1 = (props) => {
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 11) ||
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 11)
           ) {
-             setNpcFace('faceGirl2');
+             setNpcFace('faceGirl1RH1');
              setTextValue('My dad is mad at me');
              clickAudio2();
           }

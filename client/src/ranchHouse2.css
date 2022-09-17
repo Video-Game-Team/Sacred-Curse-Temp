@@ -105,20 +105,22 @@ body {
 
 
    .girl1RH2 {
-    width: calc(var(--grid-cell) * 2);
-        height: calc(var(--grid-cell) * 3);
-       overflow: hidden;
+     position: absolute;
+    width: calc(var(--grid-cell) * 2.5);
+    height: calc(var(--grid-cell) * 2.5);
+    overflow: hidden;
    }
 
    .girl1RH2_spritesheet {
-       position: absolute;
+     
        background: url("./assets/images/Ranch House 2 Girl.png") no-repeat no-repeat;
-        width: calc(var(--grid-cell) * 24);
+        background-size: 100%;
+        width: calc(var(--grid-cell) * 36);
         height: calc(var(--grid-cell)* 3);
    }
 
    .girl1RH2 .girl1RH2_spritesheet {
-    animation: walkAnimation 5.5s steps(12) infinite;
+     animation: walkAnimation 3.5s steps(5) infinite;
    }
 
 
@@ -132,13 +134,13 @@ body {
 
 
    .childRH2 {
+      position: absolute;
        width: calc(var(--grid-cell)* 2.5);
        height: calc(var(--grid-cell)* 2.5);
        overflow: hidden;
    }
 
    .childRH2_spritesheet {
-       position: absolute;
        background: url("./assets/images/Ranch House 2 baby.png") no-repeat no-repeat;
        background-size: 100%;
        width: calc(var(--grid-cell)* 7);

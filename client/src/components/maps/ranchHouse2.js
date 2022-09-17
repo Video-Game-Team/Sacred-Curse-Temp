@@ -561,7 +561,7 @@ const RanchHouse2 = (props) => {
             <div
               className="girl1RH2 pixel-art"
               style={{
-                transform: `translate3d( ${585}px, ${100}px, 0 )`,
+                transform: `translate3d( ${585}px, ${86}px, 0 )`,
               }}
             >
               <div className="girl1RH2_spritesheet pixel-art"></div>
@@ -570,7 +570,7 @@ const RanchHouse2 = (props) => {
             <div
               className="childRH2 pixel-art"
               style={{
-                transform: `translate3d( ${655}px, ${510}px, 0 )`,
+                transform: `translate3d( ${655}px, ${650}px, 0 )`,
               }}
             >
               <div className="childRH2_spritesheet pixel-art"></div>

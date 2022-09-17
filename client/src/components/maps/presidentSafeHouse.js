@@ -154,6 +154,8 @@ const PresidentSafeHouse = (props) => {
     }
   }, [yPlayerIndex.current]);
 
+
+
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
     const dialogueAction = (event) => {
@@ -162,10 +164,10 @@ const PresidentSafeHouse = (props) => {
         if (facing.current === 'up') {
           //Guard 1 Lower left NPC
           if (
-            (yPlayerIndex.current === 5 && xPlayerIndex.current === 11) ||
-            (yPlayerIndex.current === 5 && xPlayerIndex.current === 12)
+            (yPlayerIndex.current === 6 && xPlayerIndex.current === 10)
+  
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('facePresidentRH2');
             setTextValue('My dad is mad at me');
             clickAudio2();
           }
@@ -174,7 +176,7 @@ const PresidentSafeHouse = (props) => {
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 4) ||
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 5)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceGuard1PSH');
             setTextValue('My dad is mad at me');
             clickAudio2();
           }
@@ -200,7 +202,7 @@ const PresidentSafeHouse = (props) => {
           if (
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 1) 
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceGuard1PSH');
             setTextValue('My dad is mad at me');
             clickAudio2();
           }
@@ -209,24 +211,37 @@ const PresidentSafeHouse = (props) => {
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 7) ||
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 8)
           ) {
-             setNpcFace('faceGirl2');
+             setNpcFace('faceGeneral1RH2');
              setTextValue('My dad is mad at me');
              clickAudio2();
           }
           //Hot Girl
-          // if (
-          //   (yPlayerIndex.current === 34 && xPlayerIndex.current === 14) ||
-          //   (yPlayerIndex.current === 34 && xPlayerIndex.current === 15)
-          // ) {
-          //   console.log("Hi I'm Guard 3");
-          // }
+          if (
+            (yPlayerIndex.current === 11 && xPlayerIndex.current === 2) 
+  
+          ) {
+             setNpcFace('faceGuard1PSH');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
+          }
           //Hot Girl
-          // if (
-          //   (yPlayerIndex.current === 21 && xPlayerIndex.current === 33) ||
-          //   (yPlayerIndex.current === 21 && xPlayerIndex.current === 34)
-          // ) {
-          //   console.log("Hi I'm guard 4");
-          // }
+          if (
+            (yPlayerIndex.current === 12 && xPlayerIndex.current === 4) 
+     
+          ) {
+              setNpcFace('faceGuard1PSH');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
+          }
+           //Hot Girl
+          if (
+            (yPlayerIndex.current === 12 && xPlayerIndex.current === 12) 
+     
+          ) {
+              setNpcFace('faceGeneral1RH2');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
+          }
         }
 
         //Facing left
@@ -235,7 +250,7 @@ const PresidentSafeHouse = (props) => {
             (yPlayerIndex.current === 12 && xPlayerIndex.current === 3) ||
             (yPlayerIndex.current === 13 && xPlayerIndex.current === 3)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceGuard1PSH');
             setTextValue('My dad is mad at me');
             clickAudio2();
           }
@@ -244,7 +259,7 @@ const PresidentSafeHouse = (props) => {
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 2) ||
             (yPlayerIndex.current === 6 && xPlayerIndex.current === 2)
           ) {
-             setNpcFace('faceGirl2');
+             setNpcFace('faceGuard1PSH');
              setTextValue('My dad is mad at me');
              clickAudio2();
           }
@@ -253,17 +268,19 @@ const PresidentSafeHouse = (props) => {
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 11) ||
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 11)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('facePresidentRH2');
             setTextValue('My dad is mad at me');
             clickAudio2();
           }
           //Hot Girl
-          // if (
-          //   (yPlayerIndex.current === 22 && xPlayerIndex.current === 34) ||
-          //   (yPlayerIndex.current === 23 && xPlayerIndex.current === 34)
-          // ) {
-          //   console.log("Hi I'm guard 4");
-          // }
+          if (
+            (yPlayerIndex.current === 12 && xPlayerIndex.current === 7) 
+  
+          ) {
+             setNpcFace('faceGuard1PSH');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
+          }
         }
 
         //Facing right
@@ -272,7 +289,7 @@ const PresidentSafeHouse = (props) => {
             (yPlayerIndex.current === 13 && xPlayerIndex.current === 4) ||
             (yPlayerIndex.current === 12 && xPlayerIndex.current === 4)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceGuard1PSH');
             setTextValue('My dad is mad at me');
             clickAudio2();
           }
@@ -281,7 +298,7 @@ const PresidentSafeHouse = (props) => {
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 6) ||
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 6)
           ) {
-              setNpcFace('faceGirl2');
+              setNpcFace('faceGeneral1RH2');
               setTextValue('My dad is mad at me');
               clickAudio2();
           }
@@ -290,7 +307,7 @@ const PresidentSafeHouse = (props) => {
             (yPlayerIndex.current === 13 && xPlayerIndex.current === 11) ||
             (yPlayerIndex.current === 12 && xPlayerIndex.current === 11)
           ) {
-           setNpcFace('faceGirl2');
+           setNpcFace('faceGeneral1RH2');
            setTextValue('My dad is mad at me');
            clickAudio2();
           }

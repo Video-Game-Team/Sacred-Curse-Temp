@@ -899,26 +899,30 @@ const SaintAnna = (props) => {
         //Facing up
         if (facing.current === 'up') {
           // //Guard 1 Lower left NPC
-          // if (
-          //   (yPlayerIndex.current === 38 && xPlayerIndex.current === 32) ||
-          //   (yPlayerIndex.current === 38 && xPlayerIndex.current === 33)
-          // ) {
-          //   setTextValue('Hi I am Guard1');
-          //   console.log('Hi I am Guard1');
-          // }
+          if (
+            (yPlayerIndex.current === 37 && xPlayerIndex.current === 79) ||
+            (yPlayerIndex.current === 37 && xPlayerIndex.current === 79)
+          ) {
+            setTextValue('Hi I am Guard1');
+            console.log('Hi I am Guard1');
+          }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 41 && xPlayerIndex.current === 33) ||
             (yPlayerIndex.current === 41 && xPlayerIndex.current === 34)
           ) {
-            setTextValue("Hi I'm red shirt");
+                 setNpcFace('faceSquatterSA');
+         setTextValue('My dad is mad at me');
+         clickAudio2();
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 25 && xPlayerIndex.current === 39) ||
             (yPlayerIndex.current === 25 && xPlayerIndex.current === 38)
           ) {
-            setTextValue("Hi I'm blonde girl");
+                setNpcFace('faceGirl2');
+         setTextValue('My dad is mad at me');
+         clickAudio2();
           }
           //Hot Girl
           if (
@@ -926,33 +930,43 @@ const SaintAnna = (props) => {
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 79) ||
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 80)
           ) {
-            setTextValue("Hi I'm dock guy 2");
+                 setNpcFace('faceGirl2');
+         setTextValue('My dad is mad at me');
+         clickAudio2();
           }
         }
+
+
 
         //Facing down
         if (!facing.current) {
           //Jim NPC
           if (
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 18) ||
-            (yPlayerIndex.current === 23 && xPlayerIndex.current === 19)
+            (yPlayerIndex.current === 23 && xPlayerIndex.current === 17)
           ) {
-            setTextValue("Hi I'm Dock guy 1");
+                 setNpcFace('faceDockguy1SA');
+         setTextValue('My dad is mad at me');
+         clickAudio2();
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 38 && xPlayerIndex.current === 34) ||
             (yPlayerIndex.current === 38 && xPlayerIndex.current === 33)
           ) {
-            setTextValue("Hi I'm blonde girl");
+                setNpcFace('faceGirl2');
+         setTextValue('My dad is mad at me');
+         clickAudio2();
           }
           //Hot Girl
-          // if (
-          //   (yPlayerIndex.current === 34 && xPlayerIndex.current === 14) ||
-          //   (yPlayerIndex.current === 34 && xPlayerIndex.current === 15)
-          // ) {
-          //   console.log("Hi I'm Guard 3");
-          // }
+          if (
+            (yPlayerIndex.current === 37 && xPlayerIndex.current === 65) ||
+            (yPlayerIndex.current === 37 && xPlayerIndex.current === 66)
+          ) {
+                    setNpcFace('facePizzaGuySA');
+         setTextValue('My dad is mad at me');
+         clickAudio2();
+          }
           //Hot Girl
           // if (
           //   (yPlayerIndex.current === 21 && xPlayerIndex.current === 33) ||
@@ -962,35 +976,52 @@ const SaintAnna = (props) => {
           // }
         }
 
+
         //Facing left
         if (facing.current === 'left') {
           if (
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 20) ||
             (yPlayerIndex.current === 25 && xPlayerIndex.current === 20)
           ) {
-            setTextValue("Hi I'm Dock guy 1");
+                setNpcFace('faceDockguy1SA');
+         setTextValue('My dad is mad at me');
+         clickAudio2();
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 39 && xPlayerIndex.current === 35) ||
             (yPlayerIndex.current === 40 && xPlayerIndex.current === 35)
           ) {
-            setTextValue("Hi I'm red shirt");
+                 setNpcFace('faceSquatterSA');
+         setTextValue('My dad is mad at me');
+         clickAudio2();
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 40) ||
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 40)
           ) {
-            setTextValue("Hi I'm blonde girl");
+                 setNpcFace('faceGirl2');
+         setTextValue('My dad is mad at me');
+         clickAudio2();
           }
           //Hot Girl
-          // if (
-          //   (yPlayerIndex.current === 22 && xPlayerIndex.current === 34) ||
-          //   (yPlayerIndex.current === 23 && xPlayerIndex.current === 34)
-          // ) {
-          //   console.log("Hi I'm guard 4");
-          // }
+          if (
+            (yPlayerIndex.current === 24 && xPlayerIndex.current === 40) ||
+            (yPlayerIndex.current === 23 && xPlayerIndex.current === 40)
+          ) {
+                         setNpcFace('faceGirl2');
+         setTextValue('My dad is mad at me');
+         clickAudio2();
+          }
+           //Hot Girl
+          if (
+            (yPlayerIndex.current === 35 && xPlayerIndex.current === 80) 
+          ) {
+                         setNpcFace('faceDockguy1SA');
+         setTextValue('My dad is mad at me');
+         clickAudio2();
+          }
         }
 
         //Facing right
@@ -999,29 +1030,45 @@ const SaintAnna = (props) => {
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 17) ||
             (yPlayerIndex.current === 25 && xPlayerIndex.current === 17)
           ) {
-            setTextValue("Hi I'm Dock guy 1");
+                 setNpcFace('faceDockguy1SA');
+         setTextValue('My dad is mad at me');
+         clickAudio2();
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 39 && xPlayerIndex.current === 32) ||
             (yPlayerIndex.current === 40 && xPlayerIndex.current === 32)
           ) {
-            setTextValue("Hi I'm red shirt");
+                 setNpcFace('faceSquatterSA');
+         setTextValue('My dad is mad at me');
+         clickAudio2();
           }
           //Hot Girl
-          // if (
-          //   (yPlayerIndex.current === 22 && xPlayerIndex.current === 22) ||
-          //   (yPlayerIndex.current === 23 && xPlayerIndex.current === 22)
-          // ) {
-          //    console.log("Hi I'm blonde girl");
-          // }
+          if (
+            (yPlayerIndex.current === 24 && xPlayerIndex.current === 37) ||
+            (yPlayerIndex.current === 23 && xPlayerIndex.current === 27)
+          ) {
+                  setNpcFace('faceGirl2');
+         setTextValue('My dad is mad at me');
+         clickAudio2();
+          }
           //Hot Girl
-          // if (
-          //   (yPlayerIndex.current === 22 && xPlayerIndex.current === 32) ||
-          //   (yPlayerIndex.current === 23 && xPlayerIndex.current === 32)
-          // ) {
-          //   console.log("Hi I'm guard 4");
-          // }
+          if (
+            (yPlayerIndex.current === 38 && xPlayerIndex.current === 64) 
+          ) {
+                       setNpcFace('facePizzaGuySA');
+         setTextValue('My dad is mad at me');
+         clickAudio2();
+          }
+
+           //Hot Girl
+          if (
+            (yPlayerIndex.current === 35 && xPlayerIndex.current === 78) 
+          ) {
+           setNpcFace('faceDockguy1SA');
+         setTextValue('My dad is mad at me');
+         clickAudio2();
+          }
         }
       }
     };
