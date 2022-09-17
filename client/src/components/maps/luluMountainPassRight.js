@@ -818,7 +818,7 @@ const LuluMountainPassRight = (props) => {
       <div className="camera fade-in">
         <div>
           <div
-            className="mapLMP pixel-art"
+            className="mapLMPR pixel-art"
             style={{
               transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`,
             }}

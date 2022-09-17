@@ -2792,7 +2792,7 @@ const Tortous = (props) => {
                <div
               className="guard1TT pixel-art"
               style={{
-                transform: `translate3d( ${265}px, ${2390}px, 0 )`,
+                transform: `translate3d( ${2650}px, ${2390}px, 0 )`,
               }}
             >
               <div className="guard1TT_spritesheet pixel-art"></div>
@@ -2825,7 +2825,7 @@ const Tortous = (props) => {
             
 
 
-            <div
+            {/* <div
               className="demon pixel-art"
               style={{
                 transform: `translate3d( ${150 - xdemonTransformVar}px, ${
@@ -2834,7 +2834,9 @@ const Tortous = (props) => {
               }}
             >
               <div className="demon_spritesheet pixel-art"></div>
-            </div>
+            </div> */}
+
+
           </div>
         </div>
         {textValue ? (

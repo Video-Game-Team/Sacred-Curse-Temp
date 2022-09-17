@@ -35,7 +35,7 @@
 
  .mapMT {
      image-rendering: pixelated;
-     background-image: url("./assets/maps/Mouintain Town no grid npc.png");
+     background-image: url("./assets/maps/Mountain Town tweaks no grid.png");
      background-size: 7424px;
      width: calc(290 * var(--grid-cell));
      height: calc(200 * var(--grid-cell));

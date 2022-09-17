@@ -36,7 +36,7 @@
  .mapT {
      image-rendering: pixelated;
     /* background-image: url("./assets/maps/Tortous no npc special black door.png"); */
-     background-image: url("./assets/maps/Tortous w grid npc.png");
+     background-image: url("./assets/maps/Tortous tweaks no grid.png");
      background-size: 6656px;
      width: calc(260 * var(--grid-cell));
      height: calc(250 * var(--grid-cell));

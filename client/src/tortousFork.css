@@ -35,7 +35,7 @@
 
  .mapTF {
      image-rendering: pixelated;
-     background-image: url("./assets/maps/Tortous Fork no fountains w grid.png");
+     background-image: url("./assets/maps/Tortous Fork no fountains no grid.png");
      background-size: 3840px;
      width: calc(150 * var(--grid-cell));
      height: calc(105 * var(--grid-cell));

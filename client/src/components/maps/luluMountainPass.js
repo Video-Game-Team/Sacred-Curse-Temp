@@ -854,8 +854,13 @@ const LuluMountainPass = (props) => {
                 }px, 0 )`,
               }}
             >
+
               <div className="character_spritesheet pixel-art"></div>
             </div>
+
+
+
+
           </div>
         </div>
         {textValue ? (

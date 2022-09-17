@@ -36,7 +36,7 @@ body {
 
 .mapCC {
     image-rendering: pixelated;
-    background-image: url("./assets/maps/Crystal Caverns no grid.png");
+    background-image: url("./assets/maps/Crystal Caverns tweaks no grid.png");
     background-size: 3840px;
     width: calc(150 * var(--grid-cell));
     height: calc(150 * var(--grid-cell));

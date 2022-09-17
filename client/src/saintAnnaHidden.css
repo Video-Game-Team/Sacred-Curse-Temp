@@ -35,7 +35,7 @@
 
  .mapSAH {
      image-rendering: pixelated;
-     background-image: url("./assets/maps/Saint Anna Hidden Map no grid.png");
+     background-image: url("./assets/maps/Saint Anna Hidden Map tweaks no grid.png");
      background-size: 2880px;
      width: calc(112.5 * var(--grid-cell));
      height: calc(125 * var(--grid-cell));
@@ -55,7 +55,7 @@
 
 
 
- */ .character {
+ .character {
      width: calc(var(--grid-cell)* 2);
      height: calc(var(--grid-cell)* 2);
      overflow: hidden;
