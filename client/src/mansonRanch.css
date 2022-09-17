@@ -118,7 +118,7 @@ body {
 
 
  .faceCrazyGuyMR {
-     background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+     background: url("./assets/images/Manson Ranch Crazy Guy Face.png") no-repeat no-repeat;
      background-position: left top;
      background-size: 12%;
      background-size: content-box;
@@ -147,7 +147,7 @@ body {
 
 
   .faceGirlShiekMR {
-      background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+      background: url("./assets/images/Shiek Girl Face.png") no-repeat no-repeat;
       background-position: left top;
       background-size: 12%;
       background-size: content-box;
@@ -174,7 +174,7 @@ body {
    }
 
    .faceGirlHippyPrettyMR {
-       background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+       background: url("./assets/images/Manson Ranch Pretty Girl.png") no-repeat no-repeat;
        background-position: left top;
        background-size: 12%;
        background-size: content-box;
@@ -211,6 +211,7 @@ body {
 
 
 
+
     .girlHippy1MR {
         width: calc(var(--grid-cell)* 2.5);
         height: calc(var(--grid-cell)* 2.5);
@@ -231,7 +232,7 @@ body {
 
 
    .facegirlHippy1MR {
-       background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+       background: url("./assets/images/Manson Ranch Hippy Face.png") no-repeat no-repeat;
        background-position: left top;
        background-size: 12%;
        background-size: content-box;

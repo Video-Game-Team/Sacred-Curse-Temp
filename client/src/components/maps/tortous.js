@@ -2104,8 +2104,8 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 21)
           ) {
             setNpcFace('faceGirl2');
-            setTextValue('My dad is mad at me');
-            clickAudio2();
+             setTextValue('My dad is mad at me');
+             clickAudio2();
           }
         }
       }

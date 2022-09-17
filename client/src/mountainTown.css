@@ -35,7 +35,7 @@
 
  .mapMT {
      image-rendering: pixelated;
-     background-image: url("./assets/maps/Mouintain Town w grid npc.png");
+     background-image: url("./assets/maps/Mouintain Town no grid npc.png");
      background-size: 7424px;
      width: calc(290 * var(--grid-cell));
      height: calc(200 * var(--grid-cell));
@@ -151,7 +151,7 @@
 
 
 .faceGirl2MT {
-    background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+    background: url("./assets/images/Indoor House 3 girl 1 face.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;
@@ -181,7 +181,7 @@
 
 
 .faceGuy1MT{
-    background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+    background: url("./assets/images/Indoor House 4 face.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;
@@ -210,7 +210,7 @@
 
 
 .faceGuyBaldMT{
-    background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+    background: url("./assets/images/Indoor House 9 guy face.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;
@@ -240,7 +240,7 @@
 
 
 .faceRancherMT {
-    background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+    background: url("./assets/images/Indoor House 2 guy face.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;
@@ -270,7 +270,7 @@
 
 
 .faceEaterMT {
-    background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+    background: url("./assets/images/Indoor House 7 guy face.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;

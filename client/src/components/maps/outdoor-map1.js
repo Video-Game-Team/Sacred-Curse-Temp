@@ -12,9 +12,6 @@ import '../../App.css';
 const OutDoorMap1 = (props) => {
 
 
- 
-
-
 
   let h1 = 1;
   let h2 = 2;

@@ -907,12 +907,12 @@ const MountainEntrance = (props) => {
 
         //Facing left
         if (facing.current === 'left') {
-          if (
-            (yPlayerIndex.current === 26 && xPlayerIndex.current === 35) ||
-            (yPlayerIndex.current === 27 && xPlayerIndex.current === 35)
-          ) {
-            console.log("Hi I'm Guard");
-          }
+          // if (
+          //   (yPlayerIndex.current === 26 && xPlayerIndex.current === 35) ||
+          //   (yPlayerIndex.current === 27 && xPlayerIndex.current === 35)
+          // ) {
+          //   console.log("Hi I'm Guard");
+          // }
           //   //YO Mama NPC
           //   if (
           //     (yPlayerIndex.current === 33 && xPlayerIndex.current === 40) ||
@@ -938,12 +938,12 @@ const MountainEntrance = (props) => {
 
         //Facing right
         if (facing.current === 'right') {
-          if (
-            (yPlayerIndex.current === 26 && xPlayerIndex.current === 32) ||
-            (yPlayerIndex.current === 27 && xPlayerIndex.current === 32)
-          ) {
-            console.log("Hi I'm Guard1");
-          }
+          // if (
+          //   (yPlayerIndex.current === 26 && xPlayerIndex.current === 32) ||
+          //   (yPlayerIndex.current === 27 && xPlayerIndex.current === 32)
+          // ) {
+          //   console.log("Hi I'm Guard1");
+          // }
           // //YO Mama NPC
           // if (
           //   (yPlayerIndex.current === 33 && xPlayerIndex.current === 37) ||

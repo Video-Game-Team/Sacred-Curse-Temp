@@ -780,7 +780,7 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 48 && xPlayerIndex.current === 36) ||
             (yPlayerIndex.current === 48 && xPlayerIndex.current === 37)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('facegirlHippy1MR');
             setTextValue('Hi I am blonde');
             clickAudio2();
           }
@@ -798,7 +798,7 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 45) ||
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 46)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceGirlShiekMR');
             setTextValue('Hi I am blonde');
             clickAudio2();
           }
@@ -807,7 +807,7 @@ const MansonRanch = (props) => {
              (yPlayerIndex.current === 24 && xPlayerIndex.current === 12) ||
              (yPlayerIndex.current === 24 && xPlayerIndex.current === 13)
            ) {
-             setNpcFace('faceGirl2');
+             setNpcFace('faceCrazyGuyMR');
              setTextValue('Hi I am blonde');
              clickAudio2();
            }
@@ -816,7 +816,7 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 31 && xPlayerIndex.current === 30) ||
             (yPlayerIndex.current === 31 && xPlayerIndex.current === 31)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceGirlHippyPrettyMR');
             setTextValue('Hi I am blonde');
             clickAudio2();
           }
@@ -829,7 +829,7 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 45 && xPlayerIndex.current === 38) ||
             (yPlayerIndex.current === 45 && xPlayerIndex.current === 37)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('facegirlHippy1MR');
             setTextValue('Hi I am blonde');
             clickAudio2();
           }
@@ -847,16 +847,16 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 12) ||
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 13)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceCrazyGuyMR');
             setTextValue('Hi I am blonde');
             clickAudio2();
           }
 
            if (
              (yPlayerIndex.current === 21 && xPlayerIndex.current === 45) ||
-             (yPlayerIndex.current === 20 && xPlayerIndex.current === 13)
+             (yPlayerIndex.current === 20 && xPlayerIndex.current === 45)
            ) {
-             setNpcFace('faceGirl2');
+             setNpcFace('faceGirlShiekMR');
              setTextValue('Hi I am blonde');
              clickAudio2();
            }
@@ -866,7 +866,7 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 29 && xPlayerIndex.current === 30) ||
             (yPlayerIndex.current === 29 && xPlayerIndex.current === 31)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceGirlHippyPrettyMR');
             setTextValue('Hi I am blonde');
             clickAudio2();
           }
@@ -878,7 +878,7 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 46 && xPlayerIndex.current === 39) ||
             (yPlayerIndex.current === 47 && xPlayerIndex.current === 39)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('facegirlHippy1MR');
             setTextValue('Hi I am blonde');
             clickAudio2();
           }
@@ -896,7 +896,7 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 47) ||
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 47)
           ) {
-              setNpcFace('faceGirl2');
+              setNpcFace('faceGirlShiekMR');
               setTextValue('Hi I am blonde');
               clickAudio2();
           }
@@ -905,7 +905,7 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 29 && xPlayerIndex.current === 32) ||
             (yPlayerIndex.current === 30 && xPlayerIndex.current === 32)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceGirlHippyPrettyMR');
             setTextValue('Hi I am blonde');
             clickAudio2();
           }
@@ -920,18 +920,13 @@ const MansonRanch = (props) => {
           //    console.log('Hi I am Hippy Girl 1');
           // }
           //YO Mama NPC
-          // if (
-          //   (yPlayerIndex.current === 33 && xPlayerIndex.current === 37) ||
-          //   (yPlayerIndex.current === 34 && xPlayerIndex.current === 37)
-          // ) {
-          //   console.log('Hi I am Hippy Girl 2');
-          // }
+     
           //Hot Girl
           if (
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 11) ||
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 11)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceCrazyGuyMR');
             setTextValue('Hi I am blonde');
             clickAudio2();
           }
@@ -940,7 +935,7 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 29 && xPlayerIndex.current === 30) ||
             (yPlayerIndex.current === 30 && xPlayerIndex.current === 30)
           ) {
-            setNpcFace('faceGirl2');
+            setNpcFace('faceGirlHippyPrettyMR');
             setTextValue('Hi I am blonde');
             clickAudio2();
           }

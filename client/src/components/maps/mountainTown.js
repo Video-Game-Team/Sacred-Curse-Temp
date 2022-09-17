@@ -40,6 +40,7 @@ const MountainTown = (props) => {
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
   const [npcFace, setNpcFace] = useState();
+  
 
   //Music Playing
   const clickAudio1 = () => new Audio(SnowMan).play();
@@ -1491,6 +1492,218 @@ const MountainTown = (props) => {
           ) {
             clickAudio2();
             setTextValue('Welcome to the Mountain Town');
+          }
+        }
+      }
+    };
+    window.addEventListener('keydown', dialogueAction);
+    return () => {
+      window.removeEventListener('keydown', dialogueAction);
+    };
+  }, []);
+
+  //CHARACTER DIALOGUE USE EFFECT
+  useEffect(() => {
+    const dialogueAction = (event) => {
+      if (event.key === 'a') {
+       
+        //Facing up
+        if (facing.current === 'up') {
+          //Guard 1 Lower left NPC
+          if (
+            (yPlayerIndex.current === 70 && xPlayerIndex.current === 53) 
+          ) {
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
+          //YO Mama NPC
+          if (
+            (yPlayerIndex.current === 52 && xPlayerIndex.current === 15) ||
+            (yPlayerIndex.current === 52 && xPlayerIndex.current === 14)
+          ) {
+            setNpcFace('faceEaterMT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 57 && xPlayerIndex.current === 61) ||
+            (yPlayerIndex.current === 57 && xPlayerIndex.current === 62)
+          ) {
+            setNpcFace('faceGirl2');
+            setTextValue('AMy dad is mad at me');
+            clickAudio2();
+          }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 51 && xPlayerIndex.current === 65) ||
+            (yPlayerIndex.current === 51 && xPlayerIndex.current === 66)
+          ) {
+            setNpcFace('faceGirl2MT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
+          //Old Man
+          if (
+            (yPlayerIndex.current === 27 && xPlayerIndex.current === 52) ||
+            (yPlayerIndex.current === 27 && xPlayerIndex.current === 51)
+          ) {
+            setNpcFace('faceGuyBaldMT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
+        }
+
+        //Facing down
+        if (!facing.current) {
+          //Jim NPC
+          if (
+            (yPlayerIndex.current === 61 && xPlayerIndex.current === 43) ||
+            (yPlayerIndex.current === 61 && xPlayerIndex.current === 44)
+          ) {
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
+          //YO Mama NPC
+          if (
+            (yPlayerIndex.current === 49 && xPlayerIndex.current === 15) ||
+            (yPlayerIndex.current === 49 && xPlayerIndex.current === 14)
+          ) {
+            setNpcFace('faceEaterMT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 21 && xPlayerIndex.current === 14) ||
+            (yPlayerIndex.current === 22 && xPlayerIndex.current === 14)
+          ) {
+            setNpcFace('faceRancherMT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 27 && xPlayerIndex.current === 88) ||
+            (yPlayerIndex.current === 27 && xPlayerIndex.current === 89)
+          ) {
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
+          //Old Man
+          if (
+            (yPlayerIndex.current === 23 && xPlayerIndex.current === 52) ||
+            (yPlayerIndex.current === 23 && xPlayerIndex.current === 51)
+          ) {
+            setNpcFace('faceGuyBaldMT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
+           if (
+             (yPlayerIndex.current === 31 && xPlayerIndex.current === 95) ||
+             (yPlayerIndex.current === 31 && xPlayerIndex.current === 96)
+           ) {
+             setNpcFace('faceGuy1MT');
+             setTextValue('My dad is mad at me');
+             clickAudio2();
+           }
+        }
+
+        //Facing left
+        if (facing.current === 'left') {
+          if (
+            (yPlayerIndex.current === 63 && xPlayerIndex.current === 45) ||
+            (yPlayerIndex.current === 64 && xPlayerIndex.current === 45)
+          ) {
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
+          //YO Mama NPC
+          if (
+            (yPlayerIndex.current === 55 && xPlayerIndex.current === 45) ||
+            (yPlayerIndex.current === 56 && xPlayerIndex.current === 45)
+          ) {
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 55 && xPlayerIndex.current === 63) ||
+            (yPlayerIndex.current === 56 && xPlayerIndex.current === 63)
+          ) {
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 50 && xPlayerIndex.current === 67) 
+          ) {
+            setNpcFace('faceGirl2MT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
+          //Old Man
+          if (
+            (yPlayerIndex.current === 33 && xPlayerIndex.current === 98) ||
+            (yPlayerIndex.current === 34 && xPlayerIndex.current === 98)
+          ) {
+            setNpcFace('faceGuy1MT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
+        }
+
+        //Facing right
+        if (facing.current === 'right') {
+          if (
+            (yPlayerIndex.current === 81 && xPlayerIndex.current === 23) ||
+            (yPlayerIndex.current === 82 && xPlayerIndex.current === 23)
+          ) {
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
+          //YO Mama NPC
+          if (
+            (yPlayerIndex.current === 51 && xPlayerIndex.current === 14) ||
+            (yPlayerIndex.current === 50 && xPlayerIndex.current === 14)
+          ) {
+            setNpcFace('faceEaterMT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 22 && xPlayerIndex.current === 14) ||
+            (yPlayerIndex.current === 21 && xPlayerIndex.current === 14)
+          ) {
+            setNpcFace('faceRancherMT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
+          //Hot Girl
+          if (
+            (yPlayerIndex.current === 28 && xPlayerIndex.current === 87) ||
+            (yPlayerIndex.current === 29 && xPlayerIndex.current === 87)
+          ) {
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
+          //Old Man
+          if (
+            (yPlayerIndex.current === 26 && xPlayerIndex.current === 51) ||
+            (yPlayerIndex.current === 25 && xPlayerIndex.current === 51)
+          ) {
+            setNpcFace('faceGuyBaldMT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
         }
       }
