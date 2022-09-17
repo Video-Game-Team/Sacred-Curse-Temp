@@ -1647,6 +1647,21 @@ const TortousTrainStation = (props) => {
             >
               <div className="generalTTTS_spritesheet pixel-art"></div>
             </div>
+
+
+            <div
+              className="fountainTTTS pixel-art"
+              style={{
+                transform: `translate3d( ${3135}px, ${1634}px, 0 )`,
+              }}
+            >
+              <div className="fountainTTTS_spritesheet pixel-art"></div>
+            </div>
+
+
+
+
+
           </div>
         </div>
         {textValue ? (

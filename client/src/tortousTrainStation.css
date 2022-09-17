@@ -35,7 +35,7 @@
 
  .mapTTS {
      image-rendering: pixelated;
-     background-image: url("./assets/maps/Tortous Train Station w grid npc.png");
+     background-image: url("./assets/maps/Tortous Train Station no npc no fountain no grid.png");
      background-size: 6400px;
      width: calc(250 * var(--grid-cell));
      height: calc(100 * var(--grid-cell));
@@ -151,6 +151,27 @@
      background-size: 12%;
      background-size: content-box;
  }
+
+
+  .fountainTTTS {
+     position: absolute;
+     width: calc(var(--grid-cell)* 24);
+     height: calc(var(--grid-cell)* 24);
+     overflow: hidden;
+ }
+
+ .fountainTTTS_spritesheet {
+     background: url("./assets/images/fountain.gif") no-repeat no-repeat;
+     background-size: 100%;
+     width: calc(var(--grid-cell)* 2.7);
+     height: calc(var(--grid-cell)* 4.2);
+ }
+
+
+
+
+
+
 
 
 
