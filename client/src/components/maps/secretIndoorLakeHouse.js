@@ -6,6 +6,11 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
+
+import text from '../../audioclips/Text.mp3';
+import itemPickup from '../../audioclips/itemPickup.mp3';
+import SnowMan from '../../audioclips/Snowman.mp3';
+
 import '../../secretIndoorLakeHouse.css';
 
 const SecretIndoorLakeHouse = (props) => {
@@ -34,6 +39,23 @@ const SecretIndoorLakeHouse = (props) => {
   const xPlayerIndex = useRef(4);
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
+  const [npcFace, setNpcFace] = useState();
+
+  //Music Playing
+  const clickAudio1 = () => new Audio(SnowMan).play();
+
+  // //NPC Dialogue sound effect
+  const clickAudio2 = () => new Audio(text).play();
+
+  // Item collection sound effect
+  const clickAudio3 = () => new Audio(itemPickup).play();
+
+  //Starts off Music Loop
+  useEffect(() => {
+    {
+      clickAudio1();
+    }
+  }, []);
 
   // let currentMap2 = [
   //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -181,12 +203,12 @@ const SecretIndoorLakeHouse = (props) => {
         //Facing down
         if (!facing.current) {
           //Jim NPC
-          if (
-            (yPlayerIndex.current === 3 && xPlayerIndex.current === 6) ||
-            (yPlayerIndex.current === 3 && xPlayerIndex.current === 7)
-          ) {
-            setTextValue("Hi I'm Guard1");
-          }
+          // if (
+          //   (yPlayerIndex.current === 3 && xPlayerIndex.current === 6) ||
+          //   (yPlayerIndex.current === 3 && xPlayerIndex.current === 7)
+          // ) {
+          //   setTextValue("Hi I'm Guard1");
+          // }
           // //YO Mama NPC
           // if (
           //   (yPlayerIndex.current === 32 && xPlayerIndex.current === 38) ||
@@ -216,7 +238,9 @@ const SecretIndoorLakeHouse = (props) => {
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 8) ||
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 8)
           ) {
-            setTextValue("Hi I'm Guard");
+                             setNpcFace('faceWizardSILH');
+         setTextValue('My dad is mad at me');
+         clickAudio2();
           }
           //YO Mama NPC
           // if (
@@ -247,7 +271,9 @@ const SecretIndoorLakeHouse = (props) => {
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 5) ||
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 5)
           ) {
-            setTextValue("Hi I'm Guard1");
+          setNpcFace('faceWizardSILH');
+         setTextValue('My dad is mad at me');
+         clickAudio2();
           }
           //YO Mama NPC
           // if (
@@ -512,7 +538,7 @@ const SecretIndoorLakeHouse = (props) => {
 
   //update the style for the mpa character by transforming it according the new x and y variables
   //map and character share the varaibles since they move together
-  return (
+return (
     <div>
       <div className="camera fade-in">
         <div>
@@ -535,10 +561,25 @@ const SecretIndoorLakeHouse = (props) => {
             >
               <div className="character_spritesheet pixel-art"></div>
             </div>
+
+            <div
+              className="wizardSILH pixel-art"
+              style={{
+                transform: `translate3d( ${369}px, ${126}px, 0 )`,
+              }}
+            >
+              <div className="wizardSILH_spritesheet pixel-art"></div>
+            </div>
+
+
           </div>
         </div>
         {textValue ? (
-          <dialog className="textBox typewriter" open>
+          <dialog
+            id="dialogStyle"
+            className={`${npcFace} textBox typewriter`}
+            open
+          >
             <p>{textValue}</p>
           </dialog>
         ) : null}
@@ -546,4 +587,6 @@ const SecretIndoorLakeHouse = (props) => {
     </div>
   );
 };
+
+
 export default SecretIndoorLakeHouse;
