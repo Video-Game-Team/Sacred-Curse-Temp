@@ -1038,6 +1038,7 @@ const CrystalCaverns = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
+       <div className="gameHue">
       <div className="camera fade-in">
         <div>
           <div
@@ -1083,6 +1084,7 @@ const CrystalCaverns = (props) => {
         ) : null}
       </div>
     </div>
+     </div>
   );
 };
 

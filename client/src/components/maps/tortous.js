@@ -2422,7 +2422,7 @@ const Tortous = (props) => {
             setToggle1(true);
             demonSetToggle1(true);
             setHue(180);
-          }t
+          }
         }
       }
     };
@@ -2674,7 +2674,7 @@ const Tortous = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="punk">
+      <div className="gameHue">
         <div
           className="camera fade-in"
           style={{ filter: `hue-rotate(${hue}deg)` }}

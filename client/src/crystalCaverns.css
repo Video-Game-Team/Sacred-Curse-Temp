@@ -5,6 +5,12 @@
 
 }
 
+.gameHue {
+     /* filter: brightness(100%);  */
+     /* filter: grayscale(100%); */
+     filter: saturate(150%);
+ }
+
 @media(min-width: 700px) {
     :root {
         --pixel-size: 3px;
