@@ -4,6 +4,12 @@
   --bg: #070000;
 }
 
+ .gameHue {
+   /* filter: brightness(100%);  */
+   /* filter: grayscale(100%); */
+   filter: saturate(200%);
+ }
+
 @media(min-width: 700px) {
   :root {
       --pixel-size: 3px;
@@ -135,13 +141,13 @@ p {
   font-size: 25px;
 }
 
-.typewriter p {
+/* .typewriter p {
   overflow: hidden;
-  white-space: nowrap;
+  white-space: normal;
   animation:
   typing 3s steps(40, end),
   .75s step-end infinite;
-}
+} */
 
 @keyframes typing {
   from {

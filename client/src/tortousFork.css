@@ -2,7 +2,6 @@
      --pixel-size: 2px;
      --grid-cell: calc(var(--pixel-size) * 12);
      --bg: #070000;
-
  }
 
  @media(min-width: 700px) {
@@ -98,7 +97,7 @@
  }
 
 
-   .fountainTTF {
+.fountainTTF {
      position: absolute;
      width: calc(var(--grid-cell)* 24);
      height: calc(var(--grid-cell)* 24);
@@ -115,7 +114,6 @@
 
 .pigeon1TTF {
      position: absolute;
-     z-index: 1;
      width: calc(var(--grid-cell)* 2);
      height: calc(var(--grid-cell)* 2);
      overflow: hidden;

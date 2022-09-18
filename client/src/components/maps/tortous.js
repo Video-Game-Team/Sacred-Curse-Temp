@@ -1939,7 +1939,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 44)
           ) {
          setNpcFace('faceGuard1TT');
-         setTextValue('My dad is mad at me');
+         setTextValue('Just please go away. No one is safe if that lunatic goes off.');
          clickAudio2();
           }
           //Hot Girl
@@ -1948,7 +1948,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 62)
           ) {
            setNpcFace('faceGuard1TT');
-           setTextValue('My dad is mad at me');
+           setTextValue('At least the Sun Kings never force people to join. I am proud to serve my King.');
            clickAudio2();
           }
           //Hot Girl
@@ -1975,7 +1975,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 88 && xPlayerIndex.current === 87)
           ) {
            setNpcFace('facesweeperGuyTT');
-           setTextValue('My dad is mad at me');
+           setTextValue("Go away! If we don't keep the city clean, that monster in the station will do it again.");
            clickAudio2();
           }
 
@@ -2024,7 +2024,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 85 && xPlayerIndex.current === 88)
           ) {
             setNpcFace('facesweeperGuyTT');
-             setTextValue('My dad is mad at me');
+             setTextValue("Go away! If we don't keep the city clean, that monster in the station will do it again.");
              clickAudio2();
           }
           //YO Mama NPC
@@ -2032,8 +2032,8 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 54 && xPlayerIndex.current === 43) ||
             (yPlayerIndex.current === 52 && xPlayerIndex.current === 42)
           ) {
-             setNpcFace('faceGirl2');
-             setTextValue('My dad is mad at me');
+             setNpcFace('faceGuard1TT');
+             setTextValue('Just please go away. No one is safe if that lunatic goes off.');
              clickAudio2();
           }
           //Hot Girl
@@ -2041,8 +2041,8 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 54 && xPlayerIndex.current === 62) ||
             (yPlayerIndex.current === 54 && xPlayerIndex.current === 61)
           ) {
-            setNpcFace('faceGirl2');
-            setTextValue('My dad is mad at me');
+            setNpcFace('faceGuard1TT');
+            setTextValue('At least the Sun Kings never force people to join. I am proud to serve my King.');
             clickAudio2();
           }
           //Hot Girl
@@ -2060,7 +2060,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 17 && xPlayerIndex.current === 22)
           ) {
           setNpcFace('faceGuard1TT');
-          setTextValue('My dad is mad at me');
+            setTextValue('Get the fuck out of here you little shit stain.');
           clickAudio2();
           }
 
@@ -2070,7 +2070,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 65)
           ) {
           setNpcFace('faceRedheadTT');
-          setTextValue('My dad is mad at me');
+          setTextValue('At least the Sun Kings never force people to join. I am proud to serve my King.');
           clickAudio2();
           }
            //Old Man
@@ -2109,7 +2109,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 45)
           ) {
             setNpcFace('faceGuard1TT');
-            setTextValue('My dad is mad at me');
+            setTextValue('Just please go away. No one is safe if that lunatic goes off.');
             clickAudio2();
           }
           //Hot Girl
@@ -2118,7 +2118,8 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 63)
           ) {
              setNpcFace('faceGuard1TT');
-             setTextValue('My dad is mad at me');
+             setTextValue('At least the Sun Kings never force people to join. I am proud to serve my King.');
+
              clickAudio2();
           }
           //Hot Girl
@@ -2136,7 +2137,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 24)
           ) {
             setNpcFace('faceGuard1TT');
-            setTextValue('My dad is mad at me');
+             setTextValue('Get the fuck out of here you little shit stain.');
             clickAudio2();
           }
             //Old Man
@@ -2145,7 +2146,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 86 && xPlayerIndex.current === 90)
           ) {
             setNpcFace('facesweeperGuyTT');
-            setTextValue('My dad is mad at me');
+            setTextValue("Go away! If we don't keep the city clean, that monster in the station will do it again.");
             clickAudio2();
           }
 
@@ -2194,7 +2195,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 42)
           ) {
             setNpcFace('faceGuard1TT');
-            setTextValue('My dad is mad at me');
+            setTextValue('Just please go away. No one is safe if that lunatic goes off.');
             clickAudio2();
           }
           //Hot Girl
@@ -2203,7 +2204,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 60)
           ) {
             setNpcFace('faceGuard1TT');
-            setTextValue('My dad is mad at me');
+            setTextValue('At least the Sun Kings never force people to join. I am proud to serve my King.');
             clickAudio2();
           }
           //Hot Girl
@@ -2221,7 +2222,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 21)
           ) {
             setNpcFace('faceGuard1TT');
-             setTextValue('My dad is mad at me');
+             setTextValue('Get the fuck out of here you little shit stain.');
              clickAudio2();
           }
            //Old Man
@@ -2230,7 +2231,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 86 && xPlayerIndex.current === 87)
           ) {
             setNpcFace('facesweeperGuyTT');
-             setTextValue('My dad is mad at me');
+             setTextValue("Go away! If we don't keep the city clean, that monster in the station will do it again.");
              clickAudio2();
           }
             //Old Man
@@ -2422,6 +2423,9 @@ const Tortous = (props) => {
             setToggle1(true);
             demonSetToggle1(true);
             setHue(180);
+            setTimeout(() => {
+              setHue(0);
+            }, 10000)
           }
         }
       }
@@ -2674,176 +2678,174 @@ const Tortous = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="gameHue">
-        <div
-          className="camera fade-in"
-          style={{ filter: `hue-rotate(${hue}deg)` }}
-        >
-          <div>
-            <div
-              className="mapT pixel-art"
-              style={{
-                transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`,
-              }}
-            >
-              {gridArray}
-              <div
-                className="character pixel-art"
-                facing={facing.current}
-                walking={walker}
-                style={{
-                  transform: `translate3d( ${600 - xTransformVar}px, ${
-                    272 - yTransformVar
-                  }px, 0 )`,
-                }}
-              >
-                {toggle1 === false ? (
-                  <div className="character_spritesheet pixel-art"></div>
-                ) : (
-                  <div className="character_spritesheet2 pixel-art"></div>
-                )}
-              </div>
+      <div style={{ filter: 'saturate(150%)' }}>
+        <div style={{ filter: `hue-rotate(90deg)` }}>
+          <div style={{ filter: 'brightness(40%)' }}>
+            <div style={{ filter: 'sepia(90%)' }}>
+              <div style={{ filter: 'contrast(200%)' }}>
+                <div
+                  className="camera fade-in"
+                  style={{ filter: `hue-rotate(${hue}deg)` }}
+                >
+                  <div>
+                    <div
+                      className="mapT pixel-art"
+                      style={{
+                        transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`,
+                      }}
+                    >
+                      {gridArray}
+                      <div
+                        className="character pixel-art"
+                        facing={facing.current}
+                        walking={walker}
+                        style={{
+                          transform: `translate3d( ${600 - xTransformVar}px, ${
+                            272 - yTransformVar
+                          }px, 0 )`,
+                        }}
+                      >
+                        {toggle1 === false ? (
+                          <div className="character_spritesheet pixel-art"></div>
+                        ) : (
+                          <div className="character_spritesheet2 pixel-art"></div>
+                        )}
+                      </div>
 
-              <div
-                className="sweeperGuyTT pixel-art"
-                style={{
-                  transform: `translate3d( ${5646}px, ${5402}px, 0 )`,
-                }}
-              >
-                <div className="sweeperGuyTT_spritesheet pixel-art"></div>
-              </div>
+                      <div
+                        className="sweeperGuyTT pixel-art"
+                        style={{
+                          transform: `translate3d( ${5646}px, ${5402}px, 0 )`,
+                        }}
+                      >
+                        <div className="sweeperGuyTT_spritesheet pixel-art"></div>
+                      </div>
 
-              <div
-                className="brideTT pixel-art"
-                style={{
-                  transform: `translate3d( ${1545}px, ${5080}px, 0 )`,
-                }}
-              >
-                <div className="brideTT_spritesheet pixel-art"></div>
-              </div>
+                      <div
+                        className="brideTT pixel-art"
+                        style={{
+                          transform: `translate3d( ${1545}px, ${5080}px, 0 )`,
+                        }}
+                      >
+                        <div className="brideTT_spritesheet pixel-art"></div>
+                      </div>
 
-              <div
-                className="redheadTT pixel-art"
-                style={{
-                  transform: `translate3d( ${4232}px, ${3600}px, 0 )`,
-                }}
-              >
-                <div className="redheadTT_spritesheet pixel-art"></div>
-              </div>
+                      <div
+                        className="redheadTT pixel-art"
+                        style={{
+                          transform: `translate3d( ${4232}px, ${3600}px, 0 )`,
+                        }}
+                      >
+                        <div className="redheadTT_spritesheet pixel-art"></div>
+                      </div>
 
-              <div
-                className="brunetteTT pixel-art"
-                style={{
-                  transform: `translate3d( ${1800}px, ${2760}px, 0 )`,
-                }}
-              >
-                <div className="brunetteTT_spritesheet pixel-art"></div>
-              </div>
+                      <div
+                        className="brunetteTT pixel-art"
+                        style={{
+                          transform: `translate3d( ${1800}px, ${2760}px, 0 )`,
+                        }}
+                      >
+                        <div className="brunetteTT_spritesheet pixel-art"></div>
+                      </div>
 
-              <div
-                className="crazyGuyTT pixel-art"
-                style={{
-                  transform: `translate3d( ${4232}px, ${1738}px, 0 )`,
-                }}
-              >
-                <div className="crazyGuyTT_spritesheet pixel-art"></div>
-              </div>
+                      <div
+                        className="crazyGuyTT pixel-art"
+                        style={{
+                          transform: `translate3d( ${4232}px, ${1738}px, 0 )`,
+                        }}
+                      >
+                        <div className="crazyGuyTT_spritesheet pixel-art"></div>
+                      </div>
 
-              <div
-                className="coinFlipperTT pixel-art"
-                style={{
-                  transform: `translate3d( ${5646}px, ${1688}px, 0 )`,
-                }}
-              >
-                <div className="coinFlipperTT_spritesheet pixel-art"></div>
-              </div>
+                      <div
+                        className="coinFlipperTT pixel-art"
+                        style={{
+                          transform: `translate3d( ${5646}px, ${1688}px, 0 )`,
+                        }}
+                      >
+                        <div className="coinFlipperTT_spritesheet pixel-art"></div>
+                      </div>
 
-              <div
-                className="blackSmithTT pixel-art"
-                style={{
-                  transform: `translate3d( ${2976}px, ${1604}px, 0 )`,
-                }}
-              >
-                <div className="blackSmithTT_spritesheet pixel-art"></div>
-              </div>
+                      <div
+                        className="blackSmithTT pixel-art"
+                        style={{
+                          transform: `translate3d( ${2976}px, ${1604}px, 0 )`,
+                        }}
+                      >
+                        <div className="blackSmithTT_spritesheet pixel-art"></div>
+                      </div>
 
-              <div
-                className="guard1TT pixel-art"
-                style={{
-                  transform: `translate3d( ${3910}px, ${3408}px, 0 )`,
-                }}
-              >
-                <div className="guard1TT_spritesheet pixel-art"></div>
-              </div>
+                      <div
+                        className="guard1TT pixel-art"
+                        style={{
+                          transform: `translate3d( ${3910}px, ${3408}px, 0 )`,
+                        }}
+                      >
+                        <div className="guard1TT_spritesheet pixel-art"></div>
+                      </div>
 
-              <div
-                className="guard1TT pixel-art"
-                style={{
-                  transform: `translate3d( ${2770}px, ${3408}px, 0 )`,
-                }}
-              >
-                <div className="guard1TT_spritesheet pixel-art"></div>
-              </div>
+                      <div
+                        className="guard1TT pixel-art"
+                        style={{
+                          transform: `translate3d( ${2770}px, ${3408}px, 0 )`,
+                        }}
+                      >
+                        <div className="guard1TT_spritesheet pixel-art"></div>
+                      </div>
 
-              <div
-                className="guard1TT pixel-art"
-                style={{
-                  transform: `translate3d( ${4035}px, ${2390}px, 0 )`,
-                }}
-              >
-                <div className="guard1TT_spritesheet pixel-art"></div>
-              </div>
+                      <div
+                        className="guard1TT pixel-art"
+                        style={{
+                          transform: `translate3d( ${4035}px, ${2390}px, 0 )`,
+                        }}
+                      >
+                        <div className="guard1TT_spritesheet pixel-art"></div>
+                      </div>
 
-              <div
-                className="guard1TT pixel-art"
-                style={{
-                  transform: `translate3d( ${2650}px, ${2390}px, 0 )`,
-                }}
-              >
-                <div className="guard1TT_spritesheet pixel-art"></div>
-              </div>
+                      <div
+                        className="guard1TT pixel-art"
+                        style={{
+                          transform: `translate3d( ${2650}px, ${2390}px, 0 )`,
+                        }}
+                      >
+                        <div className="guard1TT_spritesheet pixel-art"></div>
+                      </div>
 
-              <div
-                className="roofGuardTT pixel-art"
-                style={{
-                  transform: `translate3d( ${3242}px, ${2636}px, 0 )`,
-                }}
-              >
-                <div className="roofGuardTT_spritesheet pixel-art"></div>
-              </div>
+                      <div
+                        className="roofGuardTT pixel-art"
+                        style={{
+                          transform: `translate3d( ${3242}px, ${2636}px, 0 )`,
+                        }}
+                      >
+                        <div className="roofGuardTT_spritesheet pixel-art"></div>
+                      </div>
 
-              <div
-                className="redDoor1TT pixel-art"
-                style={{
-                  transform: `translate3d( ${2112}px, ${5472}px, 0 )`,
-                }}
-              >
-                {doorToggle1 === true ? (
-                  <div className="redDoor1TT_spritesheet pixel-art"></div>
-                ) : null}
-              </div>
-
-              <div
-                className="demon pixel-art"
-                style={{
-                  transform: `translate3d( ${150 - xdemonTransformVar}px, ${
-                    272 - ydemonTransformVar
-                  }px, 0 )`,
-                }}
-              >
-                <div className="demon_spritesheet pixel-art"></div>
+                      <div
+                        className="demon pixel-art"
+                        style={{
+                          zIndex: -1,
+                          transform: `translate3d( ${
+                            150 - xdemonTransformVar
+                          }px, ${272 - ydemonTransformVar}px, 0 )`,
+                        }}
+                      >
+                        <div className="demon_spritesheet pixel-art"></div>
+                      </div>
+                    </div>
+                  </div>
+                  {textValue ? (
+                    <dialog
+                      id="dialogStyle"
+                      className={`${npcFace} textBox typewriter`}
+                      open
+                    >
+                      <p>{textValue}</p>
+                    </dialog>
+                  ) : null}
+                </div>
               </div>
             </div>
           </div>
-          {textValue ? (
-            <dialog
-              id="dialogStyle"
-              className={`${npcFace} textBox typewriter`}
-              open
-            >
-              <p>{textValue}</p>
-            </dialog>
-          ) : null}
         </div>
       </div>
     </div>

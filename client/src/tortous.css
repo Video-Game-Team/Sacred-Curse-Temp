@@ -5,12 +5,6 @@
 
  }
 
- .punk {
-  /* filter: brightness(100%);  */
-  /* filter: grayscale(100%); */
-  filter: saturate(150%);  
-}
-
  @media(min-width: 700px) {
      :root {
          --pixel-size: 3px;
@@ -60,26 +54,27 @@
     background: transparent;
 }  */
 
- .character {
-     width: calc(var(--grid-cell)* 2);
-     height: calc(var(--grid-cell)* 2);
-     overflow: hidden;
- }
+  .character {
+      width: calc(var(--grid-cell)* 2);
+      height: calc(var(--grid-cell)* 2);
+      overflow: hidden;
+      grid-column-start: 10;
+      grid-row-start: 5;
+  }
 
- .character_spritesheet {
-     position: absolute;
-     background: url("./assets/images/AjFP5.png") no-repeat no-repeat;
-     background-size: 100%;
-     width: calc(var(--grid-cell)* 8);
-     height: calc(var(--grid-cell)* 8);
-
- }
+  .character_spritesheet {
+      position: absolute;
+      background: url("./assets/images/AjFP5.png") no-repeat no-repeat;
+      background-size: 100%;
+      width: calc(var(--grid-cell)* 8);
+      height: calc(var(--grid-cell)* 8);
+  }
 
  .character[facing="right"] .character_spritesheet {
      background-position-y: calc(var(--pixel-size) * -48);
  }
 
- .character[facing="up"] .character_spritesheet {
+ .characterTT[facing="up"] .character_spritesheet {
      background-position-y: calc(var(--pixel-size) * -72);
  }
 
@@ -116,10 +111,6 @@
       width: calc(var(--grid-cell)* 2);
       height: calc(var(--grid-cell)* 2);
   }
-
-
-
-
 
 
 .sweeperGuyTT {
