@@ -46,10 +46,18 @@ const Tortous = (props) => {
   const ydemonIndex = useRef(91);
   const xdemonIndex = useRef(46);
   const [npcFace, setNpcFace] = useState();
+  
   // Sprtiesheet Toggle1 state
   const [toggle1, setToggle1] = useState(false);
   const [doorToggle1, setdoorToggle1] = useState(false);
+  
+  // Color Correction state
+  const [saturate, setSaturate] = useState(150)
   const [hue, setHue] = useState(0)
+  const [brightness, setBrightness] = useState(100)
+  const [sepia, setSepia] = useState(0)
+  const [contrast, setContrast] = useState(100)
+  const [invert, setInvert] = useState([0])
 
   //Demon Toggle state
   const [demonToggle1, demonSetToggle1] = useState(false);
@@ -2422,9 +2430,17 @@ const Tortous = (props) => {
             setYdemonTransformVar(-5338);
             setToggle1(true);
             demonSetToggle1(true);
-            setHue(180);
+
+           setHue(190);
+           setBrightness(80);
+           setSepia(0);
+           setContrast(100);
+
             setTimeout(() => {
-              setHue(0);
+               setHue(0);
+               setBrightness(100);
+               setSepia(0);
+               setContrast(100);
             }, 10000)
           }
         }
@@ -2678,14 +2694,14 @@ const Tortous = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div style={{ filter: 'saturate(150%)' }}>
-        <div style={{ filter: `hue-rotate(90deg)` }}>
-          <div style={{ filter: 'brightness(40%)' }}>
-            <div style={{ filter: 'sepia(90%)' }}>
-              <div style={{ filter: 'contrast(200%)' }}>
+      <div style={{ filter: `saturate(${saturate}%)`}}>
+        <div style={{ filter: `hue-rotate(${hue}deg)`}}>
+          <div style={{ filter: `brightness(${brightness}%)`}}>
+            <div style={{ filter: `sepia(${sepia}%)`}}>
+              <div style={{ filter: `contrast(${contrast}%)`}}>
+                 <div style={{ filter: `invert(${invert}%)`}}>
                 <div
                   className="camera fade-in"
-                  style={{ filter: `hue-rotate(${hue}deg)` }}
                 >
                   <div>
                     <div
@@ -2846,9 +2862,10 @@ const Tortous = (props) => {
               </div>
             </div>
           </div>
-        </div>
+       </div>
       </div>
-    </div>
+     </div>
+     </div>
   );
 };
 
