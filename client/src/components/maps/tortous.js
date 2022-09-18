@@ -2415,14 +2415,14 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 90 && xPlayerIndex.current === 47) ||
             (yPlayerIndex.current === 91 && xPlayerIndex.current === 47)
           ) {
-            setHue(180)
             clickAudio3();
             setTextValue('Hooray!!!!!!');
             setXdemonTransformVar(-2844);
             setYdemonTransformVar(-5338);
             setToggle1(true);
             demonSetToggle1(true);
-          }
+            setHue(180);
+          }t
         }
       }
     };
@@ -2431,6 +2431,7 @@ const Tortous = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
+
 
   //event listen for enter
   useEffect(() => {
@@ -2673,180 +2674,177 @@ const Tortous = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="camera fade-in" style={{filter: `hue-rotate(${hue}deg)`}}>
-        <div>
-          <div
-            className="mapT pixel-art"
-            style={{transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`,}}
-          >
-            {gridArray}
+      <div className="punk">
+        <div
+          className="camera fade-in"
+          style={{ filter: `hue-rotate(${hue}deg)` }}
+        >
+          <div>
             <div
-              className="character pixel-art"
-              facing={facing.current}
-              walking={walker}
+              className="mapT pixel-art"
               style={{
-                transform: `translate3d( ${600 - xTransformVar}px, ${
-                  272 - yTransformVar
-                }px, 0 )`,
+                transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`,
               }}
             >
-              {toggle1 === false ? 
-              (<div className="character_spritesheet pixel-art"></div>) : 
-              (<div className="character_spritesheet2 pixel-art"></div>)
-              }
-            </div>
-
-            <div
-              className="sweeperGuyTT pixel-art"
-              style={{
-                transform: `translate3d( ${5646}px, ${5402}px, 0 )`,
-              }}
-            >
-              <div className="sweeperGuyTT_spritesheet pixel-art"></div>
-            </div>
-
-            <div
-              className="brideTT pixel-art"
-              style={{
-                transform: `translate3d( ${1545}px, ${5080}px, 0 )`,
-              }}
-            >
-              <div className="brideTT_spritesheet pixel-art"></div>
-            </div>
-
-            <div
-              className="redheadTT pixel-art"
-              style={{
-                transform: `translate3d( ${4232}px, ${3600}px, 0 )`,
-              }}
-            >
-              <div className="redheadTT_spritesheet pixel-art"></div>
-            </div>
-
-            <div
-              className="brunetteTT pixel-art"
-              style={{
-                transform: `translate3d( ${1800}px, ${2760}px, 0 )`,
-              }}
-            >
-              <div className="brunetteTT_spritesheet pixel-art"></div>
-            </div>
-
-            <div
-              className="crazyGuyTT pixel-art"
-              style={{
-                transform: `translate3d( ${4232}px, ${1738}px, 0 )`,
-              }}
-            >
-              <div className="crazyGuyTT_spritesheet pixel-art"></div>
-            </div>
-
-            <div
-              className="coinFlipperTT pixel-art"
-              style={{
-                transform: `translate3d( ${5646}px, ${1688}px, 0 )`,
-              }}
-            >
-              <div className="coinFlipperTT_spritesheet pixel-art"></div>
-            </div>
-
-            <div
-              className="blackSmithTT pixel-art"
-              style={{
-                transform: `translate3d( ${2976}px, ${1604}px, 0 )`,
-              }}
-            >
-              <div className="blackSmithTT_spritesheet pixel-art"></div>
-            </div>
-
-             <div
-              className="guard1TT pixel-art"
-              style={{
-                transform: `translate3d( ${3910}px, ${3408}px, 0 )`,
-              }}
-            >
-              <div className="guard1TT_spritesheet pixel-art"></div>
-            </div>
+              {gridArray}
+              <div
+                className="character pixel-art"
+                facing={facing.current}
+                walking={walker}
+                style={{
+                  transform: `translate3d( ${600 - xTransformVar}px, ${
+                    272 - yTransformVar
+                  }px, 0 )`,
+                }}
+              >
+                {toggle1 === false ? (
+                  <div className="character_spritesheet pixel-art"></div>
+                ) : (
+                  <div className="character_spritesheet2 pixel-art"></div>
+                )}
+              </div>
 
               <div
-              className="guard1TT pixel-art"
-              style={{
-                transform: `translate3d( ${2770}px, ${3408}px, 0 )`,
-              }}
-            >
-              <div className="guard1TT_spritesheet pixel-art"></div>
-            </div>
-
+                className="sweeperGuyTT pixel-art"
+                style={{
+                  transform: `translate3d( ${5646}px, ${5402}px, 0 )`,
+                }}
+              >
+                <div className="sweeperGuyTT_spritesheet pixel-art"></div>
+              </div>
 
               <div
-              className="guard1TT pixel-art"
-              style={{
-                transform: `translate3d( ${4035}px, ${2390}px, 0 )`,
-              }}
-            >
-              <div className="guard1TT_spritesheet pixel-art"></div>
+                className="brideTT pixel-art"
+                style={{
+                  transform: `translate3d( ${1545}px, ${5080}px, 0 )`,
+                }}
+              >
+                <div className="brideTT_spritesheet pixel-art"></div>
+              </div>
+
+              <div
+                className="redheadTT pixel-art"
+                style={{
+                  transform: `translate3d( ${4232}px, ${3600}px, 0 )`,
+                }}
+              >
+                <div className="redheadTT_spritesheet pixel-art"></div>
+              </div>
+
+              <div
+                className="brunetteTT pixel-art"
+                style={{
+                  transform: `translate3d( ${1800}px, ${2760}px, 0 )`,
+                }}
+              >
+                <div className="brunetteTT_spritesheet pixel-art"></div>
+              </div>
+
+              <div
+                className="crazyGuyTT pixel-art"
+                style={{
+                  transform: `translate3d( ${4232}px, ${1738}px, 0 )`,
+                }}
+              >
+                <div className="crazyGuyTT_spritesheet pixel-art"></div>
+              </div>
+
+              <div
+                className="coinFlipperTT pixel-art"
+                style={{
+                  transform: `translate3d( ${5646}px, ${1688}px, 0 )`,
+                }}
+              >
+                <div className="coinFlipperTT_spritesheet pixel-art"></div>
+              </div>
+
+              <div
+                className="blackSmithTT pixel-art"
+                style={{
+                  transform: `translate3d( ${2976}px, ${1604}px, 0 )`,
+                }}
+              >
+                <div className="blackSmithTT_spritesheet pixel-art"></div>
+              </div>
+
+              <div
+                className="guard1TT pixel-art"
+                style={{
+                  transform: `translate3d( ${3910}px, ${3408}px, 0 )`,
+                }}
+              >
+                <div className="guard1TT_spritesheet pixel-art"></div>
+              </div>
+
+              <div
+                className="guard1TT pixel-art"
+                style={{
+                  transform: `translate3d( ${2770}px, ${3408}px, 0 )`,
+                }}
+              >
+                <div className="guard1TT_spritesheet pixel-art"></div>
+              </div>
+
+              <div
+                className="guard1TT pixel-art"
+                style={{
+                  transform: `translate3d( ${4035}px, ${2390}px, 0 )`,
+                }}
+              >
+                <div className="guard1TT_spritesheet pixel-art"></div>
+              </div>
+
+              <div
+                className="guard1TT pixel-art"
+                style={{
+                  transform: `translate3d( ${2650}px, ${2390}px, 0 )`,
+                }}
+              >
+                <div className="guard1TT_spritesheet pixel-art"></div>
+              </div>
+
+              <div
+                className="roofGuardTT pixel-art"
+                style={{
+                  transform: `translate3d( ${3242}px, ${2636}px, 0 )`,
+                }}
+              >
+                <div className="roofGuardTT_spritesheet pixel-art"></div>
+              </div>
+
+              <div
+                className="redDoor1TT pixel-art"
+                style={{
+                  transform: `translate3d( ${2112}px, ${5472}px, 0 )`,
+                }}
+              >
+                {doorToggle1 === true ? (
+                  <div className="redDoor1TT_spritesheet pixel-art"></div>
+                ) : null}
+              </div>
+
+              <div
+                className="demon pixel-art"
+                style={{
+                  transform: `translate3d( ${150 - xdemonTransformVar}px, ${
+                    272 - ydemonTransformVar
+                  }px, 0 )`,
+                }}
+              >
+                <div className="demon_spritesheet pixel-art"></div>
+              </div>
             </div>
-
-
-               <div
-              className="guard1TT pixel-art"
-              style={{
-                transform: `translate3d( ${2650}px, ${2390}px, 0 )`,
-              }}
-            >
-              <div className="guard1TT_spritesheet pixel-art"></div>
-            </div>
-
-
-            <div
-              className="roofGuardTT pixel-art"
-              style={{
-                transform: `translate3d( ${3242}px, ${2636}px, 0 )`,
-              }}
-            >
-              <div className="roofGuardTT_spritesheet pixel-art"></div>
-            </div>
-
-
-            <div
-              className="redDoor1TT pixel-art"
-              style={{
-                transform: `translate3d( ${2112}px, ${5472}px, 0 )`,
-              }}
-            >
-              {doorToggle1 === true ? (
-                <div className="redDoor1TT_spritesheet pixel-art"></div>
-              ) : (
-                null
-              )}
-            </div>
-            
-            
-
-
-            <div
-              className="demon pixel-art"
-              style={{
-                transform: `translate3d( ${150 - xdemonTransformVar}px, ${
-                  272 - ydemonTransformVar
-                }px, 0 )`,
-              }}
-            >
-              <div className="demon_spritesheet pixel-art"></div>
-            </div>
-
-
           </div>
+          {textValue ? (
+            <dialog
+              id="dialogStyle"
+              className={`${npcFace} textBox typewriter`}
+              open
+            >
+              <p>{textValue}</p>
+            </dialog>
+          ) : null}
         </div>
-        {textValue ? (
-          <dialog
-            id="dialogStyle"
-            className={`${npcFace} textBox typewriter`}
-            open
-          >
-            <p>{textValue}</p>
-          </dialog>
-        ) : null}
       </div>
     </div>
   );
