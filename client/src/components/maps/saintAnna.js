@@ -19,6 +19,9 @@ const SaintAnna = (props) => {
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-1172);
   //
+   const [xwaterTransformVar, setXWaterTransformVar] = useState(0);
+   //this sets the y Cordinate to transform the map and character location
+   const [ywaterTransformVar, setYwaterTransformVar] = useState(0);
 
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
@@ -1368,7 +1371,7 @@ const SaintAnna = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="punk camera fade-in">
+      <div className="camera punk fade-in">
         <div>
           <div
             className="mapSA pixel-art"
@@ -1433,6 +1436,18 @@ const SaintAnna = (props) => {
               }}
             >
               <div className="dockguy1SA_spritesheet pixel-art"></div>
+            </div>
+
+
+            <div
+              className="waterSA pixel-art"
+              style={{
+                transform: `translate3d( ${100 - xwaterTransformVar}px, ${
+                  0 - ywaterTransformVar
+                }px, 0 )`,
+              }}
+            >
+              <div className="waterSA_spritesheet pixel-art"></div>
             </div>
 
 
