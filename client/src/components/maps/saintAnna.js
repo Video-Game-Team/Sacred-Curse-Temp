@@ -1368,7 +1368,7 @@ const SaintAnna = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="camera fade-in">
+      <div className="punk camera fade-in">
         <div>
           <div
             className="mapSA pixel-art"

@@ -5,6 +5,14 @@
 
  }
 
+ .punk {
+  /* filter: brightness(20%);  */
+  /* filter: grayscale(100%); */
+
+  filter: hue-rotate(180deg);
+  /* filter: saturate(150%);   */
+}
+
  @media(min-width: 700px) {
      :root {
          --pixel-size: 3px;

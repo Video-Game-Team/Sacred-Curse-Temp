@@ -49,6 +49,7 @@ const Tortous = (props) => {
   // Sprtiesheet Toggle1 state
   const [toggle1, setToggle1] = useState(false);
   const [doorToggle1, setdoorToggle1] = useState(false);
+  const [hue, setHue] = useState(0)
 
   //Demon Toggle state
   const [demonToggle1, demonSetToggle1] = useState(false);
@@ -2414,6 +2415,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 90 && xPlayerIndex.current === 47) ||
             (yPlayerIndex.current === 91 && xPlayerIndex.current === 47)
           ) {
+            setHue(180)
             clickAudio3();
             setTextValue('Hooray!!!!!!');
             setXdemonTransformVar(-2844);
@@ -2671,13 +2673,11 @@ const Tortous = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="camera fade-in">
+      <div className="camera fade-in" style={{filter: `hue-rotate(${hue}deg)`}}>
         <div>
           <div
             className="mapT pixel-art"
-            style={{
-              transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`,
-            }}
+            style={{transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`,}}
           >
             {gridArray}
             <div
@@ -2690,11 +2690,10 @@ const Tortous = (props) => {
                 }px, 0 )`,
               }}
             >
-              {toggle1 === false ? (
-                <div className="character_spritesheet pixel-art"></div>
-              ) : (
-                <div className="character_spritesheet2 pixel-art"></div>
-              )}
+              {toggle1 === false ? 
+              (<div className="character_spritesheet pixel-art"></div>) : 
+              (<div className="character_spritesheet2 pixel-art"></div>)
+              }
             </div>
 
             <div
@@ -2825,7 +2824,7 @@ const Tortous = (props) => {
             
 
 
-            {/* <div
+            <div
               className="demon pixel-art"
               style={{
                 transform: `translate3d( ${150 - xdemonTransformVar}px, ${
@@ -2834,7 +2833,7 @@ const Tortous = (props) => {
               }}
             >
               <div className="demon_spritesheet pixel-art"></div>
-            </div> */}
+            </div>
 
 
           </div>
