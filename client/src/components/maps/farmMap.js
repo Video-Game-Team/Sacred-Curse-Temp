@@ -1030,7 +1030,7 @@ const FarmMap = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className= "fade-in">
+      <div className= "camera fade-in">
         {/* <button style={{height: "1000px", }} onClick={()=>{console.log("Mike is a poker king")}}>Hi</button> */}
 
         <div>

@@ -183,12 +183,13 @@ body {
 
 
      .dogFM {
+       z-index: -1;
        width: calc(var(--grid-cell) * 2.5);
        height: calc(var(--grid-cell) * 2);
        overflow: hidden;
        position: relative;
        animation-name: square;
-       animation: square 18s linear infinite;
+       animation: square 17s linear infinite;
      }
   
      .dogFM_spritesheet {
