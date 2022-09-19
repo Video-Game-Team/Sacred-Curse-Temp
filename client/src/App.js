@@ -81,6 +81,20 @@ function App() {
   const [contrast, setContrast] = useState(120);
   const [invert, setInvert] = useState([0]);
 
+
+  // CapsLock check logic
+  const [isCapsLockOn, setIsCapsLockOn] = useState(false);
+
+    // This function is triggered on the keyup event
+  const checkCapsLock = (event) => {
+      if (event.getModifierState('CapsLock')) {
+        setIsCapsLockOn(true);
+      } else {
+        setIsCapsLockOn(false);
+      }
+    };
+    
+
   // console.log("CURRENTMAP", current, "PREVIOUSMAP", previous)
 
   const mapsObj = {

@@ -2419,6 +2419,7 @@ const Tortous = (props) => {
   useEffect(() => {
     const dialogueAction = (event) => {
       if (event.key === 'g') {
+        
         //Facing up
         if (facing.current === 'left') {
           if (
