@@ -476,25 +476,30 @@ function App() {
                     ) : null}
                   </body>
                   <h1 className="box1">
-                    <text className="pokeText" style={{ marginLeft: '50px' }}>
+                    <text className="pokeText" style={{ marginLeft: '90px' }}>
                       FLOWERS
                     </text>
                   </h1>
                   <div className="box2">
-                    <text className="pokeText" style={{ marginLeft: '35px' }}>
-                      EQUIPMENT
-                    </text>
-                  </div>
-                  <div className="box3">
-                    <text className="pokeText" style={{ marginLeft: '80px' }}>
+                    <text className="pokeText" style={{ marginLeft: '105px' }}>
                       ITEMS
                     </text>
                   </div>
-                  <div className="box4">
-                    <text className="pokeText" style={{ marginLeft: '105px' }}>
-                      MAP
+                  <div className="box3">
+                    <text className="pokeText" style={{ marginLeft: '110px' }}>
+                      MAPS
                     </text>
                   </div>
+                  {/* <div className="box4">
+                    <text className="pokeText" style={{ marginLeft: '125px' }}>
+                      MAP
+                    </text>
+                  </div> */}
+                  {/* <div className="box5">
+                    <text className="pokeText" style={{ marginLeft: '585px' }}>
+                      CONTROLS
+                    </text>
+                  </div> */}
                 </div>
               </div>
             </div>

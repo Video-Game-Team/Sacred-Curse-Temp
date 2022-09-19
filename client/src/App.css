@@ -140,12 +140,13 @@ p {
 }
 
 .pokeText {
+  z-index: 1;
   display: flex;
   justify-content: center;
   font-family: Pokemon-Classic;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-weight: bold;
-  font-size: 22px;
+  font-size: 11px;
 }
 
 /* .typewriter p {
@@ -245,11 +246,11 @@ p {
    display: flex;
    position: absolute;
    top: 0px;
-   left: 1249px;
-   width: 280px;
-   height: 200px;
+   left: 1257px;
+   width: 275px;
+   height: 213px;
    padding: 10px;
-   border: 10px solid rgb(0, 209, 31);
+  border: 4px solid rgb(0, 4, 255);
    border-radius: 10px;
    margin: 0;
    background: rgb(9, 9, 9);
@@ -258,7 +259,7 @@ p {
   .box1:before {
    display: flex;
    background: none;
-   border: 4px solid rgb(251, 250, 255);
+   border: 2px solid rgb(0, 0, 0);
    content: "";
    display: block;
    position: absolute;
@@ -269,15 +270,22 @@ p {
    pointer-events: none;
  }
 
+ .box1::before {
+   content: '';
+   display: block;
+   background: rgba(255, 255, 255, 0.2);
+   background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
+ }
+
  .box2 {
    display: flex;
    position: absolute;
    top: 248px;
-   left: 1249px;
-   width: 280px;
-   height: 200px;
+  left: 1257px;
+    width: 275px;
+      height: 213px;
    padding: 10px;
-   border: 10px solid rgb(255, 217, 0);
+  border: 4px solid rgb(0, 4, 255);
    border-radius: 10px;
    margin: 0;
    background: rgb(9, 9, 9);
@@ -285,7 +293,7 @@ p {
   .box2:before {
    display: flex;
    background: none;
-   border: 4px solid rgb(251, 250, 255);
+   border: 2px solid rgb(0, 0, 0);
    content: "";
    display: block;
    position: absolute;
@@ -296,15 +304,22 @@ p {
    pointer-events: none;
  }
 
+ .box2::before {
+   content: '';
+   display: block;
+   background: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
+ }
+
  .box3 {
    display: flex;
    position: absolute;
    top: 496px;
-   left: 1249px;
-   width: 280px;
-   height: 200px;
+  left: 1257px;
+    width: 275px;
+      height: 213px;
    padding: 10px;
-   border: 10px solid rgb(255, 0, 0);
+border: 4px solid rgb(0, 4, 255);
    border-radius: 10px;
    margin: 0;
    background: rgb(9, 9, 9);
@@ -313,7 +328,7 @@ p {
  .box3:before {
    display: flex;
    background: none;
-   border: 4px solid rgb(251, 250, 255);
+  border: 2px solid rgb(0, 0, 0);
    content: "";
    display: block;
    position: absolute;
@@ -324,15 +339,22 @@ p {
    pointer-events: none;
  }
 
+ .box3::before {
+   content: '';
+   display: block;
+   background: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
+ }
+
     .box4 {
       display: flex;
       position: absolute;
       top: 0px;
-      left: -330px;
-      width: 280px;
-      height: 698px;
+      left: -326px;
+      width: 287px;
+      height: 708px;
       padding: 10px;
-      border: 10px solid rgb(0, 17, 255);
+    border: 4px solid rgb(2, 6, 255);
       border-radius: 10px;
       margin: 0;
       background: rgb(9, 9, 9);
@@ -341,14 +363,58 @@ p {
     .box4:before {
       display: flex;
       background: none;
-      border: 4px solid rgb(251, 250, 255);
+      border: 2px solid rgb(0, 0, 0);
       content: "";
       display: block;
       position: absolute;
-      top: 2px;
+      top: 0px;
       left: 2px;
       right: 2px;
       bottom: 2px;
       pointer-events: none;
     }
 
+
+    .box4::before {
+    content: '';
+    display: block; 
+    background: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
+    }
+
+
+     .box5 {
+      display: flex;
+      position: absolute;
+      top: 740px;
+      left: -2px;
+      width: 1217px;
+      height: 72px;
+      padding: 10px;
+      border: 4px solid rgb(2, 6, 255);
+      border-radius: 10px;
+      margin: 0;
+      background: rgb(9, 9, 9);
+    }
+
+     .box5:before {
+      display: flex;
+      background: none;
+      border: 2px solid rgb(0, 0, 0);
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      pointer-events: none;
+    }
+
+
+    .box5::before {
+    content: '';
+    display: block; 
+    background: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
+    }
