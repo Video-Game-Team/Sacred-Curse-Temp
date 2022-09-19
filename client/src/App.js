@@ -476,22 +476,22 @@ function App() {
                     ) : null}
                   </body>
                   <h1 className="box1">
-                    <text className="pokeText" style={{}}>
+                    <text className="pokeText" style={{ marginLeft: '50px' }}>
                       FLOWERS
                     </text>
                   </h1>
                   <div className="box2">
-                    <text className="pokeText" style={{}}>
+                    <text className="pokeText" style={{ marginLeft: '35px' }}>
                       EQUIPMENT
                     </text>
                   </div>
                   <div className="box3">
-                    <text className="pokeText" style={{}}>
+                    <text className="pokeText" style={{ marginLeft: '80px' }}>
                       ITEMS
                     </text>
                   </div>
                   <div className="box4">
-                    <text className="pokeText" style={{}}>
+                    <text className="pokeText" style={{ marginLeft: '105px' }}>
                       MAP
                     </text>
                   </div>
