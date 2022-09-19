@@ -494,8 +494,8 @@ function App() {
                     <text className="pokeText" style={{ marginLeft: '125px' }}>
                       MAP
                     </text>
-                  </div> */}
-                  {/* <div className="box5">
+                  </div> 
+                  <div className="box5">
                     <text className="pokeText" style={{ marginLeft: '585px' }}>
                       CONTROLS
                     </text>
