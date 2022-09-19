@@ -57,6 +57,9 @@ function App() {
   // const character =  testRef.current.querySelector('characterUp');
   const [itemObj, setItemObj] = useState({});
 
+  const [menu1Toggle, setMenu1Toggle] = useState(false);
+  const [menu2Toggle, setMenu2Toggle] = useState(false);
+
   //delete Later
   const [demonTeam, setDemonTeam] = useState([
     DemonObjects.Player,
@@ -449,6 +452,7 @@ function App() {
   }, [previous]);
 
   function tracker(x, y) {
+    m;
     setCurrent(x);
     setPrevious(y);
   }
@@ -456,6 +460,33 @@ function App() {
   function addItem(x) {
     setItemObj((itemObj.poop = x));
   }
+
+  //menu 1 toggle
+  useEffect(() => {
+    const menu1 = (event) => {
+      if (event.key === 'm') {
+        setMenu1Toggle(!menu1Toggle);
+      }
+    };
+    window.addEventListener('keydown', menu1);
+    return () => {
+      window.removeEventListener('keydown', menu1);
+    };
+  }, [menu1Toggle]);
+
+  // menu 2 toggle
+  useEffect(() => {
+    const menu2 = (event) => {
+      if (event.key === 'i') {
+        setMenu2Toggle(!menu2Toggle);
+      }
+    };
+    window.addEventListener('keydown', menu2);
+    return () => {
+      window.removeEventListener('keydown', menu2);
+    };
+  }, [menu2Toggle]);
+
 
   // whole map is a button - giving that button onkeyppress listener called wrap
   return (
@@ -475,31 +506,66 @@ function App() {
                       </dialog>
                     ) : null}
                   </body>
-                  <h1 className="box1">
-                    <text className="pokeText" style={{ marginLeft: '90px' }}>
-                      FLOWERS
-                    </text>
-                  </h1>
-                  <div className="box2">
-                    <text className="pokeText" style={{ marginLeft: '105px' }}>
-                      ITEMS
-                    </text>
-                  </div>
-                  <div className="box3">
-                    <text className="pokeText" style={{ marginLeft: '110px' }}>
-                      MAPS
-                    </text>
-                  </div>
-                  {/* <div className="box4">
-                    <text className="pokeText" style={{ marginLeft: '125px' }}>
-                      MAP
-                    </text>
-                  </div> 
-                  <div className="box5">
-                    <text className="pokeText" style={{ marginLeft: '585px' }}>
-                      CONTROLS
-                    </text>
-                  </div> */}
+
+                  {menu2Toggle === true ? (
+                    <div className="box1">
+                      <text className="pokeText" style={{ marginLeft: '90px' }}>
+                        FLOWERS
+                      </text>
+                    </div>
+                  ) : null}
+
+                  {menu2Toggle === true ? (
+                    <div className="box2">
+                      <text
+                        className="pokeText"
+                        style={{ marginLeft: '105px' }}
+                      >
+                        ITEMS
+                      </text>
+                    </div>
+                  ) : null}
+
+                  {menu2Toggle === true ? (
+                    <div className="box3">
+                      <text className="pokeText" style={{ marginLeft: '82px' }}>
+                        EQUIPMENT
+                      </text>
+                    </div>
+                  ) : null}
+
+                  {menu1Toggle === true ? (
+                    <div className="box4">
+                      <text
+                        className="pokeText"
+                        style={{ marginLeft: '125px' }}
+                      >
+                        MAP
+                      </text>
+                    </div>
+                  ) : null}
+
+                  {menu1Toggle === true ? (
+                    <div className="box5">
+                      <text
+                        className="pokeText"
+                        style={{ marginLeft: '585px' }}
+                      >
+                        CONTROLS
+                      </text>
+                    </div>
+                  ) : null}
+
+                  {menu1Toggle === true ? (
+                    <div className="box6">
+                      <text
+                        className="pokeText"
+                        style={{ marginLeft: '585px' }}
+                      >
+                        MENU
+                      </text>
+                    </div>
+                  ) : null}
                 </div>
               </div>
             </div>

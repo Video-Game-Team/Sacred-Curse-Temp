@@ -99,7 +99,6 @@
 
 
   .demon {
-    z-index: -1;
       width: calc(var(--grid-cell)* 2);
       height: calc(var(--grid-cell)* 2);
       overflow: hidden;
@@ -115,7 +114,6 @@
 
 
 .sweeperGuyTT {
-    z-index: -1;
       position: absolute;
         width: calc(var(--grid-cell)* 2.5);
         height: calc(var(--grid-cell)* 2.5);
@@ -145,7 +143,6 @@
 
 
 .brideTT {
-    z-index: -1;
     position: absolute;
     width: calc(var(--grid-cell)* 2.5);
     height: calc(var(--grid-cell)* 2.5);
@@ -176,7 +173,6 @@
 
 
 .redheadTT {
-    z-index: -1;
     position: absolute;
     width: calc(var(--grid-cell)* 2);
     height: calc(var(--grid-cell)* 3);
@@ -206,7 +202,6 @@
 
 
 .brunetteTT {
-    z-index: -1;
     position: absolute;
     width: calc(var(--grid-cell)* 2);
     height: calc(var(--grid-cell)* 3);
@@ -226,7 +221,7 @@
 
 
 .faceBrunetteTT {
-    background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+    background: url("./assets/images/Indoor House 3 girl 1 face.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;
@@ -237,7 +232,6 @@
 
 
 .crazyGuyTT {
-    z-index: -1;
     position: absolute;
     width: calc(var(--grid-cell)* 2);
     height: calc(var(--grid-cell)* 3);
@@ -268,7 +262,6 @@
 
 
 .coinFlipperTT {
-    z-index: -1;
     position: absolute;
     width: calc(var(--grid-cell)* 2);
     height: calc(var(--grid-cell)* 3);
@@ -298,7 +291,6 @@
 
 
 .blackSmithTT {
-    z-index: -1;
     position: absolute;
     width: calc(var(--grid-cell)* 2);
     height: calc(var(--grid-cell)* 3);
@@ -328,7 +320,6 @@
 
 
 .guard1TT {
-    z-index: -1;
     position: absolute;
     width: calc(var(--grid-cell)* 2);
     height: calc(var(--grid-cell)* 3);
@@ -348,7 +339,6 @@
 
 
 .faceGuard1TT {
-    z-index: -1;
     background: url("./assets/images/Tortous guard 1 face.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
@@ -383,17 +373,3 @@
 } 
 
 
-.redDoor1TT {
-    z-index: -1;
-     position: absolute;
-     width: calc(var(--grid-cell)* 24);
-     height: calc(var(--grid-cell)* 24);
-     overflow: hidden;
- }
-
- .redDoor1TT_spritesheet {
-     background: url("./assets/images/Tortous red house door 1.gif") no-repeat no-repeat;
-     background-size: 50%;
-     width: calc(var(--grid-cell)* 2.7);
-     height: calc(var(--grid-cell)* 4.2);
- }

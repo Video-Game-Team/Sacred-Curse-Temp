@@ -2001,7 +2001,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 47 && xPlayerIndex.current === 28) ||
             (yPlayerIndex.current === 47 && xPlayerIndex.current === 27)
           ) {
-           setNpcFace('faceGuard1TT');
+          setNpcFace('faceBrunetteTT');
            setTextValue('My dad is mad at me');
            clickAudio2();
           }
@@ -2164,7 +2164,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 47 && xPlayerIndex.current === 30) ||
             (yPlayerIndex.current === 46 && xPlayerIndex.current === 30)
           ) {
-            setNpcFace('faceGuard1TT');
+            setNpcFace('faceBrunetteTT');
             setTextValue('My dad is mad at me');
             clickAudio2();
           }
@@ -2258,7 +2258,7 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 46 && xPlayerIndex.current === 27) ||
             (yPlayerIndex.current === 45 && xPlayerIndex.current === 27)
           ) {
-            setNpcFace('faceGuard1TT');
+            setNpcFace('faceBrunetteTT');
              setTextValue('My dad is mad at me');
              clickAudio2();
           }
@@ -2701,6 +2701,8 @@ const Tortous = (props) => {
             <div style={{ filter: `sepia(${sepia}%)` }}>
               <div style={{ filter: `contrast(${contrast}%)` }}>
                 <div style={{ filter: `invert(${invert}%)` }}>
+
+
                   <div className="camera fade-in">
                     <div>
                       <div
