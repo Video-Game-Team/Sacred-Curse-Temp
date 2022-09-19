@@ -4,12 +4,6 @@
   --bg: #070000;
 }
 
- .gameHue {
-   /* filter: brightness(100%);  */
-   /* filter: grayscale(100%); */
-   filter: saturate(200%);
- }
-
 @media(min-width: 700px) {
   :root {
       --pixel-size: 3px;
@@ -141,6 +135,15 @@ p {
   font-size: 25px;
 }
 
+.pokeText {
+  display: flex;
+  justify-content: center;
+  font-family: Pokemon-Classic;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 22px;
+}
+
 /* .typewriter p {
   overflow: hidden;
   white-space: normal;
@@ -232,3 +235,108 @@ p {
   background: rgb(173, 173, 173);
   background: linear-gradient(0deg, rgba(173, 173, 173, 1) 0%, rgba(212, 218, 217, 1) 55%);
 }
+
+
+ .box1 {
+   position: absolute;
+   top: 0px;
+   left: 1249px;
+   width: 280px;
+   height: 200px;
+   padding: 10px;
+   border: 10px solid rgb(0, 209, 31);
+   border-radius: 10px;
+   margin: 0;
+   background: rgb(9, 9, 9);
+ }
+
+  .box1:before {
+   background: none;
+   border: 4px solid rgb(251, 250, 255);
+   content: "";
+   display: block;
+   position: absolute;
+   top: 2px;
+   left: 2px;
+   right: 2px;
+   bottom: 2px;
+   pointer-events: none;
+ }
+
+ .box2 {
+   position: absolute;
+   top: 248px;
+  left: 1249px;
+   width: 280px;
+   height: 200px;
+   padding: 10px;
+   border: 10px solid rgb(255, 217, 0);
+   border-radius: 10px;
+   margin: 0;
+   background: rgb(9, 9, 9);
+ }
+  .box2:before {
+   background: none;
+   border: 4px solid rgb(251, 250, 255);
+   content: "";
+   display: block;
+   position: absolute;
+    top: 2px;
+   left: 2px;
+   right: 2px;
+   bottom: 2px;
+   pointer-events: none;
+ }
+
+ .box3 {
+   position: absolute;
+   top: 496px;
+  left: 1249px;
+   width: 280px;
+   height: 200px;
+   padding: 10px;
+   border: 10px solid rgb(255, 0, 0);
+   border-radius: 10px;
+   margin: 0;
+   background: rgb(9, 9, 9);
+ }
+
+ .box3:before {
+   background: none;
+   border: 4px solid rgb(251, 250, 255);
+   content: "";
+   display: block;
+   position: absolute;
+   top: 2px;
+   left: 2px;
+   right: 2px;
+   bottom: 2px;
+   pointer-events: none;
+ }
+
+    .box4 {
+      position: absolute;
+      top: 0px;
+      left: -330px;
+      width: 280px;
+      height: 698px;
+      padding: 10px;
+      border: 10px solid rgb(0, 17, 255);
+      border-radius: 10px;
+      margin: 0;
+      background: rgb(9, 9, 9);
+    }
+  
+    .box4:before {
+      background: none;
+      border: 4px solid rgb(251, 250, 255);
+      content: "";
+      display: block;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      pointer-events: none;
+    }
+

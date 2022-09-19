@@ -10,6 +10,8 @@ import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
 import click1 from '../../audioclips/click1.mp3';
 import text from '../../audioclips/Text.mp3';
 import SnowMan from '../../audioclips/Snowman.mp3';
+import Shadows from '../../audioclips/IN THE SHADOWS VOX.mp3';
+import Heavens from '../../audioclips/The HEavens Vox.mp3';
 import River1 from '../../audioclips/river4.mp3';
 import River2 from '../../audioclips/river2.mp3';
 
@@ -48,6 +50,8 @@ const CrystalCaverns = (props) => {
 
   //Music Playing
   const clickAudio1 = () => new Audio(SnowMan).play();
+  const clickAudio4 = () => new Audio(Heavens).play();
+  const clickAudio5 = () => new Audio(Shadows).play();
 
   //River Sounds
   const clickAudio3 = () => new Audio(River1).play();
@@ -59,6 +63,7 @@ const CrystalCaverns = (props) => {
   useEffect(() => {
     {
       clickAudio3();
+      clickAudio1();
     }
   }, []);
 
@@ -1038,53 +1043,47 @@ const CrystalCaverns = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-       <div className="gameHue">
-      <div className="camera fade-in">
-        <div>
-          <div
-            className="mapCC pixel-art"
-            style={{
-              transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`,
-            }}
-          >
-            {gridArray}
+        <div className="camera fade-in">
+          <div>
             <div
-              className="character pixel-art"
-              facing={facing.current}
-              walking={walker}
+              className="mapCC pixel-art"
               style={{
-                transform: `translate3d( ${600 - xTransformVar}px, ${
-                  272 - yTransformVar
-                }px, 0 )`,
+                transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`,
               }}
             >
-              <div className="character_spritesheet pixel-art"></div>
+              {gridArray}
+              <div
+                className="character pixel-art"
+                facing={facing.current}
+                walking={walker}
+                style={{
+                  transform: `translate3d( ${600 - xTransformVar}px, ${
+                    272 - yTransformVar
+                  }px, 0 )`,
+                }}
+              >
+                <div className="character_spritesheet pixel-art"></div>
+              </div>
+
+              <div
+                className="water pixel-art'"
+                style={{
+                  transform: `translate3d( ${600 - xwaterTransformVar}px, ${
+                    0 - ywaterTransformVar
+                  }px, 0 )`,
+                }}
+              >
+                <div className="water_spritesheet pixel-art"></div>
+              </div>
             </div>
-
-
-            <div
-              className="water pixel-art"
-              style={{
-                transform: `translate3d( ${600 - xwaterTransformVar}px, ${
-                  0 - ywaterTransformVar
-                }px, 0 )`,
-              }}
-            >
-              <div className="water_spritesheet pixel-art"></div>
-            </div>
-
-
-          
           </div>
+          {textValue ? (
+            <dialog className="textBox typewriter" open>
+              <p>{textValue}</p>
+            </dialog>
+          ) : null}
         </div>
-        {textValue ? (
-          <dialog className="textBox typewriter" open>
-            <p>{textValue}</p>
-          </dialog>
-        ) : null}
-      </div>
     </div>
-     </div>
   );
 };
 

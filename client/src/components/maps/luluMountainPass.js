@@ -49,11 +49,11 @@ const LuluMountainPass = (props) => {
   const clickAudio2 = () => new Audio(text).play();
 
   //Starts off Music Loop
-  useEffect(() => {
-    {
-      clickAudio1();
-    }
-  }, []);
+  // useEffect(() => {
+  //   {
+  //     clickAudio1();
+  //   }
+  // }, []);
 
   // let currentMap2 = [
   //   [

@@ -65,11 +65,18 @@ function App() {
     DemonObjects.Zabuza,
     DemonObjects.Naruto,
   ]);
-  const [current, setCurrent] = useState('farmMap');
+  const [current, setCurrent] = useState('tortous');
   const [tempCurrent, setTempCurrent] = useState(null);
   const [previous, setPrevious] = useState(null);
   const [textValue, setTextValue] = useState(null);
   const [menu, setMenu] = useState(false);
+
+  const [saturate, setSaturate] = useState(120);
+  const [hue, setHue] = useState(0);
+  const [brightness, setBrightness] = useState(100);
+  const [sepia, setSepia] = useState(0);
+  const [contrast, setContrast] = useState(120);
+  const [invert, setInvert] = useState([0]);
 
   // console.log("CURRENTMAP", current, "PREVIOUSMAP", previous)
 
@@ -453,16 +460,66 @@ function App() {
   // whole map is a button - giving that button onkeyppress listener called wrap
   return (
     <div>
-      <body>
-        {mapsObj[current]}
-        {menu === true ? (
-          <dialog className="mainMenu" open>
-            <button>MAP</button>
-          </dialog>
-        ) : null}
-      </body>
+      <div style={{ filter: `saturate(${saturate}%)` }}>
+        <div style={{ filter: `hue-rotate(${hue}deg)` }}>
+          <div style={{ filter: `brightness(${brightness}%)` }}>
+            <div style={{ filter: `sepia(${sepia}%)` }}>
+              <div style={{ filter: `contrast(${contrast}%)` }}>
+                <div style={{ filter: `invert(${invert}%)` }}></div>
+                <div>
+                  <body>
+                    {mapsObj[current]}
+                    {menu === true ? (
+                      <dialog className="mainMenu" open>
+                        <button>MAP</button>
+                      </dialog>
+                    ) : null}
+                  </body>
+                  <h1 className="box1">
+                    <text className="pokeText" style={{}}>
+                      FLOWERS
+                    </text>
+                  </h1>
+                  <div className="box2">
+                    <text className="pokeText" style={{}}>
+                      EQUIPMENT
+                    </text>
+                  </div>
+                  <div className="box3">
+                    <text className="pokeText" style={{}}>
+                      ITEMS
+                    </text>
+                  </div>
+                  <div className="box4">
+                    <text className="pokeText" style={{}}>
+                      MAP
+                    </text>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
 
 export default App;
+
+
+
+
+// return (
+//     <div>
+//       <body>
+//         {mapsObj[current]}
+//         {menu === true ? (
+//           <dialog className="mainMenu" open>
+//             <button>MAP</button>
+//           </dialog>
+//         ) : null}
+//       </body>
+      
+//     </div>
+//   );

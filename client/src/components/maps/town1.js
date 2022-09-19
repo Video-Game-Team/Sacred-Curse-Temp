@@ -1393,7 +1393,10 @@ const TownMap1 = (props) => {
             (yPlayerIndex.current === 71 && xPlayerIndex.current === 27) ||
             (yPlayerIndex.current === 71 && xPlayerIndex.current === 45) ||
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 47) ||
-            (yPlayerIndex.current === 51 && xPlayerIndex.current === 28)
+            (yPlayerIndex.current === 51 && xPlayerIndex.current === 28) ||
+            (
+              yPlayerIndex.current === 24 && xPlayerIndex.current === 28
+            )
           ) {
             clickAudio2();
             setTextValue('This door is locked');
@@ -1416,8 +1419,7 @@ const TownMap1 = (props) => {
           if (
             (yPlayerIndex.current === 37 && xPlayerIndex.current === 35) ||
             (yPlayerIndex.current === 37 && xPlayerIndex.current === 36) ||
-            (yPlayerIndex.current === 37 && xPlayerIndex.current === 37) ||
-            (yPlayerIndex.current === 51 && xPlayerIndex.current === 28)
+            (yPlayerIndex.current === 37 && xPlayerIndex.current === 37) 
           ) {
             clickAudio2();
             setTextValue('Interesting statue. Hmmmm....I wonder...');
