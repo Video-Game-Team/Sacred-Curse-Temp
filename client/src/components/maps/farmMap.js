@@ -607,9 +607,9 @@ const FarmMap = (props) => {
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 21) ||
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 22)
           ) {
-             setNpcFace('facefarmer1FM');
-             setTextValue('Hi I am the main farmHand, Hank.');
-             clickAudio2();
+            setNpcFace('facefarmer1FM');
+            setTextValue('Hi I am the main farmHand, Hank.');
+            clickAudio2();
           }
           //YO Mama NPC
           if (
@@ -625,9 +625,9 @@ const FarmMap = (props) => {
             (yPlayerIndex.current === 34 && xPlayerIndex.current === 14) ||
             (yPlayerIndex.current === 34 && xPlayerIndex.current === 15)
           ) {
-             setNpcFace('faceGirlFM');
+            setNpcFace('faceGirlFM');
             setTextValue('How do you like my flowers? Pretty, huh?');
-             clickAudio2();
+            clickAudio2();
           }
         }
 
@@ -638,7 +638,7 @@ const FarmMap = (props) => {
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 23)
           ) {
             setNpcFace('facefarmer1FM');
-             setTextValue('Hi I am the main farmHand, Hank.');
+            setTextValue('Hi I am the main farmHand, Hank.');
             clickAudio2();
           }
           //YO Mama NPC
@@ -646,18 +646,18 @@ const FarmMap = (props) => {
             (yPlayerIndex.current === 27 && xPlayerIndex.current === 23) ||
             (yPlayerIndex.current === 28 && xPlayerIndex.current === 23)
           ) {
-             setNpcFace('facefarmer1FM');
-             setTextValue('This place is a mess!');
-             clickAudio2();
+            setNpcFace('facefarmer1FM');
+            setTextValue('This place is a mess!');
+            clickAudio2();
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 16) ||
             (yPlayerIndex.current === 36 && xPlayerIndex.current === 16)
           ) {
-             setNpcFace('faceGirlFM');
-             setTextValue('How do you like my flowers? Pretty, huh?');
-             clickAudio2();
+            setNpcFace('faceGirlFM');
+            setTextValue('How do you like my flowers? Pretty, huh?');
+            clickAudio2();
           }
         }
 
@@ -668,7 +668,7 @@ const FarmMap = (props) => {
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 20)
           ) {
             setNpcFace('facefarmer1FM');
-             setTextValue('Hi I am the main farmHand, Hank.');
+            setTextValue('Hi I am the main farmHand, Hank.');
             clickAudio2();
           }
           //YO Mama NPC
@@ -685,9 +685,9 @@ const FarmMap = (props) => {
             (yPlayerIndex.current === 35 && xPlayerIndex.current === 13) ||
             (yPlayerIndex.current === 36 && xPlayerIndex.current === 13)
           ) {
-             setNpcFace('faceGirlFM'); 
+            setNpcFace('faceGirlFM');
             setTextValue('How do you like my flowers? Pretty, huh?');
-             clickAudio2();
+            clickAudio2();
           }
         }
       }
@@ -716,8 +716,6 @@ const FarmMap = (props) => {
       window.removeEventListener('keydown', dialogueAction);
     };
   }, []);
-
-
 
   useEffect(() => {
     window.addEventListener('keydown', (e) => {
@@ -836,15 +834,15 @@ const FarmMap = (props) => {
           }
         }
 
-          if (facing.current === 'left') {
-            if (
-              (yPlayerIndex.current === 12 && xPlayerIndex.current === 28) ||
-              (yPlayerIndex.current === 13 && xPlayerIndex.current === 28)
-            ) {
-              clickAudio2();
-              setTextValue(`Welcome to the Funny Farm`);
-            }
+        if (facing.current === 'left') {
+          if (
+            (yPlayerIndex.current === 12 && xPlayerIndex.current === 28) ||
+            (yPlayerIndex.current === 13 && xPlayerIndex.current === 28)
+          ) {
+            clickAudio2();
+            setTextValue(`Welcome to the Funny Farm`);
           }
+        }
       }
     };
     window.addEventListener('keydown', dialogueAction);
@@ -1005,7 +1003,7 @@ const FarmMap = (props) => {
     requestRef.current = requestAnimationFrame(animate);
   };
 
-  // Matt Birnholtz is going to go bald
+ 
   //every time the current key changes this runs
   useEffect(() => {
     if (dirArr.current[0]) {
@@ -1032,7 +1030,7 @@ const FarmMap = (props) => {
   //map and character share the varaibles since they move together
   return (
     <div>
-      <div className="camera fade-in">
+      <div className= "fade-in">
         {/* <button style={{height: "1000px", }} onClick={()=>{console.log("Mike is a poker king")}}>Hi</button> */}
 
         <div>
@@ -1082,6 +1080,17 @@ const FarmMap = (props) => {
             >
               <div className="girlFM_spritesheet pixel-art"></div>
             </div>
+
+            <div
+              className="dogFM pixel-art"
+              style={{
+                transform: `translate3d( ${1900}px, ${500}px, 0 )`,
+              }}
+            >
+              <div className="dogFM_spritesheet pixel-art"></div>
+            </div>
+
+            
           </div>
         </div>
         {textValue ? (

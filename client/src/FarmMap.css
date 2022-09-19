@@ -174,10 +174,58 @@ body {
       animation: walkAnimationFarmer 2.0s steps(3) infinite;
      }
   
-  
      .faceGirlFM {
        background: url("./assets/images/Indoor House 8 girl face.png") no-repeat no-repeat;
        background-position: left top;
        background-size: 12%;
        background-size: content-box;
      }
+
+
+     .dogFM {
+       width: calc(var(--grid-cell) * 2.5);
+       height: calc(var(--grid-cell) * 2);
+       overflow: hidden;
+       position: relative;
+       animation-name: square;
+       animation: square 18s linear infinite;
+     }
+  
+     .dogFM_spritesheet {
+       position: absolute;
+       background: url("./assets/images/Dog 2 walk.png") no-repeat no-repeat;
+       background-size: 100%;
+       width: calc(var(--grid-cell) * 96);
+       height: calc(var(--grid-cell)* 2);
+       background-position-y: calc(var(--pixel-size) * -0);
+       background-position-x: calc(var(--pixel-size) * -0 );
+       
+     }
+  
+     .dogFM .dogFM_spritesheet {
+      animation: walkAnimationFarmer 11s steps(48) infinite; 
+     }
+  
+
+@keyframes square {
+  0%
+  {
+    margin-left: 0px; margin-top: 0px;
+  }
+  25%
+  {
+    margin-left: 200px; margin-top: 0px;
+  }
+  50%
+  {
+    margin-left: 200px; margin-top: 200px;
+  }
+  75%
+  {
+    margin-top: 200px; margin-left: 0px;
+  }
+  100%
+  {
+    margin-left: 0px; margin-top: 0px;
+  }
+}
