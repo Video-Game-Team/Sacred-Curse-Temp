@@ -187,7 +187,7 @@ body {
        width: calc(var(--grid-cell) * 2.5);
        height: calc(var(--grid-cell) * 2);
        overflow: hidden;
-       position: relative;
+       position: absolute;
        animation-name: square;
        animation: square 17s linear infinite;
      }

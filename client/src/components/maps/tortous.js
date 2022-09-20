@@ -2415,12 +2415,13 @@ const Tortous = (props) => {
     };
   }, []);
 
+
   //ITEM GRABBING LOGIC
   useEffect(() => {
     const dialogueAction = (event) => {
       if (event.key === 'g') {
         
-        //Facing up
+        //Facing ups
         if (facing.current === 'left') {
           if (
             (yPlayerIndex.current === 90 && xPlayerIndex.current === 47) ||
@@ -2702,8 +2703,6 @@ const Tortous = (props) => {
             <div style={{ filter: `sepia(${sepia}%)` }}>
               <div style={{ filter: `contrast(${contrast}%)` }}>
                 <div style={{ filter: `invert(${invert}%)` }}>
-
-
                   <div className="camera fade-in">
                     <div>
                       <div
@@ -2839,6 +2838,15 @@ const Tortous = (props) => {
                         </div>
 
                         <div
+                          className="dogTT pixel-art"
+                          style={{
+                            transform: `translate3d( ${3276}px, ${5500}px, 0 )`,
+                          }}
+                        >
+                          <div className="dogTT_spritesheet pixel-art"></div>
+                        </div>
+
+                        <div
                           className="demon pixel-art"
                           style={{
                             zIndex: -1,
@@ -2862,12 +2870,12 @@ const Tortous = (props) => {
                     ) : null}
                   </div>
                 </div>
-               </div>
-             </div>
+              </div>
+            </div>
           </div>
-         </div>
-       </div>
-     </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
