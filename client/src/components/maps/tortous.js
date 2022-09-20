@@ -21,6 +21,10 @@ const Tortous = (props) => {
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-5588);
   //
+  const [xdogTransformVar, setXdogTransformVar] = useState(-2866);
+    //this sets the y Cordinate to transform the map and character location
+  const [ydogTransformVar, setYdogTransformVar] = useState(-5088);
+
   const [xdemonTransformVar, setXdemonTransformVar] = useState(-2776);
   //this sets the y Cordinate to transform the map and character location
   const [ydemonTransformVar, setYdemonTransformVar] = useState(-5388);
@@ -2693,6 +2697,15 @@ const Tortous = (props) => {
     }
   }, [tick]);
 
+
+     console.log(
+       'DOG X COORD: ',
+       xdogTransformVar)
+      console.log(
+       'DOG Y COORD: ',
+       ydogTransformVar)
+
+
   //update the style for the mpa character by transforming it according the new x and y variables
   //map and character share the varaibles since they move together
   return (
@@ -2837,14 +2850,14 @@ const Tortous = (props) => {
                           <div className="roofGuardTT_spritesheet pixel-art"></div>
                         </div>
 
-                        <div
+                        <span
                           className="dogTT pixel-art"
                           style={{
-                            transform: `translate3d( ${3276}px, ${5500}px, 0 )`,
+                            transform: `translate3d( ${600 - xdogTransformVar}px, ${272 - ydogTransformVar}px, 0 )`,
                           }}
                         >
                           <div className="dogTT_spritesheet pixel-art"></div>
-                        </div>
+                        </span>
 
                         <div
                           className="demon pixel-art"
