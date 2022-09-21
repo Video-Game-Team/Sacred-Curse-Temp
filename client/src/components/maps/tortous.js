@@ -22,12 +22,12 @@ const Tortous = (props) => {
   const [yTransformVar, setYTransformVar] = useState(-5588);
   //
   const [xdogTransformVar, setXdogTransformVar] = useState(-2866);
-    //this sets the y Cordinate to transform the map and character location
+  //this sets the y Cordinate to transform the map and character location
   const [ydogTransformVar, setYdogTransformVar] = useState(-5088);
 
-  const [xdemonTransformVar, setXdemonTransformVar] = useState(-2776);
+  const [xdemonTransformVar, setXdemonTransformVar] = useState(-2800);
   //this sets the y Cordinate to transform the map and character location
-  const [ydemonTransformVar, setYdemonTransformVar] = useState(-5388);
+  const [ydemonTransformVar, setYdemonTransformVar] = useState(-5488);
 
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
@@ -46,23 +46,29 @@ const Tortous = (props) => {
   const yBank = useRef(0);
   const yPlayerIndex = useRef(92);
   const xPlayerIndex = useRef(53);
+
+  const ydogIndex = useRef(90);
+  const xdogIndex = useRef(46);
+
+  const ydemonIndex = useRef(90);
+  const xdemonIndex = useRef(46);
+
   const [gridArray, setGridArray] = useState([]);
   const [textValue, setTextValue] = useState(null);
-  const ydemonIndex = useRef(91);
-  const xdemonIndex = useRef(46);
+
   const [npcFace, setNpcFace] = useState();
-  
+
   // Sprtiesheet Toggle1 state
   const [toggle1, setToggle1] = useState(false);
   const [doorToggle1, setdoorToggle1] = useState(false);
-  
+
   // Color Correction state
-  const [saturate, setSaturate] = useState(100)
-  const [hue, setHue] = useState(0)
-  const [brightness, setBrightness] = useState(100)
-  const [sepia, setSepia] = useState(0)
-  const [contrast, setContrast] = useState(100)
-  const [invert, setInvert] = useState([0])
+  const [saturate, setSaturate] = useState(100);
+  const [hue, setHue] = useState(0);
+  const [brightness, setBrightness] = useState(100);
+  const [sepia, setSepia] = useState(0);
+  const [contrast, setContrast] = useState(100);
+  const [invert, setInvert] = useState([0]);
 
   //Demon Toggle state
   const [demonToggle1, demonSetToggle1] = useState(false);
@@ -1729,6 +1735,7 @@ const Tortous = (props) => {
   // setGridArray(tempGrid)
   // },[])
 
+  //UseEffect for setting proper starting coords on different maps
   useEffect(() => {
     if (props.previousMap === 'trainTracksToTortous') {
       //setYCord
@@ -1853,7 +1860,7 @@ const Tortous = (props) => {
     }
   }, []);
 
-  // UseEffect Keeping track of player conditions
+  // UseEffect Keeping track of player and map conditions
   useEffect(() => {
     //yPlayerIndex up and down values
     // trains Map check conditions
@@ -1924,12 +1931,9 @@ const Tortous = (props) => {
     }
     // indoor house 2
     if (yPlayerIndex.current === 88 && xPlayerIndex.current === 33) {
-      
       props.active('indoorHouse2', 'tortous');
-     
     }
   }, [yPlayerIndex.current]);
-
 
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
@@ -1951,81 +1955,87 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 43) ||
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 44)
           ) {
-         setNpcFace('faceGuard1TT');
-         setTextValue('Just please go away. No one is safe if that lunatic goes off.');
-         clickAudio2();
+            setNpcFace('faceGuard1TT');
+            setTextValue(
+              'Just please go away. No one is safe if that lunatic goes off.'
+            );
+            clickAudio2();
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 61) ||
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 62)
           ) {
-           setNpcFace('faceGuard1TT');
-           setTextValue('At least the Sun Kings never force people to join. I am proud to serve my King.');
-           clickAudio2();
+            setNpcFace('faceGuard1TT');
+            setTextValue(
+              'At least the Sun Kings never force people to join. I am proud to serve my King.'
+            );
+            clickAudio2();
           }
           //Hot Girl
           if (
             (yPlayerIndex.current === 30 && xPlayerIndex.current === 88) ||
             (yPlayerIndex.current === 30 && xPlayerIndex.current === 89)
           ) {
-             setNpcFace('faceCoinFlipperTT');
-             setTextValue('My dad is mad at me');
-             clickAudio2();
+            setNpcFace('faceCoinFlipperTT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
           //Old Man
           if (
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 22) ||
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 23)
           ) {
-           setNpcFace('faceGuard1TT');
-           setTextValue('My dad is mad at me');
-           clickAudio2();
+            setNpcFace('faceGuard1TT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
 
           if (
             (yPlayerIndex.current === 88 && xPlayerIndex.current === 88) ||
             (yPlayerIndex.current === 88 && xPlayerIndex.current === 87)
           ) {
-           setNpcFace('facesweeperGuyTT');
-           setTextValue("Go away! If we don't keep the city clean, that monster in the station will do it again.");
-           clickAudio2();
+            setNpcFace('facesweeperGuyTT');
+            setTextValue(
+              "Go away! If we don't keep the city clean, that monster in the station will do it again."
+            );
+            clickAudio2();
           }
 
-            if (
+          if (
             (yPlayerIndex.current === 60 && xPlayerIndex.current === 66) ||
             (yPlayerIndex.current === 60 && xPlayerIndex.current === 65)
           ) {
-           setNpcFace('faceRedheadTT');
-           setTextValue('My dad is mad at me');
-           clickAudio2();
+            setNpcFace('faceRedheadTT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
 
-            if (
+          if (
             (yPlayerIndex.current === 47 && xPlayerIndex.current === 28) ||
             (yPlayerIndex.current === 47 && xPlayerIndex.current === 27)
           ) {
-          setNpcFace('faceBrunetteTT');
-           setTextValue('My dad is mad at me');
-           clickAudio2();
+            setNpcFace('faceBrunetteTT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
 
           if (
             (yPlayerIndex.current === 41 && xPlayerIndex.current === 41) ||
             (yPlayerIndex.current === 41 && xPlayerIndex.current === 42)
           ) {
-           setNpcFace('faceGuard1TT');
-           setTextValue('My dad is mad at me');
-           clickAudio2();
+            setNpcFace('faceGuard1TT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
 
-        if (
+          if (
             (yPlayerIndex.current === 41 && xPlayerIndex.current === 63) ||
             (yPlayerIndex.current === 41 && xPlayerIndex.current === 62)
           ) {
-           setNpcFace('faceGuard1TT');
-           setTextValue('My dad is mad at me');
-           clickAudio2();
+            setNpcFace('faceGuard1TT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
         }
 
@@ -2037,17 +2047,21 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 85 && xPlayerIndex.current === 88)
           ) {
             setNpcFace('facesweeperGuyTT');
-             setTextValue("Go away! If we don't keep the city clean, that monster in the station will do it again.");
-             clickAudio2();
+            setTextValue(
+              "Go away! If we don't keep the city clean, that monster in the station will do it again."
+            );
+            clickAudio2();
           }
           //YO Mama NPC
           if (
             (yPlayerIndex.current === 54 && xPlayerIndex.current === 43) ||
             (yPlayerIndex.current === 52 && xPlayerIndex.current === 42)
           ) {
-             setNpcFace('faceGuard1TT');
-             setTextValue('Just please go away. No one is safe if that lunatic goes off.');
-             clickAudio2();
+            setNpcFace('faceGuard1TT');
+            setTextValue(
+              'Just please go away. No one is safe if that lunatic goes off.'
+            );
+            clickAudio2();
           }
           //Hot Girl
           if (
@@ -2055,7 +2069,9 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 54 && xPlayerIndex.current === 61)
           ) {
             setNpcFace('faceGuard1TT');
-            setTextValue('At least the Sun Kings never force people to join. I am proud to serve my King.');
+            setTextValue(
+              'At least the Sun Kings never force people to join. I am proud to serve my King.'
+            );
             clickAudio2();
           }
           //Hot Girl
@@ -2072,37 +2088,39 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 17 && xPlayerIndex.current === 23) ||
             (yPlayerIndex.current === 17 && xPlayerIndex.current === 22)
           ) {
-          setNpcFace('faceGuard1TT');
+            setNpcFace('faceGuard1TT');
             setTextValue('Get the fuck out of here you little shit stain.');
-          clickAudio2();
+            clickAudio2();
           }
 
-           //Old Man
+          //Old Man
           if (
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 66) ||
             (yPlayerIndex.current === 57 && xPlayerIndex.current === 65)
           ) {
-          setNpcFace('faceRedheadTT');
-          setTextValue('At least the Sun Kings never force people to join. I am proud to serve my King.');
-          clickAudio2();
+            setNpcFace('faceRedheadTT');
+            setTextValue(
+              'At least the Sun Kings never force people to join. I am proud to serve my King.'
+            );
+            clickAudio2();
           }
-           //Old Man
+          //Old Man
           if (
             (yPlayerIndex.current === 38 && xPlayerIndex.current === 41) ||
             (yPlayerIndex.current === 38 && xPlayerIndex.current === 42)
           ) {
-          setNpcFace('faceGuard1TT');
-          setTextValue('My dad is mad at me');
-          clickAudio2();
+            setNpcFace('faceGuard1TT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
-            //Old Man
+          //Old Man
           if (
             (yPlayerIndex.current === 38 && xPlayerIndex.current === 63) ||
             (yPlayerIndex.current === 38 && xPlayerIndex.current === 64)
           ) {
-          setNpcFace('faceGuard1TT');
-          setTextValue('My dad is mad at me');
-          clickAudio2();
+            setNpcFace('faceGuard1TT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
         }
 
@@ -2112,9 +2130,9 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 81 && xPlayerIndex.current === 26) ||
             (yPlayerIndex.current === 82 && xPlayerIndex.current === 26)
           ) {
-             setNpcFace('faceBrideTT');
-             setTextValue('My dad is mad at me');
-             clickAudio2();
+            setNpcFace('faceBrideTT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
           //YO Mama NPC
           if (
@@ -2122,7 +2140,9 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 45)
           ) {
             setNpcFace('faceGuard1TT');
-            setTextValue('Just please go away. No one is safe if that lunatic goes off.');
+            setTextValue(
+              'Just please go away. No one is safe if that lunatic goes off.'
+            );
             clickAudio2();
           }
           //Hot Girl
@@ -2130,10 +2150,12 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 55 && xPlayerIndex.current === 63) ||
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 63)
           ) {
-             setNpcFace('faceGuard1TT');
-             setTextValue('At least the Sun Kings never force people to join. I am proud to serve my King.');
+            setNpcFace('faceGuard1TT');
+            setTextValue(
+              'At least the Sun Kings never force people to join. I am proud to serve my King.'
+            );
 
-             clickAudio2();
+            clickAudio2();
           }
           //Hot Girl
           if (
@@ -2150,20 +2172,22 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 24)
           ) {
             setNpcFace('faceGuard1TT');
-             setTextValue('Get the fuck out of here you little shit stain.');
+            setTextValue('Get the fuck out of here you little shit stain.');
             clickAudio2();
           }
-            //Old Man
+          //Old Man
           if (
             (yPlayerIndex.current === 87 && xPlayerIndex.current === 90) ||
             (yPlayerIndex.current === 86 && xPlayerIndex.current === 90)
           ) {
             setNpcFace('facesweeperGuyTT');
-            setTextValue("Go away! If we don't keep the city clean, that monster in the station will do it again.");
+            setTextValue(
+              "Go away! If we don't keep the city clean, that monster in the station will do it again."
+            );
             clickAudio2();
           }
 
-              //Old Man
+          //Old Man
           if (
             (yPlayerIndex.current === 47 && xPlayerIndex.current === 30) ||
             (yPlayerIndex.current === 46 && xPlayerIndex.current === 30)
@@ -2172,7 +2196,7 @@ const Tortous = (props) => {
             setTextValue('My dad is mad at me');
             clickAudio2();
           }
-               //Old Man
+          //Old Man
           if (
             (yPlayerIndex.current === 40 && xPlayerIndex.current === 43) ||
             (yPlayerIndex.current === 41 && xPlayerIndex.current === 43)
@@ -2181,7 +2205,7 @@ const Tortous = (props) => {
             setTextValue('My dad is mad at me');
             clickAudio2();
           }
-                //Old Man
+          //Old Man
           if (
             (yPlayerIndex.current === 40 && xPlayerIndex.current === 65) ||
             (yPlayerIndex.current === 41 && xPlayerIndex.current === 65)
@@ -2198,9 +2222,9 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 81 && xPlayerIndex.current === 23) ||
             (yPlayerIndex.current === 82 && xPlayerIndex.current === 23)
           ) {
-             setNpcFace('faceBrideTT');
-             setTextValue('My dad is mad at me');
-             clickAudio2();
+            setNpcFace('faceBrideTT');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
           //YO Mama NPC
           if (
@@ -2208,7 +2232,9 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 42)
           ) {
             setNpcFace('faceGuard1TT');
-            setTextValue('Just please go away. No one is safe if that lunatic goes off.');
+            setTextValue(
+              'Just please go away. No one is safe if that lunatic goes off.'
+            );
             clickAudio2();
           }
           //Hot Girl
@@ -2217,7 +2243,9 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 56 && xPlayerIndex.current === 60)
           ) {
             setNpcFace('faceGuard1TT');
-            setTextValue('At least the Sun Kings never force people to join. I am proud to serve my King.');
+            setTextValue(
+              'At least the Sun Kings never force people to join. I am proud to serve my King.'
+            );
             clickAudio2();
           }
           //Hot Girl
@@ -2235,54 +2263,56 @@ const Tortous = (props) => {
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 21)
           ) {
             setNpcFace('faceGuard1TT');
-             setTextValue('Get the fuck out of here you little shit stain.');
-             clickAudio2();
+            setTextValue('Get the fuck out of here you little shit stain.');
+            clickAudio2();
           }
-           //Old Man
+          //Old Man
           if (
             (yPlayerIndex.current === 87 && xPlayerIndex.current === 87) ||
             (yPlayerIndex.current === 86 && xPlayerIndex.current === 87)
           ) {
             setNpcFace('facesweeperGuyTT');
-             setTextValue("Go away! If we don't keep the city clean, that monster in the station will do it again.");
-             clickAudio2();
+            setTextValue(
+              "Go away! If we don't keep the city clean, that monster in the station will do it again."
+            );
+            clickAudio2();
           }
-            //Old Man
+          //Old Man
           if (
             (yPlayerIndex.current === 59 && xPlayerIndex.current === 65) ||
             (yPlayerIndex.current === 60 && xPlayerIndex.current === 65)
           ) {
             setNpcFace('faceRedheadTT');
-             setTextValue('My dad is mad at me');
-             clickAudio2();
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
 
-             //Old Man
+          //Old Man
           if (
             (yPlayerIndex.current === 46 && xPlayerIndex.current === 27) ||
             (yPlayerIndex.current === 45 && xPlayerIndex.current === 27)
           ) {
             setNpcFace('faceBrunetteTT');
-             setTextValue('My dad is mad at me');
-             clickAudio2();
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
-               //Old Man
+          //Old Man
           if (
             (yPlayerIndex.current === 40 && xPlayerIndex.current === 40) ||
             (yPlayerIndex.current === 41 && xPlayerIndex.current === 40)
           ) {
             setNpcFace('faceGuard1TT');
-             setTextValue('My dad is mad at me');
-             clickAudio2();
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
-               //Old Man
+          //Old Man
           if (
             (yPlayerIndex.current === 40 && xPlayerIndex.current === 62) ||
             (yPlayerIndex.current === 41 && xPlayerIndex.current === 62)
           ) {
             setNpcFace('faceGuard1TT');
-             setTextValue('My dad is mad at me');
-             clickAudio2();
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
         }
       }
@@ -2344,16 +2374,13 @@ const Tortous = (props) => {
             clickAudio2();
             setTextValue('This door is locked');
           }
-          
 
-       if (
-        (yPlayerIndex.current === 89 && xPlayerIndex.current === 33) ||
-        (yPlayerIndex.current === 89 && xPlayerIndex.current === 32)  
-       )
-        {
-        setdoorToggle1(true)
-        }
-
+          if (
+            (yPlayerIndex.current === 89 && xPlayerIndex.current === 33) ||
+            (yPlayerIndex.current === 89 && xPlayerIndex.current === 32)
+          ) {
+            setdoorToggle1(true);
+          }
         }
       }
     };
@@ -2419,12 +2446,10 @@ const Tortous = (props) => {
     };
   }, []);
 
-
   //ITEM GRABBING LOGIC
   useEffect(() => {
     const dialogueAction = (event) => {
       if (event.key === 'g') {
-        
         //Facing ups
         if (facing.current === 'left') {
           if (
@@ -2438,17 +2463,17 @@ const Tortous = (props) => {
             setToggle1(true);
             demonSetToggle1(true);
 
-           setHue(190);
-           setBrightness(80);
-           setSepia(0);
-           setContrast(100);
+            setHue(190);
+            setBrightness(80);
+            setSepia(0);
+            setContrast(100);
 
             setTimeout(() => {
-               setHue(0);
-               setBrightness(100);
-               setSepia(0);
-               setContrast(120);
-            }, 10000)
+              setHue(0);
+              setBrightness(100);
+              setSepia(0);
+              setContrast(120);
+            }, 10000);
           }
         }
       }
@@ -2459,67 +2484,7 @@ const Tortous = (props) => {
     };
   }, []);
 
-
-  //event listen for enter
-  useEffect(() => {
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        if (facing.current === 'up') {
-          if (
-            xBank.current + 32 > 64 &&
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
-              'door1'
-          ) {
-          }
-          if (
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
-              'sign1' &&
-            64 - xBank.current > 32
-          ) {
-            // console.log('sign1');
-          }
-          if (
-            xBank.current + 32 > 64 &&
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
-              'sign2'
-          ) {
-            // console.log('sign2');
-          }
-          if (
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
-              'sign2' &&
-            64 - xBank.current > 32
-          ) {
-            // console.log('sign2');
-          }
-        }
-        if (facing.current == null) {
-          if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
-              'sign1' &&
-            xBank.current + 32 < 64
-          ) {
-            // console.log('sign1');
-          }
-          if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current + 1] ===
-            'sign2'
-          ) {
-            // console.log('poopshit');
-          }
-          if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
-              'sign2' &&
-            xBank.current + 32 < 64
-          ) {
-            // console.log('sign2');
-          }
-        }
-      }
-    });
-  }, []);
-
-  //listens for the current down key and saves it as the currentkey state
+  //listens for the current down key and saves it as the current key state
   //wrapping in a useEffect prevents compounding event listeners
   useEffect(() => {
     const keyDownHandler = (event) => {
@@ -2560,6 +2525,7 @@ const Tortous = (props) => {
     //when the key is lifted it sets the current key to null to stop map movement and the walker to false to stop the animation
   }, []);
 
+  // Useffect for demon grabbing toggle
   useEffect(() => {
     if (demonToggle1 === true) {
       setTimeout(() => {
@@ -2569,7 +2535,7 @@ const Tortous = (props) => {
     }
   }, [demonToggle1]);
 
-  //facing logic. It needed to be removed from the animate because it was cuasing
+  //facing logic. It needed to be removed from the animate because it was causing
   dirArr.current[0] === 'ArrowRight'
     ? (facing.current = 'right')
     : dirArr.current[0] === 'ArrowLeft'
@@ -2580,7 +2546,11 @@ const Tortous = (props) => {
     ? (facing.current = null)
     : null;
 
-  //animate is a reccursive function that takes the current key and updates the cordinate variables depending on which direction is pushed. It also sets which way the character is facing
+  // animate is a reccursive function that takes the current key and updates the cordinate variables depending on which direction is pushed. It also sets which way the character is facing
+
+
+
+
   const animate = () => {
     //if current key is d, the x cordinate becomes  the previous state + the speed
     if (dirArr.current[0] === 'ArrowRight') {
@@ -2698,12 +2668,37 @@ const Tortous = (props) => {
   }, [tick]);
 
 
-     console.log(
-       'DOG X COORD: ',
-       xdogTransformVar)
-      console.log(
-       'DOG Y COORD: ',
-       ydogTransformVar)
+
+  // TEST DOG WALKING COLLISION
+  useEffect(() => {
+    function demonMove() {
+      if (xdemonIndex.current <= 200) {
+        xdemonIndex.current = xdemonIndex.current + 1;
+        setXdemonTransformVar((prevCount) => prevCount - 1);
+        // console.log('Right ', xdemonIndex.current, ydemonIndex.current);
+        // console.log("COUNTER1", counter)
+      } 
+      else if (ydemonIndex.current <= 200) {
+        ydemonIndex.current = ydemonIndex.current + 1;
+        setYdemonTransformVar((prevCount) => prevCount + 1);
+          // console.log('COUNTER2', counter);
+        // console.log('Up ', xdemonIndex.current, ydemonIndex.current);
+      } 
+      else if (xdemonIndex.current <= 400) {
+        xdemonIndex.current = xdemonIndex.current + 1;
+        setXdemonTransformVar((prevCount) => prevCount + 1);
+        // console.log('COUNTER3', counter);
+        // console.log('Left ', xdemonIndex.current, ydemonIndex.current);
+      } 
+      else if (ydemonIndex.current <= 400) {
+        ydemonIndex.current = ydemonIndex.current + 1;
+        setYdemonTransformVar((prevCount) => prevCount - 1);
+          //  console.log('COUNTER4', counter);
+        // console.log('Down ', xdemonIndex.current, ydemonIndex.current);
+      }
+    }
+    requestAnimationFrame(demonMove);
+  }, );
 
 
   //update the style for the mpa character by transforming it according the new x and y variables
@@ -2853,7 +2848,9 @@ const Tortous = (props) => {
                         <span
                           className="dogTT pixel-art"
                           style={{
-                            transform: `translate3d( ${600 - xdogTransformVar}px, ${272 - ydogTransformVar}px, 0 )`,
+                            transform: `translate3d( ${
+                              600 - xdogTransformVar
+                            }px, ${272 - ydogTransformVar}px, 0 )`,
                           }}
                         >
                           <div className="dogTT_spritesheet pixel-art"></div>

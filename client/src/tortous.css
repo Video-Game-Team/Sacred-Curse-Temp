@@ -99,13 +99,15 @@
 
 
   .demon {
-      width: calc(var(--grid-cell)* 2);
-      height: calc(var(--grid-cell)* 2);
-      overflow: hidden;
+    z-index: -1;
+    position: absolute;
+    /*display: inline-block; */
+    width: calc(var(--grid-cell)* 2);
+    height: calc(var(--grid-cell)* 2);
+    overflow: hidden;
   }
 
   .demon_spritesheet {
-      position: absolute;
       background: url("./assets/images/0.png") no-repeat no-repeat;
       background-size: 100%;
       width: calc(var(--grid-cell)* 2);
@@ -377,8 +379,9 @@
 
 
          .dogTT {
-             z-index: -1;
+             /* z-index: -1; */
              position: absolute;
+            /* display: inline-block; */
              width: calc(var(--grid-cell) * 2.2);
              height: calc(var(--grid-cell) * 2);
              overflow: hidden;

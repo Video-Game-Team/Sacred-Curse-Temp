@@ -44,6 +44,8 @@ body {
   position: relative;
   /* width: calc(var(--pixel-size) * 476);
   height: calc(var(--pixel-size) * 236); */
+  /* width: calc(var(--pixel-size) * 292);
+  height: calc(var(--pixel-size) * 224); */
   width: calc(var(--pixel-size) * 310);
   height: calc(var(--pixel-size) * 184);
   overflow: hidden;
@@ -67,8 +69,9 @@ body {
 }
 
  .character {
-  z-index: -1;
-  position: relative;;
+  /* z-index: -1; */
+  position: absolute;
+  /* display: inline-block; */
   width: calc(var(--grid-cell)* 2);
   height: calc(var(--grid-cell)* 2);
   overflow: hidden;
