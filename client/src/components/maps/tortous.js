@@ -27,7 +27,7 @@ const Tortous = (props) => {
 
   const [xdemonTransformVar, setXdemonTransformVar] = useState(-2776);
   //this sets the y Cordinate to transform the map and character location
-  const [ydemonTransformVar, setYdemonTransformVar] = useState(-5288);
+  const [ydemonTransformVar, setYdemonTransformVar] = useState(-5588);
 
   const requestRef = useRef();
   const requestRef2 = useRef();
@@ -35,7 +35,6 @@ const Tortous = (props) => {
   //this sets the speed for the map to move. bigger number goes faster
   const speedRef = useRef(4);
   const speedRef2 = useRef(1);
-  
 
   const [tick, setTick] = useState(1);
 
@@ -62,10 +61,10 @@ const Tortous = (props) => {
   const ydogIndex = useRef(90);
   const xdogIndex = useRef(46);
 
-  const ydemonIndex = useRef(88);
+  const ydemonIndex = useRef(92);
   const xdemonIndex = useRef(53);
 
-  const yKeepIndex = useRef(88);
+  const yKeepIndex = useRef(92);
   const xKeepIndex = useRef(53);
 
   const [gridArray, setGridArray] = useState([]);
@@ -1723,6 +1722,8 @@ const Tortous = (props) => {
     ],
   ];
 
+  const [collidable1, setCollidable1] = useState(false)
+
   console.log('PLAYER COORDINATES', yPlayerIndex.current, xPlayerIndex.current);
   // console.log('Player TransformVar', yTransformVar, xTransformVar);
   // console.log(
@@ -1730,10 +1731,31 @@ const Tortous = (props) => {
   //   currentMap[yPlayerIndex.current][xPlayerIndex.current]
   // );
 
-  console.log('DEMON COORDINATES', ydemonIndex.current, xdemonIndex.current);
-  console.log('KEEP COORDINATES', yKeepIndex.current, xKeepIndex.current);
+  // console.log('DEMON COORDINATES', ydemonIndex.current, xdemonIndex.current);
+  // console.log('KEEP COORDINATES', yKeepIndex.current, xKeepIndex.current);
   // console.log('Player TransformVar', yTransformVar, xTransformVar);
   // console.log('DEMON TransformVar', ydemonTransformVar, xdemonTransformVar);
+
+  console.log(
+    'COLLISION DETEECTION X',
+    xPlayerIndex.current - xdemonIndex.current
+  );
+  console.log(
+    'COLLISION DETEECTION Y',
+    yPlayerIndex.current - ydemonIndex.current
+  );
+
+
+  useEffect(() => {
+    if (
+      xPlayerIndex.current === xdemonIndex.current &&
+      yPlayerIndex.current === ydemonIndex.current
+    ) {
+      console.log('HIIIIIIIIIIIIIII');
+      setCollidable1(!collidable1);
+    }
+  }, );
+       console.log('COLLIDABLE', collidable1);
 
   // useEffect(()=>{
   //   let tempGrid=[]
@@ -2577,99 +2599,97 @@ const Tortous = (props) => {
   //REQUEST ANIMATION FRAME LOGIC
   // animate is a reccursive function that takes the current key and updates the cordinate variables depending on which direction is pushed. It also sets which way the character is facing
   const animate = () => {
-   
+    if (dirArr.current[0] === 'ArrowRight') {
       //if current key is d, the x cordinate becomes  the previous state + the speed
-      if (dirArr.current[0] === 'ArrowRight') {
+      if (
+        currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] === 0 ||
+        xBank.current < 0
+      )
         if (
-          currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] === 0 ||
-          xBank.current < 0
-        )
-          if (
-            yBank.current + 32 < 64 ||
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
-          ) {
-            {
-              setXTransformVar((prevCount) => prevCount - speedRef.current);
-              xBank.current = xBank.current + speedRef.current;
-              if (xBank.current === 64) {
-                xPlayerIndex.current = xPlayerIndex.current + 1;
-
-                xBank.current = 0;
-              }
-            }
-          }
-      }
-      //if current key is a, the x cordinate becomes  the previous state - the speed
-
-      if (dirArr.current[0] === 'ArrowLeft') {
-        if (
-          currentMap[yPlayerIndex.current][xPlayerIndex.current - 1] === 0 ||
-          xBank.current > 0
-        )
-          if (
-            yBank.current + 32 < 64 ||
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] == 0
-          ) {
-            {
-              setXTransformVar((prevCount) => prevCount + speedRef.current);
-              xBank.current = xBank.current - speedRef.current;
-              // console.log(yPlayerIndex.current,xPlayerIndex.current)
-
-              if (xBank.current < 0) {
-                // console.log("this one",xBank.current)
-
-                xPlayerIndex.current = xPlayerIndex.current - 1;
-                // console.log(yPlayerIndex.current, xPlayerIndex.current);
-                // alert(xPlayerIndex.current)
-                xBank.current = 60;
-              }
-            }
-          }
-      }
-
-      //if current key is w, the y cordinate becomes  the previous state + the speed
-      if (dirArr.current[0] === 'ArrowUp') {
-        if (
-          currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 0 ||
-          yBank.current < 0
+          yBank.current + 32 < 64 ||
+          currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
         ) {
-          if (
-            xBank.current + 48 < 64 ||
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
-          ) {
-            setYTransformVar((prevCount) => prevCount + speedRef.current);
+          {
+            setXTransformVar((prevCount) => prevCount - speedRef.current);
+            xBank.current = xBank.current + speedRef.current;
+            if (xBank.current === 64) {
+              xPlayerIndex.current = xPlayerIndex.current + 1;
+
+              xBank.current = 0;
+            }
+          }
+        }
+    }
+    //if current key is a, the x cordinate becomes  the previous state - the speed
+
+    if (dirArr.current[0] === 'ArrowLeft') {
+      if (
+        currentMap[yPlayerIndex.current][xPlayerIndex.current - 1] === 0 ||
+        xBank.current > 0
+      )
+        if (
+          yBank.current + 32 < 64 ||
+          currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] == 0
+        ) {
+          {
+            setXTransformVar((prevCount) => prevCount + speedRef.current);
+            xBank.current = xBank.current - speedRef.current;
             // console.log(yPlayerIndex.current,xPlayerIndex.current)
-            yBank.current = yBank.current + speedRef.current;
-            if (yBank.current === 64) {
-              yPlayerIndex.current = yPlayerIndex.current - 1;
-              yBank.current = 0;
+
+            if (xBank.current < 0) {
+              // console.log("this one",xBank.current)
+
+              xPlayerIndex.current = xPlayerIndex.current - 1;
+              // console.log(yPlayerIndex.current, xPlayerIndex.current);
+              // alert(xPlayerIndex.current)
+              xBank.current = 60;
             }
           }
         }
-      }
-      //if current key is s, the y cordinate becomes  the previous state - the speed
+    }
 
-      if (dirArr.current[0] === 'ArrowDown') {
+    //if current key is w, the y cordinate becomes  the previous state + the speed
+    if (dirArr.current[0] === 'ArrowUp') {
+      if (
+        currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 0 ||
+        yBank.current < 0
+      ) {
         if (
-          currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 0 ||
-          yBank.current > 0
+          xBank.current + 48 < 64 ||
+          currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
         ) {
-          // if (xBank.current+32<64 || newMap[yPlayerIndex.current+1][xPlayerIndex.current+1]==0)
-          if (
-            xBank.current < 16 ||
-            currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] == 0
-          ) {
-            setYTransformVar((prevCount) => prevCount - speedRef.current);
-            yBank.current = yBank.current - speedRef.current;
-            if (yBank.current < 0) {
-              yPlayerIndex.current = yPlayerIndex.current + 1;
-              yBank.current = 60;
-            }
+          setYTransformVar((prevCount) => prevCount + speedRef.current);
+          // console.log(yPlayerIndex.current,xPlayerIndex.current)
+          yBank.current = yBank.current + speedRef.current;
+          if (yBank.current === 64) {
+            yPlayerIndex.current = yPlayerIndex.current - 1;
+            yBank.current = 0;
           }
         }
       }
-      requestRef.current = requestAnimationFrame(animate);
+    }
+    //if current key is s, the y cordinate becomes  the previous state - the speed
 
+    if (dirArr.current[0] === 'ArrowDown') {
+      if (
+        currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 0 ||
+        yBank.current > 0
+      ) {
+        // if (xBank.current+32<64 || newMap[yPlayerIndex.current+1][xPlayerIndex.current+1]==0)
+        if (
+          xBank.current < 16 ||
+          currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] == 0
+        ) {
+          setYTransformVar((prevCount) => prevCount - speedRef.current);
+          yBank.current = yBank.current - speedRef.current;
+          if (yBank.current < 0) {
+            yPlayerIndex.current = yPlayerIndex.current + 1;
+            yBank.current = 60;
+          }
+        }
+      }
+    }
+    requestRef.current = requestAnimationFrame(animate);
   };
 
   //every time the current key changes this runs
@@ -2726,10 +2746,10 @@ const Tortous = (props) => {
   // }
   // let cancel = setInterval(secondsIncrement, 1000);
 
-
   //NPC LOGIC
   function npc1Move() {
-    //UP
+    //RIGHT
+
     while (xKeepIndex.current <= 57) {
       {
         npcFacing.current = 'right';
@@ -2787,7 +2807,6 @@ const Tortous = (props) => {
     //     npcFacing.current = 'up';
     //     {
     //       setYdemonTransformVar((prevCount) => prevCount + speedRef2.current);
-    //       // console.log(yPlayerIndex.current,xPlayerIndex.current)
     //       ydemonBank.current = ydemonBank.current + speedRef2.current;
     //       if (ydemonBank.current === 64) {
     //         ydemonIndex.current = ydemonIndex.current + -1;
@@ -2807,7 +2826,6 @@ const Tortous = (props) => {
     requestRef3.current = requestAnimationFrame(npc1Move);
     return () => cancelAnimationFrame(requestRef3.current);
   });
-
 
   // //KEEP CODE DEMON LOGIC
   // function demonMove() {
@@ -2888,8 +2906,6 @@ const Tortous = (props) => {
   //   requestRef3.current = requestAnimationFrame(demonMove);
   //   return () => cancelAnimationFrame(requestRef3.current);
   // });
-
-
 
   //update the style for the npc character by transforming it according the new x and y variables
   //map and character share the varaibles since they move together
@@ -3057,9 +3073,6 @@ const Tortous = (props) => {
                         >
                           <div className="npcWalkerDrone1_spritesheet pixel-art"></div>
                         </div>
-
-
-
                       </div>
                     </div>
                     {textValue ? (

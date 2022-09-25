@@ -366,7 +366,7 @@
 
 .npcWalkerDrone1 {
     /* z-index: -1; */
-    position: absolute;
+    position: absolute;;
     ;
     /* display: inline-block; */
     width: calc(var(--grid-cell)* 2);
