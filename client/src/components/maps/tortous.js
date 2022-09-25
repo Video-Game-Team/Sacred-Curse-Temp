@@ -2726,19 +2726,6 @@ const Tortous = (props) => {
   // }
   // let cancel = setInterval(secondsIncrement, 1000);
 
-
-
-    dirArr.current[0] === 'ArrowRight'
-      ? (facing.current = 'right')
-      : dirArr.current[0] === 'ArrowLeft'
-      ? (facing.current = 'left')
-      : dirArr.current[0] === 'ArrowUp'
-      ? (facing.current = 'up')
-      : dirArr.current[0] == 'ArrowDown'
-      ? (facing.current = null)
-      : null;
-
-
   function demonMove() {
     //UP
     while (xKeepIndex.current <= 57) {
@@ -2900,6 +2887,8 @@ const Tortous = (props) => {
   //   requestRef3.current = requestAnimationFrame(demonMove);
   //   return () => cancelAnimationFrame(requestRef3.current);
   // });
+
+  
 
   //update the style for the npc character by transforming it according the new x and y variables
   //map and character share the varaibles since they move together
