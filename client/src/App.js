@@ -428,10 +428,9 @@ function App() {
     demoMap: <DemoMap demonList={demonTeam} />,
   };
 
-
+  //MATT MENU
   useEffect(() => {
     const menuListener = (event) => {
-      // console.log(event.key)
       if (event.key === 'Enter') {
         setMenu(true);
       }
@@ -446,8 +445,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // console.log(current)
-    // console.log(tempCurrent)
     setPrevious(tempCurrent);
   }, [current]);
 
@@ -492,17 +489,17 @@ function App() {
 
 
     // menu Clock toggle
-  useEffect(() => {
-    const clock = (event) => {
-      if (event.key === 'c') {
-        setMenuClockToggle(!menuClockToggle);
-      }
-    };
-    window.addEventListener('keydown', clock);
-    return () => {
-      window.removeEventListener('keydown', clock);
-    };
-  }, [menuClockToggle]);
+  // useEffect(() => {
+  //   const clock = (event) => {
+  //     if (event.key === 'c') {
+  //       setMenuClockToggle(!menuClockToggle);
+  //     }
+  //   };
+  //   window.addEventListener('keydown', clock);
+  //   return () => {
+  //     window.removeEventListener('keydown', clock);
+  //   };
+  // }, [menuClockToggle]);
 
  
 
@@ -526,7 +523,7 @@ function App() {
                     ) : null}
                   </body>
 
-                  {menuClockToggle === true ? (
+                  {/* {menuClockToggle === true ? (
                     <>
                       <div className="clock">
                         <Clock
@@ -540,8 +537,8 @@ function App() {
                         <Datetime />
                       </div>
                     </>
-                  ) : null}
-
+                  ) : null} */}
+{/* 
                   {menu2Toggle === true ? (
                     <div className="box1">
                       <text className="pokeText" style={{ marginLeft: '90px' }}>
@@ -600,7 +597,9 @@ function App() {
                         MENU
                       </text>
                     </div>
-                  ) : null}
+                  ) : null} */}
+
+
                 </div>
               </div>
             </div>

@@ -70,7 +70,7 @@ body {
 
  .character {
   /* z-index: -1; */
-  position: absolute;
+  position: relative;
   /* display: inline-block; */
   width: calc(var(--grid-cell)* 2);
   height: calc(var(--grid-cell)* 2);
