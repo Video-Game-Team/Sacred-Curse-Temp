@@ -20,32 +20,30 @@ const Tortous = (props) => {
   const [xTransformVar, setXTransformVar] = useState(-2776);
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-5588);
-  //
+
   const [xdogTransformVar, setXdogTransformVar] = useState(-2866);
-  //this sets the y Cordinate to transform the map and character location
   const [ydogTransformVar, setYdogTransformVar] = useState(-5088);
 
   const [xdemonTransformVar, setXdemonTransformVar] = useState(-2776);
-  //this sets the y Cordinate to transform the map and character location
-  const [ydemonTransformVar, setYdemonTransformVar] = useState(-5588);
+  const [ydemonTransformVar, setYdemonTransformVar] = useState(-5444);
 
   const requestRef = useRef();
   const requestRef2 = useRef();
   const requestRef3 = useRef();
-  //this sets the speed for the map to move. bigger number goes faster
+
   const speedRef = useRef(4);
   const speedRef2 = useRef(1);
 
   const [tick, setTick] = useState(1);
 
-  const [butt, setButt] = useState();
+  // const [butt, setButt] = useState();
 
-  //correpsondds with a css class to tell it which version of the sprite to load. ie "left", "right"
   const facing = useRef();
-  const npcFacing = useRef();
-  //corresponds with a css class. determiines if the sprite gets animated or not
+  const npcfacing = useRef();
+
   const [walker, setWalker] = useState('false');
-  // const [walkerArr, setWalkerkArr]= useState([])
+  const [npcwalking, setNpcWalking] = useState('false');
+
   const dirArr = useRef([]);
   const dirArrDemon = useRef([]);
 
@@ -61,10 +59,10 @@ const Tortous = (props) => {
   const ydogIndex = useRef(90);
   const xdogIndex = useRef(46);
 
-  const ydemonIndex = useRef(92);
+  const ydemonIndex = useRef(90);
   const xdemonIndex = useRef(53);
 
-  const yKeepIndex = useRef(92);
+  const yKeepIndex = useRef(90);
   const xKeepIndex = useRef(53);
 
   const [gridArray, setGridArray] = useState([]);
@@ -1722,9 +1720,7 @@ const Tortous = (props) => {
     ],
   ];
 
-  const [collidable1, setCollidable1] = useState(false)
-
-  console.log('PLAYER COORDINATES', yPlayerIndex.current, xPlayerIndex.current);
+  // console.log('PLAYER COORDINATES', yPlayerIndex.current, xPlayerIndex.current);
   // console.log('Player TransformVar', yTransformVar, xTransformVar);
   // console.log(
   //   'VALUE Right',
@@ -1735,27 +1731,6 @@ const Tortous = (props) => {
   // console.log('KEEP COORDINATES', yKeepIndex.current, xKeepIndex.current);
   // console.log('Player TransformVar', yTransformVar, xTransformVar);
   // console.log('DEMON TransformVar', ydemonTransformVar, xdemonTransformVar);
-
-  console.log(
-    'COLLISION DETEECTION X',
-    xPlayerIndex.current - xdemonIndex.current
-  );
-  console.log(
-    'COLLISION DETEECTION Y',
-    yPlayerIndex.current - ydemonIndex.current
-  );
-
-
-  useEffect(() => {
-    if (
-      xPlayerIndex.current === xdemonIndex.current &&
-      yPlayerIndex.current === ydemonIndex.current
-    ) {
-      console.log('HIIIIIIIIIIIIIII');
-      setCollidable1(!collidable1);
-    }
-  }, );
-       console.log('COLLIDABLE', collidable1);
 
   // useEffect(()=>{
   //   let tempGrid=[]
@@ -1909,8 +1884,6 @@ const Tortous = (props) => {
 
   // UseEffect Keeping track of player and map conditions
   useEffect(() => {
-    //yPlayerIndex up and down values
-    // trains Map check conditions
     if (
       (yPlayerIndex.current === 53 && xPlayerIndex.current === 9) ||
       (yPlayerIndex.current === 54 && xPlayerIndex.current === 9) ||
@@ -1928,8 +1901,6 @@ const Tortous = (props) => {
   }, [xPlayerIndex.current]);
 
   useEffect(() => {
-    //yPlayerIndex up and down values
-    // trains Map check conditions
     if (
       (yPlayerIndex.current === 5 && xPlayerIndex.current === 51) ||
       (yPlayerIndex.current === 5 && xPlayerIndex.current === 52) ||
@@ -2582,7 +2553,6 @@ const Tortous = (props) => {
       window.removeEventListener('keydown', keyDownHandler);
       window.removeEventListener('keyup', keyUpHandler);
     };
-    //when the key is lifted it sets the current key to null to stop map movement and the walker to false to stop the animation
   }, []);
 
   //FACING LOGIC
@@ -2634,14 +2604,9 @@ const Tortous = (props) => {
           {
             setXTransformVar((prevCount) => prevCount + speedRef.current);
             xBank.current = xBank.current - speedRef.current;
-            // console.log(yPlayerIndex.current,xPlayerIndex.current)
 
             if (xBank.current < 0) {
-              // console.log("this one",xBank.current)
-
               xPlayerIndex.current = xPlayerIndex.current - 1;
-              // console.log(yPlayerIndex.current, xPlayerIndex.current);
-              // alert(xPlayerIndex.current)
               xBank.current = 60;
             }
           }
@@ -2659,7 +2624,6 @@ const Tortous = (props) => {
           currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
         ) {
           setYTransformVar((prevCount) => prevCount + speedRef.current);
-          // console.log(yPlayerIndex.current,xPlayerIndex.current)
           yBank.current = yBank.current + speedRef.current;
           if (yBank.current === 64) {
             yPlayerIndex.current = yPlayerIndex.current - 1;
@@ -2668,14 +2632,12 @@ const Tortous = (props) => {
         }
       }
     }
-    //if current key is s, the y cordinate becomes  the previous state - the speed
 
     if (dirArr.current[0] === 'ArrowDown') {
       if (
         currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 0 ||
         yBank.current > 0
       ) {
-        // if (xBank.current+32<64 || newMap[yPlayerIndex.current+1][xPlayerIndex.current+1]==0)
         if (
           xBank.current < 16 ||
           currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] == 0
@@ -2752,8 +2714,27 @@ const Tortous = (props) => {
 
     while (xKeepIndex.current <= 57) {
       {
-        npcFacing.current = 'right';
+        npcfacing.current = 'right';
+        setNpcWalking('true');
         {
+          // if (
+          //   currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] !== 0
+          // ) {
+          //   console.log('RIGHT COLLISION');
+          //   return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
+          // }
+
+          if (
+            xPlayerIndex.current === xdemonIndex.current &&
+            yPlayerIndex.current === ydemonIndex.current
+          ) {
+            setNpcWalking('false');
+            setNpcFace('faceBrideTT');
+            setTextValue('Excuse me');
+            clickAudio2();
+            return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
+          }
+
           setXdemonTransformVar((prevCount) => prevCount - speedRef2.current);
           xdemonBank.current = xdemonBank.current + speedRef2.current;
           if (xdemonBank.current === 64) {
@@ -2767,27 +2748,64 @@ const Tortous = (props) => {
     }
 
     //DOWN
-    // while (yKeepIndex.current <= 92) {
-    //   {
-    //     npcFacing.current = null;
-    //     {
-    //       setYdemonTransformVar((prevCount) => prevCount - speedRef2.current);
-    //       ydemonBank.current = ydemonBank.current - speedRef2.current;
-    //       if (ydemonBank.current < 0) {
-    //         ydemonIndex.current = ydemonIndex.current + 1;
-    //         yKeepIndex.current = yKeepIndex.current + 1;
-    //         ydemonBank.current = 60;
-    //       }
-    //     }
-    //   }
-    //   return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
-    // }
+    while (yKeepIndex.current <= 92) {
+      {
+        npcfacing.current = null;
+        setNpcWalking('true');
+        {
+          //  if (
+          //    currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] !== 0
+          //  ) {
+          //    console.log('DOWN COLLISION');
+          //    return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
+          //  }
+
+          if (
+            xPlayerIndex.current === xdemonIndex.current &&
+            yPlayerIndex.current === ydemonIndex.current
+          ) {
+            setNpcWalking('false');
+            setNpcFace('faceBrideTT');
+            setTextValue('Excuse me');
+            clickAudio2();
+            return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
+          }
+          setYdemonTransformVar((prevCount) => prevCount - speedRef2.current);
+          ydemonBank.current = ydemonBank.current - speedRef2.current;
+          if (ydemonBank.current < 0) {
+            ydemonIndex.current = ydemonIndex.current + 1;
+            yKeepIndex.current = yKeepIndex.current + 1;
+            ydemonBank.current = 60;
+          }
+        }
+      }
+      return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
+    }
 
     //LEFT
     while (xdemonIndex.current >= 53) {
       {
-        npcFacing.current = 'left';
+        npcfacing.current = 'left';
+        setNpcWalking('true');
         {
+          //  if (
+          //    currentMap[yPlayerIndex.current][xPlayerIndex.current - 1] !== 0
+          //  ) {
+          //    console.log('HELP COLLISION');
+          //    return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
+          //  }
+
+          if (
+            xPlayerIndex.current === xdemonIndex.current &&
+            yPlayerIndex.current === ydemonIndex.current
+          ) {
+            setNpcWalking('false');
+            setNpcFace('faceBrideTT');
+            setTextValue('Excuse me');
+            clickAudio2();
+            return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
+          }
+
           setXdemonTransformVar((prevCount) => prevCount + speedRef2.current);
           xdemonBank.current = xdemonBank.current - speedRef2.current;
 
@@ -2802,20 +2820,39 @@ const Tortous = (props) => {
     }
 
     //UP
-    // while (ydemonIndex.current >= 91) {
-    //   {
-    //     npcFacing.current = 'up';
-    //     {
-    //       setYdemonTransformVar((prevCount) => prevCount + speedRef2.current);
-    //       ydemonBank.current = ydemonBank.current + speedRef2.current;
-    //       if (ydemonBank.current === 64) {
-    //         ydemonIndex.current = ydemonIndex.current + -1;
-    //         ydemonBank.current = 0;
-    //       }
-    //     }
-    //   }
-    //   return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
-    // }
+    while (ydemonIndex.current >= 91) {
+      {
+        npcfacing.current = 'up';
+        setNpcWalking('true');
+        {
+          // if (
+          //   currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] !== 0
+          // ) {
+          //   console.log('HELP COLLISION');
+          //   return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
+          // }
+
+          if (
+            xPlayerIndex.current === xdemonIndex.current &&
+            yPlayerIndex.current === ydemonIndex.current
+          ) {
+            setNpcWalking('false');
+            setNpcFace('faceBrideTT');
+            setTextValue('Excuse me');
+            clickAudio2();
+            return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
+          }
+
+          setYdemonTransformVar((prevCount) => prevCount + speedRef2.current);
+          ydemonBank.current = ydemonBank.current + speedRef2.current;
+          if (ydemonBank.current === 64) {
+            ydemonIndex.current = ydemonIndex.current + -1;
+            ydemonBank.current = 0;
+          }
+        }
+      }
+      return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
+    }
 
     yKeepIndex.current = 88;
     xKeepIndex.current = 53;
@@ -2832,7 +2869,7 @@ const Tortous = (props) => {
   //   //UP
   //   while (xKeepIndex.current <= 57) {
   //     {
-  //       npcFacing.current = 'right';
+  //       npcfacing.current = 'right';
   //       {
   //         setXdemonTransformVar((prevCount) => prevCount - speedRef2.current);
   //         xdemonBank.current = xdemonBank.current + speedRef2.current;
@@ -2849,7 +2886,7 @@ const Tortous = (props) => {
   //   //DOWN
   //   while (yKeepIndex.current <= 92) {
   //     {
-  //       npcFacing.current = null;
+  //       npcfacing.current = null;
   //       {
   //         setYdemonTransformVar((prevCount) => prevCount - speedRef2.current);
   //         ydemonBank.current = ydemonBank.current - speedRef2.current;
@@ -2884,7 +2921,7 @@ const Tortous = (props) => {
   //   //UP
   //   while (ydemonIndex.current >= 91) {
   //     {
-  //       npcFacing.current = 'up';
+  //       npcfacing.current = 'up';
   //       {
   //         setYdemonTransformVar((prevCount) => prevCount + speedRef2.current);
   //         // console.log(yPlayerIndex.current,xPlayerIndex.current)
@@ -2955,7 +2992,7 @@ const Tortous = (props) => {
                         <div
                           className="brideTT pixel-art"
                           style={{
-                            transform: `translate3d( ${1545}px, ${5080}px, 0 )`,
+                            transform: `translate3d( ${1545}px, ${5200}px, 0 )`,
                           }}
                         >
                           <div className="brideTT_spritesheet pixel-art"></div>
@@ -3063,7 +3100,8 @@ const Tortous = (props) => {
                         </div>
                         <div
                           className="npcWalkerDrone1 pixel-art"
-                          npcFacing={npcFacing.current}
+                          npcfacing={npcfacing.current}
+                          npcwalking={npcwalking}
                           style={{
                             zIndex: -1,
                             transform: `translate3d( ${

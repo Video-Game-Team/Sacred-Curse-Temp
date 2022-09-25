@@ -384,19 +384,19 @@
 }
 
 
-.npcWalkerDrone1[npcFacing="right"] .npcWalkerDrone1_spritesheet {
+.npcWalkerDrone1[npcfacing="right"] .npcWalkerDrone1_spritesheet {
     background-position-y: calc(var(--pixel-size) * -48);
 }
 
-.npcWalkerDrone1[npcFacing="left"] .npcWalkerDrone1_spritesheet {
+.npcWalkerDrone1[npcfacing="left"] .npcWalkerDrone1_spritesheet {
     background-position-y: calc(var(--pixel-size) * -24);
 }
 
-.npcWalkerDrone1[npcFacing="up"] .npcWalkerDrone1_spritesheet {
+.npcWalkerDrone1[npcfacing="up"] .npcWalkerDrone1_spritesheet {
     background-position-y: calc(var(--pixel-size) * -72);
 }
 
 
-.npcWalkerDrone1 .npcWalkerDrone1_spritesheet {
+.npcWalkerDrone1[npcwalking = 'true'] .npcWalkerDrone1_spritesheet {
     animation: walkAnimation 1.0s steps(4) infinite;
 }
