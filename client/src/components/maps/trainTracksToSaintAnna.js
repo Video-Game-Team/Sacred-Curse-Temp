@@ -1626,7 +1626,7 @@ const TrainTracksToSaintAnna = (props) => {
             (yPlayerIndex.current === 145 && xPlayerIndex.current === 20)
           ) {
              setNpcFace('faceDockguyTTSA');
-            setTextValue('My dad is mad at me');
+            setTextValue('Are you sure you want to go to St. Gwen? I guess it is the only play not occupied by either army. But the people are insufferable!');
             clickAudio2();
           }
         }

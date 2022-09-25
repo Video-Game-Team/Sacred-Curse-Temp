@@ -58,7 +58,7 @@ body {
   display: grid;
   grid-template-columns: repeat(20, 64px);
   grid-template-rows: repeat(12, 64px); 
-   max-height: 50000px;
+  max-height: 50000px;
   min-width: 50000px;
   background-image: url("./assets/maps/map 40x 40 w grid.png");
   background-size: 2560px; 
@@ -70,7 +70,7 @@ body {
 
  .character {
   /* z-index: -1; */
-  position: absolute;
+  position: relative;;
   /* display: inline-block; */
   width: calc(var(--grid-cell)* 2);
   height: calc(var(--grid-cell)* 2);
@@ -464,4 +464,26 @@ p {
       display: block;
       background: rgba(255, 255, 255, 0.2);
       background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
+    }
+
+    .clockTime {
+       z-index: 999;
+       top: -1;
+       position: absolute;
+        font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 24px;
+        font-weight: 500;
+        height: 100px;
+        width: 1000px;
+        color: rgb(254, 252, 252);
+    }
+    
+    .clock {
+        z-index: 999;
+        top: -1;
+        position: absolute;
+        padding-left: 190px;
+        color: rgb(254, 254, 254);
+        font-size: 120;
+        font-weight: 500;
     }

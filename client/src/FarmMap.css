@@ -180,32 +180,6 @@ body {
        background-size: 12%;
        background-size: content-box;
      }
-
-
-     .dogFM {
-       z-index: -1;
-       width: calc(var(--grid-cell) * 2.5);
-       height: calc(var(--grid-cell) * 2);
-       overflow: hidden;
-       position: absolute;
-       animation-name: square;
-       animation: square 17s linear infinite;
-     }
-  
-     .dogFM_spritesheet {
-       position: absolute;
-       background: url("./assets/images/Dog 2 walk.png") no-repeat no-repeat;
-       background-size: 100%;
-       width: calc(var(--grid-cell) * 96);
-       height: calc(var(--grid-cell)* 2);
-       background-position-y: calc(var(--pixel-size) * -0);
-       background-position-x: calc(var(--pixel-size) * -0 );
-       
-     }
-  
-     .dogFM .dogFM_spritesheet {
-      animation: walkAnimationFarmer 11s steps(48) infinite; 
-     }
   
 
 @keyframes square {

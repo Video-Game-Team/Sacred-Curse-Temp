@@ -51,6 +51,9 @@ import CrystalCavernsRight from './components/maps/crystalCavernsRight.js';
 import DemoMap from './battleMaps/demoMap.jsx';
 import DemonObjects from './demonObjects.js'
 
+import Datetime from './components/maps/datetime.js';
+import Clock from 'react-live-clock';
+
 import './App.css';
 
 function App() {
@@ -59,6 +62,7 @@ function App() {
 
   const [menu1Toggle, setMenu1Toggle] = useState(false);
   const [menu2Toggle, setMenu2Toggle] = useState(false);
+  const [menuClockToggle, setMenuClockToggle] = useState(false);
 
   //delete Later
   const [demonTeam, setDemonTeam] = useState([
@@ -424,7 +428,6 @@ function App() {
     demoMap: <DemoMap demonList={demonTeam} />,
   };
 
-  // console.log('POOP', mapsObj)
 
   useEffect(() => {
     const menuListener = (event) => {
@@ -488,6 +491,22 @@ function App() {
   }, [menu2Toggle]);
 
 
+    // menu Clock toggle
+  useEffect(() => {
+    const clock = (event) => {
+      if (event.key === 'c') {
+        setMenuClockToggle(!menuClockToggle);
+      }
+    };
+    window.addEventListener('keydown', clock);
+    return () => {
+      window.removeEventListener('keydown', clock);
+    };
+  }, [menuClockToggle]);
+
+ 
+
+
   // whole map is a button - giving that button onkeyppress listener called wrap
   return (
     <div>
@@ -507,11 +526,27 @@ function App() {
                     ) : null}
                   </body>
 
+                  {menuClockToggle === true ? (
+                    <>
+                      <div className="clock">
+                        <Clock
+                          format="h:mm:ssa"
+                          style={{ fontSize: '1.5em' }}
+                          ticking
+                        />
+                      </div>
+
+                      <div className="clockTime">
+                        <Datetime />
+                      </div>
+                    </>
+                  ) : null}
+
                   {menu2Toggle === true ? (
                     <div className="box1">
                       <text className="pokeText" style={{ marginLeft: '90px' }}>
                         FLOWERS
-                      </text>
+                      </text>c
                     </div>
                   ) : null}
 

@@ -781,7 +781,7 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 48 && xPlayerIndex.current === 37)
           ) {
             setNpcFace('facegirlHippy1MR');
-            setTextValue('Hi I am blonde');
+            setTextValue('We protect the children here. Do you have any children for us to save? ');
             clickAudio2();
           }
           //YO Mama NPC
@@ -790,7 +790,7 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 40 && xPlayerIndex.current === 18)
           ) {
             setNpcFace('faceGirl2');
-            setTextValue('Hi I am blonde');
+            setTextValue('“At the end of the Rainbow is happiness. And the Rainbow is you. And the rainbow is me. And we are all children of the rainbow. ” ');
             clickAudio2();
           }
           //Hot Girl
@@ -799,7 +799,7 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 24 && xPlayerIndex.current === 46)
           ) {
             setNpcFace('faceGirlShiekMR');
-            setTextValue('Hi I am blonde');
+            setTextValue('We must protect the Duke. He keeps us safe from the war.');
             clickAudio2();
           }
 
@@ -808,7 +808,7 @@ const MansonRanch = (props) => {
              (yPlayerIndex.current === 24 && xPlayerIndex.current === 13)
            ) {
              setNpcFace('faceCrazyGuyMR');
-             setTextValue('Hi I am blonde');
+             setTextValue('This is the last stand of freedom! We follow the Duke, and the Duke shows us freedom.');
              clickAudio2();
            }
           //Hot Girl
@@ -817,7 +817,7 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 31 && xPlayerIndex.current === 31)
           ) {
             setNpcFace('faceGirlHippyPrettyMR');
-            setTextValue('Hi I am blonde');
+            setTextValue('We protect the children here. Do you have any children for us to save? ');
             clickAudio2();
           }
         }
@@ -830,7 +830,7 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 45 && xPlayerIndex.current === 37)
           ) {
             setNpcFace('facegirlHippy1MR');
-            setTextValue('Hi I am blonde');
+            setTextValue('He saved me. He saved us all.');
             clickAudio2();
           }
           //YO Mama NPC
@@ -839,7 +839,7 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 36 && xPlayerIndex.current === 18)
           ) {
             setNpcFace('faceGirl2');
-            setTextValue('Hi I am blonde');
+            setTextValue('“At the end of the Rainbow is happiness. And the Rainbow is you. And the rainbow is me. And we are all children of the rainbow. ” ');
             clickAudio2();
           }
           //Hot Girl
@@ -848,7 +848,7 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 13)
           ) {
             setNpcFace('faceCrazyGuyMR');
-            setTextValue('Hi I am blonde');
+            setTextValue('This is the last stand of freedom! We follow the Duke, and the Duke shows us freedom.');
             clickAudio2();
           }
 
@@ -857,7 +857,7 @@ const MansonRanch = (props) => {
              (yPlayerIndex.current === 20 && xPlayerIndex.current === 45)
            ) {
              setNpcFace('faceGirlShiekMR');
-             setTextValue('Hi I am blonde');
+             setTextValue('We must protect the Duke. He keeps us safe from the war.');
              clickAudio2();
            }
 
@@ -867,7 +867,7 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 29 && xPlayerIndex.current === 31)
           ) {
             setNpcFace('faceGirlHippyPrettyMR');
-            setTextValue('Hi I am blonde');
+            setTextValue('We protect the children here. Do you have any children for us to save? ');
             clickAudio2();
           }
         }
@@ -879,7 +879,7 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 47 && xPlayerIndex.current === 39)
           ) {
             setNpcFace('facegirlHippy1MR');
-            setTextValue('Hi I am blonde');
+            setTextValue('He saved me. He saved us all.');
             clickAudio2();
           }
           //YO Mama NPC
@@ -888,7 +888,7 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 39 && xPlayerIndex.current === 19)
           ) {
             setNpcFace('faceGirl2');
-            setTextValue('Hi I am blonde');
+            setTextValue('“At the end of the Rainbow is happiness. And the Rainbow is you. And the rainbow is me. And we are all children of the rainbow. ” ');
             clickAudio2();
           }
           //Hot Girl
@@ -897,7 +897,7 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 47)
           ) {
               setNpcFace('faceGirlShiekMR');
-              setTextValue('Hi I am blonde');
+              setTextValue('We must protect the Duke. He keeps us safe from the war.');
               clickAudio2();
           }
           //Hot Girl
@@ -906,7 +906,7 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 30 && xPlayerIndex.current === 32)
           ) {
             setNpcFace('faceGirlHippyPrettyMR');
-            setTextValue('Hi I am blonde');
+            setTextValue('We protect the children here. Do you have any children for us to save? ');
             clickAudio2();
           }
         }
@@ -927,7 +927,7 @@ const MansonRanch = (props) => {
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 11)
           ) {
             setNpcFace('faceCrazyGuyMR');
-            setTextValue('Hi I am blonde');
+            setTextValue('This is the last stand of freedom! We follow the Duke, and the Duke shows us freedom.');
             clickAudio2();
           }
           //Hot Girl

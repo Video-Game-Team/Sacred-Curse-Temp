@@ -577,7 +577,7 @@ const FarmMap = (props) => {
             (yPlayerIndex.current === 23 && xPlayerIndex.current === 22)
           ) {
             setNpcFace('facefarmer1FM');
-            setTextValue('Hi I am the main farmHand, Hank.');
+            setTextValue('They haven’t been the same. First there was some hope ya know, that he’d return. But the hope turned to prayer, which turned to desperation. And now. Well this.');
             clickAudio2();
           }
           //YO Mama NPC
@@ -586,7 +586,7 @@ const FarmMap = (props) => {
             (yPlayerIndex.current === 29 && xPlayerIndex.current === 22)
           ) {
             setNpcFace('facefarmer1FM');
-            setTextValue('This place is a mess!');
+            setTextValue('She’s in the garden isn’t she? That’s all she does now. She’s almost forgotten she’s got another son.');
             clickAudio2();
           }
           //Hot Girl
@@ -608,7 +608,7 @@ const FarmMap = (props) => {
             (yPlayerIndex.current === 20 && xPlayerIndex.current === 22)
           ) {
             setNpcFace('facefarmer1FM');
-            setTextValue('Hi I am the main farmHand, Hank.');
+            setTextValue('They haven’t been the same. First there was some hope ya know, that he’d return. But the hope turned to prayer, which turned to desperation. And now. Well this.');
             clickAudio2();
           }
           //YO Mama NPC
@@ -617,7 +617,7 @@ const FarmMap = (props) => {
             (yPlayerIndex.current === 26 && xPlayerIndex.current === 22)
           ) {
             setNpcFace('facefarmer1FM');
-            setTextValue('This place is a mess!');
+            setTextValue('She’s in the garden isn’t she? That’s all she does now. She’s almost forgotten she’s got another son.');
             clickAudio2();
           }
           //Hot Girl
@@ -638,7 +638,7 @@ const FarmMap = (props) => {
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 23)
           ) {
             setNpcFace('facefarmer1FM');
-            setTextValue('Hi I am the main farmHand, Hank.');
+            setTextValue('They haven’t been the same. First there was some hope ya know, that he’d return. But the hope turned to prayer, which turned to desperation. And now. Well this.');
             clickAudio2();
           }
           //YO Mama NPC
@@ -647,7 +647,7 @@ const FarmMap = (props) => {
             (yPlayerIndex.current === 28 && xPlayerIndex.current === 23)
           ) {
             setNpcFace('facefarmer1FM');
-            setTextValue('This place is a mess!');
+            setTextValue('She’s in the garden isn’t she? That’s all she does now. She’s almost forgotten she’s got another son.');
             clickAudio2();
           }
           //Hot Girl
@@ -668,7 +668,7 @@ const FarmMap = (props) => {
             (yPlayerIndex.current === 22 && xPlayerIndex.current === 20)
           ) {
             setNpcFace('facefarmer1FM');
-            setTextValue('Hi I am the main farmHand, Hank.');
+            setTextValue('They haven’t been the same. First there was some hope ya know, that he’d return. But the hope turned to prayer, which turned to desperation. And now. Well this.');
             clickAudio2();
           }
           //YO Mama NPC
@@ -677,7 +677,7 @@ const FarmMap = (props) => {
             (yPlayerIndex.current === 28 && xPlayerIndex.current === 20)
           ) {
             setNpcFace('facefarmer1FM');
-            setTextValue('This place is a mess!');
+            setTextValue('She’s in the garden isn’t she? That’s all she does now. She’s almost forgotten she’s got another son.');
             clickAudio2();
           }
           //Hot Girl

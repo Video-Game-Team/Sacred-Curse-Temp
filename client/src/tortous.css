@@ -1,38 +1,3 @@
- :root {
-     --pixel-size: 2px;
-     --grid-cell: calc(var(--pixel-size) * 12);
-     --bg: #070000;
-
- }
-
- @media(min-width: 700px) {
-     :root {
-         --pixel-size: 3px;
-     }
- }
-
- @media(min-width: 1000px) {
-     :root {
-         --pixel-size: 4px;
-     }
- }
-
- html,
- body {
-     height: 100%;
- }
-
- body {
-     background: var(--bg);
-     display: flex;
-     align-items: center;
-     justify-content: center;
- }
-
- .pixel-art {
-     image-rendering: pixelated;
- }
-
  .mapT {
      image-rendering: pixelated;
     /* background-image: url("./assets/maps/Tortous no npc special black door.png"); */
@@ -48,45 +13,12 @@
     grid-template-rows: repeat(100, 64px); */
  }
 
-
 /* .numbers {
     size: 100%;
     background: transparent;
 }  */
 
-  .character {
-      width: calc(var(--grid-cell)* 2);
-      height: calc(var(--grid-cell)* 2);
-      overflow: hidden;
-      grid-column-start: 10;
-      grid-row-start: 5;
-  }
-
-  .character_spritesheet {
-      position: absolute;
-      background: url("./assets/images/AjFP5.png") no-repeat no-repeat;
-      background-size: 100%;
-      width: calc(var(--grid-cell)* 8);
-      height: calc(var(--grid-cell)* 8);
-  }
-
- .character[facing="right"] .character_spritesheet {
-     background-position-y: calc(var(--pixel-size) * -48);
- }
-
- .characterTT[facing="up"] .character_spritesheet {
-     background-position-y: calc(var(--pixel-size) * -72);
- }
-
- .character[facing="left"] .character_spritesheet {
-     background-position-y: calc(var(--pixel-size) * -24);
- }
-
- .character[walking="true"] .character_spritesheet {
-     animation: walkAnimation 0.6s steps(4) infinite;
- }
-
-
+ 
  @keyframes walkAnimation {
      from {
          transform: translate3d(0%, 0%, 0);
@@ -99,8 +31,8 @@
 
 
   .demon {
-    z-index: -1;
-    position: absolute;
+    /* z-index: -1; */
+    position: relative;
     /*display: inline-block; */
     width: calc(var(--grid-cell)* 2);
     height: calc(var(--grid-cell)* 2);
@@ -321,9 +253,6 @@
     background-size: content-box;
 } 
 
-
-
-
 .guard1TT {
     position: absolute;
     width: calc(var(--grid-cell)* 2);
@@ -430,3 +359,44 @@
                  margin-top: 0px;
              }
          }
+
+
+/* NPC WALKING DRONE TRY BELOW */
+
+
+.npcWalkerDrone1 {
+    /* z-index: -1; */
+    position: absolute;
+    ;
+    /* display: inline-block; */
+    width: calc(var(--grid-cell)* 2);
+    height: calc(var(--grid-cell)* 2);
+    overflow: hidden;
+    grid-column-start: 10;
+    grid-row-start: 5;
+}
+
+.npcWalkerDrone1_spritesheet {
+    background: url("./assets/images/NPC WALKER DRONE 1.png") no-repeat no-repeat;
+    background-size: 100%;
+    width: calc(var(--grid-cell)* 8);
+    height: calc(var(--grid-cell)* 8);
+}
+
+
+.npcWalkerDrone1[npcFacing="right"] .npcWalkerDrone1_spritesheet {
+    background-position-y: calc(var(--pixel-size) * -48);
+}
+
+.npcWalkerDrone1[npcFacing="left"] .npcWalkerDrone1_spritesheet {
+    background-position-y: calc(var(--pixel-size) * -24);
+}
+
+.npcWalkerDrone1[npcFacing="up"] .npcWalkerDrone1_spritesheet {
+    background-position-y: calc(var(--pixel-size) * -72);
+}
+
+
+.npcWalkerDrone1 .npcWalkerDrone1_spritesheet {
+    animation: walkAnimation 1.0s steps(4) infinite;
+}
