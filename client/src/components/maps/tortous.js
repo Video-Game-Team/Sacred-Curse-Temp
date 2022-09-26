@@ -1718,15 +1718,15 @@ const Tortous = (props) => {
     ],
   ];
 
-  // console.log('PLAYER COORDINATES', yPlayerIndex.current, xPlayerIndex.current);
+  console.log('PLAYER COORDINATES', yPlayerIndex.current, xPlayerIndex.current);
   // console.log('Player TransformVar', yTransformVar, xTransformVar);
   // console.log(
   //   'VALUE Right',
   //   currentMap[yPlayerIndex.current][xPlayerIndex.current]
   // );
 
-  // console.log('DEMON COORDINATES', ydemonIndex.current, xdemonIndex.current);
-  // console.log('KEEP COORDINATES', yKeepIndex.current, xKeepIndex.current);
+  console.log('DEMON COORDINATES', ydemonIndex.current, xdemonIndex.current);
+  console.log('KEEP COORDINATES', yKeepIndex.current, xKeepIndex.current);
   // console.log('Player TransformVar', yTransformVar, xTransformVar);
   // console.log('DEMON TransformVar', ydemonTransformVar, xdemonTransformVar);
   // console.log('DOG YTransformVar', ydogTransformVar, xdogTransformVar);
@@ -2717,23 +2717,28 @@ const Tortous = (props) => {
       setNpcWalking('true');
 
       // CHECK TO SEE IF TILE IS WALKABLE
-      if (currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] !== 0) {
-        console.log('NOT AVAILBALE TO PASS');
+      if (currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] !== 0 ||
+        xBank.current < 0)
+      {
         setNpcWalking('false');
         return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
       }
 
       // CHECK TO SEE IF COLLISION WITH PLAYER IS HAPPENING
       if (
-        xPlayerIndex.current === xdemonIndex.current &&
-        yPlayerIndex.current === ydemonIndex.current
-      ) {
+        (xPlayerIndex.current === xdemonIndex.current &&
+         yPlayerIndex.current === ydemonIndex.current) ||
+        (xPlayerIndex.current -1 === xdemonIndex.current &&
+         yPlayerIndex.current === ydemonIndex.current) 
+        ) 
+        
+        {
         setNpcWalking('false');
         setNpcFace('faceBrideTT');
         setTextValue('Excuse me');
         clickAudio2();
         return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
-      }
+        }
 
       // LOGIC TO MOVE PLAYER IF ABOVE CONDITIONS HAVE BEEN MET
       setXdemonTransformVar((prevCount) => prevCount - speedRef2.current);
@@ -2763,15 +2768,19 @@ const Tortous = (props) => {
 
       // CHECK TO SEE IF COLLISION WITH PLAYER IS HAPPENING
       if (
-        xPlayerIndex.current === xdemonIndex.current &&
-        yPlayerIndex.current === ydemonIndex.current
-      ) {
+        (xPlayerIndex.current === xdemonIndex.current &&
+        yPlayerIndex.current === ydemonIndex.current) ||
+        (xPlayerIndex.current === xdemonIndex.current &&
+        yPlayerIndex.current -1 === ydemonIndex.current) 
+        ) 
+        
+        {
         setNpcWalking('false');
         setNpcFace('faceBrideTT');
         setTextValue('Excuse me');
         clickAudio2();
         return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
-      }
+        }
 
       // LOGIC TO MOVE PLAYER IF ABOVE CONDITIONS HAVE BEEN MET
       setYdemonTransformVar((prevCount) => prevCount - speedRef2.current);
@@ -2801,15 +2810,19 @@ const Tortous = (props) => {
 
       // CHECK TO SEE IF COLLISION WITH PLAYER IS HAPPENING
       if (
-        xPlayerIndex.current === xdemonIndex.current &&
-        yPlayerIndex.current === ydemonIndex.current
-      ) {
+        (xPlayerIndex.current === xdemonIndex.current &&
+        yPlayerIndex.current === ydemonIndex.current) ||
+        (xPlayerIndex.current === xdemonIndex.current -1 &&
+        yPlayerIndex.current === ydemonIndex.current -1) 
+      ) 
+      
+        {
         setNpcWalking('false');
         setNpcFace('faceBrideTT');
         setTextValue('Excuse me');
         clickAudio2();
         return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
-      }
+        }
 
       // LOGIC TO MOVE PLAYER IF ABOVE CONDITIONS HAVE BEEN MET
       setXdemonTransformVar((prevCount) => prevCount + speedRef2.current);
@@ -2817,7 +2830,7 @@ const Tortous = (props) => {
 
       if (xdemonBank.current < 0) {
         xdemonIndex.current = xdemonIndex.current + -1;
-        //  xKeepIndex.current = xKeepIndex.current + -1;
+        //xKeepIndex.current = xKeepIndex.current + -1;
         xdemonBank.current = 60;
       }
 
@@ -2839,8 +2852,11 @@ const Tortous = (props) => {
 
       // CHECK TO SEE IF COLLISION WITH PLAYER IS HAPPENING
       if (
-        xPlayerIndex.current === xdemonIndex.current &&
-        yPlayerIndex.current === ydemonIndex.current
+        (xPlayerIndex.current === xdemonIndex.current &&
+        yPlayerIndex.current === ydemonIndex.current) ||
+        (xPlayerIndex.current === xdemonIndex.current &&
+        yPlayerIndex.current === ydemonIndex.current -1) 
+
       ) {
         setNpcWalking('false');
         setNpcFace('faceBrideTT');
