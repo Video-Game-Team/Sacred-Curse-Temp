@@ -77,8 +77,6 @@
    }
 
 
-
-
 .brideTT {
     position: absolute;
     width: calc(var(--grid-cell)* 2.5);
@@ -104,9 +102,6 @@
     background-size: 12%;
     background-size: content-box;
 }
-
-
-
 
 
 .redheadTT {
@@ -135,9 +130,6 @@
     background-size: content-box;
 }
 
-
-
-
 .brunetteTT {
     position: absolute;
     width: calc(var(--grid-cell)* 2);
@@ -163,9 +155,6 @@
     background-size: 12%;
     background-size: content-box;
 }
-
-
-
 
 
 .crazyGuyTT {
@@ -195,9 +184,6 @@
 }
 
 
-
-
-
 .coinFlipperTT {
     position: absolute;
     width: calc(var(--grid-cell)* 2);
@@ -223,8 +209,6 @@
     background-size: 12%;
     background-size: content-box;
 }
-
-
 
 
 .blackSmithTT {
@@ -361,13 +345,12 @@
          }
 
 
+
 /* NPC WALKING DRONE TRY BELOW */
 
-
 .npcWalkerDrone1 {
-    /* z-index: -1; */
-    position: absolute;;
-    ;
+    z-index: -1;
+    position: absolute;
     /* display: inline-block; */
     width: calc(var(--grid-cell)* 2);
     height: calc(var(--grid-cell)* 2);

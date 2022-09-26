@@ -57,7 +57,6 @@ import Clock from 'react-live-clock';
 import './App.css';
 
 function App() {
-  // const character =  testRef.current.querySelector('characterUp');
   const [itemObj, setItemObj] = useState({});
 
   const [menu1Toggle, setMenu1Toggle] = useState(false);
@@ -72,6 +71,7 @@ function App() {
     DemonObjects.Zabuza,
     DemonObjects.Naruto,
   ]);
+
   const [current, setCurrent] = useState('tortous');
   const [tempCurrent, setTempCurrent] = useState(null);
   const [previous, setPrevious] = useState(null);
@@ -79,12 +79,15 @@ function App() {
   const [menu, setMenu] = useState(false);
 
   const [saturate, setSaturate] = useState(120);
-  const [hue, setHue] = useState(0);
-  const [brightness, setBrightness] = useState(100);
-  const [sepia, setSepia] = useState(0);
   const [contrast, setContrast] = useState(120);
-  const [invert, setInvert] = useState([0]);
-  
+
+  // const [saveState, setSaveState] = useState({
+  //   butt: 'false',
+  //   ass: 'false',
+  //   head: 'false'
+  // })
+
+  // console.log('SAVESTATE', saveState)
 
   // console.log("CURRENTMAP", current, "PREVIOUSMAP", previous)
 
@@ -489,17 +492,17 @@ function App() {
 
 
     // menu Clock toggle
-  // useEffect(() => {
-  //   const clock = (event) => {
-  //     if (event.key === 'c') {
-  //       setMenuClockToggle(!menuClockToggle);
-  //     }
-  //   };
-  //   window.addEventListener('keydown', clock);
-  //   return () => {
-  //     window.removeEventListener('keydown', clock);
-  //   };
-  // }, [menuClockToggle]);
+  useEffect(() => {
+    const clock = (event) => {
+      if (event.key === 'c') {
+        setMenuClockToggle(!menuClockToggle);
+      }
+    };
+    window.addEventListener('keydown', clock);
+    return () => {
+      window.removeEventListener('keydown', clock);
+    };
+  }, [menuClockToggle]);
 
  
 
@@ -508,11 +511,7 @@ function App() {
   return (
     <div>
       <div style={{ filter: `saturate(${saturate}%)` }}>
-        <div style={{ filter: `hue-rotate(${hue}deg)` }}>
-          <div style={{ filter: `brightness(${brightness}%)` }}>
-            <div style={{ filter: `sepia(${sepia}%)` }}>
               <div style={{ filter: `contrast(${contrast}%)` }}>
-                <div style={{ filter: `invert(${invert}%)` }}></div>
                 <div>
                   <body>
                     {mapsObj[current]}
@@ -523,7 +522,7 @@ function App() {
                     ) : null}
                   </body>
 
-                  {/* {menuClockToggle === true ? (
+                  {menuClockToggle === true ? (
                     <>
                       <div className="clock">
                         <Clock
@@ -537,8 +536,8 @@ function App() {
                         <Datetime />
                       </div>
                     </>
-                  ) : null} */}
-{/* 
+                  ) : null} 
+
                   {menu2Toggle === true ? (
                     <div className="box1">
                       <text className="pokeText" style={{ marginLeft: '90px' }}>
@@ -597,34 +596,12 @@ function App() {
                         MENU
                       </text>
                     </div>
-                  ) : null} */}
-
-
+                  ) : null}
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
   );
 }
 
 export default App;
-
-
-
-
-// return (
-//     <div>
-//       <body>
-//         {mapsObj[current]}
-//         {menu === true ? (
-//           <dialog className="mainMenu" open>
-//             <button>MAP</button>
-//           </dialog>
-//         ) : null}
-//       </body>
-      
-//     </div>
-//   );

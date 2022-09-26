@@ -20499,101 +20499,107 @@ const TrainTracksToTortous = (props) => {
     ? (facing.current = null)
     : null;
 
+
+
   //animate is a reccursive function that takes the current key and updates the cordinate variables depending on which direction is pushed. It also sets which way the character is facing
+  
+  let fps = 15;
+  
+  
   const animate = () => {
-    //if current key is d, the x cordinate becomes  the previous state + the speed
-    if (dirArr.current[0] === 'ArrowRight') {
-      if (
-        currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] === 0 ||
-        xBank.current < 0
-      )
+      //if current key is d, the x cordinate becomes  the previous state + the speed
+      if (dirArr.current[0] === 'ArrowRight') {
         if (
-          yBank.current + 32 < 64 ||
-          currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
-        ) {
-          {
-            setXTransformVar((prevCount) => prevCount - speedRef.current);
-            // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current+1])
-            xBank.current = xBank.current + speedRef.current;
-            // console.log(yPlayerIndex.current,xPlayerIndex.current)
-            if (xBank.current === 64) {
-              xPlayerIndex.current = xPlayerIndex.current + 1;
+          currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] === 0 ||
+          xBank.current < 0
+        )
+          if (
+            yBank.current + 32 < 64 ||
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
+          ) {
+            {
+              setXTransformVar((prevCount) => prevCount - speedRef.current);
+              // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current+1])
+              xBank.current = xBank.current + speedRef.current;
+              // console.log(yPlayerIndex.current,xPlayerIndex.current)
+              if (xBank.current === 64) {
+                xPlayerIndex.current = xPlayerIndex.current + 1;
 
-              xBank.current = 0;
+                xBank.current = 0;
+              }
+            }
+          }
+      }
+      //if current key is a, the x cordinate becomes  the previous state - the speed
+
+      if (dirArr.current[0] === 'ArrowLeft') {
+        if (
+          currentMap[yPlayerIndex.current][xPlayerIndex.current - 1] === 0 ||
+          xBank.current > 0
+        )
+          if (
+            yBank.current + 32 < 64 ||
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] == 0
+          ) {
+            {
+              setXTransformVar((prevCount) => prevCount + speedRef.current);
+              xBank.current = xBank.current - speedRef.current;
+              // console.log(yPlayerIndex.current,xPlayerIndex.current)
+
+              if (xBank.current < 0) {
+                // console.log("this one",xBank.current)
+
+                xPlayerIndex.current = xPlayerIndex.current - 1;
+                // console.log(yPlayerIndex.current, xPlayerIndex.current);
+                // alert(xPlayerIndex.current)
+                xBank.current = 60;
+              }
+            }
+          }
+      }
+
+      //if current key is w, the y cordinate becomes  the previous state + the speed
+      if (dirArr.current[0] === 'ArrowUp') {
+        if (
+          currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 0 ||
+          yBank.current < 0
+        ) {
+          if (
+            xBank.current + 48 < 64 ||
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
+          ) {
+            setYTransformVar((prevCount) => prevCount + speedRef.current);
+            // console.log(yPlayerIndex.current,xPlayerIndex.current)
+            yBank.current = yBank.current + speedRef.current;
+            if (yBank.current === 64) {
+              yPlayerIndex.current = yPlayerIndex.current - 1;
+              yBank.current = 0;
             }
           }
         }
-    }
-    //if current key is a, the x cordinate becomes  the previous state - the speed
+      }
+      //if current key is s, the y cordinate becomes  the previous state - the speed
 
-    if (dirArr.current[0] === 'ArrowLeft') {
-      if (
-        currentMap[yPlayerIndex.current][xPlayerIndex.current - 1] === 0 ||
-        xBank.current > 0
-      )
+      if (dirArr.current[0] === 'ArrowDown') {
         if (
-          yBank.current + 32 < 64 ||
-          currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] == 0
+          currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 0 ||
+          yBank.current > 0
         ) {
-          {
-            setXTransformVar((prevCount) => prevCount + speedRef.current);
-            xBank.current = xBank.current - speedRef.current;
-            // console.log(yPlayerIndex.current,xPlayerIndex.current)
-
-            if (xBank.current < 0) {
-              // console.log("this one",xBank.current)
-
-              xPlayerIndex.current = xPlayerIndex.current - 1;
-              // console.log(yPlayerIndex.current, xPlayerIndex.current);
-              // alert(xPlayerIndex.current)
-              xBank.current = 60;
+          // if (xBank.current+32<64 || newMap[yPlayerIndex.current+1][xPlayerIndex.current+1]==0)
+          if (
+            xBank.current < 16 ||
+            currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] == 0
+          ) {
+            setYTransformVar((prevCount) => prevCount - speedRef.current);
+            yBank.current = yBank.current - speedRef.current;
+            if (yBank.current < 0) {
+              yPlayerIndex.current = yPlayerIndex.current + 1;
+              yBank.current = 60;
             }
           }
         }
-    }
-
-    //if current key is w, the y cordinate becomes  the previous state + the speed
-    if (dirArr.current[0] === 'ArrowUp') {
-      if (
-        currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 0 ||
-        yBank.current < 0
-      ) {
-        if (
-          xBank.current + 48 < 64 ||
-          currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
-        ) {
-          setYTransformVar((prevCount) => prevCount + speedRef.current);
-          // console.log(yPlayerIndex.current,xPlayerIndex.current)
-          yBank.current = yBank.current + speedRef.current;
-          if (yBank.current === 64) {
-            yPlayerIndex.current = yPlayerIndex.current - 1;
-            yBank.current = 0;
-          }
-        }
       }
-    }
-    //if current key is s, the y cordinate becomes  the previous state - the speed
-
-    if (dirArr.current[0] === 'ArrowDown') {
-      if (
-        currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 0 ||
-        yBank.current > 0
-      ) {
-        // if (xBank.current+32<64 || newMap[yPlayerIndex.current+1][xPlayerIndex.current+1]==0)
-        if (
-          xBank.current < 16 ||
-          currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] == 0
-        ) {
-          setYTransformVar((prevCount) => prevCount - speedRef.current);
-          yBank.current = yBank.current - speedRef.current;
-          if (yBank.current < 0) {
-            yPlayerIndex.current = yPlayerIndex.current + 1;
-            yBank.current = 60;
-          }
-        }
-      }
-    }
-    requestRef.current = requestAnimationFrame(animate);
+      requestRef.current = requestAnimationFrame(animate);
   };
 
   // Matt Birnholtz is going to go bald
