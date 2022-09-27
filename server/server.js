@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 const State = require('./models/Schema.js');
 
 const app = express();
@@ -10,6 +11,8 @@ const PORT = 3001;
 app.use(express.json());
 
 app.use(cors());
+
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
   res.send('Hello World');

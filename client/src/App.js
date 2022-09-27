@@ -85,6 +85,21 @@ function App() {
   // Save State
   const [saveState, setSaveState] = useState([]);
 
+  const [passwordState, setPasswordState] = useState('')
+  const [userIDState, setUserIDState] = useState('');
+  const [currentMapState, setCurrentMapState] = useState('');
+  const [flowersState, setFlowersState] = useState('');
+  const [quest1State, setQuest1State] = useState('false');
+  const [quest2State, setQuest2State] = useState('false');
+  const [quest3State, setQuest3State] = useState('false');
+  const [quest4State, setQuest4State] = useState('false');
+  const [emailState, setEmailState] = useState('');
+  const [userNameState, setUserNameState] = useState('');
+
+  useEffect(() => {
+    setPasswordState("HICKY DICK DO")
+  })
+
   //Get Save state
   const GetSaveState = () => {
     axios.get('http://localhost:3001/state') 
@@ -100,32 +115,21 @@ function App() {
   }, );
 
 
-  
-  // const handleMe = val => 
-  //   setSaveState({
-  //   ...saveState,
-  //   [val]: saveState[quest1(true)]
-  // })
-
-  //  useEffect(() => {
-  //    handleMe(); 
-  //  }, );
-
  //Update Save State
   const updateState = () => {
     axios
       .put('http://localhost:3001/state/new', {
-        password: req.body.password,
-            userId: req.body.userID,
-            currentMap: req.body.currentMap,
-            flowers: req.body.flowers,
-            quest1: req.body.quest1,
-            quest2: req.body.quest2,
-            quest3: req.body.quest3,
-            quest4: req.body.quest4,
-            timeStamp: req.body.timeStamp,
-            email: req.body.email,
-            userName: req.body.userName,
+        password: passwordState,
+        userID: userIDState,
+        currentMap: currentMapState,
+        flowers: flowersState,
+        quest1: quest1State,
+        quest2: quest2State,
+        quest3: quest3State,
+        quest4: quest4State,
+        timeStamp: '1',
+        email: emailState,
+        userName: userNameState,
       })
       .then((res) => {
         console.log(res);
@@ -136,9 +140,6 @@ function App() {
      updateState();
      console.log('UPDATE SAVESTATE', saveState);
    }, );
-
-
-
 
   const mapsObj = {
     outDoorMap1: (
