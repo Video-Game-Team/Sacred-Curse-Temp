@@ -2737,7 +2737,7 @@ const Tortous = (props) => {
         return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
       }
 
-      // LOGIC TO MOVE PLAYER IF ABOVE CONDITIONS HAVE BEEN MET
+      // LOGIC TO MOVE PLAYER IF ABOVE CONDITIONS HAVE BEEN PASSED ON
       setXdemonTransformVar((prevCount) => prevCount - speedRef2.current);
       xdemonBank.current = xdemonBank.current + speedRef2.current;
 
@@ -2765,7 +2765,7 @@ const Tortous = (props) => {
 
       // CHECK TO SEE IF COLLISION WITH PLAYER IS HAPPENING
       if (
-        (yTransformVar == ydemonTransformVar - 90) &&
+        yTransformVar == ydemonTransformVar - 90 &&
         (xTransformVar <= xdemonTransformVar + 10 ||
           xTransformVar >= xdemonTransformVar - 10)
       ) {
@@ -2776,7 +2776,7 @@ const Tortous = (props) => {
         return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
       }
 
-      // LOGIC TO MOVE PLAYER IF ABOVE CONDITIONS HAVE BEEN MET
+      // LOGIC TO MOVE PLAYER IF ABOVE CONDITIONS HAVE BEEN PASSED ON
       setYdemonTransformVar((prevCount) => prevCount - speedRef2.current);
       ydemonBank.current = ydemonBank.current - speedRef2.current;
 
@@ -2804,10 +2804,9 @@ const Tortous = (props) => {
 
       // CHECK TO SEE IF COLLISION WITH PLAYER IS HAPPENING
       if (
-        (xTransformVar === xdemonTransformVar + 50) &&
+        xTransformVar === xdemonTransformVar + 50 &&
         (yTransformVar >= ydemonTransformVar - 90 ||
-        yTransformVar <= ydemonTransformVar + 90)
- 
+          yTransformVar <= ydemonTransformVar + 90)
       ) {
         setNpcWalking('false');
         setNpcFace('faceBrideTT');
@@ -2816,7 +2815,7 @@ const Tortous = (props) => {
         return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
       }
 
-      // LOGIC TO MOVE PLAYER IF ABOVE CONDITIONS HAVE BEEN MET
+      // LOGIC TO MOVE PLAYER IF ABOVE CONDITIONS HAVE BEEN PASSED ON
       setXdemonTransformVar((prevCount) => prevCount + speedRef2.current);
       xdemonBank.current = xdemonBank.current - speedRef2.current;
 
@@ -2844,9 +2843,9 @@ const Tortous = (props) => {
 
       // CHECK TO SEE IF COLLISION WITH PLAYER IS HAPPENING
       if (
-        (yTransformVar == ydemonTransformVar + 90) &&
+        yTransformVar == ydemonTransformVar + 90 &&
         (xTransformVar >= xdemonTransformVar - 10 ||
-         xTransformVar <= xdemonTransformVar + 10)
+          xTransformVar <= xdemonTransformVar + 10)
       ) {
         setNpcWalking('false');
         setNpcFace('faceBrideTT');
@@ -2855,7 +2854,7 @@ const Tortous = (props) => {
         return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
       }
 
-      // LOGIC TO MOVE PLAYER IF ABOVE CONDITIONS HAVE BEEN MET
+      // LOGIC TO MOVE PLAYER IF ABOVE CONDITIONS HAVE BEEN PASSED ON
       setYdemonTransformVar((prevCount) => prevCount + speedRef2.current);
       ydemonBank.current = ydemonBank.current + speedRef2.current;
 

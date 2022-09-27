@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+const axios = require('axios');
 import LeftWalker from './assets/images/leftWalker.png';
 import RightWalker from './assets/images/rightWalker.png';
 import UpWalker from './assets/images/upWalker.png';
@@ -81,15 +82,63 @@ function App() {
   const [saturate, setSaturate] = useState(120);
   const [contrast, setContrast] = useState(120);
 
-  // const [saveState, setSaveState] = useState({
-  //   butt: 'false',
-  //   ass: 'false',
-  //   head: 'false'
+  // Save State
+  const [saveState, setSaveState] = useState([]);
+
+  //Get Save state
+  const GetSaveState = () => {
+    axios.get('http://localhost:3001/state') 
+        .then(res => {
+          console.log('Res;', res.data);
+          setSaveState(res.data)
+  })
+}
+
+  useEffect(() => {
+    GetSaveState();
+    console.log('SAVESTATE', saveState);
+  }, );
+
+
+  
+  // const handleMe = val => 
+  //   setSaveState({
+  //   ...saveState,
+  //   [val]: saveState[quest1(true)]
   // })
 
-  // console.log('SAVESTATE', saveState)
+  //  useEffect(() => {
+  //    handleMe(); 
+  //  }, );
 
-  // console.log("CURRENTMAP", current, "PREVIOUSMAP", previous)
+ //Update Save State
+  const updateState = () => {
+    axios
+      .put('http://localhost:3001/state/new', {
+        password: req.body.password,
+            userId: req.body.userID,
+            currentMap: req.body.currentMap,
+            flowers: req.body.flowers,
+            quest1: req.body.quest1,
+            quest2: req.body.quest2,
+            quest3: req.body.quest3,
+            quest4: req.body.quest4,
+            timeStamp: req.body.timeStamp,
+            email: req.body.email,
+            userName: req.body.userName,
+      })
+      .then((res) => {
+        console.log(res);
+      });
+  };
+
+   useEffect(() => {
+     updateState();
+     console.log('UPDATE SAVESTATE', saveState);
+   }, );
+
+
+
 
   const mapsObj = {
     outDoorMap1: (
@@ -490,8 +539,7 @@ function App() {
     };
   }, [menu2Toggle]);
 
-
-    // menu Clock toggle
+  // menu Clock toggle
   useEffect(() => {
     const clock = (event) => {
       if (event.key === 'c') {
@@ -504,103 +552,89 @@ function App() {
     };
   }, [menuClockToggle]);
 
- 
-
-
   // whole map is a button - giving that button onkeyppress listener called wrap
   return (
     <div>
       <div style={{ filter: `saturate(${saturate}%)` }}>
-              <div style={{ filter: `contrast(${contrast}%)` }}>
-                <div>
-                  <body>
-                    {mapsObj[current]}
-                    {menu === true ? (
-                      <dialog className="mainMenu" open>
-                        <button>MAP</button>
-                      </dialog>
-                    ) : null}
-                  </body>
+        <div style={{ filter: `contrast(${contrast}%)` }}>
+          <div>
+            <body>
+              {mapsObj[current]}
+              {menu === true ? (
+                <dialog className="mainMenu" open>
+                  <button>MAP</button>
+                </dialog>
+              ) : null}
+            </body>
 
-                  {menuClockToggle === true ? (
-                    <>
-                      <div className="clock">
-                        <Clock
-                          format="h:mm:ssa"
-                          style={{ fontSize: '1.5em' }}
-                          ticking
-                        />
-                      </div>
-
-                      <div className="clockTime">
-                        <Datetime />
-                      </div>
-                    </>
-                  ) : null} 
-
-                  {menu2Toggle === true ? (
-                    <div className="box1">
-                      <text className="pokeText" style={{ marginLeft: '90px' }}>
-                        FLOWERS
-                      </text>c
-                    </div>
-                  ) : null}
-
-                  {menu2Toggle === true ? (
-                    <div className="box2">
-                      <text
-                        className="pokeText"
-                        style={{ marginLeft: '105px' }}
-                      >
-                        ITEMS
-                      </text>
-                    </div>
-                  ) : null}
-
-                  {menu2Toggle === true ? (
-                    <div className="box3">
-                      <text className="pokeText" style={{ marginLeft: '82px' }}>
-                        EQUIPMENT
-                      </text>
-                    </div>
-                  ) : null}
-
-                  {menu1Toggle === true ? (
-                    <div className="box4">
-                      <text
-                        className="pokeText"
-                        style={{ marginLeft: '125px' }}
-                      >
-                        MAP
-                      </text>
-                    </div>
-                  ) : null}
-
-                  {menu1Toggle === true ? (
-                    <div className="box5">
-                      <text
-                        className="pokeText"
-                        style={{ marginLeft: '585px' }}
-                      >
-                        CONTROLS
-                      </text>
-                    </div>
-                  ) : null}
-
-                  {menu1Toggle === true ? (
-                    <div className="box6">
-                      <text
-                        className="pokeText"
-                        style={{ marginLeft: '585px' }}
-                      >
-                        MENU
-                      </text>
-                    </div>
-                  ) : null}
+            {menuClockToggle === true ? (
+              <>
+                <div className="clock">
+                  <Clock
+                    format="h:mm:ssa"
+                    style={{ fontSize: '1.5em' }}
+                    ticking
+                  />
                 </div>
+
+                <div className="clockTime">
+                  <Datetime />
+                </div>
+              </>
+            ) : null}
+
+            {menu2Toggle === true ? (
+              <div className="box1">
+                <text className="pokeText" style={{ marginLeft: '90px' }}>
+                  FLOWERS
+                </text>
+                c
               </div>
-            </div>
+            ) : null}
+
+            {menu2Toggle === true ? (
+              <div className="box2">
+                <text className="pokeText" style={{ marginLeft: '105px' }}>
+                  ITEMS
+                </text>
+              </div>
+            ) : null}
+
+            {menu2Toggle === true ? (
+              <div className="box3">
+                <text className="pokeText" style={{ marginLeft: '82px' }}>
+                  EQUIPMENT
+                </text>
+              </div>
+            ) : null}
+
+            {menu1Toggle === true ? (
+              <div className="box4">
+                <text className="pokeText" style={{ marginLeft: '125px' }}>
+                  MAP
+                </text>
+              </div>
+            ) : null}
+
+            {menu1Toggle === true ? (
+              <div className="box5">
+                <text className="pokeText" style={{ marginLeft: '585px' }}>
+                  CONTROLS
+                </text>
+              </div>
+            ) : null}
+
+            {menu1Toggle === true ? (
+              <div className="box6">
+                <text className="pokeText" style={{ marginLeft: '585px' }}>
+                  MENU
+                </text>
+              </div>
+            ) : null}
           </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
