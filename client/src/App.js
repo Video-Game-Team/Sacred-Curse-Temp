@@ -117,7 +117,7 @@ function App() {
   //   setPasswordState('SHARK');
   // }, []);
 
-  //Get Save state
+  // GET Request for SaveState
   const GetSaveState = () => {
     axios
       .get('http://localhost:3001/state')
@@ -132,7 +132,7 @@ function App() {
     GetSaveState();
   }, []);
 
-  //Update Save State
+  // POST Request for SaveState
   const updateState = () => {
     axios
       .post('http://localhost:3001/state/new', {
@@ -158,18 +158,36 @@ function App() {
     updateState();
   }, [passwordState]);
 
-  //  const putState = async (id) => {
-  //   console.log("HELELELELE")
-  //    const data = await fetch(`http://localhost:3001/state/update/${id}`, {
-  //      method: 'PUT',
-  //      password: 'TINKERBELL',
-  //    }).then((res) => res.json());
-  //  };
+  // PUT Request for SaveState
+  const putState = async (id) => {
+    console.log('HELELELELE');
+    const data = await fetch(`http://localhost:3001/state/update/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        password: 'barMikeb',
+        userID: '12345',
+        currentMap: 'tot',
+        flowers: 1,
+        quest1: false,
+        quest2: false,
+        quest3: false,
+        quest4: false,
+        timeStamp: '',
+        email: 'mmmmm',
+        userName: 'aaaaaa',
+      }),
+    }).then((res) => res.json());
+  };
 
-  //    useEffect(() => {
-  //     putState('6333ae1026690d1e71b91b39');
-  //    }, [])
+  useEffect(() => {
+    putState('6333ae1026690d1e71b91b39');
+  }, []);
 
+
+  // DELETE Request for SaveState
   const deleteState = async (id) => {
     const data = await fetch(`http://localhost:3001/state/delete/${id}`, {
       method: 'DELETE',
@@ -522,8 +540,6 @@ function App() {
     demoMap: <DemoMap demonList={demonTeam} />,
   };
 
- 
-
   //MATT MENU
   useEffect(() => {
     const menuListener = (event) => {
@@ -557,13 +573,13 @@ function App() {
     setItemObj((itemObj.poop = x));
   }
 
-    function finalState(x) {
-      setPasswordState(x);
-    }
+  function finalState(x) {
+    setPasswordState(x);
+  }
 
-    useEffect(() => {
-      finalState()
-    }, [])
+  useEffect(() => {
+    finalState();
+  }, []);
 
   //menu 1 toggle
   useEffect(() => {

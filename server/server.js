@@ -55,30 +55,22 @@ app.post('/state/new', (req, res) => {
 });
 
 // PUT
-// app.put('/state/update/:id', async (req, res) => {
-//   const state = await State.findById(req.params.id)({
-//     password: req.body.password,
-//     userId: req.body.userID,
-//     currentMap: req.body.currentMap,
-//     flowers: req.body.flowers,
-//     quest1: 'true',
-//     quest2: req.body.quest2,
-//     quest3: req.body.quest3,
-//     quest4: req.body.quest4,
-//     timeStamp: req.body.timeStamp,
-//     email: req.body.email,
-//     userName: req.body.userName,
-//   });
-//   state.save();
-//   res.json(state);
-// });
-
-// PUT
 app.put('/state/update/:id', async (req, res) => {
   const update = await State.findById(req.params.id);
   update.password = req.body.password;
+  update.userID = req.body.userID;
+  update.currentMap = req.body.currentMap;
+  update.flowers = req.body.flowers;
+  update.quest1 = req.body.quest1;
+  update.quest2 = req.body.quest2;
+  update.quest3 = req.body.quest3;
+  update.quest4 = req.body.quest4;
+  update.timeStamp = req.body.timeStamp;
+  update.email = req.body.email;
+  update.userName = req.body.userName;
   update.save();
   res.json(update);
+  console.log('UPDATE', update);
 });
 
 // DELETE
