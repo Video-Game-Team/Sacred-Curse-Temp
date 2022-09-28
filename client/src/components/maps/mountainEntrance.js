@@ -1265,7 +1265,7 @@ const MountainEntrance = (props) => {
             <div
               className="mech2ME pixel-art"
               style={{
-                transform: `translate3d( ${1918}px, ${1360}px, 0 )`,
+                transform: `translate3d( ${1918}px, ${1555}px, 0 )`,
               }}
             >
               <div className="mech2ME_spritesheet pixel-art"></div>
@@ -1274,7 +1274,7 @@ const MountainEntrance = (props) => {
             <div
               className="mainGuardME pixel-art"
               style={{
-                transform: `translate3d( ${2120}px, ${1175}px, 0 )`,
+                transform: `translate3d( ${2120}px, ${1455}px, 0 )`,
               }}
             >
               <div className="mainGuardME_spritesheet pixel-art"></div>

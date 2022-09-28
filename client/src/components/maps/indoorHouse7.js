@@ -593,7 +593,7 @@ const IndoorHouse7 = (props) => {
             <div
               className="guyIH7 pixel-art"
               style={{
-                transform: `translate3d( ${400}px, ${250}px, 0 )`,
+                transform: `translate3d( ${400}px, ${320}px, 0 )`,
               }}
             >
               <div className="guyIH7_spritesheet pixel-art"></div>

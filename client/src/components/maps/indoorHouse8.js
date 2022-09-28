@@ -17,7 +17,7 @@ const IndoorHouse8 = (props) => {
   //this sets the x Cordinate to transform the map and character location
   const [xTransformVar, setXTransformVar] = useState(361);
   //this sets the y Cordinate to transform the map and character location
-  const [yTransformVar, setYTransformVar] = useState(-531);
+  const [yTransformVar, setYTransformVar] = useState(-441);
   //
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster

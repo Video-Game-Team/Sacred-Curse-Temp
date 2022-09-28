@@ -1974,7 +1974,7 @@ const MountainTown = (props) => {
             <div
               className="girl1MT pixel-art"
               style={{
-                transform: `translate3d( ${2800}px, ${3880}px, 0 )`,
+                transform: `translate3d( ${2800}px, ${3980}px, 0 )`,
               }}
             >
               <div className="girl1MT_spritesheet pixel-art"></div>
@@ -1983,7 +1983,7 @@ const MountainTown = (props) => {
             <div
               className="eaterMT pixel-art"
               style={{
-                transform: `translate3d( ${972}px, ${3093}px, 0 )`,
+                transform: `translate3d( ${972}px, ${3195}px, 0 )`,
               }}
             >
               <div className="eaterMT_spritesheet pixel-art"></div>
@@ -1992,7 +1992,7 @@ const MountainTown = (props) => {
             <div
               className="girl2MT pixel-art"
               style={{
-                transform: `translate3d( ${4204}px, ${3033}px, 0 )`,
+                transform: `translate3d( ${4204}px, ${3128}px, 0 )`,
               }}
             >
               <div className="girl2MT_spritesheet pixel-art"></div>
@@ -2001,7 +2001,7 @@ const MountainTown = (props) => {
             <div
               className="guy1MT pixel-art"
               style={{
-                transform: `translate3d( ${6154}px, ${1958}px, 0 )`,
+                transform: `translate3d( ${6154}px, ${2058}px, 0 )`,
               }}
             >
               <div className="guy1MT_spritesheet pixel-art"></div>
@@ -2010,7 +2010,7 @@ const MountainTown = (props) => {
             <div
               className="guyBaldMT pixel-art"
               style={{
-                transform: `translate3d( ${3332}px, ${1494}px, 0 )`,
+                transform: `translate3d( ${3332}px, ${1578}px, 0 )`,
               }}
             >
               <div className="guyBaldMT_spritesheet pixel-art"></div>
@@ -2019,7 +2019,7 @@ const MountainTown = (props) => {
             <div
               className="rancherMT pixel-art"
               style={{
-                transform: `translate3d( ${950}px, ${1243}px, 0 )`,
+                transform: `translate3d( ${950}px, ${1350}px, 0 )`,
               }}
             >
               <div className="rancherMT_spritesheet pixel-art"></div>

@@ -1396,7 +1396,7 @@ const SaintAnna = (props) => {
             <div
               className="dockguy1SA pixel-art"
               style={{
-                transform: `translate3d( ${1120}px, ${1436}px, 0 )`,
+                transform: `translate3d( ${1120}px, ${1536}px, 0 )`,
               }}
             >
               <div className="dockguy1SA_spritesheet pixel-art"></div>
@@ -1405,7 +1405,7 @@ const SaintAnna = (props) => {
             <div
               className="brunetteSA pixel-art"
               style={{
-                transform: `translate3d( ${2442}px, ${1362}px, 0 )`,
+                transform: `translate3d( ${2442}px, ${1442}px, 0 )`,
               }}
             >
               <div className="brunetteSA_spritesheet pixel-art"></div>
@@ -1414,7 +1414,7 @@ const SaintAnna = (props) => {
             <div
               className="squatterSA pixel-art"
               style={{
-                transform: `translate3d( ${2120}px, ${2380}px, 0 )`,
+                transform: `translate3d( ${2120}px, ${2480}px, 0 )`,
               }}
             >
               <div className="squatterSA_spritesheet pixel-art"></div>
@@ -1423,7 +1423,7 @@ const SaintAnna = (props) => {
             <div
               className="pizzaGuySA pixel-art"
               style={{
-                transform: `translate3d( ${4176}px, ${2330}px, 0 )`,
+                transform: `translate3d( ${4176}px, ${2430}px, 0 )`,
               }}
             >
               <div className="pizzaGuySA_spritesheet pixel-art"></div>
@@ -1432,7 +1432,7 @@ const SaintAnna = (props) => {
             <div
               className="dockguy1SA pixel-art"
               style={{
-                transform: `translate3d( ${5062}px, ${2080}px, 0 )`,
+                transform: `translate3d( ${5062}px, ${2180}px, 0 )`,
               }}
             >
               <div className="dockguy1SA_spritesheet pixel-art"></div>

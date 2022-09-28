@@ -1644,7 +1644,7 @@ const TownMap1 = (props) => {
             <div
               className="mainGuardTM pixel-art"
               style={{
-                transform: `translate3d( ${2060}px, ${2200}px, 0 )`,
+                transform: `translate3d( ${2060}px, ${2290}px, 0 )`,
               }}
             >
               <div className="mainGuardTM_spritesheet pixel-art"></div>
@@ -1653,7 +1653,7 @@ const TownMap1 = (props) => {
             <div
               className="mainGuardTM pixel-art"
               style={{
-                transform: `translate3d( ${2420}px, ${2010}px, 0 )`,
+                transform: `translate3d( ${2420}px, ${2100}px, 0 )`,
               }}
             >
               <div className="mainGuardTM_spritesheet pixel-art"></div>
@@ -1662,7 +1662,7 @@ const TownMap1 = (props) => {
             <div
               className="mainGuardTM pixel-art"
               style={{
-                transform: `translate3d( ${2090}px, ${1300}px, 0 )`,
+                transform: `translate3d( ${2090}px, ${1400}px, 0 )`,
               }}
             >
               <div className="mainGuardTM_spritesheet pixel-art"></div>
@@ -1671,7 +1671,7 @@ const TownMap1 = (props) => {
             <div
               className="mainGuardTM pixel-art"
               style={{
-                transform: `translate3d( ${1510}px, ${1300}px, 0 )`,
+                transform: `translate3d( ${1510}px, ${1400}px, 0 )`,
               }}
             >
               <div className="mainGuardTM_spritesheet pixel-art"></div>
@@ -1680,7 +1680,7 @@ const TownMap1 = (props) => {
             <div
               className="mainGuardTM pixel-art"
               style={{
-                transform: `translate3d( ${450}px, ${175}px, 0 )`,
+                transform: `translate3d( ${450}px, ${275}px, 0 )`,
               }}
             >
               <div className="mainGuardTM_spritesheet pixel-art"></div>
@@ -1689,13 +1689,11 @@ const TownMap1 = (props) => {
             <div
               className="mainGuardTM pixel-art"
               style={{
-                transform: `translate3d( ${600}px, ${125}px, 0 )`,
+                transform: `translate3d( ${600}px, ${225}px, 0 )`,
               }}
             >
               <div className="mainGuardTM_spritesheet pixel-art"></div>
             </div>
-
-            
           </div>
         </div>
         {textValue ? (

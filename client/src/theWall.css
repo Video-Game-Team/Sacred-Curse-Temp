@@ -38,7 +38,7 @@ body {
     image-rendering: pixelated;
     max-height: 50000px;
     min-width: 50000px;
-    background-image: url("./assets/maps/The Wall w grid npc.png");
+    background-image: url("./assets/maps/The Wall no grid npc.png");
     background-size: 2688px;
     width: calc(105 * var(--grid-cell));
     height: calc(90 * var(--grid-cell));
@@ -57,13 +57,13 @@ body {
 
 
 .mech1TW {
+    position: absolute;
     width: calc(var(--grid-cell) * 4);
     height: calc(var(--grid-cell) * 4);
     overflow: hidden;
 }
 
 .mech1TW_spritesheet {
-    position: absolute;
     background: url("./assets/images/mech3.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc(var(--grid-cell) * 12);
@@ -76,13 +76,13 @@ body {
 
 
 .mech2TW {
+    position: absolute;
     width: calc(var(--grid-cell) * 4);
     height: calc(var(--grid-cell) * 4);
     overflow: hidden;
 }
 
 .mech2TW_spritesheet {
-    position: absolute;
     background: url("./assets/images/mech4.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc(var(--grid-cell) * 12);
@@ -96,13 +96,13 @@ body {
 
 
 .mainGuardTW {
+    position: absolute;
     width: calc(var(--grid-cell)* 2.5);
     height: calc(var(--grid-cell)* 2.5);
     overflow: hidden;
 }
 
 .mainGuardTW_spritesheet {
-    position: fixed;
     background: url("./assets/images/Mountain Entrance Main Guard.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc(var(--grid-cell)* 7);
@@ -123,13 +123,13 @@ body {
 
 
 .shots1TW {
+    position: absolute;
     width: calc(var(--grid-cell)* 2);
     height: calc(var(--grid-cell)* 2);
     overflow: hidden;
 }
 
 .shots1TW_spritesheet {
-    position: fixed;
     background: url("./assets/images/Fighter Shots1.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc(var(--grid-cell)* 17);

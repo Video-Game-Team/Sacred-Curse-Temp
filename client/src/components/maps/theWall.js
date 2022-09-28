@@ -1640,7 +1640,7 @@ const TheWall = (props) => {
             <div
               className="mech1TW pixel-art"
               style={{
-                transform: `translate3d( ${1355}px, ${475}px, 0 )`,
+                transform: `translate3d( ${1355}px, ${575}px, 0 )`,
               }}
             >
               <div className="mech1TW_spritesheet pixel-art"></div>
@@ -1649,7 +1649,7 @@ const TheWall = (props) => {
             <div
               className="mech2TW pixel-art"
               style={{
-                transform: `translate3d( ${1035}px, ${285}px, 0 )`,
+                transform: `translate3d( ${1035}px, ${585}px, 0 )`,
               }}
             >
               <div className="mech2TW_spritesheet pixel-art"></div>
@@ -1658,7 +1658,7 @@ const TheWall = (props) => {
             <div
               className="mainGuardTW pixel-art"
               style={{
-                transform: `translate3d( ${1235}px, ${275}px, 0 )`,
+                transform: `translate3d( ${1235}px, ${745}px, 0 )`,
               }}
             >
               <div className="mainGuardTW_spritesheet pixel-art"></div>

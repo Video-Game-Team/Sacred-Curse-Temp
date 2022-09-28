@@ -565,7 +565,7 @@ return (
             <div
               className="wizardSILH pixel-art"
               style={{
-                transform: `translate3d( ${369}px, ${126}px, 0 )`,
+                transform: `translate3d( ${369}px, ${216}px, 0 )`,
               }}
             >
               <div className="wizardSILH_spritesheet pixel-art"></div>

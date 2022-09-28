@@ -20652,7 +20652,7 @@ const TrainTracksToTortous = (props) => {
             <div
               className="blondeTTTV pixel-art"
               style={{
-                transform: `translate3d( ${1086}px, ${15620}px, 0 )`,
+                transform: `translate3d( ${1086}px, ${15720}px, 0 )`,
               }}
             >
               <div className="blondeTTTV_spritesheet pixel-art"></div>
@@ -20661,7 +20661,7 @@ const TrainTracksToTortous = (props) => {
             <div
               className="brunnetteTTTV pixel-art"
               style={{
-                transform: `translate3d( ${1086}px, ${15188}px, 0 )`,
+                transform: `translate3d( ${1086}px, ${15288}px, 0 )`,
               }}
             >
               <div className="brunnetteTTTV_spritesheet pixel-art"></div>

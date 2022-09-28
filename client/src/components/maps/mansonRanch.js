@@ -1295,7 +1295,7 @@ const MansonRanch = (props) => {
             <div
               className="crazyGuyMR pixel-art"
               style={{
-                transform: `translate3d( ${760}px, ${1295}px, 0 )`,
+                transform: `translate3d( ${760}px, ${1390}px, 0 )`,
               }}
             >
               <div className="crazyGuyMR_spritesheet pixel-art"></div>
@@ -1304,7 +1304,7 @@ const MansonRanch = (props) => {
             <div
               className="girlShiekMR pixel-art"
               style={{
-                transform: `translate3d( ${2885}px, ${1180}px, 0 )`,
+                transform: `translate3d( ${2885}px, ${1390}px, 0 )`,
               }}
             >
               <div className="girlShiekMR_spritesheet pixel-art"></div>
@@ -1313,7 +1313,7 @@ const MansonRanch = (props) => {
             <div
               className="girlHippyPrettyMR pixel-art"
               style={{
-                transform: `translate3d( ${1964}px, ${1505}px, 0 )`,
+                transform: `translate3d( ${1964}px, ${1845}px, 0 )`,
               }}
             >
               <div className="girlHippyPrettyMR_spritesheet pixel-art"></div>
@@ -1322,7 +1322,7 @@ const MansonRanch = (props) => {
             <div
               className="girlLaughingMR pixel-art"
               style={{
-                transform: `translate3d( ${1102}px, ${1970}px, 0 )`,
+                transform: `translate3d( ${1102}px, ${2410}px, 0 )`,
               }}
             >
               <div className="girlLaughingMR_spritesheet pixel-art"></div>
@@ -1331,7 +1331,7 @@ const MansonRanch = (props) => {
             <div
               className="girlHippy1MR pixel-art"
               style={{
-                transform: `translate3d( ${2379}px, ${2353}px, 0 )`,
+                transform: `translate3d( ${2379}px, ${2930}px, 0 )`,
               }}
             >
               <div className="girlHippy1MR_spritesheet pixel-art"></div>

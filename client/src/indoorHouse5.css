@@ -65,13 +65,13 @@ body {
 
 
  .girlIH5 {
+    position: absolute;
      width: calc(var(--grid-cell)* 2.2);
      height: calc(var(--grid-cell)* 2.2);
      overflow: hidden;
  }
 
  .girlIH5_spritesheet {
-     position: absolute;
      background: url("./assets/images/Indoor House 5 girl.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc(var(--grid-cell)*34);

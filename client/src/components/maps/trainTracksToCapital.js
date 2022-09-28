@@ -2115,7 +2115,7 @@ const TrainTracksToCapital = (props) => {
             <div
               className="guard1TTTC pixel-art"
               style={{
-                transform: `translate3d( ${1600}px, ${500}px, 0 )`,
+                transform: `translate3d( ${1600}px, ${600}px, 0 )`,
               }}
             >
               <div className="guard1TTTC_spritesheet pixel-art"></div>

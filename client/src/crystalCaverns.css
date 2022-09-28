@@ -78,13 +78,13 @@ body {
 
 
  .water {
+    position: absolute;
      width: calc(var(--grid-cell) * 6.8);
      height: calc(var(--grid-cell)* 62.7);
      overflow: hidden;
  }
 
  .water_spritesheet {
-     position: absolute;
      background: url("./assets/images/river no grid.png") no-repeat no-repeat;
      background-size: 100%;
      width: calc(var(--grid-cell)* 8);

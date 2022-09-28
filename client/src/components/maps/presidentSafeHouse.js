@@ -587,7 +587,7 @@ const PresidentSafeHouse = (props) => {
             <div
               className="guard1PSH pixel-art"
               style={{
-                transform: `translate3d( ${100}px, ${640}px, 0 )`,
+                transform: `translate3d( ${100}px, ${780}px, 0 )`,
               }}
             >
               <div className="guard1PSH_spritesheet pixel-art"></div>
@@ -596,7 +596,7 @@ const PresidentSafeHouse = (props) => {
             <div
               className="guard2PSH pixel-art"
               style={{
-                transform: `translate3d( ${300}px, ${640}px, 0 )`,
+                transform: `translate3d( ${300}px, ${780}px, 0 )`,
               }}
             >
               <div className="guard2PSH_spritesheet pixel-art"></div>
@@ -605,7 +605,7 @@ const PresidentSafeHouse = (props) => {
             <div
               className="guard2PSH pixel-art"
               style={{
-                transform: `translate3d( ${50}px, ${230}px, 0 )`,
+                transform: `translate3d( ${50}px, ${320}px, 0 )`,
               }}
             >
               <div className="guard2PSH_spritesheet pixel-art"></div>
@@ -615,7 +615,7 @@ const PresidentSafeHouse = (props) => {
             <div
               className="general1RH2 pixel-art"
               style={{
-                transform: `translate3d( ${760}px, ${660}px, 0 )`,
+                transform: `translate3d( ${760}px, ${760}px, 0 )`,
               }}
             >
               <div className="general1RH2_spritesheet pixel-art"></div>
@@ -624,7 +624,7 @@ const PresidentSafeHouse = (props) => {
             <div
               className="general1RH2 pixel-art"
               style={{
-                transform: `translate3d( ${450}px, ${175}px, 0 )`,
+                transform: `translate3d( ${450}px, ${275}px, 0 )`,
               }}
             >
               <div className="general1RH2_spritesheet pixel-art"></div>
@@ -633,7 +633,7 @@ const PresidentSafeHouse = (props) => {
             <div
               className="presidentRH2 pixel-art"
               style={{
-                transform: `translate3d( ${600}px, ${125}px, 0 )`,
+                transform: `translate3d( ${600}px, ${245}px, 0 )`,
               }}
             >
               <div className="presidentRH2_spritesheet pixel-art"></div>

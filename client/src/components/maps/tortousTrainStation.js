@@ -1570,7 +1570,7 @@ const TortousTrainStation = (props) => {
             <div
               className="guard1TTTS pixel-art"
               style={{
-                transform: `translate3d( ${2700}px, ${1300}px, 0 )`,
+                transform: `translate3d( ${2700}px, ${1400}px, 0 )`,
               }}
             >
               <div className="guard1TTTS_spritesheet pixel-art"></div>
@@ -1579,7 +1579,7 @@ const TortousTrainStation = (props) => {
             <div
               className="guard1TTTS pixel-art"
               style={{
-                transform: `translate3d( ${2820}px, ${1300}px, 0 )`,
+                transform: `translate3d( ${2820}px, ${1400}px, 0 )`,
               }}
             >
               <div className="guard1TTTS_spritesheet pixel-art"></div>
@@ -1588,7 +1588,7 @@ const TortousTrainStation = (props) => {
             <div
               className="guard1TTTS pixel-art"
               style={{
-                transform: `translate3d( ${2940}px, ${1300}px, 0 )`,
+                transform: `translate3d( ${2940}px, ${1400}px, 0 )`,
               }}
             >
               <div className="guard1TTTS_spritesheet pixel-art"></div>
@@ -1597,7 +1597,7 @@ const TortousTrainStation = (props) => {
             <div
               className="guard1TTTS pixel-art"
               style={{
-                transform: `translate3d( ${3060}px, ${1300}px, 0 )`,
+                transform: `translate3d( ${3060}px, ${1400}px, 0 )`,
               }}
             >
               <div className="guard1TTTS_spritesheet pixel-art"></div>
@@ -1606,7 +1606,7 @@ const TortousTrainStation = (props) => {
             <div
               className="guard1TTTS pixel-art"
               style={{
-                transform: `translate3d( ${3180}px, ${1300}px, 0 )`,
+                transform: `translate3d( ${3180}px, ${1400}px, 0 )`,
               }}
             >
               <div className="guard1TTTS_spritesheet pixel-art"></div>
@@ -1615,7 +1615,7 @@ const TortousTrainStation = (props) => {
             <div
               className="guard1TTTS pixel-art"
               style={{
-                transform: `translate3d( ${3300}px, ${1300}px, 0 )`,
+                transform: `translate3d( ${3300}px, ${1400}px, 0 )`,
               }}
             >
               <div className="guard1TTTS_spritesheet pixel-art"></div>
@@ -1624,7 +1624,7 @@ const TortousTrainStation = (props) => {
             <div
               className="guard1TTTS pixel-art"
               style={{
-                transform: `translate3d( ${3420}px, ${1300}px, 0 )`,
+                transform: `translate3d( ${3420}px, ${1400}px, 0 )`,
               }}
             >
               <div className="guard1TTTS_spritesheet pixel-art"></div>
@@ -1633,7 +1633,7 @@ const TortousTrainStation = (props) => {
             <div
               className="guard1TTTS pixel-art"
               style={{
-                transform: `translate3d( ${3540}px, ${1300}px, 0 )`,
+                transform: `translate3d( ${3540}px, ${1400}px, 0 )`,
               }}
             >
               <div className="guard1TTTS_spritesheet pixel-art"></div>
@@ -1642,23 +1642,20 @@ const TortousTrainStation = (props) => {
             <div
               className="generalTTTS pixel-art"
               style={{
-                transform: `translate3d( ${3140}px, ${1174}px, 0 )`,
+                transform: `translate3d( ${3140}px, ${1274}px, 0 )`,
               }}
             >
               <div className="generalTTTS_spritesheet pixel-art"></div>
             </div>
 
-
             <div
               className="fountainTTTS pixel-art"
               style={{
-                transform: `translate3d( ${3135}px, ${1634}px, 0 )`,
+                transform: `translate3d( ${3135}px, ${1734}px, 0 )`,
               }}
             >
               <div className="fountainTTTS_spritesheet pixel-art"></div>
             </div>
-
-
           </div>
         </div>
         {textValue ? (

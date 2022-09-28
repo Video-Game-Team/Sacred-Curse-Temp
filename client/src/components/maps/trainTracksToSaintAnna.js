@@ -1933,7 +1933,7 @@ const TrainTracksToSaintAnna = (props) => {
             <div
               className="guardRTTSA pixel-art"
               style={{
-                transform: `translate3d( ${620}px, ${8892}px, 0 )`,
+                transform: `translate3d( ${620}px, ${8992}px, 0 )`,
               }}
             >
               <div className="guardRTTSA_spritesheet pixel-art"></div>
@@ -1942,7 +1942,7 @@ const TrainTracksToSaintAnna = (props) => {
             <div
               className="guardRTTSA pixel-art"
               style={{
-                transform: `translate3d( ${620}px, ${8628}px, 0 )`,
+                transform: `translate3d( ${620}px, ${8728}px, 0 )`,
               }}
             >
               <div className="guardRTTSA_spritesheet pixel-art"></div>
@@ -1951,7 +1951,7 @@ const TrainTracksToSaintAnna = (props) => {
             <div
               className="guardLTTSA pixel-art"
               style={{
-                transform: `translate3d( ${1836}px, ${8892}px, 0 )`,
+                transform: `translate3d( ${1836}px, ${8992}px, 0 )`,
               }}
             >
               <div className="guardLTTSA_spritesheet pixel-art"></div>
@@ -1960,7 +1960,7 @@ const TrainTracksToSaintAnna = (props) => {
             <div
               className="guardLTTSA pixel-art"
               style={{
-                transform: `translate3d( ${1836}px, ${8628}px, 0 )`,
+                transform: `translate3d( ${1836}px, ${8728}px, 0 )`,
               }}
             >
               <div className="guardLTTSA_spritesheet pixel-art"></div>
@@ -1969,7 +1969,7 @@ const TrainTracksToSaintAnna = (props) => {
             <div
               className="dockguyTTSA pixel-art"
               style={{
-                transform: `translate3d( ${1360}px, ${9060}px, 0 )`,
+                transform: `translate3d( ${1360}px, ${9160}px, 0 )`,
               }}
             >
               <div className="dockguyTTSA_spritesheet pixel-art"></div>
