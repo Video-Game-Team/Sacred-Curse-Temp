@@ -112,11 +112,6 @@ function App() {
   //   userName: userNameState,
   // };
 
-  //TEMP TRIGGER FOR UPDATING STATE
-  // useEffect(() => {
-  //   setPasswordState('SHARK');
-  // }, []);
-
   // GET Request for SaveState
   const GetSaveState = () => {
     axios
@@ -160,42 +155,42 @@ function App() {
 
   // PUT Request for SaveState
   const putState = async (id) => {
-    console.log('HELELELELE');
-    const data = await fetch(`http://localhost:3001/state/update/${id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        password: 'barMikeb',
-        userID: '12345',
-        currentMap: 'tot',
-        flowers: 1,
-        quest1: false,
-        quest2: false,
-        quest3: false,
-        quest4: false,
+    axios
+      .put(`http://localhost:3001/state/update/${id}`, {
+        password: passwordState,
+        userID: userIDState,
+        currentMap: currentMapState,
+        flowers: flowersState,
+        quest1: quest1State,
+        quest2: quest2State,
+        quest3: quest3State,
+        quest4: quest4State,
         timeStamp: '',
-        email: 'mmmmm',
-        userName: 'aaaaaa',
-      }),
-    }).then((res) => res.json());
+        email: emailState,
+        userName: userNameState,
+      })
+      .then((res) => res.json());
   };
 
   useEffect(() => {
-    putState('6333ae1026690d1e71b91b39');
+    putState('6333ae0226690d1e71b91b28');
   }, []);
 
+  //TEMP TRIGGER FOR UPDATING STATE JUST FOR DEMO PURPOSE
+  // useEffect(() => {
+  //   setPasswordState('TOTOISE');
+  // }, );
 
   // DELETE Request for SaveState
   const deleteState = async (id) => {
-    const data = await fetch(`http://localhost:3001/state/delete/${id}`, {
-      method: 'DELETE',
-    }).then((res) => res.json());
+    axios
+      .delete(`http://localhost:3001/state/delete/${id}`, {})
+      .then((res) => res.json())
+      .catch((err) => console.log(err));
   };
 
   //  useEffect(() => {
-  //   deleteState('');
+  //   deleteState('6333bc72fb4231bf503e491f');
   //  }, [])
 
   const mapsObj = {
