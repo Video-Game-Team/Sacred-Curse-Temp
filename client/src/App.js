@@ -74,7 +74,7 @@ function App() {
     DemonObjects.Naruto,
   ]);
 
-  const [current, setCurrent] = useState('luluMountainPassRight');
+  const [current, setCurrent] = useState('tortous');
   const [tempCurrent, setTempCurrent] = useState(null);
   const [previous, setPrevious] = useState(null);
   const [textValue, setTextValue] = useState(null);
