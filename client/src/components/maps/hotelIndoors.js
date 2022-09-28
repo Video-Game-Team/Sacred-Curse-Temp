@@ -588,7 +588,7 @@ const HotelIndoors = (props) => {
             <div
               className="guard pixel-art"
               style={{
-                transform: `translate3d( ${710}px, ${75}px, 0 )`,
+                transform: `translate3d( ${700}px, ${165}px, 0 )`,
               }}
             >
               <div className="guard_spritesheet pixel-art"></div>

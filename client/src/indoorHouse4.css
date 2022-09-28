@@ -55,39 +55,6 @@ body {
 }  */
 
 
-
-.character {
-    width: calc(var(--grid-cell)* 2);
-    height: calc(var(--grid-cell)* 2);
-    overflow: hidden;
-}
-
-.character_spritesheet {
-    position: absolute;
-    background: url("./assets/images/AjFP5.png") no-repeat no-repeat;
-    background-size: 100%;
-    width: calc(var(--grid-cell)* 8);
-    height: calc(var(--grid-cell)* 8);
-
-}
-
-.character[facing="right"] .character_spritesheet {
-    background-position-y: calc(var(--pixel-size) * -48);
-}
-
-.character[facing="up"] .character_spritesheet {
-    background-position-y: calc(var(--pixel-size) * -72);
-}
-
-.character[facing="left"] .character_spritesheet {
-    background-position-y: calc(var(--pixel-size) * -24);
-}
-
-.character[walking="true"] .character_spritesheet {
-    animation: walkAnimation 0.6s steps(4) infinite;
-}
-
-
 @keyframes walkAnimation {
     from {
         transform: translate3d(0%, 0%, 0);
@@ -99,13 +66,13 @@ body {
 }
 
   .guyIH4 {
+    position: absolute;
       width: calc(var(--grid-cell)* 2);
       height: calc(var(--grid-cell)* 3);
       overflow: hidden;
   }
 
   .guyIH4_spritesheet {
-      position: absolute;
       background: url("./assets/images/Indoor House 4 guy.png") no-repeat no-repeat;
       background-size: 100%;
       width: calc(var(--grid-cell)* 7);

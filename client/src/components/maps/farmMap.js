@@ -1057,7 +1057,7 @@ const FarmMap = (props) => {
             <div
               className="farmer1FM pixel-art"
               style={{
-                transform: `translate3d( ${1348}px, ${1236}px, 0 )`,
+                transform: `translate3d( ${1348}px, ${1336}px, 0 )`,
               }}
             >
               <div className="farmer1FM_spritesheet pixel-art"></div>
@@ -1066,7 +1066,7 @@ const FarmMap = (props) => {
             <div
               className="farmer2FM pixel-art"
               style={{
-                transform: `translate3d( ${1300}px, ${1510}px, 0 )`,
+                transform: `translate3d( ${1300}px, ${1720}px, 0 )`,
               }}
             >
               <div className="farmer2FM_spritesheet pixel-art"></div>
@@ -1075,7 +1075,7 @@ const FarmMap = (props) => {
             <div
               className="girlFM pixel-art"
               style={{
-                transform: `translate3d( ${915}px, ${1896}px, 0 )`,
+                transform: `translate3d( ${915}px, ${2226}px, 0 )`,
               }}
             >
               <div className="girlFM_spritesheet pixel-art"></div>

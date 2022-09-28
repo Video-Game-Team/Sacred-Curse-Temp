@@ -1723,8 +1723,8 @@ const Tortous = (props) => {
 
   // console.log('DEMON COORDINATES', ydemonIndex.current, xdemonIndex.current);
   // console.log('KEEP COORDINATES', yKeepIndex.current, xKeepIndex.current);
-  // console.log('Player TransformVar', yTransformVar, xTransformVar);
-  // console.log('DEMON TransformVar', ydemonTransformVar, xdemonTransformVar);
+  console.log('Player TransformVar', yTransformVar, xTransformVar);
+  console.log('DEMON TransformVar', ydemonTransformVar, xdemonTransformVar);
   // console.log('DOG YTransformVar', ydogTransformVar, xdogTransformVar);
 
   // useEffect(()=>{
@@ -2807,9 +2807,16 @@ const Tortous = (props) => {
       }
 
       // CHECK TO SEE IF COLLISION WITH PLAYER IS HAPPENING
+       console.log('Player TransformVar2', yTransformVar, xTransformVar);
+       console.log(
+         'DEMON TransformVar2',
+         ydemonTransformVar,
+         xdemonTransformVar
+       );
       if (
-        xTransformVar === xdemonTransformVar + 50 &&
-        yTransformVar <= ydemonTransformVar + 90
+        (xTransformVar === xdemonTransformVar + 50) &&
+        ((yTransformVar <= ydemonTransformVar + 90 ) &&
+         ( yTransformVar >= ydemonTransformVar - 90 ))
       ) {
         setNpcWalking('false');
         setNpcFace('faceBrideTT');

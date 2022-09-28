@@ -74,7 +74,7 @@ function App() {
     DemonObjects.Naruto,
   ]);
 
-  const [current, setCurrent] = useState('saintAnna');
+  const [current, setCurrent] = useState('tortous');
   const [tempCurrent, setTempCurrent] = useState(null);
   const [previous, setPrevious] = useState(null);
   const [textValue, setTextValue] = useState(null);
@@ -116,7 +116,7 @@ function App() {
     axios
       .get('http://localhost:3001/state')
       .then((res) => {
-        console.log('Res;', res.data);
+        // console.log('Res;', res.data);
         setSaveState(res.data);
       })
       .catch((err) => console.log(err));
@@ -143,7 +143,7 @@ function App() {
         userName: 'POOOO',
       })
       .then((res) => {
-        console.log(res);
+        // console.log(res);
       })
       .catch((err) => console.log(err));
   };
