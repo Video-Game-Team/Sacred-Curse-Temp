@@ -2,39 +2,34 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
-
-const app = express();
-
-const PORT = 3001;
-
-app.use(express.json());
-
-app.use(cors());
-
-mongoose
-  .connect(
-    'mongodb+srv://giffinmike:Ross310889@cluster0.ioqnq.mongodb.net/tippy',
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
-  .then(() => console.log('Connected to Sacred Curse Mongo DB.'))
-  .catch(console.error);
-
+const cookieParser = require('cookie-parser');
 const State = require('./models/Schema');
 
-app.get('/', (req, res) => {
-  res.send('Hello World');
-});
+// CREATING OUR INSTANCE OF OUR EXPRESS SERVER
+const app = express();
 
-// GET
+// PORT TO LISTEN ON
+const PORT = 3001;
+
+// HANDLE PARSING REQUEST BODY FOR JSON AND URL
+app.use(cors());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cookieParser());
+
+// HANDLE REQUESTS FOR STATIC FILES
+app.use(
+  express.static(path.resolve(__dirname, '../client/stylesheets/styles.css'))
+);
+
+// GET ROUTE
 app.get('/state', async (req, res) => {
   const states = await State.find();
   res.json(states);
+  // res.status(200);
 });
 
-// POST
+// POST ROUTE
 app.post('/state/new', (req, res) => {
   const state = new State({
     password: req.body.password,
@@ -51,10 +46,11 @@ app.post('/state/new', (req, res) => {
   });
   state.save();
   res.json(state);
-  console.log('STATE', state);
+  // res.status(200);
+  console.log('POST STATE', state);
 });
 
-// PUT
+// PUT ROUTE
 app.put('/state/update/:id', async (req, res) => {
   const update = await State.findById(req.params.id);
   update.password = req.body.password;
@@ -70,29 +66,27 @@ app.put('/state/update/:id', async (req, res) => {
   update.userName = req.body.userName;
   update.save();
   res.json(update);
+  // res.status(200);
   console.log('UPDATE', update);
 });
 
-// DELETE
+// DELETE ROUTE
 app.delete('/state/delete/:id', async (req, res) => {
   const result = await State.findByIdAndDelete(req.params.id);
   res.json({ result });
+  // res.status(200);
+  console.log('DELETE', result);
 });
 
-/** HANDLE REQUESTS FOR STATIC FILES */
-app.use(
-  express.static(path.resolve(__dirname, '../client/stylesheets/styles.css'))
-);
-
-/** CATCH-ALL ROUTE HANDLER FOR ANY REQUESTS TO AN UNKNOWN ROUTE */
+// CATCH-ALL ROUTE HANDLER FOR ANY REQUESTS TO AN UNKNOWN ROUTE
 app.use('*', (request, response) => {
   response.status(404).send('Error: Page not found');
 });
 
-/** CONFIGURE EXPRESS GLOBAL ERROR HANDLER */
+// CONFIGURE EXPRESS GLOBAL ERROR HANDLER
 app.use((error, request, response, next) => {
   const defaultErr = {
-    log: 'Express error handler caught unknown middleware error', // testing
+    log: 'Express error handler caught unknown middleware error',
     status: 400,
     message: { err: 'An error occurred' },
   };
@@ -100,6 +94,7 @@ app.use((error, request, response, next) => {
   response.status(errorObj.status).json(errorObj.message.err);
 });
 
+// START SERVER
 app.listen(PORT, () => {
   console.log(`The server is connected and running on port: ${PORT}`);
 });

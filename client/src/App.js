@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
 import ReactDOM from 'react-dom';
-// const axios = require('axios');
 import axios from 'axios';
 import LeftWalker from './assets/images/leftWalker.png';
 import RightWalker from './assets/images/rightWalker.png';
@@ -98,7 +97,7 @@ function App() {
   const [emailState, setEmailState] = useState('');
   const [userNameState, setUserNameState] = useState('');
 
-  // let tempObj = {
+  // let tempSaveState = {
   //   password: passwordState,
   //   userID: userIDState,
   //   currentMap: currentMapState,
@@ -112,7 +111,7 @@ function App() {
   //   userName: userNameState,
   // };
 
-  // GET Request for SaveState
+  // GET AXIOS Request for SaveState
   const GetSaveState = () => {
     axios
       .get('http://localhost:3001/state')
@@ -127,7 +126,7 @@ function App() {
     GetSaveState();
   }, []);
 
-  // POST Request for SaveState
+  // POST AXIOS Request for SaveState
   const updateState = () => {
     axios
       .post('http://localhost:3001/state/new', {
@@ -141,7 +140,7 @@ function App() {
         quest4: quest4State,
         timeStamp: '',
         email: emailState,
-        userName: userNameState,
+        userName: 'POOOO',
       })
       .then((res) => {
         console.log(res);
@@ -153,7 +152,7 @@ function App() {
     updateState();
   }, [passwordState]);
 
-  // PUT Request for SaveState
+  // PUT AXIOS Request for SaveState
   const putState = async (id) => {
     axios
       .put(`http://localhost:3001/state/update/${id}`, {
@@ -169,19 +168,20 @@ function App() {
         email: emailState,
         userName: userNameState,
       })
-      .then((res) => res.json());
+      .then((res) => res.json())
+      .catch((err) => console.log(err));
   };
 
-  useEffect(() => {
-    putState('6333ae0226690d1e71b91b28');
-  }, []);
+  // useEffect(() => {
+  //   putState('6333ae0226690d1e71b91b28');
+  // }, []);
 
   //TEMP TRIGGER FOR UPDATING STATE JUST FOR DEMO PURPOSE
   // useEffect(() => {
   //   setPasswordState('TOTOISE');
   // }, );
 
-  // DELETE Request for SaveState
+  // DELETE AXIOS Request for SaveState
   const deleteState = async (id) => {
     axios
       .delete(`http://localhost:3001/state/delete/${id}`, {})
@@ -190,7 +190,7 @@ function App() {
   };
 
   //  useEffect(() => {
-  //   deleteState('6333bc72fb4231bf503e491f');
+  //   deleteState('6333ae1026690d1e71b91b32');
   //  }, [])
 
   const mapsObj = {
