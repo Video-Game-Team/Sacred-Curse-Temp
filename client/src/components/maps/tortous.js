@@ -68,10 +68,6 @@ const Tortous = (props) => {
 
   const [npcFace, setNpcFace] = useState();
 
-  const collidable = {
-    demonCollision: false,
-  };
-
   // Sprtiesheet Toggle1 state
   const [toggle1, setToggle1] = useState(false);
   const [doorToggle1, setdoorToggle1] = useState(false);
@@ -2735,10 +2731,10 @@ const Tortous = (props) => {
 
       // CHECK TO SEE IF COLLISION WITH PLAYER IS HAPPENING
       if (
-        (xTransformVar === xdemonTransformVar - 100)
-          // yTransformVar <= ydemonTransformVar + 90) 
-      ) 
-      {
+        xTransformVar ===
+        xdemonTransformVar - 100
+        // yTransformVar <= ydemonTransformVar + 90)
+      ) {
         setNpcWalking('false');
         setNpcFace('faceBrideTT');
         setTextValue('Excuse me');
@@ -2774,8 +2770,8 @@ const Tortous = (props) => {
     //   // CHECK TO SEE IF COLLISION WITH PLAYER IS HAPPENING
     //   if (
     //     yTransformVar == ydemonTransformVar - 90 &&
-    //     xTransformVar <= xdemonTransformVar + 50 
-       
+    //     xTransformVar <= xdemonTransformVar + 50
+
     //   ) {
     //     setNpcWalking('false');
     //     setNpcFace('faceBrideTT');
@@ -2813,8 +2809,7 @@ const Tortous = (props) => {
       // CHECK TO SEE IF COLLISION WITH PLAYER IS HAPPENING
       if (
         xTransformVar === xdemonTransformVar + 50 &&
-        yTransformVar <= ydemonTransformVar + 90 
-     
+        yTransformVar <= ydemonTransformVar + 90
       ) {
         setNpcWalking('false');
         setNpcFace('faceBrideTT');
@@ -2838,41 +2833,41 @@ const Tortous = (props) => {
     }
 
     //UP
-  //   while (ydemonIndex.current >= 91) {
-  //     npcfacing.current = 'up';
-  //     setNpcWalking('true');
+    //   while (ydemonIndex.current >= 91) {
+    //     npcfacing.current = 'up';
+    //     setNpcWalking('true');
 
-  //     // // CHECK TO SEE IF TILE IS WALKABLE
-  //     if (currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] !== 0) {
-  //       // console.log('HELP COLLISION');
-  //       setNpcWalking('false');
-  //       return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
-  //     }
+    //     // // CHECK TO SEE IF TILE IS WALKABLE
+    //     if (currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] !== 0) {
+    //       // console.log('HELP COLLISION');
+    //       setNpcWalking('false');
+    //       return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
+    //     }
 
-  //     // CHECK TO SEE IF COLLISION WITH PLAYER IS HAPPENING
-  //     if (
-  //       yTransformVar == ydemonTransformVar + 90 &&
-  //       xTransformVar >= xdemonTransformVar - 10 
-    
-  //     ) {
-  //       setNpcWalking('false');
-  //       setNpcFace('faceBrideTT');
-  //       setTextValue('Excuse me');
-  //       return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
-  //     }
+    //     // CHECK TO SEE IF COLLISION WITH PLAYER IS HAPPENING
+    //     if (
+    //       yTransformVar == ydemonTransformVar + 90 &&
+    //       xTransformVar >= xdemonTransformVar - 10
 
-  //     // LOGIC TO MOVE PLAYER IF ABOVE CONDITIONS HAVE BEEN PASSED ON
-  //     setYdemonTransformVar((prevCount) => prevCount + speedRef2.current);
-  //     ydemonBank.current = ydemonBank.current + speedRef2.current;
+    //     ) {
+    //       setNpcWalking('false');
+    //       setNpcFace('faceBrideTT');
+    //       setTextValue('Excuse me');
+    //       return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
+    //     }
 
-  //     if (ydemonBank.current === 64) {
-  //       ydemonIndex.current = ydemonIndex.current + -1;
-  //       ydemonBank.current = 0;
-  //     }
+    //     // LOGIC TO MOVE PLAYER IF ABOVE CONDITIONS HAVE BEEN PASSED ON
+    //     setYdemonTransformVar((prevCount) => prevCount + speedRef2.current);
+    //     ydemonBank.current = ydemonBank.current + speedRef2.current;
 
-  //     //CANCEL ANIMATIONFRAME TO QUIT WHILE LOOP
-  //     return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
-  //   }
+    //     if (ydemonBank.current === 64) {
+    //       ydemonIndex.current = ydemonIndex.current + -1;
+    //       ydemonBank.current = 0;
+    //     }
+
+    //     //CANCEL ANIMATIONFRAME TO QUIT WHILE LOOP
+    //     return () => cancelAnimationFramecancelAnimationFrame(npc1Move);
+    //   }
 
     yKeepIndex.current = 88;
     xKeepIndex.current = 53;

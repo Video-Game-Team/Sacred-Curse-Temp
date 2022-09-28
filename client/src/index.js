@@ -1,9 +1,10 @@
-import React, { useState, useEffect, StrictMode } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import App from './App';
+import './index.css';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);

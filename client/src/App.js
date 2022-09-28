@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
-const axios = require('axios');
+import ReactDOM from 'react-dom';
+// const axios = require('axios');
+import axios from 'axios';
 import LeftWalker from './assets/images/leftWalker.png';
 import RightWalker from './assets/images/rightWalker.png';
 import UpWalker from './assets/images/upWalker.png';
@@ -96,29 +98,31 @@ function App() {
   const [emailState, setEmailState] = useState('');
   const [userNameState, setUserNameState] = useState('');
 
-  useEffect(() => {
-    setPasswordState("HICKY DICK DO")
-  })
+  //TEMP TRIGGER FOR UPDATING STATE
+     useEffect(() => {
+       setPasswordState('POOTER');
+     }, []);
 
   //Get Save state
   const GetSaveState = () => {
-    axios.get('http://localhost:3001/state') 
-        .then(res => {
-          console.log('Res;', res.data);
-          setSaveState(res.data)
-  })
-}
+    axios
+      .get('http://localhost:3001/state')
+      .then((res) => {
+        console.log('Res;', res.data);
+        setSaveState(res.data);
+      })
+      .catch((err) => console.log(err));
+  }
 
   useEffect(() => {
     GetSaveState();
-    console.log('SAVESTATE', saveState);
-  }, );
+  }, []);
 
 
  //Update Save State
   const updateState = () => {
     axios
-      .put('http://localhost:3001/state/new', {
+      .post('http://localhost:3001/state/new', {
         password: passwordState,
         userID: userIDState,
         currentMap: currentMapState,
@@ -133,13 +137,25 @@ function App() {
       })
       .then((res) => {
         console.log(res);
-      });
+      })
+      .catch((err) => console.log(err));
   };
 
    useEffect(() => {
      updateState();
-     console.log('UPDATE SAVESTATE', saveState);
-   }, );
+   }, [passwordState]);
+
+
+ const deleteState = async (id) => {
+   const data = await fetch(`http://localhost:3001/state/delete/${id}`, {
+     method: 'DELETE',
+   }).then((res) => res.json());
+ };
+
+//  useEffect(() => {
+//   deleteState('');
+//  }, [])
+
 
   const mapsObj = {
     outDoorMap1: (
