@@ -75,7 +75,7 @@ function App() {
     DemonObjects.Naruto,
   ]);
 
-  const [current, setCurrent] = useState('tortous');
+  const [current, setCurrent] = useState('saintAnna');
   const [tempCurrent, setTempCurrent] = useState(null);
   const [previous, setPrevious] = useState(null);
   const [textValue, setTextValue] = useState(null);
@@ -87,7 +87,7 @@ function App() {
   // Save State
   const [saveState, setSaveState] = useState([]);
 
-  const [passwordState, setPasswordState] = useState('')
+  const [passwordState, setPasswordState] = useState('');
   const [userIDState, setUserIDState] = useState('');
   const [currentMapState, setCurrentMapState] = useState('');
   const [flowersState, setFlowersState] = useState('');
@@ -98,10 +98,24 @@ function App() {
   const [emailState, setEmailState] = useState('');
   const [userNameState, setUserNameState] = useState('');
 
+  // let tempObj = {
+  //   password: passwordState,
+  //   userID: userIDState,
+  //   currentMap: currentMapState,
+  //   flowers: flowersState,
+  //   quest1: true,
+  //   quest2: quest2State,
+  //   quest3: quest3State,
+  //   quest4: quest4State,
+  //   timeStamp: '1',
+  //   email: emailState,
+  //   userName: userNameState,
+  // };
+
   //TEMP TRIGGER FOR UPDATING STATE
-     useEffect(() => {
-       setPasswordState('POOTER');
-     }, []);
+  // useEffect(() => {
+  //   setPasswordState('SHARK');
+  // }, []);
 
   //Get Save state
   const GetSaveState = () => {
@@ -112,14 +126,13 @@ function App() {
         setSaveState(res.data);
       })
       .catch((err) => console.log(err));
-  }
+  };
 
   useEffect(() => {
     GetSaveState();
   }, []);
 
-
- //Update Save State
+  //Update Save State
   const updateState = () => {
     axios
       .post('http://localhost:3001/state/new', {
@@ -131,7 +144,7 @@ function App() {
         quest2: quest2State,
         quest3: quest3State,
         quest4: quest4State,
-        timeStamp: '1',
+        timeStamp: '',
         email: emailState,
         userName: userNameState,
       })
@@ -141,21 +154,31 @@ function App() {
       .catch((err) => console.log(err));
   };
 
-   useEffect(() => {
-     updateState();
-   }, [passwordState]);
+  useEffect(() => {
+    updateState();
+  }, [passwordState]);
 
+  //  const putState = async (id) => {
+  //   console.log("HELELELELE")
+  //    const data = await fetch(`http://localhost:3001/state/update/${id}`, {
+  //      method: 'PUT',
+  //      password: 'TINKERBELL',
+  //    }).then((res) => res.json());
+  //  };
 
- const deleteState = async (id) => {
-   const data = await fetch(`http://localhost:3001/state/delete/${id}`, {
-     method: 'DELETE',
-   }).then((res) => res.json());
- };
+  //    useEffect(() => {
+  //     putState('6333ae1026690d1e71b91b39');
+  //    }, [])
 
-//  useEffect(() => {
-//   deleteState('');
-//  }, [])
+  const deleteState = async (id) => {
+    const data = await fetch(`http://localhost:3001/state/delete/${id}`, {
+      method: 'DELETE',
+    }).then((res) => res.json());
+  };
 
+  //  useEffect(() => {
+  //   deleteState('');
+  //  }, [])
 
   const mapsObj = {
     outDoorMap1: (
@@ -452,6 +475,8 @@ function App() {
         active={tracker}
         adder={addItem}
         previousMap={previous}
+        passUpState={finalState}
+        // value= "Cana"
       />
     ),
     trainTracksToCapital: (
@@ -497,6 +522,8 @@ function App() {
     demoMap: <DemoMap demonList={demonTeam} />,
   };
 
+ 
+
   //MATT MENU
   useEffect(() => {
     const menuListener = (event) => {
@@ -529,6 +556,14 @@ function App() {
   function addItem(x) {
     setItemObj((itemObj.poop = x));
   }
+
+    function finalState(x) {
+      setPasswordState(x);
+    }
+
+    useEffect(() => {
+      finalState()
+    }, [])
 
   //menu 1 toggle
   useEffect(() => {

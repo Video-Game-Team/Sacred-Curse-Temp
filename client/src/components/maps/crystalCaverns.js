@@ -26,7 +26,7 @@ const CrystalCaverns = (props) => {
 
   const [xwaterTransformVar, setXWaterTransformVar] = useState(-1124);
   //this sets the y Cordinate to transform the map and character location
-  const [ywaterTransformVar, setYwaterTransformVar] = useState(-288);
+  const [ywaterTransformVar, setYwaterTransformVar] = useState(-384);
 
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster

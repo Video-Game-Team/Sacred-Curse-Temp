@@ -28,18 +28,20 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
+// GET
 app.get('/state', async (req, res) => {
   const states = await State.find();
   res.json(states);
 });
 
+// POST
 app.post('/state/new', (req, res) => {
   const state = new State({
     password: req.body.password,
     userId: req.body.userID,
     currentMap: req.body.currentMap,
     flowers: req.body.flowers,
-    quest1: 'true',
+    quest1: req.body.quest1,
     quest2: req.body.quest2,
     quest3: req.body.quest3,
     quest4: req.body.quest4,
@@ -52,14 +54,34 @@ app.post('/state/new', (req, res) => {
   console.log('STATE', state);
 });
 
+// PUT
 // app.put('/state/update/:id', async (req, res) => {
-//   const state = await State.findById(req.params.id);
-//   // UPDATE FEILDS HERE BELOW
-//   state.text = req.body.text;
+//   const state = await State.findById(req.params.id)({
+//     password: req.body.password,
+//     userId: req.body.userID,
+//     currentMap: req.body.currentMap,
+//     flowers: req.body.flowers,
+//     quest1: 'true',
+//     quest2: req.body.quest2,
+//     quest3: req.body.quest3,
+//     quest4: req.body.quest4,
+//     timeStamp: req.body.timeStamp,
+//     email: req.body.email,
+//     userName: req.body.userName,
+//   });
 //   state.save();
-//   res.json(this.state.first);
+//   res.json(state);
 // });
 
+// PUT
+app.put('/state/update/:id', async (req, res) => {
+  const update = await State.findById(req.params.id);
+  update.password = req.body.password;
+  update.save();
+  res.json(update);
+});
+
+// DELETE
 app.delete('/state/delete/:id', async (req, res) => {
   const result = await State.findByIdAndDelete(req.params.id);
   res.json({ result });

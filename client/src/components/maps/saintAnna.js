@@ -21,7 +21,7 @@ const SaintAnna = (props) => {
   //
    const [xwaterTransformVar, setXWaterTransformVar] = useState(0);
    //this sets the y Cordinate to transform the map and character location
-   const [ywaterTransformVar, setYwaterTransformVar] = useState(0);
+   const [ywaterTransformVar, setYwaterTransformVar] = useState(-100);
 
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster
