@@ -19,6 +19,12 @@
   --bg: #070000;
 }
 
+
+h1 {
+  color: white;
+  font-size: 100px;
+}
+
 .pixel-art {
   image-rendering: pixelated;
 }

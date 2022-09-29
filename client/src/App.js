@@ -97,6 +97,29 @@ function App() {
   const [emailState, setEmailState] = useState('');
   const [userNameState, setUserNameState] = useState('');
 
+  // Save State as an object
+  // const [tempState, setTempState] = useState({
+  //   passwordState: '',
+  //   userIDState: '',
+  //   currentMapState: '',
+  //   flowersState: '',
+  //   quest1State: false,
+  //   quest2State: false,
+  //   quest3State: false,
+  //   quest4State: false,
+  //   emailState: '',
+  //   userNameState: '',
+  // });
+
+  // setTempState((prevState) => ({
+  //   ...prevState,
+  //   tempState: {
+
+  //     ...prevState.tempState,
+  //     passwordState: "Bunghole"
+  //   },
+  // }));
+
   // let tempSaveState = {
   //   password: passwordState,
   //   userID: userIDState,
@@ -140,7 +163,7 @@ function App() {
         quest4: quest4State,
         timeStamp: '',
         email: emailState,
-        userName: 'POOOO',
+        userName: userNameState,
       })
       .then((res) => {
         // console.log(res);
@@ -699,6 +722,7 @@ function App() {
       </div>
     </div>
   );
-}
+  };
 
+  
 export default App;
