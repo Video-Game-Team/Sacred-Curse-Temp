@@ -51,7 +51,7 @@ import CrystalCaverns from './components/maps/crystalCaverns.js';
 import CrystalCavernsRight from './components/maps/crystalCavernsRight.js';
 
 import DemoMap from './battleMaps/demoMap.jsx';
-import DemonObjects from './demonObjects.js'
+import DemonObjects from './demonObjects.js';
 
 import Datetime from './components/maps/datetime.js';
 import Clock from 'react-live-clock';
@@ -74,7 +74,7 @@ function App() {
     DemonObjects.Naruto,
   ]);
 
-  const [current, setCurrent] = useState('tortous');
+  const [current, setCurrent] = useState('townMap1');
   const [tempCurrent, setTempCurrent] = useState(null);
   const [previous, setPrevious] = useState(null);
   const [textValue, setTextValue] = useState(null);
@@ -97,30 +97,7 @@ function App() {
   const [emailState, setEmailState] = useState('');
   const [userNameState, setUserNameState] = useState('');
 
-  // Save State as an object
-  // const [tempState, setTempState] = useState({
-  //   passwordState: '',
-  //   userIDState: '',
-  //   currentMapState: '',
-  //   flowersState: '',
-  //   quest1State: false,
-  //   quest2State: false,
-  //   quest3State: false,
-  //   quest4State: false,
-  //   emailState: '',
-  //   userNameState: '',
-  // });
-
-  // setTempState((prevState) => ({
-  //   ...prevState,
-  //   tempState: {
-
-  //     ...prevState.tempState,
-  //     passwordState: "Bunghole"
-  //   },
-  // }));
-
-  // let tempSaveState = {
+  // let tempObj = {
   //   password: passwordState,
   //   userID: userIDState,
   //   currentMap: currentMapState,
@@ -134,12 +111,12 @@ function App() {
   //   userName: userNameState,
   // };
 
-  // GET AXIOS Request for SaveState
+  // GET Request for SaveState
   const GetSaveState = () => {
     axios
       .get('http://localhost:3001/state')
       .then((res) => {
-        // console.log('Res;', res.data);
+        console.log('Res;', res.data);
         setSaveState(res.data);
       })
       .catch((err) => console.log(err));
@@ -149,7 +126,7 @@ function App() {
     GetSaveState();
   }, []);
 
-  // POST AXIOS Request for SaveState
+  // POST Request for SaveState
   const updateState = () => {
     axios
       .post('http://localhost:3001/state/new', {
@@ -166,7 +143,7 @@ function App() {
         userName: userNameState,
       })
       .then((res) => {
-        // console.log(res);
+        console.log(res);
       })
       .catch((err) => console.log(err));
   };
@@ -175,10 +152,15 @@ function App() {
     updateState();
   }, [passwordState]);
 
-  // PUT AXIOS Request for SaveState
+  // PUT Request for SaveState
   const putState = async (id) => {
-    axios
-      .put(`http://localhost:3001/state/update/${id}`, {
+    console.log('HELELELELE');
+    const data = await fetch(`http://localhost:3001/state/update/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
         password: passwordState,
         userID: userIDState,
         currentMap: currentMapState,
@@ -190,30 +172,28 @@ function App() {
         timeStamp: '',
         email: emailState,
         userName: userNameState,
-      })
-      .then((res) => res.json())
-      .catch((err) => console.log(err));
+      }),
+    }).then((res) => res.json());
   };
 
-  // useEffect(() => {
-  //   putState('6333ae0226690d1e71b91b28');
-  // }, []);
+  useEffect(() => {
+    putState('6333ae1026690d1e71b91b39');
+  }, []);
 
   //TEMP TRIGGER FOR UPDATING STATE JUST FOR DEMO PURPOSE
   // useEffect(() => {
   //   setPasswordState('TOTOISE');
   // }, );
 
-  // DELETE AXIOS Request for SaveState
+  // DELETE Request for SaveState
   const deleteState = async (id) => {
-    axios
-      .delete(`http://localhost:3001/state/delete/${id}`, {})
-      .then((res) => res.json())
-      .catch((err) => console.log(err));
+    const data = await fetch(`http://localhost:3001/state/delete/${id}`, {
+      method: 'DELETE',
+    }).then((res) => res.json());
   };
 
   //  useEffect(() => {
-  //   deleteState('6333ae1026690d1e71b91b32');
+  //   deleteState('');
   //  }, [])
 
   const mapsObj = {
@@ -722,7 +702,6 @@ function App() {
       </div>
     </div>
   );
-  };
+}
 
-  
 export default App;

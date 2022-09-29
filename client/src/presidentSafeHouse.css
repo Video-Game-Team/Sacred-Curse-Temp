@@ -1,39 +1,3 @@
-:root {
-    --pixel-size: 2px;
-    --grid-cell: calc(var(--pixel-size) * 12);
-    --bg: #070000;
-
-}
-
-@media(min-width: 700px) {
-    :root {
-        --pixel-size: 3px;
-    }
-}
-
-@media(min-width: 1000px) {
-    :root {
-        --pixel-size: 4px;
-    }
-}
-
-html,
-body {
-    height: 100%;
-}
-
-body {
-    background: var(--bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.pixel-art {
-    image-rendering: pixelated;
-}
-
-
 .mapPSH {
     image-rendering: pixelated;
     background-image: url("./assets/maps/President Safe House no grid npc.png");
@@ -53,18 +17,6 @@ body {
     size: 100%;
     background: transparent;
 } */
-
-
-@keyframes walkAnimation {
-    from {
-        transform: translate3d(0%, 0%, 0);
-    }
-
-    to {
-        transform: translate3d(-100%, 0%, 0);
-    }
-}
-
 
  .guard1PSH {
     position: absolute;

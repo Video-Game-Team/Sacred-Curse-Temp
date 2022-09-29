@@ -1,11 +1,14 @@
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import Layout from './pages/Layout.jsx';
+import Layout from './pages/Layout';
 import Home from './pages/Home.jsx';
 import Signup from './pages/Signup.jsx';
 import Login from './pages/Login.jsx';
 import NoPage from './pages/NoPage.jsx';
-import App from './App.js';
+import App from './App';
 import './index.css';
 
 export default function Index() {
@@ -23,4 +26,12 @@ export default function Index() {
   );
 }
 
-ReactDOM.render(<Index />, document.getElementById('root'));
+const rootElement = document.getElementById('root');
+const root = createRoot(rootElement);
+
+root.render(
+  <StrictMode>
+    <Index />
+  </StrictMode>
+);
+
