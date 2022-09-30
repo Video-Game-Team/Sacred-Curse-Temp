@@ -128,31 +128,31 @@ function App() {
     GetSaveState();
   }, []);
 
-  // POST Request for SaveState
-  const updateState = () => {
-    axios
-      .post('http://localhost:3001/state/new', {
-        password: passwordState,
-        userID: userIDState,
-        currentMap: currentMapState,
-        flowers: flowersState,
-        quest1: quest1State,
-        quest2: quest2State,
-        quest3: quest3State,
-        quest4: quest4State,
-        timeStamp: '',
-        email: emailState,
-        userName: userNameState,
-      })
-      .then((res) => {
-        // console.log(res);
-      })
-      .catch((err) => console.log(err));
-  };
+  // // POST Request for SaveState
+  // const updateState = () => {
+  //   axios
+  //     .post('http://localhost:3001/state/new', {
+  //       password: passwordState,
+  //       userID: userIDState,
+  //       currentMap: currentMapState,
+  //       flowers: flowersState,
+  //       quest1: quest1State,
+  //       quest2: quest2State,
+  //       quest3: quest3State,
+  //       quest4: quest4State,
+  //       timeStamp: '',
+  //       email: emailState,
+  //       userName: userNameState,
+  //     })
+  //     .then((res) => {
+  //       // console.log(res);
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
 
-  useEffect(() => {
-    updateState();
-  }, [passwordState]);
+  // useEffect(() => {
+  //   updateState();
+  // }, [passwordState]);
 
   // PUT Request for SaveState
   const putState = async (id) => {
@@ -162,6 +162,8 @@ function App() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
+        userName: userNameState,
+        email: emailState,
         password: passwordState,
         userID: userIDState,
         currentMap: currentMapState,
@@ -171,8 +173,6 @@ function App() {
         quest3: quest3State,
         quest4: quest4State,
         timeStamp: '',
-        email: emailState,
-        userName: userNameState,
       }),
     }).then((res) => res.json());
   };

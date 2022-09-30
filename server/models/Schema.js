@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // Mongo DB Address for your database
 const myURI =
-  'mongodb+srv://giffinmike:Ross310889@cluster0.ioqnq.mongodb.net/tippy';
+  'mongodb+srv://giffinmike:Ross310889@cluster0.ioqnq.mongodb.net/SacredCurseUserDB';
 
 // MONGO URI
 const URI = process.env.MONGO_URI || myURI;
@@ -12,7 +12,7 @@ mongoose
   .connect(URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    dbName: 'tippy',
+    dbName: 'SacredCurseUserDB',
   })
   .then(() => console.log('Connected to Sacred Curse Database.'))
   .catch((err) => console.log(err));
@@ -22,12 +22,16 @@ const { Schema } = mongoose;
 
 // Sacred Curse Schema
 const StateSchema = new Schema({
-  password: {
-    type: String,
-  },
-  userID: {
+  userName: {
     type: String,
     default: '',
+  },
+  email: {
+    type: String,
+    default: '',
+  },
+  password: {
+    type: String,
   },
   currentMap: {
     type: String,
@@ -56,14 +60,6 @@ const StateSchema = new Schema({
   timeStamp: {
     type: String,
     default: Date.now(),
-  },
-  email: {
-    type: String,
-    default: '',
-  },
-  userName: {
-    type: String,
-    default: '',
   },
 });
 

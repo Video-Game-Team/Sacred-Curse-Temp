@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import axios from 'axios';
 import '../signupPage.css';
 
 
@@ -69,52 +70,77 @@ function Signup() {
     );
   };
 
+  // POST Request for SaveState
+  const updateState = () => {
+    axios
+      .post('http://localhost:3001/state/new', {
+        name: name,
+        email: email,
+        password: password,
+        currentMap: 'indoorHouse10',
+        flowers: 0,
+        quest1: false,
+        quest2: false,
+        quest3: false,
+        quest4: false,
+        timeStamp: '',
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    updateState();
+  }, [submitted]);
+
   return (
     <div>
       <h1 className="titleTextSignup">Sacred Curse</h1>
       <div className="mainContainerSignup">
-      <div className="form">
-        <div>
-          <h1>User Registration</h1>
+        <div className="form">
+          <div>
+            <h1>User Registration</h1>
+          </div>
+
+          {/* Calling to the methods */}
+          <div className="messages">
+            {errorMessage()}
+            {successMessage()}
+          </div>
+
+          <form>
+            {/* Labels and inputs for form data */}
+            <label className="label">Name</label>
+            <input
+              onChange={handleName}
+              className="input"
+              value={name}
+              type="text"
+            />
+
+            <label className="label">Email</label>
+            <input
+              onChange={handleEmail}
+              className="input"
+              value={email}
+              type="email"
+            />
+
+            <label className="label">Password</label>
+            <input
+              onChange={handlePassword}
+              className="input"
+              value={password}
+              type="password"
+            />
+
+            <button onClick={handleSubmit} className="btn" type="submit">
+              Submit
+            </button>
+          </form>
         </div>
-
-        {/* Calling to the methods */}
-        <div className="messages">
-          {errorMessage()}
-          {successMessage()}
-        </div>
-
-        <form>
-          {/* Labels and inputs for form data */}
-          <label className="label">Name</label>
-          <input
-            onChange={handleName}
-            className="input"
-            value={name}
-            type="text"
-          />
-
-          <label className="label">Email</label>
-          <input
-            onChange={handleEmail}
-            className="input"
-            value={email}
-            type="email"
-          />
-
-          <label className="label">Password</label>
-          <input
-            onChange={handlePassword}
-            className="input"
-            value={password}
-            type="password"
-          />
-
-          <button onClick={handleSubmit} className="btn" type="submit">
-            Submit
-          </button>
-        </form>
-      </div>
       </div>
     </div>
   );
