@@ -47,7 +47,7 @@ app.post('/state/new', (req, res) => {
   state.save();
   res.json(state);
   // res.status(200);
-  console.log('POST STATE', state);
+  // console.log('POST STATE', state);
 });
 
 // PUT ROUTE
@@ -67,7 +67,7 @@ app.put('/state/update/:id', async (req, res) => {
   update.save();
   res.json(update);
   // res.status(200);
-  console.log('UPDATE', update);
+  // console.log('UPDATE', update);
 });
 
 // DELETE ROUTE
@@ -75,7 +75,7 @@ app.delete('/state/delete/:id', async (req, res) => {
   const result = await State.findByIdAndDelete(req.params.id);
   res.json({ result });
   // res.status(200);
-  console.log('DELETE', result);
+  // console.log('DELETE', result);
 });
 
 // CATCH-ALL ROUTE HANDLER FOR ANY REQUESTS TO AN UNKNOWN ROUTE

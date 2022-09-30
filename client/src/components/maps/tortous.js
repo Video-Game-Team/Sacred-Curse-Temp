@@ -1723,8 +1723,8 @@ const Tortous = (props) => {
 
   // console.log('DEMON COORDINATES', ydemonIndex.current, xdemonIndex.current);
   // console.log('KEEP COORDINATES', yKeepIndex.current, xKeepIndex.current);
-  console.log('Player TransformVar', yTransformVar, xTransformVar);
-  console.log('DEMON TransformVar', ydemonTransformVar, xdemonTransformVar);
+  // console.log('Player TransformVar', yTransformVar, xTransformVar);
+  // console.log('DEMON TransformVar', ydemonTransformVar, xdemonTransformVar);
   // console.log('DOG YTransformVar', ydogTransformVar, xdogTransformVar);
 
   // useEffect(()=>{
