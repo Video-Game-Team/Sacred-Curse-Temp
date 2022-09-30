@@ -16,17 +16,7 @@
   justify-content: center;;
   --pixel-size: 2px;
   --grid-cell: calc(var(--pixel-size) * 12);
-  --bg: #070000;
-}
-
-
-h1 {
-  color: white;
-  font-size: 100px;
-}
-
-.pixel-art {
-  image-rendering: pixelated;
+  --bg: #090000;
 }
 
 html,
