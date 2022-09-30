@@ -1,8 +1,6 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { useNavigate, useLocation } from 'react-router';
+import React, { useEffect, useState} from 'react';
+import { useNavigate} from 'react-router';
 import axios from 'axios';
-import Index from '../index.js';
-import PageRedirect from './pageReidrect.jsx';
 import '../loginPage.css';
 
 
@@ -14,10 +12,6 @@ function Login(props) {
   const [checkName, setCheckName] = useState("")
   const [checkPassword, setCheckPassword] = useState('');
 
-  const { loginRedirect, setLoginRedirect } = PageRedirect();
-  console.log('LOOK AT ME LOGIN.JS', loginRedirect);
-
-
   const navigate = useNavigate();
   
    const GetSaveState = () => {
@@ -27,9 +21,6 @@ function Login(props) {
          setSaveState(res.data);
          setCheckName(res.data[0].userName)
          setCheckPassword(res.data[0].password);
-        //  console.log('Res;', res.data);
-        //  console.log('UserName;', checkName);
-        //  console.log('Password;', checkPassword);
        })
        .catch((err) => console.log(err));
    };
@@ -77,8 +68,9 @@ function Login(props) {
         setErrorMessages({ name: 'pass', message: errors.pass });
       } else {
         setIsSubmitted(true);
-        setLoginRedirect(true)
-        navigate('/game');
+        setTimeout(() => {
+          navigate('/game');
+        }, 3000)
       }
     } else {
       // Username not found

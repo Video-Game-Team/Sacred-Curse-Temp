@@ -1,9 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { useNavigate } from 'react-router';
 import axios from 'axios';
 import '../signupPage.css';
 
 
 function Signup() {
+
+  const navigate = useNavigate();
+  
   // States for registration
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -46,6 +50,10 @@ function Signup() {
     } else {
       setSubmitted(true);
       setError(false);
+      setTimeout(() => {
+         navigate('/game');
+      }, 3000)
+     
     }
   };
 
