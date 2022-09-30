@@ -8,7 +8,6 @@ function Login() {
       <h1 className="titleTextLogin">Sacred Curse</h1>
       <button className="buttonLoginLogin">userName</button>
       <button className="buttonSignupLogin">password</button>
-  
     </div>
   );
 }

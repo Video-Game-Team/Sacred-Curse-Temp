@@ -2,18 +2,19 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import Layout from './pages/Layout';
+import { HashRouter, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home.jsx';
-import Signup from './pages/Signup.jsx';
-import Login from './pages/Login.jsx';
-import NoPage from './pages/NoPage.jsx';
+import Layout from './pages/Layout';
 import App from './App';
+import Login from './pages/Login.jsx';
+import Signup from './pages/Signup.jsx';
+import NoPage from './pages/NoPage.jsx';
+
 import './index.css';
 
 export default function Index() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -23,7 +24,7 @@ export default function Index() {
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
@@ -35,6 +36,7 @@ root.render(
     <Index />
   </StrictMode>
 );
+
 
 
 
