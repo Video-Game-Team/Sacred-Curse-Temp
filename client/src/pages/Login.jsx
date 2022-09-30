@@ -16,6 +16,9 @@ function Login(props) {
 
   const { loginRedirect, setLoginRedirect } = PageRedirect();
   console.log('LOOK AT ME LOGIN.JS', loginRedirect);
+
+
+  const navigate = useNavigate();
   
    const GetSaveState = () => {
      axios
@@ -75,6 +78,7 @@ function Login(props) {
       } else {
         setIsSubmitted(true);
         setLoginRedirect(true)
+        navigate('/game');
       }
     } else {
       // Username not found
