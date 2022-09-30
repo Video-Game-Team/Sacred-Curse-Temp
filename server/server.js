@@ -32,8 +32,9 @@ app.get('/state', async (req, res) => {
 // POST ROUTE
 app.post('/state/new', (req, res) => {
   const state = new State({
-    userName: req.body.userName,
+    name: req.body.name,
     email: req.body.email,
+    userName: req.body.userName,
     password: req.body.password,
     userId: req.body.userID,
     currentMap: req.body.currentMap,

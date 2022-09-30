@@ -88,16 +88,16 @@ function App() {
   // Save State
   const [saveState, setSaveState] = useState([]);
 
+  const [nameState, setNameState] = useState('');
+  const [emailState, setEmailState] = useState('');
+  const [userNameState, setUserNameState] = useState('');
   const [passwordState, setPasswordState] = useState('');
-  const [userIDState, setUserIDState] = useState('');
   const [currentMapState, setCurrentMapState] = useState('');
   const [flowersState, setFlowersState] = useState('');
   const [quest1State, setQuest1State] = useState('false');
   const [quest2State, setQuest2State] = useState('false');
   const [quest3State, setQuest3State] = useState('false');
   const [quest4State, setQuest4State] = useState('false');
-  const [emailState, setEmailState] = useState('');
-  const [userNameState, setUserNameState] = useState('');
 
   // let tempObj = {
   //   password: passwordState,
@@ -128,32 +128,6 @@ function App() {
     GetSaveState();
   }, []);
 
-  // // POST Request for SaveState
-  // const updateState = () => {
-  //   axios
-  //     .post('http://localhost:3001/state/new', {
-  //       password: passwordState,
-  //       userID: userIDState,
-  //       currentMap: currentMapState,
-  //       flowers: flowersState,
-  //       quest1: quest1State,
-  //       quest2: quest2State,
-  //       quest3: quest3State,
-  //       quest4: quest4State,
-  //       timeStamp: '',
-  //       email: emailState,
-  //       userName: userNameState,
-  //     })
-  //     .then((res) => {
-  //       // console.log(res);
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
-
-  // useEffect(() => {
-  //   updateState();
-  // }, [passwordState]);
-
   // PUT Request for SaveState
   const putState = async (id) => {
     const data = await fetch(`http://localhost:3001/state/update/${id}`, {
@@ -162,10 +136,10 @@ function App() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        userName: userNameState,
+        name: nameState,
         email: emailState,
+        userName: userNameState,
         password: passwordState,
-        userID: userIDState,
         currentMap: currentMapState,
         flowers: flowersState,
         quest1: quest1State,
@@ -181,11 +155,6 @@ function App() {
     putState('6333ae1026690d1e71b91b39');
   }, []);
 
-  //TEMP TRIGGER FOR UPDATING STATE JUST FOR DEMO PURPOSE
-  // useEffect(() => {
-  //   setPasswordState('TOTOISE');
-  // }, );
-
   // DELETE Request for SaveState
   const deleteState = async (id) => {
     const data = await fetch(`http://localhost:3001/state/delete/${id}`, {
@@ -194,7 +163,7 @@ function App() {
   };
 
   //  useEffect(() => {
-  //   deleteState('');
+  //   deleteState('6337321ce90b16a4693f15b5');
   //  }, [])
 
   const mapsObj = {

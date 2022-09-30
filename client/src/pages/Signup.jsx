@@ -8,6 +8,7 @@ function Signup() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [userName, setUserName] = useState('');
 
   // States for checking the errors
   const [submitted, setSubmitted] = useState(false);
@@ -28,6 +29,12 @@ function Signup() {
   // Handling the password change
   const handlePassword = (e) => {
     setPassword(e.target.value);
+    setSubmitted(false);
+  };
+
+  // Handling the password change
+  const handleUserName = (e) => {
+    setUserName(e.target.value);
     setSubmitted(false);
   };
 
@@ -77,6 +84,7 @@ function Signup() {
         name: name,
         email: email,
         password: password,
+        userName: userName,
         currentMap: 'indoorHouse10',
         flowers: 0,
         quest1: false,
@@ -126,6 +134,14 @@ function Signup() {
               className="input"
               value={email}
               type="email"
+            />
+
+            <label className="label">UserName</label>
+            <input
+              onChange={handleUserName}
+              className="input"
+              value={userName}
+              type="username"
             />
 
             <label className="label">Password</label>

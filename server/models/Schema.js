@@ -22,11 +22,15 @@ const { Schema } = mongoose;
 
 // Sacred Curse Schema
 const StateSchema = new Schema({
-  userName: {
+  name: {
     type: String,
     default: '',
   },
   email: {
+    type: String,
+    default: '',
+  },
+  userName: {
     type: String,
     default: '',
   },

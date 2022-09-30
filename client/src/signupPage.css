@@ -87,11 +87,11 @@
 
 .success {
     position: fixed;
-    top: 650px;
+    top: 750px;
     display: block;
     color: rgb(182, 42, 42);
     width: fit-content;
     height: 50px;
     padding: 5px;
-    font-size: 15px;
+    font-size: 12px;
 }
