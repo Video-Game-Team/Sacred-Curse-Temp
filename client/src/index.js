@@ -4,22 +4,28 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { HashRouter, Routes, Route, Link } from 'react-router-dom';
 import Layout from './pages/Layout';
-import App from './App';
 import Login from './pages/Login.jsx';
 import Signup from './pages/Signup.jsx';
 import NoPage from './pages/NoPage.jsx';
+import PageRedirect from './pages/pageReidrect.jsx';
+import App from './App';
 
 import './index.css';
 
-export default function Index() {
+
+function Index(props) {
+  const { loginRedirect, setLoginRedirect } = PageRedirect();
+  
+  console.log('LOOK AT ME INDEX.JS', loginRedirect);
+
   return (
     <HashRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Login />} />
-          <Route path="/game" element={<App />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/game" element={<App />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
@@ -37,22 +43,4 @@ root.render(
 );
 
 
-
-
-// import React, { useState, useEffect } from 'react';
-// import ReactDOM from 'react-dom';
-// import { StrictMode } from 'react';
-// import { createRoot } from 'react-dom/client';
-
-// import App from './App';
-// import './index.css';
-
-// const rootElement = document.getElementById('root');
-// const root = createRoot(rootElement);
-
-// root.render(
-//   <StrictMode>
-//     <App />
-//   </StrictMode>
-// );
-
+export default Index;

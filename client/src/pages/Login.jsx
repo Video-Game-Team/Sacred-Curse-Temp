@@ -1,9 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { useNavigate, useLocation } from 'react-router';
 import axios from 'axios';
+import Index from '../index.js';
+import PageRedirect from './pageReidrect.jsx';
 import '../loginPage.css';
 
 
-function Login() {
+function Login(props) {
   // React States
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -11,9 +14,12 @@ function Login() {
   const [checkName, setCheckName] = useState("")
   const [checkPassword, setCheckPassword] = useState('');
 
+  const { loginRedirect, setLoginRedirect } = PageRedirect();
+  console.log('LOOK AT ME LOGIN.JS', loginRedirect);
+  
    const GetSaveState = () => {
      axios
-       .get('http://localhost:3001/state')
+       .get('http://localhost:3001/state') 
        .then((res) => {
          setSaveState(res.data);
          setCheckName(res.data[0].userName)
@@ -68,6 +74,7 @@ function Login() {
         setErrorMessages({ name: 'pass', message: errors.pass });
       } else {
         setIsSubmitted(true);
+        setLoginRedirect(true)
       }
     } else {
       // Username not found

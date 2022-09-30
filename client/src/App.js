@@ -60,7 +60,8 @@ import Clock from 'react-live-clock';
 
 import './App.css';
 
-function App() {
+function App(props) {
+
   const [itemObj, setItemObj] = useState({});
 
   const [menu1Toggle, setMenu1Toggle] = useState(false);
@@ -151,9 +152,9 @@ function App() {
     }).then((res) => res.json());
   };
 
-  useEffect(() => {
-    putState('6333ae1026690d1e71b91b39');
-  }, []);
+  // useEffect(() => {
+  //   putState();
+  // }, []);
 
   // DELETE Request for SaveState
   const deleteState = async (id) => {

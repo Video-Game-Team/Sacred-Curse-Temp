@@ -26,7 +26,7 @@ app.use(
 app.get('/state', async (req, res) => {
   const states = await State.find();
   res.json(states);
-  console.log(states);
+  // console.log(states);
   // res.status(200);
 });
 
