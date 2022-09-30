@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { HashRouter, Routes, Route, Link } from 'react-router-dom';
-import Home from './pages/Home.jsx';
 import Layout from './pages/Layout';
 import App from './App';
 import Login from './pages/Login.jsx';
@@ -17,7 +16,7 @@ export default function Index() {
     <HashRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
+          <Route index element={<Login />} />
           <Route path="/game" element={<App />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />

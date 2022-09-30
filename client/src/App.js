@@ -49,7 +49,6 @@ import TortousFork from './components/maps/tortousFork.js';
 import Tortous from './components/maps/tortous.js';
 import CrystalCaverns from './components/maps/crystalCaverns.js';
 import CrystalCavernsRight from './components/maps/crystalCavernsRight.js';
-import Home from './pages/Home.jsx';
 import Login from './pages/Login.jsx';
 import Signup from './pages/Signup.jsx';
 
@@ -538,30 +537,7 @@ function App() {
         previousMap={previous}
       />
     ),
-    // login: (
-    //   <Login
-    //     passed={previous}
-    //     active={tracker}
-    //     adder={addItem}
-    //     previousMap={previous}
-    //   />
-    // ),
-    // signup: (
-    //   <Signup
-    //     passed={previous}
-    //     active={tracker}
-    //     adder={addItem}
-    //     previousMap={previous}
-    //   />
-    // ),
-    // home: (
-    //   <Home
-    //     passed={previous}
-    //     active={tracker}
-    //     adder={addItem}
-    //     previousMap={previous}
-    //   />
-    // ),
+
 
     demoMap: <DemoMap demonList={demonTeam} />,
   };

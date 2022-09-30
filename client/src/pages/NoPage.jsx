@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import '../noPage.css';
 
 function NoPage() {
   return (
