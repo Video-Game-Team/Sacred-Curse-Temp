@@ -1,0 +1,43 @@
+.buttonLoginSignup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 80px;
+    left: 240px;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.buttonSignupSignup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 80px;
+    right: 240px;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 10px 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+
+.titleTextSignup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -280px;
+    left: 0px;
+    border: none;
+    color: rgb(255, 0, 0);
+    /* padding: 15px 32px; */
+    font-size: 106px;
+}

@@ -49,9 +49,9 @@ import TortousFork from './components/maps/tortousFork.js';
 import Tortous from './components/maps/tortous.js';
 import CrystalCaverns from './components/maps/crystalCaverns.js';
 import CrystalCavernsRight from './components/maps/crystalCavernsRight.js';
-import Login from './components/maps/Login.jsx';
-import Signup from './components/maps/Signup.jsx';
-import Home from './components/maps/Home.jsx';
+import Home from './pages/Home.jsx';
+import Login from './pages/Login.jsx';
+import Signup from './pages/Signup.jsx';
 
 import DemoMap from './battleMaps/demoMap.jsx';
 import DemonObjects from './demonObjects.js';
@@ -77,7 +77,7 @@ function App() {
     DemonObjects.Naruto,
   ]);
 
-  const [current, setCurrent] = useState('login');
+  const [current, setCurrent] = useState('tortous');
   const [tempCurrent, setTempCurrent] = useState(null);
   const [previous, setPrevious] = useState(null);
   const [textValue, setTextValue] = useState(null);
@@ -538,30 +538,30 @@ function App() {
         previousMap={previous}
       />
     ),
-    login: (
-      <Login
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
-    ),
-    signup: (
-      <Signup
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
-    ),
-    home: (
-      <Home
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
-    ),
+    // login: (
+    //   <Login
+    //     passed={previous}
+    //     active={tracker}
+    //     adder={addItem}
+    //     previousMap={previous}
+    //   />
+    // ),
+    // signup: (
+    //   <Signup
+    //     passed={previous}
+    //     active={tracker}
+    //     adder={addItem}
+    //     previousMap={previous}
+    //   />
+    // ),
+    // home: (
+    //   <Home
+    //     passed={previous}
+    //     active={tracker}
+    //     adder={addItem}
+    //     previousMap={previous}
+    //   />
+    // ),
 
     demoMap: <DemoMap demonList={demonTeam} />,
   };
