@@ -11,8 +11,9 @@ import Indoormap2 from './components/maps/Indoor-map2';
 import OutDoorMapFresh from './components/maps/outdoor-mapFresh.js';
 import FarmMap from './components/maps/farmMap.js';
 import SphynxBM from './battleMaps/Sphynx';
+import FloraForest from './battleMaps/FloraForest';
 
-import DemoMap from './battleMaps/demoMap.jsx';
+
 import DemonObjects from './demonObjects.js'
 
 import './App.css';
@@ -36,13 +37,14 @@ DemonObjects.Charlie, DemonObjects.CrawLord, DemonObjects.Dewy, DemonObjects.Has
     indoorMap2: <Indoormap2 active={tracker} adder={addItem} />,
     outDoorMapFresh: <OutDoorMapFresh active={tracker} adder={addItem} />,
     farmMap: <FarmMap active={tracker} adder={addItem}/>,
-    demoMap:  <DemoMap demonList={demonTeam}/>,
-    sphynx: <SphynxBM demonList={demonTeam}/>
+    // demoMap:  <DemoMap demonList={demonTeam}/>,
+    sphynx: <SphynxBM demonList={demonTeam}/>,
+    floraForest:<FloraForest demonList={demonTeam}/>,
 };
 
 
 // console.log('POOP', mapsObj)
-console.log(<FarmMap/>)
+
 
 const [current, setCurrent] = useState("sphynx");
 
