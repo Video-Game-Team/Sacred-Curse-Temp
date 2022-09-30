@@ -114,19 +114,19 @@ function App() {
   // };
 
   // GET Request for SaveState
-  const GetSaveState = () => {
-    axios
-      .get('http://localhost:3001/state')
-      .then((res) => {
-        // console.log('Res;', res.data);
-        setSaveState(res.data);
-      })
-      .catch((err) => console.log(err));
-  };
+  // const GetSaveState = () => {
+  //   axios
+  //     .get('http://localhost:3001/state')
+  //     .then((res) => {
+  //       // console.log('Res;', res.data);
+  //       setSaveState(res.data);
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
 
-  useEffect(() => {
-    GetSaveState();
-  }, []);
+  // useEffect(() => {
+  //   GetSaveState();
+  // }, []);
 
   // PUT Request for SaveState
   const putState = async (id) => {

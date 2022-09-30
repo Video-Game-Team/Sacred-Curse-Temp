@@ -1,24 +1,52 @@
 import React, { useEffect, useState, useRef } from 'react';
-import ReactDOM from 'react-dom';
+import axios from 'axios';
 import '../loginPage.css';
-import '../loginPage.css';
+
 
 function Login() {
   // React States
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [saveState, setSaveState] = useState([]);
+  const [checkName, setCheckName] = useState("")
+  const [checkPassword, setCheckPassword] = useState('');
+
+   const GetSaveState = () => {
+     axios
+       .get('http://localhost:3001/state')
+       .then((res) => {
+         setSaveState(res.data);
+         setCheckName(res.data[0].userName)
+         setCheckPassword(res.data[0].password);
+        //  console.log('Res;', res.data);
+        //  console.log('UserName;', checkName);
+        //  console.log('Password;', checkPassword);
+       })
+       .catch((err) => console.log(err));
+   };
+
+   useEffect(() => {
+     GetSaveState();
+   }, [isSubmitted, errorMessages]);
 
   // User Login info
   const database = [
     {
-      username: 'user1',
-      password: 'pass1',
-    },
-    {
-      username: 'user2',
-      password: 'pass2',
+      username: checkName,
+      password: checkPassword,
     },
   ];
+
+    // const database = [
+    //   {
+    //     username: checkName,
+    //     password: checkPassword,
+    //   },
+    //   // {
+    //   //   username: 'user2',
+    //   //   password: 'pass2',
+    //   // },
+    // ];
 
   const errors = {
     uname: 'invalid username',
@@ -28,12 +56,11 @@ function Login() {
   const handleSubmit = (event) => {
     //Prevent page reload
     event.preventDefault();
-
     var { uname, pass } = document.forms[0];
-
     // Find user login info
     const userData = database.find((user) => user.username === uname.value);
 
+    
     // Compare user info
     if (userData) {
       if (userData.password !== pass.value) {
