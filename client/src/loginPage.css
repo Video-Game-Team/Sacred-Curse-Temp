@@ -2,12 +2,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    top: -280px;
-    left: 0px;
+    position: fixed;
+    top: 0%;
+    left: 22%;
     border: none;
     color: rgb(255, 0, 0);
-    font-size: 260px;
+    font-size: 9.2vw;
 }
 
 /* .titleTextLogin {

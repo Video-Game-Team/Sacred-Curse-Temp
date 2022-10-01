@@ -1,14 +1,50 @@
+@media(min-width: 1000px) {
+  :root {
+    --pixel-size: 4px;
+  }
+}
+
+
 @media(min-width: 700px) {
   :root {
       --pixel-size: 3px;
   }
 }
 
-@media(min-width: 1000px) {
+
+
+/* @media(min-width: 1200px) {
   :root {
-      --pixel-size:4px;
+    --pixel-size: 4px;
+
   }
 }
+
+
+@media(min-width: 992px) {
+  :root {
+      --pixel-size: 4px;
+    
+  }
+} 
+
+ @media(min-width: 768px) {
+  :root {
+    --pixel-size: 3px;
+   
+  }
+}
+
+
+@media(min-width: 576px) {
+  :root {
+      --pixel-size: 3px;
+     
+  }  
+}  */
+
+
+
 
 :root {
   display: flex;
