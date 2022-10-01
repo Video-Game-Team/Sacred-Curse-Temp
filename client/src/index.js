@@ -15,7 +15,7 @@ import './index.css';
 
 function Index(props) {
   const { loginRedirect, setLoginRedirect } = PageRedirect();
-  console.log('LOOK AT ME INDEX.JS', loginRedirect);
+  // console.log('LOOK AT ME INDEX.JS', loginRedirect);
 
 
   function refresh() {

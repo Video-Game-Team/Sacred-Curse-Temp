@@ -77,7 +77,7 @@ function App(props) {
     DemonObjects.Naruto,
   ]);
 
-  const [current, setCurrent] = useState('indoorHouse10');
+  const [current, setCurrent] = useState('tortous');
   const [tempCurrent, setTempCurrent] = useState(null);
   const [previous, setPrevious] = useState(null);
   const [textValue, setTextValue] = useState(null);

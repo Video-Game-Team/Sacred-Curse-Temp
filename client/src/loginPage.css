@@ -2,12 +2,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    top: 0%;
-    left: 22%;
+    position: relative;
+    White-space: nowrap;    
+    /* inline-size: 14px; */
+    /* top: 0px;
+    left: 370px; */
+    top: -250px;
+    left: 0px;
     border: none;
     color: rgb(255, 0, 0);
     font-size: 9.2vw;
+    /* height: 22.0vh; */
 }
 
 /* .titleTextLogin {
@@ -40,23 +45,24 @@
     display: flex;
     align-items: center;
     position: fixed;
-    left: 850px;
-    top: 400px;
+    left: 44vw;
+    top: 45%;
 }
 
 input[type="text"],
 input[type="password"] {
-    height: px;
+    height: 0%;
     border: 1px solid rgb(255, 253, 253);
 }
 
 input[type="submit"] {
-    margin-top: 10px;
+    margin-top: 10%;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 1em;
     background: #000000;
     color: rgb(255, 255, 255);
     padding: 5px 5px;
+    font-size: .83vw;
 }
 
 input[type="submit"]:hover {
@@ -72,10 +78,11 @@ input[type="submit"]:hover {
     display: flex;
     align-items: center;
     flex-direction: column;
-    max-width: 150px;
-    margin: 0px;
+    max-width: 100%;
     background-color: rgb(78, 77, 77);
     padding: 2rem;
+    /* width: 8vw;
+    height: 11vw; */
 }
 
 .list-container {
@@ -91,19 +98,21 @@ input[type="submit"]:hover {
     display: flex;
     align-items: center;
     flex-direction: column;
-    font-size: 35px;
-    margin-bottom: 0px;
+    font-size: 2vw;
     color: white;
 }
 
 .otherText {
     color: rgb(4, 0, 0);
+    font-size: .84vw;
 }
 
 .input-container {
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 4px;
-    margin: 4px;
+    gap: .2em;
+    margin: .3em;
+  
+    /* width: 2vw; */
 }

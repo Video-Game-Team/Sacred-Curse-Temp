@@ -128,7 +128,7 @@ function Signup() {
 
           <form>
             {/* Labels and inputs for form data */}
-            <label className="label">Name</label>
+            <label className="label otherTextSignup">Name</label>
             <input
               onChange={handleName}
               className="input"
@@ -136,7 +136,7 @@ function Signup() {
               type="text"
             />
 
-            <label className="label">Email</label>
+            <label className="label otherTextSignup">Email</label>
             <input
               onChange={handleEmail}
               className="input"
@@ -144,7 +144,7 @@ function Signup() {
               type="email"
             />
 
-            <label className="label">UserName</label>
+            <label className="label otherTextSignup">UserName</label>
             <input
               onChange={handleUserName}
               className="input"
@@ -152,7 +152,7 @@ function Signup() {
               type="username"
             />
 
-            <label className="label">Password</label>
+            <label className="label otherTextSignup">Password</label>
             <input
               onChange={handlePassword}
               className="input"

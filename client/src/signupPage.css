@@ -1,14 +1,19 @@
 .titleTextSignup{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: -280px;
-    left: 0px;
-    border: none;
-    color: rgb(255, 0, 0);
-    font-size: 260px;
-}
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        White-space: nowrap;
+        /* inline-size: 14px; */
+        /* top: 0px;
+        left: 370px; */
+        top: -250px;
+        left: 0px;
+        border: none;
+        color: rgb(255, 0, 0);
+        font-size: 9.2vw;
+        /* height: 22.0vh; */
+    }
 
 /* .titleTextSignup {
     display: flex;
@@ -40,22 +45,21 @@
     display: flex;
     align-items: center;
     position: fixed;
-    left: 850px;
-    top: 300px;
+    left: 44vw;
+    top: 35%;
 }
 
 .label {
     display: block;
     font-size: larger;
     color: white;
-    padding: 5px;
+    padding: .2em;
 }
 
 .input {
     font-size: larger;
     padding: 5px;
     margin: 2px;
-
 }
 
 .btn {
@@ -68,7 +72,13 @@
     display: block;
     padding: 5px;
     margin: 10px ;
-    margin-left: 75px;
+    margin-left: 28%;
+    font-size: 1vw;
+}
+
+.otherTextSignup {
+    color: rgb(255, 255, 255);
+    font-size: 1vw;
 }
 
 .messages {

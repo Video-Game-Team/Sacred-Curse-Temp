@@ -1,4 +1,4 @@
-@media(min-width: 1000px) {
+/* @media(min-width: 1000px) {
   :root {
     --pixel-size: 4px;
   }
@@ -9,40 +9,184 @@
   :root {
       --pixel-size: 3px;
   }
+} */
+
+/* @media screen and (max-width: 700px) {
+  .section__padding {
+    padding: 4rem;
+  }
+
+  .section__margin {
+    margin: 4rem;
+  }
 }
 
+@media screen and (max-width: 550px) {
+  .section__padding {
+    padding: 4rem 2rem;
+  }
+
+  .section__margin {
+    margin: 4rem 2rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .gpt3__blog-container_article-content h3 {
+    font-size: 18px;
+    line-height: 25p;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .gpt3__cta {
+    flex-direction: column;
+  }
+
+  .gpt3__cta-btn {
+    margin: 2rem 0 0;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .gpt3__cta {
+    flex-direction: column;
+    margin: 4rem 2rem;
+  }
+
+  .gpt3__cta-content h3 {
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  .gpt3__cta-btn button {
+    font-size: 14px;
+    line-height: 28px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .gpt3__features-container__feature-title h1 {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .gpt3__features-container_feature-text p {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .gpt3__features-container__feature {
+    margin: 1rem 0;
+  }
+}
+
+/* For tablet screen sizes */
+/* @media screen and (max-width: 1050px) {
+  .gpt3__navbar-links_container {
+    display: none;
+  }
+
+  .gpt3__navbar-menu {
+    display: flex;
+  }
+} */
+/* 
+/* For screen sizes */
+/* @media screen and (max-width: 700px) {
+  .gpt3__navbar {
+    padding: 2rem 4rem;
+  }
+} */
+
+/* For smasllest screen sizes */
+/* @media screen and (max-width: 550px) {
+  .gpt3__navbar {
+    padding: 2rem;
+  }
+
+  .gpt3__navbar-sign {
+    display: none;
+  }
+
+  .gpt3__navbar-menu_container {
+    top: 20px;
+  }
+
+  .gpt3__navbar-menu_container-links-sign {
+    display: block;
+  }
+}   */
 
 
-/* @media(min-width: 1200px) {
+/* Best practice breakpoint/media query sizes below here */
+
+/* 1200px */
+@media(min-width: 75em) {
   :root {
     --pixel-size: 4px;
 
   }
+  
+    img {
+      width: 100%;
+    }
 }
 
-
-@media(min-width: 992px) {
+/* 992 px */
+@media(min-width: 62em) {
   :root {
       --pixel-size: 4px;
     
   }
+    img {
+      width: 100%;
+    }
 } 
 
- @media(min-width: 768px) {
+/* 768 px */
+ @media(min-width: 48em) {
   :root {
-    --pixel-size: 3px;
-   
+    --pixel-size: 4px;
   }
+  
+    img {
+      width: 100%;
+    }
 }
 
+/* 576px */
+@media(min-width: 36em) {
+  :root {--pixel-size: 4px;}
+      
+  img {width: 100%;}
+} 
 
-@media(min-width: 576px) {
+
+/* 480px */
+@media(min-width: 30em) {
   :root {
-      --pixel-size: 3px;
-     
-  }  
-}  */
+      --pixel-size: 4px;
+    }
+    
+    
+  img {
+    width: 100%;
+  }
+  
+}
 
+/* 320px */
+@media(min-width: 20em) {
+  :root {
+      --pixel-size: 4px;
+    }
+
+
+  img {
+    width: 100%;
+  }
+}
 
 
 
@@ -80,8 +224,11 @@ body {
   height: calc(var(--pixel-size) * 224); */
   width: calc(var(--pixel-size) * 310);
   height: calc(var(--pixel-size) * 184);
+  max-width: 100%;
+  max-height: 100%;
   overflow: hidden;
   background: #000a0b;
+  max-width: 100%;
 }
 
 .map {

@@ -5,7 +5,7 @@
      background-size: 6656px;
      width: calc(260 * var(--grid-cell));
      height: calc(250 * var(--grid-cell));
-     position: absolute;
+     position: relative;
      background-repeat: no-repeat;
      overflow: visible;
      /* display: grid;
@@ -52,13 +52,14 @@
         width: calc(var(--grid-cell)* 2.5);
         height: calc(var(--grid-cell)* 2.5);
        overflow: hidden;
+       max-width: 100%;
    }
 
    .sweeperGuyTT_spritesheet {
        background: url("./assets/images/Tortous sweeper guy.png") no-repeat no-repeat;
        background-size: 100%;
-        width: calc(var(--grid-cell)* 7);
-        height: calc(var(--grid-cell)* 3);
+       width: calc(var(--grid-cell)* 7);
+       height: calc(var(--grid-cell)* 3);
    }
 
    .sweeperGuyTT .sweeperGuyTT_spritesheet {
