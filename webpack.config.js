@@ -3,26 +3,30 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: ['@babel/polyfill', './client/src/index.js'],
+  stats: {
+    children: true,
+  },
   output: {
     path: path.resolve(__dirname, 'build'),
     publicPath: '/',
     filename: 'bundle.js',
   },
-  devtool: 'eval-source-map',
+  devtool: 'inline-source-map',
   mode: 'development',
   devServer: {
     host: 'localhost',
     port: 3000,
     // match the output path
     static: {
-      directory: path.resolve(__dirname, 'dist'),
       // match the output 'publicPath'
-      publicPath: '/',
+      publicPath: '/build',
+      directory: path.resolve(__dirname, 'build'),
     },
     // enable HMR on the devServer
     hot: true,
     // fallback to root for other urls
     historyApiFallback: true,
+    open: true,
     headers: { 'Access-Control-Allow-Origin': '*' },
     /**
      * proxy is required in order to make api calls to
