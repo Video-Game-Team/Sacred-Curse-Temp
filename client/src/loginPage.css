@@ -15,6 +15,7 @@ html {
     color: rgb(255, 0, 0);
     font-size: calc(1rem + 8.2vw);
     /* font-size: max(13vw, 13px); */
+    z-index: 999;
 }
 
 /* .titleTextLogin {
@@ -53,12 +54,14 @@ d   isplay: flex;
     position: relative;
     left: 0vw;
     top: -10em;
+    z-index: 999;
 }
 
 input[type="text"],
 input[type="password"] {
     height: 0%;
     border: .01rem solid rgb(255, 253, 253);
+    z-index: 999;
 }
 
 input[type="submit"] {
@@ -68,15 +71,18 @@ input[type="submit"] {
     color: rgb(255, 255, 255);
     padding: .3em .3em;
     font-size: calc(1rem + .01vw);
+    z-index: 999;
 }
 
 input[type="submit"]:hover {
     background: #040000;
+    z-index: 999;
 }
 
 .button-container {
     display: flex;
     justify-content: center;
+    z-index: 999;
 }
 
 .login-form {
@@ -86,15 +92,18 @@ input[type="submit"]:hover {
     max-width: 100%;
     background-color: rgb(78, 77, 77);
     padding: 2em;
+    z-index: 999;
 }
 
 .list-container {
     display: flex;
+    z-index: 999;
 }
 
 .error {
     color: rgb(255, 0, 0);
     font-size: calc(1rem + .01vw);
+    z-index: 999;
 }
 
 .title {
@@ -103,11 +112,13 @@ input[type="submit"]:hover {
     flex-direction: column;
     font-size: calc(1rem + 1.2vw);
     color: white;
+    z-index: 999;
 }
 
 .otherText {
     color: rgb(4, 0, 0);
     font-size: calc(1rem + .01vw);
+    z-index: 999;
 }
 
 .input-container {
@@ -116,4 +127,21 @@ input[type="submit"]:hover {
     flex-direction: column;
     gap: .2em;
     margin: .3em;
+    z-index: 999;
+}
+
+.darkSky {
+    background-image: url(https://cdn.glitch.com/4f83b17b-3d9a-4782-bfb9-3298fce7ff84%2Fstormynight.jpg?1516228334292);
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 2000px;
+    height: 3000px;
+    z-index: -1;
+    top: 0rem;
+    left: 0rem;
+    opacity: .7;
 }

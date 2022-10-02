@@ -112,58 +112,61 @@ function Signup() {
   }, [submitted]);
 
   return (
-    <div className="fade-in">
-      <h1 className="titleTextSignup">Sacred Curse</h1>
-      <div className="mainContainerSignup">
-        <div className="form">
-          <div>
-            <h1 className="otherTextSignup">User Registration</h1>
+    <div>
+      <div className="fade-in">
+        <h1 className="titleTextSignup">Sacred Curse</h1>
+        <div className="darkSky"></div>
+        <div className="mainContainerSignup">
+          <div className="form">
+            <div>
+              <h1 className="otherTextSignup">User Registration</h1>
+            </div>
+
+            {/* Calling to the methods */}
+            <div className="messages">
+              {errorMessage()}
+              {successMessage()}
+            </div>
+
+            <form>
+              {/* Labels and inputs for form data */}
+              <label className="label otherTextSignup">Name</label>
+              <input
+                onChange={handleName}
+                className="input"
+                value={name}
+                type="text"
+              />
+
+              <label className="label otherTextSignup">Email</label>
+              <input
+                onChange={handleEmail}
+                className="input"
+                value={email}
+                type="email"
+              />
+
+              <label className="label otherTextSignup">UserName</label>
+              <input
+                onChange={handleUserName}
+                className="input"
+                value={userName}
+                type="username"
+              />
+
+              <label className="label otherTextSignup">Password</label>
+              <input
+                onChange={handlePassword}
+                className="input"
+                value={password}
+                type="password"
+              />
+
+              <button onClick={handleSubmit} className="btn" type="submit">
+                Submit
+              </button>
+            </form>
           </div>
-
-          {/* Calling to the methods */}
-          <div className="messages">
-            {errorMessage()}
-            {successMessage()}
-          </div>
-
-          <form>
-            {/* Labels and inputs for form data */}
-            <label className="label otherTextSignup">Name</label>
-            <input
-              onChange={handleName}
-              className="input"
-              value={name}
-              type="text"
-            />
-
-            <label className="label otherTextSignup">Email</label>
-            <input
-              onChange={handleEmail}
-              className="input"
-              value={email}
-              type="email"
-            />
-
-            <label className="label otherTextSignup">UserName</label>
-            <input
-              onChange={handleUserName}
-              className="input"
-              value={userName}
-              type="username"
-            />
-
-            <label className="label otherTextSignup">Password</label>
-            <input
-              onChange={handlePassword}
-              className="input"
-              value={password}
-              type="password"
-            />
-
-            <button onClick={handleSubmit} className="btn" type="submit">
-              Submit
-            </button>
-          </form>
         </div>
       </div>
     </div>

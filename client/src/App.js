@@ -59,10 +59,10 @@ import Datetime from './components/maps/datetime.js';
 import Clock from 'react-live-clock';
 import { browserName, browserVersion } from 'react-device-detect';
 
+
 import './App.css';
 
 function App(props) {
-
   const [itemObj, setItemObj] = useState({});
 
   const [menu1Toggle, setMenu1Toggle] = useState(false);
@@ -79,7 +79,7 @@ function App(props) {
     DemonObjects.Naruto,
   ]);
 
-  const [current, setCurrent] = useState('farmMap');
+  const [current, setCurrent] = useState('tortousFork');
   const [tempCurrent, setTempCurrent] = useState(null);
   const [previous, setPrevious] = useState(null);
   const [textValue, setTextValue] = useState(null);
@@ -101,7 +101,6 @@ function App(props) {
   const [quest2State, setQuest2State] = useState('false');
   const [quest3State, setQuest3State] = useState('false');
   const [quest4State, setQuest4State] = useState('false');
-
 
   // let tempObj = {
   //   password: passwordState,
@@ -535,9 +534,6 @@ function App(props) {
     };
   }, [framerateToggle]);
 
-
-
-
   // //Checking for screen inner width
   function getWindowDimensions() {
     const { innerWidth: width, innerHeight: height } = window;
@@ -561,8 +557,6 @@ function App(props) {
   }
   console.log('WINDOW INNER HEIGHT', window.innerHeight);
 
-
-
   // //MATT MENU
   // useEffect(() => {
   //   const menuListener = (event) => {
@@ -579,6 +573,7 @@ function App(props) {
   //   };
   // }, []);
 
+  // MATT CODE
   useEffect(() => {
     setPrevious(tempCurrent);
   }, [current]);
@@ -648,116 +643,120 @@ function App(props) {
   // whole map is a button - giving that button onkeyppress listener called wrap
   return (
     <div className="mainGameContainer">
-      <div style={{ filter: `saturate(${saturate}%)` }}>
-        <div style={{ filter: `contrast(${contrast}%)` }}>
-          {framerateToggle === true ? (
-            <>
-              <div>
-                <h1
-                  style={{
-                    position: 'fixed',
-                    fontSize: '20px',
-                    color: 'white',
-                    zIndex: '999',
-                  }}
-                >
-                  {browserName} Version: {browserVersion}
-                </h1>
-                <span
-                  style={{ position: 'fixed', color: 'white', zIndex: '999' }}
-                >
-                  Current Frame Rate =
-                </span>
-                <span
-                  id="test"
-                  style={{
-                    position: 'absolute',
-                    left: '10rem',
-                    color: 'white',
-                    zIndex: '999',
-                  }}
-                ></span>
-              </div>
-            </>
-          ) : null}
-
-          <div>
-            <body>
-              {mapsObj[current]}
-              {menu === true ? (
-                <dialog className="mainMenu" open>
-                  <button>MAP</button>
-                </dialog>
-              ) : null}
-            </body>
-
-            {menuClockToggle === true ? (
+        <div style={{ filter: `saturate(${saturate}%)` }}>
+          <div style={{ filter: `contrast(${contrast}%)` }}>
+            {framerateToggle === true ? (
               <>
-                <div className="clock">
-                  <Clock
-                    format="h:mm:ssa"
-                    style={{ fontSize: '1.5em' }}
-                    ticking
-                  />
-                </div>
-
-                <div className="clockTime">
-                  <Datetime />
+                <div>
+                  <h1
+                    style={{
+                      position: 'fixed',
+                      fontSize: '20px',
+                      color: 'white',
+                      zIndex: '999',
+                    }}
+                  >
+                    {browserName} Version: {browserVersion}
+                  </h1>
+                  <span
+                    style={{
+                      position: 'fixed',
+                      color: 'white',
+                      zIndex: '999',
+                    }}
+                  >
+                    Current Frame Rate =
+                  </span>
+                  <span
+                    id="test"
+                    style={{
+                      position: 'absolute',
+                      left: '10rem',
+                      color: 'white',
+                      zIndex: '999',
+                    }}
+                  ></span>
                 </div>
               </>
             ) : null}
 
-            {menu2Toggle === true ? (
-              <div className="box1">
-                <text className="pokeText" style={{ marginLeft: '90px' }}>
-                  FLOWERS
-                </text>
-                c
-              </div>
-            ) : null}
+            <div>
+              <body>
+                {mapsObj[current]}
+                {menu === true ? (
+                  <dialog className="mainMenu" open>
+                    <button>MAP</button>
+                  </dialog>
+                ) : null}
+              </body>
 
-            {menu2Toggle === true ? (
-              <div className="box2">
-                <text className="pokeText" style={{ marginLeft: '105px' }}>
-                  ITEMS
-                </text>
-              </div>
-            ) : null}
+              {menuClockToggle === true ? (
+                <>
+                  <div className="clock">
+                    <Clock
+                      format="h:mm:ssa"
+                      style={{ fontSize: '1.5em' }}
+                      ticking
+                    />
+                  </div>
 
-            {menu2Toggle === true ? (
-              <div className="box3">
-                <text className="pokeText" style={{ marginLeft: '82px' }}>
-                  EQUIPMENT
-                </text>
-              </div>
-            ) : null}
+                  <div className="clockTime">
+                    <Datetime />
+                  </div>
+                </>
+              ) : null}
 
-            {menu1Toggle === true ? (
-              <div className="box4">
-                <text className="pokeText" style={{ marginLeft: '125px' }}>
-                  MAP
-                </text>
-              </div>
-            ) : null}
+              {menu2Toggle === true ? (
+                <div className="box1">
+                  <text className="pokeText" style={{ marginLeft: '90px' }}>
+                    FLOWERS
+                  </text>
+                  c
+                </div>
+              ) : null}
 
-            {menu1Toggle === true ? (
-              <div className="box5">
-                <text className="pokeText" style={{ marginLeft: '585px' }}>
-                  CONTROLS
-                </text>
-              </div>
-            ) : null}
+              {menu2Toggle === true ? (
+                <div className="box2">
+                  <text className="pokeText" style={{ marginLeft: '105px' }}>
+                    ITEMS
+                  </text>
+                </div>
+              ) : null}
 
-            {menu1Toggle === true ? (
-              <div className="box6">
-                <text className="pokeText" style={{ marginLeft: '585px' }}>
-                  MENU
-                </text>
-              </div>
-            ) : null}
+              {menu2Toggle === true ? (
+                <div className="box3">
+                  <text className="pokeText" style={{ marginLeft: '82px' }}>
+                    EQUIPMENT
+                  </text>
+                </div>
+              ) : null}
+
+              {menu1Toggle === true ? (
+                <div className="box4">
+                  <text className="pokeText" style={{ marginLeft: '125px' }}>
+                    MAP
+                  </text>
+                </div>
+              ) : null}
+
+              {menu1Toggle === true ? (
+                <div className="box5">
+                  <text className="pokeText" style={{ marginLeft: '585px' }}>
+                    CONTROLS
+                  </text>
+                </div>
+              ) : null}
+
+              {menu1Toggle === true ? (
+                <div className="box6">
+                  <text className="pokeText" style={{ marginLeft: '585px' }}>
+                    MENU
+                  </text>
+                </div>
+              ) : null}
+            </div>
           </div>
         </div>
-      </div>
     </div>
   );
 }

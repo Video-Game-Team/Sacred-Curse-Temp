@@ -11,6 +11,7 @@
 } */
 
 
+
 :root {
   --pixel-size: 2px;
   --grid-cell: calc(var(--pixel-size) * 12);
@@ -512,7 +513,8 @@ p {
     }
 
 
-
+    
+      
         /* Bootstrap standards for best practice breakpoint/media query sizes below here */
 
          /* 1444px this one is personal preference not bootstrap*/

@@ -106,17 +106,20 @@ function Login(props) {
   );
 
   return (
-    <div className="fade-in">
-      <h1 className="titleTextLogin">Sacred Curse</h1>
-      <div className="wholeContainer">
-        <div className="app">
-          <div className="login-form">
-            <div className="title">Log In</div>
-            {isSubmitted ? (
-              <div className="otherText">User is successfully logged in</div>
-            ) : (
-              renderForm
-            )}
+    <div>
+      <div className="fade-in">
+        <h1 className="titleTextLogin">Sacred Curse</h1>
+        <div className="darkSky"></div>
+        <div className="wholeContainer">
+          <div className="app">
+            <div className="login-form">
+              <div className="title">Log In</div>
+              {isSubmitted ? (
+                <div className="otherText">User is successfully logged in</div>
+              ) : (
+                renderForm
+              )}
+            </div>
           </div>
         </div>
       </div>
