@@ -46,8 +46,8 @@ html {
     display: flex;
     align-items: center;
     position: relative;
-    left: 22vw;
-    top: -10rem;
+    left: 22.6vw;
+    top: -10em;
 }
 
 .label {
@@ -73,7 +73,7 @@ html {
     display: block;
     padding: .3em;
     margin: .4em;
-    margin-left: 4.1em;
+    margin-left: 4.5em;
     font-size: calc(1rem + .01vw);
 }
 
