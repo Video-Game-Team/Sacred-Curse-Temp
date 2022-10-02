@@ -11,15 +11,15 @@
 } */
 
 
-.mainGameContainer {
-  /* display: flex;
+/* .mainGameContainer {
+  display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  /* width: 81.em;
-  height: 0em; 
-  max-width: 10vw; */ 
-} 
+  width: 0%
+  min-height: 0%
+  max-width: 10% 
+}  */
 
 :root {
   --pixel-size: 2px;
@@ -490,12 +490,12 @@ p {
 
 
 
-        /* Best practice breakpoint/media query sizes below here */
+        /* Bootstrap standards for best practice breakpoint/media query sizes below here */
     
         /* 1200px */
         @media only screen and (max-width: 75em) {
           img {
-            width: 1%;
+            width: 100%;
           }
          }
     
@@ -506,36 +506,27 @@ p {
           }
         }
 
-        /* 576px */
+        /* 768 px - 1023*/
+          @media only screen and (max-width: 48em) {
+        img {
+            width: 100%;
+          }
+        }
+
+        /* 576px     -767*/
         @media only screen and (max-width: 36em) {
           img {
             width: 100%;
           }
-        }
+        } 
     
-        /* 480px */
-        @media only screen and (max-width: 30em) {
-          img {
-            width: 100%;
-          }
-        }
-
-        /* 320px */
-        @media(min-width: 20em) {
-          img {
-            width: 100%;
-          }
-        }
-
-
-
-
+       
 
     
      /* Settings for my ipad and iphone below here */
 
         /* 1194 Ipad pro 11 3rd gen */
-         @media only screen and (max-width: 1194px){ 
+         @media only screen and (max-width: 74.625em){ 
           .camera {
               width: calc(var(--pixel-size) * 255);
               height: calc(var(--pixel-size) * 144);
@@ -550,7 +541,7 @@ p {
 
     
         /* 897 px iphone 11 Pro Max*/
-        @media only screen and (max-width: 897px) {  
+        @media only screen and (max-width: 56.0625em) {  
         @media(min-width: 48em) { 
           .camera {
               width: calc(var(--pixel-size) * 255);

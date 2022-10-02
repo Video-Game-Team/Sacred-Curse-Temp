@@ -113,7 +113,7 @@ function Login(props) {
           <div className="login-form">
             <div className="title">Log In</div>
             {isSubmitted ? (
-              <div>User is successfully logged in</div>
+              <div className="otherText">User is successfully logged in</div>
             ) : (
               renderForm
             )}
