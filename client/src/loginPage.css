@@ -14,6 +14,7 @@ html {
     border: none;
     color: rgb(255, 0, 0);
     font-size: calc(1rem + 8.2vw);
+    /* font-size: max(13vw, 13px); */
 }
 
 /* .titleTextLogin {
@@ -48,8 +49,9 @@ d   isplay: flex;
 .wholeContainer {
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
-    left: 22vw;
+    left: 0vw;
     top: -10em;
 }
 

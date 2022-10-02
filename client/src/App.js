@@ -57,6 +57,7 @@ import DemonObjects from './demonObjects.js';
 
 import Datetime from './components/maps/datetime.js';
 import Clock from 'react-live-clock';
+import { browserName, browserVersion } from 'react-device-detect';
 
 import './App.css';
 
@@ -67,6 +68,7 @@ function App(props) {
   const [menu1Toggle, setMenu1Toggle] = useState(false);
   const [menu2Toggle, setMenu2Toggle] = useState(false);
   const [menuClockToggle, setMenuClockToggle] = useState(false);
+  const [framerateToggle, setFramerateToggle] = useState(false);
 
   //delete Later
   const [demonTeam, setDemonTeam] = useState([
@@ -99,6 +101,7 @@ function App(props) {
   const [quest2State, setQuest2State] = useState('false');
   const [quest3State, setQuest3State] = useState('false');
   const [quest4State, setQuest4State] = useState('false');
+
 
   // let tempObj = {
   //   password: passwordState,
@@ -509,48 +512,72 @@ function App(props) {
     demoMap: <DemoMap demonList={demonTeam} />,
   };
 
-  const [framerateToggle, setFramerateToggle] = useState(false)
-
   //Framerate Tester on and off
-   useEffect(() => {
-     const dialogueAction = (event) => {
-       if (event.key === 'f') {
-         setFramerateToggle(!framerateToggle);
-         function step(timestamp) {
-           var time2 = new Date();
-           var fps = 1000 / (time2 - time);
-           time = time2;
-           document.getElementById('test').innerHTML = fps;
-           window.requestAnimationFrame(step);
-         }
-         var time = new Date(),
-           i = 0;
-         window.requestAnimationFrame(step);
-       }
-     };
-     window.addEventListener('keydown', dialogueAction);
-     return () => {
-       window.removeEventListener('keydown', dialogueAction);
-     };
-   }, [framerateToggle]);
-
-
-
-  //MATT MENU
   useEffect(() => {
-    const menuListener = (event) => {
-      if (event.key === 'Enter') {
-        setMenu(true);
-      }
-      if (event.key === 'Escape') {
-        setMenu(false);
+    const dialogueAction = (event) => {
+      if (event.key === 'f') {
+        setFramerateToggle(!framerateToggle);
+        function step(timestamp) {
+          var time2 = new Date();
+          var fps = 1000 / (time2 - time);
+          time = time2;
+          document.getElementById('test').innerHTML = fps;
+          window.requestAnimationFrame(step);
+        }
+        var time = new Date(),
+          i = 0;
+        window.requestAnimationFrame(step);
       }
     };
-    window.addEventListener('keydown', menuListener);
+    window.addEventListener('keydown', dialogueAction);
     return () => {
-      window.removeEventListener('keydown', menuListener);
+      window.removeEventListener('keydown', dialogueAction);
     };
-  }, []);
+  }, [framerateToggle]);
+
+
+
+
+  // //Checking for screen inner width
+  function getWindowDimensions() {
+    const { innerWidth: width, innerHeight: height } = window;
+    return {
+      width,
+      height,
+    };
+  }
+  function useWindowDimensions() {
+    const [windowDimensions, setWindowDimensions] = useState(
+      getWindowDimensions()
+    );
+    useEffect(() => {
+      function handleResize() {
+        setWindowDimensions(getWindowDimensions());
+      }
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+    return windowDimensions;
+  }
+  console.log('WINDOW INNER HEIGHT', window.innerHeight);
+
+
+
+  // //MATT MENU
+  // useEffect(() => {
+  //   const menuListener = (event) => {
+  //     if (event.key === 'Enter') {
+  //       setMenu(true);
+  //     }
+  //     if (event.key === 'Escape') {
+  //       setMenu(false);
+  //     }
+  //   };
+  //   window.addEventListener('keydown', menuListener);
+  //   return () => {
+  //     window.removeEventListener('keydown', menuListener);
+  //   };
+  // }, []);
 
   useEffect(() => {
     setPrevious(tempCurrent);
@@ -616,17 +643,23 @@ function App(props) {
     };
   }, [menuClockToggle]);
 
+  // console.log("BROWSER", `${browserName} ${browserVersion}`);
+
   // whole map is a button - giving that button onkeyppress listener called wrap
   return (
     <div className="mainGameContainer">
       <div style={{ filter: `saturate(${saturate}%)` }}>
         <div style={{ filter: `contrast(${contrast}%)` }}>
-
           {framerateToggle === true ? (
             <>
               <div>
-                <span style={{ color: 'white' }}>Current Frame Rate   =</span>
-                <span style={{ color: 'white' }} id="test"></span>
+                <h1 style={{ fontSize: '20px', color: 'white' }}>
+                  {browserName} Version: {browserVersion}
+                </h1>
+                <span style={{ color: 'white', zIndex: 999 }}>
+                  Current Frame Rate =
+                </span>
+                <span style={{ color: 'white', zIndex: 999 }} id="test"></span>
               </div>
             </>
           ) : null}

@@ -45,8 +45,9 @@ html {
 .mainContainerSignup {
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
-    left: 22.6vw;
+    left: 0vw;
     top: -10em;
 }
 

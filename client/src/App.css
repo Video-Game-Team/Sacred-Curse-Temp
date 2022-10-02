@@ -272,6 +272,7 @@ p {
    border-radius: .6rem;
    margin: 0em;
    background: rgb(9, 9, 9);
+   z-index: -1;
  }
 
   /* .box1:before {
@@ -307,6 +308,7 @@ p {
   border-radius: .6rem;
     margin: 0em;
    background: rgb(9, 9, 9);
+    z-index: -1;
  }
   /* .box2:before {
    display: flex;
@@ -341,6 +343,7 @@ p {
   border-radius: .6rem;
   margin: 0em;
    background: rgb(9, 9, 9);
+    z-index: -1;
  }
 
  /* .box3:before {
@@ -376,6 +379,7 @@ p {
       border-radius: .6rem;
       margin: 0em;
       background: rgb(9, 9, 9);
+      z-index: -1;
     }
 /*   
     .box4:before {
@@ -413,6 +417,7 @@ p {
       border-radius: .6rem;
       margin: 0em;
       background: rgb(9, 9, 9);
+      z-index: -1;
     }
 
      /* .box5:before {
@@ -450,6 +455,7 @@ p {
       border-radius: 0.625rem;
       margin: 0em;
       background: rgb(9, 9, 9);
+      z-index: -1;
     }
   
     /* .box6:before {
@@ -500,6 +506,16 @@ p {
 
 
         /* Bootstrap standards for best practice breakpoint/media query sizes below here */
+
+         /* 1444px this one is personal preference not bootstrap*/
+        @media only screen and (min-width: 1921px) {
+        .titleTextLogin {
+          font-size: calc(1rem + 6.2vw);
+         }
+        .titleTextSignup {
+          font-size: calc(1rem + 6.2vw);
+         }
+        }
     
         /* 1200px */
         @media only screen and (max-width: 75em) {
