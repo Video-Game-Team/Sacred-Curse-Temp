@@ -130,18 +130,22 @@ input[type="submit"]:hover {
     z-index: 999;
 }
 
+
+
 .darkSky {
     background-image: url(https://cdn.glitch.com/4f83b17b-3d9a-4782-bfb9-3298fce7ff84%2Fstormynight.jpg?1516228334292);
-    /* background-size: cover; */
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    width: 2000px;
-    height: 3000px;
-    z-index: -1;
-    top: 0rem;
-    left: 0rem;
-    opacity: .7;
+    opacity: .8;
+    background-size: cover;
+    /* Set rules to fill background this is  set to 1024px*/
+        min-height: 100%;
+        min-width: 64rem;
+    
+        /* Set up proportionate scaling */
+        width: 100%;
+        height: auto;
+    
+        /* Set up positioning */
+        position: fixed;
+        top: 0rem;
+        left: 0rem;
 }
