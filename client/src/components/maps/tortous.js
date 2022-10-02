@@ -3060,6 +3060,9 @@ const Tortous = (props) => {
 
   //update the style for the npc character by transforming it according the new x and y variables
   //map and character share the varaibles since they move together
+
+ 
+
   return (
     <div>
       <div style={{ filter: `saturate(${saturate}%)` }}>

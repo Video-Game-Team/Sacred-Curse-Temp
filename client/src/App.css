@@ -4,199 +4,27 @@
   }
 }
 
-
 @media(min-width: 700px) {
   :root {
       --pixel-size: 3px;
   }
 } */
 
-/* @media screen and (max-width: 700px) {
-  .section__padding {
-    padding: 4rem;
-  }
 
-  .section__margin {
-    margin: 4rem;
-  }
-}
-
-@media screen and (max-width: 550px) {
-  .section__padding {
-    padding: 4rem 2rem;
-  }
-
-  .section__margin {
-    margin: 4rem 2rem;
-  }
-}
-
-@media screen and (max-width: 550px) {
-  .gpt3__blog-container_article-content h3 {
-    font-size: 18px;
-    line-height: 25p;
-  }
-}
-
-@media screen and (max-width: 650px) {
-  .gpt3__cta {
-    flex-direction: column;
-  }
-
-  .gpt3__cta-btn {
-    margin: 2rem 0 0;
-  }
-}
-
-@media screen and (max-width: 550px) {
-  .gpt3__cta {
-    flex-direction: column;
-    margin: 4rem 2rem;
-  }
-
-  .gpt3__cta-content h3 {
-    font-size: 18px;
-    line-height: 32px;
-  }
-
-  .gpt3__cta-btn button {
-    font-size: 14px;
-    line-height: 28px;
-  }
-}
-
-@media screen and (max-width: 550px) {
-  .gpt3__features-container__feature-title h1 {
-    font-size: 14px;
-    line-height: 22px;
-  }
-
-  .gpt3__features-container_feature-text p {
-    font-size: 12px;
-    line-height: 20px;
-  }
-
-  .gpt3__features-container__feature {
-    margin: 1rem 0;
-  }
-}
-
-/* For tablet screen sizes */
-/* @media screen and (max-width: 1050px) {
-  .gpt3__navbar-links_container {
-    display: none;
-  }
-
-  .gpt3__navbar-menu {
-    display: flex;
-  }
-} */
-/* 
-/* For screen sizes */
-/* @media screen and (max-width: 700px) {
-  .gpt3__navbar {
-    padding: 2rem 4rem;
-  }
-} */
-
-/* For smasllest screen sizes */
-/* @media screen and (max-width: 550px) {
-  .gpt3__navbar {
-    padding: 2rem;
-  }
-
-  .gpt3__navbar-sign {
-    display: none;
-  }
-
-  .gpt3__navbar-menu_container {
-    top: 20px;
-  }
-
-  .gpt3__navbar-menu_container-links-sign {
-    display: block;
-  }
-}   */
-
-
-/* Best practice breakpoint/media query sizes below here */
-
-/* 1200px */
-@media(min-width: 75em) {
-  :root {
-    --pixel-size: 4px;
-
-  }
-  
-    img {
-      width: 100%;
-    }
-}
-
-/* 992 px */
-@media(min-width: 62em) {
-  :root {
-      --pixel-size: 4px;
-    
-  }
-    img {
-      width: 100%;
-    }
+.mainGameContainer {
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* width: 81.em;
+  height: 0em; 
+  max-width: 10vw; */ 
 } 
-
-/* 768 px */
- @media(min-width: 48em) {
-  :root {
-    --pixel-size: 4px;
-  }
-  
-    img {
-      width: 100%;
-    }
-}
-
-/* 576px */
-@media(min-width: 36em) {
-  :root {--pixel-size: 4px;}
-      
-  img {width: 100%;}
-} 
-
-
-/* 480px */
-@media(min-width: 30em) {
-  :root {
-      --pixel-size: 4px;
-    }
-    
-    
-  img {
-    width: 100%;
-  }
-  
-}
-
-/* 320px */
-@media(min-width: 20em) {
-  :root {
-      --pixel-size: 4px;
-    }
-
-
-  img {
-    width: 100%;
-  }
-}
-
-
 
 :root {
-  display: flex;
-  align-items: center;
-  justify-content: center;;
   --pixel-size: 2px;
   --grid-cell: calc(var(--pixel-size) * 12);
-  --bg: #090000;
+  --bg: #000000;
 }
 
 html,
@@ -218,10 +46,6 @@ body {
 
 .camera {
   position: relative;
-  /* width: calc(var(--pixel-size) * 476);
-  height: calc(var(--pixel-size) * 236); */
-  /* width: calc(var(--pixel-size) * 292);
-  height: calc(var(--pixel-size) * 224); */
   width: calc(var(--pixel-size) * 310);
   height: calc(var(--pixel-size) * 184);
   max-width: 100%;
@@ -243,14 +67,12 @@ body {
   background-size: 2560px; 
   width: calc(40 * var(--grid-cell));
   height: calc(40 * var(--grid-cell)); 
-  
   background-repeat:no-repeat
 }
 
  .character {
   /* z-index: -1; */
   position: absolute;
-  /* display: inline-block; */
   width: calc(var(--grid-cell)* 2);
   height: calc(var(--grid-cell)* 2);
   overflow: hidden;
@@ -415,7 +237,6 @@ p {
   }
 }
 
-
 .mainMenu {
   border-radius: 15px;
   border: 3px solid;
@@ -433,13 +254,13 @@ p {
 
  .box1 {
    display: flex;
-   position: absolute;
-   top: 0px;
-   left: 1257px;
-   width: 275px;
-   height: 213px;
+   position: fixed;
+   top: 1.8em;
+   left: 80em;
+   width: 15.1vw;
+   height: 22.7vh;
    padding: 10px;
-  border: 4px solid rgb(0, 4, 255);
+   border: 4px solid rgb(0, 4, 255);
    border-radius: 10px;
    margin: 0;
    background: rgb(9, 9, 9);
@@ -468,13 +289,13 @@ p {
 
  .box2 {
    display: flex;
-   position: absolute;
-   top: 248px;
-  left: 1257px;
-    width: 275px;
-      height: 213px;
+   position: fixed;
+   top: 17.3em;
+  left: 80em;
+   width: 15.1vw;
+   height: 22.7vh;
    padding: 10px;
-  border: 4px solid rgb(0, 4, 255);
+   border: 4px solid rgb(0, 4, 255);
    border-radius: 10px;
    margin: 0;
    background: rgb(9, 9, 9);
@@ -502,11 +323,11 @@ p {
 
  .box3 {
    display: flex;
-   position: absolute;
-   top: 496px;
-  left: 1257px;
-    width: 275px;
-      height: 213px;
+   position: fixed;
+   top: 32.8em;
+    left: 80em;
+    width: 15.1vw;
+  height: 22.7vh;
    padding: 10px;
   border: 4px solid rgb(0, 4, 255);
    border-radius: 10px;
@@ -535,15 +356,15 @@ p {
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
  }
 
-    .box4 {
+  .box4 {
       display: flex;
-      position: absolute;
-      top: 0px;
-      left: -326px;
-      width: 287px;
-      height: 708px;
+      position: fixed;
+      top: 1.8em;
+      left: -18.6em;
+      width: 15.1vw;
+      height: 44.6em;
       padding: 10px;
-    border: 4px solid rgb(2, 6, 255);
+      border: 4px solid rgb(2, 6, 255);
       border-radius: 10px;
       margin: 0;
       background: rgb(9, 9, 9);
@@ -574,11 +395,11 @@ p {
 
      .box5 {
       display: flex;
-      position: absolute;
-      top: 740px;
-      left: -2px;
-      width: 1217px;
-      height: 72px;
+      position: fixed;
+      top: 48.4em;
+      left: 1.8em;
+      width: 76em;
+      height: 2em;
       padding: 10px;
       border: 4px solid rgb(2, 6, 255);
       border-radius: 10px;
@@ -611,11 +432,11 @@ p {
 
     .box6 {
       display: flex;
-      position: absolute;
-      top: -99px;
-      left: -2px;
-      width: 1217px;
-      height: 66px;
+      position: fixed;
+      top: -3.5em;
+      left: 1.7em;
+      width: 76em;
+      height: 3.3em;
       padding: 10px;
       border: 4px solid rgb(2, 6, 255);
       border-radius: 10px;
@@ -669,4 +490,81 @@ p {
 
 
 
+        /* Best practice breakpoint/media query sizes below here */
     
+        /* 1200px */
+        @media only screen and (max-width: 75em) {
+          img {
+            width: 1%;
+          }
+         }
+    
+        /* 992 px */
+        @media only screen and (max-width: 62em) {
+        img {
+            width: 100%;
+          }
+        }
+
+        /* 576px */
+        @media only screen and (max-width: 36em) {
+          img {
+            width: 100%;
+          }
+        }
+    
+        /* 480px */
+        @media only screen and (max-width: 30em) {
+          img {
+            width: 100%;
+          }
+        }
+
+        /* 320px */
+        @media(min-width: 20em) {
+          img {
+            width: 100%;
+          }
+        }
+
+
+
+
+
+    
+     /* Settings for my ipad and iphone below here */
+
+        /* 1194 Ipad pro 11 3rd gen */
+         @media only screen and (max-width: 1194px){ 
+          .camera {
+              width: calc(var(--pixel-size) * 255);
+              height: calc(var(--pixel-size) * 144);
+              }
+            .otherTextSignup {
+              font-size: 1.5vw;
+              }
+            .otherText {
+              font-size: 1.5vw;
+              }
+          } 
+
+    
+        /* 897 px iphone 11 Pro Max*/
+        @media only screen and (max-width: 897px) {  
+        @media(min-width: 48em) { 
+          .camera {
+              width: calc(var(--pixel-size) * 255);
+              height: calc(var(--pixel-size) * 90);
+            }
+            .otherTextSignup {
+                  font-size: 2.5vw;
+          }
+            .otherText {
+              font-size: 2.5vw;
+            }
+            .title {
+              font-size: 2.5vw;
+            }
+          } 
+        }
+      

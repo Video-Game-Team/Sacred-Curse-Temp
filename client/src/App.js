@@ -591,7 +591,7 @@ function App(props) {
 
   // whole map is a button - giving that button onkeyppress listener called wrap
   return (
-    <div>
+    <div className="mainGameContainer">
       <div style={{ filter: `saturate(${saturate}%)` }}>
         <div style={{ filter: `contrast(${contrast}%)` }}>
           <div>

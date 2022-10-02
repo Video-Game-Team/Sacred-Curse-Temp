@@ -1,6 +1,5 @@
  .mapT {
      image-rendering: pixelated;
-    /* background-image: url("./assets/maps/Tortous no npc special black door.png"); */
      background-image: url("./assets/maps/Tortous tweaks no grid.png");
      background-size: 6656px;
      width: calc(260 * var(--grid-cell));
@@ -17,6 +16,17 @@
     size: 100%;
     background: transparent;
 }  */
+
+.cameraTT {
+    position: relative;
+    width: calc(var(--pixel-size) * 254);
+    height: calc(var(--pixel-size) * 145);
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    background: #000a0b;
+    max-width: 100%;
+}
 
  
  @keyframes walkAnimation {
@@ -48,11 +58,11 @@
 
 
 .sweeperGuyTT {
-      position: absolute;
-        width: calc(var(--grid-cell)* 2.5);
-        height: calc(var(--grid-cell)* 2.5);
-       overflow: hidden;
-       max-width: 100%;
+    position: absolute;
+    width: calc(var(--grid-cell)* 2.5);
+    height: calc(var(--grid-cell)* 2.5);
+    overflow: hidden;
+    max-width: 100%;
    }
 
    .sweeperGuyTT_spritesheet {

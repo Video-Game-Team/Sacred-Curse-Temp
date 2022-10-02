@@ -112,12 +112,12 @@ function Signup() {
   }, [submitted]);
 
   return (
-    <div>
+    <div className="fade-in">
       <h1 className="titleTextSignup">Sacred Curse</h1>
       <div className="mainContainerSignup">
         <div className="form">
           <div>
-            <h1>User Registration</h1>
+            <h1 className="otherTextSignup">User Registration</h1>
           </div>
 
           {/* Calling to the methods */}
