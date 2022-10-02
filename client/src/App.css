@@ -264,8 +264,8 @@ p {
    display: flex;
    position: absolute;
    top: 1.8rem;
-   left: 80rem;
-   width: 22.3%;
+   left: 81.3rem;
+   width: 20%;
    height: 27%;
    padding: .6em;
    border: .26rem solid rgb(0, 4, 255);
@@ -275,7 +275,7 @@ p {
    z-index: -1;
  }
 
-  /* .box1:before {
+  .box1:before {
    display: flex;
    background: none;
    border: 2px solid rgb(0, 0, 0);
@@ -294,14 +294,14 @@ p {
    display: block;
    background: rgba(255, 255, 255, 0.2);
    background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
- } */
+ }
 
  .box2 {
    display: flex;
    position: absolute;
    top: 17.3em;
-  left: 80em;
-  width: 22.3%;
+  left: 81.3rem;
+    width: 20%;
   height: 27%;
   padding: .6em;
    border: .26rem solid rgb(0, 4, 255);
@@ -310,7 +310,8 @@ p {
    background: rgb(9, 9, 9);
     z-index: -1;
  }
-  /* .box2:before {
+
+  .box2:before {
    display: flex;
    background: none;
    border: 2px solid rgb(0, 0, 0);
@@ -329,14 +330,14 @@ p {
    display: block;
    background: rgba(255, 255, 255, 0.2);
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
- } */
+ }
 
  .box3 {
    display: flex;
    position: absolute;
    top: 32.8em;
-  left: 80em;
-  width: 22.3%;
+  left: 81.3rem;
+    width: 20%;
   height: 27%;
   padding: .6em;
   border: .26rem solid rgb(0, 4, 255);
@@ -346,7 +347,7 @@ p {
     z-index: -1;
  }
 
- /* .box3:before {
+ .box3:before {
    display: flex;
    background: none;
   border: 2px solid rgb(0, 0, 0);
@@ -365,14 +366,14 @@ p {
    display: block;
    background: rgba(255, 255, 255, 0.2);
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
- } */
+ }
 
   .box4 {
       display: flex;
       position: absolute;
       top: 1.8em;
-      left: -18.6em;
-      width: 22.3%;
+      left: -18.2em;
+      width: 20%;
       height: 44.6em;
       padding: .65em;
       border: .26rem solid rgb(2, 6, 255);
@@ -381,7 +382,7 @@ p {
       background: rgb(9, 9, 9);
       z-index: -1;
     }
-/*   
+  
     .box4:before {
       display: flex;
       background: none;
@@ -402,16 +403,16 @@ p {
     display: block; 
     background: rgba(255, 255, 255, 0.2);
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
-    } */
+    } 
 
 
      .box5 {
       display: flex;
       position: absolute;
-      top: 48.4em;
+      top: 49.8em;
       left: 1.7em;
       width: 93.5%;
-      height: 2em;
+      height: .8em;
       padding: .65em;
       border: .26rem solid rgb(2, 6, 255);
       border-radius: .6rem;
@@ -420,7 +421,7 @@ p {
       z-index: -1;
     }
 
-     /* .box5:before {
+     .box5:before {
       display: flex;
       background: none;
       border: .16rem solid rgb(0, 0, 0);
@@ -440,7 +441,7 @@ p {
     display: block; 
     background: rgba(255, 255, 255, 0.2);
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
-    } */
+    } 
 
 
     .box6 {
@@ -449,7 +450,7 @@ p {
       top: -3.5em;
       left: 1.6rem;
       width: 93.5%;
-      height: 3.3rem;
+      height: 1.7rem;
       padding: 0.625em;
       border: .26rem solid rgb(2, 6, 255);
       border-radius: 0.625rem;
@@ -458,7 +459,7 @@ p {
       z-index: -1;
     }
   
-    /* .box6:before {
+    .box6:before {
       display: flex;
       background: none;
       border: .16rem solid rgb(0, 0, 0);
@@ -478,29 +479,36 @@ p {
       display: block;
       background: rgba(255, 255, 255, 0.2);
       background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
-    } */
+    }
 
     .clockTime {
+       display: flex;
+       align-items: left;
+       justify-content: left;
        z-index: 999;
        top: -1;
        position: absolute;
         font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
         font-size: calc(1rem + .4vw);
         font-weight: 500;
-        height: 100%;
-        width: 100%;
+        max-width: 100%;
         color: rgb(254, 252, 252);
         left: 3rem;
     }
     
     .clock {
+        display: flex;
+        align-items: left;
+        justify-content: left;
         z-index: 999;
         top: -1;
         position: absolute;
+        padding-left: 20px;
         color: rgb(254, 254, 254);
         font-size: calc(1rem + .0vw);
         font-weight: 500;
         left: 15rem;
+        max-width: 100%;
     }
 
 

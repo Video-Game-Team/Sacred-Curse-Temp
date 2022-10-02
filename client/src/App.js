@@ -653,13 +653,30 @@ function App(props) {
           {framerateToggle === true ? (
             <>
               <div>
-                <h1 style={{ fontSize: '20px', color: 'white' }}>
+                <h1
+                  style={{
+                    position: 'fixed',
+                    fontSize: '20px',
+                    color: 'white',
+                    zIndex: '999',
+                  }}
+                >
                   {browserName} Version: {browserVersion}
                 </h1>
-                <span style={{ color: 'white', zIndex: 999 }}>
+                <span
+                  style={{ position: 'fixed', color: 'white', zIndex: '999' }}
+                >
                   Current Frame Rate =
                 </span>
-                <span style={{ color: 'white', zIndex: 999 }} id="test"></span>
+                <span
+                  id="test"
+                  style={{
+                    position: 'absolute',
+                    left: '10rem',
+                    color: 'white',
+                    zIndex: '999',
+                  }}
+                ></span>
               </div>
             </>
           ) : null}
