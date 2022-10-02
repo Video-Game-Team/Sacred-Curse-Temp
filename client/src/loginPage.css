@@ -8,12 +8,12 @@ html {
     align-items: center;
     justify-content: center;
     position: relative;
-    White-space: nowrap;    
-    top: -250px;
-    left: 0px;
+    White-space: nowrap;
+    top: -10rem;
+    left: 0%;
     border: none;
     color: rgb(255, 0, 0);
-    font-size: calc(1rem + 8.2vw); 
+    font-size: calc(1rem + 8.2vw);
 }
 
 /* .titleTextLogin {
@@ -48,9 +48,9 @@ d   isplay: flex;
 .wholeContainer {
     display: flex;
     align-items: center;
-    position: fixed;
-    left: 44%;
-    top: 45%;
+    position: relative;
+    left: 22vw;
+    top: -9rem;
 }
 
 input[type="text"],

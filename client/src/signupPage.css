@@ -8,8 +8,8 @@ html {
     justify-content: center;
     position: relative;
     White-space: nowrap;
-    top: -250px;
-    left: 0px;
+    top: -8rem;
+    left: 0%;
     border: none;
     color: rgb(255, 0, 0);
     font-size: calc(1rem + 8.2vw);
@@ -45,9 +45,9 @@ html {
 .mainContainerSignup {
     display: flex;
     align-items: center;
-    position: fixed;
-    left: 44%;
-    top: 45%;
+    position: relative;
+    left: 22vw;
+    top: -10rem;
 }
 
 .label {

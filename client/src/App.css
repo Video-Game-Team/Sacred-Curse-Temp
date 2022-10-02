@@ -11,16 +11,6 @@
 } */
 
 
-/* .mainGameContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 0%
-  min-height: 0%
-  max-width: 10% 
-}  */
-
 :root {
   --pixel-size: 2px;
   --grid-cell: calc(var(--pixel-size) * 12);
@@ -71,7 +61,6 @@ body {
 }
 
  .character {
-  /* z-index: -1; */
   position: absolute;
   width: calc(var(--grid-cell)* 2);
   height: calc(var(--grid-cell)* 2);
@@ -128,11 +117,11 @@ body {
 
 .textBox {
   position: absolute;
-  border-radius: 15px;
-  border: 3px solid;
+  border-radius: 0.938rem;
+  border: 0.188rem solid;
   box-shadow: 1px -2px 10px 5px rgba(0, 0, 0, 0.5);
-  opacity: 0.94;
-  bottom: 22px;
+  opacity: 0.94rem;
+  bottom: 1.375rem;
   width: 93%;
   height: 25%;
   color: rgb(0, 0, 0);
@@ -143,10 +132,10 @@ body {
 
 p {
   position: absolute;
-  margin-left: 155px;
+  margin-left: 9.688rem;
   font-family: Pokemon-Classic;
   color: rgb(0, 0, 0);
-  font-size: 25px;
+  font-size: 1.563rem;
 }
 
 .pokeText {
@@ -157,7 +146,7 @@ p {
   font-family: Pokemon-Classic;
   color: rgb(0, 0, 0);
   font-weight: bold;
-  font-size: 11px;
+  font-size: 0.688rem;
 }
 
 /* .typewriter p {
@@ -237,7 +226,17 @@ p {
   }
 }
 
-.mainMenu {
+.mainGameContainer {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  position: relative;
+  max-width: 100%;
+  max-height: 100%; 
+  /* overflow: hidden; */
+}
+
+/* .mainMenu {
   border-radius: 15px;
   border: 3px solid;
   box-shadow: 1px -2px 10px 5px rgba(0, 0, 0, 0.5);
@@ -249,34 +248,34 @@ p {
   color: rgb(0, 0, 0);
   background: rgb(173, 173, 173);
   background: linear-gradient(0deg, rgba(173, 173, 173, 1) 0%, rgba(212, 218, 217, 1) 55%);
-}
+} */
 
 
  .box1 {
    display: flex;
    position: fixed;
-   top: 1.8em;
-   left: 80em;
-   width: 15.1vw;
-   height: 22.7vh;
-   padding: 10px;
-   border: 4px solid rgb(0, 4, 255);
-   border-radius: 10px;
-   margin: 0;
+   top: 1.8rem;
+   left: 80rem;
+   width: 22.3%;
+   height: 27%;
+   padding: .6em;
+   border: .26rem solid rgb(0, 4, 255);
+   border-radius: .6rem;
+   margin: 0em;
    background: rgb(9, 9, 9);
  }
 
-  .box1:before {
+  /* .box1:before {
    display: flex;
    background: none;
    border: 2px solid rgb(0, 0, 0);
    content: "";
    display: block;
    position: absolute;
-   top: 2px;
-   left: 2px;
-   right: 2px;
-   bottom: 2px;
+   top: .1rem;
+   left: .1rem;
+   right: .1rem;
+   bottom: .1rem;
    pointer-events: none;
  }
 
@@ -285,32 +284,32 @@ p {
    display: block;
    background: rgba(255, 255, 255, 0.2);
    background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
- }
+ } */
 
  .box2 {
    display: flex;
    position: fixed;
    top: 17.3em;
   left: 80em;
-   width: 15.1vw;
-   height: 22.7vh;
-   padding: 10px;
-   border: 4px solid rgb(0, 4, 255);
-   border-radius: 10px;
-   margin: 0;
+  width: 22.3%;
+  height: 27%;
+  padding: .6em;
+   border: .26rem solid rgb(0, 4, 255);
+  border-radius: .6rem;
+    margin: 0em;
    background: rgb(9, 9, 9);
  }
-  .box2:before {
+  /* .box2:before {
    display: flex;
    background: none;
    border: 2px solid rgb(0, 0, 0);
    content: "";
    display: block;
    position: absolute;
-    top: 2px;
-   left: 2px;
-   right: 2px;
-   bottom: 2px;
+     top: .1rem;
+   left: .1rem;
+   right: .1rem;
+   bottom: .1rem;
    pointer-events: none;
  }
 
@@ -319,33 +318,33 @@ p {
    display: block;
    background: rgba(255, 255, 255, 0.2);
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
- }
+ } */
 
  .box3 {
    display: flex;
    position: fixed;
    top: 32.8em;
-    left: 80em;
-    width: 15.1vw;
-  height: 22.7vh;
-   padding: 10px;
-  border: 4px solid rgb(0, 4, 255);
-   border-radius: 10px;
-   margin: 0;
+  left: 80em;
+  width: 22.3%;
+  height: 27%;
+  padding: .6em;
+  border: .26rem solid rgb(0, 4, 255);
+  border-radius: .6rem;
+  margin: 0em;
    background: rgb(9, 9, 9);
  }
 
- .box3:before {
+ /* .box3:before {
    display: flex;
    background: none;
   border: 2px solid rgb(0, 0, 0);
    content: "";
    display: block;
    position: absolute;
-   top: 2px;
-   left: 2px;
-   right: 2px;
-   bottom: 2px;
+   top: .1rem;
+   left: .1rem;
+   right: .1rem;
+   bottom: .1rem;
    pointer-events: none;
  }
 
@@ -354,22 +353,22 @@ p {
    display: block;
    background: rgba(255, 255, 255, 0.2);
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
- }
+ } */
 
   .box4 {
       display: flex;
       position: fixed;
       top: 1.8em;
       left: -18.6em;
-      width: 15.1vw;
+      width: 22.3%;
       height: 44.6em;
-      padding: 10px;
-      border: 4px solid rgb(2, 6, 255);
-      border-radius: 10px;
-      margin: 0;
+      padding: .65em;
+      border: .26rem solid rgb(2, 6, 255);
+      border-radius: .6rem;
+      margin: 0em;
       background: rgb(9, 9, 9);
     }
-  
+/*   
     .box4:before {
       display: flex;
       background: none;
@@ -377,10 +376,10 @@ p {
       content: "";
       display: block;
       position: absolute;
-      top: 0px;
-      left: 2px;
-      right: 2px;
-      bottom: 2px;
+      top: 0rem;
+      left: .1rem;
+      right: .1rem;
+      bottom: .1rem;
       pointer-events: none;
     }
 
@@ -390,34 +389,34 @@ p {
     display: block; 
     background: rgba(255, 255, 255, 0.2);
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
-    }
+    } */
 
 
      .box5 {
       display: flex;
       position: fixed;
       top: 48.4em;
-      left: 1.8em;
-      width: 76em;
+      left: 1.7em;
+      width: 93.5%;
       height: 2em;
-      padding: 10px;
-      border: 4px solid rgb(2, 6, 255);
-      border-radius: 10px;
-      margin: 0;
+      padding: .65em;
+      border: .26rem solid rgb(2, 6, 255);
+      border-radius: .6rem;
+      margin: 0em;
       background: rgb(9, 9, 9);
     }
 
-     .box5:before {
+     /* .box5:before {
       display: flex;
       background: none;
-      border: 2px solid rgb(0, 0, 0);
+      border: .16rem solid rgb(0, 0, 0);
       content: "";
       display: block;
       position: absolute;
-      top: 0px;
-      left: 2px;
-      right: 2px;
-      bottom: 2px;
+      top: 0rem;
+      left: .1rem;
+      right: .1rem;
+      bottom: .1rem;
       pointer-events: none;
     }
 
@@ -427,34 +426,34 @@ p {
     display: block; 
     background: rgba(255, 255, 255, 0.2);
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
-    }
+    } */
 
 
     .box6 {
       display: flex;
       position: fixed;
       top: -3.5em;
-      left: 1.7em;
-      width: 76em;
-      height: 3.3em;
-      padding: 10px;
-      border: 4px solid rgb(2, 6, 255);
-      border-radius: 10px;
-      margin: 0;
+      left: 1.6rem;
+      width: 93.5%;
+      height: 3.3rem;
+      padding: 0.625em;
+      border: .26rem solid rgb(2, 6, 255);
+      border-radius: 0.625rem;
+      margin: 0em;
       background: rgb(9, 9, 9);
     }
   
-    .box6:before {
+    /* .box6:before {
       display: flex;
       background: none;
-      border: 2px solid rgb(0, 0, 0);
+      border: .16rem solid rgb(0, 0, 0);
       content: "";
       display: block;
       position: absolute;
-      top: 0px;
-      left: 2px;
-      right: 2px;
-      bottom: 2px;
+      top: 0rem;
+      left: .1rem;
+      right: .1rem;
+      bottom: .1rem;
       pointer-events: none;
     }
   
@@ -464,28 +463,29 @@ p {
       display: block;
       background: rgba(255, 255, 255, 0.2);
       background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
-    }
+    } */
 
     .clockTime {
        z-index: 999;
        top: -1;
        position: absolute;
         font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
-        font-size: 24px;
+        font-size: calc(1rem + .4vw);
         font-weight: 500;
-        height: 100px;
-        width: 1000px;
+        height: 100%;
+        width: 100%;
         color: rgb(254, 252, 252);
+        left: 3rem;
     }
     
     .clock {
         z-index: 999;
         top: -1;
         position: absolute;
-        padding-left: 190px;
         color: rgb(254, 254, 254);
-        font-size: 120;
+        font-size: calc(1rem + .0vw);
         font-weight: 500;
+        left: 15rem;
     }
 
 
@@ -494,30 +494,30 @@ p {
     
         /* 1200px */
         @media only screen and (max-width: 75em) {
-          img {
+          /* img {
             width: 100%;
-          }
+          } */
          }
     
         /* 992 px */
         @media only screen and (max-width: 62em) {
-        img {
+        /* img {
             width: 100%;
-          }
+          } */
         }
 
         /* 768 px - 1023*/
           @media only screen and (max-width: 48em) {
-        img {
+        /* img {
             width: 100%;
-          }
+          } */
         }
 
         /* 576px     -767*/
         @media only screen and (max-width: 36em) {
-          img {
+          /* img {
             width: 100%;
-          }
+          } */
         } 
     
        
@@ -526,23 +526,24 @@ p {
      /* Settings for my ipad and iphone below here */
 
         /* 1194 Ipad pro 11 3rd gen */
-         @media only screen and (max-width: 74.625em){ 
+         /* @media only screen and (max-width: 74.625em){ 
           .camera {
               width: calc(var(--pixel-size) * 255);
-              height: calc(var(--pixel-size) * 144);
+              height: calc(var(--pixel-size) * 144); 
+              width: calc(var(--pixel-size) * 175);
+                height: calc(var(--pixel-size) * 142);
               }
             .otherTextSignup {
               font-size: 1.5vw;
               }
             .otherText {
               font-size: 1.5vw;
-              }
-          } 
+              } 
+          }   */
 
     
         /* 897 px iphone 11 Pro Max*/
-        @media only screen and (max-width: 56.0625em) {  
-        @media(min-width: 48em) { 
+        /* @media only screen and (max-width: 56.0625em) {  
           .camera {
               width: calc(var(--pixel-size) * 255);
               height: calc(var(--pixel-size) * 90);
@@ -556,6 +557,6 @@ p {
             .title {
               font-size: 2.5vw;
             }
-          } 
-        }
+          }   */
+        
       
