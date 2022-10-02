@@ -77,7 +77,7 @@ function App(props) {
     DemonObjects.Naruto,
   ]);
 
-  const [current, setCurrent] = useState('tortous');
+  const [current, setCurrent] = useState('farmMap');
   const [tempCurrent, setTempCurrent] = useState(null);
   const [previous, setPrevious] = useState(null);
   const [textValue, setTextValue] = useState(null);
@@ -509,6 +509,33 @@ function App(props) {
     demoMap: <DemoMap demonList={demonTeam} />,
   };
 
+  const [framerateToggle, setFramerateToggle] = useState(false)
+
+  //Framerate Tester on and off
+   useEffect(() => {
+     const dialogueAction = (event) => {
+       if (event.key === 'f') {
+         setFramerateToggle(!framerateToggle);
+         function step(timestamp) {
+           var time2 = new Date();
+           var fps = 1000 / (time2 - time);
+           time = time2;
+           document.getElementById('test').innerHTML = fps;
+           window.requestAnimationFrame(step);
+         }
+         var time = new Date(),
+           i = 0;
+         window.requestAnimationFrame(step);
+       }
+     };
+     window.addEventListener('keydown', dialogueAction);
+     return () => {
+       window.removeEventListener('keydown', dialogueAction);
+     };
+   }, [framerateToggle]);
+
+
+
   //MATT MENU
   useEffect(() => {
     const menuListener = (event) => {
@@ -594,6 +621,16 @@ function App(props) {
     <div className="mainGameContainer">
       <div style={{ filter: `saturate(${saturate}%)` }}>
         <div style={{ filter: `contrast(${contrast}%)` }}>
+
+          {framerateToggle === true ? (
+            <>
+              <div>
+                <span style={{ color: 'white' }}>Current Frame Rate   =</span>
+                <span style={{ color: 'white' }} id="test"></span>
+              </div>
+            </>
+          ) : null}
+
           <div>
             <body>
               {mapsObj[current]}
