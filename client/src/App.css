@@ -517,15 +517,6 @@ p {
       
         /* Bootstrap standards for best practice breakpoint/media query sizes below here */
 
-         /* 1444px this one is personal preference not bootstrap*/
-        @media only screen and (min-width: 1921px) {
-        .titleTextLogin {
-          font-size: calc(1rem + 6.2vw);
-         }
-        .titleTextSignup {
-          font-size: calc(1rem + 6.2vw);
-         }
-        }
     
         /* 1200px */
         @media only screen and (max-width: 75em) {
@@ -559,6 +550,36 @@ p {
 
     
      /* Settings for my ipad and iphone below here */
+
+         /* @media only screen and (max-width: 600px) and (min-width: 400px) */
+
+
+
+          /* 1444px this one is personal preference not bootstrap*/
+        @media only screen and (min-width: 1921px) {
+        .titleTextLogin {
+          font-size: calc(1rem + 6.2vw);
+         }
+        .titleTextSignup {
+          font-size: calc(1rem + 6.2vw);
+         }
+        }
+
+        /* Arcade 1up Screen Resolution */
+        @media only screen and (min-width: 1600px) and (max-width: 1610px){
+          :root {
+              --bg: #fc0000;
+            }
+          /* .camera {
+            width: calc(var(--pixel-size) * 310);
+            height: calc(var(--pixel-size) * 144);
+          } */
+          .mainGameContainer {
+              max-width: 100%;
+              max-height: 75%;
+          }
+        }
+
 
         /* 1194 Ipad pro 11 3rd gen */
          /* @media only screen and (max-width: 74.625em){ 
