@@ -261,13 +261,12 @@ input[type="submit"]:hover {
     left: 0rem;
 }
 
+.cityline {
+    background-image: url('./assets/maps/LuLu Mountain Pass new tweaks no grid.png');
+    opacity: .5;
 
-.darkSkyVideo {
-    background-image: url('./assets/video/lightning.mov');
-    opacity: .4;
-    
     background-size: cover;
-    /* Set rules to fill background this is  set to 1024px */
+    /* Set rules to fill background this is  set to 1024px*/
     min-height: 100%;
     min-width: 64rem;
 
@@ -280,3 +279,4 @@ input[type="submit"]:hover {
     top: 0rem;
     left: 0rem;
 }
+
