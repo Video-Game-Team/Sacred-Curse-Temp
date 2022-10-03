@@ -512,7 +512,7 @@ function App(props) {
 
   //Framerate Tester on and off
   useEffect(() => {
-    const dialogueAction = (event) => {
+    const frameRate = (event) => {
       if (event.key === 'f') {
         setFramerateToggle(!framerateToggle);
         function step(timestamp) {
@@ -527,9 +527,9 @@ function App(props) {
         window.requestAnimationFrame(step);
       }
     };
-    window.addEventListener('keydown', dialogueAction);
+    window.addEventListener('keydown', frameRate);
     return () => {
-      window.removeEventListener('keydown', dialogueAction);
+      window.removeEventListener('keydown', frameRate);
     };
   }, [framerateToggle]);
 
@@ -541,6 +541,10 @@ function App(props) {
       height,
     };
   }
+
+  // console.log('WINDOW INNER HEIGHT', window.innerHeight);
+
+  //Checking for window inner height
   function useWindowDimensions() {
     const [windowDimensions, setWindowDimensions] = useState(
       getWindowDimensions()
@@ -554,7 +558,17 @@ function App(props) {
     }, []);
     return windowDimensions;
   }
-  console.log('WINDOW INNER HEIGHT', window.innerHeight);
+  // console.log('WINDOW INNER HEIGHT', window.innerHeight);
+
+
+
+  //Check screens resolution
+  function getResolution() {
+        return 'Your screen resolution is: ' + screen.width + 'x' + screen.height
+      }
+
+    // console.log('RESOLUTION', getResolution());
+
 
   // //MATT MENU
   // useEffect(() => {
@@ -662,34 +676,47 @@ function App(props) {
             {framerateToggle === true ? (
               <>
                 <div>
-                  <h1
-                    style={{
-                      position: 'fixed',
-                      fontSize: '20px',
-                      color: 'white',
-                      zIndex: '999',
-                    }}
-                  >
-                    {browserName} Version: {browserVersion}
-                  </h1>
                   <span
                     style={{
-                      position: 'fixed',
+                      position: 'absolute',
+                      left: '2rem',
                       color: 'white',
                       zIndex: '999',
                     }}
                   >
                     Current Frame Rate =
                   </span>
+
                   <span
                     id="test"
                     style={{
                       position: 'absolute',
-                      left: '10rem',
+                      left: '12rem',
                       color: 'white',
                       zIndex: '999',
                     }}
                   ></span>
+                  <span
+                    style={{
+                      position: 'absolute',
+                      left: '23rem',
+                      color: 'white',
+                      zIndex: '999',
+                    }}
+                  >
+                    {getResolution()}
+                  </span>
+                  <span
+                    style={{
+                      position: 'absolute',
+                      left: '41rem',
+                      fontSize: '16px',
+                      color: 'white',
+                      zIndex: '999',
+                    }}
+                  >
+                    {browserName} Version: {browserVersion}
+                  </span>
                 </div>
               </>
             ) : null}
