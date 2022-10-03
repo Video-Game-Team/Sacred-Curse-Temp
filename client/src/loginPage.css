@@ -18,31 +18,32 @@ html {
 }
 
 /* .titleTextLogin {
-d   isplay: flex;
+display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     White-space: nowrap;
-    top: -250px;
-    left: 0px;
+    top: -10rem;
+    left: 0%;
     border: none;
     color: rgb(255, 0, 0);
     font-size: calc(1rem + 8.2vw);
+    z-index: 999;
     font-family: Pixeboy-z8XGD;
 } */
 
 /* .titleTextLogin {
-    display: flex;
-    display: flex;
+display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     White-space: nowrap;
-    top: -250px;
-    left: 0px;
+    top: -10rem;
+    left: 0%;
     border: none;
     color: rgb(255, 0, 0);
     font-size: calc(1rem + 5.2vw);
+    z-index: 999;
     font-family: Pokemon-Classic;
 } */
 
@@ -131,9 +132,10 @@ input[type="submit"]:hover {
 
 
 
-.darkSky {
+.darkSkyPic {
     background-image: url(https://cdn.glitch.com/4f83b17b-3d9a-4782-bfb9-3298fce7ff84%2Fstormynight.jpg?1516228334292);
     opacity: .8;
+    
     background-size: cover;
     /* Set rules to fill background this is  set to 1024px*/
         min-height: 100%;
@@ -147,4 +149,24 @@ input[type="submit"]:hover {
         position: fixed;
         top: 0rem;
         left: 0rem;
+}
+
+
+.darkSkyVideo {
+    background-image: url('./assets/video/lightning.mov');
+    opacity: .4;
+    
+    background-size: cover;
+    /* Set rules to fill background this is  set to 1024px */
+    min-height: 100%;
+    min-width: 64rem;
+
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+
+    /* Set up positioning */
+    position: fixed;
+    top: 0rem;
+    left: 0rem;
 }

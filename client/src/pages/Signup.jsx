@@ -115,7 +115,7 @@ function Signup() {
     <div>
       <div className="fade-in">
         <h1 className="titleTextSignup">Sacred Curse</h1>
-        <div className="darkSky"></div>
+        <div className="darkSkyPic"></div>
         <div className="mainContainerSignup">
           <div className="form">
             <div>

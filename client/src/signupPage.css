@@ -18,28 +18,32 @@ html {
 
 
 /* .titleTextSignup {
-    display: flex;
+     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    top: -280px;
-    left: 0px;
+    White-space: nowrap;
+    top: -8rem;
+    left: 0%;
     border: none;
     color: rgb(255, 0, 0);
-    font-size: 206px;
+    font-size: calc(1rem + 8.2vw);
+    z-index: 999;
     font-family: Pixeboy-z8XGD;
 } */
 
 /* .titleTextSignup {
-    display: flex;
+     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    top: -280px;
-    left: 0px;
+    White-space: nowrap;
+    top: -8rem;
+    left: 0%;
     border: none;
     color: rgb(255, 0, 0);
-    font-size: 120px;
+    font-size: calc(1rem + 8.2vw);
+    z-index: 999;
     font-family: Pokemon-Classic;
 } */
 

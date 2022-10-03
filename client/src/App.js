@@ -59,7 +59,6 @@ import Datetime from './components/maps/datetime.js';
 import Clock from 'react-live-clock';
 import { browserName, browserVersion } from 'react-device-detect';
 
-
 import './App.css';
 
 function App(props) {
