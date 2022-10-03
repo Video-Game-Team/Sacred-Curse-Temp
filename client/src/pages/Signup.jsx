@@ -116,13 +116,11 @@ function Signup() {
   // Logic for checking Browser type
   const [browserWarning, setBrowserWarning] = useState(false);
 
-  useEffect(() => {
-    browserName !== 'Chrome' &&
-    browserName !== 'Safari' &&
-    browserName !== 'Opera'
-      ? setBrowserWarning(true)
-      : null;
-  }, []);
+    useEffect(() => {
+      browserName !== 'Chrome' && browserName !== 'Safari'
+        ? setBrowserWarning(true)
+        : null;
+    }, []);
 
 
   return (
@@ -130,7 +128,7 @@ function Signup() {
       {browserWarning === true ? (
         <h1
           style={{ fontSize: '30px', color: 'white' }}
-        >{`Firefox's browser is incompatible with this game. Please use Google Chrome, Safari or Opera`}</h1>
+        >{`Firefox's browser is incompatible with this game. Please use Google Chrome or Safari`}</h1>
       ) : (
         <div className="fade-in">
           <h1 className="titleTextSignup">Sacred Curse</h1>

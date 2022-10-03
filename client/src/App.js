@@ -78,7 +78,7 @@ function App(props) {
     DemonObjects.Naruto,
   ]);
 
-  const [current, setCurrent] = useState('tortousFork');
+  const [current, setCurrent] = useState('tortous');
   const [tempCurrent, setTempCurrent] = useState(null);
   const [previous, setPrevious] = useState(null);
   const [textValue, setTextValue] = useState(null);
@@ -644,8 +644,7 @@ function App(props) {
 
   useEffect(() => {
     browserName !== 'Chrome' &&
-    browserName !== 'Safari' &&
-    browserName !== 'Opera'
+    browserName !== 'Safari'
       ? setBrowserWarning(true)
       : null;
   }, []);
@@ -656,7 +655,7 @@ function App(props) {
       {browserWarning === true ? (
         <h1
           style={{ fontSize: '30px', color: 'white' }}
-        >{`Firefox's browser is incompatible with this game. Please use Google Chrome, Safari or Opera`}</h1>
+        >{`Firefox's browser is incompatible with this game. Please use Google Chrome or Safari`}</h1>
       ) : (
         <div style={{ filter: `saturate(${saturate}%)` }}>
           <div style={{ filter: `contrast(${contrast}%)` }}>
