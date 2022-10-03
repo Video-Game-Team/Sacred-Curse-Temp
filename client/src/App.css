@@ -551,10 +551,10 @@ p {
           /* 1444px this one is personal preference not bootstrap*/
         @media only screen and (min-width: 1921px) {
         .titleTextLogin {
-          font-size: calc(1rem + 6.2vw);
+          font-size: calc(1rem + 9.5vw);
          }
         .titleTextSignup {
-          font-size: calc(1rem + 6.2vw);
+          font-size: calc(1rem + 9.5vw);
          }
         }
 
@@ -592,13 +592,13 @@ p {
 
     
         /* 897 px iphone 11 Pro Max*/
-        /* @media only screen and (max-width: 56.0625em) {  
+        @media only screen and (max-width: 56.0625em) and (orientation: portrait) {  
           .camera {
               width: calc(var(--pixel-size) * 255);
               height: calc(var(--pixel-size) * 90);
             }
             .otherTextSignup {
-                  font-size: 2.5vw;
+              font-size: 2.5vw;
           }
             .otherText {
               font-size: 2.5vw;
@@ -606,7 +606,37 @@ p {
             .title {
               font-size: 2.5vw;
             }
-          }   */
+          }  
+
+             /* 897 px iphone 11 Pro Max*/
+        @media only screen and (max-width: 56.0625em) and (orientation: landscape) {  
+          .camera {
+              width: calc(var(--pixel-size) * 255);
+              height: calc(var(--pixel-size) * 90);
+            }
+            .otherTextSignup {
+                  font-size: 2vw;
+          }
+            .otherText {
+              font-size: 2vw;
+            }
+            .title {
+              top: 0rem;
+              font-size: 2vw;
+            }
+            .titleTextLogin {
+              top: 0rem;
+            }
+            .wholeContainer {
+              top: -7rem;
+            }
+            .titleTextSignup {
+              top: 5.5rem;
+            }
+            .mainContainerSignup {
+              top: -4rem;
+            }
+          }  
         
       
 

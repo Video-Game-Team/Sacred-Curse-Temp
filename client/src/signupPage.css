@@ -3,7 +3,7 @@ html {
 }
 
 .titleTextSignup {
-display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
@@ -53,6 +53,7 @@ display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    margin: 9rem 0rem 0rem 0rem;
     left: 0vw;
     top: -12em;
 }

@@ -143,6 +143,7 @@ html {
     align-items: center;
     justify-content: center;
     position: relative;
+    margin: 7rem 0rem 0rem 0rem;
     left: 0vw;
     top: -14em;
     z-index: 999;

@@ -639,9 +639,25 @@ function App(props) {
 
   // console.log("BROWSER", `${browserName} ${browserVersion}`);
 
+  // Logic for checking Browser type
+  const [browserWarning, setBrowserWarning] = useState(false);
+
+  useEffect(() => {
+    browserName !== 'Chrome' &&
+    browserName !== 'Safari' &&
+    browserName !== 'Opera'
+      ? setBrowserWarning(true)
+      : null;
+  }, []);
+
   // whole map is a button - giving that button onkeyppress listener called wrap
   return (
     <div className="mainGameContainer">
+      {browserWarning === true ? (
+        <h1
+          style={{ fontSize: '30px', color: 'white' }}
+        >{`Firefox's browser is incompatible with this game. Please use Google Chrome, Safari or Opera`}</h1>
+      ) : (
         <div style={{ filter: `saturate(${saturate}%)` }}>
           <div style={{ filter: `contrast(${contrast}%)` }}>
             {framerateToggle === true ? (
@@ -756,6 +772,7 @@ function App(props) {
             </div>
           </div>
         </div>
+      )}
     </div>
   );
 }

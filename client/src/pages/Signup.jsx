@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router';
+import { browserName, browserVersion } from 'react-device-detect';
 import axios from 'axios';
 import '../signupPage.css';
 
 
 function Signup() {
-
   const navigate = useNavigate();
-  
+
   // States for registration
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -51,9 +51,8 @@ function Signup() {
       setSubmitted(true);
       setError(false);
       setTimeout(() => {
-         navigate('/game');
-      }, 3000)
-     
+        navigate('/game');
+      }, 3000);
     }
   };
 
@@ -111,67 +110,89 @@ function Signup() {
     updateState();
   }, [submitted]);
 
+  // Logic for checking Browser type
+  const [firefoxBrowserWarning, setFirefoxBrowserWarning] = useState(false);
+
+  // Logic for checking Browser type
+  const [browserWarning, setBrowserWarning] = useState(false);
+
+  useEffect(() => {
+    browserName !== 'Chrome' &&
+    browserName !== 'Safari' &&
+    browserName !== 'Opera'
+      ? setBrowserWarning(true)
+      : null;
+  }, []);
+
+
   return (
     <div>
-      <div className="fade-in">
-        <h1 className="titleTextSignup">Sacred Curse</h1>
-        <div className="darkSkyGif"></div>
-        <div className="darkSkyPic"></div>
-        <div className="mainContainerSignup">
-          <div className="submit-form">
-            <div className="form">
-              <div>
-                <h1 className="otherTextSignup">User Registration</h1>
+      {browserWarning === true ? (
+        <h1
+          style={{ fontSize: '30px', color: 'white' }}
+        >{`Firefox's browser is incompatible with this game. Please use Google Chrome, Safari or Opera`}</h1>
+      ) : (
+        <div className="fade-in">
+          <h1 className="titleTextSignup">Sacred Curse</h1>
+          <div className="darkSkyGif"></div>
+          {/* <div className="darkSkyPic"></div> */}
+          <div className="cityline"></div>
+          <div className="mainContainerSignup">
+            <div className="submit-form">
+              <div className="form">
+                <div>
+                  <h1 className="otherTextSignup">User Registration</h1>
+                </div>
+
+                {/* Calling to the methods */}
+                <div className="messages">
+                  {errorMessage()}
+                  {successMessage()}
+                </div>
+
+                <form>
+                  {/* Labels and inputs for form data */}
+                  <label className="label otherTextSignup">Name</label>
+                  <input
+                    onChange={handleName}
+                    className="input"
+                    value={name}
+                    type="text"
+                  />
+
+                  <label className="label otherTextSignup">Email</label>
+                  <input
+                    onChange={handleEmail}
+                    className="input"
+                    value={email}
+                    type="email"
+                  />
+
+                  <label className="label otherTextSignup">UserName</label>
+                  <input
+                    onChange={handleUserName}
+                    className="input"
+                    value={userName}
+                    type="username"
+                  />
+
+                  <label className="label otherTextSignup">Password</label>
+                  <input
+                    onChange={handlePassword}
+                    className="input"
+                    value={password}
+                    type="password"
+                  />
+
+                  <button onClick={handleSubmit} className="btn" type="submit">
+                    Submit
+                  </button>
+                </form>
               </div>
-
-              {/* Calling to the methods */}
-              <div className="messages">
-                {errorMessage()}
-                {successMessage()}
-              </div>
-
-              <form>
-                {/* Labels and inputs for form data */}
-                <label className="label otherTextSignup">Name</label>
-                <input
-                  onChange={handleName}
-                  className="input"
-                  value={name}
-                  type="text"
-                />
-
-                <label className="label otherTextSignup">Email</label>
-                <input
-                  onChange={handleEmail}
-                  className="input"
-                  value={email}
-                  type="email"
-                />
-
-                <label className="label otherTextSignup">UserName</label>
-                <input
-                  onChange={handleUserName}
-                  className="input"
-                  value={userName}
-                  type="username"
-                />
-
-                <label className="label otherTextSignup">Password</label>
-                <input
-                  onChange={handlePassword}
-                  className="input"
-                  value={password}
-                  type="password"
-                />
-
-                <button onClick={handleSubmit} className="btn" type="submit">
-                  Submit
-                </button>
-              </form>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

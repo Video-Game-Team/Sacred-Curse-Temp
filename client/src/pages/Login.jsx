@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from 'react';
 import { useNavigate} from 'react-router';
 import axios from 'axios';
+import { browserName, browserVersion } from 'react-device-detect';
 import '../loginPage.css';
 
 
@@ -84,6 +85,19 @@ function Login(props) {
       <div className="error">{errorMessages.message}</div>
     );
 
+  // Logic for checking Browser type
+  const [browserWarning, setBrowserWarning] = useState(false);
+
+    useEffect(() => {
+        browserName !== 'Chrome' &&
+        browserName !== 'Safari' &&
+        browserName !== 'Opera'
+      ?
+        (setBrowserWarning(true))
+        : (null)  
+      }, []);
+
+
   // JSX code for login form
   const renderForm = (
     <div className="form">
@@ -107,11 +121,15 @@ function Login(props) {
 
   return (
     <div>
+      
+        {browserWarning === true ? 
+         (<h1 style={{fontSize: "30px", color: 'white'}}>{`This browser is incompatible with this game. Please use Google Chrome or Safari.`}</h1>) :
+
       <div className="fade-in">
         <h1 className="titleTextLogin">Sacred Curse</h1>
         <div className="darkSkyGif"></div>
-        {/* <div className="darkSkyPic"></div> */}
-        <div className="cityline"></div>
+        <div className="darkSkyPic"></div>
+        {/* <div className="cityline"></div> */}
         <div className="wholeContainer">
           <div className="app">
             <div className="login-form">
@@ -125,6 +143,8 @@ function Login(props) {
           </div>
         </div>
       </div>
+
+      }
     </div>
   );
 }
