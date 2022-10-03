@@ -14,7 +14,6 @@ html {
     border: none;
     color: rgb(255, 0, 0);
     font-size: calc(1rem + 8.2vw);
-    /* font-size: max(13vw, 13px); */
     z-index: 999;
 }
 
