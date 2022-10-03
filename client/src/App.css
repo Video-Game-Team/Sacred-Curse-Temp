@@ -150,14 +150,7 @@ p {
   font-size: 0.688rem;
 }
 
-@font-face {
-  font-family: 'Pokemon-Classic';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local("Pokemon-Classic"),
-    url("../../fonts/Pokemon-Classic.ttf") format("truetype");
-}
+
 
 /* .typewriter p {
   overflow: hidden;

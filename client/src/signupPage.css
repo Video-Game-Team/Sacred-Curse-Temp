@@ -3,17 +3,18 @@ html {
 }
 
 .titleTextSignup {
-    display: flex;
+display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     White-space: nowrap;
-    top: -8rem;
+    top: -6.0rem;
     left: 0%;
     border: none;
     color: rgb(255, 0, 0);
-    font-size: calc(1rem + 8.2vw);
+    font-size: calc(1rem + 11.3vw);
     z-index: 999;
+    font-family: Pixeboy-z8XGD;
 }
 
 
@@ -53,7 +54,17 @@ html {
     justify-content: center;
     position: relative;
     left: 0vw;
-    top: -10em;
+    top: -12em;
+}
+
+.submit-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 100%;
+    background-color: rgb(78, 77, 77);
+    padding: 2em;
+    z-index: 999;
 }
 
 .label {

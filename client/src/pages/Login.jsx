@@ -109,7 +109,9 @@ function Login(props) {
     <div>
       <div className="fade-in">
         <h1 className="titleTextLogin">Sacred Curse</h1>
+        <div className="darkSkyGif"></div>
         <div className="darkSkyPic"></div>
+
         <div className="wholeContainer">
           <div className="app">
             <div className="login-form">

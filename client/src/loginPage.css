@@ -3,6 +3,126 @@ html {
     /* font-size: 62.5% */
 }
 
+@font-face {
+    font-family: 'Pokemon-Classic';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("Pokemon-Classic"),
+        url("../../fonts/Pokemon-Classic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Halo3';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("Halo3"),
+        url("../../fonts/Halo3.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'zig';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("zig"),
+        url("../../fonts/zig.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'aurora';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("aurora"),
+        url("../../fonts/aurora.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'rexlia';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("rexlia"),
+        url("../../fonts/rexlia.otf") format("truetype");
+}
+
+@font-face {
+    font-family: 'joystix monospace';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("joystix monospace"),
+        url("../../fonts/joystix monospace.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Gasalt-Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("Gasalt-Regular"),
+        url("../../fonts/Gasalt-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Gasalt-Black';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("Gasalt-Black"),
+        url("../../fonts/Gasalt-Black.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Gasalt-Thin';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("Gasalt-Thin"),
+        url("../../fonts/Gasalt-Thin.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Pixeboy-z8XGD';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("Pixeboy-z8XGD"),
+        url("../../fonts/Pixeboy-z8XGD.ttf") format("truetype");
+}
+
+/* .titleTextLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    White-space: nowrap;
+    top: -10rem;
+    left: 0%;
+    border: none;
+    color: rgb(255, 0, 0);
+    font-size: calc(1rem + 8.2vw);
+    z-index: 999;
+} */
+
+
+/* .titleTextLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    White-space: nowrap;
+    top: -10rem;
+    left: 0%;
+    border: none;
+    color: rgb(255, 0, 0);
+    font-size: calc(1rem + 6.6vw);
+    z-index: 999;
+    font-family: joystix monospace;
+} */
+
 .titleTextLogin {
     display: flex;
     align-items: center;
@@ -13,39 +133,10 @@ html {
     left: 0%;
     border: none;
     color: rgb(255, 0, 0);
-    font-size: calc(1rem + 8.2vw);
-    z-index: 999;
-}
-
-/* .titleTextLogin {
-display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    White-space: nowrap;
-    top: -10rem;
-    left: 0%;
-    border: none;
-    color: rgb(255, 0, 0);
-    font-size: calc(1rem + 8.2vw);
+    font-size: calc(1rem + 11.3vw);
     z-index: 999;
     font-family: Pixeboy-z8XGD;
-} */
-
-/* .titleTextLogin {
-display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    White-space: nowrap;
-    top: -10rem;
-    left: 0%;
-    border: none;
-    color: rgb(255, 0, 0);
-    font-size: calc(1rem + 5.2vw);
-    z-index: 999;
-    font-family: Pokemon-Classic;
-} */
+}
 
 .wholeContainer {
     display: flex;
@@ -53,7 +144,7 @@ display: flex;
     justify-content: center;
     position: relative;
     left: 0vw;
-    top: -10em;
+    top: -14em;
     z-index: 999;
 }
 
@@ -83,7 +174,6 @@ input[type="submit"]:hover {
     display: flex;
     justify-content: center;
     z-index: 999;
-  
 }
 
 .login-form {
@@ -150,6 +240,25 @@ input[type="submit"]:hover {
         position: fixed;
         top: 0rem;
         left: 0rem;
+}
+
+.darkSkyGif {
+    background-image: url('./assets/images/lightning.gif');
+    opacity: .9;
+
+    background-size: cover;
+    /* Set rules to fill background this is  set to 1024px*/
+    min-height: 100%;
+    min-width: 64rem;
+
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+
+    /* Set up positioning */
+    position: fixed;
+    top: 0rem;
+    left: 0rem;
 }
 
 
