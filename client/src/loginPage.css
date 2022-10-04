@@ -93,6 +93,13 @@ html {
         url("../../fonts/Pixeboy-z8XGD.ttf") format("truetype");
 }
 
+.containerLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 /* .titleTextLogin {
     display: flex;
     align-items: center;
@@ -124,9 +131,6 @@ html {
 } */
 
 .titleTextLogin {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
     White-space: nowrap;
     top: -10rem;
@@ -173,6 +177,7 @@ input[type="submit"]:hover {
 
 .button-container {
     display: flex;
+    align-items: center;
     justify-content: center;
     z-index: 999;
 }
@@ -199,9 +204,6 @@ input[type="submit"]:hover {
 }
 
 .title {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
     font-size: calc(1rem + 1.2vw);
     color: white;
     z-index: 999;
@@ -215,7 +217,7 @@ input[type="submit"]:hover {
 
 .input-container {
     display: flex;
-    align-items: center;
+    align-items: left;
     flex-direction: column;
     gap: .2em;
     margin: .3em;
@@ -227,16 +229,13 @@ input[type="submit"]:hover {
 .darkSkyPic {
     background-image: url(https://cdn.glitch.com/4f83b17b-3d9a-4782-bfb9-3298fce7ff84%2Fstormynight.jpg?1516228334292);
     opacity: .8;
-    
     background-size: cover;
     /* Set rules to fill background this is  set to 1024px*/
         min-height: 100%;
         min-width: 64rem;
-    
         /* Set up proportionate scaling */
         width: 100%;
         height: auto;
-    
         /* Set up positioning */
         position: fixed;
         top: 0rem;
@@ -246,16 +245,13 @@ input[type="submit"]:hover {
 .darkSkyGif {
     background-image: url('./assets/images/lightning.gif');
     opacity: .9;
-
     background-size: cover;
     /* Set rules to fill background this is  set to 1024px*/
     min-height: 100%;
     min-width: 64rem;
-
     /* Set up proportionate scaling */
     width: 100%;
     height: auto;
-
     /* Set up positioning */
     position: fixed;
     top: 0rem;
@@ -265,16 +261,13 @@ input[type="submit"]:hover {
 .cityline {
     background-image: url('./assets/maps/LuLu Mountain Pass new tweaks no grid.png');
     opacity: .5;
-
     background-size: cover;
     /* Set rules to fill background this is  set to 1024px*/
     min-height: 100%;
     min-width: 64rem;
-
     /* Set up proportionate scaling */
     width: 100%;
     height: auto;
-
     /* Set up positioning */
     position: fixed;
     top: 0rem;

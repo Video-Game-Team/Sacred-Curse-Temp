@@ -1,19 +1,5 @@
-/* @media(min-width: 1000px) {
-  :root {
-    --pixel-size: 4px;
-  }
-}
-
-@media(min-width: 700px) {
-  :root {
-      --pixel-size: 3px;
-  }
-} */
-
-
-
 :root {
-  --pixel-size: 2px;
+  --pixel-size: 4px;
   --grid-cell: calc(var(--pixel-size) * 12);
   --bg: #000000;
 }
@@ -29,6 +15,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.containerApp {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  /* flex-direction: column; */
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  /* flex-basis: 100%; */
+  /* overflow: hidden;  */
 }
 
 .pixel-art {
@@ -229,15 +227,6 @@ p {
   }
 }
 
-.mainGameContainer {
-  display: flex;
-  align-self: center;
-  justify-content: center;
-  position: relative;
-  max-width: 100%;
-  max-height: 100%; 
-  /* overflow: hidden; */
-}
 
 /* .mainMenu {
   border-radius: 15px;
@@ -255,7 +244,6 @@ p {
 
 
  .box1 {
-   display: flex;
    position: absolute;
    top: 1.8rem;
    left: 81.3rem;
@@ -270,7 +258,6 @@ p {
  }
 
   .box1:before {
-   display: flex;
    background: none;
    border: 2px solid rgb(0, 0, 0);
    content: "";
@@ -291,7 +278,6 @@ p {
  }
 
  .box2 {
-   display: flex;
    position: absolute;
    top: 17.3em;
   left: 81.3rem;
@@ -306,7 +292,6 @@ p {
  }
 
   .box2:before {
-   display: flex;
    background: none;
    border: 2px solid rgb(0, 0, 0);
    content: "";
@@ -327,7 +312,6 @@ p {
  }
 
  .box3 {
-   display: flex;
    position: absolute;
    top: 32.8em;
   left: 81.3rem;
@@ -342,7 +326,6 @@ p {
  }
 
  .box3:before {
-   display: flex;
    background: none;
   border: 2px solid rgb(0, 0, 0);
    content: "";
@@ -363,7 +346,6 @@ p {
  }
 
   .box4 {
-      display: flex;
       position: absolute;
       top: 1.8em;
       left: -18.2em;
@@ -378,7 +360,6 @@ p {
     }
   
     .box4:before {
-      display: flex;
       background: none;
       border: 2px solid rgb(0, 0, 0);
       content: "";
@@ -401,7 +382,6 @@ p {
 
 
      .box5 {
-      display: flex;
       position: absolute;
       top: 49.8em;
       left: 1.7em;
@@ -416,7 +396,6 @@ p {
     }
 
      .box5:before {
-      display: flex;
       background: none;
       border: .16rem solid rgb(0, 0, 0);
       content: "";
@@ -439,7 +418,6 @@ p {
 
 
     .box6 {
-      display: flex;
       position: absolute;
       top: -3.5em;
       left: 1.6rem;
@@ -454,7 +432,6 @@ p {
     }
   
     .box6:before {
-      display: flex;
       background: none;
       border: .16rem solid rgb(0, 0, 0);
       content: "";
@@ -476,9 +453,6 @@ p {
     }
 
     .clockTime {
-       display: flex;
-       align-items: left;
-       justify-content: left;
        z-index: 999;
        top: -1;
        position: absolute;
@@ -491,9 +465,6 @@ p {
     }
     
     .clock {
-        display: flex;
-        align-items: left;
-        justify-content: left;
         z-index: 999;
         top: -1;
         position: absolute;
@@ -506,40 +477,41 @@ p {
     }
 
 
-    
       
         /* Bootstrap standards for best practice breakpoint/media query sizes below here */
 
     
         /* 1200px */
         @media only screen and (max-width: 75em) {
-          /* img {
+          img {
             width: 100%;
-          } */
-         }
+          }
+        }
     
         /* 992 px */
-        @media only screen and (max-width: 62em) {
-        /* img {
+        /* 1024 px Ipad pro*/
+        /* @media only screen and (max-width: 1024px) {
+        img {
             width: 100%;
-          } */
-        }
+          }
+          .camera {
+            width: calc(var(--pixel-size) * 175);
+            height: calc(var(--pixel-size) * 186);
+          }
+          :root {
+        
+          --bg: #ff0707;
+          }
+        } */
 
-        /* 768 px - 1023*/
-          @media only screen and (max-width: 48em) {
-        /* img {
-            width: 100%;
-          } */
-        }
+        /* 768 px */
+        @media only screen and (max-width: 48em) {
 
-        /* 576px     -767*/
-        @media only screen and (max-width: 36em) {
-          /* img {
-            width: 100%;
-          } */
         } 
     
+
        
+        /* 480px is also ok for mobile */
 
     
      /* Settings for my ipad and iphone below here */
@@ -549,7 +521,7 @@ p {
 
 
           /* 1444px this one is personal preference not bootstrap*/
-        @media only screen and (min-width: 1921px) {
+        /* @media only screen and (min-width: 1921px) {
         .titleTextLogin {
           font-size: calc(1rem + 250px);
          }
@@ -559,61 +531,67 @@ p {
         }
 
         /* Arcade 1up Screen Resolution */
-        @media only screen and (min-width: 1600px) and (max-width: 1610px){
+        /* @media only screen and (min-width: 1600px) and (max-width: 1610px){
           :root {
               --bg: #fc0000;
             }
-          /* .camera {
-            width: calc(var(--pixel-size) * 310);
-            height: calc(var(--pixel-size) * 144);
-          } */
           .mainGameContainer {
               max-width: 100%;
               max-height: 75%;
           }
-        }
+        }  */
 
 
-        /* 1194 Ipad pro 11 3rd gen */
-         /* @media only screen and (max-width: 74.625em){ 
+        /* 1194 Ipad pro 11 3rd gen    74.625em*/
+         @media only screen and (max-width: 74.625em) and (min-width: 52.125em) { 
           .camera {
-              width: calc(var(--pixel-size) * 255);
-              height: calc(var(--pixel-size) * 144); 
-              width: calc(var(--pixel-size) * 175);
-                height: calc(var(--pixel-size) * 142);
-              }
-            .otherTextSignup {
-              font-size: 1.5vw;
-              }
-            .otherText {
-              font-size: 1.5vw;
-              } 
-          }   */
+              width: calc(var(--pixel-size) * 284);
+              height: calc(var(--pixel-size) * 155);
+          } 
+          .titleTextLogin {
+              top: -7rem;
+          }
+          .titleTextSignup {
+              top: -1.5rem;
+          }   
+             :root {
+
+            --bg: #21f400;
+          }  
+          }  
 
     
-        /* 897 px iphone 11 Pro Max*/
+        /* 897 px iphone 11 Pro Max */
         @media only screen and (max-width: 56.0625em) and (orientation: portrait) {  
           .camera {
-              width: calc(var(--pixel-size) * 255);
-              height: calc(var(--pixel-size) * 90);
-            }
+             width: calc(var(--pixel-size) * 200);
+            height: calc(var(--pixel-size) * 65);
+          }
             .otherTextSignup {
-              font-size: 2.5vw;
+              font-size: 2vw;
           }
             .otherText {
-              font-size: 2.5vw;
+              font-size: 2vw;
             }
             .title {
-              font-size: 2.5vw;
+              font-size: 2vw;
             }
+            :root {
+            --bg: #0014f4;
+            }                    
+            
           }  
 
              /* 897 px iphone 11 Pro Max*/
-        @media only screen and (max-width: 56.0625em) and (orientation: landscape) {  
+        @media only screen and (max-width: 56.063em) and (orientation: landscape) {  
           .camera {
-              width: calc(var(--pixel-size) * 255);
-              height: calc(var(--pixel-size) * 90);
+              width: calc(var(--pixel-size) * 200);
+              height: calc(var(--pixel-size) * 65);
             }
+            :root {
+
+            --bg: #0014f4;
+          }
             .otherTextSignup {
                   font-size: 2vw;
           }
@@ -625,16 +603,16 @@ p {
               font-size: 2vw;
             }
             .titleTextLogin {
-              top: 0rem;
+              top: 1rem;
             }
             .wholeContainer {
-              top: -7rem;
+              top: -6.5rem;
             }
             .titleTextSignup {
-              top: 5.5rem;
+              top: 6.5rem;
             }
             .mainContainerSignup {
-              top: -4rem;
+              top: -3rem;
             }
           }  
         

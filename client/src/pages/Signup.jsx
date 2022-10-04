@@ -116,19 +116,22 @@ function Signup() {
   // Logic for checking Browser type
   const [browserWarning, setBrowserWarning] = useState(false);
 
-    useEffect(() => {
-      browserName !== 'Chrome' && browserName !== 'Safari'
-        ? setBrowserWarning(true)
-        : null;
-    }, []);
+     useEffect(() => {
+       browserName !== 'Chrome' &&
+       browserName !== 'Safari' &&
+       browserName !== 'Mobile Safari' &&
+       browserName !== 'Mobile Chrome'
+         ? setBrowserWarning(true)
+         : null;
+     }, []);
 
 
   return (
-    <div>
+    <div className="containerSignup">
       {browserWarning === true ? (
         <h1
           style={{ fontSize: '30px', color: 'white' }}
-        >{`Firefox's browser is incompatible with this game. Please use Google Chrome or Safari`}</h1>
+        >{`This browser is incompatible with this game. Please use Google Chrome or Safari`}</h1>
       ) : (
         <div className="fade-in">
           <h1 className="titleTextSignup">Sacred Curse</h1>
@@ -139,7 +142,7 @@ function Signup() {
             <div className="submit-form">
               <div className="form">
                 <div>
-                  <h1 className="otherTextSignup">User Registration</h1>
+                  <h1 className="otherTextSignupW">User Registration</h1>
                 </div>
 
                 {/* Calling to the methods */}

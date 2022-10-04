@@ -1,15 +1,3 @@
-@media(min-width: 700px) {
-  :root {
-    --pixel-size: 3px;
-  }
-}
-
-@media(min-width: 1000px) {
-  :root {
-    --pixel-size: 4px;
-  }
-}
-
 .mapF {
   image-rendering: pixelated;
   background-image: url("./assets/maps/Farm map no grid npc.png");

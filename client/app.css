@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --pixel-size: 2px;
     --grid-cell: calc(var(--pixel-size) * 16);
     --bg: #070000;
@@ -36,7 +36,7 @@ body {
 
 .map {
     /* display: block; */
-    max-height: 50000px;
+    /* max-height: 50000px;
     min-width: 50000px;
     image-rendering: pixelated;
     background-image: url("./src/assets/maps/Map1.png");
@@ -45,7 +45,7 @@ body {
     height: calc(40 * var(--grid-cell)); 
     background-position: 100% 100%;
     position: absolute;
-}
+} */
 
 /* .map {
     background-size: 150px;
@@ -66,7 +66,7 @@ body {
     position: relative;
 } */
 
-.character {
+/* .character {
     width: calc(var(--grid-cell)* 2);
     height: calc(var(--grid-cell)* 2);
     position: absolute;
@@ -105,4 +105,4 @@ body {
     to {
         transform: translate3d(-100%, 0%, 0);
     }
-}
+} */ 

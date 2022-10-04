@@ -89,7 +89,10 @@ function Login(props) {
   const [browserWarning, setBrowserWarning] = useState(false);
 
    useEffect(() => {
-     browserName !== 'Chrome' && browserName !== 'Safari'
+     browserName !== 'Chrome' &&
+     browserName !== 'Safari' &&
+     browserName !== 'Mobile Safari' &&
+     browserName !== 'Mobile Chrome'
        ? setBrowserWarning(true)
        : null;
    }, []);
@@ -117,8 +120,7 @@ function Login(props) {
   );
 
   return (
-    <div>
-      
+    <div className="containerLogin">
         {browserWarning === true ? 
          (<h1 style={{fontSize: "30px", color: 'white'}}>{`This browser is incompatible with this game. Please use Google Chrome or Safari.`}</h1>) :
 

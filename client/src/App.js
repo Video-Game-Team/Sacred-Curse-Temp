@@ -662,18 +662,20 @@ function App(props) {
 
   useEffect(() => {
     browserName !== 'Chrome' &&
-    browserName !== 'Safari'
+    browserName !== 'Safari' &&
+    browserName !== 'Mobile Safari' &&
+    browserName !== 'Mobile Chrome' 
       ? setBrowserWarning(true)
       : null;
   }, []);
 
   // whole map is a button - giving that button onkeyppress listener called wrap
   return (
-    <div className="mainGameContainer">
+    <div className="containerApp">
       {browserWarning === true ? (
         <h1
           style={{ fontSize: '30px', color: 'white' }}
-        >{`Firefox's browser is incompatible with this game. Please use Google Chrome or Safari`}</h1>
+        >{`This browser is incompatible with this game. Please use Google Chrome or Safari`}</h1>
       ) : (
         <div style={{ filter: `saturate(${saturate}%)` }}>
           <div style={{ filter: `contrast(${contrast}%)` }}>
@@ -682,7 +684,8 @@ function App(props) {
                 <div>
                   <span
                     style={{
-                      position: 'fixed',
+                      position: 'absolute',
+                      top: '4rem',
                       left: '2rem',
                       color: 'white',
                       zIndex: '999',
@@ -695,6 +698,7 @@ function App(props) {
                     id="test"
                     style={{
                       position: 'absolute',
+                      top: '4rem',
                       left: '8.5rem',
                       color: 'white',
                       zIndex: '999',
@@ -703,6 +707,7 @@ function App(props) {
                   <span
                     style={{
                       position: 'absolute',
+                      top: '4rem',
                       left: '19.8rem',
                       color: 'white',
                       zIndex: '999',
@@ -713,6 +718,7 @@ function App(props) {
                   <span
                     style={{
                       position: 'absolute',
+                      top: '4rem',
                       left: '34.5rem',
                       fontSize: '16px',
                       color: 'white',
@@ -724,12 +730,14 @@ function App(props) {
                   <span
                     style={{
                       position: 'absolute',
+                      top: '4rem',
                       left: '45rem',
                       fontSize: '16px',
                       color: 'white',
                       zIndex: '999',
                     }}
-                  >OS:
+                  >
+                    OS:
                     {platform}
                   </span>
                 </div>
