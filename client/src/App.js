@@ -532,6 +532,7 @@ function App(props) {
       window.removeEventListener('keydown', frameRate);
     };
   }, [framerateToggle]);
+  
 
   // //Checking for screen inner width
   function getWindowDimensions() {
@@ -678,7 +679,7 @@ function App(props) {
                 <div>
                   <span
                     style={{
-                      position: 'absolute',
+                      position: 'fixed',
                       left: '2rem',
                       color: 'white',
                       zIndex: '999',
