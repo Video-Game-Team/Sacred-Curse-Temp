@@ -664,7 +664,7 @@ function App(props) {
     browserName !== 'Chrome' &&
     browserName !== 'Safari' &&
     browserName !== 'Mobile Safari' &&
-    browserName !== 'Mobile Chrome' 
+    browserName !== 'Mobile Chrome'
       ? setBrowserWarning(true)
       : null;
   }, []);

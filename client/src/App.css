@@ -476,60 +476,56 @@ p {
         max-width: 100%;
     }
 
-
+    /* ////////////////////////////////// */
       
         /* Bootstrap standards for best practice breakpoint/media query sizes below here */
 
+         /* 1400 px */
+         /* @media only screen and (max-width: 87.5em) {
+            } */
+
+
+        /* 1200 px */
+         /* @media only screen and (max-width: 75em) {
+            } */
+
+
+         /* 992 px */
+        /* @media only screen and (max-width: 62em) {
+            } */
+
+
+        /* 768 px */
+        /* @media only screen and (max-width: 48em) {
+           } 
+
+
+        /* 576 px */
+        /* @media only screen and (max-width: 36em) {
+           } 
+     */
+
+
+     /* //////////////////////////////////// */
+
+
+     /* Personal media queries below this line */
+
     
-        /* 1200px */
-        @media only screen and (max-width: 75em) {
+        /* 2560px for really large monitors*/
+        @media only screen and (min-width: 160em) {
           img {
             width: 100%;
           }
+           .titleTextLogin {
+              font-size: calc(1rem + 8.3vw);
+            }
+            
+            .titleTextSignup {
+              font-size: calc(1rem + 8.3vw);
+            }
         }
     
-        /* 992 px */
-        /* 1024 px Ipad pro*/
-        /* @media only screen and (max-width: 1024px) {
-        img {
-            width: 100%;
-          }
-          .camera {
-            width: calc(var(--pixel-size) * 175);
-            height: calc(var(--pixel-size) * 186);
-          }
-          :root {
-        
-          --bg: #ff0707;
-          }
-        } */
-
-        /* 768 px */
-        @media only screen and (max-width: 48em) {
-
-        } 
-    
-
-       
-        /* 480px is also ok for mobile */
-
-    
-     /* Settings for my ipad and iphone below here */
-
-         /* @media only screen and (max-width: 600px) and (min-width: 400px) */
-
-
-
-          /* 1444px this one is personal preference not bootstrap*/
-        /* @media only screen and (min-width: 1921px) {
-        .titleTextLogin {
-          font-size: calc(1rem + 250px);
-         }
-        .titleTextSignup {
-          font-size: calc(1rem + 250px);
-         }
-        }
-
         /* Arcade 1up Screen Resolution */
         /* @media only screen and (min-width: 1600px) and (max-width: 1610px){
           :root {
@@ -542,7 +538,7 @@ p {
         }  */
 
 
-        /* 1194 Ipad pro 11 3rd gen    74.625em*/
+        /* Ipad Pro 11 3rd gen  1194px - 834px */
          @media only screen and (max-width: 74.625em) and (min-width: 52.125em) { 
           .camera {
               width: calc(var(--pixel-size) * 284);
@@ -554,14 +550,10 @@ p {
           .titleTextSignup {
               top: -1.5rem;
           }   
-             :root {
-
-            --bg: #21f400;
-          }  
           }  
 
     
-        /* 897 px iphone 11 Pro Max */
+        /* Iphone 11 Pro Max (Portrait Mode)    897px */
         @media only screen and (max-width: 56.0625em) and (orientation: portrait) {  
           .camera {
              width: calc(var(--pixel-size) * 200);
@@ -575,23 +567,15 @@ p {
             }
             .title {
               font-size: 2vw;
-            }
-            :root {
-            --bg: #0014f4;
-            }                    
-            
+            }  
           }  
 
-             /* 897 px iphone 11 Pro Max*/
+        /* Iphone 11 Pro Max (Landscape Mode)    897px */
         @media only screen and (max-width: 56.063em) and (orientation: landscape) {  
           .camera {
               width: calc(var(--pixel-size) * 200);
               height: calc(var(--pixel-size) * 65);
             }
-            :root {
-
-            --bg: #0014f4;
-          }
             .otherTextSignup {
                   font-size: 2vw;
           }
@@ -615,8 +599,6 @@ p {
               top: -3rem;
             }
           }  
-        
-      
-
 
           
+/* //////////////////////////////////////////////////// */

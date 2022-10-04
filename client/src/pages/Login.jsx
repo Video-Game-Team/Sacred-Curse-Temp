@@ -88,15 +88,14 @@ function Login(props) {
   // Logic for checking Browser type
   const [browserWarning, setBrowserWarning] = useState(false);
 
-   useEffect(() => {
-     browserName !== 'Chrome' &&
-     browserName !== 'Safari' &&
-     browserName !== 'Mobile Safari' &&
-     browserName !== 'Mobile Chrome'
-       ? setBrowserWarning(true)
-       : null;
-   }, []);
-
+     useEffect(() => {
+       browserName !== 'Chrome' &&
+       browserName !== 'Safari' &&
+       browserName !== 'Mobile Safari' &&
+       browserName !== 'Mobile Chrome'
+         ? setBrowserWarning(true)
+         : null;
+     }, []);
 
   // JSX code for login form
   const renderForm = (
