@@ -2565,13 +2565,7 @@ const Tortous = (props) => {
   //REQUEST ANIMATION FRAME LOGIC
   // animate is a reccursive function that takes the current key and updates the cordinate variables depending on which direction is pushed. It also sets which way the character is facing
 
-  const animate = (timeStamp) => {
-
-       var time2 = new Date();
-       var fps = 1000 / (time2 - time);
-       time = time2;
-
-
+  const animate = () => {
     if (dirArr.current[0] === 'ArrowRight') {
        if (
          xTransformVar === xdemonTransformVar
@@ -2661,14 +2655,9 @@ const Tortous = (props) => {
         }
       }
     }
-    document.getElementById('test').innerHTML = fps;
-    requestRef.current = window.requestAnimationFrame(animate);
+
+    requestRef.current = requestAnimationFrame(animate);
   };
-
-  var time = new Date(),
-    i = 0;
-  window.requestAnimationFrame(animate);
-
 
 
   //every time the current key changes this runs
