@@ -87,6 +87,9 @@ function App(props) {
   const [saturate, setSaturate] = useState(120);
   const [contrast, setContrast] = useState(120);
 
+  // Current OS
+  const platform = window.navigator.platform;
+  
   // Save State
   const [saveState, setSaveState] = useState([]);
 
@@ -565,7 +568,7 @@ function App(props) {
 
   //Check screens resolution
   function getResolution() {
-        return 'Your screen resolution is: ' + screen.width + 'x' + screen.height
+        return 'Screen resolution: ' + screen.width + 'x' + screen.height
       }
 
     // console.log('RESOLUTION', getResolution());
@@ -685,14 +688,14 @@ function App(props) {
                       zIndex: '999',
                     }}
                   >
-                    Current Frame Rate =
+                    Frame Rate =
                   </span>
 
                   <span
                     id="test"
                     style={{
                       position: 'absolute',
-                      left: '12rem',
+                      left: '8.5rem',
                       color: 'white',
                       zIndex: '999',
                     }}
@@ -700,7 +703,7 @@ function App(props) {
                   <span
                     style={{
                       position: 'absolute',
-                      left: '23rem',
+                      left: '19.8rem',
                       color: 'white',
                       zIndex: '999',
                     }}
@@ -710,13 +713,24 @@ function App(props) {
                   <span
                     style={{
                       position: 'absolute',
-                      left: '41rem',
+                      left: '34.5rem',
                       fontSize: '16px',
                       color: 'white',
                       zIndex: '999',
                     }}
                   >
                     {browserName} Version: {browserVersion}
+                  </span>
+                  <span
+                    style={{
+                      position: 'absolute',
+                      left: '45rem',
+                      fontSize: '16px',
+                      color: 'white',
+                      zIndex: '999',
+                    }}
+                  >OS:
+                    {platform}
                   </span>
                 </div>
               </>
