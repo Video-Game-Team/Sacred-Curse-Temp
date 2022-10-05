@@ -9,9 +9,7 @@ import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
 
 import click1 from '../../audioclips/click1.mp3';
 import text from '../../audioclips/Text.mp3';
-import SnowMan from '../../audioclips/Snowman.mp3';
-import Shadows from '../../audioclips/IN THE SHADOWS VOX.mp3';
-import Heavens from '../../audioclips/The HEavens Vox.mp3';
+import SnowMan from '../../audioclips/Snowman.mp3'
 import River1 from '../../audioclips/river4.mp3';
 import River2 from '../../audioclips/river2.mp3';
 
@@ -50,9 +48,7 @@ const CrystalCaverns = (props) => {
 
   //Music Playing
   const clickAudio1 = () => new Audio(SnowMan).play();
-  const clickAudio4 = () => new Audio(Heavens).play();
-  const clickAudio5 = () => new Audio(Shadows).play();
-
+ 
   //River Sounds
   const clickAudio3 = () => new Audio(River1).play();
 
