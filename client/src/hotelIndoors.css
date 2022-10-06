@@ -1,6 +1,6 @@
  .mapHI {
      image-rendering: pixelated;
-     background-image: url("./assets/maps/Hotel%20indoors%20no%20grid%20npc.png");
+     background-image: url("./assets/maps/HotelIndoorsnogridnpc.png");
      background-size: 1024px;
      width: calc(40 * var(--grid-cell));
      height: calc(55 * var(--grid-cell));
@@ -26,7 +26,7 @@
    }
 
    .guard_spritesheet {
-       background: url("./assets/images/Hotel%20Indoors%20guard%201.png") no-repeat no-repeat;
+       background: url("./assets/images/HotelIndoorsguard1.png") no-repeat no-repeat;
        background-size: 100%;
        width: calc(var(--grid-cell)* 5);
        height: calc(var(--grid-cell)* 5);
@@ -37,14 +37,14 @@
    }
 
    .faceGuard {
-       background: url("./assets/images/Hotel%20Indoors%20Face%201.png") no-repeat no-repeat;
+       background: url("./assets/images/HotelIndoorsFace1.png") no-repeat no-repeat;
        background-position: left top;
        background-size: 12%;
        background-size: content-box;
    }
 
    .faceGirlHI {
-       background: url("./assets/images/Indoor%20House%203%20girl%201%20face.png") no-repeat no-repeat;
+       background: url("./assets/images/IndoorHouse3girl1face.png") no-repeat no-repeat;
        background-position: left top;
        background-size: 12%;
        background-size: content-box;
