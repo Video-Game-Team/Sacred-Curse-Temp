@@ -7,8 +7,6 @@
   "description": "",
   "main": "module.js",
   "scripts": {
-    "postinstall": "npm start",
-    "webpack": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently \"npm run server\" \"webpack serve\"",
     "server": "cd server && nodemon server.js",
