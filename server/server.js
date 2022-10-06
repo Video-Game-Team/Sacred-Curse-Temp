@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const cool = require('cool-ascii-faces');
 const State = require('./models/Schema');
 
 // CREATING OUR INSTANCE OF OUR EXPRESS SERVER
@@ -21,6 +22,8 @@ app.use(cookieParser());
 app.use(
   express.static(path.resolve(__dirname, '../client/stylesheets/styles.css'))
 );
+
+app.get('/cool', (req, res) => res.send(cool()));
 
 // GET ROUTE
 app.get('/state', async (req, res) => {
