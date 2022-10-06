@@ -9,7 +9,7 @@ const State = require('./models/Schema');
 const app = express();
 
 // PORT TO LISTEN ON
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 // HANDLE PARSING REQUEST BODY FOR JSON AND URL
 app.use(cors());
@@ -97,6 +97,6 @@ app.use((error, request, response, next) => {
 });
 
 // START SERVER
-app.listen(process.env.PORT || PORT, () => {
+app.listen(PORT, () => {
   console.log(`The server is connected and running on port: ${PORT}`);
 });
