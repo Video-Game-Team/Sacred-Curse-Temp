@@ -87,7 +87,8 @@ function Signup() {
   // POST Request for SaveState
   const updateState = () => {
     axios
-      .post('http://localhost:3001/state/new', {
+      // .post('http://localhost:3001/state/new', {
+      .post('https://thesacredcurse.herokuapp.com/state/new', {
         name: name,
         email: email,
         password: password,
