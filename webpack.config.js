@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: ['@babel/polyfill', './client/src/index.js'],
@@ -67,7 +66,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './client/public/index.html',
     }),
-    new MiniCssExtractPlugin(),
   ],
   resolve: {
     // Enable importing JS / JSX files without specifying their extension
