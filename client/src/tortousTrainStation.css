@@ -82,7 +82,7 @@
  }
 
  .fountainTTTS_spritesheet {
-     background: url("./assets/images/fountain.gif") no-repeat no-repeat;
+     background: url("./assets/images/Fountain.gif") no-repeat no-repeat;
      background-size: 100%;
      width: calc(var(--grid-cell)* 2.7);
      height: calc(var(--grid-cell)* 4.2);
