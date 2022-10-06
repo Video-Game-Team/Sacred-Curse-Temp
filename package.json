@@ -30,6 +30,7 @@
     "css-loader": "^6.7.1",
     "detect-collisions": "^6.4.2",
     "dotenv": "^16.0.3",
+    "es6-promise": "^4.2.8",
     "express": "^4.17.3",
     "html-webpack-plugin": "^5.5.0",
     "mongodb": "^4.10.0",
