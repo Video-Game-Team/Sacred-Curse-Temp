@@ -53,7 +53,7 @@
    }
 
    .girl2_spritesheet {
-       background: url("./assets/images/IndoorHouse3girl2.png") no-repeat no-repeat;
+       background: url("./assets/images/IndoorHouse3Girl2.png") no-repeat no-repeat;
        background-size: 100%;
        width: calc(var(--grid-cell)* 9);
        height: calc(var(--grid-cell)* 9);
