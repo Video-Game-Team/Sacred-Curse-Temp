@@ -30,7 +30,7 @@ app.get('/cool', (req, res) => res.send(cool()));
 app.get('/state', async (req, res) => {
   const states = await State.find();
   res.json(states);
-  // console.log(states);
+  console.log('HOLA CHICKA');
   // res.status(200);
 });
 
