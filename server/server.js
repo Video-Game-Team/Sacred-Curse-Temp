@@ -19,9 +19,11 @@ app.use(express.json());
 app.use(cookieParser());
 
 // HANDLE REQUESTS FOR STATIC FILES
-app.use(
-  express.static(path.resolve(__dirname, '../client/stylesheets/styles.css'))
-);
+// app.use(
+//   express.static(path.resolve(__dirname, '../client/stylesheets/styles.css'))
+// );
+
+app.use(express.static(path.resolve(__dirname, '/build')));
 
 app.get('/cool', (req, res) => res.send(cool()));
 
