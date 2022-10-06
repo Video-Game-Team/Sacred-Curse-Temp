@@ -1,7 +1,7 @@
 {
   "name": "finaltest",
   "version": "1.0.0",
-   "engines": {
+  "engines": {
     "node": "16.x"
   },
   "description": "",
@@ -45,6 +45,7 @@
     "webpack-dev-server": "^4.7.4"
   },
   "devDependencies": {
+    "mini-css-extract-plugin": "^2.6.1",
     "webpack-cli": "^4.10.0"
   }
 }
