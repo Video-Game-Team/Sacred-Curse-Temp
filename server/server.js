@@ -86,7 +86,7 @@ app.delete('/state/delete/:id', async (req, res) => {
 
 // CATCH-ALL ROUTE HANDLER FOR ANY REQUESTS TO AN UNKNOWN ROUTE
 app.use('*', (request, response) => {
-  response.status(404).send('Error: Page not found');
+  response.status(404).send('Error: Page not found for shizzle');
 });
 
 // CONFIGURE EXPRESS GLOBAL ERROR HANDLER
