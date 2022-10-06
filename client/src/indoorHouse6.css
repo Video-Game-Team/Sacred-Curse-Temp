@@ -1,6 +1,6 @@
 .mapIH6 {
     image-rendering: pixelated;
-    background-image: url("./assets/maps/Indoor House 6 no grid npc.png");
+    background-image: url("./assets/maps/IndoorHouse6nogridnpc.png");
     background-size: 960px;
     width: calc(37.5 * var(--grid-cell));
     height: calc(37.5 * var(--grid-cell));
@@ -26,7 +26,7 @@
  }
 
  .girlIH6_spritesheet {
-     background: url("./assets/images/Indoor House 6 girl.png") no-repeat no-repeat;
+     background: url("./assets/images/IndoorHouse6girl.png") no-repeat no-repeat;
      background-size: 100%;
      width: calc(var(--grid-cell)*34);
      height: calc(var(--grid-cell)* 3);
@@ -38,7 +38,7 @@
 
 
  .faceGirlIH6 {
-     background: url("./assets/images/Indoor House 6 girl face.png") no-repeat no-repeat;
+     background: url("./assets/images/IndoorHouse6girlface.png") no-repeat no-repeat;
      background-position: left top;
      background-size: 12%;
      background-size: content-box;

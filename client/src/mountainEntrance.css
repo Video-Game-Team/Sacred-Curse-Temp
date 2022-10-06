@@ -1,6 +1,6 @@
 .mapME {
     image-rendering: pixelated;
-    background-image: url("./assets/maps/Mountain Entrance tweaks no grid.png");
+    background-image: url("./assets/maps/MountainEntrancetweaksnogrid.png");
     background-size: 4544px;
     width: calc(150 * var(--grid-cell));
     height: calc(177.50 * var(--grid-cell));
@@ -66,7 +66,7 @@
    }
 
    .mainGuardME_spritesheet {
-       background: url("./assets/images/Mountain Entrance Main Guard.png") no-repeat no-repeat;
+       background: url("./assets/images/MountainEntranceMainGuard.png") no-repeat no-repeat;
        background-size: 100%;
         width: calc(var(--grid-cell)* 7);
         height: calc(var(--grid-cell)* 3);
@@ -78,7 +78,7 @@
 
 
    .faceMainGuardME {
-       background: url("./assets/images/Mountain Entrance Main Guard Face.png") no-repeat no-repeat;
+       background: url("./assets/images/MountainEntranceMainGuardFace.png") no-repeat no-repeat;
        background-position: left top;
        background-size: 12%;
        background-size: content-box;

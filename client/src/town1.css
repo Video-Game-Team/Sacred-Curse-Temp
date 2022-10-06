@@ -1,6 +1,6 @@
 .mapTown1 {
     image-rendering: pixelated;
-    background-image: url("./assets/maps/Town_Rock Path no grid npc.png");
+    background-image: url("./assets/maps/TownRockPathnogridnpc.png");
     background-size: 4544px;
     width: calc(215 * var(--grid-cell));
     height: calc(177.5 * var(--grid-cell));
@@ -27,7 +27,7 @@
    }
 
    .mainGuardTM_spritesheet {
-       background: url("./assets/images/Mountain Entrance Main Guard.png") no-repeat no-repeat;
+       background: url("./assets/images/MountainEntranceMainGuard.png") no-repeat no-repeat;
        background-size: 100%;
         width: calc(var(--grid-cell)* 7);
         height: calc(var(--grid-cell)* 3);
@@ -39,7 +39,7 @@
 
 
    .faceMainGuardTM {
-       background: url("./assets/images/Mountain Entrance Main Guard Face.png") no-repeat no-repeat;
+       background: url("./assets/images/MountainEntranceMainGuardFace.png") no-repeat no-repeat;
        background-position: left top;
        background-size: 12%;
        background-size: content-box;

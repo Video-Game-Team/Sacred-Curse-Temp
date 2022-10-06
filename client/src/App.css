@@ -52,7 +52,7 @@ body {
   grid-template-rows: repeat(12, 64px); 
   max-height: 50000px;
   min-width: 50000px;
-  background-image: url("./assets/maps/map 40x 40 w grid.png");
+  background-image: url("./assets/maps/map40x40wgrid.png");
   background-size: 2560px; 
   width: calc(40 * var(--grid-cell));
   height: calc(40 * var(--grid-cell)); 

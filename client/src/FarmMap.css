@@ -1,6 +1,6 @@
 .mapF {
   image-rendering: pixelated;
-  background-image: url("./assets/maps/Farm map no grid npc.png");
+  background-image: url("./assets/maps/Farmmapnogridnpc.png");
   background-size: 3840px; 
   width: calc(150 * var(--grid-cell));
   height: calc(115 * var(--grid-cell)); 
@@ -49,7 +49,7 @@
   
   
      .facefarmer1FM {
-       background: url("./assets/images/Inddor House 2 guy face.png") no-repeat no-repeat;
+       background: url("./assets/images/InddorHouse2guyface.png") no-repeat no-repeat;
        background-position: left top;
        background-size: 12%;
        background-size: content-box;
@@ -86,7 +86,7 @@
      }
   
      .girlFM_spritesheet {
-       background: url("./assets/images/Farm Map flower girl.png") no-repeat no-repeat;
+       background: url("./assets/images/FarmMapflowergirl.png") no-repeat no-repeat;
        background-size: 100%;
        width: calc(var(--grid-cell) * 7);
        height: calc(var(--grid-cell)* 3);
@@ -97,7 +97,7 @@
      }
   
      .faceGirlFM {
-       background: url("./assets/images/Indoor House 8 girl face.png") no-repeat no-repeat;
+       background: url("./assets/images/IndoorHouse8girlface.png") no-repeat no-repeat;
        background-position: left top;
        background-size: 12%;
        background-size: content-box;

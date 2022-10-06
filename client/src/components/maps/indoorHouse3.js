@@ -4,7 +4,7 @@ import RightWalker from '../../assets/images/rightWalker.png';
 import UpWalker from '../../assets/images/upWalker.png';
 import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
-import BackgroundImage1 from '../../assets/maps/map 40x 40 w grid.png';
+import BackgroundImage1 from '../../assets/maps/map40x40wgrid.png';
 
 import click1 from '../../audioclips/click1.mp3';
 import text from '../../audioclips/Text.mp3';

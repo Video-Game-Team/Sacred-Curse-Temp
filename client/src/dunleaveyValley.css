@@ -1,6 +1,6 @@
 .mapDV {
     image-rendering: pixelated;
-    background-image: url("./assets/maps/Dunleavey Valley no grid.png");
+    background-image: url("./assets/maps/DunleaveyValleynogrid.png");
     background-size: 13440px;
     width: calc(525 * var(--grid-cell));
     height: calc(550 * var(--grid-cell));

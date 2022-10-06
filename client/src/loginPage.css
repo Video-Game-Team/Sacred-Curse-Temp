@@ -259,7 +259,7 @@ input[type="submit"]:hover {
 }
 
 .cityline {
-    background-image: url('./assets/maps/LuLu Mountain Pass new tweaks no grid.png');
+    background-image: url('./assets/maps/LuLuMountainPassnewtweaksnogrid.png');
     opacity: .5;
     background-size: cover;
     /* Set rules to fill background this is  set to 1024px*/

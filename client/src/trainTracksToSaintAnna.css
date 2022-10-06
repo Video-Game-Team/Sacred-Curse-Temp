@@ -1,6 +1,6 @@
   .mapTTTSA {
      image-rendering: pixelated;
-     background-image: url("./assets/maps/Train track to St Anna no grid npc.png");
+     background-image: url("./assets/maps/TraintracktoStAnnanogridnpc.png");
      background-size: 2560px;
      width: calc(100 * var(--grid-cell));
      height: calc(375 * var(--grid-cell));
@@ -27,7 +27,7 @@
  }
 
  .guardRTTSA_spritesheet {
-     background: url("./assets/images/Train Tracks To Saint Anna guard R.png") no-repeat no-repeat;
+     background: url("./assets/images/TrainTracksToSaintAnnaguardR.png") no-repeat no-repeat;
      background-size: 100%;
      width: calc(var(--grid-cell)* 34);
      height: calc(var(--grid-cell)* 3);
@@ -38,7 +38,7 @@
  }
 
  .faceGuardRTTSA {
-      background: url("./assets/images/Ranch House 1 guy face.png") no-repeat no-repeat;
+      background: url("./assets/images/RanchHouse1guyface.png") no-repeat no-repeat;
      background-position: left top;
      background-size: 12%;
      background-size: content-box;
@@ -55,7 +55,7 @@
  }
 
  .guardLTTSA_spritesheet {
-   background: url("./assets/images/Train Tracks To Saint Anna guard L.png") no-repeat no-repeat;
+   background: url("./assets/images/TrainTracksToSaintAnnaguardL.png") no-repeat no-repeat;
      background-size: 100%;
      width: calc(var(--grid-cell)* 34);
      height: calc(var(--grid-cell)* 3);
@@ -66,7 +66,7 @@
  }
 
  .faceGuardLTTSA {
-     background: url("./assets/images/Ranch House 1 guy face.png") no-repeat no-repeat;
+     background: url("./assets/images/RanchHouse1guyface.png") no-repeat no-repeat;
      background-position: left top;
      background-size: 12%;
      background-size: content-box;
@@ -82,7 +82,7 @@
 }
 
 .dockguyTTSA_spritesheet {
-    background: url("./assets/images/Indoor House 2 guy.png") no-repeat no-repeat;
+    background: url("./assets/images/IndoorHouse2guy.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc(var(--grid-cell)* 34);
     height: calc(var(--grid-cell)* 3);
@@ -93,7 +93,7 @@
 }
 
 .faceDockguyTTSA {
-    background: url("./assets/images/Indoor House 2 guy face.png") no-repeat no-repeat;
+    background: url("./assets/images/IndoorHouse2guyface.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;

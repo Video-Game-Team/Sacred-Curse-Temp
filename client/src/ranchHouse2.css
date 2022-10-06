@@ -1,6 +1,6 @@
 .mapRH2 {
     image-rendering: pixelated;
-    background-image: url("./assets/maps/Ranch House 2 w grid npc.png");
+    background-image: url("./assets/maps/RanchHouse2wgridnpc.png");
     background-size: 960px;
     width: calc(37.5 * var(--grid-cell));
     height: calc(37.5 * var(--grid-cell));
@@ -28,7 +28,7 @@
 
    .girl1RH2_spritesheet {
      
-       background: url("./assets/images/Ranch House 2 Girl.png") no-repeat no-repeat;
+       background: url("./assets/images/RanchHouse2Girl.png") no-repeat no-repeat;
         background-size: 100%;
         width: calc(var(--grid-cell) * 36);
         height: calc(var(--grid-cell)* 3);
@@ -56,7 +56,7 @@
    }
 
    .childRH2_spritesheet {
-       background: url("./assets/images/Ranch House 2 baby.png") no-repeat no-repeat;
+       background: url("./assets/images/RanchHouse2baby.png") no-repeat no-repeat;
        background-size: 100%;
        width: calc(var(--grid-cell)* 7);
        height: calc(var(--grid-cell)* 3);

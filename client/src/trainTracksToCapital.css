@@ -1,6 +1,6 @@
  .mapTTTC {
      image-rendering: pixelated;
-     background-image: url("./assets/maps/Train track to Capital no grid npc.png");
+     background-image: url("./assets/maps/TraintracktoCapitalnogridnpc.png");
      background-size: 3840px;
      width: calc(150 * var(--grid-cell));
      height: calc(375 * var(--grid-cell));
@@ -27,7 +27,7 @@
  }
 
  .guard1TTTC_spritesheet {
-     background: url("./assets/images/Mountain Entrance Main Guard.png") no-repeat no-repeat;
+     background: url("./assets/images/MountainEntranceMainGuard.png") no-repeat no-repeat;
      background-size: 100%;
      width: calc(var(--grid-cell)* 7);
      height: calc(var(--grid-cell)* 3);

@@ -1,6 +1,6 @@
   .mapIH9 {
      image-rendering: pixelated;
-     background-image: url("./assets/maps/Indoor House 9 no grid npc.png");
+     background-image: url("./assets/maps/IndoorHouse9nogridnpc.png");
      background-size: 960px;
      width: calc(37.5 * var(--grid-cell));
      height: calc(37.5 * var(--grid-cell));
@@ -26,7 +26,7 @@
     
         .guy1IH9_spritesheet {
             
-            background: url("./assets/images/Indoor House 9 guy 1.png") no-repeat no-repeat;
+            background: url("./assets/images/IndoorHouse9guy1.png") no-repeat no-repeat;
             background-size: 100%;
             width: calc(var(--grid-cell)*34);
             height: calc(var(--grid-cell)* 3);
@@ -38,7 +38,7 @@
     
     
         .faceGuy1IH9 {
-            background: url("./assets/images/Indoor House 9 guy face.png") no-repeat no-repeat;
+            background: url("./assets/images/IndoorHouse9guyface.png") no-repeat no-repeat;
             background-position: left top;
             background-size: 12%;
             background-size: content-box;
@@ -53,7 +53,7 @@
         }
     
         .guy2IH9_spritesheet {
-            background: url("./assets/images/Indoor House 9 guy 2.png") no-repeat no-repeat;
+            background: url("./assets/images/IndoorHouse9guy2.png") no-repeat no-repeat;
             background-size: 100%;
             width: calc(var(--grid-cell)*34);
             height: calc(var(--grid-cell)* 3);

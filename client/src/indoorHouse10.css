@@ -1,6 +1,6 @@
  .mapIH10 {
      image-rendering: pixelated;
-     background-image: url("./assets/maps/Indoor House 10 no grid.png");
+     background-image: url("./assets/maps/IndoorHouse10nogrid.png");
      background-size: 960px;
      width: calc(37.5 * var(--grid-cell));
      height: calc(37.5 * var(--grid-cell));

@@ -1,6 +1,6 @@
  .mapT {
      image-rendering: pixelated;
-     background-image: url("./assets/maps/Tortous tweaks no grid.png");
+     background-image: url("./assets/maps/Tortoustweaksnogrid.png");
      background-size: 6656px;
      width: calc(260 * var(--grid-cell));
      height: calc(250 * var(--grid-cell));
@@ -66,7 +66,7 @@
    }
 
    .sweeperGuyTT_spritesheet {
-       background: url("./assets/images/Tortous sweeper guy.png") no-repeat no-repeat;
+       background: url("./assets/images/Tortoussweeperguy.png") no-repeat no-repeat;
        background-size: 100%;
        width: calc(var(--grid-cell)* 7);
        height: calc(var(--grid-cell)* 3);
@@ -81,7 +81,7 @@
        position: absolute;
        display: flex;
        align-items: absolute;
-       background: url("./assets/images/Indoor House 4 face.png") no-repeat no-repeat;
+       background: url("./assets/images/IndoorHouse4face.png") no-repeat no-repeat;
        background-position: left top;
        background-size: 12%;
        background-size: content-box;
@@ -96,7 +96,7 @@
 }
 
 .brideTT_spritesheet {
-    background: url("./assets/images/Tortous bride.png") no-repeat no-repeat;
+    background: url("./assets/images/Tortousbride.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc(var(--grid-cell)* 7);
     height: calc(var(--grid-cell)* 3);
@@ -108,7 +108,7 @@
 
 
 .faceBrideTT {
-    background: url("./assets/images/Tortous bride face.png") no-repeat no-repeat;
+    background: url("./assets/images/Tortousbrideface.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;
@@ -176,7 +176,7 @@
 }
 
 .crazyGuyTT_spritesheet {
-    background: url("./assets/images/Tortous Crazy guy.png") no-repeat no-repeat;
+    background: url("./assets/images/TortousCrazyguy.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc(var(--grid-cell)* 7);
     height: calc(var(--grid-cell)* 3);
@@ -203,7 +203,7 @@
 }
 
 .coinFlipperTT_spritesheet {
-    background: url("./assets/images/Tortous Coin Flipper.png") no-repeat no-repeat;
+    background: url("./assets/images/TortousCoinFlipper.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc(var(--grid-cell)* 7);
     height: calc(var(--grid-cell)* 3);
@@ -215,7 +215,7 @@
 
 
 .faceCoinFlipperTT {
-    background: url("./assets/images/Tortous Coin Flipper face.png") no-repeat no-repeat;
+    background: url("./assets/images/TortousCoinFlipperface.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;
@@ -230,7 +230,7 @@
 }
 
 .blackSmithTT_spritesheet {
-    background: url("./assets/images/Tortous Blacksmith.png") no-repeat no-repeat;
+    background: url("./assets/images/TortousBlacksmith.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc(var(--grid-cell)* 7);
     height: calc(var(--grid-cell)* 3);
@@ -256,7 +256,7 @@
 }
 
 .guard1TT_spritesheet {
-    background: url("./assets/images/Tortous guard 1.png") no-repeat no-repeat;
+    background: url("./assets/images/Tortousguard1.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc(var(--grid-cell)* 7);
     height: calc(var(--grid-cell)* 3);
@@ -268,7 +268,7 @@
 
 
 .faceGuard1TT {
-    background: url("./assets/images/Tortous guard 1 face.png") no-repeat no-repeat;
+    background: url("./assets/images/Tortousguard1face.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;
@@ -283,7 +283,7 @@
 }
 
 .roofGuardTT_spritesheet {
-    background: url("./assets/images/Tortous roof guard.png") no-repeat no-repeat;
+    background: url("./assets/images/Tortousroofguard.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc(var(--grid-cell)* 20);
     height: calc(var(--grid-cell)* 10);
@@ -295,7 +295,7 @@
 
 
 .faceRoofGuardTT {
-    background: url("./assets/images/Tortous guard 1 face.png") no-repeat no-repeat;
+    background: url("./assets/images/Tortousguard1face.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;
@@ -314,7 +314,7 @@
          }
     
          .dogTT_spritesheet {
-             background: url("./assets/images/Dog 3 walk.png") no-repeat no-repeat;
+             background: url("./assets/images/Dog3walk.png") no-repeat no-repeat;
              background-size: 100%;
              width: calc(var(--grid-cell) * 96);
              height: calc(var(--grid-cell)* 2);
@@ -371,7 +371,7 @@
 }
 
 .npcWalkerDrone1_spritesheet {
-    background: url("./assets/images/NPC WALKER DRONE 1.png") no-repeat no-repeat;
+    background: url("./assets/images/NPCWALKERDRONE.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc(var(--grid-cell)* 8);
     height: calc(var(--grid-cell)* 8);

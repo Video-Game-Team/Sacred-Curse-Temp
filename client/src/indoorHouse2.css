@@ -1,6 +1,6 @@
 .mapIH2 {
     image-rendering: pixelated;
-    background-image: url("./assets/maps/Indoor House 2 no grid npc.png");
+    background-image: url("./assets/maps/IndoorHouse2nogridnpc.png");
     background-size: 960px;
     width: calc(37.5 * var(--grid-cell));
     height: calc(37.5 * var(--grid-cell));
@@ -26,7 +26,7 @@
    }
 
    .guyIH2_spritesheet {
-       background: url("./assets/images/Indoor House 2 guy.png") no-repeat no-repeat;
+       background: url("./assets/images/IndoorHouse2guy.png") no-repeat no-repeat;
        background-size: 100%;
        width: calc(var(--grid-cell)*34);
        height: calc(var(--grid-cell)* 3);
@@ -38,7 +38,7 @@
 
 
    .faceGuyIH2 {
-       background: url("./assets/images/Inddor House 2 guy face.png") no-repeat no-repeat;
+       background: url("./assets/images/InddorHouse2guyface.png") no-repeat no-repeat;
        background-position: left top;
        background-size: 12%;
        background-size: content-box;

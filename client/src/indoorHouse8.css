@@ -1,6 +1,6 @@
 .mapIH8 {
     image-rendering: pixelated;
-    background-image: url("./assets/maps/Indoor House 8 no grid npc.png");
+    background-image: url("./assets/maps/IndoorHouse8nogridnpc.png");
     background-size: 960px;
     width: calc(37.5 * var(--grid-cell));
     height: calc(37.5 * var(--grid-cell));
@@ -25,7 +25,7 @@
    }
 
    .girlIH8_spritesheet {
-       background: url("./assets/images/Indoor House 8 girl.png") no-repeat no-repeat;
+       background: url("./assets/images/IndoorHouse8girl.png") no-repeat no-repeat;
        background-size: 100%;
        width: calc(var(--grid-cell)*34);
        height: calc(var(--grid-cell)* 3);
@@ -37,7 +37,7 @@
 
 
    .faceGirlIH8 {
-       background: url("./assets/images/Indoor House 8 girl face.png") no-repeat no-repeat;
+       background: url("./assets/images/IndoorHouse8girlface.png") no-repeat no-repeat;
        background-position: left top;
        background-size: 12%;
        background-size: content-box;

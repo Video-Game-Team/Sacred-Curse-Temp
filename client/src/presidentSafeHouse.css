@@ -1,6 +1,6 @@
 .mapPSH {
     image-rendering: pixelated;
-    background-image: url("./assets/maps/President Safe House no grid npc.png");
+    background-image: url("./assets/maps/PresidentSafeHousenogridnpc.png");
     background-size: 960px;
     width: calc(37.5 * var(--grid-cell));
     height: calc(37.5 * var(--grid-cell));
@@ -27,7 +27,7 @@
 
  .guard1PSH_spritesheet {
    
-     background: url("./assets/images/President Safe House guard 1.png") no-repeat no-repeat;
+     background: url("./assets/images/PresidentSafeHouseguard1.png") no-repeat no-repeat;
      background-size: 100%;
      width: calc(var(--grid-cell)* 34);
      height: calc(var(--grid-cell)* 3);
@@ -39,7 +39,7 @@
 
 
  .faceGuard1PSH {
-     background: url("./assets/images/President Guard 1 Face.png") no-repeat no-repeat;
+     background: url("./assets/images/PresidentGuard1Face.png") no-repeat no-repeat;
      background-position: left top;
      background-size: 12%;
      background-size: content-box;
@@ -55,7 +55,7 @@
   }
 
   .guard2PSH_spritesheet {
-      background: url("./assets/images/President Safe House guard 1.png") no-repeat no-repeat;
+      background: url("./assets/images/PresidentSafeHouseguard1.png") no-repeat no-repeat;
       background-size: 100%;
       width: calc(var(--grid-cell)* 34);
       height: calc(var(--grid-cell)* 3);
@@ -76,7 +76,7 @@
  }
 
  .general1RH2_spritesheet {
-     background: url("./assets/images/President Safe House General 1.png") no-repeat no-repeat;
+     background: url("./assets/images/PresidentSafeHouseGeneral1.png") no-repeat no-repeat;
      background-size: 100%;
      width: calc(var(--grid-cell)* 34);
      height: calc(var(--grid-cell)* 3);
@@ -88,7 +88,7 @@
 
 
  .faceGeneral1RH2 {
-     background: url("./assets/images/President Guard 2 Face.png") no-repeat no-repeat;
+     background: url("./assets/images/PresidentGuard2Face.png") no-repeat no-repeat;
      background-position: left top;
      background-size: 12%;
      background-size: content-box;
@@ -104,7 +104,7 @@
   }
 
   .presidentRH2_spritesheet {
-      background: url("./assets/images/President Safe House President.png") no-repeat no-repeat;
+      background: url("./assets/images/PresidentSafeHousePresident.png") no-repeat no-repeat;
       background-size: 100%;
       width: calc(var(--grid-cell)* 34);
       height: calc(var(--grid-cell)* 3);
@@ -116,7 +116,7 @@
 
 
   .facePresidentRH2 {
-      background: url("./assets/images/Manson Ranch Crazy Guy Face.png") no-repeat no-repeat;
+      background: url("./assets/images/MansonRanchCrazyGuyFace.png") no-repeat no-repeat;
       background-position: left top;
       background-size: 12%;
       background-size: content-box;

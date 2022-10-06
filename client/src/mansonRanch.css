@@ -1,6 +1,6 @@
 .mapMR {
     image-rendering: pixelated;
-    background-image: url("./assets/maps/Manson Ranch tweaks no grid.png");
+    background-image: url("./assets/maps/MansonRanchtweaksnogrid.png");
     background-size: 3840px;
     width: calc(150 * var(--grid-cell));
     height: calc(150 * var(--grid-cell));
@@ -26,7 +26,7 @@
  }
 
  .crazyGuyMR_spritesheet {
-     background: url("./assets/images/Manson Ranch Crazy Guy.png") no-repeat no-repeat;
+     background: url("./assets/images/MansonRanchCrazyGuy.png") no-repeat no-repeat;
      background-size: 100%;
      width: calc(var(--grid-cell)* 7);
      height: calc(var(--grid-cell)* 3);
@@ -38,7 +38,7 @@
 
 
  .faceCrazyGuyMR {
-     background: url("./assets/images/Manson Ranch Crazy Guy Face.png") no-repeat no-repeat;
+     background: url("./assets/images/MansonRanchCrazyGuyFace.png") no-repeat no-repeat;
      background-position: left top;
      background-size: 12%;
      background-size: content-box;
@@ -53,7 +53,7 @@
   }
 
   .girlShiekMR_spritesheet {
-      background: url("./assets/images/Manson Ranch Shiek.png") no-repeat no-repeat;
+      background: url("./assets/images/MansonRanchShiek.png") no-repeat no-repeat;
       background-size: 100%;
       width: calc(var(--grid-cell)* 7);
       height: calc(var(--grid-cell)* 3);
@@ -65,7 +65,7 @@
 
 
   .faceGirlShiekMR {
-      background: url("./assets/images/Shiek Girl Face.png") no-repeat no-repeat;
+      background: url("./assets/images/ShiekGirlFace.png") no-repeat no-repeat;
       background-position: left top;
       background-size: 12%;
       background-size: content-box;
@@ -80,7 +80,7 @@
    }
 
    .girlHippyPrettyMR_spritesheet {
-       background: url("./assets/images/Manson Ranch Hippy Girl Pretty.png") no-repeat no-repeat;
+       background: url("./assets/images/MansonRanchHippyGirlPretty.png") no-repeat no-repeat;
        background-size: 100%;
        width: calc(var(--grid-cell)* 7);
         height: calc(var(--grid-cell)* 3);
@@ -91,7 +91,7 @@
    }
 
    .faceGirlHippyPrettyMR {
-       background: url("./assets/images/Manson Ranch Pretty Girl.png") no-repeat no-repeat;
+       background: url("./assets/images/MansonRanchPrettyGirl.png") no-repeat no-repeat;
        background-position: left top;
        background-size: 12%;
        background-size: content-box;
@@ -106,7 +106,7 @@
     }
     
     .girlLaughingMR_spritesheet {
-        background: url("./assets/images/Manson Ranch Laughing Girl.png") no-repeat no-repeat;
+        background: url("./assets/images/MansonRanchLaughingGirl.png") no-repeat no-repeat;
         background-size: 100%;
          width: calc(var(--grid-cell)* 7);
         height: calc(var(--grid-cell)* 3);
@@ -133,7 +133,7 @@
    }
 
    .girlHippy1MR_spritesheet {
-       background: url("./assets/images/Manson Ranch Hippy Girl 1.png") no-repeat no-repeat;
+       background: url("./assets/images/MansonRanchHippyGirl1.png") no-repeat no-repeat;
        background-size: 100%;
         width: calc(var(--grid-cell)* 7);
         height: calc(var(--grid-cell)* 3);
@@ -145,7 +145,7 @@
 
 
    .facegirlHippy1MR {
-       background: url("./assets/images/Manson Ranch Hippy Face.png") no-repeat no-repeat;
+       background: url("./assets/images/MansonRanchHippyFace.png") no-repeat no-repeat;
        background-position: left top;
        background-size: 12%;
        background-size: content-box;

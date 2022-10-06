@@ -1,6 +1,6 @@
   .mapTF {
      image-rendering: pixelated;
-     background-image: url("./assets/maps/Tortous Fork no fountains no grid.png");
+     background-image: url("./assets/maps/TortousForknofountainsnogrid.png");
      background-size: 3840px;
      width: calc(150 * var(--grid-cell));
      height: calc(105 * var(--grid-cell));
@@ -42,7 +42,7 @@
  }
 
  .pigeon1TTF_spritesheet {
-     background: url("./assets/images/Pigeon 1.gif") no-repeat no-repeat;
+     background: url("./assets/images/Pigeon1.gif") no-repeat no-repeat;
      background-size: 100%;
      width: calc(var(--grid-cell)* 1);
      height: calc(var(--grid-cell)* 1);
@@ -57,7 +57,7 @@
  }
 
  .pigeon2TTF_spritesheet {
-     background: url("./assets/images/Pigeon 2.gif") no-repeat no-repeat;
+     background: url("./assets/images/Pigeon2.gif") no-repeat no-repeat;
      background-size: 100%;
      width: calc(var(--grid-cell)* 1);
      height: calc(var(--grid-cell)* 1);
@@ -71,7 +71,7 @@
  }
 
  .statue1TTF_spritesheet {
-     background: url("./assets/images/boss statue west 1.png") no-repeat no-repeat;
+     background: url("./assets/images/bossstatuewest1.png") no-repeat no-repeat;
      background-size: 100%;
      width: calc(var(--grid-cell)* 25);
      height: calc(var(--grid-cell)* 20);

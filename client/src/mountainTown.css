@@ -1,6 +1,6 @@
   .mapMT {
      image-rendering: pixelated;
-     background-image: url("./assets/maps/Mountain Town tweaks no grid.png");
+     background-image: url("./assets/maps/MountainTowntweaksnogrid.png");
      background-size: 7424px;
      width: calc(290 * var(--grid-cell));
      height: calc(200 * var(--grid-cell));
@@ -27,7 +27,7 @@
 }
 
 .girl1MT_spritesheet {
-    background: url("./assets/images/Indoor House 6 girl.png") no-repeat no-repeat;
+    background: url("./assets/images/IndoorHouse6girl.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc(var(--grid-cell)*34);
     height: calc(var(--grid-cell)* 3);
@@ -86,7 +86,7 @@
 }
 
 .guy1MT_spritesheet {
-    background: url("./assets/images/Indoor House 4 guy.png") no-repeat no-repeat;
+    background: url("./assets/images/IndoorHouse4guy.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc(var(--grid-cell)* 7);
     height: calc(var(--grid-cell)* 3);
@@ -98,7 +98,7 @@
 
 
 .faceGuy1MT{
-    background: url("./assets/images/Indoor House 4 face.png") no-repeat no-repeat;
+    background: url("./assets/images/IndoorHouse4face.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;
@@ -115,7 +115,7 @@
 }
 
 .guyBaldMT_spritesheet {
-    background: url("./assets/images/Indoor House 9 guy 2.png") no-repeat no-repeat;
+    background: url("./assets/images/IndoorHouse9guy2.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc(var(--grid-cell)* 36);
     height: calc(var(--grid-cell)* 3);
@@ -127,7 +127,7 @@
 
 
 .faceGuyBaldMT{
-    background: url("./assets/images/Indoor House 9 guy face.png") no-repeat no-repeat;
+    background: url("./assets/images/IndoorHouse9guyface.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;
@@ -145,7 +145,7 @@
 }
 
 .rancherMT_spritesheet {
-    background: url("./assets/images/Indoor House 2 guy.png") no-repeat no-repeat;
+    background: url("./assets/images/IndoorHouse2guy.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc(var(--grid-cell)* 34);
     height: calc(var(--grid-cell)* 3);
@@ -157,7 +157,7 @@
 
 
 .faceRancherMT {
-    background: url("./assets/images/Indoor House 2 guy face.png") no-repeat no-repeat;
+    background: url("./assets/images/IndoorHouse2guyface.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;
@@ -175,7 +175,7 @@
 }
 
 .eaterMT_spritesheet {
-    background: url("./assets/images/Indoor House 7 guy.png") no-repeat no-repeat;
+    background: url("./assets/images/IndoorHouse7guy.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc(var(--grid-cell)* 7);
     height: calc(var(--grid-cell)* 3);
@@ -187,7 +187,7 @@
 
 
 .faceEaterMT {
-    background: url("./assets/images/Indoor House 7 guy face.png") no-repeat no-repeat;
+    background: url("./assets/images/IndoorHouse7guyface.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;

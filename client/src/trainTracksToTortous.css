@@ -1,6 +1,6 @@
 .mapTTTT {
     image-rendering: pixelated;
-    background-image: url("./assets/maps/Train track to Tortous no grid npc.png");
+    background-image: url("./assets/maps/TraintracktoTortousnogridnpc.png");
     background-size: 3840px;
     width: calc(150 * var(--grid-cell));
     height: calc(750 * var(--grid-cell));
@@ -26,7 +26,7 @@
 }
 
 .blondeTTTV_spritesheet {
-    background: url("./assets/images/Train Tracks To Tortous Blonde.png") no-repeat no-repeat;
+    background: url("./assets/images/TrainTracksToTortousBlonde.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc(var(--grid-cell)* 40);
     height: calc(var(--grid-cell)* 3);
@@ -38,7 +38,7 @@
 
 
 .faceBlondeTTTV {
-    background: url("./assets/images/Indoor House 6 girl face.png") no-repeat no-repeat;
+    background: url("./assets/images/IndoorHouse6girlface.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;
@@ -55,7 +55,7 @@
 }
 
 .brunnetteTTTV_spritesheet {
-    background: url("./assets/images/Train Tracks To Tortous Brunnette.png") no-repeat no-repeat;
+    background: url("./assets/images/TrainTracksToTortousBrunnette.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc(var(--grid-cell)* 40);
     height: calc(var(--grid-cell)* 3);

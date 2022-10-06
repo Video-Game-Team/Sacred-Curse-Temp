@@ -1,6 +1,6 @@
 .mapIH7 {
     image-rendering: pixelated;
-    background-image: url("./assets/maps/Indoor House 7 no grid npc.png");
+    background-image: url("./assets/maps/IndoorHouse7nogridnpc.png");
     background-size: 960px;
     width: calc(37.5 * var(--grid-cell));
     height: calc(37.5 * var(--grid-cell));
@@ -26,7 +26,7 @@
    }
 
    .guyIH7_spritesheet {
-       background: url("./assets/images/Indoor House 7 guy.png") no-repeat no-repeat;
+       background: url("./assets/images/IndoorHouse7guy.png") no-repeat no-repeat;
        background-size: 100%;
        width: calc(var(--grid-cell) * 6);
        height: calc(var(--grid-cell) * 6);
@@ -38,7 +38,7 @@
 
 
    .faceGuyIH7 {
-       background: url("./assets/images/Indoor House 7 guy face.png") no-repeat no-repeat;
+       background: url("./assets/images/IndoorHouse7guyface.png") no-repeat no-repeat;
        background-position: left top;
        background-size: 12%;
        background-size: content-box;

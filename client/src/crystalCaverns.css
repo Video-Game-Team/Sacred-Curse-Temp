@@ -1,6 +1,6 @@
 .mapCC {
     image-rendering: pixelated;
-    background-image: url("./assets/maps/Crystal Caverns tweaks no grid.png");
+    background-image: url("./assets/maps/CrystalCavernstweaksnogrid.png");
     background-size: 3840px;
     width: calc(150 * var(--grid-cell));
     height: calc(150 * var(--grid-cell));
@@ -37,7 +37,7 @@
  }
 
  .water_spritesheet {
-     background: url("./assets/images/river no grid.png") no-repeat no-repeat;
+     background: url("./assets/images/rivernogrid.png") no-repeat no-repeat;
      background-size: 100%;
      width: calc(var(--grid-cell)* 8);
      height: calc(var(--grid-cell)* 80);

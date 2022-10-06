@@ -1,6 +1,6 @@
 .mapOMCI {
     image-rendering: pixelated;
-    background-image: url("./assets/maps/Old Man Crawford Inside House no grid.png");
+    background-image: url("./assets/maps/OldManCrawfordInsideHousenogrid.png");
     background-size: 960px;
     width: calc(37.5 * var(--grid-cell));
     height: calc(37.5 * var(--grid-cell));
