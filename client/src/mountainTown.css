@@ -39,7 +39,7 @@
 
 
 .faceGirl1MT {
-    background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+    background: url("./assets/images/IndoorHouse3girl2face.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;
@@ -56,7 +56,7 @@
 }
 
 .girl2MT_spritesheet {
-    background: url("./assets/images/Indoor House 3 Girl 1.png") no-repeat no-repeat;
+    background: url("./assets/images/IndoorHouse3Girl1.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc(var(--grid-cell)* 34);
     height: calc(var(--grid-cell)* 3);

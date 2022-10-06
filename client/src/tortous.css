@@ -123,7 +123,7 @@
 }
 
 .redheadTT_spritesheet {
-    background: url("./assets/images/Indoor house 1 girl.png") no-repeat no-repeat;
+    background: url("./assets/images/Indoorhouse1girl.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc(var(--grid-cell)* 36);
     height: calc(var(--grid-cell)* 3);
@@ -135,7 +135,7 @@
 
 
 .faceRedheadTT {
-    background: url("./assets/images/Indoor house 3 girl face.png") no-repeat no-repeat;
+    background: url("./assets/images/Indoorhouse3girlface.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;
@@ -149,7 +149,7 @@
 }
 
 .brunetteTT_spritesheet {
-    background: url("./assets/images/Indoor House 3 Girl 1.png") no-repeat no-repeat;
+    background: url("./assets/images/IndoorHouse3Girl1.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc(var(--grid-cell)* 36);
     height: calc(var(--grid-cell)* 3);
@@ -188,7 +188,7 @@
 
 
 .faceCrazyGuyTT {
-    background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+    background: url("./assets/images/IndoorHouse3girl2face.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;
@@ -242,7 +242,7 @@
 
 
 .faceBlackSmithTT{
-    background: url("./assets/images/Indoor House 3 girl 2 face.png") no-repeat no-repeat;
+    background: url("./assets/images/IndoorHouse3girl2face.png") no-repeat no-repeat;
     background-position: left top;
     background-size: 12%;
     background-size: content-box;
