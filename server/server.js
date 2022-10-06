@@ -19,7 +19,8 @@ app.use(express.json());
 app.use(cookieParser());
 
 // HANDLE REQUESTS FOR STATIC FILES
-app.use(express.static(path.resolve(__dirname, '/build')));
+app.use(express.static(path.resolve(__dirname, '../build')));
+// app.use(express.static(path.resolve(__dirname, '../client/public')));
 // app.use(
 //   express.static(path.resolve(__dirname, '../client/stylesheets/styles.css'))
 // );
@@ -30,7 +31,6 @@ app.get('/cool', (req, res) => res.send(cool()));
 app.get('/state', async (req, res) => {
   const states = await State.find();
   res.json(states);
-  console.log('HOLA CHICKA');
   // res.status(200);
 });
 
