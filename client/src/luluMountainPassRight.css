@@ -1,6 +1,6 @@
   .mapLMPR {
      image-rendering: pixelated;
-     background-image: url("./assets/maps/LuluMountainPassRightnogrid.png");
+     background-image: url("./assets/maps/LuLuMountainPassRightnogrid.png");
      background-size: 4352px;
      width: calc(290 * var(--grid-cell));
      height: calc(170 * var(--grid-cell));
