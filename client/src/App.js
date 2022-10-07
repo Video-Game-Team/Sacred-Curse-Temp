@@ -68,6 +68,8 @@ function App(props) {
   const [menu2Toggle, setMenu2Toggle] = useState(false);
   const [menuClockToggle, setMenuClockToggle] = useState(false);
   const [framerateToggle, setFramerateToggle] = useState(false);
+  // Logic for checking Browser type
+  const [browserWarning, setBrowserWarning] = useState(false);
 
   //delete Later
   const [demonTeam, setDemonTeam] = useState([
@@ -89,7 +91,7 @@ function App(props) {
 
   // Current OS
   const platform = window.navigator.platform;
-  
+
   // Save State
   const [saveState, setSaveState] = useState([]);
 
@@ -535,7 +537,6 @@ function App(props) {
       window.removeEventListener('keydown', frameRate);
     };
   }, [framerateToggle]);
-  
 
   // //Checking for screen inner width
   function getWindowDimensions() {
@@ -564,15 +565,12 @@ function App(props) {
   }
   // console.log('WINDOW INNER HEIGHT', window.innerHeight);
 
-
-
   //Check screens resolution
   function getResolution() {
-        return 'Screen resolution: ' + screen.width + 'x' + screen.height
-      }
+    return 'Screen resolution: ' + screen.width + 'x' + screen.height;
+  }
 
-    // console.log('RESOLUTION', getResolution());
-
+  // console.log('RESOLUTION', getResolution());
 
   // //MATT MENU
   // useEffect(() => {
@@ -656,9 +654,6 @@ function App(props) {
   }, [menuClockToggle]);
 
   // console.log("BROWSER", `${browserName} ${browserVersion}`);
-
-  // Logic for checking Browser type
-  const [browserWarning, setBrowserWarning] = useState(false);
 
   useEffect(() => {
     browserName !== 'Chrome' &&

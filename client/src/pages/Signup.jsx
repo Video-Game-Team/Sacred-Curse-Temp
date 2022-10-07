@@ -103,7 +103,7 @@ function Signup() {
         timeStamp: '',
       })
       .then((res) => {
-        console.log(res);
+        // console.log(res);
       })
       .catch((err) => console.log(err));
   };
@@ -112,8 +112,6 @@ function Signup() {
     updateState();
   }, [submitted]);
 
-  // Logic for checking Browser type
-  const [firefoxBrowserWarning, setFirefoxBrowserWarning] = useState(false);
 
   // Logic for checking Browser type
   const [browserWarning, setBrowserWarning] = useState(false);
