@@ -34,6 +34,7 @@
     "es6-promise": "^4.2.8",
     "express": "^4.17.3",
     "heroku": "^7.64.0",
+    "heroku-ssl-redirect": "^0.1.1",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
     "mongodb": "^4.10.0",

@@ -4,10 +4,10 @@ const cors = require('cors');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const cool = require('cool-ascii-faces');
+const sslRedirect = require('heroku-ssl-redirect');
 const State = require('./models/Schema');
 
-//Https redirect logic
-var sslRedirect = require(‘heroku-ssl-redirect’);
+// Https redirect logic
 
 // CREATING OUR INSTANCE OF OUR EXPRESS SERVER
 const app = express();
@@ -24,10 +24,10 @@ app.use(cookieParser());
 // HANDLE REQUESTS FOR STATIC FILES
 app.use(express.static(path.resolve(__dirname, '../build')));
 
-//Https redirect logic
+// Https redirect logic
 app.use(sslRedirect());
 
-//EMoji welcome screen Heroku
+// EMoji welcome screen Heroku
 app.get('/cool', (req, res) => res.send(cool()));
 
 // GET ROUTE
