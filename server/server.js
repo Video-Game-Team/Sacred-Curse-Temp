@@ -100,10 +100,10 @@ app.use((error, request, response, next) => {
 });
 
 // START SERVER
-// app.listen(PORT, () => {
-//   console.log(`The server is connected and running on port: ${PORT}`);
-// });
-
-http.createServer(app).listen(app.get('PORT'), () => {
-  console.log(`Express server listening on port ${app.get('PORT')}`);
+app.listen(PORT, () => {
+  console.log(`The server is connected and running on port: ${PORT}`);
 });
+
+// http.createServer(app).listen(app.get('PORT'), () => {
+//   console.log(`Express server listening on port ${app.get('PORT')}`);
+// });
