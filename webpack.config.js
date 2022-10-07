@@ -11,7 +11,7 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js',
   },
-  devtool: 'inline-source-map',
+
   mode: 'production',
   devServer: {
     host: 'localhost',
