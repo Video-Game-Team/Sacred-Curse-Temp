@@ -4,7 +4,7 @@ module.exports = function (app) {
   app.get(
     '/state',
     createProxyMiddleware({
-      target: 'https://www.sacredcurse.com/',
+      target: 'https://sacredcurse.com/',
       secure: false,
       changeOrigin: true,
     })
