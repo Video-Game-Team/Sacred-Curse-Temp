@@ -4,7 +4,9 @@ const cors = require('cors');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const cool = require('cool-ascii-faces');
-const State = require('./models/Schema');
+const State = require('./models/Schema');const { createProxyMiddleware } = require('http-proxy-middleware');
+
+
 
 // CREATING OUR INSTANCE OF OUR EXPRESS SERVER
 const app = express();
@@ -17,6 +19,17 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
+
+module.exports = function (app) {
+  app.use(
+    '/state',
+    createProxyMiddleware({
+      target: 'https://www.sacredcurse.com/',
+      secure: false,
+      changeOrigin: true,
+    })
+  );
+};
 
 // HANDLE REQUESTS FOR STATIC FILES
 app.use(express.static(path.resolve(__dirname, '../build')));
