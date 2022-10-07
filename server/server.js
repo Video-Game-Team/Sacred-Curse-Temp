@@ -24,12 +24,17 @@ app.use(express.static(path.resolve(__dirname, '../build')));
 // EMoji welcome screen Heroku
 app.get('/cool', (req, res) => res.send(cool()));
 
-// GET ROUTE
+
 app.get('/state', async (req, res) => {
   const states = await State.find();
+  res.setHeader(
+    'Access-Control-Allow-Origin',
+    'https://www.sacredcurse.com/state'
+  ); //sets the allow use to all requests html header
   res.json(states);
   // res.status(200);
 });
+
 
 // POST ROUTE
 app.post('/state/new', (req, res) => {
