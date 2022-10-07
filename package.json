@@ -37,6 +37,7 @@
     "heroku": "^7.64.0",
     "heroku-ssl-redirect": "^0.1.1",
     "html-webpack-plugin": "^5.5.0",
+    "http-proxy-middleware": "^2.0.6",
     "mini-css-extract-plugin": "^2.6.1",
     "mongodb": "^4.10.0",
     "mongoose": "^6.6.2",
