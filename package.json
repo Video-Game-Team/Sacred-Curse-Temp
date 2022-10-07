@@ -11,8 +11,7 @@
     "start": "concurrently \"npm run server\" \"webpack serve\"",
     "server": "cd server && nodemon server.js",
     "client": "cd client && npm start",
-    "build": "webpack --config webpack.config.js",
-    "build-prod": "webpack"
+    "build": "webpack --config webpack.config.js"
   },
   "keywords": [],
   "author": "",

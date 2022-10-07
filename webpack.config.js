@@ -12,7 +12,7 @@ module.exports = {
     filename: 'bundle.js',
   },
   devtool: 'inline-source-map',
-  mode: 'development',
+  mode: 'production',
   devServer: {
     host: 'localhost',
     port: 3000,
