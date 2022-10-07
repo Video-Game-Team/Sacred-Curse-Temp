@@ -11,7 +11,7 @@ function Login(props) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [saveState, setSaveState] = useState([]);
   const [checkName, setCheckName] = useState("")
-  const [checkPassword, setCheckPassword] = useState('');
+  const [checkPassword, setCheckPassword] = useState([]);
 
   const navigate = useNavigate();
   
@@ -30,6 +30,8 @@ function Login(props) {
    useEffect(() => {
      GetSaveState();
    }, [isSubmitted, errorMessages]);
+
+   console.log("SAVE STATE", saveState)
 
   // User Login info
   const database = [
