@@ -1,7 +1,7 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
 module.exports = function (app) {
-  app.use(
+  app.get(
     '/state',
     createProxyMiddleware({
       target: 'https://www.sacredcurse.com/',
