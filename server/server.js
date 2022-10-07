@@ -4,7 +4,7 @@ const cors = require('cors');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const cool = require('cool-ascii-faces');
-const sslRedirect = require('heroku-ssl-redirect');
+const enforce = require('express-sslify');
 const State = require('./models/Schema');
 
 // CREATING OUR INSTANCE OF OUR EXPRESS SERVER
@@ -18,9 +18,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
-
-// enable ssl redirect
-app.use(sslRedirect());
+app.use(enforce.HTTPS());
 
 // HANDLE REQUESTS FOR STATIC FILES
 app.use(express.static(path.resolve(__dirname, '../build')));
@@ -102,6 +100,10 @@ app.use((error, request, response, next) => {
 });
 
 // START SERVER
-app.listen(PORT, () => {
-  console.log(`The server is connected and running on port: ${PORT}`);
+// app.listen(PORT, () => {
+//   console.log(`The server is connected and running on port: ${PORT}`);
+// });
+
+http.createServer(app).listen(app.get('PORT'), () => {
+  console.log(`Express server listening on port ${app.get('PORT')}`);
 });
