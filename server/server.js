@@ -13,7 +13,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // HANDLE PARSING REQUEST BODY FOR JSON AND URL
-app.use(cors());
+// app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
@@ -29,7 +29,7 @@ app.get('/state', cors(), async (req, res) => {
   const states = await State.find();
   res.setHeader(
     'Access-Control-Allow-Origin',
-    'https://www.sacredcurse.com/state'
+   
   ); //sets the allow use to all requests html header
   res.json(states);
   // res.status(200);
