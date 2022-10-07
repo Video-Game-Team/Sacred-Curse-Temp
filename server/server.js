@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 module.exports = function (app) {
-  app.use(
+  app.get(
     '/state',
     createProxyMiddleware({
       target: 'https://www.sacredcurse.com/',
