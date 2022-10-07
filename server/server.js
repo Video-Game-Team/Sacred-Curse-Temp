@@ -25,7 +25,7 @@ app.use(express.static(path.resolve(__dirname, '../build')));
 app.get('/cool', (req, res) => res.send(cool()));
 
 
-app.get('/state', cors(), async (req, res) => {
+app.get('/state', async (req, res) => {
   const states = await State.find();
   res.setHeader(
     'Access-Control-Allow-Origin',
