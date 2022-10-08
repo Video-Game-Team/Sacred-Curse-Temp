@@ -13,7 +13,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // HANDLE PARSING REQUEST BODY FOR JSON AND URL
-// app.use(cors());
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
@@ -25,16 +25,33 @@ app.use(express.static(path.resolve(__dirname, '../build')));
 app.get('/cool', (req, res) => res.send(cool()));
 
 
-app.get('/state', cors(), async (req, res) => {
-  const states = await State.find();
-  res.setHeader(
-    'Access-Control-Allow-Origin',
-   {"proxy" :"https://hotmail.com"}
-  ); //sets the allow use to all requests html header
-  res.json(states);
-  // res.status(200);
-});
 
+
+
+const proxy = require('http-proxy-middleware');
+
+module.exports = (app) => {
+  app.get(
+    '/state',
+    proxy({
+      target: 'https://www.sacredcurse.com/state',
+      changeOrigin: true,
+      pathRewrite: {
+        '^/state': '/',
+      },
+    })
+  );
+};
+
+
+
+
+// // GET ROUTE
+// app.get('/state', async (req, res) => {
+//   const states = await State.find();
+//   res.json(states);
+//   // res.status(200);
+// });
 
 // POST ROUTE
 app.post('/state/new', (req, res) => {
