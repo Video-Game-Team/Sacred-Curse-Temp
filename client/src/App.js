@@ -137,25 +137,28 @@ function App(props) {
 
   // PUT Request for SaveState
   const putState = async (id) => {
-    const data = await fetch(`http://localhost:3001/state/update/${id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: nameState,
-        email: emailState,
-        userName: userNameState,
-        password: passwordState,
-        currentMap: currentMapState,
-        flowers: flowersState,
-        quest1: quest1State,
-        quest2: quest2State,
-        quest3: quest3State,
-        quest4: quest4State,
-        timeStamp: '',
-      }),
-    }).then((res) => res.json());
+    const data = await fetch(
+      `http://localhost:3001/Birn93Giff69InDaHouse69/update/${id}`,
+      {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: nameState,
+          email: emailState,
+          userName: userNameState,
+          password: passwordState,
+          currentMap: currentMapState,
+          flowers: flowersState,
+          quest1: quest1State,
+          quest2: quest2State,
+          quest3: quest3State,
+          quest4: quest4State,
+          timeStamp: '',
+        }),
+      }
+    ).then((res) => res.json());
   };
 
   // useEffect(() => {
@@ -164,9 +167,12 @@ function App(props) {
 
   // DELETE Request for SaveState
   const deleteState = async (id) => {
-    const data = await fetch(`http://localhost:3001/state/delete/${id}`, {
-      method: 'DELETE',
-    }).then((res) => res.json());
+    const data = await fetch(
+      `http://localhost:3001/Birn93Giff69InDaHouse69/delete/${id}`,
+      {
+        method: 'DELETE',
+      }
+    ).then((res) => res.json());
   };
 
   //  useEffect(() => {
