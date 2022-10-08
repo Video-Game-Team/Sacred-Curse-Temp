@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
 module.exports = {
   entry: ['@babel/polyfill', './client/src/index.js'],
@@ -12,7 +13,7 @@ module.exports = {
     filename: 'bundle.js',
   },
 
-  mode: 'development',
+  mode: 'production',
   devServer: {
     host: 'localhost',
     port: 3000,
@@ -66,6 +67,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './client/public/index.html',
     }),
+    new NodePolyfillPlugin(),
   ],
   resolve: {
     // Enable importing JS / JSX files without specifying their extension

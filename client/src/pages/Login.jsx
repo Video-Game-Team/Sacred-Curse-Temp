@@ -2,35 +2,47 @@ import React, { useEffect, useState} from 'react';
 import { useNavigate} from 'react-router';
 import axios from 'axios';
 import { browserName, browserVersion } from 'react-device-detect';
+import bcrypt from 'bcryptjs';
 import '../loginPage.css';
 
 
+// SALT should be created ONE TIME upon sign up
+const salt = bcrypt.genSaltSync(10)
+// example =>  $2a$10$CwTycUXWue0Thq9StjUM0u => to be added always to the password hash
+
+
 function Login(props) {
-  // React States
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [saveState, setSaveState] = useState([]);
-  const [checkName, setCheckName] = useState("")
+  const [checkName, setCheckName] = useState('');
   const [checkPassword, setCheckPassword] = useState([]);
 
-  const navigate = useNavigate();
-  
-   const GetSaveState = () => {
-     axios
-        // .get('http://localhost:3001/state')
-       //  .get('https://thesacredcurse.herokuapp.com/state')
-       .get('https://www.sacredcurse.com/state')
-       .then((res) => {
-         setSaveState(res.data);
-         setCheckName(res.data[0].userName);
-         setCheckPassword(res.data[0].password);
-       })
-       .catch((err) => console.log(err));
-   };
+  const password = ""
 
-   useEffect(() => {
-     GetSaveState();
-   }, [isSubmitted, errorMessages]);
+  const hashedPassword = bcrypt.hashSync(
+    password, '$2a$10$CwTycUXWue0Thq9StjUM0u'
+  ); // hash created previously created upon sign up
+
+  const navigate = useNavigate();
+
+  const GetSaveState = () => {
+    axios
+      // .get('http://localhost:3001/state')
+      //  .get('https://thesacredcurse.herokuapp.com/state')
+       .get('https://www.sacredcurse.com/state')
+      .then((res) => {
+        setSaveState(res.data);
+        setCheckName(res.data[0].userName);
+        setCheckPassword(res.data[0].password);
+        // console.log('HASHED PASSWORD', hashedPassword);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    GetSaveState();
+  }, [isSubmitted, errorMessages]);
 
   //  console.log("SAVE STATE", saveState)
 
@@ -42,16 +54,16 @@ function Login(props) {
     },
   ];
 
-    // const database = [
-    //   {
-    //     username: checkName,
-    //     password: checkPassword,
-    //   },
-    //   // {
-    //   //   username: 'user2',
-    //   //   password: 'pass2',
-    //   // },
-    // ];
+  // const database = [
+  //   {
+  //     username: checkName,
+  //     password: checkPassword,
+  //   },
+  //   // {
+  //   //   username: 'user2',
+  //   //   password: 'pass2',
+  //   // },
+  // ];
 
   const errors = {
     uname: 'invalid username',
@@ -65,7 +77,6 @@ function Login(props) {
     // Find user login info
     const userData = database.find((user) => user.username === uname.value);
 
-    
     // Compare user info
     if (userData) {
       if (userData.password !== pass.value) {
@@ -75,7 +86,7 @@ function Login(props) {
         setIsSubmitted(true);
         setTimeout(() => {
           navigate('/game');
-        }, 3000)
+        }, 3000);
       }
     } else {
       // Username not found
@@ -92,14 +103,14 @@ function Login(props) {
   // Logic for checking Browser type
   const [browserWarning, setBrowserWarning] = useState(false);
 
-     useEffect(() => {
-       browserName !== 'Chrome' &&
-       browserName !== 'Safari' &&
-       browserName !== 'Mobile Safari' &&
-       browserName !== 'Mobile Chrome'
-         ? setBrowserWarning(true)
-         : null;
-     }, []);
+  useEffect(() => {
+    browserName !== 'Chrome' &&
+    browserName !== 'Safari' &&
+    browserName !== 'Mobile Safari' &&
+    browserName !== 'Mobile Chrome'
+      ? setBrowserWarning(true)
+      : null;
+  }, []);
 
   // JSX code for login form
   const renderForm = (
@@ -116,7 +127,7 @@ function Login(props) {
           {renderErrorMessage('pass')}
         </div>
         <div className="button-container">
-          <input type="submit" value='submit' />
+          <input type="submit" value="submit" />
         </div>
       </form>
     </div>
@@ -124,29 +135,32 @@ function Login(props) {
 
   return (
     <div className="containerLogin">
-        {browserWarning === true ? 
-         (<h1 style={{fontSize: "30px", color: 'white'}}>{`This browser is incompatible with this game. Please use Google Chrome or Safari.`}</h1>) :
-
-      <div className="fade-in">
-        <h1 className="titleTextLogin">Sacred Curse</h1>
-        <div className="darkSkyGif"></div>
-        <div className="darkSkyPic"></div>
-        {/* <div className="cityline"></div> */}
-        <div className="wholeContainer">
-          <div className="app">
-            <div className="login-form">
-              <div className="title">Log In</div>
-              {isSubmitted ? (
-                <div className="otherText">User is successfully logged in</div>
-              ) : (
-                renderForm
-              )}
+      {browserWarning === true ? (
+        <h1
+          style={{ fontSize: '30px', color: 'white' }}
+        >{`This browser is incompatible with this game. Please use Google Chrome or Safari.`}</h1>
+      ) : (
+        <div className="fade-in">
+          <h1 className="titleTextLogin">Sacred Curse</h1>
+          <div className="darkSkyGif"></div>
+          <div className="darkSkyPic"></div>
+          {/* <div className="cityline"></div> */}
+          <div className="wholeContainer">
+            <div className="app">
+              <div className="login-form">
+                <div className="title">Log In</div>
+                {isSubmitted ? (
+                  <div className="otherText">
+                    User is successfully logged in
+                  </div>
+                ) : (
+                  renderForm
+                )}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      }
+      )}
     </div>
   );
 }

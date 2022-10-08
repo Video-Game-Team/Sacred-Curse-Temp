@@ -2,7 +2,13 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router';
 import { browserName, browserVersion } from 'react-device-detect';
 import axios from 'axios';
+import bcrypt from 'bcryptjs';
 import '../signupPage.css';
+
+
+// SALT should be created ONE TIME upon sign up
+const salt = bcrypt.genSaltSync(10)
+// example =>  $2a$10$CwTycUXWue0Thq9StjUM0u => to be added always to the password hash
 
 
 function Signup() {
@@ -13,6 +19,12 @@ function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [userName, setUserName] = useState('');
+
+  const hashedPassword = bcrypt.hashSync(
+    password,
+    '$2a$10$CwTycUXWue0Thq9StjUM0u'
+  ); // hash created previously created upon sign up
+
 
   // States for checking the errors
   const [submitted, setSubmitted] = useState(false);
@@ -88,11 +100,11 @@ function Signup() {
   const updateState = () => {
     axios
       // .post('http://localhost:3001/state/new', {
-      // .post('https://thesacredcurse.herokuapp.com/state/new', {
-      .post('https://www.sacredcurse.com/state/new', {
+        // .post('https://thesacredcurse.herokuapp.com/state/new', {
+        .post('https://www.sacredcurse.com/state/new', {
         name: name,
         email: email,
-        password: password,
+        password: hashedPassword,
         userName: userName,
         currentMap: 'indoorHouse10',
         flowers: 0,
@@ -112,19 +124,17 @@ function Signup() {
     updateState();
   }, [submitted]);
 
-
   // Logic for checking Browser type
   const [browserWarning, setBrowserWarning] = useState(false);
 
-     useEffect(() => {
-       browserName !== 'Chrome' &&
-       browserName !== 'Safari' &&
-       browserName !== 'Mobile Safari' &&
-       browserName !== 'Mobile Chrome'
-         ? setBrowserWarning(true)
-         : null;
-     }, []);
-
+  useEffect(() => {
+    browserName !== 'Chrome' &&
+    browserName !== 'Safari' &&
+    browserName !== 'Mobile Safari' &&
+    browserName !== 'Mobile Chrome'
+      ? setBrowserWarning(true)
+      : null;
+  }, []);
 
   return (
     <div className="containerSignup">

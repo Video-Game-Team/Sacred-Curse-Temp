@@ -13,7 +13,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // HANDLE PARSING REQUEST BODY FOR JSON AND URL
-// app.use(cors());
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
@@ -101,14 +101,6 @@ app.use((error, request, response, next) => {
 app.listen(PORT, () => {
   console.log(`The server is connected and running on port: ${PORT}`);
 });
-
-
-
-
-
-
-
-
 
 // const proxy = require('http-proxy-middleware');
 

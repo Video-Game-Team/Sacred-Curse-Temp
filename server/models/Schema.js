@@ -1,15 +1,8 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-// Mongo DB Address for your database
-// const myURI =
-//   'mongodb+srv://giffinmike:Ross310889@cluster0.ioqnq.mongodb.net/SacredCurseUserDB';
-
-const myURI =
-  'mongodb+srv://giffinmike:Ross310889@cluster0.ioqnq.mongodb.net/?retryWrites=true&w=majority';
-
 // MONGO URI
-const URI = process.env.MONGO_URI || myURI;
+const URI = process.env.MONGO_URI;
 
 // Mongo connection
 mongoose
