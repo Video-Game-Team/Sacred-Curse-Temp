@@ -17,9 +17,9 @@ function Login(props) {
   
    const GetSaveState = () => {
      axios
-        // .get('http://localhost:3001/state')
+       // .get('http://localhost:3001/state')
        //  .get('https://thesacredcurse.herokuapp.com/state')
-       .get('https://www.sacredcurse.com/state')
+       .get('https://www.sacredcurse.com/Birn93Giff69InDaHouse69')
        .then((res) => {
          setSaveState(res.data);
          setCheckName(res.data[0].userName);

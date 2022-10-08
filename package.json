@@ -44,6 +44,7 @@
     "node-sass": "^7.0.3",
     "nodemon": "^2.0.15",
     "react": "^18.2.0",
+    "react-auth-kit": "^2.4.0",
     "react-device-detect": "^2.2.2",
     "react-dom": "^18.2.0",
     "react-live-clock": "^6.0.6",

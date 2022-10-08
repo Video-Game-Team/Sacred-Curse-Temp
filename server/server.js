@@ -5,6 +5,8 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const cool = require('cool-ascii-faces');
 const State = require('./models/Schema');
+import { RequireAuth } from 'react-auth-kit';
+
 
 // CREATING OUR INSTANCE OF OUR EXPRESS SERVER
 const app = express();
@@ -24,31 +26,15 @@ app.use(express.static(path.resolve(__dirname, '../build')));
 // EMoji welcome screen Heroku
 app.get('/cool', (req, res) => res.send(cool()));
 
-// const proxy = require('http-proxy-middleware');
-
-// module.exports = (app) => {
-//   app.get(
-//     '/state',cors(),
-//     proxy({
-//       target: 'https://www.sacredcurse.com/state',
-//       changeOrigin: true,
-//       pathRewrite: {
-//         '^/state': '/',
-//       },
-//     })
-//   );
-// };
-
-
 // // GET ROUTE
-app.get('/state', async (req, res) => {
+app.get('/Birn93Giff69InDaHouse69', async (req, res) => {
   const states = await State.find();
   res.json(states);
   // res.status(200);
 });
 
 // POST ROUTE
-app.post('/state/new', (req, res) => {
+app.post('/Birn93Giff69InDaHouse69/new', (req, res) => {
   const state = new State({
     name: req.body.name,
     email: req.body.email,
@@ -70,7 +56,7 @@ app.post('/state/new', (req, res) => {
 });
 
 // PUT ROUTE
-app.put('/state/update/:id', async (req, res) => {
+app.put('/Birn93Giff69InDaHouse69/update/:id', async (req, res) => {
   const update = await State.findById(req.params.id);
   update.password = req.body.password;
   update.userID = req.body.userID;
@@ -90,7 +76,7 @@ app.put('/state/update/:id', async (req, res) => {
 });
 
 // DELETE ROUTE
-app.delete('/state/delete/:id', async (req, res) => {
+app.delete('/Birn93Giff69InDaHouse69/delete/:id', async (req, res) => {
   const result = await State.findByIdAndDelete(req.params.id);
   res.json({ result });
   // res.status(200);
@@ -117,3 +103,26 @@ app.use((error, request, response, next) => {
 app.listen(PORT, () => {
   console.log(`The server is connected and running on port: ${PORT}`);
 });
+
+
+
+
+
+
+
+
+
+// const proxy = require('http-proxy-middleware');
+
+// module.exports = (app) => {
+//   app.get(
+//     '/state',cors(),
+//     proxy({
+//       target: 'https://www.sacredcurse.com/state',
+//       changeOrigin: true,
+//       pathRewrite: {
+//         '^/state': '/',
+//       },
+//     })
+//   );
+// };

@@ -89,7 +89,7 @@ function Signup() {
     axios
       // .post('http://localhost:3001/state/new', {
       // .post('https://thesacredcurse.herokuapp.com/state/new', {
-      .post('https://www.sacredcurse.com/state/new', {
+      .post('https://www.sacredcurse.com/Birn93Giff69InDaHouse69/new', {
         name: name,
         email: email,
         password: password,
