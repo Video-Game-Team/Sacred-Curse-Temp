@@ -32,7 +32,7 @@ const proxy = require('http-proxy-middleware');
 
 module.exports = (app) => {
   app.get(
-    '/state',
+    '/state',cors(),
     proxy({
       target: 'https://www.sacredcurse.com/state',
       changeOrigin: true,
