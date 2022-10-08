@@ -29,7 +29,7 @@ app.get('/state', cors(), async (req, res) => {
   const states = await State.find();
   res.setHeader(
     'Access-Control-Allow-Origin',
-    'https://www.pickel.co'
+   
   ); //sets the allow use to all requests html header
   res.json(states);
   // res.status(200);
