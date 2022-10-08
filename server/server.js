@@ -24,34 +24,28 @@ app.use(express.static(path.resolve(__dirname, '../build')));
 // EMoji welcome screen Heroku
 app.get('/cool', (req, res) => res.send(cool()));
 
+// const proxy = require('http-proxy-middleware');
 
-
-
-
-const proxy = require('http-proxy-middleware');
-
-module.exports = (app) => {
-  app.get(
-    '/state',cors(),
-    proxy({
-      target: 'https://www.sacredcurse.com/state',
-      changeOrigin: true,
-      pathRewrite: {
-        '^/state': '/',
-      },
-    })
-  );
-};
-
-
+// module.exports = (app) => {
+//   app.get(
+//     '/state',cors(),
+//     proxy({
+//       target: 'https://www.sacredcurse.com/state',
+//       changeOrigin: true,
+//       pathRewrite: {
+//         '^/state': '/',
+//       },
+//     })
+//   );
+// };
 
 
 // // GET ROUTE
-// app.get('/state', async (req, res) => {
-//   const states = await State.find();
-//   res.json(states);
-//   // res.status(200);
-// });
+app.get('/state', async (req, res) => {
+  const states = await State.find();
+  res.json(states);
+  // res.status(200);
+});
 
 // POST ROUTE
 app.post('/state/new', (req, res) => {
