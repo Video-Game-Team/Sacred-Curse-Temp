@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
 module.exports = {
-  entry: ['@babel/polyfill', './client/src/index.js'],
+  entry: ['./client/src/index.js'],
   stats: {
     children: true,
   },
