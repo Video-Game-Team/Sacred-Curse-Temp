@@ -4,7 +4,10 @@ const cors = require('cors');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const cool = require('cool-ascii-faces');
+const axios = require('axios');
+const parse = require('html-react-parser');
 const State = require('./models/Schema');
+require('dotenv').config();
 
 // CREATING OUR INSTANCE OF OUR EXPRESS SERVER
 const app = express();
@@ -30,6 +33,27 @@ app.get('/state', async (req, res) => {
   res.json(states);
   // res.status(200);
 });
+
+// ANIA TRY
+// app.get('/state', (req, res) => {
+//   const options = {
+//     method: 'GET',
+//     url: 'http://localhost:3001/state',
+//     headers: {
+//       'x-rapidapi-key': process.env.APIKEY1,
+//     },
+//   };
+
+//   axios
+//     .request(options)
+//     .then((response) => {
+//       response.json(response.data);
+//       console.error('YOU ARE SUCCESSFUL');
+//     })
+//     .catch((error) => {
+//       console.error('YOU ARE EN ERROR');
+//     });
+// });
 
 // POST ROUTE
 app.post('/state/new', (req, res) => {

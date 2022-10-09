@@ -5,7 +5,7 @@
         "**/__tests__"
     ],
     "plugins": [
-        "prettier",
+        "prettier"
     ],
     "env": {
         "node": true,
@@ -48,8 +48,6 @@
             "single"
         ],
         "space-infix-ops": "warn",
-        "prettier/prettier": "error",
-        
-        
+        "prettier/prettier": "error"   
     }
 }

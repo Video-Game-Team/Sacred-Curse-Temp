@@ -3,6 +3,9 @@ import { useNavigate } from 'react-router';
 import { browserName, browserVersion } from 'react-device-detect';
 import axios from 'axios';
 import bcrypt from 'bcryptjs';
+const createDOMPurify = require('dompurify');
+const DOMPurify = createDOMPurify(window);
+const parse = require('html-react-parser');
 import '../signupPage.css';
 
 
@@ -19,6 +22,7 @@ function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [userName, setUserName] = useState('');
+  let data = "Hello!<img src='unicorns.png' onerror='alert(1)'>";
 
   const hashedPassword = bcrypt.hashSync(
     password,
@@ -99,9 +103,9 @@ function Signup() {
   // POST Request for SaveState
   const updateState = () => {
     axios
-      // .post('http://localhost:3001/state/new', {
+      .post('http://localhost:3001/state/new', {
         // .post('https://thesacredcurse.herokuapp.com/state/new', {
-        .post('https://www.sacredcurse.com/state/new', {
+        // .post('https://www.sacredcurse.com/state/new', {
         name: name,
         email: email,
         password: hashedPassword,
@@ -137,74 +141,81 @@ function Signup() {
   }, []);
 
   return (
-    <div className="containerSignup">
-      {browserWarning === true ? (
-        <h1
-          style={{ fontSize: '30px', color: 'white' }}
-        >{`This browser is incompatible with this game. Please use Google Chrome or Safari`}</h1>
-      ) : (
-        <div className="fade-in">
-          <h1 className="titleTextSignup">Sacred Curse</h1>
-          <div className="darkSkyGif"></div>
-          {/* <div className="darkSkyPic"></div> */}
-          <div className="cityline"></div>
-          <div className="mainContainerSignup">
-            <div className="submit-form">
-              <div className="form">
-                <div>
-                  <h1 className="otherTextSignupW">User Registration</h1>
+    <>
+      {/* <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(data) }}></div> */}
+      <div className="containerSignup">
+        {browserWarning === true ? (
+          <h1
+            style={{ fontSize: '30px', color: 'white' }}
+          >{`This browser is incompatible with this game. Please use Google Chrome or Safari`}</h1>
+        ) : (
+          <div className="fade-in">
+            <h1 className="titleTextSignup">Sacred Curse</h1>
+            <div className="darkSkyGif"></div>
+            {/* <div className="darkSkyPic"></div> */}
+            <div className="cityline"></div>
+            <div className="mainContainerSignup">
+              <div className="submit-form">
+                <div className="form">
+                  <div>
+                    <h1 className="otherTextSignupW">User Registration</h1>
+                  </div>
+
+                  {/* Calling to the methods */}
+                  <div className="messages">
+                    {errorMessage()}
+                    {successMessage()}
+                  </div>
+
+                  <form>
+                    {/* Labels and inputs for form data */}
+                    <label className="label otherTextSignup">Name</label>
+                    <input
+                      onChange={handleName}
+                      className="input"
+                      value={name}
+                      type="text"
+                    />
+
+                    <label className="label otherTextSignup">Email</label>
+                    <input
+                      onChange={handleEmail}
+                      className="input"
+                      value={email}
+                      type="email"
+                    />
+
+                    <label className="label otherTextSignup">UserName</label>
+                    <input
+                      onChange={handleUserName}
+                      className="input"
+                      value={userName}
+                      type="username"
+                    />
+
+                    <label className="label otherTextSignup">Password</label>
+                    <input
+                      onChange={handlePassword}
+                      className="input"
+                      value={password}
+                      type="password"
+                    />
+
+                    <button
+                      onClick={handleSubmit}
+                      className="btn"
+                      type="submit"
+                    >
+                      Submit
+                    </button>
+                  </form>
                 </div>
-
-                {/* Calling to the methods */}
-                <div className="messages">
-                  {errorMessage()}
-                  {successMessage()}
-                </div>
-
-                <form>
-                  {/* Labels and inputs for form data */}
-                  <label className="label otherTextSignup">Name</label>
-                  <input
-                    onChange={handleName}
-                    className="input"
-                    value={name}
-                    type="text"
-                  />
-
-                  <label className="label otherTextSignup">Email</label>
-                  <input
-                    onChange={handleEmail}
-                    className="input"
-                    value={email}
-                    type="email"
-                  />
-
-                  <label className="label otherTextSignup">UserName</label>
-                  <input
-                    onChange={handleUserName}
-                    className="input"
-                    value={userName}
-                    type="username"
-                  />
-
-                  <label className="label otherTextSignup">Password</label>
-                  <input
-                    onChange={handlePassword}
-                    className="input"
-                    value={password}
-                    type="password"
-                  />
-
-                  <button onClick={handleSubmit} className="btn" type="submit">
-                    Submit
-                  </button>
-                </form>
               </div>
             </div>
           </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+    </>
   );
 }
 

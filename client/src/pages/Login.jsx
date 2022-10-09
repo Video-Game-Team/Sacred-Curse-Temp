@@ -4,6 +4,9 @@ import axios from 'axios';
 import { browserName, browserVersion } from 'react-device-detect';
 import bcrypt from 'bcryptjs';
 import '../loginPage.css';
+const createDOMPurify = require('dompurify');
+const DOMPurify = createDOMPurify(window);
+const parse = require('html-react-parser');
 
 
 // SALT should be created ONE TIME upon sign up
@@ -17,6 +20,7 @@ function Login(props) {
   const [saveState, setSaveState] = useState([]);
   const [checkName, setCheckName] = useState('');
   const [checkPassword, setCheckPassword] = useState([]);
+  let data = "Hello!<img src='unicorns.png' onerror='alert(1)'>";
 
   const password = ""
 
@@ -26,19 +30,27 @@ function Login(props) {
 
   const navigate = useNavigate();
 
+
   const GetSaveState = () => {
     axios
-      // .get('http://localhost:3001/state')
-      //  .get('https://thesacredcurse.herokuapp.com/state')
-       .get('https://www.sacredcurse.com/state')
+      .get('http://localhost:3001/state', {
+        //  .get('https://thesacredcurse.herokuapp.com/state', {
+        //  .get('https://www.sacredcurse.com/state', {
+        headers: {
+          'x-rapidapi-key': process.env.APIKEY1
+        },
+      })
       .then((res) => {
         setSaveState(res.data);
         setCheckName(res.data[0].userName);
         setCheckPassword(res.data[0].password);
+        console.log('STATE', res.data);
         // console.log('HASHED PASSWORD', hashedPassword);
       })
       .catch((err) => console.log(err));
+    
   };
+  
 
   useEffect(() => {
     GetSaveState();
@@ -134,34 +146,37 @@ function Login(props) {
   );
 
   return (
-    <div className="containerLogin">
-      {browserWarning === true ? (
-        <h1
-          style={{ fontSize: '30px', color: 'white' }}
-        >{`This browser is incompatible with this game. Please use Google Chrome or Safari.`}</h1>
-      ) : (
-        <div className="fade-in">
-          <h1 className="titleTextLogin">Sacred Curse</h1>
-          <div className="darkSkyGif"></div>
-          <div className="darkSkyPic"></div>
-          {/* <div className="cityline"></div> */}
-          <div className="wholeContainer">
-            <div className="app">
-              <div className="login-form">
-                <div className="title">Log In</div>
-                {isSubmitted ? (
-                  <div className="otherText">
-                    User is successfully logged in
-                  </div>
-                ) : (
-                  renderForm
-                )}
+    <>
+      {/* <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(data) }}></div> */}
+      <div className="containerLogin">
+        {browserWarning === true ? (
+          <h1
+            style={{ fontSize: '30px', color: 'white' }}
+          >{`This browser is incompatible with this game. Please use Google Chrome or Safari.`}</h1>
+        ) : (
+          <div className="fade-in">
+            <h1 className="titleTextLogin">Sacred Curse</h1>
+            <div className="darkSkyGif"></div>
+            <div className="darkSkyPic"></div>
+            {/* <div className="cityline"></div> */}
+            <div className="wholeContainer">
+              <div className="app">
+                <div className="login-form">
+                  <div className="title">Log In</div>
+                  {isSubmitted ? (
+                    <div className="otherText">
+                      User is successfully logged in
+                    </div>
+                  ) : (
+                    renderForm
+                  )}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+    </>
   );
 }
 

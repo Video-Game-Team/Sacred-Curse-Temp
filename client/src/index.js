@@ -7,7 +7,7 @@ import Layout from './pages/Layout';
 import Login from './pages/Login.jsx';
 import Signup from './pages/Signup.jsx';
 import NoPage from './pages/NoPage.jsx';
-import PageRedirect from './pages/pageReidrect.jsx';
+import PageRedirect from './pages/pageRedirect.jsx';
 import App from './App';
 
 import './index.css';

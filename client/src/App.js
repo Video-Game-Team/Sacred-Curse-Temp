@@ -58,6 +58,10 @@ import DemonObjects from './demonObjects.js';
 import Datetime from './components/maps/datetime.js';
 import Clock from 'react-live-clock';
 import { browserName, browserVersion } from 'react-device-detect';
+const createDOMPurify = require('dompurify');
+const DOMPurify = createDOMPurify(window);
+const parse = require('html-react-parser');
+const URL = require('url-parse');
 
 import './App.css';
 
@@ -71,6 +75,8 @@ function App(props) {
   // Logic for checking Browser type
   const [browserWarning, setBrowserWarning] = useState(false);
 
+  let data = "Hello!<img src='unicorns.png' onerror='alert(1)'>";
+
   //delete Later
   const [demonTeam, setDemonTeam] = useState([
     DemonObjects.Player,
@@ -80,7 +86,7 @@ function App(props) {
     DemonObjects.Naruto,
   ]);
 
-  const [current, setCurrent] = useState('indoorHouse3');
+  const [current, setCurrent] = useState('farmMap');
   const [tempCurrent, setTempCurrent] = useState(null);
   const [previous, setPrevious] = useState(null);
   const [textValue, setTextValue] = useState(null);
@@ -134,31 +140,29 @@ function App(props) {
   // useEffect(() => {
   //   GetSaveState();
   // }, []);
+  
 
   // PUT Request for SaveState
-  const putState = async (id) => {
-    const data = await fetch(
-      `http://localhost:3001/Birn93Giff69InDaHouse69/update/${id}`,
-      {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: nameState,
-          email: emailState,
-          userName: userNameState,
-          password: passwordState,
-          currentMap: currentMapState,
-          flowers: flowersState,
-          quest1: quest1State,
-          quest2: quest2State,
-          quest3: quest3State,
-          quest4: quest4State,
-          timeStamp: '',
-        }),
-      }
-    ).then((res) => res.json());
+  const putState = async (id) => {   
+    const data = await fetch(`http://localhost:3001/state/update/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: nameState,
+        email: emailState,
+        userName: userNameState,
+        password: passwordState,
+        currentMap: currentMapState,
+        flowers: flowersState,
+        quest1: quest1State,
+        quest2: quest2State,
+        quest3: quest3State,
+        quest4: quest4State,
+        timeStamp: '',
+      }),
+    }).then((res) => res.json());
   };
 
   // useEffect(() => {
@@ -167,17 +171,32 @@ function App(props) {
 
   // DELETE Request for SaveState
   const deleteState = async (id) => {
-    const data = await fetch(
-      `http://localhost:3001/Birn93Giff69InDaHouse69/delete/${id}`,
-      {
-        method: 'DELETE',
-      }
-    ).then((res) => res.json());
+    const data = await fetch(`http://localhost:3001/state/delete/${id}`, {
+      method: 'DELETE',
+    }).then((res) => res.json());
   };
 
   //  useEffect(() => {
   //   deleteState('6337321ce90b16a4693f15b5');
   //  }, [])
+
+
+  // URL protocol checker
+  // let url = new URL('https://github.com/foo/bar');
+
+  // function isSafe(dangerousURL, text) {
+  //   const url = URL(dangerousURL, {});
+  //   if (url.protocol === 'http:') return true;
+  //   if (url.protocol === 'https:') return true;
+
+  //   return false;
+  // }
+
+  // useEffect(() => {
+  //   isSafe();
+  // }, []);
+
+
 
   const mapsObj = {
     outDoorMap1: (
@@ -340,7 +359,7 @@ function App(props) {
         previousMap={previous}
       />
     ),
-    hotelIndoors: (
+       hotelIndoors: (
       <HotelIndoors
         passed={previous}
         active={tracker}
@@ -672,158 +691,161 @@ function App(props) {
 
   // whole map is a button - giving that button onkeyppress listener called wrap
   return (
-    <div className="containerApp">
-      {browserWarning === true ? (
-        <h1
-          style={{ fontSize: '30px', color: 'white' }}
-        >{`This browser is incompatible with this game. Please use Google Chrome or Safari`}</h1>
-      ) : (
-        <div style={{ filter: `saturate(${saturate}%)` }}>
-          <div style={{ filter: `contrast(${contrast}%)` }}>
-            {framerateToggle === true ? (
-              <>
-                <div>
-                  <span
-                    style={{
-                      position: 'absolute',
-                      top: '4rem',
-                      left: '2rem',
-                      color: 'white',
-                      zIndex: '999',
-                    }}
-                  >
-                    Frame Rate =
-                  </span>
-
-                  <span
-                    id="test"
-                    style={{
-                      position: 'absolute',
-                      top: '4rem',
-                      left: '8.5rem',
-                      color: 'white',
-                      zIndex: '999',
-                    }}
-                  ></span>
-                  <span
-                    style={{
-                      position: 'absolute',
-                      top: '4rem',
-                      left: '19.8rem',
-                      color: 'white',
-                      zIndex: '999',
-                    }}
-                  >
-                    {getResolution()}
-                  </span>
-                  <span
-                    style={{
-                      position: 'absolute',
-                      top: '4rem',
-                      left: '34.5rem',
-                      fontSize: '16px',
-                      color: 'white',
-                      zIndex: '999',
-                    }}
-                  >
-                    {browserName} Version: {browserVersion}
-                  </span>
-                  <span
-                    style={{
-                      position: 'absolute',
-                      top: '4rem',
-                      left: '45rem',
-                      fontSize: '16px',
-                      color: 'white',
-                      zIndex: '999',
-                    }}
-                  >
-                    OS:
-                    {platform}
-                  </span>
-                </div>
-              </>
-            ) : null}
-
-            <div>
-              <body>
-                {mapsObj[current]}
-                {menu === true ? (
-                  <dialog className="mainMenu" open>
-                    <button>MAP</button>
-                  </dialog>
-                ) : null}
-              </body>
-
-              {menuClockToggle === true ? (
+    <>
+      {/* <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(data) }}></div> */}
+      <div className="containerApp">
+        {browserWarning === true ? (
+          <h1
+            style={{ fontSize: '30px', color: 'white' }}
+          >{`This browser is incompatible with this game. Please use Google Chrome or Safari`}</h1>
+        ) : (
+          <div style={{ filter: `saturate(${saturate}%)` }}>
+            <div style={{ filter: `contrast(${contrast}%)` }}>
+              {framerateToggle === true ? (
                 <>
-                  <div className="clock">
-                    <Clock
-                      format="h:mm:ssa"
-                      style={{ fontSize: '1.5em' }}
-                      ticking
-                    />
-                  </div>
+                  <div>
+                    <span
+                      style={{
+                        position: 'absolute',
+                        top: '4rem',
+                        left: '2rem',
+                        color: 'white',
+                        zIndex: '999',
+                      }}
+                    >
+                      Frame Rate =
+                    </span>
 
-                  <div className="clockTime">
-                    <Datetime />
+                    <span
+                      id="test"
+                      style={{
+                        position: 'absolute',
+                        top: '4rem',
+                        left: '8.5rem',
+                        color: 'white',
+                        zIndex: '999',
+                      }}
+                    ></span>
+                    <span
+                      style={{
+                        position: 'absolute',
+                        top: '4rem',
+                        left: '19.8rem',
+                        color: 'white',
+                        zIndex: '999',
+                      }}
+                    >
+                      {getResolution()}
+                    </span>
+                    <span
+                      style={{
+                        position: 'absolute',
+                        top: '4rem',
+                        left: '34.5rem',
+                        fontSize: '16px',
+                        color: 'white',
+                        zIndex: '999',
+                      }}
+                    >
+                      {browserName} Version: {browserVersion}
+                    </span>
+                    <span
+                      style={{
+                        position: 'absolute',
+                        top: '4rem',
+                        left: '45rem',
+                        fontSize: '16px',
+                        color: 'white',
+                        zIndex: '999',
+                      }}
+                    >
+                      OS:
+                      {platform}
+                    </span>
                   </div>
                 </>
               ) : null}
 
-              {menu2Toggle === true ? (
-                <div className="box1">
-                  <text className="pokeText" style={{ marginLeft: '90px' }}>
-                    FLOWERS
-                  </text>
-                  c
-                </div>
-              ) : null}
+              <div>
+                <body>
+                  {mapsObj[current]}
+                  {menu === true ? (
+                    <dialog className="mainMenu" open>
+                      <button>MAP</button>
+                    </dialog>
+                  ) : null}
+                </body>
 
-              {menu2Toggle === true ? (
-                <div className="box2">
-                  <text className="pokeText" style={{ marginLeft: '105px' }}>
-                    ITEMS
-                  </text>
-                </div>
-              ) : null}
+                {menuClockToggle === true ? (
+                  <>
+                    <div className="clock">
+                      <Clock
+                        format="h:mm:ssa"
+                        style={{ fontSize: '1.5em' }}
+                        ticking
+                      />
+                    </div>
 
-              {menu2Toggle === true ? (
-                <div className="box3">
-                  <text className="pokeText" style={{ marginLeft: '82px' }}>
-                    EQUIPMENT
-                  </text>
-                </div>
-              ) : null}
+                    <div className="clockTime">
+                      <Datetime />
+                    </div>
+                  </>
+                ) : null}
 
-              {menu1Toggle === true ? (
-                <div className="box4">
-                  <text className="pokeText" style={{ marginLeft: '125px' }}>
-                    MAP
-                  </text>
-                </div>
-              ) : null}
+                {menu2Toggle === true ? (
+                  <div className="box1">
+                    <text className="pokeText" style={{ marginLeft: '90px' }}>
+                      FLOWERS
+                    </text>
+                    c
+                  </div>
+                ) : null}
 
-              {menu1Toggle === true ? (
-                <div className="box5">
-                  <text className="pokeText" style={{ marginLeft: '585px' }}>
-                    CONTROLS
-                  </text>
-                </div>
-              ) : null}
+                {menu2Toggle === true ? (
+                  <div className="box2">
+                    <text className="pokeText" style={{ marginLeft: '105px' }}>
+                      ITEMS
+                    </text>
+                  </div>
+                ) : null}
 
-              {menu1Toggle === true ? (
-                <div className="box6">
-                  <text className="pokeText" style={{ marginLeft: '585px' }}>
-                    MENU
-                  </text>
-                </div>
-              ) : null}
+                {menu2Toggle === true ? (
+                  <div className="box3">
+                    <text className="pokeText" style={{ marginLeft: '82px' }}>
+                      EQUIPMENT
+                    </text>
+                  </div>
+                ) : null}
+
+                {menu1Toggle === true ? (
+                  <div className="box4">
+                    <text className="pokeText" style={{ marginLeft: '125px' }}>
+                      MAP
+                    </text>
+                  </div>
+                ) : null}
+
+                {menu1Toggle === true ? (
+                  <div className="box5">
+                    <text className="pokeText" style={{ marginLeft: '585px' }}>
+                      CONTROLS
+                    </text>
+                  </div>
+                ) : null}
+
+                {menu1Toggle === true ? (
+                  <div className="box6">
+                    <text className="pokeText" style={{ marginLeft: '585px' }}>
+                      MENU
+                    </text>
+                  </div>
+                ) : null}
+              </div>
             </div>
           </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+    </>
   );
 }
 
