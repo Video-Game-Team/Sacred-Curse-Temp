@@ -5,12 +5,12 @@ const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 module.exports = {
   entry: ['@babel/polyfill', './client/src/index.js'],
   stats: {
-    children: true,
+    children: true
   },
   output: {
     path: path.resolve(__dirname, 'build'),
     publicPath: '/',
-    filename: 'bundle.js',
+    filename: 'bundle.js'
   },
 
   mode: 'production',
@@ -21,7 +21,7 @@ module.exports = {
     static: {
       // match the output 'publicPath'
       publicPath: '/build',
-      directory: path.resolve(__dirname, 'build'),
+      directory: path.resolve(__dirname, 'build')
     },
     // enable HMR on the devServer
     hot: true,
@@ -38,9 +38,9 @@ module.exports = {
     proxy: {
       '/': {
         target: 'http://localhost:3001/',
-        secure: false,
-      },
-    },
+        secure: false
+      }
+    }
   },
   module: {
     rules: [
@@ -48,29 +48,29 @@ module.exports = {
         test: /.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-        },
+          loader: 'babel-loader'
+        }
       },
       {
         test: /.(css|scss)$/,
         exclude: /node_modules/,
-        use: ['style-loader', 'css-loader'],
+        use: ['style-loader', 'css-loader']
       },
 
       {
         test: /\.(png|jpg|gif|woff|woff2|eot|ttf|mp3|svg|ico)$/,
-        type: 'asset/resource',
-      },
-    ],
+        type: 'asset/resource'
+      }
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './client/public/index.html',
+      template: './client/public/index.html'
     }),
-    new NodePolyfillPlugin(),
+    new NodePolyfillPlugin()
   ],
   resolve: {
     // Enable importing JS / JSX files without specifying their extension
-    extensions: ['.js', '.jsx'],
-  },
+    extensions: ['.js', '.jsx']
+  }
 };
