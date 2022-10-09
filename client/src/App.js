@@ -140,10 +140,9 @@ function App(props) {
   // useEffect(() => {
   //   GetSaveState();
   // }, []);
-  
 
   // PUT Request for SaveState
-  const putState = async (id) => {   
+  const putState = async (id) => {
     const data = await fetch(`http://localhost:3001/state/update/${id}`, {
       method: 'PUT',
       headers: {
@@ -359,7 +358,7 @@ function App(props) {
         previousMap={previous}
       />
     ),
-       hotelIndoors: (
+    hotelIndoors: (
       <HotelIndoors
         passed={previous}
         active={tracker}
