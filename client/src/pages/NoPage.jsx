@@ -5,7 +5,7 @@ import '../noPage.css';
 function NoPage() {
   return (
      <div>
-       <h1>You are very lost</h1>
+       <h1 style={{color: 'white'}}>Don't even try it bitch!</h1>
      </div>
   )
 }

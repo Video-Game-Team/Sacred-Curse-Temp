@@ -6,6 +6,8 @@ const cookieParser = require('cookie-parser');
 const cool = require('cool-ascii-faces');
 const axios = require('axios');
 const parse = require('html-react-parser');
+const jwt = require('jsonwebtoken');
+
 const State = require('./models/Schema');
 require('dotenv').config();
 
@@ -27,32 +29,31 @@ app.use(express.static(path.resolve(__dirname, '../build')));
 // EMoji welcome screen Heroku
 app.get('/cool', (req, res) => res.send(cool()));
 
+const loggedin = true;
+
 // // GET ROUTE
 app.get('/state', async (req, res) => {
-  const states = await State.find();
-  res.json(states);
-  // res.status(200);
+  try {
+    const states = await State.find();
+    res.json(states);
+  } catch (error) {
+    console.log(error);
+  }
 });
 
-// ANIA TRY
-// app.get('/state', (req, res) => {
-//   const options = {
-//     method: 'GET',
-//     url: 'http://localhost:3001/state',
-//     headers: {
-//       'x-rapidapi-key': process.env.APIKEY1,
-//     },
-//   };
-
-//   axios
-//     .request(options)
-//     .then((response) => {
-//       response.json(response.data);
-//       console.error('YOU ARE SUCCESSFUL');
-//     })
-//     .catch((error) => {
-//       console.error('YOU ARE EN ERROR');
-//     });
+// app.get('/state', async (req, res) => {
+//   const token = req.headers['x-access-token'];
+//   try {
+//     if (!token) {
+//       // const decoded = jwt.verify(token, 'secret123');
+//       // const { email } = decoded;
+//       const states = await State.find();
+//       res.json(states);
+//     }
+//   } catch (error) {
+//     console.log(error);
+//     res.json({ status: 'error', error: 'invalid token' });
+//   }
 // });
 
 // POST ROUTE
@@ -61,27 +62,95 @@ app.post('/state/new', (req, res) => {
     name: req.body.name,
     email: req.body.email,
     userName: req.body.userName,
+    subID: req.body.subID,
     password: req.body.password,
-    userId: req.body.userID,
     currentMap: req.body.currentMap,
     flowers: req.body.flowers,
     quest1: req.body.quest1,
     quest2: req.body.quest2,
     quest3: req.body.quest3,
     quest4: req.body.quest4,
-    timeStamp: req.body.timeStamp,
+    timeStamp: req.body.timeStamp
   });
   state.save();
   res.json(state);
   // res.status(200);
-  // console.log('POST STATE', state);
+  console.log('POST STATE', state);
 });
+
+// app.post('/state/new', async (req, res) => {
+//   try {
+//     const state = await new State({
+//       name: req.body.name,
+//       email: req.body.email,
+//       userName: req.body.userName,
+//       password: req.body.password,
+//       userId: req.body.userID,
+//       currentMap: req.body.currentMap,
+//       flowers: req.body.flowers,
+//       quest1: req.body.quest1,
+//       quest2: req.body.quest2,
+//       quest3: req.body.quest3,
+//       quest4: req.body.quest4,
+//       timeStamp: req.body.timeStamp
+//     });
+//     state.save();
+//     res.json(state);
+//     // res.json({ status: 'ok' });
+//   } catch (err) {
+//     res.json({ status: 'error', error: 'Problem!' });
+//   }
+// });
+
+// app.post('/state/new', (req, res) => {
+//   const state = new State({
+//     name: req.body.name,
+//     email: req.body.email,
+//     userName: req.body.userName,
+//     password: req.body.password,
+//     userId: req.body.userID,
+//     currentMap: req.body.currentMap,
+//     flowers: req.body.flowers,
+//     quest1: req.body.quest1,
+//     quest2: req.body.quest2,
+//     quest3: req.body.quest3,
+//     quest4: req.body.quest4,
+//     timeStamp: req.body.timeStamp
+//   });
+
+//   if (state) {
+//     const token = jwt.sign(
+//       {
+//         name: state.name,
+//         email: state.email,
+//         userName: state.userName,
+//         password: state.password,
+//         userId: state.userID,
+//         currentMap: state.currentMap,
+//         flowers: state.flowers,
+//         quest1: state.quest1,
+//         quest2: state.quest2,
+//         quest3: state.quest3,
+//         quest4: state.quest4,
+//         timeStamp: state.timeStamp
+//       },
+//       'secret123'
+//     );
+//     state.save();
+//     // res.json(state);
+//     return res.json({ status: 'ok', state: token });
+//   }
+//   return res.json({ status: 'error', state: false });
+// });
 
 // PUT ROUTE
 app.put('/state/update/:id', async (req, res) => {
   const update = await State.findById(req.params.id);
+  update.name = req.body.name;
+  update.email = req.body.email;
+  update.userName = req.body.userName;
+  update.subID = req.body.subID;
   update.password = req.body.password;
-  update.userID = req.body.userID;
   update.currentMap = req.body.currentMap;
   update.flowers = req.body.flowers;
   update.quest1 = req.body.quest1;
@@ -89,8 +158,6 @@ app.put('/state/update/:id', async (req, res) => {
   update.quest3 = req.body.quest3;
   update.quest4 = req.body.quest4;
   update.timeStamp = req.body.timeStamp;
-  update.email = req.body.email;
-  update.userName = req.body.userName;
   update.save();
   res.json(update);
   // res.status(200);
@@ -115,7 +182,7 @@ app.use((error, request, response, next) => {
   const defaultErr = {
     log: 'Express error handler caught unknown middleware error',
     status: 400,
-    message: { err: 'An error occurred' },
+    message: { err: 'An error occurred' }
   };
   const errorObj = Object.assign(defaultErr, { error });
   response.status(errorObj.status).json(errorObj.message.err);
@@ -125,18 +192,3 @@ app.use((error, request, response, next) => {
 app.listen(PORT, () => {
   console.log(`The server is connected and running on port: ${PORT}`);
 });
-
-// const proxy = require('http-proxy-middleware');
-
-// module.exports = (app) => {
-//   app.get(
-//     '/state',cors(),
-//     proxy({
-//       target: 'https://www.sacredcurse.com/state',
-//       changeOrigin: true,
-//       pathRewrite: {
-//         '^/state': '/',
-//       },
-//     })
-//   );
-// };

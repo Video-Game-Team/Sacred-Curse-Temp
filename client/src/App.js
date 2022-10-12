@@ -50,7 +50,6 @@ import Tortous from './components/maps/tortous.js';
 import CrystalCaverns from './components/maps/crystalCaverns.js';
 import CrystalCavernsRight from './components/maps/crystalCavernsRight.js';
 import Login from './pages/Login.jsx';
-import Signup from './pages/Signup.jsx';
 
 import DemoMap from './battleMaps/demoMap.jsx';
 import DemonObjects from './demonObjects.js';
@@ -75,15 +74,13 @@ function App(props) {
   // Logic for checking Browser type
   const [browserWarning, setBrowserWarning] = useState(false);
 
-  let data = "Hello!<img src='unicorns.png' onerror='alert(1)'>";
-
   //delete Later
   const [demonTeam, setDemonTeam] = useState([
     DemonObjects.Player,
     DemonObjects.Dragonite,
     DemonObjects.Haku,
     DemonObjects.Zabuza,
-    DemonObjects.Naruto,
+    DemonObjects.Naruto
   ]);
 
   const [current, setCurrent] = useState('farmMap');
@@ -100,85 +97,105 @@ function App(props) {
 
   // Save State
   const [saveState, setSaveState] = useState([]);
-
-  const [nameState, setNameState] = useState('');
-  const [emailState, setEmailState] = useState('');
-  const [userNameState, setUserNameState] = useState('');
   const [passwordState, setPasswordState] = useState('');
-  const [currentMapState, setCurrentMapState] = useState('');
-  const [flowersState, setFlowersState] = useState('');
-  const [quest1State, setQuest1State] = useState('false');
-  const [quest2State, setQuest2State] = useState('false');
-  const [quest3State, setQuest3State] = useState('false');
-  const [quest4State, setQuest4State] = useState('false');
 
-  // let tempObj = {
-  //   password: passwordState,
-  //   userID: userIDState,
-  //   currentMap: currentMapState,
-  //   flowers: flowersState,
-  //   quest1: true,
-  //   quest2: quest2State,
-  //   quest3: quest3State,
-  //   quest4: quest4State,
-  //   timeStamp: '1',
-  //   email: emailState,
-  //   userName: userNameState,
-  // };
+  // Temp state for User save game
+  const [tempName, setTempName] = useState('');
+  const [tempEmail, setTempEmail] = useState('');
+  const [tempUserName, setTempUserName] = useState('');
+  const [tempSubID, setTempSubID] = useState('');
+  const [tempPassword, setTempPassword] = useState('');
+  const [tempCurrentMap, setTempCurrentMap] = useState('indoorHouse10');
+  const [tempFlowers, setTempFlowers] = useState(0);
+  const [tempQuest1, setTempQuest1] = useState('false');
+  const [tempQuest2, setTempQuest2] = useState('false');
+  const [tempQuest3, setTempQuest3] = useState('false');
+  const [tempQuest4, setTempQuest] = useState('false');
+  const [timeStamp, setTimeStamp] = useState('');
 
-  // GET Request for SaveState
-  // const GetSaveState = () => {
-  //   axios
-  //     .get('http://localhost:3001/state')
-  //     .then((res) => {
-  //       // console.log('Res;', res.data);
-  //       setSaveState(res.data);
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
+  const [trigger, setTrigger] = useState(false);
+  const [trigger2, setTrigger2] = useState(false);
+  const [saveMessage, setSaveMessage] = useState(false);
 
-  // useEffect(() => {
-  //   GetSaveState();
-  // }, []);
-
-  // PUT Request for SaveState
-  const putState = async (id) => {
-    const data = await fetch(`http://localhost:3001/state/update/${id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: nameState,
-        email: emailState,
-        userName: userNameState,
-        password: passwordState,
-        currentMap: currentMapState,
-        flowers: flowersState,
-        quest1: quest1State,
-        quest2: quest2State,
-        quest3: quest3State,
-        quest4: quest4State,
-        timeStamp: '',
-      }),
-    }).then((res) => res.json());
+  // Handle Click Function For temp activating Get Request
+  const handleClickTrigger = (e) => {
+    setTrigger(!trigger);
   };
 
-  // useEffect(() => {
-  //   putState();
-  // }, []);
+  // Handle Click Function For temp activating Get Request
+  const handleClickSave = (e) => {
+    setTrigger2(!trigger2);
+  };
+
+  //GET Request for Fetching and Updating Users Game Records
+  useEffect(() => {
+    if (trigger === true) {
+      axios
+        .get('http://localhost:3001/state')
+        .then((res) => {
+          console.log('Res;', res.data);
+          setTempName(res.data[0].name);
+          setTempEmail(res.data[0].email);
+          setTempUserName(res.data[0].userName);
+          setTempSubID(res.data[0].subID);
+          setTempPassword(res.data[0].password);
+          setTempCurrentMap(res.data[0].currentMap);
+          setTempFlowers(res.data[0].flowers);
+          setTempQuest1(res.data[0].quest1);
+          setTempQuest2(res.data[0].quest2);
+          setTempQuest3(res.data[0].quest3);
+          setTempQuest(res.data[0].quest4);
+          setTimeStamp(res.data[0].timeStamp);
+          setSaveState(res.data);
+          // setCurrent(res.data[0].currentMap);
+          console.log("FETCH USERS RECORD COMPLETED!")
+        })
+        .catch((err) => console.log(err));
+    }
+  }, [trigger]);
+
+  // PUT Request for SaveState
+  useEffect(() => {
+     if (trigger2 === true) {
+    const putState = async (id) => {
+      const data = await fetch(`http://localhost:3001/state/update/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: tempName,
+          email: tempEmail,
+          userName: tempUserName,
+          subID: tempSubID,
+          password: tempPassword,
+          currentMap: tempCurrentMap,
+          flowers: tempFlowers,
+          quest1: tempQuest1,
+          quest2: tempQuest2,
+          quest3: tempQuest3,
+          quest4: tempQuest4,
+          timeStamp: timeStamp
+        })
+      }).then((res) => res.json());
+       setSaveMessage(!saveMessage);
+      console.log('SAVE GAME RECORD UPDATED');
+    };
+     putState('63464fa990ac97f43d9a0cdc');
+  }
+  }, [trigger2]);
+ 
 
   // DELETE Request for SaveState
   const deleteState = async (id) => {
     const data = await fetch(`http://localhost:3001/state/delete/${id}`, {
-      method: 'DELETE',
+      method: 'DELETE'
     }).then((res) => res.json());
   };
 
   //  useEffect(() => {
   //   deleteState('6337321ce90b16a4693f15b5');
   //  }, [])
-
 
   // URL protocol checker
   // let url = new URL('https://github.com/foo/bar');
@@ -195,65 +212,24 @@ function App(props) {
   //   isSafe();
   // }, []);
 
-
-
   const mapsObj = {
     outDoorMap1: (
-      <OutDoorMap1
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <OutDoorMap1 passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
     indoorMap1: (
-      <Indoormap1
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <Indoormap1 passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
     indoorMap2: (
-      <Indoormap2
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <Indoormap2 passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
     outDoorMapFresh: (
-      <OutDoorMapFresh
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <OutDoorMapFresh passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
-    farmMap: (
-      <FarmMap
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
-    ),
+    farmMap: <FarmMap passed={previous} active={tracker} adder={addItem} previousMap={previous} />,
     townMap1: (
-      <TownMap1
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <TownMap1 passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
-    theWall: (
-      <TheWall
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
-    ),
+    theWall: <TheWall passed={previous} active={tracker} adder={addItem} previousMap={previous} />,
     trainTracksToTortous: (
       <TrainTracksToTortous
         passed={previous}
@@ -271,20 +247,10 @@ function App(props) {
       />
     ),
     dunleaveyValley: (
-      <DunleaveyValley
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <DunleaveyValley passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
     saintAnna: (
-      <SaintAnna
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <SaintAnna passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
     mountainRoadTrainTracks: (
       <MountainRoadTrainTracks
@@ -295,29 +261,12 @@ function App(props) {
       />
     ),
     mansonRanch: (
-      <MansonRanch
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <MansonRanch passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
     mountainEntrance: (
-      <MountainEntrance
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <MountainEntrance passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
-    sigele: (
-      <Sigele
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
-    ),
+    sigele: <Sigele passed={previous} active={tracker} adder={addItem} previousMap={previous} />,
     presidentSafeHouse: (
       <PresidentSafeHouse
         passed={previous}
@@ -327,20 +276,10 @@ function App(props) {
       />
     ),
     ranchHouse1: (
-      <RanchHouse1
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <RanchHouse1 passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
     ranchHouse2: (
-      <RanchHouse2
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <RanchHouse2 passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
     secretIndoorLakeHouse: (
       <SecretIndoorLakeHouse
@@ -359,108 +298,43 @@ function App(props) {
       />
     ),
     hotelIndoors: (
-      <HotelIndoors
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <HotelIndoors passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
     indoorHouse1: (
-      <IndoorHouse1
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <IndoorHouse1 passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
     indoorHouse2: (
-      <IndoorHouse2
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <IndoorHouse2 passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
     indoorHouse3: (
-      <IndoorHouse3
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <IndoorHouse3 passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
     indoorHouse4: (
-      <IndoorHouse4
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <IndoorHouse4 passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
     indoorHouse5: (
-      <IndoorHouse5
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <IndoorHouse5 passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
     indoorHouse6: (
-      <IndoorHouse6
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <IndoorHouse6 passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
     indoorHouse7: (
-      <IndoorHouse7
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <IndoorHouse7 passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
     indoorHouse8: (
-      <IndoorHouse8
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <IndoorHouse8 passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
     indoorHouse9: (
-      <IndoorHouse9
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <IndoorHouse9 passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
     indoorHouse10: (
-      <IndoorHouse10
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <IndoorHouse10 passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
     mountainTown: (
-      <MountainTown
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <MountainTown passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
     luluMountainPass: (
-      <LuluMountainPass
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <LuluMountainPass passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
     luluMountainPassRight: (
       <LuluMountainPassRight
@@ -471,20 +345,10 @@ function App(props) {
       />
     ),
     saintAnnaHidden: (
-      <SaintAnnaHidden
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <SaintAnnaHidden passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
     tortousFork: (
-      <TortousFork
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <TortousFork passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
     tortous: (
       <Tortous
@@ -521,12 +385,7 @@ function App(props) {
       />
     ),
     crystalCaverns: (
-      <CrystalCaverns
-        passed={previous}
-        active={tracker}
-        adder={addItem}
-        previousMap={previous}
-      />
+      <CrystalCaverns passed={previous} active={tracker} adder={addItem} previousMap={previous} />
     ),
     crystalCavernsRight: (
       <CrystalCavernsRight
@@ -536,7 +395,7 @@ function App(props) {
         previousMap={previous}
       />
     ),
-    demoMap: <DemoMap demonList={demonTeam} />,
+    demoMap: <DemoMap demonList={demonTeam} />
   };
 
   //Framerate Tester on and off
@@ -567,7 +426,7 @@ function App(props) {
     const { innerWidth: width, innerHeight: height } = window;
     return {
       width,
-      height,
+      height
     };
   }
 
@@ -575,9 +434,7 @@ function App(props) {
 
   //Checking for window inner height
   function useWindowDimensions() {
-    const [windowDimensions, setWindowDimensions] = useState(
-      getWindowDimensions()
-    );
+    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
     useEffect(() => {
       function handleResize() {
         setWindowDimensions(getWindowDimensions());
@@ -641,7 +498,7 @@ function App(props) {
   //menu 1 toggle
   useEffect(() => {
     const menu1 = (event) => {
-      if (event.key === 'm') {
+      if (event.key === 's') {
         setMenu1Toggle(!menu1Toggle);
       }
     };
@@ -654,7 +511,7 @@ function App(props) {
   // menu 2 toggle
   useEffect(() => {
     const menu2 = (event) => {
-      if (event.key === 'i') {
+      if (event.key === 's') {
         setMenu2Toggle(!menu2Toggle);
       }
     };
@@ -677,6 +534,7 @@ function App(props) {
     };
   }, [menuClockToggle]);
 
+
   // console.log("BROWSER", `${browserName} ${browserVersion}`);
 
   useEffect(() => {
@@ -688,6 +546,8 @@ function App(props) {
       : null;
   }, []);
 
+  // console.log("TRIGGER", trigger)
+
   // whole map is a button - giving that button onkeyppress listener called wrap
   return (
     <>
@@ -695,8 +555,10 @@ function App(props) {
       <div className="containerApp">
         {browserWarning === true ? (
           <h1
-            style={{ fontSize: '30px', color: 'white' }}
-          >{`This browser is incompatible with this game. Please use Google Chrome or Safari`}</h1>
+            style={{
+              fontSize: '30px',
+              color: 'white'
+            }}>{`This browser is incompatible with this game. Please use Google Chrome or Safari`}</h1>
         ) : (
           <div style={{ filter: `saturate(${saturate}%)` }}>
             <div style={{ filter: `contrast(${contrast}%)` }}>
@@ -709,9 +571,8 @@ function App(props) {
                         top: '4rem',
                         left: '2rem',
                         color: 'white',
-                        zIndex: '999',
-                      }}
-                    >
+                        zIndex: '999'
+                      }}>
                       Frame Rate =
                     </span>
 
@@ -722,18 +583,16 @@ function App(props) {
                         top: '4rem',
                         left: '8.5rem',
                         color: 'white',
-                        zIndex: '999',
-                      }}
-                    ></span>
+                        zIndex: '999'
+                      }}></span>
                     <span
                       style={{
                         position: 'absolute',
                         top: '4rem',
                         left: '19.8rem',
                         color: 'white',
-                        zIndex: '999',
-                      }}
-                    >
+                        zIndex: '999'
+                      }}>
                       {getResolution()}
                     </span>
                     <span
@@ -743,9 +602,8 @@ function App(props) {
                         left: '34.5rem',
                         fontSize: '16px',
                         color: 'white',
-                        zIndex: '999',
-                      }}
-                    >
+                        zIndex: '999'
+                      }}>
                       {browserName} Version: {browserVersion}
                     </span>
                     <span
@@ -755,9 +613,8 @@ function App(props) {
                         left: '45rem',
                         fontSize: '16px',
                         color: 'white',
-                        zIndex: '999',
-                      }}
-                    >
+                        zIndex: '999'
+                      }}>
                       OS:
                       {platform}
                     </span>
@@ -778,11 +635,7 @@ function App(props) {
                 {menuClockToggle === true ? (
                   <>
                     <div className="clock">
-                      <Clock
-                        format="h:mm:ssa"
-                        style={{ fontSize: '1.5em' }}
-                        ticking
-                      />
+                      <Clock format="h:mm:ssa" style={{ fontSize: '1.5em' }} ticking />
                     </div>
 
                     <div className="clockTime">
@@ -792,52 +645,19 @@ function App(props) {
                 ) : null}
 
                 {menu2Toggle === true ? (
-                  <div className="box1">
-                    <text className="pokeText" style={{ marginLeft: '90px' }}>
-                      FLOWERS
-                    </text>
-                    c
-                  </div>
+                  <button className="saveGameButton" onClick={handleClickTrigger}>
+                    SET TRIGGER
+                  </button>
                 ) : null}
 
                 {menu2Toggle === true ? (
-                  <div className="box2">
-                    <text className="pokeText" style={{ marginLeft: '105px' }}>
-                      ITEMS
-                    </text>
-                  </div>
+                  <button className="triggerButton" onClick={handleClickSave}>
+                    SAVE GAME
+                  </button>
                 ) : null}
 
-                {menu2Toggle === true ? (
-                  <div className="box3">
-                    <text className="pokeText" style={{ marginLeft: '82px' }}>
-                      EQUIPMENT
-                    </text>
-                  </div>
-                ) : null}
-
-                {menu1Toggle === true ? (
-                  <div className="box4">
-                    <text className="pokeText" style={{ marginLeft: '125px' }}>
-                      MAP
-                    </text>
-                  </div>
-                ) : null}
-
-                {menu1Toggle === true ? (
-                  <div className="box5">
-                    <text className="pokeText" style={{ marginLeft: '585px' }}>
-                      CONTROLS
-                    </text>
-                  </div>
-                ) : null}
-
-                {menu1Toggle === true ? (
-                  <div className="box6">
-                    <text className="pokeText" style={{ marginLeft: '585px' }}>
-                      MENU
-                    </text>
-                  </div>
+                {saveMessage === true ? (
+                <h1 className = "successMessage">YOUR GAME WAS SUCCESSFULLY SAVED!</h1>
                 ) : null}
               </div>
             </div>

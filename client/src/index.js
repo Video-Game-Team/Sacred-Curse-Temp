@@ -8,6 +8,8 @@ import Login from './pages/Login.jsx';
 import Signup from './pages/Signup.jsx';
 import NoPage from './pages/NoPage.jsx';
 import PageRedirect from './pages/pageRedirect.jsx';
+import { disableReactDevTools } from '@fvilers/disable-react-devtools';
+import { Auth0Provider } from '@auth0/auth0-react';
 import App from './App';
 
 import './index.css';
@@ -15,8 +17,11 @@ import './index.css';
 
 function Index(props) {
   const { loginRedirect, setLoginRedirect } = PageRedirect();
-  // console.log('LOOK AT ME INDEX.JS', loginRedirect);
 
+// Disable React Dev Tools
+  if (process.env.NODE_ENV === 'production') {
+    disableReactDevTools();
+  }
 
   function refresh() {
     window.location.reload(false);
@@ -27,28 +32,22 @@ function Index(props) {
   }
 
   return (
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Login />} />
-          {/* <Route path="/login" element={<Navigate replace to="/game" />} /> */}
-          <Route
-            path="/login"
-            element={
-              loginRedirect === true ? (
-                <Navigate replace to="/game" />
-              ) : (
-                <Login />
-              )
-            }
-          />
-          {/* <Route path="/login" element={<Login />} /> */}
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/game" element={<App />} />
-          <Route path="*" element={<NoPage />} />
-        </Route>
-      </Routes>
-    </HashRouter>
+    <Auth0Provider
+      domain="dev-mvc8sgjt.us.auth0.com"
+      clientId = "nJ5yDrF0aizFClKKz3uFFI93A8zu02QQ"
+      redirectUri={window.location.origin}
+      >
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Login />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/game" element={<App />} />
+            <Route path="*" element={<App />} />
+          </Route>
+        </Routes>
+      </HashRouter>
+    </Auth0Provider>
   );
 }
 
@@ -56,10 +55,10 @@ const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
 root.render(
-  <StrictMode>
     <Index />
-  </StrictMode>
 );
 
 
 export default Index;
+
+

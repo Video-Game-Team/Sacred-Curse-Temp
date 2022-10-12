@@ -14,8 +14,17 @@ const salt = bcrypt.genSaltSync(10)
 // example =>  $2a$10$CwTycUXWue0Thq9StjUM0u => to be added always to the password hash
 
 
-function Signup() {
+function Signup(props) {
   const navigate = useNavigate();
+
+
+
+    const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
+
+
+   if (isAuthenticated) {
+     console.log('User Email:', user.email, "User Sub:", user.sub);
+    }
 
   // States for registration
   const [name, setName] = useState('');
@@ -103,9 +112,9 @@ function Signup() {
   // POST Request for SaveState
   const updateState = () => {
     axios
-      // .post('http://localhost:3001/state/new', {
+      .post('http://localhost:3001/state/new', {
         // .post('https://thesacredcurse.herokuapp.com/state/new', {
-        .post('https://www.sacredcurse.com/state/new', {
+        // .post('https://www.sacredcurse.com/state/new', {
         name: name,
         email: email,
         password: hashedPassword,

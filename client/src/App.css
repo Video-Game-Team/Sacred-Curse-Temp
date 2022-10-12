@@ -9,6 +9,7 @@ body {
   height: 100%;
 }
 
+
 body {
   position: relative;
   background: var(--bg);
@@ -27,6 +28,63 @@ body {
   max-height: 100%;
   /* flex-basis: 100%; */
   /* overflow: hidden;  */
+}
+
+.saveGameButton {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  position: absolute;
+  background-color: #000dff;
+  border: none;
+  color: white;
+  padding: .5em .5em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: calc(1rem + .01vw);
+   z-index: 999;
+  top: 3rem;
+  left: 3rem;
+  font-family: Pokemon-Classic;
+}
+
+.triggerButton {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  position: absolute;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: .5em .5em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: calc(1rem + .01vw);
+  z-index: 999;
+  top: 3rem;
+  left: 16rem;
+  font-family: Pokemon-Classic;
+}
+
+.successMessage {
+  display: flex;
+    align-self: center;
+    justify-content: center;
+    position: absolute;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: .5em .5em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: calc(1rem + .7vw);
+    z-index: 999;
+    top: 20rem;
+    left: 10rem;
+    font-family: Pokemon-Classic;
 }
 
 .pixel-art {
@@ -147,8 +205,6 @@ p {
   font-weight: bold;
   font-size: 0.688rem;
 }
-
-
 
 /* .typewriter p {
   overflow: hidden;

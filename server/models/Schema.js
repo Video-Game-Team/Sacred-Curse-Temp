@@ -31,6 +31,10 @@ const StateSchema = new Schema({
     type: String,
     default: '',
   },
+  subID: {
+    type: String,
+    default: '',
+  },
   password: {
     type: String,
   },
