@@ -62,6 +62,7 @@ const DOMPurify = createDOMPurify(window);
 const parse = require('html-react-parser');
 const URL = require('url-parse');
 
+
 import './App.css';
 
 function App(props) {
@@ -127,11 +128,12 @@ function App(props) {
     setTrigger2(!trigger2);
   };
 
+
   //GET Request for Fetching and Updating Users Game Records
   useEffect(() => {
     if (trigger === true) {
       axios
-        .get('http://localhost:3001/state')
+        .get(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`)
         .then((res) => {
           console.log('Res;', res.data);
           setTempName(res.data[0].name);
@@ -148,7 +150,7 @@ function App(props) {
           setTimeStamp(res.data[0].timeStamp);
           setSaveState(res.data);
           // setCurrent(res.data[0].currentMap);
-          console.log("FETCH USERS RECORD COMPLETED!")
+          console.log('FETCH USERS RECORD COMPLETED!');
         })
         .catch((err) => console.log(err));
     }
@@ -158,7 +160,7 @@ function App(props) {
   useEffect(() => {
      if (trigger2 === true) {
     const putState = async (id) => {
-      const data = await fetch(`http://localhost:3001/state/update/${id}`, {
+      const data = await fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -188,7 +190,7 @@ function App(props) {
 
   // DELETE Request for SaveState
   const deleteState = async (id) => {
-    const data = await fetch(`http://localhost:3001/state/delete/${id}`, {
+    const data = await fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/delete/${id}`, {
       method: 'DELETE'
     }).then((res) => res.json());
   };

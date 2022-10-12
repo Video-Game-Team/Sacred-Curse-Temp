@@ -351,7 +351,7 @@ function Login(props) {
  useEffect(() => { 
    if (isAuthenticated === true) {
     axios
-      .get('http://localhost:3001/state', {})
+      .get(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {})
       .then((res) => {
         setSaveState(res.data);
         setCheckEmail(res.data[0].email);
@@ -365,7 +365,7 @@ function Login(props) {
       console.log('USER MATCHES');
     } else {
       axios
-        .post('http://localhost:3001/state/new', {
+        .post(`${process.env.APPJS_GET_REQUEST_ENDPOINT}state/new`, {
           name: name,
           email: user.email,
           password: password,

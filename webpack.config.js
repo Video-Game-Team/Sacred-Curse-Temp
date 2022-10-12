@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: ['@babel/polyfill', './client/src/index.js'],
@@ -67,7 +68,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './client/public/index.html'
     }),
-    new NodePolyfillPlugin()
+    new NodePolyfillPlugin(),
+    new Dotenv()
   ],
   resolve: {
     // Enable importing JS / JSX files without specifying their extension
