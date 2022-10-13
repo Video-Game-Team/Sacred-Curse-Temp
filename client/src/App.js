@@ -100,12 +100,14 @@ function App(props) {
     DemonObjects.Naruto
   ]);
 
-  // This is where you want to change maps manually below here
+  
   const [current, setCurrent] = useState(tempCurrentMap);
   const [tempCurrent, setTempCurrent] = useState(null);
   const [previous, setPrevious] = useState(null);
   const [textValue, setTextValue] = useState(null);
   const [menu, setMenu] = useState(false);
+
+  console.log("CURRENT MAP", current)
 
   const [saturate, setSaturate] = useState(120);
   const [contrast, setContrast] = useState(120);
@@ -169,7 +171,7 @@ function App(props) {
             userName: tempUserName,
             subID: tempSubID,
             password: tempPassword,
-            currentMap: tempCurrentMap,
+            currentMap: current,
             flowers: tempFlowers,
             quest1: tempQuest1,
             quest2: tempQuest2,
