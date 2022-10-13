@@ -162,22 +162,6 @@ html {
     font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif; 
 }
 
-.loadGame {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 999;
-    font-size: calc(1rem + .4vw);
-    top: 21rem;
-    left: 33.5rem;
-    padding: .5em .5em;
-    background-color: black;
-    color: rgb(141, 137, 137);
-    font-family: Pokemon-Classic;
-}
-
-
 .darkSkyPic {
     background-image: url('https://cdn.glitch.com/4f83b17b-3d9a-4782-bfb9-3298fce7ff84%2Fstormynight.jpg?1516228334292');
     opacity: .8;

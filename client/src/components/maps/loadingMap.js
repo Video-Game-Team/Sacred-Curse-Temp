@@ -6,17 +6,18 @@ import DownWalker from '../../assets/images/downWalker.png';
 import EmptyCanvas from '../../assets/images/newone.png';
 import BackgroundImage1 from '../../assets/maps/map40x40wgrid.png';
 import PlayerSpriteSheet from '../../assets/images/AjFP5.png';
+import LoadingScreen from '../../assets/maps/LoadingScreen.png';
 
 import click1 from '../../audioclips/click1.mp3';
 import text from '../../audioclips/Text.mp3';
 import SnowMan from '../../audioclips/Snowman.mp3';
 
-import '../../FarmMap.css';
+import '../../App.css';
 
 
 
 
-const FarmMap = (props) => {
+const LoadingMap = (props) => {
   //this sets the x Cordinate to transform the map and character location
   const [xTransformVar, setXTransformVar] = useState(-1240);
   //this sets the y Cordinate to transform the map and character location
@@ -1093,4 +1094,4 @@ const FarmMap = (props) => {
   );
 };
 
-export default FarmMap;
+export default LoadingMap;

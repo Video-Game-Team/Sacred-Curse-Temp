@@ -30,6 +30,21 @@ body {
   /* overflow: hidden;  */
 }
 
+.loadGame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 999;
+  font-size: calc(1rem + .4vw);
+  top: 21rem;
+  left: 25.5rem;
+  padding: .5em .5em;
+  background-color: black;
+  color: rgb(141, 137, 137);
+  font-family: Pokemon-Classic;
+}
+
 .saveGameButton {
   display: flex;
   align-self: center;
@@ -82,13 +97,24 @@ body {
     display: inline-block;
     font-size: calc(1rem + .7vw);
     z-index: 999;
-    top: 20rem;
+    top: 40rem;
     left: 10rem;
     font-family: Pokemon-Classic;
 }
 
 .pixel-art {
   image-rendering: pixelated;
+}
+
+.loadingScreen {
+  image-rendering: pixelated;
+  background-image: url("./assets/maps/LoadingScreen.png");
+  background-size: 3840px;
+  width: calc(150 * var(--grid-cell));
+  height: calc(150 * var(--grid-cell));
+  position: absolute;
+  background-repeat: no-repeat;
+  overflow: visible;
 }
 
 .camera {

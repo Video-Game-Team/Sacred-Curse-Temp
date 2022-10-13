@@ -347,7 +347,7 @@ const enter = () => {
 
       {isAuthenticated ? (
         <button className="loadGame" onClick={enter}>
-          ENTER
+          ENTER SACRED CURSE
         </button>
       ) : (
         <button className="loginSignupButton" onClick={() => loginWithRedirect()}>

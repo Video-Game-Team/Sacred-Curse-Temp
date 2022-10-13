@@ -49,6 +49,7 @@ import TortousFork from './components/maps/tortousFork.js';
 import Tortous from './components/maps/tortous.js';
 import CrystalCaverns from './components/maps/crystalCaverns.js';
 import CrystalCavernsRight from './components/maps/crystalCavernsRight.js';
+import LoadingMap from './components/maps/loadingMap.js';
 import Login from './pages/Login.jsx';
 
 import DemoMap from './battleMaps/demoMap.jsx';
@@ -75,7 +76,7 @@ function App(props) {
   const [tempUserName, setTempUserName] = useState('');
   const [tempSubID, setTempSubID] = useState('');
   const [tempPassword, setTempPassword] = useState('');
-  const [tempCurrentMap, setTempCurrentMap] = useState('indoorHouse10');
+  const [tempCurrentMap, setTempCurrentMap] = useState('loadingMap');
   const [tempFlowers, setTempFlowers] = useState(0);
   const [tempQuest1, setTempQuest1] = useState('false');
   const [tempQuest2, setTempQuest2] = useState('false');
@@ -88,6 +89,7 @@ function App(props) {
   const [menu2Toggle, setMenu2Toggle] = useState(false);
   const [menuClockToggle, setMenuClockToggle] = useState(false);
   const [framerateToggle, setFramerateToggle] = useState(false);
+  const [loadGameToggle, setLoadGameToggle] = useState(true);
 
   // Logic for checking Browser type
   const [browserWarning, setBrowserWarning] = useState(false);
@@ -131,69 +133,75 @@ function App(props) {
     setSaveMessage(true);
     setTimeout(() => {
       setSaveMessage(false);
+      setTrigger2(false);
+      setMenu2Toggle(false);
       console.log('message off');
-    }, 7000);
+      console.log('SAVE MESSAGE', saveMessage);
+    }, 4000);
   };
 
-  console.log('NAME BEFORE', tempName);
-  console.log('Email BEFORE', tempEmail);
-  console.log('Username BEFORE', tempUserName);
-  console.log('SubID BEFORE', tempSubID);
-   console.log('Current Map BEFORE', tempCurrentMap);
+  console.log('SAVE MESSAGE', saveMessage);
+
+  // console.log('NAME BEFORE', tempName);
+  // console.log('Email BEFORE', tempEmail);
+  // console.log('Username BEFORE', tempUserName);
+  // console.log('SubID BEFORE', tempSubID);
+  console.log('Current Map BEFORE', tempCurrentMap);
 
   //GET Request for Fetching and Updating Users Game Records
   useEffect(() => {
     //  console.log('SUBUID', props.subIDAuth);
-    if (execute === true) {
+  
       axios
         .get(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`)
         .then((res) => {
-         
-            console.log('Res YOU MADE IT;', res.data);
-            setTempMongoID(res.data[0]._id);
-            setTempName(res.data[0].name);
-            setTempEmail(res.data[0].email);
-            setTempUserName(res.data[0].userName);
-            setTempSubID(res.data[0].subID);
-            setTempPassword(res.data[0].password);
-            setTempCurrentMap(res.data[0].currentMap);
-            setTempFlowers(res.data[0].flowers);
-            setTempQuest1(res.data[0].quest1);
-            setTempQuest2(res.data[0].quest2);
-            setTempQuest3(res.data[0].quest3);
-            setTempQuest(res.data[0].quest4);
-            setTimeStamp(res.data[0].timeStamp);
-            setSaveState(res.data.data);
-            setCurrent(res.data[0].currentMap);
-            // console.log('_ID AFTER GET', res.data[0]._id);
-            // console.log('NAME AFTER GET', res.data[0].name);
-            // console.log('EMAIL AFTER GET', res.data[0].email);
-            // console.log('USERNAME AFTER GET', res.data[0].userName);
-            // console.log('SUBID AFTER GET', res.data[0].subID);
-            //  console.log('PASSWORD', result[0].password);
-            //  console.log('CURRENTMAP', result[0].currentMap);
-            //  console.log('FLOWERS', result[0].flowers);
-            //  console.log('QUEST1', result[0].quest1);
-            //  console.log('QUEST2', result[0].quest2);
-            //  console.log('QUEST3', result[0].quest3);
-            //  console.log('QUEST4', result[0].quest4);
-            //  console.log('TIMESTAMP', result[0].timeStamp);
-            setExecute(false)
-            console.log('FETCH USERS RECORD COMPLETED!');
-          
+          console.log('Res YOU MADE IT;', res.data);
+          setTempMongoID(res.data[0]._id);
+          setTempName(res.data[0].name);
+          setTempEmail(res.data[0].email);
+          setTempUserName(res.data[0].userName);
+          setTempSubID(res.data[0].subID);
+          setTempPassword(res.data[0].password);
+          setTempCurrentMap(res.data[0].setTempCurrentMap);
+          setTempFlowers(res.data[0].flowers);
+          setTempQuest1(res.data[0].quest1);
+          setTempQuest2(res.data[0].quest2);
+          setTempQuest3(res.data[0].quest3);
+          setTempQuest(res.data[0].quest4);
+          setTimeStamp(res.data[0].timeStamp);
+          setSaveState(res.data);
+          setCurrent(res.data[0].currentMap);
+          // console.log('_ID AFTER GET', res.data[0]._id);
+          // console.log('NAME AFTER GET', res.data[0].name);
+          // console.log('EMAIL AFTER GET', res.data[0].email);
+          // console.log('USERNAME AFTER GET', res.data[0].userName);
+          // console.log('SUBID AFTER GET', res.data[0].subID);
+          //  console.log('PASSWORD', result[0].password);
+          //  console.log('CURRENTMAP', result[0].currentMap);
+          //  console.log('FLOWERS', result[0].flowers);
+          //  console.log('QUEST1', result[0].quest1);
+          //  console.log('QUEST2', result[0].quest2);
+          //  console.log('QUEST3', result[0].quest3);
+          //  console.log('QUEST4', result[0].quest4);
+          //  console.log('TIMESTAMP', result[0].timeStamp);
+        
+          console.log('FETCH USERS RECORD COMPLETED!');
         })
         .catch((err) => console.log(err));
-    }
+    
   }, [execute]);
 
-  console.log('NAME AFTER', tempName);
-  console.log('Email AFTER', tempEmail);
-  console.log('Username AFTER', tempUserName);
-  console.log('SubID AFTER', tempSubID);
-   console.log('Current Map AFTER', tempCurrentMap);
+  // console.log('NAME AFTER', tempName);
+  // console.log('Email AFTER', tempEmail);
+  // console.log('Username AFTER', tempUserName);
+  // console.log('SubID AFTER', tempSubID);
+  console.log('Current Map AFTER', tempCurrentMap);
+  console.log('EXECUTE', execute);
+  console.log('QUEST1 AFTER', tempQuest1);
+  console.log('QUEST2 AFTER', tempQuest2);
+  console.log('QUEST3 AFTER', tempQuest3);
+  console.log('QUEST4 AFTER', tempQuest4);
 
-
-  
   // PUT Request for SaveState
   useEffect(() => {
     if (trigger2 === true) {
@@ -218,20 +226,16 @@ function App(props) {
             timeStamp: timeStamp
           })
         }).then((res) => res.json());
-         setTrigger2(false)
-         console.log('SAVE GAME RECORD UPDATED');
-        setSaveMessage(!saveMessage);
-       
-       
+         setExecute(false);
+        console.log('SAVE GAME RECORD UPDATED');
       };
       putState(tempMongoID);
     }
   }, [trigger2]);
 
-  console.log("TRIGGER2", trigger2)
+  console.log('TRIGGER2', trigger2);
+  console.log('MAP TRACKER', current);
 
-
-   console.log('MAP TRACKER', current);
   // DELETE Request for SaveState
   const deleteState = async (id) => {
     const data = await fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/delete/${id}`, {
@@ -441,6 +445,7 @@ function App(props) {
         previousMap={previous}
       />
     ),
+    loadingMap: <LoadingMap />,
     demoMap: <DemoMap demonList={demonTeam} />
   };
 
@@ -595,12 +600,13 @@ function App(props) {
       : null;
   }, []);
 
-  // Handleclick for ENTER
-  const loadGame = () => {
-    setExecute(!execute);
-  };
-  
-  console.log("EXECUTE", execute)
+  //Handleclick for LOAD GAME
+  // const loadGame = () => {
+  //   setExecute(true);
+  //   setTimeout(() => {
+  //      setExecute(false);
+  //   }, 1000)
+  // };
 
   //Return logic
   return (
@@ -616,14 +622,9 @@ function App(props) {
         ) : (
           <div style={{ filter: `saturate(${saturate}%)` }}>
             <div style={{ filter: `contrast(${contrast}%)` }}>
-
-
-
-              <button className="loadGame" onClick={loadGame}>
-                LOAD GAME
-              </button>
-
-
+              {/* <button className="loadGame" onClick={loadGame}>
+                LOAD YOUR SAVED GAME
+              </button> */}
 
               {framerateToggle === true ? (
                 <>
