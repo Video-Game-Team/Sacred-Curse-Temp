@@ -57,21 +57,18 @@ import DemonObjects from './demonObjects.js';
 import Datetime from './components/maps/datetime.js';
 import Clock from 'react-live-clock';
 import { browserName, browserVersion } from 'react-device-detect';
+import './App.css';
 const createDOMPurify = require('dompurify');
 const DOMPurify = createDOMPurify(window);
 const parse = require('html-react-parser');
 const URL = require('url-parse');
 
 
-import './App.css';
 
+//Main function
 function App(props) {
   const [itemObj, setItemObj] = useState({});
 
-  console.log('DOWNER', props.downer);
-
-  const butt = props.downer;
-  console.log('BUTT', butt);
 
   // Temp state for User save game
   const [tempName, setTempName] = useState('');
@@ -91,6 +88,7 @@ function App(props) {
   const [menu2Toggle, setMenu2Toggle] = useState(false);
   const [menuClockToggle, setMenuClockToggle] = useState(false);
   const [framerateToggle, setFramerateToggle] = useState(false);
+
   // Logic for checking Browser type
   const [browserWarning, setBrowserWarning] = useState(false);
 
@@ -126,14 +124,10 @@ function App(props) {
   const [saveMessage, setSaveMessage] = useState(false);
 
   // Handle Click Function For temp activating Get Request
-  const handleClickTrigger = (e) => {
-    setTrigger(!trigger);
-  };
-
-  // Handle Click Function For temp activating Get Request
   const handleClickSave = (e) => {
     setTrigger2(!trigger2);
   };
+
 
   //GET Request for Fetching and Updating Users Game Records
   useEffect(() => {
@@ -159,8 +153,6 @@ function App(props) {
       })
       .catch((err) => console.log(err));
   }, []);
-
-  console.log('CURRENT MAP', tempCurrentMap);
 
   // PUT Request for SaveState
   useEffect(() => {
@@ -192,6 +184,7 @@ function App(props) {
       putState('63464fa990ac97f43d9a0cdc');
     }
   }, [trigger2]);
+
 
   // DELETE Request for SaveState
   const deleteState = async (id) => {
@@ -437,8 +430,6 @@ function App(props) {
     };
   }
 
-  // console.log('WINDOW INNER HEIGHT', window.innerHeight);
-
   //Checking for window inner height
   function useWindowDimensions() {
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
@@ -453,12 +444,11 @@ function App(props) {
   }
   // console.log('WINDOW INNER HEIGHT', window.innerHeight);
 
+
   //Check screens resolution
   function getResolution() {
     return 'Screen resolution: ' + screen.width + 'x' + screen.height;
   }
-
-  // console.log('RESOLUTION', getResolution());
 
   // //MATT MENU
   // useEffect(() => {
@@ -491,7 +481,7 @@ function App(props) {
   }
 
   /////////////////////////////////////////////////////////////////
-  //MATT STATE PASSING FUNCTION
+  //MATT STATE PASSING FUNCTION for subID Auth
   function loginPass(subIDAuth) {
     setMattState(subIDAuth);
   }
@@ -550,6 +540,7 @@ function App(props) {
 
   // console.log("BROWSER", `${browserName} ${browserVersion}`);
 
+  //UseEffect for blocking certain browsers
   useEffect(() => {
     browserName !== 'Chrome' &&
     browserName !== 'Safari' &&
@@ -559,12 +550,8 @@ function App(props) {
       : null;
   }, []);
 
-  // console.log("TRIGGER", trigger)
 
-  // const [word, setWord] = useState("Parent")
-  // console.log(< Login changeWord={word => setWord(word)}/>)
-
-  // whole map is a button - giving that button onkeyppress listener called wrap
+ //Return logic
   return (
     <>
       {/* <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(data) }}></div> */}
@@ -661,9 +648,7 @@ function App(props) {
                 ) : null}
 
                 {menu2Toggle === true ? (
-                  <button className="saveGameButton" onClick={handleClickTrigger}>
-                    SET TRIGGER
-                  </button>
+                  <></>
                 ) : null}
 
                 {menu2Toggle === true ? (
