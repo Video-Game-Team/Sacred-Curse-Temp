@@ -303,7 +303,7 @@ function Login(props) {
     } 
     else {
       axios
-        .post(`${process.env.APPJS_GET_REQUEST_ENDPOINT}state/new`, {
+        .post(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new`, {
           name: name,
           email: user.email,
           password: password,
@@ -318,6 +318,7 @@ function Login(props) {
           timeStamp: ''
         })
         .then((res) => {
+          console.log('NEW USER RECORD')
           console.log(res);
         })
         .catch((err) => console.log(err));

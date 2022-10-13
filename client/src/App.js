@@ -69,7 +69,6 @@ const URL = require('url-parse');
 function App(props) {
   const [itemObj, setItemObj] = useState({});
 
-
   // Temp state for User save game
   const [tempName, setTempName] = useState('');
   const [tempEmail, setTempEmail] = useState('');
@@ -101,6 +100,7 @@ function App(props) {
     DemonObjects.Naruto
   ]);
 
+  // This is where you want to change maps manually below here
   const [current, setCurrent] = useState(tempCurrentMap);
   const [tempCurrent, setTempCurrent] = useState(null);
   const [previous, setPrevious] = useState(null);
@@ -126,8 +126,8 @@ function App(props) {
   // Handle Click Function For temp activating Get Request
   const handleClickSave = (e) => {
     setTrigger2(!trigger2);
+    setSaveMessage(!saveMessage);
   };
-
 
   //GET Request for Fetching and Updating Users Game Records
   useEffect(() => {
@@ -181,10 +181,9 @@ function App(props) {
         setSaveMessage(!saveMessage);
         console.log('SAVE GAME RECORD UPDATED');
       };
-      putState('63464fa990ac97f43d9a0cdc');
+      putState('634777d345a31a087aa6e9c0');
     }
   }, [trigger2]);
-
 
   // DELETE Request for SaveState
   const deleteState = async (id) => {
@@ -444,7 +443,6 @@ function App(props) {
   }
   // console.log('WINDOW INNER HEIGHT', window.innerHeight);
 
-
   //Check screens resolution
   function getResolution() {
     return 'Screen resolution: ' + screen.width + 'x' + screen.height;
@@ -550,8 +548,7 @@ function App(props) {
       : null;
   }, []);
 
-
- //Return logic
+  //Return logic
   return (
     <>
       {/* <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(data) }}></div> */}
@@ -647,9 +644,7 @@ function App(props) {
                   </>
                 ) : null}
 
-                {menu2Toggle === true ? (
-                  <></>
-                ) : null}
+                {menu2Toggle === true ? <></> : null}
 
                 {menu2Toggle === true ? (
                   <button className="triggerButton" onClick={handleClickSave}>
