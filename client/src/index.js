@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
@@ -16,21 +16,33 @@ import './index.css';
 
 
 function Index(props) {
+
+  //State
   const { loginRedirect, setLoginRedirect } = PageRedirect();
+  const [downPass, setDownPass]= useState("original")
+
 
 // Disable React Dev Tools
   if (process.env.NODE_ENV === 'production') {
     disableReactDevTools();
   }
 
+// Matt function in Index.js
+  function loginPass(SubIDAuth){
+    setDownPass(SubIDAuth);
+      }
+
+  // Page refresh logic    
   function refresh() {
     window.location.reload(false);
   } 
 
+  // Auth0 logic
   if (loginRedirect === true) {
     return <Navigate replace to="/game" />;
   }
 
+  // Retrun logic
   return (
     <Auth0Provider
       domain="dev-mvc8sgjt.us.auth0.com"
@@ -40,10 +52,10 @@ function Index(props) {
       <HashRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Login />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/game" element={<App />} />
-            <Route path="*" element={<App />} />
+            <Route index element={<Login passer={loginPass}/>} />
+            <Route path="/login" element={<Login passer={loginPass} />} />
+            <Route path="/game" element={<App downer={downPass}/>} />
+            <Route path="*" element={<App downer={downPass}/>} />
           </Route>
         </Routes>
       </HashRouter>
@@ -57,7 +69,6 @@ const root = createRoot(rootElement);
 root.render(
     <Index />
 );
-
 
 export default Index;
 

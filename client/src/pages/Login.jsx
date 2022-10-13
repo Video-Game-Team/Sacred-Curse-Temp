@@ -234,23 +234,27 @@
 
 
 
+
+
+
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import axios from 'axios';
 import { browserName, browserVersion } from 'react-device-detect';
 import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import { useAuth0 } from '@auth0/auth0-react';
 import '../loginPage.css';
 const createDOMPurify = require('dompurify');
 const DOMPurify = createDOMPurify(window);
 const parse = require('html-react-parser');
 const basicAuth = require('express-basic-auth');
-import jwt from 'jsonwebtoken';
-import { useAuth0 } from '@auth0/auth0-react';
 
 
+//Main function
 function Login(props) {
-  const [errorMessages, setErrorMessages] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  //State
   const [saveState, setSaveState] = useState([]);
   const [checkEmail, setCheckEmail] = useState('');
   const [checkSubID, setCheckSubID] = useState('');
@@ -262,78 +266,11 @@ function Login(props) {
   const [subID, setSubID] = useState('');
 
   const [tempSubID, setTumpSubID] = useState('')
-
-  const [execute, setExecute] = useState(false);
+  const [browserWarning, setBrowserWarning] = useState(false);
 
   const navigate = useNavigate();
 
-  //Get request
-  // const GetSaveState = () => {
-  //   axios
-  //     .get('http://localhost:3001/state', {
-  //       //  .get('https://thesacredcurse.herokuapp.com/state', {
-  //       //  .get('https://www.sacredcurse.com/state', {
-  //     })
-  //     .then((res) => {
-  //       setSaveState(res.data);
-  //       setCheckEmail(res.data[0].email);
-  //       setCheckSubID(res.data[0].subID);
-  //       console.log('STATE', res.data);
-  //       // console.log('HASHED PASSWORD', hashedPassword);
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
-
-  // useEffect(() => {
-  //   GetSaveState();
-  // }, []);
-
-
-  // User Login info
-  const database = [
-    {
-      email: checkEmail,
-      subID: checkSubID
-    }
-  ];
-
-  const errors = {
-    email: 'invalid email',
-    subID: 'invalid SubID'
-  };
-
-  const handleSubmit = (event) => {
-    //Prevent page reload
-    event.preventDefault();
-    var { uname, pass } = document.forms[0];
-    // Find user login info
-    const userData = database.find((user) => user.username === uname.value);
-
-    // Compare user info
-    if (userData) {
-      if (userData.password !== pass.value) {
-        // Invalid password
-        setErrorMessages({ name: 'pass', message: errors.pass });
-      } else {
-        setIsSubmitted(true);
-        // // Redirect to a certain page
-        // window.location.href = '/state';
-        setTimeout(() => {
-          navigate('/game');
-        }, 3000);
-      }
-    } else {
-      // Username not found
-      setErrorMessages({ email: 'uname', message: errors.email });
-    }
-  };
-
-  // Generate JSX code for error message
-  const renderErrorMessage = (name) =>
-    name === errorMessages.name && <div className="error">{errorMessages.message}</div>;
-
   // Logic for checking Browser type
-  const [browserWarning, setBrowserWarning] = useState(false);
   useEffect(() => {
     browserName !== 'Chrome' &&
     browserName !== 'Safari' &&
@@ -343,14 +280,15 @@ function Login(props) {
       : null;
   }, []);
 
+
+  //Auth 0 logic
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
+  
 
- 
-
-     // POST Request for SaveState
- useEffect(() => { 
-   if (isAuthenticated === true) {
-    axios
+  // GET Request for Checking to see if user exists or if we need to create a new database record for them
+    useEffect(() => { 
+     if (isAuthenticated === true) {
+     axios
       .get(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {})
       .then((res) => {
         setSaveState(res.data);
@@ -360,10 +298,10 @@ function Login(props) {
       })
       .catch((err) => console.log(err));
 
-  
     if (checkSubID === tempSubID) {
       console.log('USER MATCHES');
-    } else {
+    } 
+    else {
       axios
         .post(`${process.env.APPJS_GET_REQUEST_ENDPOINT}state/new`, {
           name: name,
@@ -383,18 +321,31 @@ function Login(props) {
           console.log(res);
         })
         .catch((err) => console.log(err));
-    };
+      };
+      }
+    },[isAuthenticated])
+
+
+  //Matt useeffect for passing props
+  useEffect(() => {
+    props.passer(tempSubID);
+  }, [tempSubID]);  
+
+
+// Handleclick for Load Game
+const loadGame = () => {
+  setTimeout(() => {
+    navigate('/game');
+  }, 1000)
 }
-  },[isAuthenticated])
 
-  console.log('CHECK SUB', checkSubID, tempSubID);
-
+// Return statement
   return (
     <>
       {/* <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(data) }}></div> */}
 
       {isAuthenticated ? (
-        <button className="loadGame" onClick={() => logout()}>
+        <button className="loadGame" onClick={loadGame}>
           LOAD GAME
         </button>
       ) : (

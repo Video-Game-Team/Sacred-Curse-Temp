@@ -68,6 +68,25 @@ import './App.css';
 function App(props) {
   const [itemObj, setItemObj] = useState({});
 
+  console.log('DOWNER', props.downer);
+
+  const butt = props.downer;
+  console.log('BUTT', butt);
+
+  // Temp state for User save game
+  const [tempName, setTempName] = useState('');
+  const [tempEmail, setTempEmail] = useState('');
+  const [tempUserName, setTempUserName] = useState('');
+  const [tempSubID, setTempSubID] = useState('');
+  const [tempPassword, setTempPassword] = useState('');
+  const [tempCurrentMap, setTempCurrentMap] = useState('indoorHouse10');
+  const [tempFlowers, setTempFlowers] = useState(0);
+  const [tempQuest1, setTempQuest1] = useState('false');
+  const [tempQuest2, setTempQuest2] = useState('false');
+  const [tempQuest3, setTempQuest3] = useState('false');
+  const [tempQuest4, setTempQuest] = useState('false');
+  const [timeStamp, setTimeStamp] = useState('');
+
   const [menu1Toggle, setMenu1Toggle] = useState(false);
   const [menu2Toggle, setMenu2Toggle] = useState(false);
   const [menuClockToggle, setMenuClockToggle] = useState(false);
@@ -84,7 +103,7 @@ function App(props) {
     DemonObjects.Naruto
   ]);
 
-  const [current, setCurrent] = useState('farmMap');
+  const [current, setCurrent] = useState(tempCurrentMap);
   const [tempCurrent, setTempCurrent] = useState(null);
   const [previous, setPrevious] = useState(null);
   const [textValue, setTextValue] = useState(null);
@@ -100,19 +119,7 @@ function App(props) {
   const [saveState, setSaveState] = useState([]);
   const [passwordState, setPasswordState] = useState('');
 
-  // Temp state for User save game
-  const [tempName, setTempName] = useState('');
-  const [tempEmail, setTempEmail] = useState('');
-  const [tempUserName, setTempUserName] = useState('');
-  const [tempSubID, setTempSubID] = useState('');
-  const [tempPassword, setTempPassword] = useState('');
-  const [tempCurrentMap, setTempCurrentMap] = useState('indoorHouse10');
-  const [tempFlowers, setTempFlowers] = useState(0);
-  const [tempQuest1, setTempQuest1] = useState('false');
-  const [tempQuest2, setTempQuest2] = useState('false');
-  const [tempQuest3, setTempQuest3] = useState('false');
-  const [tempQuest4, setTempQuest] = useState('false');
-  const [timeStamp, setTimeStamp] = useState('');
+  const [mattState, setMattState] = useState();
 
   const [trigger, setTrigger] = useState(false);
   const [trigger2, setTrigger2] = useState(false);
@@ -128,65 +135,63 @@ function App(props) {
     setTrigger2(!trigger2);
   };
 
-
   //GET Request for Fetching and Updating Users Game Records
   useEffect(() => {
-    if (trigger === true) {
-      axios
-        .get(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`)
-        .then((res) => {
-          console.log('Res;', res.data);
-          setTempName(res.data[0].name);
-          setTempEmail(res.data[0].email);
-          setTempUserName(res.data[0].userName);
-          setTempSubID(res.data[0].subID);
-          setTempPassword(res.data[0].password);
-          setTempCurrentMap(res.data[0].currentMap);
-          setTempFlowers(res.data[0].flowers);
-          setTempQuest1(res.data[0].quest1);
-          setTempQuest2(res.data[0].quest2);
-          setTempQuest3(res.data[0].quest3);
-          setTempQuest(res.data[0].quest4);
-          setTimeStamp(res.data[0].timeStamp);
-          setSaveState(res.data);
-          // setCurrent(res.data[0].currentMap);
-          console.log('FETCH USERS RECORD COMPLETED!');
-        })
-        .catch((err) => console.log(err));
-    }
-  }, [trigger]);
+    axios
+      .get(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`)
+      .then((res) => {
+        console.log('Res;', res.data);
+        setTempName(res.data[0].name);
+        setTempEmail(res.data[0].email);
+        setTempUserName(res.data[0].userName);
+        setTempSubID(res.data[0].subID);
+        setTempPassword(res.data[0].password);
+        setTempCurrentMap(res.data[0].currentMap);
+        setTempFlowers(res.data[0].flowers);
+        setTempQuest1(res.data[0].quest1);
+        setTempQuest2(res.data[0].quest2);
+        setTempQuest3(res.data[0].quest3);
+        setTempQuest(res.data[0].quest4);
+        setTimeStamp(res.data[0].timeStamp);
+        setSaveState(res.data);
+        setCurrent(res.data[0].currentMap);
+        console.log('FETCH USERS RECORD COMPLETED!');
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  console.log('CURRENT MAP', tempCurrentMap);
 
   // PUT Request for SaveState
   useEffect(() => {
-     if (trigger2 === true) {
-    const putState = async (id) => {
-      const data = await fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          name: tempName,
-          email: tempEmail,
-          userName: tempUserName,
-          subID: tempSubID,
-          password: tempPassword,
-          currentMap: tempCurrentMap,
-          flowers: tempFlowers,
-          quest1: tempQuest1,
-          quest2: tempQuest2,
-          quest3: tempQuest3,
-          quest4: tempQuest4,
-          timeStamp: timeStamp
-        })
-      }).then((res) => res.json());
-       setSaveMessage(!saveMessage);
-      console.log('SAVE GAME RECORD UPDATED');
-    };
-     putState('63464fa990ac97f43d9a0cdc');
-  }
+    if (trigger2 === true) {
+      const putState = async (id) => {
+        const data = await fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name: tempName,
+            email: tempEmail,
+            userName: tempUserName,
+            subID: tempSubID,
+            password: tempPassword,
+            currentMap: tempCurrentMap,
+            flowers: tempFlowers,
+            quest1: tempQuest1,
+            quest2: tempQuest2,
+            quest3: tempQuest3,
+            quest4: tempQuest4,
+            timeStamp: timeStamp
+          })
+        }).then((res) => res.json());
+        setSaveMessage(!saveMessage);
+        console.log('SAVE GAME RECORD UPDATED');
+      };
+      putState('63464fa990ac97f43d9a0cdc');
+    }
   }, [trigger2]);
- 
 
   // DELETE Request for SaveState
   const deleteState = async (id) => {
@@ -485,6 +490,13 @@ function App(props) {
     setPrevious(y);
   }
 
+  /////////////////////////////////////////////////////////////////
+  //MATT STATE PASSING FUNCTION
+  function loginPass(subIDAuth) {
+    setMattState(subIDAuth);
+  }
+  /////////////////////////////////////////////////////////////////
+
   function addItem(x) {
     setItemObj((itemObj.poop = x));
   }
@@ -536,7 +548,6 @@ function App(props) {
     };
   }, [menuClockToggle]);
 
-
   // console.log("BROWSER", `${browserName} ${browserVersion}`);
 
   useEffect(() => {
@@ -549,6 +560,9 @@ function App(props) {
   }, []);
 
   // console.log("TRIGGER", trigger)
+
+  // const [word, setWord] = useState("Parent")
+  // console.log(< Login changeWord={word => setWord(word)}/>)
 
   // whole map is a button - giving that button onkeyppress listener called wrap
   return (
@@ -659,7 +673,7 @@ function App(props) {
                 ) : null}
 
                 {saveMessage === true ? (
-                <h1 className = "successMessage">YOUR GAME WAS SUCCESSFULLY SAVED!</h1>
+                  <h1 className="successMessage">YOUR GAME WAS SUCCESSFULLY SAVED!</h1>
                 ) : null}
               </div>
             </div>
