@@ -155,22 +155,25 @@ function App(props) {
       axios
         .get(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`)
         .then((res) => {
-          console.log('Res YOU MADE IT;', res.data);
-          setTempMongoID(res.data[0]._id);
-          setTempName(res.data[0].name);
-          setTempEmail(res.data[0].email);
-          setTempUserName(res.data[0].userName);
-          setTempSubID(res.data[0].subID);
-          setTempPassword(res.data[0].password);
-          setTempCurrentMap(res.data[0].setTempCurrentMap);
-          setTempFlowers(res.data[0].flowers);
-          setTempQuest1(res.data[0].quest1);
-          setTempQuest2(res.data[0].quest2);
-          setTempQuest3(res.data[0].quest3);
-          setTempQuest(res.data[0].quest4);
-          setTimeStamp(res.data[0].timeStamp);
+
+        {const result = res.data.filter((c, i) => c.subID === props.subIDAuth)
+          // console.log("RESULT", result[0].subID)
+          // console.log('Res YOU MADE IT;', res.data);
+          setTempMongoID(result[0]._id);
+          setTempName(result[0].name);
+          setTempEmail(result[0].email);
+          setTempUserName(result[0].userName);
+          setTempSubID(result[0].subID);
+          setTempPassword(result[0].password);
+          setTempCurrentMap(result[0].setTempCurrentMap);
+          setTempFlowers(result[0].flowers);
+          setTempQuest1(result[0].quest1);
+          setTempQuest2(result[0].quest2);
+          setTempQuest3(result[0].quest3);
+          setTempQuest(result[0].quest4);
+          setTimeStamp(result[0].timeStamp);
           setSaveState(res.data);
-          setCurrent(res.data[0].currentMap);
+          setCurrent(result[0].currentMap);
           // console.log('_ID AFTER GET', res.data[0]._id);
           // console.log('NAME AFTER GET', res.data[0].name);
           // console.log('EMAIL AFTER GET', res.data[0].email);
@@ -186,9 +189,9 @@ function App(props) {
           //  console.log('TIMESTAMP', result[0].timeStamp);
         
           console.log('FETCH USERS RECORD COMPLETED!');
+            }
         })
         .catch((err) => console.log(err));
-    
   }, [execute]);
 
   // console.log('NAME AFTER', tempName);
