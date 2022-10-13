@@ -82,6 +82,7 @@ function App(props) {
   const [tempQuest3, setTempQuest3] = useState('false');
   const [tempQuest4, setTempQuest] = useState('false');
   const [timeStamp, setTimeStamp] = useState('');
+  const [tempMongoID, setTempMongoID] = useState('');
 
   const [menu1Toggle, setMenu1Toggle] = useState(false);
   const [menu2Toggle, setMenu2Toggle] = useState(false);
@@ -100,14 +101,11 @@ function App(props) {
     DemonObjects.Naruto
   ]);
 
-  
   const [current, setCurrent] = useState(tempCurrentMap);
   const [tempCurrent, setTempCurrent] = useState(null);
   const [previous, setPrevious] = useState(null);
   const [textValue, setTextValue] = useState(null);
   const [menu, setMenu] = useState(false);
-
-  console.log("CURRENT MAP", current)
 
   const [saturate, setSaturate] = useState(120);
   const [contrast, setContrast] = useState(120);
@@ -125,41 +123,77 @@ function App(props) {
   const [trigger2, setTrigger2] = useState(false);
   const [saveMessage, setSaveMessage] = useState(false);
 
+  const [execute, setExecute] = useState(false);
+
   // Handle Click Function For temp activating Get Request
   const handleClickSave = (e) => {
     setTrigger2(true);
     setSaveMessage(true);
     setTimeout(() => {
-       setSaveMessage(false);
-       console.log('message off')
-    }, 7000)
+      setSaveMessage(false);
+      console.log('message off');
+    }, 7000);
   };
+
+  console.log('NAME BEFORE', tempName);
+  console.log('Email BEFORE', tempEmail);
+  console.log('Username BEFORE', tempUserName);
+  console.log('SubID BEFORE', tempSubID);
+   console.log('Current Map BEFORE', tempCurrentMap);
 
   //GET Request for Fetching and Updating Users Game Records
   useEffect(() => {
-    axios
-      .get(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`)
-      .then((res) => {
-        console.log('Res;', res.data);
-        setTempName(res.data[0].name);
-        setTempEmail(res.data[0].email);
-        setTempUserName(res.data[0].userName);
-        setTempSubID(res.data[0].subID);
-        setTempPassword(res.data[0].password);
-        setTempCurrentMap(res.data[0].currentMap);
-        setTempFlowers(res.data[0].flowers);
-        setTempQuest1(res.data[0].quest1);
-        setTempQuest2(res.data[0].quest2);
-        setTempQuest3(res.data[0].quest3);
-        setTempQuest(res.data[0].quest4);
-        setTimeStamp(res.data[0].timeStamp);
-        setSaveState(res.data);
-        setCurrent(res.data[0].currentMap);
-        console.log('FETCH USERS RECORD COMPLETED!');
-      })
-      .catch((err) => console.log(err));
-  }, []);
+    //  console.log('SUBUID', props.subIDAuth);
+    if (execute === true) {
+      axios
+        .get(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`)
+        .then((res) => {
+         
+            console.log('Res YOU MADE IT;', res.data);
+            setTempMongoID(res.data[0]._id);
+            setTempName(res.data[0].name);
+            setTempEmail(res.data[0].email);
+            setTempUserName(res.data[0].userName);
+            setTempSubID(res.data[0].subID);
+            setTempPassword(res.data[0].password);
+            setTempCurrentMap(res.data[0].currentMap);
+            setTempFlowers(res.data[0].flowers);
+            setTempQuest1(res.data[0].quest1);
+            setTempQuest2(res.data[0].quest2);
+            setTempQuest3(res.data[0].quest3);
+            setTempQuest(res.data[0].quest4);
+            setTimeStamp(res.data[0].timeStamp);
+            setSaveState(res.data.data);
+            setCurrent(res.data[0].currentMap);
+            // console.log('_ID AFTER GET', res.data[0]._id);
+            // console.log('NAME AFTER GET', res.data[0].name);
+            // console.log('EMAIL AFTER GET', res.data[0].email);
+            // console.log('USERNAME AFTER GET', res.data[0].userName);
+            // console.log('SUBID AFTER GET', res.data[0].subID);
+            //  console.log('PASSWORD', result[0].password);
+            //  console.log('CURRENTMAP', result[0].currentMap);
+            //  console.log('FLOWERS', result[0].flowers);
+            //  console.log('QUEST1', result[0].quest1);
+            //  console.log('QUEST2', result[0].quest2);
+            //  console.log('QUEST3', result[0].quest3);
+            //  console.log('QUEST4', result[0].quest4);
+            //  console.log('TIMESTAMP', result[0].timeStamp);
+            setExecute(false)
+            console.log('FETCH USERS RECORD COMPLETED!');
+          
+        })
+        .catch((err) => console.log(err));
+    }
+  }, [execute]);
 
+  console.log('NAME AFTER', tempName);
+  console.log('Email AFTER', tempEmail);
+  console.log('Username AFTER', tempUserName);
+  console.log('SubID AFTER', tempSubID);
+   console.log('Current Map AFTER', tempCurrentMap);
+
+
+  
   // PUT Request for SaveState
   useEffect(() => {
     if (trigger2 === true) {
@@ -184,13 +218,20 @@ function App(props) {
             timeStamp: timeStamp
           })
         }).then((res) => res.json());
+         setTrigger2(false)
+         console.log('SAVE GAME RECORD UPDATED');
         setSaveMessage(!saveMessage);
-        console.log('SAVE GAME RECORD UPDATED');
+       
+       
       };
-      putState('634777d345a31a087aa6e9c0');
+      putState(tempMongoID);
     }
   }, [trigger2]);
 
+  console.log("TRIGGER2", trigger2)
+
+
+   console.log('MAP TRACKER', current);
   // DELETE Request for SaveState
   const deleteState = async (id) => {
     const data = await fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/delete/${id}`, {
@@ -486,7 +527,7 @@ function App(props) {
 
   /////////////////////////////////////////////////////////////////
   //MATT STATE PASSING FUNCTION for subID Auth
-  function loginPass(subIDAuth) {
+  function subIDPass(subIDAuth) {
     setMattState(subIDAuth);
   }
   /////////////////////////////////////////////////////////////////
@@ -554,6 +595,13 @@ function App(props) {
       : null;
   }, []);
 
+  // Handleclick for ENTER
+  const loadGame = () => {
+    setExecute(!execute);
+  };
+  
+  console.log("EXECUTE", execute)
+
   //Return logic
   return (
     <>
@@ -568,6 +616,15 @@ function App(props) {
         ) : (
           <div style={{ filter: `saturate(${saturate}%)` }}>
             <div style={{ filter: `contrast(${contrast}%)` }}>
+
+
+
+              <button className="loadGame" onClick={loadGame}>
+                LOAD GAME
+              </button>
+
+
+
               {framerateToggle === true ? (
                 <>
                   <div>

@@ -329,12 +329,12 @@ function Login(props) {
 
   //Matt useeffect for passing props
   useEffect(() => {
-    props.passer(tempSubID);
+    props.subIDPasser(tempSubID);
   }, [tempSubID]);  
 
 
 // Handleclick for Load Game
-const loadGame = () => {
+const enter = () => {
   setTimeout(() => {
     navigate('/game');
   }, 1000)
@@ -346,8 +346,8 @@ const loadGame = () => {
       {/* <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(data) }}></div> */}
 
       {isAuthenticated ? (
-        <button className="loadGame" onClick={loadGame}>
-          LOAD GAME
+        <button className="loadGame" onClick={enter}>
+          ENTER
         </button>
       ) : (
         <button className="loginSignupButton" onClick={() => loginWithRedirect()}>

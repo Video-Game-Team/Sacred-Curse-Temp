@@ -28,9 +28,9 @@ function Index(props) {
   }
 
 // Matt function in Index.js
-  function loginPass(SubIDAuth){
+  function subIDPass(SubIDAuth) {
     setDownPass(SubIDAuth);
-      }
+  }
 
   // Page refresh logic    
   function refresh() {
@@ -46,16 +46,15 @@ function Index(props) {
   return (
     <Auth0Provider
       domain="dev-mvc8sgjt.us.auth0.com"
-      clientId = "nJ5yDrF0aizFClKKz3uFFI93A8zu02QQ"
-      redirectUri={window.location.origin}
-      >
+      clientId="nJ5yDrF0aizFClKKz3uFFI93A8zu02QQ"
+      redirectUri={window.location.origin}>
       <HashRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Login passer={loginPass}/>} />
-            <Route path="/login" element={<Login passer={loginPass} />} />
-            <Route path="/game" element={<App downer={downPass}/>} />
-            <Route path="*" element={<App downer={downPass}/>} />
+            <Route index element={<Login subIDPasser={subIDPass} />} />
+            <Route path="/login" element={<Login subIDPasser={subIDPass} />} />
+            <Route path="/game" element={<App subIDAuth={downPass} />} />
+            <Route path="*" element={<App subIDAuth={downPass} />} />
           </Route>
         </Routes>
       </HashRouter>
