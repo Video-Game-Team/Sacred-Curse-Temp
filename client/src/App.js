@@ -127,8 +127,12 @@ function App(props) {
 
   // Handle Click Function For temp activating Get Request
   const handleClickSave = (e) => {
-    setTrigger2(!trigger2);
-    setSaveMessage(!saveMessage);
+    setTrigger2(true);
+    setSaveMessage(true);
+    setTimeout(() => {
+       setSaveMessage(false);
+       console.log('message off')
+    }, 7000)
   };
 
   //GET Request for Fetching and Updating Users Game Records
