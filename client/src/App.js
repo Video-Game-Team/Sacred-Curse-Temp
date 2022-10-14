@@ -739,6 +739,12 @@ function App(props) {
       : null;
   }, []);
 
+
+  //Local Storage Size
+  const blob = new Blob(Object.values(localStorage)).size;
+  console.log('LOCAL STORAGE', blob);
+
+  
   //Return logic
   return (
     <>
