@@ -290,8 +290,8 @@ function Login(props) {
      if (isAuthenticated === true) {
      axios
        .get(
-        //  `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state` ||
-         "https://www.sacredcurse.com/state",
+         `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`,
+        //  "https://www.sacredcurse.com/state",
          {}
        )
        .then((res) => {
@@ -308,8 +308,8 @@ function Login(props) {
     else {
       axios
         .post(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new` ||
-          "https://www.sacredcurse.com/state/new",
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new`,
+          // "https://www.sacredcurse.com/state/new",
           {
             name: name,
             email: user.email,
