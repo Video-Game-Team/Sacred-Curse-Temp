@@ -178,7 +178,19 @@ function App(props) {
   const [menu2Toggle, setMenu2Toggle] = useState(false);
   const [menuClockToggle, setMenuClockToggle] = useState(false);
   const [framerateToggle, setFramerateToggle] = useState(false);
+
+
+  //LoadGame Toggle logic for Load Game message
   const [loadGameToggle, setLoadGameToggle] = useState(true);
+  //  useEffect(() => {
+  //    const data = window.sessionStorage.getItem('loadGameToggle');
+  //    setLoadGameToggle(JSON.parse(data));
+  //  }, []);
+   
+  //  useEffect(() => {
+  //    window.sessionStorage.setItem('loadGameToggle', JSON.stringify(loadGameToggle));
+  //  }, []);
+  //  console.log('Load Game Toggle', loadGameToggle);
 
   // Logic for checking Browser type
   const [browserWarning, setBrowserWarning] = useState(false);
@@ -250,17 +262,30 @@ function App(props) {
   // console.log('Current Map BEFORE', tempCurrentMap);
 
   //Logic for triggering useeffect and Get request
-  const loadGame = () => {
-    isMounted.current = true;
-    setExecute(true);
-    setTimeout(() => {
-      isMounted.current = false;
-      setExecute(false);
-    }, 100);
-    setTimeout(() => {
-      setLoadGameToggle(false);
-    }, 100);
-  };
+  // const loadGame = () => {
+  //   isMounted.current = true;
+  //   setExecute(true);
+  //   setTimeout(() => {
+  //     isMounted.current = false;
+  //     setExecute(false);
+  //   }, 100);
+  //   setTimeout(() => {
+  //     setLoadGameToggle(false);
+  //   }, 100);
+  // };
+
+    function loadGame() {
+          isMounted.current = true;
+          setExecute(true);
+          setTimeout(() => {
+            isMounted.current = false;
+            setExecute(false);
+          }, 100);
+          setTimeout(() => {
+            setLoadGameToggle(false);
+          }, 100);
+     };
+     
 
   //GET Request for Fetching and Updating Users Game Records
   useEffect(() => {
@@ -759,6 +784,8 @@ function App(props) {
         ) : (
           <div style={{ filter: `saturate(${saturate}%)` }}>
             <div style={{ filter: `contrast(${contrast}%)` }}>
+
+
               {loadGameToggle === true ? (
                 <button className="loadGame" onClick={loadGame}>
                   LOAD GAME
