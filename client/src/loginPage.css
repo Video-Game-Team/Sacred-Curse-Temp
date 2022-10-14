@@ -100,36 +100,6 @@ html {
     flex-direction: column;
 }
 
-/* .titleTextLogin {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    White-space: nowrap;
-    top: -10rem;
-    left: 0%;
-    border: none;
-    color: rgb(255, 0, 0);
-    font-size: calc(1rem + 8.2vw);
-    z-index: 999;
-} */
-
-
-/* .titleTextLogin {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    White-space: nowrap;
-    top: -10rem;
-    left: 0%;
-    border: none;
-    color: rgb(255, 0, 0);
-    font-size: calc(1rem + 6.6vw);
-    z-index: 999;
-    font-family: joystix monospace;
-} */
-
 .titleTextLogin {
     position: relative;
     White-space: nowrap;
@@ -157,6 +127,20 @@ html {
     font-size: calc(1rem + .4vw);
     top: 21rem;
     left: 33.5rem;
+    background-color: black;
+    color: rgb(141, 137, 137);
+    font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif; 
+}
+
+.enterGame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 999;
+    font-size: calc(1rem + .4vw);
+    top: 21rem;
+    left: 29.5rem;
     background-color: black;
     color: rgb(141, 137, 137);
     font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif; 

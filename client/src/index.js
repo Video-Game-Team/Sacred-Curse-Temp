@@ -23,9 +23,9 @@ function Index(props) {
 
 
 // Disable React Dev Tools
-  if (process.env.NODE_ENV === 'production') {
+  // if (process.env.NODE_ENV === 'production') {
     disableReactDevTools();
-  }
+  // }
 
 // Matt function in Index.js
   function subIDPass(SubIDAuth) {

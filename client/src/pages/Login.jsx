@@ -346,7 +346,7 @@ const loadGame = () => {
       {/* <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(data) }}></div> */}
 
       {isAuthenticated ? (
-        <button className="loadGame" onClick={loadGame}>
+        <button className="enterGame" onClick={loadGame}>
           ENTER SACRED CURSE
         </button>
       ) : (
@@ -380,14 +380,12 @@ export default Login;
 //////////////////////////////
 
 
-  // const [name, setName] = useState(localStorage.getItem('part'));
+  // const [dark, setDark] = React.useState(localStorage.getItem('dark-mode') === 'true');
 
   // React.useEffect(() => {
-  //   localStorage.setItem('part', 'butthole');
-  // }, [name]);
+  //   localStorage.setItem('dark-mode', dark);
+  // }, [dark]);
 
   // const toggleDarkMode = () => {
-  //   setName('scrotum');
+  //   setDark(!dark);
   // };
-
-  // console.log('LOOK AT ME PERSIST', name);

@@ -76,7 +76,7 @@ function App(props) {
   const [tempUserName, setTempUserName] = useState('');
   const [tempSubID, setTempSubID] = useState('');
   const [tempPassword, setTempPassword] = useState('');
-  const [tempCurrentMap, setTempCurrentMap] = useState('indoorHouse10');
+  const [tempCurrentMap, setTempCurrentMap] = useState('loadingMap');
   const [tempFlowers, setTempFlowers] = useState(0);
   const [tempQuest1, setTempQuest1] = useState('false');
   const [tempQuest2, setTempQuest2] = useState('false');
@@ -134,7 +134,6 @@ function App(props) {
   const handleClickSave = (e) => {
     setTrigger2(true);
     setSaveMessage(true);
-
     setTimeout(() => {
       setSaveMessage(false);
       setTrigger2(false);
@@ -160,16 +159,17 @@ function App(props) {
       isMounted.current = false;
       setExecute(false);
     }, 100);
+    setTimeout(() => {
+      setLoadGameToggle(false)
+    }, 100)
   };
 
-  // const keepId = props.subIDAuth;
-
-  //  console.log('SUBUID', props.subIDAuth);
+  
 
   //GET Request for Fetching and Updating Users Game Records
   useEffect(() => {
     console.log('GET REQUEST TOP');
-
+    //  console.log('SUBUID', props.subIDAuth);
     if (isMounted.current) {
       console.log('GET REQUEST AFTER MOUNT');
 
@@ -211,13 +211,13 @@ function App(props) {
             //  console.log('QUEST3', result[0].quest3);
             //  console.log('QUEST4', result[0].quest4);
             //  console.log('TIMESTAMP', result[0].timeStamp);
-
             console.log('FETCH USERS RECORD COMPLETED!');
           }
         })
         .catch((err) => console.log(err));
     }
   }, [execute]);
+  
   console.log('ISMOUNTED', isMounted.current);
 
   console.log('NAME AFTER', tempName);
@@ -570,7 +570,6 @@ function App(props) {
     return () => {
       window.removeEventListener('keydown', preventRefresh);
     };
-
   },[])
  
  
@@ -645,16 +644,6 @@ function App(props) {
   }, []);
 
 
-  // const alertUser = alert("sucke ")
-
-  // useEffect(() => {
-  //   window.addEventListener('beforeunload', alertUser);
-  //   return () => {
-  //     window.removeEventListener('beforeunload', alertUser);
-  //   };
-  // }, [loadGame]);
-
-
   //Return logic
   return (
     <>
@@ -669,9 +658,17 @@ function App(props) {
         ) : (
           <div style={{ filter: `saturate(${saturate}%)` }}>
             <div style={{ filter: `contrast(${contrast}%)` }}>
-              <button className="loadGame" onClick={loadGame}>
-                LOAD YOUR SAVED GAME
-              </button>
+              {loadGameToggle === true ? (
+                <button className="loadGame" onClick={loadGame}>
+                  LOAD GAME
+                </button>
+              ) : null}
+
+              {loadGameToggle === true ? (
+                <button className="newGame" onClick={loadGame}>
+                  NEW GAME
+                </button>
+              ) : null}
 
               {framerateToggle === true ? (
                 <>
@@ -758,7 +755,7 @@ function App(props) {
                 {menu2Toggle === true ? <></> : null}
 
                 {menu2Toggle === true ? (
-                  <button className="triggerButton" onClick={handleClickSave}>
+                  <button className="saveGameButton" onClick={handleClickSave}>
                     SAVE GAME
                   </button>
                 ) : null}
