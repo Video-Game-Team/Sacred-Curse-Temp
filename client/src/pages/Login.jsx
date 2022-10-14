@@ -290,7 +290,7 @@ function Login(props) {
      if (isAuthenticated === true) {
      axios
        .get(
-         `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state` ||
+        //  `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state` ||
          `${process.env.APPJS_GET_REQUEST_ENDPOINT_PRODUCTION}/state`,
          {}
        )
@@ -308,7 +308,7 @@ function Login(props) {
     else {
       axios
         .post(
-          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new` ||
+          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new` ||
           `${process.env.APPJS_GET_REQUEST_ENDPOINT_PRODUCTION}/state/new`,
           {
             name: name,

@@ -296,7 +296,7 @@ function App(props) {
 
       axios
         .get(
-          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state` ||
+          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state` ||
           `${process.env.APPJS_GET_REQUEST_ENDPOINT_PRODUCTION}/state`
             )
         .then((res) => {
@@ -361,7 +361,7 @@ function App(props) {
     if (trigger2 === true) {
       const putState = async (id) => {
         const data = await fetch(
-          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}` ||
+          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}` ||
           `${process.env.APPJS_GET_REQUEST_ENDPOINT_PRODUCTION}/state/update/${id}`,
           {
             method: 'PUT',
