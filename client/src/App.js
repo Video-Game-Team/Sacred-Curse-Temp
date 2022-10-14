@@ -76,7 +76,7 @@ function App(props) {
   const [tempUserName, setTempUserName] = useState('');
   const [tempSubID, setTempSubID] = useState('');
   const [tempPassword, setTempPassword] = useState('');
-  const [tempCurrentMap, setTempCurrentMap] = useState('loadingMap');
+  const [tempCurrentMap, setTempCurrentMap] = useState('indoorHouse10');
   const [tempFlowers, setTempFlowers] = useState(0);
   const [tempQuest1, setTempQuest1] = useState('false');
   const [tempQuest2, setTempQuest2] = useState('false');
@@ -127,78 +127,104 @@ function App(props) {
 
   const [execute, setExecute] = useState(false);
 
+  //UseReft to stop Get request Useeffect from running on re-render
+  const isMounted = useRef(false);
+
   // Handle Click Function For temp activating Get Request
   const handleClickSave = (e) => {
     setTrigger2(true);
     setSaveMessage(true);
+
     setTimeout(() => {
       setSaveMessage(false);
       setTrigger2(false);
       setMenu2Toggle(false);
-      console.log('message off');
-      console.log('SAVE MESSAGE', saveMessage);
+      // console.log('message off');
+      // console.log('SAVE MESSAGE', saveMessage);
     }, 4000);
   };
 
-  console.log('SAVE MESSAGE', saveMessage);
+  // console.log('SAVE MESSAGE', saveMessage);
 
   // console.log('NAME BEFORE', tempName);
   // console.log('Email BEFORE', tempEmail);
   // console.log('Username BEFORE', tempUserName);
   // console.log('SubID BEFORE', tempSubID);
-  console.log('Current Map BEFORE', tempCurrentMap);
+  // console.log('Current Map BEFORE', tempCurrentMap);
+
+  //Logic for triggering useeffect and Get request
+  const loadGame = () => {
+    isMounted.current = true;
+    setExecute(true);
+    setTimeout(() => {
+      isMounted.current = false;
+      setExecute(false);
+    }, 100);
+  };
+
+  // const keepId = props.subIDAuth;
+
+  //  console.log('SUBUID', props.subIDAuth);
 
   //GET Request for Fetching and Updating Users Game Records
   useEffect(() => {
-    //  console.log('SUBUID', props.subIDAuth);
-  
+    console.log('GET REQUEST TOP');
+
+    if (isMounted.current) {
+      console.log('GET REQUEST AFTER MOUNT');
+
       axios
         .get(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`)
         .then((res) => {
+          console.log('RES DATA', res.data[0].subID);
+          console.log('GET REQUEST BEFORE FILTER');
+          {
+            const result = res.data.filter((c, i) => c.subID === props.subIDAuth);
+            console.log('RESULT', result);
+            // console.log('Res YOU MADE IT;', res.data);
+            console.log('GET REQUEST AFTER FILTER');
+            setTempMongoID(result[0]._id);
+            setTempName(result[0].name);
+            setTempEmail(result[0].email);
+            setTempUserName(result[0].userName);
+            setTempSubID(result[0].subID);
+            setTempPassword(result[0].password);
+            setTempCurrentMap(result[0].setTempCurrentMap);
+            setTempFlowers(result[0].flowers);
+            setTempQuest1(result[0].quest1);
+            setTempQuest2(result[0].quest2);
+            setTempQuest3(result[0].quest3);
+            setTempQuest(result[0].quest4);
+            setTimeStamp(result[0].timeStamp);
+            setSaveState(res.data);
+            setCurrent(result[0].currentMap);
+            // console.log('_ID AFTER GET', res.data[0]._id);
+            // console.log('NAME AFTER GET', res.data[0].name);
+            // console.log('EMAIL AFTER GET', res.data[0].email);
+            // console.log('USERNAME AFTER GET', res.data[0].userName);
+            // console.log('SUBID AFTER GET', res.data[0].subID);
+            //  console.log('PASSWORD', result[0].password);
+            //  console.log('CURRENTMAP', result[0].currentMap);
+            //  console.log('FLOWERS', result[0].flowers);
+            //  console.log('QUEST1', result[0].quest1);
+            //  console.log('QUEST2', result[0].quest2);
+            //  console.log('QUEST3', result[0].quest3);
+            //  console.log('QUEST4', result[0].quest4);
+            //  console.log('TIMESTAMP', result[0].timeStamp);
 
-        {const result = res.data.filter((c, i) => c.subID === props.subIDAuth)
-          // console.log("RESULT", result[0].subID)
-          // console.log('Res YOU MADE IT;', res.data);
-          setTempMongoID(result[0]._id);
-          setTempName(result[0].name);
-          setTempEmail(result[0].email);
-          setTempUserName(result[0].userName);
-          setTempSubID(result[0].subID);
-          setTempPassword(result[0].password);
-          setTempCurrentMap(result[0].setTempCurrentMap);
-          setTempFlowers(result[0].flowers);
-          setTempQuest1(result[0].quest1);
-          setTempQuest2(result[0].quest2);
-          setTempQuest3(result[0].quest3);
-          setTempQuest(result[0].quest4);
-          setTimeStamp(result[0].timeStamp);
-          setSaveState(res.data);
-          setCurrent(result[0].currentMap);
-          // console.log('_ID AFTER GET', res.data[0]._id);
-          // console.log('NAME AFTER GET', res.data[0].name);
-          // console.log('EMAIL AFTER GET', res.data[0].email);
-          // console.log('USERNAME AFTER GET', res.data[0].userName);
-          // console.log('SUBID AFTER GET', res.data[0].subID);
-          //  console.log('PASSWORD', result[0].password);
-          //  console.log('CURRENTMAP', result[0].currentMap);
-          //  console.log('FLOWERS', result[0].flowers);
-          //  console.log('QUEST1', result[0].quest1);
-          //  console.log('QUEST2', result[0].quest2);
-          //  console.log('QUEST3', result[0].quest3);
-          //  console.log('QUEST4', result[0].quest4);
-          //  console.log('TIMESTAMP', result[0].timeStamp);
-        
-          console.log('FETCH USERS RECORD COMPLETED!');
-            }
+            console.log('FETCH USERS RECORD COMPLETED!');
+          }
         })
         .catch((err) => console.log(err));
+    }
   }, [execute]);
+  console.log('ISMOUNTED', isMounted.current);
 
-  // console.log('NAME AFTER', tempName);
-  // console.log('Email AFTER', tempEmail);
-  // console.log('Username AFTER', tempUserName);
-  // console.log('SubID AFTER', tempSubID);
-  console.log('Current Map AFTER', tempCurrentMap);
+  console.log('NAME AFTER', tempName);
+  console.log('Email AFTER', tempEmail);
+  console.log('Username AFTER', tempUserName);
+  console.log('SubID AFTER', tempSubID);
+  console.log('Current Map AFTER', current);
   console.log('EXECUTE', execute);
   console.log('QUEST1 AFTER', tempQuest1);
   console.log('QUEST2 AFTER', tempQuest2);
@@ -229,15 +255,14 @@ function App(props) {
             timeStamp: timeStamp
           })
         }).then((res) => res.json());
-         setExecute(false);
         console.log('SAVE GAME RECORD UPDATED');
       };
       putState(tempMongoID);
     }
   }, [trigger2]);
 
-  console.log('TRIGGER2', trigger2);
-  console.log('MAP TRACKER', current);
+  // console.log('TRIGGER2', trigger2);
+  // console.log('MAP TRACKER', current);
 
   // DELETE Request for SaveState
   const deleteState = async (id) => {
@@ -533,6 +558,22 @@ function App(props) {
     setPrevious(y);
   }
 
+  useEffect(()=>{
+    window.addEventListener("keydown", preventRefresh)
+
+    function preventRefresh(event){
+  if (event.key==='r' || event.key==="R" || event.key === "116" || event.key==="w" || event.key==="W"  || event.key==="Q" || event.key==="q"){
+    alert("Don't refresh or  quit please : )")
+      event.preventDefault()
+  }
+    }
+    return () => {
+      window.removeEventListener('keydown', preventRefresh);
+    };
+
+  },[])
+ 
+ 
   /////////////////////////////////////////////////////////////////
   //MATT STATE PASSING FUNCTION for subID Auth
   function subIDPass(subIDAuth) {
@@ -603,13 +644,16 @@ function App(props) {
       : null;
   }, []);
 
-  //Handleclick for LOAD GAME
-  // const loadGame = () => {
-  //   setExecute(true);
-  //   setTimeout(() => {
-  //      setExecute(false);
-  //   }, 1000)
-  // };
+
+  // const alertUser = alert("sucke ")
+
+  // useEffect(() => {
+  //   window.addEventListener('beforeunload', alertUser);
+  //   return () => {
+  //     window.removeEventListener('beforeunload', alertUser);
+  //   };
+  // }, [loadGame]);
+
 
   //Return logic
   return (
@@ -625,9 +669,9 @@ function App(props) {
         ) : (
           <div style={{ filter: `saturate(${saturate}%)` }}>
             <div style={{ filter: `contrast(${contrast}%)` }}>
-              {/* <button className="loadGame" onClick={loadGame}>
+              <button className="loadGame" onClick={loadGame}>
                 LOAD YOUR SAVED GAME
-              </button> */}
+              </button>
 
               {framerateToggle === true ? (
                 <>

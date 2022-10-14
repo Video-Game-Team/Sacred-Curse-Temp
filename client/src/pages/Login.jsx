@@ -334,7 +334,7 @@ function Login(props) {
 
 
 // Handleclick for Load Game
-const enter = () => {
+const loadGame = () => {
   setTimeout(() => {
     navigate('/game');
   }, 1000)
@@ -346,7 +346,7 @@ const enter = () => {
       {/* <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(data) }}></div> */}
 
       {isAuthenticated ? (
-        <button className="loadGame" onClick={enter}>
+        <button className="loadGame" onClick={loadGame}>
           ENTER SACRED CURSE
         </button>
       ) : (
@@ -375,3 +375,19 @@ const enter = () => {
 }
 
 export default Login;
+
+
+//////////////////////////////
+
+
+  // const [name, setName] = useState(localStorage.getItem('part'));
+
+  // React.useEffect(() => {
+  //   localStorage.setItem('part', 'butthole');
+  // }, [name]);
+
+  // const toggleDarkMode = () => {
+  //   setName('scrotum');
+  // };
+
+  // console.log('LOOK AT ME PERSIST', name);
