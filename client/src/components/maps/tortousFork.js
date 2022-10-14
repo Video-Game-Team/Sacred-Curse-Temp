@@ -16,9 +16,9 @@ import '../../tortousFork.css';
 const TortousFork = (props) => {
   //this sets the x Cordinate to transform the map and character location
   const [xTransformVar, setXTransformVar] = useState(-1304);
+ 
   //this sets the y Cordinate to transform the map and character location
   const [yTransformVar, setYTransformVar] = useState(-1876);
-  //
 
   const requestRef = useRef();
   //this sets the speed for the map to move. bigger number goes faster

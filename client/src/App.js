@@ -77,31 +77,31 @@ function App(props) {
   //TempEmail State/Local Storage
   const [tempEmail, setTempEmail] = useState('');
   useEffect(() => {
-    const data = window.localStorage.getItem('tempEmail');
+    const data = window.sessionStorage.getItem('tempEmail');
     setTempEmail(JSON.parse(data));
   }, []);
   useEffect(() => {
-    window.localStorage.setItem('tempEmail', JSON.stringify(tempEmail));
+    window.sessionStorage.setItem('tempEmail', JSON.stringify(tempEmail));
   }, [tempEmail]);
 
   //TempUserName State/Local Storage
   const [tempUserName, setTempUserName] = useState('');
   useEffect(() => {
-    const data = window.localStorage.getItem('tempUserName');
+    const data = window.sessionStorage.getItem('tempUserName');
     setTempUserName(JSON.parse(data));
   }, []);
   useEffect(() => {
-    window.localStorage.setItem('tempUserName', JSON.stringify(tempUserName));
+    window.sessionStorage.setItem('tempUserName', JSON.stringify(tempUserName));
   }, [tempUserName]);
 
   //TempSubID State/Local Storage
   const [tempSubID, setTempSubID] = useState('');
   useEffect(() => {
-    const data = window.localStorage.getItem('tempSubID');
+    const data = window.sessionStorage.getItem('tempSubID');
     setTempSubID(JSON.parse(data));
   }, []);
   useEffect(() => {
-    window.localStorage.setItem('tempSubID', JSON.stringify(tempSubID));
+    window.sessionStorage.setItem('tempSubID', JSON.stringify(tempSubID));
   }, [tempSubID]);
 
   //TempPassword State
@@ -113,51 +113,51 @@ function App(props) {
   //TempFlowers State/Local Storage
   const [tempFlowers, setTempFlowers] = useState(0);
   useEffect(() => {
-    const data = window.localStorage.getItem('tempFlowers');
+    const data = window.sessionStorage.getItem('tempFlowers');
     setTempFlowers(JSON.parse(data));
   }, []);
   useEffect(() => {
-    window.localStorage.setItem('tempFlowers', JSON.stringify(tempFlowers));
+    window.sessionStorage.setItem('tempFlowers', JSON.stringify(tempFlowers));
   }, [tempFlowers]);
 
   //TempQuest1 State/Local Storage
   const [tempQuest1, setTempQuest1] = useState('false');
   useEffect(() => {
-    const data = window.localStorage.getItem('tempQuest1');
+    const data = window.sessionStorage.getItem('tempQuest1');
     setTempQuest1(JSON.parse(data));
   }, []);
   useEffect(() => {
-    window.localStorage.setItem('tempQuest1', JSON.stringify(tempQuest1));
+    window.sessionStorage.setItem('tempQuest1', JSON.stringify(tempQuest1));
   }, [tempQuest1]);
 
   //TempQuest2 State/Local Storage
   const [tempQuest2, setTempQuest2] = useState('false');
   useEffect(() => {
-    const data = window.localStorage.getItem('tempQuest2');
+    const data = window.sessionStorage.getItem('tempQuest2');
     setTempQuest2(JSON.parse(data));
   }, []);
   useEffect(() => {
-    window.localStorage.setItem('tempQuest2', JSON.stringify(tempQuest2));
+    window.sessionStorage.setItem('tempQuest2', JSON.stringify(tempQuest2));
   }, [tempQuest2]);
 
   //TempQuest3 State/Local Stoage
   const [tempQuest3, setTempQuest3] = useState('false');
   useEffect(() => {
-    const data = window.localStorage.getItem('tempQuest3');
+    const data = window.sessionStorage.getItem('tempQuest3');
     setTempQuest3(JSON.parse(data));
   }, []);
   useEffect(() => {
-    window.localStorage.setItem('tempQuest3', JSON.stringify(tempQuest3));
+    window.sessionStorage.setItem('tempQuest3', JSON.stringify(tempQuest3));
   }, [tempQuest3]);
 
   //TempQuest4 State/Local Storage
   const [tempQuest4, setTempQuest4] = useState('false');
   useEffect(() => {
-    const data = window.localStorage.getItem('tempQuest4');
+    const data = window.sessionStorage.getItem('tempQuest4');
     setTempQuest4(JSON.parse(data));
   }, []);
   useEffect(() => {
-    window.localStorage.setItem('tempQuest4', JSON.stringify(tempQuest4));
+    window.sessionStorage.setItem('tempQuest4', JSON.stringify(tempQuest4));
   }, [tempQuest4]);
 
   const [timeStamp, setTimeStamp] = useState('');
@@ -165,11 +165,11 @@ function App(props) {
   //TempMongoID State/Local Storage
   const [tempMongoID, setTempMongoID] = useState('');
   useEffect(() => {
-    const data = window.localStorage.getItem('tempMongoID');
+    const data = window.sessionStorage.getItem('tempMongoID');
     setTempMongoID(JSON.parse(data));
   }, []);
   useEffect(() => {
-    window.localStorage.setItem('tempMongoID', JSON.stringify(tempMongoID));
+    window.sessionStorage.setItem('tempMongoID', JSON.stringify(tempMongoID));
   }, [tempMongoID]);
 
   //////////////////////////////////////////// END OF TEMP STATE
@@ -195,11 +195,11 @@ function App(props) {
   const [current, setCurrent] = useState(tempCurrentMap);
   //Persist Logic for currentMap
   useEffect(() => {
-    const data = window.localStorage.getItem('CurrentMap');
+    const data = window.sessionStorage.getItem('CurrentMap');
     setCurrent(JSON.parse(data));
   }, []);
   useEffect(() => {
-    window.localStorage.setItem('CurrentMap', JSON.stringify(current));
+    window.sessionStorage.setItem('CurrentMap', JSON.stringify(current));
   }, [current]);
 
   const [tempCurrent, setTempCurrent] = useState(null);
@@ -744,7 +744,7 @@ function App(props) {
   const blob = new Blob(Object.values(localStorage)).size;
   console.log('LOCAL STORAGE', blob);
 
-  
+
   //Return logic
   return (
     <>
