@@ -297,7 +297,7 @@ function App(props) {
       axios
         .get(
           // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state` ||
-          `${process.env.APPJS_GET_REQUEST_ENDPOINT_PRODUCTION}/state`
+          "https://www.sacredcurse.com/state"
             )
         .then((res) => {
           console.log('RES DATA', res.data[0].subID);
@@ -362,7 +362,7 @@ function App(props) {
       const putState = async (id) => {
         const data = await fetch(
           // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}` ||
-          `${process.env.APPJS_GET_REQUEST_ENDPOINT_PRODUCTION}/state/update/${id}`,
+          `https://www.sacredcurse.com/state/update/${id}`,
           {
             method: 'PUT',
             headers: {

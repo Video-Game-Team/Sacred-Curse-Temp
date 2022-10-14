@@ -291,7 +291,7 @@ function Login(props) {
      axios
        .get(
         //  `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state` ||
-         `${process.env.APPJS_GET_REQUEST_ENDPOINT_PRODUCTION}/state`,
+         "https://www.sacredcurse.com/state",
          {}
        )
        .then((res) => {
@@ -309,7 +309,7 @@ function Login(props) {
       axios
         .post(
           // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new` ||
-          `${process.env.APPJS_GET_REQUEST_ENDPOINT_PRODUCTION}/state/new`,
+          "https://www.sacredcurse.com/state/new",
           {
             name: name,
             email: user.email,
