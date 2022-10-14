@@ -289,36 +289,44 @@ function Login(props) {
     useEffect(() => { 
      if (isAuthenticated === true) {
      axios
-      .get(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {})
-      .then((res) => {
-        setSaveState(res.data);
-        setCheckEmail(res.data[0].email);
-        setTumpSubID(user.sub);
-        setCheckSubID(res.data[0].subID);
-      })
-      .catch((err) => console.log(err));
+       .get(
+         `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state` ||
+         `${process.env.APPJS_GET_REQUEST_ENDPOINT_PRODUCTION}/state`,
+         {}
+       )
+       .then((res) => {
+         setSaveState(res.data);
+         setCheckEmail(res.data[0].email);
+         setTumpSubID(user.sub);
+         setCheckSubID(res.data[0].subID);
+       })
+       .catch((err) => console.log(err));
 
     if (checkSubID === tempSubID) {
       console.log('USER MATCHES');
     } 
     else {
       axios
-        .post(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new`, {
-          name: name,
-          email: user.email,
-          password: password,
-          userName: user.nickname,
-          subID: user.sub,
-          currentMap: 'indoorHouse10',
-          flowers: 0,
-          quest1: false,
-          quest2: false,
-          quest3: false,
-          quest4: false,
-          timeStamp: ''
-        })
+        .post(
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new` ||
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT_PRODUCTION}/state/new`,
+          {
+            name: name,
+            email: user.email,
+            password: password,
+            userName: user.nickname,
+            subID: user.sub,
+            currentMap: 'indoorHouse10',
+            flowers: 0,
+            quest1: false,
+            quest2: false,
+            quest3: false,
+            quest4: false,
+            timeStamp: ''
+          }
+        )
         .then((res) => {
-          console.log('NEW USER RECORD')
+          console.log('NEW USER RECORD');
           console.log(res);
         })
         .catch((err) => console.log(err));

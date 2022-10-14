@@ -295,7 +295,10 @@ function App(props) {
       console.log('GET REQUEST AFTER MOUNT');
 
       axios
-        .get(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`)
+        .get(
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state` ||
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT_PRODUCTION}/state`
+            )
         .then((res) => {
           console.log('RES DATA', res.data[0].subID);
           console.log('GET REQUEST BEFORE FILTER');
@@ -357,26 +360,30 @@ function App(props) {
   useEffect(() => {
     if (trigger2 === true) {
       const putState = async (id) => {
-        const data = await fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`, {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            name: tempName,
-            email: tempEmail,
-            userName: tempUserName,
-            subID: tempSubID,
-            password: tempPassword,
-            currentMap: current,
-            flowers: tempFlowers,
-            quest1: tempQuest1,
-            quest2: tempQuest2,
-            quest3: tempQuest3,
-            quest4: tempQuest4,
-            timeStamp: timeStamp
-          })
-        }).then((res) => res.json());
+        const data = await fetch(
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}` ||
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT_PRODUCTION}/state/update/${id}`,
+          {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              name: tempName,
+              email: tempEmail,
+              userName: tempUserName,
+              subID: tempSubID,
+              password: tempPassword,
+              currentMap: current,
+              flowers: tempFlowers,
+              quest1: tempQuest1,
+              quest2: tempQuest2,
+              quest3: tempQuest3,
+              quest4: tempQuest4,
+              timeStamp: timeStamp
+            })
+          }
+        ).then((res) => res.json());
         console.log('SAVE GAME RECORD UPDATED');
       };
       putState(tempMongoID);
