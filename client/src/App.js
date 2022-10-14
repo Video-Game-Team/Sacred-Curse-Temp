@@ -70,20 +70,109 @@ const URL = require('url-parse');
 function App(props) {
   const [itemObj, setItemObj] = useState({});
 
-  // Temp state for User save game
+  //////////////////////////////////////////// START OF TEMP STATE
+  // TempName State
   const [tempName, setTempName] = useState('');
+
+  //TempEmail State/Local Storage
   const [tempEmail, setTempEmail] = useState('');
+  useEffect(() => {
+    const data = window.localStorage.getItem('tempEmail');
+    setTempEmail(JSON.parse(data));
+  }, []);
+  useEffect(() => {
+    window.localStorage.setItem('tempEmail', JSON.stringify(tempEmail));
+  }, [tempEmail]);
+
+  //TempUserName State/Local Storage
   const [tempUserName, setTempUserName] = useState('');
+  useEffect(() => {
+    const data = window.localStorage.getItem('tempUserName');
+    setTempUserName(JSON.parse(data));
+  }, []);
+  useEffect(() => {
+    window.localStorage.setItem('tempUserName', JSON.stringify(tempUserName));
+  }, [tempUserName]);
+
+  //TempSubID State/Local Storage
   const [tempSubID, setTempSubID] = useState('');
+  useEffect(() => {
+    const data = window.localStorage.getItem('tempSubID');
+    setTempSubID(JSON.parse(data));
+  }, []);
+  useEffect(() => {
+    window.localStorage.setItem('tempSubID', JSON.stringify(tempSubID));
+  }, [tempSubID]);
+
+  //TempPassword State
   const [tempPassword, setTempPassword] = useState('');
+
+  //TempCurrentMap State
   const [tempCurrentMap, setTempCurrentMap] = useState('loadingMap');
+
+  //TempFlowers State/Local Storage
   const [tempFlowers, setTempFlowers] = useState(0);
+  useEffect(() => {
+    const data = window.localStorage.getItem('tempFlowers');
+    setTempFlowers(JSON.parse(data));
+  }, []);
+  useEffect(() => {
+    window.localStorage.setItem('tempFlowers', JSON.stringify(tempFlowers));
+  }, [tempFlowers]);
+
+  //TempQuest1 State/Local Storage
   const [tempQuest1, setTempQuest1] = useState('false');
+  useEffect(() => {
+    const data = window.localStorage.getItem('tempQuest1');
+    setTempQuest1(JSON.parse(data));
+  }, []);
+  useEffect(() => {
+    window.localStorage.setItem('tempQuest1', JSON.stringify(tempQuest1));
+  }, [tempQuest1]);
+
+  //TempQuest2 State/Local Storage
   const [tempQuest2, setTempQuest2] = useState('false');
+  useEffect(() => {
+    const data = window.localStorage.getItem('tempQuest2');
+    setTempQuest2(JSON.parse(data));
+  }, []);
+  useEffect(() => {
+    window.localStorage.setItem('tempQuest2', JSON.stringify(tempQuest2));
+  }, [tempQuest2]);
+
+  //TempQuest3 State/Local Stoage
   const [tempQuest3, setTempQuest3] = useState('false');
-  const [tempQuest4, setTempQuest] = useState('false');
+  useEffect(() => {
+    const data = window.localStorage.getItem('tempQuest3');
+    setTempQuest3(JSON.parse(data));
+  }, []);
+  useEffect(() => {
+    window.localStorage.setItem('tempQuest3', JSON.stringify(tempQuest3));
+  }, [tempQuest3]);
+
+  //TempQuest4 State/Local Storage
+  const [tempQuest4, setTempQuest4] = useState('false');
+  useEffect(() => {
+    const data = window.localStorage.getItem('tempQuest4');
+    setTempQuest4(JSON.parse(data));
+  }, []);
+  useEffect(() => {
+    window.localStorage.setItem('tempQuest4', JSON.stringify(tempQuest4));
+  }, [tempQuest4]);
+
   const [timeStamp, setTimeStamp] = useState('');
+
+  //TempMongoID State/Local Storage
   const [tempMongoID, setTempMongoID] = useState('');
+  useEffect(() => {
+    const data = window.localStorage.getItem('tempMongoID');
+    setTempMongoID(JSON.parse(data));
+  }, []);
+  useEffect(() => {
+    window.localStorage.setItem('tempMongoID', JSON.stringify(tempMongoID));
+  }, [tempMongoID]);
+
+  //////////////////////////////////////////// END OF TEMP STATE
 
   const [menu1Toggle, setMenu1Toggle] = useState(false);
   const [menu2Toggle, setMenu2Toggle] = useState(false);
@@ -104,6 +193,15 @@ function App(props) {
   ]);
 
   const [current, setCurrent] = useState(tempCurrentMap);
+  //Persist Logic for currentMap
+  useEffect(() => {
+    const data = window.localStorage.getItem('CurrentMap');
+    setCurrent(JSON.parse(data));
+  }, []);
+  useEffect(() => {
+    window.localStorage.setItem('CurrentMap', JSON.stringify(current));
+  }, [current]);
+
   const [tempCurrent, setTempCurrent] = useState(null);
   const [previous, setPrevious] = useState(null);
   const [textValue, setTextValue] = useState(null);
@@ -160,11 +258,9 @@ function App(props) {
       setExecute(false);
     }, 100);
     setTimeout(() => {
-      setLoadGameToggle(false)
-    }, 100)
+      setLoadGameToggle(false);
+    }, 100);
   };
-
-  
 
   //GET Request for Fetching and Updating Users Game Records
   useEffect(() => {
@@ -194,10 +290,11 @@ function App(props) {
             setTempQuest1(result[0].quest1);
             setTempQuest2(result[0].quest2);
             setTempQuest3(result[0].quest3);
-            setTempQuest(result[0].quest4);
+            setTempQuest4(result[0].quest4);
             setTimeStamp(result[0].timeStamp);
             setSaveState(res.data);
             setCurrent(result[0].currentMap);
+
             // console.log('_ID AFTER GET', res.data[0]._id);
             // console.log('NAME AFTER GET', res.data[0].name);
             // console.log('EMAIL AFTER GET', res.data[0].email);
@@ -217,7 +314,7 @@ function App(props) {
         .catch((err) => console.log(err));
     }
   }, [execute]);
-  
+
   console.log('ISMOUNTED', isMounted.current);
 
   console.log('NAME AFTER', tempName);
@@ -558,21 +655,20 @@ function App(props) {
     setPrevious(y);
   }
 
-  useEffect(()=>{
-    window.addEventListener("keydown", preventRefresh)
+  // EVent listener to block page refresh
+  // useEffect(()=>{
+  //   window.addEventListener("keydown", preventRefresh)
+  //   function preventRefresh(event){
+  // if (event.key==='r' || event.key==="R" || event.key === "116" || event.key==="w" || event.key==="W"  || event.key==="Q" || event.key==="q"){
+  //   alert("Don't refresh or  quit please : )")
+  //     event.preventDefault()
+  // }
+  //   }
+  //   return () => {
+  //     window.removeEventListener('keydown', preventRefresh);
+  //   };
+  // },[])
 
-    function preventRefresh(event){
-  if (event.key==='r' || event.key==="R" || event.key === "116" || event.key==="w" || event.key==="W"  || event.key==="Q" || event.key==="q"){
-    alert("Don't refresh or  quit please : )")
-      event.preventDefault()
-  }
-    }
-    return () => {
-      window.removeEventListener('keydown', preventRefresh);
-    };
-  },[])
- 
- 
   /////////////////////////////////////////////////////////////////
   //MATT STATE PASSING FUNCTION for subID Auth
   function subIDPass(subIDAuth) {
@@ -643,7 +739,6 @@ function App(props) {
       : null;
   }, []);
 
-
   //Return logic
   return (
     <>
@@ -669,7 +764,6 @@ function App(props) {
                   NEW GAME
                 </button>
               ) : null}
-
               {framerateToggle === true ? (
                 <>
                   <div>
