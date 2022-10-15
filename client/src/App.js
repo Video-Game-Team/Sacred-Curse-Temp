@@ -236,6 +236,7 @@ function App(props) {
   const [refreshMessage, setRefreshMessage] = useState(false)
 
   const [execute, setExecute] = useState(false);
+  const [createNewGame, setCreateNewGame] = useState(false);
 
   //UseReft to stop Get request Useeffect from running on re-render
   const isMounted = useRef(false);
@@ -286,6 +287,19 @@ function App(props) {
     }, 100);
   }
 
+  function newGame() {
+    isMounted.current = true;
+    setCreateNewGame(true);
+    setTimeout(() => {
+      isMounted.current = false;
+      setCreateNewGame(false);
+    }, 100);
+    setTimeout(() => {
+    
+    }, 100);
+  }
+
+
 
     const alertRefreshMessage = () => {
       
@@ -297,7 +311,6 @@ function App(props) {
     //  console.log('SUBUID', props.subIDAuth);
     if (isMounted.current) {
       console.log('GET REQUEST AFTER MOUNT');
-
       axios
         .get(
           `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
@@ -359,6 +372,40 @@ function App(props) {
   console.log('QUEST2 AFTER', tempQuest2);
   console.log('QUEST3 AFTER', tempQuest3);
   console.log('QUEST4 AFTER', tempQuest4);
+
+
+
+
+
+useEffect(() => {
+  if (isMounted.current) {
+    axios
+      .post(
+        `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new`,
+        // "https://www.sacredcurse.com/state/new",
+        {
+          name: name,
+          email: user.email,
+          password: password,
+          userName: user.nickname,
+          subID: user.sub,
+          currentMap: 'indoorHouse10',
+          flowers: 0,
+          quest1: false,
+          quest2: false,
+          quest3: false,
+          quest4: false,
+          timeStamp: ''
+        }
+      )
+      .then((res) => {
+        console.log('NEW USER RECORD');
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  }
+}, [createNewGame]);
+
 
   // PUT Request for SaveState
   useEffect(() => {
@@ -801,7 +848,7 @@ function App(props) {
               ) : null}
 
               {loadGameToggle === true ? (
-                <button className="newGame" onClick={loadGame}>
+                <button className="newGame" onClick={newGame}>
                   NEW GAME
                 </button>
               ) : null}
