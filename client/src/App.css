@@ -323,215 +323,6 @@ p {
 } */
 
 
- .box1 {
-   position: absolute;
-   top: 1.8rem;
-   left: 81.3rem;
-   width: 20%;
-   height: 27%;
-   padding: .6em;
-   border: .26rem solid rgb(0, 4, 255);
-   border-radius: .6rem;
-   margin: 0em;
-   background: rgb(9, 9, 9);
-   z-index: -1;
- }
-
-  .box1:before {
-   background: none;
-   border: 2px solid rgb(0, 0, 0);
-   content: "";
-   display: block;
-   position: absolute;
-   top: .1rem;
-   left: .1rem;
-   right: .1rem;
-   bottom: .1rem;
-   pointer-events: none;
- }
-
- .box1::before {
-   content: '';
-   display: block;
-   background: rgba(255, 255, 255, 0.2);
-   background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
- }
-
- .box2 {
-   position: absolute;
-   top: 17.3em;
-  left: 81.3rem;
-    width: 20%;
-  height: 27%;
-  padding: .6em;
-   border: .26rem solid rgb(0, 4, 255);
-  border-radius: .6rem;
-    margin: 0em;
-   background: rgb(9, 9, 9);
-    z-index: -1;
- }
-
-  .box2:before {
-   background: none;
-   border: 2px solid rgb(0, 0, 0);
-   content: "";
-   display: block;
-   position: absolute;
-     top: .1rem;
-   left: .1rem;
-   right: .1rem;
-   bottom: .1rem;
-   pointer-events: none;
- }
-
- .box2::before {
-   content: '';
-   display: block;
-   background: rgba(255, 255, 255, 0.2);
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
- }
-
- .box3 {
-   position: absolute;
-   top: 32.8em;
-  left: 81.3rem;
-    width: 20%;
-  height: 27%;
-  padding: .6em;
-  border: .26rem solid rgb(0, 4, 255);
-  border-radius: .6rem;
-  margin: 0em;
-   background: rgb(9, 9, 9);
-    z-index: -1;
- }
-
- .box3:before {
-   background: none;
-  border: 2px solid rgb(0, 0, 0);
-   content: "";
-   display: block;
-   position: absolute;
-   top: .1rem;
-   left: .1rem;
-   right: .1rem;
-   bottom: .1rem;
-   pointer-events: none;
- }
-
- .box3::before {
-   content: '';
-   display: block;
-   background: rgba(255, 255, 255, 0.2);
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
- }
-
-  .box4 {
-      position: absolute;
-      top: 1.8em;
-      left: -18.2em;
-      width: 20%;
-      height: 44.6em;
-      padding: .65em;
-      border: .26rem solid rgb(2, 6, 255);
-      border-radius: .6rem;
-      margin: 0em;
-      background: rgb(9, 9, 9);
-      z-index: -1;
-    }
-  
-    .box4:before {
-      background: none;
-      border: 2px solid rgb(0, 0, 0);
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0rem;
-      left: .1rem;
-      right: .1rem;
-      bottom: .1rem;
-      pointer-events: none;
-    }
-
-
-    .box4::before {
-    content: '';
-    display: block; 
-    background: rgba(255, 255, 255, 0.2);
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
-    } 
-
-
-     .box5 {
-      position: absolute;
-      top: 49.8em;
-      left: 1.7em;
-      width: 93.5%;
-      height: .8em;
-      padding: .65em;
-      border: .26rem solid rgb(2, 6, 255);
-      border-radius: .6rem;
-      margin: 0em;
-      background: rgb(9, 9, 9);
-      z-index: -1;
-    }
-
-     .box5:before {
-      background: none;
-      border: .16rem solid rgb(0, 0, 0);
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0rem;
-      left: .1rem;
-      right: .1rem;
-      bottom: .1rem;
-      pointer-events: none;
-    }
-
-
-    .box5::before {
-    content: '';
-    display: block; 
-    background: rgba(255, 255, 255, 0.2);
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
-    } 
-
-
-    .box6 {
-      position: absolute;
-      top: -3.5em;
-      left: 1.6rem;
-      width: 93.5%;
-      height: 1.7rem;
-      padding: 0.625em;
-      border: .26rem solid rgb(2, 6, 255);
-      border-radius: 0.625rem;
-      margin: 0em;
-      background: rgb(9, 9, 9);
-      z-index: -1;
-    }
-  
-    .box6:before {
-      background: none;
-      border: .16rem solid rgb(0, 0, 0);
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0rem;
-      left: .1rem;
-      right: .1rem;
-      bottom: .1rem;
-      pointer-events: none;
-    }
-  
-  
-    .box6::before {
-      content: '';
-      display: block;
-      background: rgba(255, 255, 255, 0.2);
-      background: linear-gradient(0deg, rgba(255, 255, 255, 0.435)50%, rgba(255, 255, 255, 0.7)100%);
-    }
-
     .clockTime {
        z-index: 999;
        top: -1;
@@ -555,6 +346,26 @@ p {
         left: 15rem;
         max-width: 100%;
     }
+
+
+.popup {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  position: absolute;
+  margin: 70px auto;
+  padding: 50px;
+  background: rgb(7, 0, 0);
+  border-radius: 5px;
+  width: 65%;
+  top: 22rem;
+  left: 10.8rem;
+  font-size: calc(1rem + .5vw);
+  white-space: wrap;
+  color: rgb(255, 0, 0);
+  /* transition: all 5s ease-in-out; */
+}
+
 
     /* ////////////////////////////////// */
       

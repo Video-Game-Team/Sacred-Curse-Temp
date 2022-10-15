@@ -70,7 +70,7 @@ const URL = require('url-parse');
 function App(props) {
   const [itemObj, setItemObj] = useState({});
 
-  //////////////////////////////////////////// START OF TEMP STATE
+  //START OF TEMP STATE//////////////////////////////////////////
   // TempName State
   const [tempName, setTempName] = useState('');
 
@@ -172,13 +172,12 @@ function App(props) {
     window.sessionStorage.setItem('tempMongoID', JSON.stringify(tempMongoID));
   }, [tempMongoID]);
 
-  //////////////////////////////////////////// END OF TEMP STATE
+  //END OF TEMP STATE/;///////////////////z/////////////////////// 
 
   const [menu1Toggle, setMenu1Toggle] = useState(false);
   const [menu2Toggle, setMenu2Toggle] = useState(false);
   const [menuClockToggle, setMenuClockToggle] = useState(false);
   const [framerateToggle, setFramerateToggle] = useState(false);
-
 
   //LoadGame Toggle logic for Load Game message
   const [loadGameToggle, setLoadGameToggle] = useState(true);
@@ -186,7 +185,7 @@ function App(props) {
   //    const data = window.sessionStorage.getItem('loadGameToggle');
   //    setLoadGameToggle(JSON.parse(data));
   //  }, []);
-   
+
   //  useEffect(() => {
   //    window.sessionStorage.setItem('loadGameToggle', JSON.stringify(loadGameToggle));
   //  }, []);
@@ -234,6 +233,7 @@ function App(props) {
   const [trigger, setTrigger] = useState(false);
   const [trigger2, setTrigger2] = useState(false);
   const [saveMessage, setSaveMessage] = useState(false);
+  const [refreshMessage, setRefreshMessage] = useState(false)
 
   const [execute, setExecute] = useState(false);
 
@@ -274,18 +274,22 @@ function App(props) {
   //   }, 100);
   // };
 
-    function loadGame() {
-          isMounted.current = true;
-          setExecute(true);
-          setTimeout(() => {
-            isMounted.current = false;
-            setExecute(false);
-          }, 100);
-          setTimeout(() => {
-            setLoadGameToggle(false);
-          }, 100);
-     };
-     
+  function loadGame() {
+    isMounted.current = true;
+    setExecute(true);
+    setTimeout(() => {
+      isMounted.current = false;
+      setExecute(false);
+    }, 100);
+    setTimeout(() => {
+      setLoadGameToggle(false);
+    }, 100);
+  }
+
+
+    const alertRefreshMessage = () => {
+      
+    }
 
   //GET Request for Fetching and Updating Users Game Records
   useEffect(() => {
@@ -298,7 +302,7 @@ function App(props) {
         .get(
           `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
           // "https://www.sacredcurse.com/state"
-            )
+        )
         .then((res) => {
           console.log('RES DATA', res.data[0].subID);
           console.log('GET REQUEST BEFORE FILTER');
@@ -687,19 +691,20 @@ function App(props) {
     setPrevious(y);
   }
 
-  // EVent listener to block page refresh
-  // useEffect(()=>{
-  //   window.addEventListener("keydown", preventRefresh)
-  //   function preventRefresh(event){
-  // if (event.key==='r' || event.key==="R" || event.key === "116" || event.key==="w" || event.key==="W"  || event.key==="Q" || event.key==="q"){
-  //   alert("Don't refresh or  quit please : )")
-  //     event.preventDefault()
-  // }
-  //   }
-  //   return () => {
-  //     window.removeEventListener('keydown', preventRefresh);
-  //   };
-  // },[])
+  // EVent listener to block page refresh, quit and close abilites
+  useEffect(()=>{
+    window.addEventListener("keydown", preventRefresh)
+    function preventRefresh(event){
+  if (event.key==='r' || event.key==="R" || event.key === "116" || event.key==="w" || event.key==="W"  || event.key==="Q" || event.key==="q"){
+    setRefreshMessage(true)
+    // alert("Don't refresh or  quit please : )")
+    //   event.preventDefault()
+  }
+    }
+    return () => {
+      window.removeEventListener('keydown', preventRefresh);
+    };
+  },[])
 
   /////////////////////////////////////////////////////////////////
   //MATT STATE PASSING FUNCTION for subID Auth
@@ -771,11 +776,9 @@ function App(props) {
       : null;
   }, []);
 
-
-  //Local Storage Size
+  //Local Storage Size Indicator
   const blob = new Blob(Object.values(localStorage)).size;
   console.log('LOCAL STORAGE', blob);
-
 
   //Return logic
   return (
@@ -791,8 +794,6 @@ function App(props) {
         ) : (
           <div style={{ filter: `saturate(${saturate}%)` }}>
             <div style={{ filter: `contrast(${contrast}%)` }}>
-
-
               {loadGameToggle === true ? (
                 <button className="loadGame" onClick={loadGame}>
                   LOAD GAME
@@ -896,6 +897,15 @@ function App(props) {
 
                 {saveMessage === true ? (
                   <h1 className="successMessage">YOUR GAME WAS SUCCESSFULLY SAVED!</h1>
+                ) : null}
+
+                {refreshMessage === true ? (
+                  <h1 className="popup">
+                    "WARNING!"
+                    <br />
+                    If you refresh the page you will start over again on the same map.
+                    <br /> This is not advised!
+                  </h1>
                 ) : null}
               </div>
             </div>
