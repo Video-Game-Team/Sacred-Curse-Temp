@@ -328,7 +328,9 @@ function App(props) {
   function proceedToggle() {
     isMounted.current = true;
     setProceedButton(true);
-    setExecute(true);
+    setTimeout(() => {
+        setExecute(true);
+    }, 200)
     setTimeout(() => {
       isMounted.current = false;
       setProceedButton(false);
@@ -534,8 +536,9 @@ function App(props) {
             })
           }
         ).then((res) => res.json());
-        console.log('SAVE GAME RECORD UPDATED');
+        setGameOverwriteWarning(false);
         setExecute(true)
+        console.log('SAVE GAME RECORD UPDATED');
       };
       putState(tempMongoID);
     }
