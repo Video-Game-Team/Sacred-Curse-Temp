@@ -14,22 +14,16 @@ import App from './App';
 
 import './index.css';
 
-
+//Main function Index
 function Index(props) {
 
-  //State
+  //Login Redirect State
   const { loginRedirect, setLoginRedirect } = PageRedirect();
-  const [downPass, setDownPass]= useState("original")
+ 
 
-
-// Disable React Dev Tools
-  // if (process.env.NODE_ENV === 'production') {
+  // Disable React Dev Tools
+  if (process.env.NODE_ENV === 'production') {
     disableReactDevTools();
-  // }
-
-// Matt function in Index.js
-  function subIDPass(SubIDAuth) {
-    setDownPass(SubIDAuth);
   }
 
   // Page refresh logic    
@@ -42,7 +36,7 @@ function Index(props) {
     return <Navigate replace to="/game" />;
   }
 
-  // Retrun logic
+  // Return logic
   return (
     <Auth0Provider
       domain="dev-mvc8sgjt.us.auth0.com"
@@ -51,10 +45,10 @@ function Index(props) {
       <HashRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Login subIDPasser={subIDPass} />} />
-            <Route path="/login" element={<Login subIDPasser={subIDPass} />} />
-            <Route path="/game" element={<App subIDAuth={downPass} />} />
-            <Route path="*" element={<App subIDAuth={downPass} />} />
+            <Route index element={<Login />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/game" element={<App />} />
+            <Route path="*" element={<App />} />
           </Route>
         </Routes>
       </HashRouter>
@@ -62,6 +56,7 @@ function Index(props) {
   );
 }
 
+//Export Logic
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
@@ -70,5 +65,3 @@ root.render(
 );
 
 export default Index;
-
-

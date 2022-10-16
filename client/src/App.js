@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import LeftWalker from './assets/images/leftWalker.png';
@@ -74,7 +74,7 @@ function App(props) {
   // TempName State
   const [tempName, setTempName] = useState('');
 
-  //TempEmail State/Local Storage
+  //TempEmail State/Session Storage
   const [tempEmail, setTempEmail] = useState('');
   useEffect(() => {
     const data = window.sessionStorage.getItem('tempEmail');
@@ -84,7 +84,7 @@ function App(props) {
     window.sessionStorage.setItem('tempEmail', JSON.stringify(tempEmail));
   }, [tempEmail]);
 
-  //TempUserName State/Local Storage
+  //TempUserName State/Session Storage
   const [tempUserName, setTempUserName] = useState('');
   useEffect(() => {
     const data = window.sessionStorage.getItem('tempUserName');
@@ -94,7 +94,7 @@ function App(props) {
     window.sessionStorage.setItem('tempUserName', JSON.stringify(tempUserName));
   }, [tempUserName]);
 
-  //TempSubID State/Local Storage
+  //TempSubID State/Session Storage
   const [tempSubID, setTempSubID] = useState('');
   useEffect(() => {
     const data = window.sessionStorage.getItem('tempSubID');
@@ -110,7 +110,7 @@ function App(props) {
   //TempCurrentMap State
   const [tempCurrentMap, setTempCurrentMap] = useState('loadingMap');
 
-  //TempFlowers State/Local Storage
+  //TempFlowers State/Session Storage
   const [tempFlowers, setTempFlowers] = useState(0);
   useEffect(() => {
     const data = window.sessionStorage.getItem('tempFlowers');
@@ -120,7 +120,7 @@ function App(props) {
     window.sessionStorage.setItem('tempFlowers', JSON.stringify(tempFlowers));
   }, [tempFlowers]);
 
-  //TempQuest1 State/Local Storage
+  //TempQuest1 State/Session Storage
   const [tempQuest1, setTempQuest1] = useState('false');
   useEffect(() => {
     const data = window.sessionStorage.getItem('tempQuest1');
@@ -130,7 +130,7 @@ function App(props) {
     window.sessionStorage.setItem('tempQuest1', JSON.stringify(tempQuest1));
   }, [tempQuest1]);
 
-  //TempQuest2 State/Local Storage
+  //TempQuest2 State/Session Storage
   const [tempQuest2, setTempQuest2] = useState('false');
   useEffect(() => {
     const data = window.sessionStorage.getItem('tempQuest2');
@@ -140,7 +140,7 @@ function App(props) {
     window.sessionStorage.setItem('tempQuest2', JSON.stringify(tempQuest2));
   }, [tempQuest2]);
 
-  //TempQuest3 State/Local Stoage
+  //TempQuest3 State/Session Storage
   const [tempQuest3, setTempQuest3] = useState('false');
   useEffect(() => {
     const data = window.sessionStorage.getItem('tempQuest3');
@@ -150,7 +150,7 @@ function App(props) {
     window.sessionStorage.setItem('tempQuest3', JSON.stringify(tempQuest3));
   }, [tempQuest3]);
 
-  //TempQuest4 State/Local Storage
+  //TempQuest4 State/Session Storage
   const [tempQuest4, setTempQuest4] = useState('false');
   useEffect(() => {
     const data = window.sessionStorage.getItem('tempQuest4');
@@ -160,9 +160,10 @@ function App(props) {
     window.sessionStorage.setItem('tempQuest4', JSON.stringify(tempQuest4));
   }, [tempQuest4]);
 
+  //TimeStamp State/Session Storage
   const [timeStamp, setTimeStamp] = useState('');
 
-  //TempMongoID State/Local Storage
+  //TempMongoID State/Session Storage
   const [tempMongoID, setTempMongoID] = useState('');
   useEffect(() => {
     const data = window.sessionStorage.getItem('tempMongoID');
@@ -172,7 +173,28 @@ function App(props) {
     window.sessionStorage.setItem('tempMongoID', JSON.stringify(tempMongoID));
   }, [tempMongoID]);
 
-  //END OF TEMP STATE/;///////////////////z/////////////////////// 
+  //END OF TEMP STATE/;///////////////////z///////////////////////
+
+  const [finalEmail, setFinalEmail] = useState('');
+  const [finalUserName, setFinalUserName] = useState('');
+  const [finalSubID, setFinalSubID] = useState('');
+
+  const email = useEffect(() => {
+    const data = window.sessionStorage.getItem('email');
+    setFinalEmail(data);
+  }, []);
+
+  const userName = useEffect(() => {
+    const data = window.sessionStorage.getItem('userName');
+    setFinalUserName(data);
+  }, []);
+
+  const authID = useEffect(() => {
+    const data = window.sessionStorage.getItem('userID');
+    setFinalSubID(data);
+  }, []);
+
+  //RETRIEVE SESSION STORAGE CREDENTIALS//////////////////////////////////////////////////////
 
   const [menu1Toggle, setMenu1Toggle] = useState(false);
   const [menu2Toggle, setMenu2Toggle] = useState(false);
@@ -181,15 +203,26 @@ function App(props) {
 
   //LoadGame Toggle logic for Load Game message
   const [loadGameToggle, setLoadGameToggle] = useState(true);
-  //  useEffect(() => {
-  //    const data = window.sessionStorage.getItem('loadGameToggle');
-  //    setLoadGameToggle(JSON.parse(data));
-  //  }, []);
 
-  //  useEffect(() => {
-  //    window.sessionStorage.setItem('loadGameToggle', JSON.stringify(loadGameToggle));
-  //  }, []);
-  //  console.log('Load Game Toggle', loadGameToggle);
+  //Prevent Load button from popping back up
+  const [preventLoadGameButton, setPreventLoadGameButton] = useState(true);
+  // useEffect(() => {
+  //   const data = window.localStorage.getItem('preventLoadGameButton');
+  //   setPreventLoadGameButton(JSON.parse(data));
+  // }, []);
+  // useEffect(() => {
+  //   window.sessionStorage.setItem('preventLoadGameButton', JSON.stringify(preventLoadGameButton));
+  // }, [preventLoadGameButton]);
+
+  //Prevent new button from popping back up
+  const [preventNewGameButton, setPreventNewGameButton] = useState(true);
+  // useEffect(() => {
+  //   const data = window.localStorage.getItem('preventNewGameButton');
+  //   setPreventNewGameButton(JSON.parse(data));
+  // }, [preventNewGameButton]);
+  // useEffect(() => {
+  //   window.sessionStorage.setItem('preventNewGameButton', JSON.stringify(preventNewGameButton));
+  // }, [preventNewGameButton]);
 
   // Logic for checking Browser type
   const [browserWarning, setBrowserWarning] = useState(false);
@@ -233,13 +266,27 @@ function App(props) {
   const [trigger, setTrigger] = useState(false);
   const [trigger2, setTrigger2] = useState(false);
   const [saveMessage, setSaveMessage] = useState(false);
-  const [refreshMessage, setRefreshMessage] = useState(false)
+  const [refreshMessage, setRefreshMessage] = useState(false);
+  const [newGameToggle, setNewGameToggle] = useState(false);
+  const [newGameMessage, setNewGameMessage] = useState(false);
 
-  const [execute, setExecute] = useState(false);
+  //Create New Game State
   const [createNewGame, setCreateNewGame] = useState(false);
 
-  //UseReft to stop Get request Useeffect from running on re-render
+  //Create Load Game State
+  const [execute, setExecute] = useState(false);
+
+  //UseRef to stop Get request Useeffect from running on re-render
   const isMounted = useRef(false);
+  // useEffect(() => {
+  //   const data = window.sessionStorage.getItem('isMounted');
+  //   //  isMounted(JSON.parse(data));
+  // }, []);
+  // useEffect(() => {
+  //   window.sessionStorage.setItem('isMounted', JSON.stringify(isMounted.current));
+  // }, [isMounted]);
+
+  console.log('IsMounted', isMounted);
 
   // Handle Click Function For temp activating Get Request
   const handleClickSave = (e) => {
@@ -254,39 +301,17 @@ function App(props) {
     }, 4000);
   };
 
-  // console.log('SAVE MESSAGE', saveMessage);
-
-  // console.log('NAME BEFORE', tempName);
-  // console.log('Email BEFORE', tempEmail);
-  // console.log('Username BEFORE', tempUserName);
-  // console.log('SubID BEFORE', tempSubID);
-  // console.log('Current Map BEFORE', tempCurrentMap);
-
-  //Logic for triggering useeffect and Get request
-  // const loadGame = () => {
-  //   isMounted.current = true;
-  //   setExecute(true);
-  //   setTimeout(() => {
-  //     isMounted.current = false;
-  //     setExecute(false);
-  //   }, 100);
-  //   setTimeout(() => {
-  //     setLoadGameToggle(false);
-  //   }, 100);
-  // };
-
+  //Function for loading Game
   function loadGame() {
-    isMounted.current = true;
-    setExecute(true);
-    setTimeout(() => {
-      isMounted.current = false;
-      setExecute(false);
-    }, 100);
-    setTimeout(() => {
-      setLoadGameToggle(false);
-    }, 100);
+      isMounted.current = true;
+      setExecute(true);
+      setTimeout(() => {
+        isMounted.current = false;
+        setExecute(false);
+      }, 100);
   }
 
+  //Function for Creating a new Game
   function newGame() {
     isMounted.current = true;
     setCreateNewGame(true);
@@ -294,118 +319,118 @@ function App(props) {
       isMounted.current = false;
       setCreateNewGame(false);
     }, 100);
-    setTimeout(() => {
-    
-    }, 100);
   }
-
-
-
-    const alertRefreshMessage = () => {
-      
-    }
 
   //GET Request for Fetching and Updating Users Game Records
   useEffect(() => {
-    console.log('GET REQUEST TOP');
     //  console.log('SUBUID', props.subIDAuth);
+    console.log('GET REQUEST STARTED');
     if (isMounted.current) {
-      console.log('GET REQUEST AFTER MOUNT');
       axios
         .get(
           `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
           // "https://www.sacredcurse.com/state"
         )
         .then((res) => {
-          console.log('RES DATA', res.data[0].subID);
           console.log('GET REQUEST BEFORE FILTER');
           {
-            const result = res.data.filter((c, i) => c.subID === props.subIDAuth);
-            console.log('RESULT', result);
-            // console.log('Res YOU MADE IT;', res.data);
-            console.log('GET REQUEST AFTER FILTER');
-            setTempMongoID(result[0]._id);
-            setTempName(result[0].name);
-            setTempEmail(result[0].email);
-            setTempUserName(result[0].userName);
-            setTempSubID(result[0].subID);
-            setTempPassword(result[0].password);
-            setTempCurrentMap(result[0].setTempCurrentMap);
-            setTempFlowers(result[0].flowers);
-            setTempQuest1(result[0].quest1);
-            setTempQuest2(result[0].quest2);
-            setTempQuest3(result[0].quest3);
-            setTempQuest4(result[0].quest4);
-            setTimeStamp(result[0].timeStamp);
-            setSaveState(res.data);
-            setCurrent(result[0].currentMap);
-
-            // console.log('_ID AFTER GET', res.data[0]._id);
-            // console.log('NAME AFTER GET', res.data[0].name);
-            // console.log('EMAIL AFTER GET', res.data[0].email);
-            // console.log('USERNAME AFTER GET', res.data[0].userName);
-            // console.log('SUBID AFTER GET', res.data[0].subID);
-            //  console.log('PASSWORD', result[0].password);
-            //  console.log('CURRENTMAP', result[0].currentMap);
-            //  console.log('FLOWERS', result[0].flowers);
-            //  console.log('QUEST1', result[0].quest1);
-            //  console.log('QUEST2', result[0].quest2);
-            //  console.log('QUEST3', result[0].quest3);
-            //  console.log('QUEST4', result[0].quest4);
-            //  console.log('TIMESTAMP', result[0].timeStamp);
-            console.log('FETCH USERS RECORD COMPLETED!');
+            const result = res.data.filter((c, i) => c.subID === finalSubID);
+            // Check if record exists
+            if (!result.length) {
+              setNewGameMessage(true);
+              setTimeout(() => {
+                setNewGameMessage(false);
+              }, 2000);
+            } else {
+              setTempMongoID(result[0]._id);
+              setTempName(result[0].name);
+              setTempEmail(result[0].email);
+              setTempUserName(result[0].userName);
+              setTempSubID(result[0].subID);
+              setTempPassword(result[0].password);
+              setTempCurrentMap(result[0].setTempCurrentMap);
+              setTempFlowers(result[0].flowers);
+              setTempQuest1(result[0].quest1);
+              setTempQuest2(result[0].quest2);
+              setTempQuest3(result[0].quest3);
+              setTempQuest4(result[0].quest4);
+              setTimeStamp(result[0].timeStamp);
+              setSaveState(res.data);
+              setCurrent(result[0].currentMap);
+              setPreventLoadGameButton(false);
+              setPreventNewGameButton(false);
+              setTimeout(() => {
+                setLoadGameToggle(false);
+                
+              }, 200);
+              console.log('_ID AFTER GET', res.data[0]._id);
+              console.log('NAME AFTER GET', res.data[0].name);
+              console.log('EMAIL AFTER GET', res.data[0].email);
+              console.log('USERNAME AFTER GET', res.data[0].userName);
+              console.log('SUBID AFTER GET', res.data[0].subID);
+              console.log('PASSWORD', result[0].password);
+              console.log('CURRENTMAP', result[0].currentMap);
+              console.log('FLOWERS', result[0].flowers);
+              console.log('QUEST1', result[0].quest1);
+              console.log('QUEST2', result[0].quest2);
+              console.log('QUEST3', result[0].quest3);
+              console.log('QUEST4', result[0].quest4);
+              console.log('TIMESTAMP', result[0].timeStamp);
+              console.log('FETCH USERS RECORD COMPLETED!');
+            }
           }
         })
         .catch((err) => console.log(err));
     }
   }, [execute]);
 
-  console.log('ISMOUNTED', isMounted.current);
+  // console.log('NAME AFTER', tempName);
+  // console.log('Email AFTER', tempEmail);
+  // console.log('Username AFTER', tempUserName);
+  // console.log('SubID AFTER', tempSubID);
+  // console.log('Current Map AFTER', current);
+  // console.log('QUEST1 AFTER', tempQuest1);
+  // console.log('QUEST2 AFTER', tempQuest2);
+  // console.log('QUEST3 AFTER', tempQuest3);
+  // console.log('QUEST4 AFTER', tempQuest4);
 
-  console.log('NAME AFTER', tempName);
-  console.log('Email AFTER', tempEmail);
-  console.log('Username AFTER', tempUserName);
-  console.log('SubID AFTER', tempSubID);
-  console.log('Current Map AFTER', current);
-  console.log('EXECUTE', execute);
-  console.log('QUEST1 AFTER', tempQuest1);
-  console.log('QUEST2 AFTER', tempQuest2);
-  console.log('QUEST3 AFTER', tempQuest3);
-  console.log('QUEST4 AFTER', tempQuest4);
+  //POST Request for Creating a new record
+  useEffect(() => {
+    if (isMounted.current) {
+      console.log('MADE IT HERE');
+      console.log('SUBUID', props.subIDAuth);
 
-
-
-
-
-useEffect(() => {
-  if (isMounted.current) {
-    axios
-      .post(
-        `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new`,
-        // "https://www.sacredcurse.com/state/new",
-        {
-          name: name,
-          email: user.email,
-          password: password,
-          userName: user.nickname,
-          subID: user.sub,
-          currentMap: 'indoorHouse10',
-          flowers: 0,
-          quest1: false,
-          quest2: false,
-          quest3: false,
-          quest4: false,
-          timeStamp: ''
-        }
-      )
-      .then((res) => {
-        console.log('NEW USER RECORD');
-        console.log(res);
-      })
-      .catch((err) => console.log(err));
-  }
-}, [createNewGame]);
-
+      console.log('MADE IT HERE AS WELL');
+      axios
+        .post(
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new`,
+          // "https://www.sacredcurse.com/state/new",
+          {
+            name: '',
+            email: finalEmail,
+            password: '',
+            userName: finalUserName,
+            subID: finalSubID,
+            currentMap: 'indoorHouse10',
+            flowers: 0,
+            quest1: false,
+            quest2: false,
+            quest3: false,
+            quest4: false,
+            timeStamp: ''
+          }
+        )
+        .then((res) => {
+          console.log('MADE IT HERE AN STOPPED');
+          console.log('NEW USER RECORD');
+          console.log(res);
+          setExecute(true);
+          setPreventLoadGameButton(false);
+          setPreventNewGameButton(false);
+        })
+        .catch((err) => console.log(err));
+    }
+  }, [createNewGame]);
 
   // PUT Request for SaveState
   useEffect(() => {
@@ -440,9 +465,6 @@ useEffect(() => {
       putState(tempMongoID);
     }
   }, [trigger2]);
-
-  // console.log('TRIGGER2', trigger2);
-  // console.log('MAP TRACKER', current);
 
   // DELETE Request for SaveState
   const deleteState = async (id) => {
@@ -739,19 +761,27 @@ useEffect(() => {
   }
 
   // EVent listener to block page refresh, quit and close abilites
-  useEffect(()=>{
-    window.addEventListener("keydown", preventRefresh)
-    function preventRefresh(event){
-  if (event.key==='r' || event.key==="R" || event.key === "116" || event.key==="w" || event.key==="W"  || event.key==="Q" || event.key==="q"){
-    setRefreshMessage(true)
-    // alert("Don't refresh or  quit please : )")
-    //   event.preventDefault()
-  }
+  useEffect(() => {
+    window.addEventListener('keydown', preventRefresh);
+    function preventRefresh(event) {
+      if (
+        event.key === 'r' ||
+        event.key === 'R' ||
+        event.key === '116' ||
+        event.key === 'w' ||
+        event.key === 'W' ||
+        event.key === 'Q' ||
+        event.key === 'q'
+      ) {
+        setRefreshMessage(true);
+        // alert("Don't refresh or  quit please : )")
+        //   event.preventDefault()
+      }
     }
     return () => {
       window.removeEventListener('keydown', preventRefresh);
     };
-  },[])
+  }, []);
 
   /////////////////////////////////////////////////////////////////
   //MATT STATE PASSING FUNCTION for subID Auth
@@ -823,7 +853,7 @@ useEffect(() => {
       : null;
   }, []);
 
-  //Local Storage Size Indicator
+  // Local Storage Size Indicator
   const blob = new Blob(Object.values(localStorage)).size;
   console.log('LOCAL STORAGE', blob);
 
@@ -841,6 +871,7 @@ useEffect(() => {
         ) : (
           <div style={{ filter: `saturate(${saturate}%)` }}>
             <div style={{ filter: `contrast(${contrast}%)` }}>
+
               {loadGameToggle === true ? (
                 <button className="loadGame" onClick={loadGame}>
                   LOAD GAME
@@ -852,6 +883,11 @@ useEffect(() => {
                   NEW GAME
                 </button>
               ) : null}
+
+              {newGameMessage === null ? (
+                <p className="createNewRecordMessage">Please Create A New Game</p>
+              ) : null}
+
               {framerateToggle === true ? (
                 <>
                   <div>
