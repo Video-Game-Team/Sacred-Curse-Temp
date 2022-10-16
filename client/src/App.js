@@ -270,6 +270,7 @@ function App(props) {
   const [refreshMessage, setRefreshMessage] = useState(false);
   const [newGameToggle, setNewGameToggle] = useState(false);
   const [newGameMessage, setNewGameMessage] = useState(false);
+  const [gameOverwriteWarning, setGameOverwriteWarning] = useState(false);
 
   //Create New Game State
   const [createNewGame, setCreateNewGame] = useState(false);
@@ -286,8 +287,6 @@ function App(props) {
   // useEffect(() => {
   //   window.sessionStorage.setItem('isMounted', JSON.stringify(isMounted.current));
   // }, [isMounted]);
-
-  console.log('IsMounted', isMounted);
 
   // Handle Click Function For temp activating Get Request
   const handleClickSave = (e) => {
@@ -316,6 +315,7 @@ function App(props) {
   function newGame() {
     isMounted.current = true;
     setCreateNewGame(true);
+    setGameOverwriteWarning(true);
     setTimeout(() => {
       isMounted.current = false;
       setCreateNewGame(false);
@@ -324,13 +324,17 @@ function App(props) {
 
   //Function for Creating a new Game
   function closeButton() {
-    setRefreshMessage(false)
+    setRefreshMessage(false);
+  }
+
+  //Function for Creating a new Game
+  function closeButton() {
+    setGameOverwriteWarning(false);
   }
 
   //GET Request for Fetching and Updating Users Game Records
   useEffect(() => {
     //  console.log('SUBUID', props.subIDAuth);
-    console.log('GET REQUEST STARTED');
     if (isMounted.current) {
       axios
         .get(
@@ -338,7 +342,6 @@ function App(props) {
           // "https://www.sacredcurse.com/state"
         )
         .then((res) => {
-          console.log('GET REQUEST BEFORE FILTER');
           {
             const result = res.data.filter((c, i) => c.subID === finalSubID);
             // Check if record exists
@@ -368,19 +371,19 @@ function App(props) {
               setTimeout(() => {
                 setLoadGameToggle(false);
               }, 200);
-              console.log('_ID AFTER GET', res.data[0]._id);
-              console.log('NAME AFTER GET', res.data[0].name);
-              console.log('EMAIL AFTER GET', res.data[0].email);
-              console.log('USERNAME AFTER GET', res.data[0].userName);
-              console.log('SUBID AFTER GET', res.data[0].subID);
-              console.log('PASSWORD', result[0].password);
-              console.log('CURRENTMAP', result[0].currentMap);
-              console.log('FLOWERS', result[0].flowers);
-              console.log('QUEST1', result[0].quest1);
-              console.log('QUEST2', result[0].quest2);
-              console.log('QUEST3', result[0].quest3);
-              console.log('QUEST4', result[0].quest4);
-              console.log('TIMESTAMP', result[0].timeStamp);
+              // console.log('_ID AFTER GET', res.data[0]._id);
+              // console.log('NAME AFTER GET', res.data[0].name);
+              // console.log('EMAIL AFTER GET', res.data[0].email);
+              // console.log('USERNAME AFTER GET', res.data[0].userName);
+              // console.log('SUBID AFTER GET', res.data[0].subID);
+              // console.log('PASSWORD', result[0].password);
+              // console.log('CURRENTMAP', result[0].currentMap);
+              // console.log('FLOWERS', result[0].flowers);
+              // console.log('QUEST1', result[0].quest1);
+              // console.log('QUEST2', result[0].quest2);
+              // console.log('QUEST3', result[0].quest3);
+              // console.log('QUEST4', result[0].quest4);
+              // console.log('TIMESTAMP', result[0].timeStamp);
               console.log('FETCH USERS RECORD COMPLETED!');
             }
           }
@@ -402,38 +405,36 @@ function App(props) {
   //POST Request for Creating a new record
   useEffect(() => {
     if (isMounted.current) {
-      console.log('MADE IT HERE');
-      console.log('SUBUID', props.subIDAuth);
-
-      console.log('MADE IT HERE AS WELL');
-      axios
-        .post(
-          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new`,
-          // "https://www.sacredcurse.com/state/new",
-          {
-            name: '',
-            email: finalEmail,
-            password: '',
-            userName: finalUserName,
-            subID: finalSubID,
-            currentMap: 'indoorHouse10',
-            flowers: 0,
-            quest1: false,
-            quest2: false,
-            quest3: false,
-            quest4: false,
-            timeStamp: ''
-          }
-        )
-        .then((res) => {
-          console.log('MADE IT HERE AN STOPPED');
-          console.log('NEW USER RECORD');
-          console.log(res);
-          setExecute(true);
-          setPreventLoadGameButton(false);
-          setPreventNewGameButton(false);
-        })
-        .catch((err) => console.log(err));
+      if (gameOverwriteWarning === true) {
+        console.log('STOP HERE');
+      } else {
+        axios
+          .post(
+            `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new`,
+            // "https://www.sacredcurse.com/state/new",
+            {
+              name: '',
+              email: finalEmail,
+              password: '',
+              userName: finalUserName,
+              subID: finalSubID,
+              currentMap: 'indoorHouse10',
+              flowers: 0,
+              quest1: false,
+              quest2: false,
+              quest3: false,
+              quest4: false,
+              timeStamp: ''
+            }
+          )
+          .then((res) => {
+            console.log(res);
+            setExecute(true);
+            setPreventLoadGameButton(false);
+            setPreventNewGameButton(false);
+          })
+          .catch((err) => console.log(err));
+      }
     }
   }, [createNewGame]);
 
@@ -859,8 +860,8 @@ function App(props) {
   }, []);
 
   // Local Storage Size Indicator
-  const blob = new Blob(Object.values(localStorage)).size;
-  console.log('LOCAL STORAGE', blob);
+  // const blob = new Blob(Object.values(localStorage)).size;
+  // console.log('LOCAL STORAGE', blob);
 
   //Return logic
   return (
@@ -1000,6 +1001,21 @@ function App(props) {
                     <button className="closeOutButton" onClick={closeButton}>
                       X
                     </button>
+                  </div>
+                ) : null}
+
+                {gameOverwriteWarning === true ? (
+                  <div>
+                    <button className="closeOutButton2" onClick={closeButton}>
+                      X
+                    </button>
+                    <h1 className="newGameAlertWarning">WARNING!</h1>
+                    <p className="newGameAlertWarning2">
+                      If you already have a saved game, pressing the "New Game" button <br /> <br />
+                      will overwrite your game and will start you all over from the beginning.
+                      <br /> <br />
+                      This process is irreversible. Proceed with caution!
+                    </p>
                   </div>
                 ) : null}
               </div>

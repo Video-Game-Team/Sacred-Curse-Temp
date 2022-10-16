@@ -104,23 +104,17 @@ body {
 }
 
 .createNewRecordMessage {
-  display: flex;
+   display: flex;
   align-self: center;
   justify-content: center;
   position: absolute;
-  background-color: #ff0000;
-  border: none;
-  color: rgb(12, 0, 0);
-  padding: .5em .5em;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: calc(1rem + .7vw);
-  z-index: 999;
-  top: -20rem;
-  left: -29rem;
-  font-family: Pokemon-Classic;
+  width: 65%;
+  top: -5rem;
+  left: -9.0rem;
+  font-size: calc(1rem + .1vw);
   white-space: nowrap;
+  color: rgb(255, 0, 0);
+  font-family: Pokemon-Classic;
 }
 
 .alertWarning {
@@ -135,9 +129,38 @@ body {
   width: 65%;
   top: 12rem;
   left: 11.0rem;
-  font-size: calc(1rem + .5vw);
+  font-size: calc(1rem + .1vw);
   white-space: wrap;
   color: rgb(255, 0, 0);
+  font-family: Pokemon-Classic;
+}
+
+.newGameAlertWarning {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  position: absolute;
+  width: 65%;
+  top: -0.7rem;
+  left: -0.0rem;
+  font-size: calc(1rem + .1vw);
+  white-space: nowrap;
+  color: rgb(255, 0, 0);
+  font-family: Pokemon-Classic;
+}
+
+.newGameAlertWarning2 {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  position: absolute;
+  width: 65%;
+  top: 3.0rem;
+  left: -7.8rem;
+  font-size: calc(1rem + .1vw);
+  white-space: nowrap;
+  color: rgb(255, 0, 0);
+  font-family: Pokemon-Classic;
 }
 
 .closeOutButton {
@@ -146,10 +169,24 @@ body {
   justify-content: center;
   position: absolute;
   background: rgb(7, 0, 0);
-  top: 16.5rem;
-  left: 68.0rem;
+  top: 16.3rem;
+  left: 67.3rem;
   font-size: calc(1rem + .5vw);
   color: rgb(254, 253, 253);
+  font-family: Pokemon-Classic;
+}
+
+.closeOutButton2 {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  position: absolute;
+  background: rgb(10, 0, 0);
+  top: -0.0rem;
+  left: 8.3rem;
+  font-size: calc(1rem + .01vw);
+  color: rgb(254, 253, 253);
+  font-family: Pokemon-Classic;
 }
 
 .pixel-art {

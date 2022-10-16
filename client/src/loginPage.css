@@ -126,10 +126,11 @@ html {
     z-index: 999;
     font-size: calc(1rem + .4vw);
     top: 21rem;
-    left: 33.5rem;
+    left: 30.0rem;
     background-color: black;
     color: rgb(141, 137, 137);
-    font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif; 
+    /* font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;  */
+    font-family: Pokemon-Classic;
 }
 
 .enterGame {
@@ -140,10 +141,11 @@ html {
     z-index: 999;
     font-size: calc(1rem + .4vw);
     top: 21rem;
-    left: 29.5rem;
+    left: 24.5rem;
     background-color: black;
     color: rgb(141, 137, 137);
-    font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif; 
+    /* font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;  */
+    font-family: Pokemon-Classic;
 }
 
 .darkSkyPic {
