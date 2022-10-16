@@ -328,9 +328,9 @@ function App(props) {
   function proceedToggle() {
     isMounted.current = true;
     setProceedButton(true);
-    setTimeout(() => {
+    // setTimeout(() => {
         setExecute(true);
-    }, 200)
+    // }, 200)
     setTimeout(() => {
       isMounted.current = false;
       setProceedButton(false);
