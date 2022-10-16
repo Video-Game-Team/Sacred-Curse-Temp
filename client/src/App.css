@@ -117,10 +117,39 @@ body {
   display: inline-block;
   font-size: calc(1rem + .7vw);
   z-index: 999;
-  top: -10rem;
+  top: -20rem;
   left: -29rem;
   font-family: Pokemon-Classic;
   white-space: nowrap;
+}
+
+.alertWarning {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  position: absolute;
+  margin: 70px auto;
+  padding: 50px;
+  background: rgb(7, 0, 0);
+  border-radius: 5px;
+  width: 65%;
+  top: 12rem;
+  left: 11.0rem;
+  font-size: calc(1rem + .5vw);
+  white-space: wrap;
+  color: rgb(255, 0, 0);
+}
+
+.closeOutButton {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  position: absolute;
+  background: rgb(7, 0, 0);
+  top: 16.5rem;
+  left: 68.0rem;
+  font-size: calc(1rem + .5vw);
+  color: rgb(254, 253, 253);
 }
 
 .pixel-art {
@@ -368,25 +397,6 @@ p {
         left: 15rem;
         max-width: 100%;
     }
-
-
-.popup {
-  display: flex;
-  align-self: center;
-  justify-content: center;
-  position: absolute;
-  margin: 70px auto;
-  padding: 50px;
-  background: rgb(7, 0, 0);
-  border-radius: 5px;
-  width: 65%;
-  top: 22rem;
-  left: 10.8rem;
-  font-size: calc(1rem + .5vw);
-  white-space: wrap;
-  color: rgb(255, 0, 0);
-  /* transition: all 5s ease-in-out; */
-}
 
 
     /* ////////////////////////////////// */

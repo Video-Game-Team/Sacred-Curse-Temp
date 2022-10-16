@@ -200,6 +200,7 @@ function App(props) {
   const [menu2Toggle, setMenu2Toggle] = useState(false);
   const [menuClockToggle, setMenuClockToggle] = useState(false);
   const [framerateToggle, setFramerateToggle] = useState(false);
+  const [closeMessage, setCloseMessage] = useState(false);
 
   //LoadGame Toggle logic for Load Game message
   const [loadGameToggle, setLoadGameToggle] = useState(true);
@@ -303,12 +304,12 @@ function App(props) {
 
   //Function for loading Game
   function loadGame() {
-      isMounted.current = true;
-      setExecute(true);
-      setTimeout(() => {
-        isMounted.current = false;
-        setExecute(false);
-      }, 100);
+    isMounted.current = true;
+    setExecute(true);
+    setTimeout(() => {
+      isMounted.current = false;
+      setExecute(false);
+    }, 100);
   }
 
   //Function for Creating a new Game
@@ -319,6 +320,11 @@ function App(props) {
       isMounted.current = false;
       setCreateNewGame(false);
     }, 100);
+  }
+
+  //Function for Creating a new Game
+  function closeButton() {
+    setRefreshMessage(false)
   }
 
   //GET Request for Fetching and Updating Users Game Records
@@ -361,7 +367,6 @@ function App(props) {
               setPreventNewGameButton(false);
               setTimeout(() => {
                 setLoadGameToggle(false);
-                
               }, 200);
               console.log('_ID AFTER GET', res.data[0]._id);
               console.log('NAME AFTER GET', res.data[0].name);
@@ -871,7 +876,6 @@ function App(props) {
         ) : (
           <div style={{ filter: `saturate(${saturate}%)` }}>
             <div style={{ filter: `contrast(${contrast}%)` }}>
-
               {loadGameToggle === true ? (
                 <button className="loadGame" onClick={loadGame}>
                   LOAD GAME
@@ -884,7 +888,7 @@ function App(props) {
                 </button>
               ) : null}
 
-              {newGameMessage === null ? (
+              {newGameMessage === true ? (
                 <p className="createNewRecordMessage">Please Create A New Game</p>
               ) : null}
 
@@ -983,12 +987,20 @@ function App(props) {
                 ) : null}
 
                 {refreshMessage === true ? (
-                  <h1 className="popup">
-                    "WARNING!"
-                    <br />
-                    If you refresh the page you will start over again on the same map.
-                    <br /> This is not advised!
-                  </h1>
+                  <div>
+                    <h1 className="alertWarning">
+                      "WARNING!"
+                      <br />
+                      <br />
+                      Pressing the "R", "Q", or "W" keys while playing the game will potentially
+                      quit or refresh the game.
+                      <br />
+                      <br /> This is not advised!
+                    </h1>
+                    <button className="closeOutButton" onClick={closeButton}>
+                      X
+                    </button>
+                  </div>
                 ) : null}
               </div>
             </div>
