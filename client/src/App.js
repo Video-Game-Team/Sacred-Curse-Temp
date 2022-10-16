@@ -271,6 +271,10 @@ function App(props) {
   const [newGameToggle, setNewGameToggle] = useState(false);
   const [newGameMessage, setNewGameMessage] = useState(false);
   const [gameOverwriteWarning, setGameOverwriteWarning] = useState(false);
+  const [proceedButton, setProceedButton] = useState(false);
+
+  //Create New Game State
+  const [checkForSavedGame, setCheckForSavedGame] = useState(false);
 
   //Create New Game State
   const [createNewGame, setCreateNewGame] = useState(false);
@@ -296,8 +300,6 @@ function App(props) {
       setSaveMessage(false);
       setTrigger2(false);
       setMenu2Toggle(false);
-      // console.log('message off');
-      // console.log('SAVE MESSAGE', saveMessage);
     }, 4000);
   };
 
@@ -311,30 +313,43 @@ function App(props) {
     }, 100);
   }
 
-  //Function for Creating a new Game
-  function newGame() {
+  //Function for Checking for current saved game records
+  function checkForSavedRecords() {
     isMounted.current = true;
-    setCreateNewGame(true);
-    setGameOverwriteWarning(true);
+    setCheckForSavedGame(true);
     setTimeout(() => {
       isMounted.current = false;
-      setCreateNewGame(false);
+      setCheckForSavedGame(false);
+    }, 100);
+    console.log('NEW GAME PRESSED');
+  }
+
+  //Function for Closing a new Game warning message
+  function proceedToggle() {
+    isMounted.current = true;
+    setProceedButton(true);
+    setTimeout(() => {
+      isMounted.current = false;
+      setProceedButton(false);
     }, 100);
   }
 
   //Function for Creating a new Game
   function closeButton() {
+    isMounted.current = true;
     setRefreshMessage(false);
   }
 
-  //Function for Creating a new Game
+  //Function for Clsoing a new Game warning message
   function closeButton() {
+    isMounted.current = true;
     setGameOverwriteWarning(false);
   }
 
+  console.log('IS MOUNTED', isMounted);
+
   //GET Request for Fetching and Updating Users Game Records
   useEffect(() => {
-    //  console.log('SUBUID', props.subIDAuth);
     if (isMounted.current) {
       axios
         .get(
@@ -347,9 +362,9 @@ function App(props) {
             // Check if record exists
             if (!result.length) {
               setNewGameMessage(true);
-              setTimeout(() => {
-                setNewGameMessage(false);
-              }, 2000);
+              // setTimeout(() => {
+              //   setNewGameMessage(false);
+              // }, 2000);
             } else {
               setTempMongoID(result[0]._id);
               setTempName(result[0].name);
@@ -402,39 +417,65 @@ function App(props) {
   // console.log('QUEST3 AFTER', tempQuest3);
   // console.log('QUEST4 AFTER', tempQuest4);
 
+  // GET REQUEST FOR CREATING A NEW GAME
+  useEffect(() => {
+    if (isMounted.current) {
+      axios
+        .get(
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
+          // "https://www.sacredcurse.com/state"
+        )
+        .then((res) => {
+          {
+            const findRecord = res.data.filter((c, i) => c.subID === finalSubID);
+            // Check if record exists
+            if (findRecord.length) {
+              setGameOverwriteWarning(true);
+              setTempMongoID(findRecord[0]._id);
+              console.log('GET REQUEST RUNNING');
+            } else {
+              setCreateNewGame(true);
+            }
+          }
+        })
+        .catch((err) => console.log(err));
+    }
+  }, [checkForSavedGame]);
+
   //POST Request for Creating a new record
   useEffect(() => {
     if (isMounted.current) {
-      if (gameOverwriteWarning === true) {
-        console.log('STOP HERE');
-      } else {
-        axios
-          .post(
-            `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new`,
-            // "https://www.sacredcurse.com/state/new",
-            {
-              name: '',
-              email: finalEmail,
-              password: '',
-              userName: finalUserName,
-              subID: finalSubID,
-              currentMap: 'indoorHouse10',
-              flowers: 0,
-              quest1: false,
-              quest2: false,
-              quest3: false,
-              quest4: false,
-              timeStamp: ''
-            }
-          )
-          .then((res) => {
-            console.log(res);
-            setExecute(true);
-            setPreventLoadGameButton(false);
-            setPreventNewGameButton(false);
-          })
-          .catch((err) => console.log(err));
-      }
+      // if (gameOverwriteWarning === true) {
+      //   console.log('STOP HERE');
+      // } else {
+      axios
+        .post(
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new`,
+          // "https://www.sacredcurse.com/state/new",
+
+          {
+            name: '',
+            email: finalEmail,
+            password: '',
+            userName: finalUserName,
+            subID: finalSubID,
+            currentMap: 'indoorHouse10',
+            flowers: 0,
+            quest1: false,
+            quest2: false,
+            quest3: false,
+            quest4: false,
+            timeStamp: ''
+          }
+        )
+        .then((res) => {
+          console.log(res);
+          setExecute(true);
+          setPreventLoadGameButton(false);
+          setPreventNewGameButton(false);
+        })
+        .catch((err) => console.log(err));
+      // }
     }
   }, [createNewGame]);
 
@@ -471,6 +512,40 @@ function App(props) {
       putState(tempMongoID);
     }
   }, [trigger2]);
+
+  // PUT Request 2 for overwirting game record
+  useEffect(() => {
+    if (proceedButton === true) {
+      const putState = async (id) => {
+        const data = await fetch(
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
+          // `https://www.sacredcurse.com/state/update/${id}`,
+          {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              name: '',
+              email: finalEmail,
+              password: '',
+              userName: finalUserName,
+              subID: finalSubID,
+              currentMap: 'indoorHouse10',
+              flowers: 0,
+              quest1: false,
+              quest2: false,
+              quest3: false,
+              quest4: false,
+              timeStamp: ''
+            })
+          }
+        ).then((res) => res.json());
+        console.log('SAVE GAME RECORD UPDATED');
+      };
+      putState(tempMongoID);
+    }
+  }, [proceedButton]);
 
   // DELETE Request for SaveState
   const deleteState = async (id) => {
@@ -884,13 +959,21 @@ function App(props) {
               ) : null}
 
               {loadGameToggle === true ? (
-                <button className="newGame" onClick={newGame}>
+                <button className="newGame" onClick={checkForSavedRecords}>
                   NEW GAME
                 </button>
               ) : null}
 
               {newGameMessage === true ? (
-                <p className="createNewRecordMessage">Please Create A New Game</p>
+                <>
+                  <p className="createNewRecordMessage">
+                    You have no saved game on file under this account.
+                  </p>
+              
+                  <p className="createNewRecordMessage2">
+                    Please press "NEW GAME" to start playing.
+                  </p>
+                </>
               ) : null}
 
               {framerateToggle === true ? (
@@ -983,6 +1066,12 @@ function App(props) {
                   </button>
                 ) : null}
 
+                {gameOverwriteWarning === true ? (
+                  <button className="eraseGame" onClick={proceedToggle}>
+                    !PRESS TO DELETE!
+                  </button>
+                ) : null}
+
                 {saveMessage === true ? (
                   <h1 className="successMessage">YOUR GAME WAS SUCCESSFULLY SAVED!</h1>
                 ) : null}
@@ -1007,14 +1096,23 @@ function App(props) {
                 {gameOverwriteWarning === true ? (
                   <div>
                     <button className="closeOutButton2" onClick={closeButton}>
-                      X
+                      PRESS TO CANCEL
                     </button>
                     <h1 className="newGameAlertWarning">WARNING!</h1>
                     <p className="newGameAlertWarning2">
-                      If you already have a saved game, pressing the "New Game" button <br /> <br />
-                      will overwrite your game and will start you all over from the beginning.
-                      <br /> <br />
-                      This process is irreversible. Proceed with caution!
+                      This useremail and or password you are logged in as, is already associated
+                      <br />
+                      <br />
+                      with a current saved game. Please press the "LOAD GAME" button to load
+                      <br />
+                      <br />
+                      your saved progress. If you really want to erase your saved game and start
+                      <br />
+                      <br />
+                      over from scratch, then please click the "ERASE MY GAME" button.
+                      <br />
+                      <br />
+                      This process is irreversible!
                     </p>
                   </div>
                 ) : null}
