@@ -69,17 +69,20 @@ function Login(props) {
     if (isAuthenticated === true) {
       axios
         .get(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`,
-           "https://www.sacredcurse.com/state",
-          {}
-        )
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`,
+          //  "https://www.sacredcurse.com/state",
+          )
         .then((res) => {
-          setEmailSessionStorage(res.data[0].email);
-          setUserNameSessionStorage(res.data[0].userName);
-          setUserAuthSessionStorage(res.data[0].subID);
+            // const auth = res.data.filter((c, i) => c.subID === user.sub);
+            setEmailSessionStorage(user.email);
+            setUserNameSessionStorage(user.nickname);
+            setUserAuthSessionStorage(user.sub);
+            //  console.log(user.email);
+            //  console.log(user.nickname);
+            //  console.log(user.sub);
         })
         .catch((err) => console.log(err));
-    }
+      }
   }, [isAuthenticated]);
 
   // Handleclick for Load Game

@@ -316,6 +316,7 @@ function App(props) {
   //Function for Checking for current saved game records
   function checkForSavedRecords() {
     isMounted.current = true;
+    console.log("POOP")
     setCheckForSavedGame(true);
     setTimeout(() => {
       isMounted.current = false;
@@ -356,8 +357,8 @@ function App(props) {
     if (isMounted.current) {
       axios
         .get(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
-          "https://www.sacredcurse.com/state"
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
+          // "https://www.sacredcurse.com/state"
         )
         .then((res) => {
           {
@@ -368,6 +369,7 @@ function App(props) {
               setTimeout(() => {
                 setNewGameMessage(false);
               }, 3000);
+              console.log("USER HAS NO RECORDS STORED")
             } else {
               setTempMongoID(result[0]._id);
               setTempName(result[0].name);
@@ -423,8 +425,8 @@ function App(props) {
     if (isMounted.current) {
       axios
         .get(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
-          "https://www.sacredcurse.com/state"
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
+          // "https://www.sacredcurse.com/state"
         )
         .then((res) => {
           {
@@ -448,8 +450,8 @@ function App(props) {
     if (isMounted.current) {
       axios
         .post(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new`,
-          "https://www.sacredcurse.com/state/new",
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new`,
+          // "https://www.sacredcurse.com/state/new",
           {
             name: '',
             email: finalEmail,
@@ -479,8 +481,8 @@ function App(props) {
     if (trigger2 === true) {
       const putState = async (id) => {
         const data = await fetch(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
-          `https://www.sacredcurse.com/state/update/${id}`,
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
+          // `https://www.sacredcurse.com/state/update/${id}`,
           {
             method: 'PUT',
             headers: {
@@ -513,8 +515,8 @@ function App(props) {
     if (proceedButton === true) {
       const putState = async (id) => {
         const data = await fetch(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
-          `https://www.sacredcurse.com/state/update/${id}`,
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
+          // `https://www.sacredcurse.com/state/update/${id}`,
           {
             method: 'PUT',
             headers: {
