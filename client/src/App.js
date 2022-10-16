@@ -328,6 +328,7 @@ function App(props) {
   function proceedToggle() {
     isMounted.current = true;
     setProceedButton(true);
+    setExecute(true);
     setTimeout(() => {
       isMounted.current = false;
       setProceedButton(false);
@@ -346,7 +347,7 @@ function App(props) {
     setGameOverwriteWarning(false);
   }
 
-  console.log('IS MOUNTED', isMounted);
+  // console.log('IS MOUNTED', isMounted);
 
   //GET Request for Fetching and Updating Users Game Records
   useEffect(() => {
@@ -362,9 +363,9 @@ function App(props) {
             // Check if record exists
             if (!result.length) {
               setNewGameMessage(true);
-              // setTimeout(() => {
-              //   setNewGameMessage(false);
-              // }, 2000);
+              setTimeout(() => {
+                setNewGameMessage(false);
+              }, 3000);
             } else {
               setTempMongoID(result[0]._id);
               setTempName(result[0].name);
@@ -381,8 +382,6 @@ function App(props) {
               setTimeStamp(result[0].timeStamp);
               setSaveState(res.data);
               setCurrent(result[0].currentMap);
-              setPreventLoadGameButton(false);
-              setPreventNewGameButton(false);
               setTimeout(() => {
                 setLoadGameToggle(false);
               }, 200);
@@ -445,14 +444,10 @@ function App(props) {
   //POST Request for Creating a new record
   useEffect(() => {
     if (isMounted.current) {
-      // if (gameOverwriteWarning === true) {
-      //   console.log('STOP HERE');
-      // } else {
       axios
         .post(
           `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new`,
           // "https://www.sacredcurse.com/state/new",
-
           {
             name: '',
             email: finalEmail,
@@ -471,8 +466,6 @@ function App(props) {
         .then((res) => {
           console.log(res);
           setExecute(true);
-          setPreventLoadGameButton(false);
-          setPreventNewGameButton(false);
         })
         .catch((err) => console.log(err));
       // }
@@ -513,7 +506,7 @@ function App(props) {
     }
   }, [trigger2]);
 
-  // PUT Request 2 for overwirting game record
+  // PUT Request 2 for overwriting game record
   useEffect(() => {
     if (proceedButton === true) {
       const putState = async (id) => {
@@ -542,6 +535,7 @@ function App(props) {
           }
         ).then((res) => res.json());
         console.log('SAVE GAME RECORD UPDATED');
+        setExecute(true)
       };
       putState(tempMongoID);
     }
