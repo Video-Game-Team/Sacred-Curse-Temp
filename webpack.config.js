@@ -14,7 +14,7 @@ module.exports = {
     filename: 'bundle.js'
   },
 
-  mode: 'development',
+  mode: 'production',
   devServer: {
     host: 'localhost',
     port: 3000,
