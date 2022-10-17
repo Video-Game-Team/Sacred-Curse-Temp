@@ -339,7 +339,7 @@ function App(props) {
   }
 
   //Function for Creating a new Game
-  function closeButton() {
+  function closeButton2() {
     isMounted.current = true;
     setRefreshMessage(false);
   }
@@ -357,8 +357,8 @@ function App(props) {
     if (isMounted.current) {
       axios
         .get(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
-          "https://www.sacredcurse.com/state"
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
+          // "https://www.sacredcurse.com/state"
         )
         .then((res) => {
           {
@@ -425,8 +425,8 @@ function App(props) {
     if (isMounted.current) {
       axios
         .get(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
-          "https://www.sacredcurse.com/state"
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
+          // "https://www.sacredcurse.com/state"
         )
         .then((res) => {
           {
@@ -450,8 +450,8 @@ function App(props) {
     if (isMounted.current) {
       axios
         .post(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new`,
-          "https://www.sacredcurse.com/state/new",
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new`,
+          // "https://www.sacredcurse.com/state/new",
           {
             name: '',
             email: finalEmail,
@@ -481,8 +481,8 @@ function App(props) {
     if (trigger2 === true) {
       const putState = async (id) => {
         const data = await fetch(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
-          `https://www.sacredcurse.com/state/update/${id}`,
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
+          // `https://www.sacredcurse.com/state/update/${id}`,
           {
             method: 'PUT',
             headers: {
@@ -515,8 +515,8 @@ function App(props) {
     if (proceedButton === true) {
       const putState = async (id) => {
         const data = await fetch(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
-          `https://www.sacredcurse.com/state/update/${id}`,
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
+          // `https://www.sacredcurse.com/state/update/${id}`,
           {
             method: 'PUT',
             headers: {
@@ -1086,7 +1086,7 @@ function App(props) {
                       <br />
                       <br /> This is not advised!
                     </h1>
-                    <button className="closeOutButton" onClick={closeButton}>
+                    <button className="closeOutButton" onClick={closeButton2}>
                       X
                     </button>
                   </div>
