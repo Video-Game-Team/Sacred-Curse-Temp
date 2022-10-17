@@ -19,7 +19,12 @@
          "> -->
     
     <title>Sacred Curse</title>
-    
+    <script>
+      var host = "www.sacredcurse.com" || "sacredcurse.com";
+      if ((host == window.location.host) && (window.location.protocol != "https:")) {
+        window.location.protocol = "https";
+      }
+    </script>
   </head>
   <body>
     <div id="root">
