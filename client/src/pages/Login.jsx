@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import axios from 'axios';
+import axiosRetry from 'axios-retry';
 import { browserName, browserVersion } from 'react-device-detect';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
@@ -12,8 +13,12 @@ const parse = require('html-react-parser');
 const basicAuth = require('express-basic-auth');
 
 
+
 //Main function
 function Login(props) {
+  //AXIOS retry logic
+  axiosRetry(axios, { retries: 3 });
+
   //State for checking Broser compatibility
   const [browserWarning, setBrowserWarning] = useState(false);
 
@@ -47,7 +52,6 @@ function Login(props) {
     window.sessionStorage.setItem('userID', JSON.stringify(userAuthSessionStorage));
   }, [userAuthSessionStorage]);
 
-
   //Navigate HashRouter Logic
   const navigate = useNavigate();
 
@@ -69,24 +73,91 @@ function Login(props) {
     if (isAuthenticated === true) {
       axios
         .get(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`,
-           "https://www.sacredcurse.com/state",
-          )
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
+          //  "https://www.sacredcurse.com/state",
+        )
         .then((res) => {
-            // const auth = res.data.filter((c, i) => c.subID === user.sub);
-            setEmailSessionStorage(user.email);
-            setUserNameSessionStorage(user.nickname);
-            setUserAuthSessionStorage(user.sub);
-            //  console.log(user.email);
-            //  console.log(user.nickname);
-            //  console.log(user.sub);
+          // const auth = res.data.filter((c, i) => c.subID === user.sub);
+          setEmailSessionStorage(user.email);
+          setUserNameSessionStorage(user.nickname);
+          setUserAuthSessionStorage(user.sub);
         })
         .catch((err) => console.log(err));
-      }
+    }
   }, [isAuthenticated]);
+
+  //Clear TempQuest1 Storage Functions
+  function clearTempQuest1() {
+    sessionStorage.removeItem('tempQuest1');
+    return '';
+  }
+
+  //Clear TempQuest2 Storage Functions
+  function clearTempQuest2() {
+    sessionStorage.removeItem('tempQuest2');
+    return '';
+  }
+
+  //Clear TempQuest3 Storage Functions
+  function clearTempQuest3() {
+    sessionStorage.removeItem('tempQuest3');
+    return '';
+  }
+
+  //Clear TempQuest4 Storage Functions
+  function clearTempQuest4() {
+    sessionStorage.removeItem('tempQuest4');
+    return '';
+  }
+
+  //Clear TempUserName Storage Functions
+  function cleartempUserName() {
+    sessionStorage.removeItem('tempUserName');
+    return '';
+  }
+
+  //Clear TempFlowers Storage Functions
+  function clearTempFlowers() {
+    sessionStorage.removeItem('tempFlowers');
+    return '';
+  }
+
+  //Clear TempEmail Storage Functions
+  function clearTempEmail() {
+    sessionStorage.removeItem('tempEmail');
+    return '';
+  }
+
+  //Clear TempSubID Storage Functions
+  function clearTempSubID() {
+    sessionStorage.removeItem('tempSubID');
+    return '';
+  }
+
+  //Clear TempMongoID Storage Functions
+  function clearTempMongoID() {
+    sessionStorage.removeItem('tempMongoID');
+    return '';
+  }
+
+  //Clear TempCurrentMap Storage Functions
+  function clearCurrentMap() {
+    sessionStorage.removeItem('CurrentMap');
+    return '';
+  }
 
   // Handleclick for Load Game
   const enterGame = () => {
+    clearTempQuest1(),
+    clearTempQuest2(),
+    clearTempQuest3(),
+    clearTempQuest4(),
+    cleartempUserName(),
+    clearTempFlowers(),
+    clearTempEmail(),
+    clearTempSubID(),
+    clearTempMongoID(),
+    clearCurrentMap(),
     setTimeout(() => {
       navigate('/game');
     }, 1000);

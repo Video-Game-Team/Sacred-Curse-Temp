@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
+import axiosRetry from 'axios-retry';
 import LeftWalker from './assets/images/leftWalker.png';
 import RightWalker from './assets/images/rightWalker.png';
 import UpWalker from './assets/images/upWalker.png';
@@ -68,6 +69,9 @@ const URL = require('url-parse');
 
 //Main function
 function App(props) {
+  //AXIOS retry logic
+  axiosRetry(axios, { retries: 3 });
+
   const [itemObj, setItemObj] = useState({});
 
   //START OF TEMP STATE//////////////////////////////////////////
@@ -205,26 +209,6 @@ function App(props) {
   //LoadGame Toggle logic for Load Game message
   const [loadGameToggle, setLoadGameToggle] = useState(true);
 
-  //Prevent Load button from popping back up
-  const [preventLoadGameButton, setPreventLoadGameButton] = useState(true);
-  // useEffect(() => {
-  //   const data = window.localStorage.getItem('preventLoadGameButton');
-  //   setPreventLoadGameButton(JSON.parse(data));
-  // }, []);
-  // useEffect(() => {
-  //   window.sessionStorage.setItem('preventLoadGameButton', JSON.stringify(preventLoadGameButton));
-  // }, [preventLoadGameButton]);
-
-  //Prevent new button from popping back up
-  const [preventNewGameButton, setPreventNewGameButton] = useState(true);
-  // useEffect(() => {
-  //   const data = window.localStorage.getItem('preventNewGameButton');
-  //   setPreventNewGameButton(JSON.parse(data));
-  // }, [preventNewGameButton]);
-  // useEffect(() => {
-  //   window.sessionStorage.setItem('preventNewGameButton', JSON.stringify(preventNewGameButton));
-  // }, [preventNewGameButton]);
-
   // Logic for checking Browser type
   const [browserWarning, setBrowserWarning] = useState(false);
 
@@ -284,13 +268,6 @@ function App(props) {
 
   //UseRef to stop Get request Useeffect from running on re-render
   const isMounted = useRef(false);
-  // useEffect(() => {
-  //   const data = window.sessionStorage.getItem('isMounted');
-  //   //  isMounted(JSON.parse(data));
-  // }, []);
-  // useEffect(() => {
-  //   window.sessionStorage.setItem('isMounted', JSON.stringify(isMounted.current));
-  // }, [isMounted]);
 
   // Handle Click Function For temp activating Get Request
   const handleClickSave = (e) => {
@@ -316,7 +293,7 @@ function App(props) {
   //Function for Checking for current saved game records
   function checkForSavedRecords() {
     isMounted.current = true;
-    console.log("POOP")
+    console.log('POOP');
     setCheckForSavedGame(true);
     setTimeout(() => {
       isMounted.current = false;
@@ -330,7 +307,7 @@ function App(props) {
     isMounted.current = true;
     setProceedButton(true);
     // setTimeout(() => {
-        setExecute(true);
+    setExecute(true);
     // }, 200)
     setTimeout(() => {
       isMounted.current = false;
@@ -357,8 +334,8 @@ function App(props) {
     if (isMounted.current) {
       axios
         .get(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
-          "https://www.sacredcurse.com/state"
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
+          // "https://www.sacredcurse.com/state"
         )
         .then((res) => {
           {
@@ -369,7 +346,7 @@ function App(props) {
               setTimeout(() => {
                 setNewGameMessage(false);
               }, 3000);
-              console.log("USER HAS NO RECORDS STORED")
+              console.log('USER HAS NO RECORDS STORED');
             } else {
               setTempMongoID(result[0]._id);
               setTempName(result[0].name);
@@ -425,8 +402,8 @@ function App(props) {
     if (isMounted.current) {
       axios
         .get(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
-          "https://www.sacredcurse.com/state"
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
+          // "https://www.sacredcurse.com/state"
         )
         .then((res) => {
           {
@@ -450,8 +427,8 @@ function App(props) {
     if (isMounted.current) {
       axios
         .post(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new`,
-          "https://www.sacredcurse.com/state/new",
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new`,
+          // "https://www.sacredcurse.com/state/new",
           {
             name: '',
             email: finalEmail,
@@ -481,8 +458,8 @@ function App(props) {
     if (trigger2 === true) {
       const putState = async (id) => {
         const data = await fetch(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
-          `https://www.sacredcurse.com/state/update/${id}`,
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
+          // `https://www.sacredcurse.com/state/update/${id}`,
           {
             method: 'PUT',
             headers: {
@@ -515,8 +492,8 @@ function App(props) {
     if (proceedButton === true) {
       const putState = async (id) => {
         const data = await fetch(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
-          `https://www.sacredcurse.com/state/update/${id}`,
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
+          // `https://www.sacredcurse.com/state/update/${id}`,
           {
             method: 'PUT',
             headers: {
@@ -539,7 +516,7 @@ function App(props) {
           }
         ).then((res) => res.json());
         setGameOverwriteWarning(false);
-        setExecute(true)
+        setExecute(true);
         console.log('SAVE GAME RECORD UPDATED');
       };
       putState(tempMongoID);
@@ -556,6 +533,10 @@ function App(props) {
   //  useEffect(() => {
   //   deleteState('6337321ce90b16a4693f15b5');
   //  }, [])
+
+  console.log('User Name', finalUserName);
+  console.log('User Email', finalEmail);
+  console.log('User ID', finalSubID);
 
   // URL protocol checker
   // let url = new URL('https://github.com/foo/bar');
@@ -840,28 +821,12 @@ function App(props) {
     setPrevious(y);
   }
 
-  // EVent listener to block page refresh, quit and close abilites
-  useEffect(() => {
-    window.addEventListener('keydown', preventRefresh);
-    function preventRefresh(event) {
-      if (
-        event.key === 'r' ||
-        event.key === 'R' ||
-        event.key === '116' ||
-        event.key === 'w' ||
-        event.key === 'W' ||
-        event.key === 'Q' ||
-        event.key === 'q'
-      ) {
-        setRefreshMessage(true);
-        // alert("Don't refresh or  quit please : )")
-        //   event.preventDefault()
-      }
-    }
-    return () => {
-      window.removeEventListener('keydown', preventRefresh);
-    };
-  }, []);
+  //Page reload, quit, and close blocker logic
+   window.onbeforeunload = function () {
+     return '';
+   };
+
+  
 
   /////////////////////////////////////////////////////////////////
   //MATT STATE PASSING FUNCTION for subID Auth
@@ -968,7 +933,7 @@ function App(props) {
                   <p className="createNewRecordMessage">
                     You have no saved game on file under this account.
                   </p>
-              
+
                   <p className="createNewRecordMessage2">
                     Please press "NEW GAME" to start playing.
                   </p>
