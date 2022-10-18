@@ -21,9 +21,9 @@ function Index(props) {
   const { loginRedirect, setLoginRedirect } = PageRedirect();
 
   // Disable React Dev Tools
-  if (process.env.NODE_ENV === 'production') {
+  // if (process.env.NODE_ENV === 'production') {
     disableReactDevTools();
-  }
+  // }
 
   // Page refresh logic
   function refresh() {

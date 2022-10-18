@@ -108,6 +108,34 @@ function App(props) {
     window.sessionStorage.setItem('tempSubID', JSON.stringify(tempSubID));
   }, [tempSubID]);
 
+///////////////////////////////////////////////
+ const [emailSessionStorage, setEmailSessionStorage] = useState('');
+const [userNameSessionStorage, setUserNameSessionStorage] = useState('');
+const [userAuthSessionStorage, setUserAuthSessionStorage] = useState('');
+
+  useEffect(() => {
+    const data1 = window.sessionStorage.getItem('email');
+    setEmailSessionStorage(JSON.parse(data1));
+    console.log("EMAIL GOOD", data1 )
+  }, []);
+
+
+   useEffect(() => {
+     const data2 = window.sessionStorage.getItem('userName');
+     setUserNameSessionStorage(JSON.parse(data2));
+     console.log('USERNAME GOOD', data2);
+   }, []);
+
+  useEffect(() => {
+    const data3 = window.sessionStorage.getItem('userID');
+    setUserAuthSessionStorage(JSON.parse(data3));
+    console.log('USERID GOOD', data3);
+  }, []);
+
+
+////////////////////////////////////////////////////////
+
+
   //TempPassword State
   const [tempPassword, setTempPassword] = useState('');
 
@@ -257,6 +285,7 @@ function App(props) {
   const [gameOverwriteWarning, setGameOverwriteWarning] = useState(false);
   const [proceedButton, setProceedButton] = useState(false);
   const [lockButton, setLockButton] = useState(false);
+  const [lockNewGameButton, setLockNewGameButton] = useState(false);
   
 
   //Create New Game State
@@ -282,6 +311,22 @@ function App(props) {
     }, 4000);
   };
 
+    useEffect(() => {
+      if (emailSessionStorage === null|| userNameSessionStorage === null|| userAuthSessionStorage === null) {
+        setLockButton(true);
+        setLockNewGameButton(true);
+        console.log('WTF DUDE GET OUTTA HERE');
+      }
+    }, );
+
+    console.log(
+      'CHECK CRED LOGIC',
+      emailSessionStorage,
+      userNameSessionStorage,
+      userAuthSessionStorage
+    );
+  
+
   //Function for loading Game
   function loadGame() {
     if (lockButton === false) {
@@ -292,21 +337,34 @@ function App(props) {
         isMounted.current = false;
         setExecute(false);
       }, 100);
+    } else {
+      // window.location.replace('http://localhost:3000/');
+      window.location.replace('https://www.sacredcurse.com/');
+      return null;
     }
   }
-  // console.log("EXECUTE", execute)
+  console.log("LOAD GAME", lockButton)
 
   //Function for Checking for current saved game records
   function checkForSavedRecords() {
     isMounted.current = true;
+    if (lockNewGameButton === false) {
     setCheckForSavedGame(true);
     setLockButton(true);
     setTimeout(() => {
       isMounted.current = false;
       setCheckForSavedGame(false);
-    }, 100);
+    }, 100)
+  }
+  else {
+    //  window.location.replace('http://localhost:3000/');
+     window.location.replace('https://www.sacredcurse.com/');
+     return null;
+  }
     console.log('NEW GAME PRESSED');
   }
+
+  console.log('NEW GAME', lockNewGameButton);
 
   //Function for Closing a new Game warning message
   function proceedToggle() {
@@ -336,7 +394,6 @@ function App(props) {
       isMounted.current = false;
     }, 100);
   }
-  
 
   // console.log('IS MOUNTED', isMounted);
 

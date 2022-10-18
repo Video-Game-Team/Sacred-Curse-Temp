@@ -161,8 +161,8 @@ function Login(props) {
       clearTempSubID(),
       clearTempMongoID(),
       clearCurrentMap();
-    setTimeout(() => {
-      navigate('/game');
+      setTimeout(() => {
+        navigate('/game');
     }, 1000);
   };
 
