@@ -333,8 +333,8 @@ function App(props) {
     if (isMounted.current) {
       axios
         .get(
-          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
-          // "https://www.sacredcurse.com/state"
+          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
+          "https://www.sacredcurse.com/state"
         )
         .then((res) => {
           {
@@ -401,8 +401,8 @@ function App(props) {
     if (isMounted.current) {
       axios
         .get(
-          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
-          // "https://www.sacredcurse.com/state"
+          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
+          "https://www.sacredcurse.com/state"
         )
         .then((res) => {
           {
@@ -457,8 +457,8 @@ function App(props) {
     if (trigger2 === true) {
       const putState = async (id) => {
         const data = await fetch(
-          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
-          // `https://www.sacredcurse.com/state/update/${id}`,
+          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
+          `https://www.sacredcurse.com/state/update/${id}`,
           {
             method: 'PUT',
             headers: {
@@ -491,8 +491,8 @@ function App(props) {
     if (proceedButton === true) {
       const putState = async (id) => {
         const data = await fetch(
-          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
-          // `https://www.sacredcurse.com/state/update/${id}`,
+          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
+          `https://www.sacredcurse.com/state/update/${id}`,
           {
             method: 'PUT',
             headers: {
