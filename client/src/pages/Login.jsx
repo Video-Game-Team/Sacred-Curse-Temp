@@ -52,6 +52,8 @@ function Login(props) {
     window.sessionStorage.setItem('userID', JSON.stringify(userAuthSessionStorage));
   }, [userAuthSessionStorage]);
 
+  const [triggerMe, setTriggerMe] = useState(false);
+
   //Navigate HashRouter Logic
   const navigate = useNavigate();
 
@@ -73,8 +75,8 @@ function Login(props) {
     if (isAuthenticated === true) {
       axios
         .get(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
-           "https://www.sacredcurse.com/state",
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
+          //  "https://www.sacredcurse.com/state",
         )
         .then((res) => {
           // const auth = res.data.filter((c, i) => c.subID === user.sub);
@@ -148,16 +150,16 @@ function Login(props) {
 
   // Handleclick for Load Game
   const enterGame = () => {
-    clearTempQuest1(),
-    clearTempQuest2(),
-    clearTempQuest3(),
-    clearTempQuest4(),
-    cleartempUserName(),
-    clearTempFlowers(),
-    clearTempEmail(),
-    clearTempSubID(),
-    clearTempMongoID(),
-    clearCurrentMap(),
+      clearTempQuest1(),
+      clearTempQuest2(),
+      clearTempQuest3(),
+      clearTempQuest4(),
+      cleartempUserName(),
+      clearTempFlowers(),
+      clearTempEmail(),
+      clearTempSubID(),
+      clearTempMongoID(),
+      clearCurrentMap();
     setTimeout(() => {
       navigate('/game');
     }, 1000);
@@ -168,15 +170,16 @@ function Login(props) {
     <>
       {/* <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(data) }}></div> */}
 
-      {isAuthenticated ? (
-        <button className="enterGame" onClick={enterGame}>
+      {isAuthenticated ? 
+        // <button className="enterGame" onClick={enterGame}>
+        <button className="enterGame" onClick={(() => {logout(); enterGame()})}>
           ENTER SACRED CURSE
         </button>
-      ) : (
+      : 
         <button className="loginSignupButton" onClick={() => loginWithRedirect()}>
           Login / Signup
         </button>
-      )}
+      }
 
       <div className="containerLogin">
         {browserWarning === true ? (
