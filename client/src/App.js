@@ -256,6 +256,8 @@ function App(props) {
   const [newGameMessage, setNewGameMessage] = useState(false);
   const [gameOverwriteWarning, setGameOverwriteWarning] = useState(false);
   const [proceedButton, setProceedButton] = useState(false);
+  const [lockButton, setLockButton] = useState(false);
+  
 
   //Create New Game State
   const [checkForSavedGame, setCheckForSavedGame] = useState(false);
@@ -282,20 +284,23 @@ function App(props) {
 
   //Function for loading Game
   function loadGame() {
-    isMounted.current = true;
-    setExecute(true);
-     console.log('LOAD GAME PRESSED');
-    setTimeout(() => {
-      isMounted.current = false;
-      setExecute(false);
-    }, 100);
+    if (lockButton === false) {
+      isMounted.current = true;
+      setExecute(true);
+      console.log('LOAD GAME PRESSED');
+      setTimeout(() => {
+        isMounted.current = false;
+        setExecute(false);
+      }, 100);
+    }
   }
-  console.log("EXECUTE", execute)
+  // console.log("EXECUTE", execute)
 
   //Function for Checking for current saved game records
   function checkForSavedRecords() {
     isMounted.current = true;
     setCheckForSavedGame(true);
+    setLockButton(true);
     setTimeout(() => {
       isMounted.current = false;
       setCheckForSavedGame(false);
@@ -309,10 +314,10 @@ function App(props) {
     setProceedButton(true);
     setTimeout(() => {
     setExecute(false);
+    setLockButton(false);
     }, 200)
     setTimeout(() => {
       isMounted.current = false;
-      setProceedButton(false);
     }, 100);
   }
 
@@ -326,7 +331,12 @@ function App(props) {
   function closeButton() {
     isMounted.current = true;
     setGameOverwriteWarning(false);
+    setLockButton(false);
+     setTimeout(() => {
+      isMounted.current = false;
+    }, 100);
   }
+  
 
   // console.log('IS MOUNTED', isMounted);
 
@@ -335,8 +345,8 @@ function App(props) {
     if (isMounted.current) {
       axios
         .get(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
-          "https://www.sacredcurse.com/state"
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
+          // "https://www.sacredcurse.com/state"
         )
         .then((res) => {
           {
@@ -403,8 +413,8 @@ function App(props) {
     if (isMounted.current) {
       axios
         .get(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
-          "https://www.sacredcurse.com/state"
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
+          // "https://www.sacredcurse.com/state"
         )
         .then((res) => {
           {
@@ -428,8 +438,8 @@ function App(props) {
     if (isMounted.current) {
       axios
         .post(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new`,
-          "https://www.sacredcurse.com/state/new",
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new`,
+          // "https://www.sacredcurse.com/state/new",
           {
             name: '',
             email: finalEmail,
@@ -459,8 +469,8 @@ function App(props) {
     if (trigger2 === true) {
       const putState = async (id) => {
         const data = await fetch(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
-          `https://www.sacredcurse.com/state/update/${id}`,
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
+          // `https://www.sacredcurse.com/state/update/${id}`,
           {
             method: 'PUT',
             headers: {
@@ -493,8 +503,8 @@ function App(props) {
     if (proceedButton === true) {
       const putState = async (id) => {
         const data = await fetch(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
-          `https://www.sacredcurse.com/state/update/${id}`,
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
+          // `https://www.sacredcurse.com/state/update/${id}`,
           {
             method: 'PUT',
             headers: {
@@ -535,9 +545,9 @@ function App(props) {
   //   deleteState('6337321ce90b16a4693f15b5');
   //  }, [])
 
-  console.log('User Name', finalUserName);
-  console.log('User Email', finalEmail);
-  console.log('User ID', finalSubID);
+  // console.log('User Name', finalUserName);
+  // console.log('User Email', finalEmail);
+  // console.log('User ID', finalSubID);
 
   // URL protocol checker
   // let url = new URL('https://github.com/foo/bar');
@@ -1060,6 +1070,7 @@ function App(props) {
 
                 {gameOverwriteWarning === true ? (
                   <div>
+                    <div> setLockButton(true)</div>
                     <button className="closeOutButton2" onClick={closeButton}>
                       PRESS TO CANCEL
                     </button>

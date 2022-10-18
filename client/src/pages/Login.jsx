@@ -67,6 +67,25 @@ function Login(props) {
       : null;
   }, []);
 
+
+//   const [token, setToken] = useState("")
+//     useEffect(() => {
+//       const data = window.sessionStorage.getItem(
+//         'browser-tabs-lock-key-auth0.lock.getTokenSilently'
+//       );
+//       setToken(JSON.parse(data));
+//     }, []);
+
+// console.log("TOKEN", token);
+
+
+
+
+
+
+
+
+
   //Auth 0 logic
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
 
@@ -75,8 +94,8 @@ function Login(props) {
     if (isAuthenticated === true) {
       axios
         .get(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
-           "https://www.sacredcurse.com/state",
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
+          //  "https://www.sacredcurse.com/state",
         )
         .then((res) => {
           // const auth = res.data.filter((c, i) => c.subID === user.sub);
