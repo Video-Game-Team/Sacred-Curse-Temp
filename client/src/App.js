@@ -284,11 +284,13 @@ function App(props) {
   function loadGame() {
     isMounted.current = true;
     setExecute(true);
+     console.log('LOAD GAME PRESSED');
     setTimeout(() => {
       isMounted.current = false;
       setExecute(false);
     }, 100);
   }
+  console.log("EXECUTE", execute)
 
   //Function for Checking for current saved game records
   function checkForSavedRecords() {
@@ -306,7 +308,7 @@ function App(props) {
     isMounted.current = true;
     setProceedButton(true);
     setTimeout(() => {
-    setExecute(true);
+    setExecute(false);
     }, 200)
     setTimeout(() => {
       isMounted.current = false;
@@ -426,8 +428,8 @@ function App(props) {
     if (isMounted.current) {
       axios
         .post(
-          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new`,
-          // "https://www.sacredcurse.com/state/new",
+          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new`,
+          "https://www.sacredcurse.com/state/new",
           {
             name: '',
             email: finalEmail,
