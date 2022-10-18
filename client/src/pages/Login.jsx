@@ -167,12 +167,12 @@ function Login(props) {
     return '';
   }
 
-   function HomePage() {
-     sessionStorage.clear();
-     window.location.replace('http://localhost:3000/');
-     // window.location.replace('https://www.sacredcurse.com/');
-     return null;
-   }
+  //  function HomePage() {
+  //    sessionStorage.clear();
+  //   //  window.location.replace('http://localhost:3000/');
+  //    window.location.replace('https://www.sacredcurse.com/');
+  //    return null;
+  //  }
 
   // Handleclick for Load Game
   const enterGame = () => {
