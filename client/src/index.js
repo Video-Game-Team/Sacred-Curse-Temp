@@ -37,7 +37,7 @@ function Index(props) {
 
   // Redirect back to home page when Login is pressed in NavBar
   function HomePage() {
-    sessionStorage.clear();
+    // sessionStorage.clear();
     // window.location.replace('http://localhost:3000/');
     window.location.replace('https://www.sacredcurse.com/');
     return null;
