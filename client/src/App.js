@@ -319,31 +319,28 @@ const [userAuthSessionStorage, setUserAuthSessionStorage] = useState('');
       }
     }, );
 
-    console.log(
-      'CHECK CRED LOGIC',
-      emailSessionStorage,
-      userNameSessionStorage,
-      userAuthSessionStorage
-    );
-  
 
   //Function for loading Game
   function loadGame() {
     if (lockButton === false) {
-      isMounted.current = true;
+      isMounted.current = true; 
       setExecute(true);
       console.log('LOAD GAME PRESSED');
       setTimeout(() => {
         isMounted.current = false;
         setExecute(false);
       }, 100);
-    } else {
+    } 
+  else if (gameOverwriteWarning === true) {
+        console.log("LOCK")
+    }
+  else {
+      isMounted.current = true;
       // window.location.replace('http://localhost:3000/');
       window.location.replace('https://www.sacredcurse.com/');
       return null;
     }
   }
-  console.log("LOAD GAME", lockButton)
 
   //Function for Checking for current saved game records
   function checkForSavedRecords() {
@@ -357,6 +354,7 @@ const [userAuthSessionStorage, setUserAuthSessionStorage] = useState('');
     }, 100)
   }
   else {
+     setLockButton(true);
     //  window.location.replace('http://localhost:3000/');
      window.location.replace('https://www.sacredcurse.com/');
      return null;
@@ -365,6 +363,7 @@ const [userAuthSessionStorage, setUserAuthSessionStorage] = useState('');
   }
 
   console.log('NEW GAME', lockNewGameButton);
+  
 
   //Function for Closing a new Game warning message
   function proceedToggle() {
