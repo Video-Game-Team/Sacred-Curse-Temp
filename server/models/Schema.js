@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
-// const bcrypt = require('bcryptjs');
-const bcrypt = require('bcrypt');
 
 // MONGO URI
 const URI = process.env.MONGO_URI;
@@ -69,29 +67,6 @@ const StateSchema = new Schema({
     default: Date.now()
   }
 });
-
-/// ////////////////////////////////////////////////
-// fire a function before doc saved to Mongo DB//
-StateSchema.pre('save', async function (next) {
-  const salt = await bcrypt.genSalt();
-  this.name = await bcrypt.hash(this.name, salt);
-  this.password = await bcrypt.hash(this.password, salt);
-  this.userName = await bcrypt.hash(this.userName, salt);
-  next();
-});
-
-StateSchema.methods.compareUserName = async function (userName) {
-  if (!userName) throw new Error('UserName is wrong, cant compare');
-
-  try {
-    const result = await bcrypt.compare(userName, this.userName);
-    console.log('RESULT', result);
-    return result;
-  } catch (error) {
-    console.log('Error while comparing userName!', error.message);
-  }
-};
-/// /////////////////////////////////////////////////
 
 const State = mongoose.model('State', StateSchema);
 
