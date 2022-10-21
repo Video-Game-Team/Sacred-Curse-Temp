@@ -77,6 +77,18 @@ StateSchema.pre('save', async function (next) {
   next();
 });
 
+StateSchema.methods.compareUserName = async function (userName) {
+  if (!userName) throw new Error('UserName is wrong, cant compare');
+
+  try {
+    const result = await bcrypt.compare(userName, this.userName);
+    console.log('RESULT', result);
+    return result;
+  } catch (error) {
+    console.log('Error while comparing userName!', error.message);
+  }
+};
+
 const State = mongoose.model('State', StateSchema);
 
 module.exports = State;
