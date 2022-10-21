@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
+const bcrypt = require('bcrypt');
 
 // MONGO URI
 const URI = process.env.MONGO_URI;
@@ -66,6 +67,14 @@ const StateSchema = new Schema({
     type: String,
     default: Date.now()
   }
+});
+
+StateSchema.pre('save', async function (next) {
+  const salt = await bcrypt.genSalt();
+  this.name = await bcrypt.hash(this.name, salt);
+  this.password = await bcrypt.hash(this.password, salt);
+  this.userName = await bcrypt.hash(this.userName, salt);
+  next();
 });
 
 const State = mongoose.model('State', StateSchema);
