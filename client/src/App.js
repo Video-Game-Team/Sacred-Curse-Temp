@@ -65,8 +65,6 @@ const DOMPurify = createDOMPurify(window);
 const parse = require('html-react-parser');
 const URL = require('url-parse');
 
-
-
 //Main function
 function App(props) {
   //AXIOS retry logic
@@ -74,12 +72,11 @@ function App(props) {
 
   const [itemObj, setItemObj] = useState({});
 
-
   //new state added in from google doc///////////////////////////////////////
 
   const [townPickup, setTownPickup] = useState(false);
   const [gotFlower, setGotFlower] = useState(false);
-  const [farmMapVersion, setFarmMapVersion] = useState("");
+  const [farmMapVersion, setFarmMapVersion] = useState('');
   const [townMapVersion, setTownMapVersion] = useState(0);
   const [demons, setDemons] = useState(0);
   const [gardenFlowersTown, setGardenFlowersTown] = useState(false);
@@ -90,10 +87,7 @@ function App(props) {
   const [stGwenBM3, setStGwenBM3] = useState(false);
   const [stGwenBM4, setStGwenBM4] = useState(false);
 
-
-
-/////////////////////////////////////////////////////////
-
+  /////////////////////////////////////////////////////////
 
   //START OF TEMP STATE//////////////////////////////////////////
   // TempName State
@@ -264,7 +258,6 @@ function App(props) {
     DemonObjects.Naruto
   ]);
 
-
   //HERE IS WHERE YOU WANT TO CHANGE THE CURRENT MAP WHEN WORKING ON THE GAME. JUST REPLACE THE '  current  ' out of the JSON.stringify value.
   const [current, setCurrent] = useState(tempCurrentMap);
   //Persist Logic for currentMap
@@ -351,8 +344,8 @@ function App(props) {
       console.log('LOCK');
     } else {
       isMounted.current = true;
-      // window.location.replace('http://localhost:3000/');
-      window.location.replace('https://www.sacredcurse.com/');
+      window.location.replace('http://localhost:3000/');
+      // window.location.replace('https://www.sacredcurse.com/');
       return null;
     }
   }
@@ -369,13 +362,12 @@ function App(props) {
       }, 100);
     } else {
       setLockButton(true);
-      // window.location.replace('http://localhost:3000/');
-       window.location.replace('https://www.sacredcurse.com/');
+      window.location.replace('http://localhost:3000/');
+      //  window.location.replace('https://www.sacredcurse.com/');
       return null;
     }
     console.log('NEW GAME PRESSED');
   }
-
 
   //Function for Closing a new Game warning message
   function proceedToggle() {
@@ -413,8 +405,8 @@ function App(props) {
     if (isMounted.current) {
       axios
         .get(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
-          "https://www.sacredcurse.com/state"
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
+          // "https://www.sacredcurse.com/state"
         )
         .then((res) => {
           {
@@ -481,8 +473,8 @@ function App(props) {
     if (isMounted.current) {
       axios
         .get(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
-          "https://www.sacredcurse.com/state"
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
+          // "https://www.sacredcurse.com/state"
         )
         .then((res) => {
           {
@@ -505,8 +497,8 @@ function App(props) {
     if (isMounted.current) {
       axios
         .post(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new`,
-          "https://www.sacredcurse.com/state/new",
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new`,
+          // "https://www.sacredcurse.com/state/new",
           {
             name: '',
             email: finalEmail,
@@ -536,8 +528,8 @@ function App(props) {
     if (trigger2 === true) {
       const putState = async (id) => {
         const data = await fetch(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
-          `https://www.sacredcurse.com/state/update/${id}`,
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
+          // `https://www.sacredcurse.com/state/update/${id}`,
           {
             method: 'PUT',
             headers: {
@@ -570,8 +562,8 @@ function App(props) {
     if (proceedButton === true) {
       const putState = async (id) => {
         const data = await fetch(
-          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
-          `https://www.sacredcurse.com/state/update/${id}`,
+          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/update/${id}`,
+          // `https://www.sacredcurse.com/state/update/${id}`,
           {
             method: 'PUT',
             headers: {
