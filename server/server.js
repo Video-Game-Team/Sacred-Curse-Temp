@@ -29,9 +29,9 @@ app.use(express.static(path.resolve(__dirname, '../build')));
 // EMoji welcome screen Heroku
 app.get('/cool', (req, res) => res.send(cool()));
 
-const loggedin = true;
+// const loggedin = true;
 
-// // GET ROUTE
+// // // GET ROUTE
 app.get('/state', async (req, res) => {
   try {
     const states = await State.find();

@@ -74,6 +74,27 @@ function App(props) {
 
   const [itemObj, setItemObj] = useState({});
 
+
+  //new state added in from google doc///////////////////////////////////////
+
+  const [townPickup, setTownPickup] = useState(false);
+  const [gotFlower, setGotFlower] = useState(false);
+  const [farmMapVersion, setFarmMapVersion] = useState("");
+  const [townMapVersion, setTownMapVersion] = useState(0);
+  const [demons, setDemons] = useState(0);
+  const [gardenFlowersTown, setGardenFlowersTown] = useState(false);
+  const [ranchQuestStarted, setRanchQuestStarted] = useState(false);
+  const [mariahsFlowers, setMariahsFlowers] = useState(false);
+  const [stGwenBM1, setStGwenBM1] = useState(false);
+  const [stGwenBM2, setStGwenBM2] = useState(false);
+  const [stGwenBM3, setStGwenBM3] = useState(false);
+  const [stGwenBM4, setStGwenBM4] = useState(false);
+
+
+
+/////////////////////////////////////////////////////////
+
+
   //START OF TEMP STATE//////////////////////////////////////////
   // TempName State
   const [tempName, setTempName] = useState('');
@@ -108,33 +129,27 @@ function App(props) {
     window.sessionStorage.setItem('tempSubID', JSON.stringify(tempSubID));
   }, [tempSubID]);
 
-///////////////////////////////////////////////
- const [emailSessionStorage, setEmailSessionStorage] = useState('');
-const [userNameSessionStorage, setUserNameSessionStorage] = useState('');
-const [userAuthSessionStorage, setUserAuthSessionStorage] = useState('');
+  ///////////////////////////////////////////////
+  const [emailSessionStorage, setEmailSessionStorage] = useState('');
+  const [userNameSessionStorage, setUserNameSessionStorage] = useState('');
+  const [userAuthSessionStorage, setUserAuthSessionStorage] = useState('');
 
   useEffect(() => {
     const data1 = window.sessionStorage.getItem('email');
     setEmailSessionStorage(JSON.parse(data1));
-    console.log("EMAIL GOOD", data1 )
   }, []);
 
-
-   useEffect(() => {
-     const data2 = window.sessionStorage.getItem('userName');
-     setUserNameSessionStorage(JSON.parse(data2));
-     console.log('USERNAME GOOD', data2);
-   }, []);
+  useEffect(() => {
+    const data2 = window.sessionStorage.getItem('userName');
+    setUserNameSessionStorage(JSON.parse(data2));
+  }, []);
 
   useEffect(() => {
     const data3 = window.sessionStorage.getItem('userID');
     setUserAuthSessionStorage(JSON.parse(data3));
-    console.log('USERID GOOD', data3);
   }, []);
 
-
-////////////////////////////////////////////////////////
-
+  ////////////////////////////////////////////////////////
 
   //TempPassword State
   const [tempPassword, setTempPassword] = useState('');
@@ -249,6 +264,8 @@ const [userAuthSessionStorage, setUserAuthSessionStorage] = useState('');
     DemonObjects.Naruto
   ]);
 
+
+  //HERE IS WHERE YOU WANT TO CHANGE THE CURRENT MAP WHEN WORKING ON THE GAME. JUST REPLACE THE '  current  ' out of the JSON.stringify value.
   const [current, setCurrent] = useState(tempCurrentMap);
   //Persist Logic for currentMap
   useEffect(() => {
@@ -286,7 +303,6 @@ const [userAuthSessionStorage, setUserAuthSessionStorage] = useState('');
   const [proceedButton, setProceedButton] = useState(false);
   const [lockButton, setLockButton] = useState(false);
   const [lockNewGameButton, setLockNewGameButton] = useState(false);
-  
 
   //Create New Game State
   const [checkForSavedGame, setCheckForSavedGame] = useState(false);
@@ -311,30 +327,29 @@ const [userAuthSessionStorage, setUserAuthSessionStorage] = useState('');
     }, 4000);
   };
 
-    useEffect(() => {
-      if (emailSessionStorage === null|| userNameSessionStorage === null|| userAuthSessionStorage === null) {
-        setLockButton(true);
-        setLockNewGameButton(true);
-        console.log('WTF DUDE GET OUTTA HERE');
-      }
-    }, );
-
+  useEffect(() => {
+    if (
+      emailSessionStorage === null ||
+      userNameSessionStorage === null ||
+      userAuthSessionStorage === null
+    ) {
+      setLockButton(true);
+      setLockNewGameButton(true);
+    }
+  });
 
   //Function for loading Game
   function loadGame() {
     if (lockButton === false) {
-      isMounted.current = true; 
+      isMounted.current = true;
       setExecute(true);
-      console.log('LOAD GAME PRESSED');
       setTimeout(() => {
         isMounted.current = false;
         setExecute(false);
       }, 100);
-    } 
-  else if (gameOverwriteWarning === true) {
-        console.log("LOCK")
-    }
-  else {
+    } else if (gameOverwriteWarning === true) {
+      console.log('LOCK');
+    } else {
       isMounted.current = true;
       // window.location.replace('http://localhost:3000/');
       window.location.replace('https://www.sacredcurse.com/');
@@ -346,33 +361,30 @@ const [userAuthSessionStorage, setUserAuthSessionStorage] = useState('');
   function checkForSavedRecords() {
     isMounted.current = true;
     if (lockNewGameButton === false) {
-    setCheckForSavedGame(true);
-    setLockButton(true);
-    setTimeout(() => {
-      isMounted.current = false;
-      setCheckForSavedGame(false);
-    }, 100)
-  }
-  else {
-     setLockButton(true);
-    //  window.location.replace('http://localhost:3000/');
-     window.location.replace('https://www.sacredcurse.com/');
-     return null;
-  }
+      setCheckForSavedGame(true);
+      setLockButton(true);
+      setTimeout(() => {
+        isMounted.current = false;
+        setCheckForSavedGame(false);
+      }, 100);
+    } else {
+      setLockButton(true);
+      // window.location.replace('http://localhost:3000/');
+       window.location.replace('https://www.sacredcurse.com/');
+      return null;
+    }
     console.log('NEW GAME PRESSED');
   }
 
-  console.log('NEW GAME', lockNewGameButton);
-  
 
   //Function for Closing a new Game warning message
   function proceedToggle() {
     isMounted.current = true;
     setProceedButton(true);
     setTimeout(() => {
-    setExecute(false);
-    setLockButton(false);
-    }, 200)
+      setExecute(false);
+      setLockButton(false);
+    }, 200);
     setTimeout(() => {
       isMounted.current = false;
     }, 100);
@@ -389,7 +401,7 @@ const [userAuthSessionStorage, setUserAuthSessionStorage] = useState('');
     isMounted.current = true;
     setGameOverwriteWarning(false);
     setLockButton(false);
-     setTimeout(() => {
+    setTimeout(() => {
       isMounted.current = false;
     }, 100);
   }
@@ -479,7 +491,6 @@ const [userAuthSessionStorage, setUserAuthSessionStorage] = useState('');
             if (findRecord.length) {
               setGameOverwriteWarning(true);
               setTempMongoID(findRecord[0]._id);
-              console.log('GET REQUEST RUNNING');
             } else {
               setCreateNewGame(true);
             }
@@ -889,11 +900,9 @@ const [userAuthSessionStorage, setUserAuthSessionStorage] = useState('');
   }
 
   //Page reload, quit, and close blocker logic
-   window.onbeforeunload = function () {
-     return '';
-   };
-
-  
+  window.onbeforeunload = function () {
+    return '';
+  };
 
   /////////////////////////////////////////////////////////////////
   //MATT STATE PASSING FUNCTION for subID Auth

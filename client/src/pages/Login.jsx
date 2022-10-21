@@ -12,8 +12,6 @@ const DOMPurify = createDOMPurify(window);
 const parse = require('html-react-parser');
 const basicAuth = require('express-basic-auth');
 
-
-
 //Main function
 function Login(props) {
   //AXIOS retry logic
@@ -66,7 +64,6 @@ function Login(props) {
       ? setBrowserWarning(true)
       : null;
   }, []);
-
 
   //Auth 0 logic
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
@@ -151,7 +148,7 @@ function Login(props) {
 
   // Handleclick for Load Game
   const enterGame = () => {
-      clearTempQuest1(),
+    clearTempQuest1(),
       clearTempQuest2(),
       clearTempQuest3(),
       clearTempQuest4(),
@@ -161,8 +158,8 @@ function Login(props) {
       clearTempSubID(),
       clearTempMongoID(),
       clearCurrentMap();
-      setTimeout(() => {
-        navigate('/game');
+    setTimeout(() => {
+      navigate('/game');
     }, 1000);
   };
 
@@ -171,16 +168,21 @@ function Login(props) {
     <>
       {/* <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(data) }}></div> */}
 
-      {isAuthenticated ? 
+      {isAuthenticated ? (
         // <button className="enterGame" onClick={enterGame}>
-        <button className="enterGame" onClick={(() => {logout(); enterGame()})}>
+        <button
+          className="enterGame"
+          onClick={() => {
+            logout();
+            enterGame();
+          }}>
           ENTER SACRED CURSE
         </button>
-      : 
+      ) : (
         <button className="loginSignupButton" onClick={() => loginWithRedirect()}>
           Login / Signup
         </button>
-      }
+      )}
 
       <div className="containerLogin">
         {browserWarning === true ? (

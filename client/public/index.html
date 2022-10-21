@@ -8,16 +8,17 @@
       name="description"
       content="Sacred Curse"
     />
-   
         <!-- <meta http-equiv="Content-Security-Policy" content="
+         default-src *;
          connect-src 'self';
-         default-src 'none';
-         img-src 'self';
-         manifest-src 'self';
-         script-src-elem 'self';
-         style-src-elem 'self';
+         manifest-src self;
+         object-src self;
+         frame-src self;
+         script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+         style-src  'self' 'unsafe-inline' *;
+         img-src 'self' data:;
+         base-uri 'self' https://dev-mvc8sgjt.us.auth0.com  http://localhost:3000/#/login
          "> -->
-    
     <title>Sacred Curse</title>
     <script>
       var host = "www.sacredcurse.com" || "sacredcurse.com";

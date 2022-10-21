@@ -149,7 +149,7 @@ html {
 }
 
 .darkSkyPic {
-    background-image: url('https://cdn.glitch.com/4f83b17b-3d9a-4782-bfb9-3298fce7ff84%2Fstormynight.jpg?1516228334292');
+    background-image: url('./assets/images/DarkSky.jpeg');
     opacity: .8;
     background-size: cover;
     /* Set rules to fill background this is  set to 1024px*/

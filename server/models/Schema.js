@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
+// const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 
 // MONGO URI
 const URI = process.env.MONGO_URI;
@@ -9,7 +11,7 @@ mongoose
   .connect(URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    dbName: 'SacredCurseUserDB',
+    dbName: 'SacredCurseUserDB'
   })
   .then(() => console.log('Connected to Sacred Curse Database.'))
   .catch((err) => console.log(err));
@@ -21,52 +23,75 @@ const { Schema } = mongoose;
 const StateSchema = new Schema({
   name: {
     type: String,
-    default: '',
+    default: ''
   },
   email: {
     type: String,
-    default: '',
+    default: ''
   },
   userName: {
     type: String,
-    default: '',
+    default: ''
   },
   subID: {
     type: String,
-    default: '',
+    default: ''
   },
   password: {
-    type: String,
+    type: String
   },
   currentMap: {
     type: String,
-    default: '',
+    default: ''
   },
   flowers: {
     type: Number,
-    default: 0,
+    default: 0
   },
   quest1: {
     type: Boolean,
-    default: false,
+    default: false
   },
   quest2: {
     type: Boolean,
-    default: false,
+    default: false
   },
   quest3: {
     type: Boolean,
-    default: false,
+    default: false
   },
   quest4: {
     type: Boolean,
-    default: false,
+    default: false
   },
   timeStamp: {
     type: String,
-    default: Date.now(),
-  },
+    default: Date.now()
+  }
 });
+
+/// ////////////////////////////////////////////////
+// fire a function before doc saved to Mongo DB//
+StateSchema.pre('save', async function (next) {
+  const salt = await bcrypt.genSalt();
+  this.name = await bcrypt.hash(this.name, salt);
+  this.password = await bcrypt.hash(this.password, salt);
+  this.userName = await bcrypt.hash(this.userName, salt);
+  next();
+});
+
+StateSchema.methods.compareUserName = async function (userName) {
+  if (!userName) throw new Error('UserName is wrong, cant compare');
+
+  try {
+    const result = await bcrypt.compare(userName, this.userName);
+    console.log('RESULT', result);
+    return result;
+  } catch (error) {
+    console.log('Error while comparing userName!', error.message);
+  }
+};
+/// /////////////////////////////////////////////////
 
 const State = mongoose.model('State', StateSchema);
 
