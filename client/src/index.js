@@ -46,8 +46,8 @@ function Index(props) {
         auth: false
       })
     }).then((res) => res.json());
-    window.location.replace('http://localhost:3000/');
-    // window.location.replace('https://www.sacredcurse.com/');
+    // window.location.replace('http://localhost:3000/');
+    window.location.replace('https://www.sacredcurse.com/');
     return null;
   }
 

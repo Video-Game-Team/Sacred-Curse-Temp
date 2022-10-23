@@ -78,8 +78,8 @@ function Login(props) {
     if (isAuthenticated === true) {
       axios
         .get(
-          `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
-          //  "https://www.sacredcurse.com/state",
+          // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
+           "https://www.sacredcurse.com/state",
         )
         .then((res) => {
           setEmailSessionStorage(user.email);
@@ -172,7 +172,8 @@ function Login(props) {
   useEffect(() => {
     console.log;
     if (isMounted.current === true) {
-      fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {
+      // fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {
+      fetch('https://www.sacredcurse.com/state', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -188,7 +189,8 @@ function Login(props) {
   useEffect(() => {
     console.log;
     if (isMounted.current === true) {
-      fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {
+      // fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {
+      fetch('https://www.sacredcurse.com/state', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
