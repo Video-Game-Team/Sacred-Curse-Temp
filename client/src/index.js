@@ -37,7 +37,8 @@ function Index(props) {
 
   // Redirect back to home page when Login is pressed in NavBar
   function HomePage() {
-    fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {
+    // fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {
+    fetch('https://www.sacredcurse.com/state', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
