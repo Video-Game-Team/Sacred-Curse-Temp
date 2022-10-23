@@ -70,10 +70,12 @@ const StateSchema = new Schema({
 });
 
 StateSchema.pre('save', async function (next) {
-  const salt = await bcrypt.genSalt();
+  const salt = await bcrypt.genSalt(12);
   this.name = await bcrypt.hash(this.name, salt);
   this.password = await bcrypt.hash(this.password, salt);
   this.userName = await bcrypt.hash(this.userName, salt);
+  console.log('SALT NAME', this.userName);
+  console.log('REG NAME', StateSchema.obj.userName);
   next();
 });
 

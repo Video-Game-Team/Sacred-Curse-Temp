@@ -8,6 +8,7 @@ const axios = require('axios');
 const parse = require('html-react-parser');
 const jwt = require('jsonwebtoken');
 
+const { Auth0Provider } = require('@auth0/auth0-react');
 const State = require('./models/Schema');
 require('dotenv').config();
 
@@ -26,35 +27,47 @@ app.use(cookieParser());
 // HANDLE REQUESTS FOR STATIC FILES
 app.use(express.static(path.resolve(__dirname, '../build')));
 
+let authStateValue = false;
+let currentAuthID = '';
+
 // EMoji welcome screen Heroku
 app.get('/cool', (req, res) => res.send(cool()));
 
-// const loggedin = true;
+// PUT ROUTE for ulocking state/endpoint
+app.put('/state', async (req, res) => {
+  console.log('AUTH TRUE', req.body);
+  authStateValue = req.body.auth;
+  currentAuthID = req.body.authID;
+});
+
+// // // GET ROUTE
+// app.get('/state', async (req, res) => {
+//   try {
+//     if (authStateValue === true) {
+//       const states = await State.find();
+//       res.json(states);
+//     } else {
+//       res.json('Error, Not Authorized');
+//     }
+//   } catch (error) {
+//     console.log(error);
+//   }
+// });
 
 // // // GET ROUTE
 app.get('/state', async (req, res) => {
   try {
-    const states = await State.find();
-    res.json(states);
+    if (authStateValue === true) {
+      const states = await State.find({ subID: `"${currentAuthID}"` });
+      res.json(states);
+      console.log('STATES', states);
+    } else {
+      res.json('Error, Not Authorized');
+    }
   } catch (error) {
     console.log(error);
   }
 });
-
-// app.get('/state', async (req, res) => {
-//   const token = req.headers['x-access-token'];
-//   try {
-//     if (!token) {
-//       // const decoded = jwt.verify(token, 'secret123');
-//       // const { email } = decoded;
-//       const states = await State.find();
-//       res.json(states);
-//     }
-//   } catch (error) {
-//     console.log(error);
-//     res.json({ status: 'error', error: 'invalid token' });
-//   }
-// });
 
 // POST ROUTE
 app.post('/state/new', (req, res) => {
