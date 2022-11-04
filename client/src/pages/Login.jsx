@@ -216,7 +216,7 @@ function Login(props) {
             logout();
             enterGame();
           }}>
-          ENTER SACRED CURSE
+          ENTER GAME
         </button>
       ) : (
         <button className="glow-on-hover" onClick={() => loginWithRedirect()}>
