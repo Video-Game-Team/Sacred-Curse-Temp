@@ -79,7 +79,7 @@ function Login(props) {
       axios
         .get(
           // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
-          'https://www.sacredcurse.com/state'
+           "https://www.sacredcurse.com/state",
         )
         .then((res) => {
           setEmailSessionStorage(user.email);
@@ -196,7 +196,8 @@ function Login(props) {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          auth: true
+          auth: true,
+          authID: user.sub,
         })
       }).then((res) => res.json());
     }
@@ -210,15 +211,15 @@ function Login(props) {
       {isAuthenticated ? (
         // <button className="enterGame" onClick={enterGame}>
         <button
-          className="glow-on-hover"
+          className="enterGame"
           onClick={() => {
             logout();
             enterGame();
           }}>
-          ENTER GAME
+          ENTER SACRED CURSE
         </button>
       ) : (
-        <button className="glow-on-hover" onClick={() => loginWithRedirect()}>
+        <button className="loginSignupButton" onClick={() => loginWithRedirect()}>
           Login / Signup
         </button>
       )}
