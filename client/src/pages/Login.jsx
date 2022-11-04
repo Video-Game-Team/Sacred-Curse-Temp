@@ -211,7 +211,7 @@ function Login(props) {
       {isAuthenticated ? (
         // <button className="enterGame" onClick={enterGame}>
         <button
-          className="enterGame"
+          className="glow-on-hover"
           onClick={() => {
             logout();
             enterGame();
@@ -219,7 +219,7 @@ function Login(props) {
           ENTER SACRED CURSE
         </button>
       ) : (
-        <button className="loginSignupButton" onClick={() => loginWithRedirect()}>
+        <button className="glow-on-hover" onClick={() => loginWithRedirect()}>
           Login / Signup
         </button>
       )}
