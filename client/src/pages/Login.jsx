@@ -79,7 +79,7 @@ function Login(props) {
       axios
         .get(
           // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
-           "https://www.sacredcurse.com/state",
+          'https://www.sacredcurse.com/state'
         )
         .then((res) => {
           setEmailSessionStorage(user.email);
@@ -172,8 +172,7 @@ function Login(props) {
   useEffect(() => {
     console.log;
     if (isMounted.current === true) {
-      // fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {
-      fetch('https://www.sacredcurse.com/state', {
+      fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -189,15 +188,13 @@ function Login(props) {
   useEffect(() => {
     console.log;
     if (isMounted.current === true) {
-      // fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {
-      fetch('https://www.sacredcurse.com/state', {
+      fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          auth: true,
-          authID: user.sub,
+          auth: true
         })
       }).then((res) => res.json());
     }
@@ -211,15 +208,15 @@ function Login(props) {
       {isAuthenticated ? (
         // <button className="enterGame" onClick={enterGame}>
         <button
-          className="enterGame"
+          className="glow-on-hover"
           onClick={() => {
             logout();
             enterGame();
           }}>
-          ENTER SACRED CURSE
+          ENTER GAME
         </button>
       ) : (
-        <button className="loginSignupButton" onClick={() => loginWithRedirect()}>
+        <button className="glow-on-hover" onClick={() => loginWithRedirect()}>
           Login / Signup
         </button>
       )}
@@ -233,8 +230,8 @@ function Login(props) {
             }}>{`This browser is incompatible with this game. Please use Google Chrome or Safari.`}</h1>
         ) : (
           <div className="fade-in">
-            <h1 className="titleTextLogin">Sacred Curse</h1>
-            <div className="darkSkyGif"></div>
+            <h1 className="sign">Sacred Curse</h1>
+            <div className="purpleSky"></div>
             <div className="darkSkyPic"></div>
           </div>
         )}
