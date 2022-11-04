@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router';
 import axios from 'axios';
 import axiosRetry from 'axios-retry';
@@ -17,8 +17,13 @@ function Login(props) {
   //AXIOS retry logic
   axiosRetry(axios, { retries: 3 });
 
+  //UseRef to stop Get request Useeffect from running on re-render
+  const isMounted = useRef(false);
+
   //State for checking Broser compatibility
   const [browserWarning, setBrowserWarning] = useState(false);
+
+  const [authTrigger, setAuthTrigger] = useState(false);
 
   //Email state and sessionStorage
   const [emailSessionStorage, setEmailSessionStorage] = useState('');
@@ -68,6 +73,7 @@ function Login(props) {
   //Auth 0 logic
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
 
+  
   // GET Request for Checking to see if user exists or if we need to create a new database record for them
   useEffect(() => {
     if (isAuthenticated === true) {
@@ -77,7 +83,6 @@ function Login(props) {
            "https://www.sacredcurse.com/state",
         )
         .then((res) => {
-          // const auth = res.data.filter((c, i) => c.subID === user.sub);
           setEmailSessionStorage(user.email);
           setUserNameSessionStorage(user.nickname);
           setUserAuthSessionStorage(user.sub);
@@ -148,7 +153,9 @@ function Login(props) {
 
   // Handleclick for Load Game
   const enterGame = () => {
-    clearTempQuest1(),
+    isMounted.current = true,
+      setAuthTrigger(true),
+      clearTempQuest1(),
       clearTempQuest2(),
       clearTempQuest3(),
       clearTempQuest4(),
@@ -163,6 +170,39 @@ function Login(props) {
     }, 1000);
   };
 
+
+   useEffect(() => {
+     console.log;
+     if (isMounted.current === true) {
+       fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {
+         method: 'PUT',
+         headers: {
+           'Content-Type': 'application/json'
+         },
+         body: JSON.stringify({
+           auth: false
+         })
+       }).then((res) => res.json());
+     }
+   }, []);
+
+
+  // PUT Request for updating Auth and unlocking state endpoint
+  useEffect(() => {
+    console.log;
+    if (isMounted.current === true) {
+      fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          auth: true
+        })
+      }).then((res) => res.json());
+    }
+  }, [authTrigger]);
+
   // Return statement
   return (
     <>
@@ -171,15 +211,15 @@ function Login(props) {
       {isAuthenticated ? (
         // <button className="enterGame" onClick={enterGame}>
         <button
-          className="enterGame"
+          className="glow-on-hover"
           onClick={() => {
             logout();
             enterGame();
           }}>
-          ENTER SACRED CURSE
+          ENTER GAME
         </button>
       ) : (
-        <button className="loginSignupButton" onClick={() => loginWithRedirect()}>
+        <button className="glow-on-hover" onClick={() => loginWithRedirect()}>
           Login / Signup
         </button>
       )}
@@ -193,8 +233,8 @@ function Login(props) {
             }}>{`This browser is incompatible with this game. Please use Google Chrome or Safari.`}</h1>
         ) : (
           <div className="fade-in">
-            <h1 className="titleTextLogin">Sacred Curse</h1>
-            <div className="darkSkyGif"></div>
+            <h1 className="sign">Sacred Curse</h1>
+            <div className="purpleSky"></div>
             <div className="darkSkyPic"></div>
           </div>
         )}

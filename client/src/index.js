@@ -37,7 +37,15 @@ function Index(props) {
 
   // Redirect back to home page when Login is pressed in NavBar
   function HomePage() {
-    // sessionStorage.clear();
+           fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {
+             method: 'PUT',
+             headers: {
+               'Content-Type': 'application/json'
+             },
+             body: JSON.stringify({
+               auth: false
+             })
+           }).then((res) => res.json());
     // window.location.replace('http://localhost:3000/');
     window.location.replace('https://www.sacredcurse.com/');
     return null;

@@ -8,6 +8,7 @@ const axios = require('axios');
 const parse = require('html-react-parser');
 const jwt = require('jsonwebtoken');
 
+const { Auth0Provider } = require('@auth0/auth0-react');
 const State = require('./models/Schema');
 require('dotenv').config();
 
@@ -26,16 +27,26 @@ app.use(cookieParser());
 // HANDLE REQUESTS FOR STATIC FILES
 app.use(express.static(path.resolve(__dirname, '../build')));
 
+let authStateValue = false;
+
 // EMoji welcome screen Heroku
 app.get('/cool', (req, res) => res.send(cool()));
 
-// const loggedin = true;
+// PUT ROUTE for ulocking state/endpoint
+app.put('/state', async (req, res) => {
+  console.log('AUTH TRUE', req.body);
+  authStateValue = req.body.auth;
+});
 
 // // // GET ROUTE
 app.get('/state', async (req, res) => {
   try {
-    const states = await State.find();
-    res.json(states);
+    if (authStateValue === true) {
+      const states = await State.find();
+      res.json(states);
+    } else {
+      res.json('Error, Not Authorized');
+    }
   } catch (error) {
     console.log(error);
   }
