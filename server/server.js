@@ -28,10 +28,8 @@ app.use(cookieParser());
 app.use(express.static(path.resolve(__dirname, '../build')));
 
 let authStateValue = false;
-<<<<<<< HEAD
-=======
+
 let currentAuthID = '';
->>>>>>> b51c73c5f1b5aa257696a441b271d4ac59d8e735
 
 // EMoji welcome screen Heroku
 app.get('/cool', (req, res) => res.send(cool()));
@@ -40,9 +38,7 @@ app.get('/cool', (req, res) => res.send(cool()));
 app.put('/state', async (req, res) => {
   console.log('AUTH TRUE', req.body);
   authStateValue = req.body.auth;
-<<<<<<< HEAD
-});
-=======
+
   currentAuthID = req.body.authID;
 });
 
@@ -59,20 +55,17 @@ app.put('/state', async (req, res) => {
 //     console.log(error);
 //   }
 // });
->>>>>>> b51c73c5f1b5aa257696a441b271d4ac59d8e735
 
 // // // GET ROUTE
 app.get('/state', async (req, res) => {
   try {
     if (authStateValue === true) {
-<<<<<<< HEAD
       const states = await State.find();
       res.json(states);
-=======
+
       const states = await State.find({ subID: `"${currentAuthID}"` });
       res.json(states);
       console.log('STATES', states);
->>>>>>> b51c73c5f1b5aa257696a441b271d4ac59d8e735
     } else {
       res.json('Error, Not Authorized');
     }
