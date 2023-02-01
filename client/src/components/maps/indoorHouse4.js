@@ -78,10 +78,7 @@ const IndoorHouse4 = (props) => {
     [3221225513, 445, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41],
     [3221225513, 461, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41],
     [1610614064, 1610614080, 1928, 0, 0, 0, 0, 0, 0, 0, 809, 810, 811, 812, 41],
-    [
-      1610614063, 1610614079, 1944, 0, 0, 0, 0, 510, 511, 0, 825, 826, 827, 828,
-      41,
-    ],
+    [1610614063, 1610614079, 1944, 0, 0, 0, 0, 510, 511, 0, 825, 826, 827, 828, 41],
     [1610614062, 1610614078, 1928, 0, 0, 0, 0, 526, 527, 0, 0, 0, 0, 0, 41],
     [1610614061, 1610614077, 1944, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41],
     [3221225513, 238, 0, 0, 0, 0, 0, 0, 3963, 3964, 0, 0, 0, 0, 41],
@@ -90,18 +87,14 @@ const IndoorHouse4 = (props) => {
     [1562, 1563, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2134, 41],
     [1578, 1579, 0, 0, 0, 0, 0, 0, 0, 0, 247, 248, 1, 3178, 111],
     [
-      3221225528, 3221225595, 1, 0, 0, 3221225594, 3221225594, 3221225594,
-      3221225594, 3221225595, 3221225594, 3221225594, 3221225590, 3221225589,
-      3221225590,
+      3221225528, 3221225595, 1, 0, 0, 3221225594, 3221225594, 3221225594, 3221225594, 3221225595,
+      3221225594, 3221225594, 3221225590, 3221225589, 3221225590
     ],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
   ];
 
   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  console.log(
-    'VALUE Right',
-    currentMap[yPlayerIndex.current][xPlayerIndex.current]
-  );
+  console.log('VALUE Right', currentMap[yPlayerIndex.current][xPlayerIndex.current]);
 
   // useEffect(() => {
   //   let tempGrid = [];
@@ -303,27 +296,23 @@ const IndoorHouse4 = (props) => {
         if (facing.current === 'up') {
           if (
             xBank.current + 32 > 64 &&
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
-              'door1'
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] === 'door1'
           ) {
           }
           if (
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
-              'sign1' &&
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 'sign1' &&
             64 - xBank.current > 32
           ) {
             console.log('sign1');
           }
           if (
             xBank.current + 32 > 64 &&
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
-              'sign2'
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] === 'sign2'
           ) {
             console.log('sign2');
           }
           if (
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
-              'sign2' &&
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 'sign2' &&
             64 - xBank.current > 32
           ) {
             console.log('sign2');
@@ -331,21 +320,16 @@ const IndoorHouse4 = (props) => {
         }
         if (facing.current == null) {
           if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
-              'sign1' &&
+            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 'sign1' &&
             xBank.current + 32 < 64
           ) {
             console.log('sign1');
           }
-          if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current + 1] ===
-            'sign2'
-          ) {
+          if (currentMap[yPlayerIndex.current + 1][xPlayerIndex.current + 1] === 'sign2') {
             console.log('poopshit');
           }
           if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
-              'sign2' &&
+            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 'sign2' &&
             xBank.current + 32 < 64
           ) {
             console.log('sign2');
@@ -414,10 +398,7 @@ const IndoorHouse4 = (props) => {
     //if current key is d, the x cordinate becomes  the previous state + the speed
 
     if (dirArr.current[0] === 'ArrowRight') {
-      if (
-        currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] === 0 ||
-        xBank.current < 0
-      )
+      if (currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] === 0 || xBank.current < 0)
         if (
           yBank.current + 32 < 64 ||
           currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
@@ -438,10 +419,7 @@ const IndoorHouse4 = (props) => {
     //if current key is a, the x cordinate becomes  the previous state - the speed
 
     if (dirArr.current[0] === 'ArrowLeft') {
-      if (
-        currentMap[yPlayerIndex.current][xPlayerIndex.current - 1] === 0 ||
-        xBank.current > 0
-      )
+      if (currentMap[yPlayerIndex.current][xPlayerIndex.current - 1] === 0 || xBank.current > 0)
         if (
           yBank.current + 32 < 64 ||
           currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] == 0
@@ -465,10 +443,7 @@ const IndoorHouse4 = (props) => {
 
     //if current key is w, the y cordinate becomes  the previous state + the speed
     if (dirArr.current[0] === 'ArrowUp') {
-      if (
-        currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 0 ||
-        yBank.current < 0
-      ) {
+      if (currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 0 || yBank.current < 0) {
         if (
           xBank.current + 48 < 64 ||
           currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
@@ -486,15 +461,9 @@ const IndoorHouse4 = (props) => {
     //if current key is s, the y cordinate becomes  the previous state - the speed
 
     if (dirArr.current[0] === 'ArrowDown') {
-      if (
-        currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 0 ||
-        yBank.current > 0
-      ) {
+      if (currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 0 || yBank.current > 0) {
         // if (xBank.current+32<64 || newMap[yPlayerIndex.current+1][xPlayerIndex.current+1]==0)
-        if (
-          xBank.current < 16 ||
-          currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] == 0
-        ) {
+        if (xBank.current < 16 || currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] == 0) {
           setYTransformVar((prevCount) => prevCount - speedRef.current);
           yBank.current = yBank.current - speedRef.current;
           if (yBank.current < 0) {
@@ -536,40 +505,31 @@ const IndoorHouse4 = (props) => {
           <div
             className="mapIH4 pixel-art"
             style={{
-              transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`,
-            }}
-          >
+              transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`
+            }}>
             {gridArray}
             <div
               className="character pixel-art"
               facing={facing.current}
               walking={walker}
               style={{
-                transform: `translate3d( ${600 - xTransformVar}px, ${
-                  272 - yTransformVar
-                }px, 0 )`,
-              }}
-            >
+                transform: `translate3d( ${600 - xTransformVar}px, ${272 - yTransformVar}px, 0 )`
+              }}>
               <div className="character_spritesheet pixel-art"></div>
             </div>
 
             <div
               className="guyIH4 pixel-art"
               style={{
-                transform: `translate3d( ${520}px, ${560}px, 0 )`,
-              }}
-            >
+                transform: `translate3d( ${520}px, ${560}px, 0 )`
+              }}>
               <div className="guyIH4_spritesheet pixel-art"></div>
             </div>
           </div>
         </div>
 
         {textValue ? (
-          <dialog
-            id="dialogStyle"
-            className={`${npcFace} textBox typewriter`}
-            open
-          >
+          <dialog id="dialogStyle" className={`${npcFace} textBox typewriter`} open>
             <p>{textValue}</p>
           </dialog>
         ) : null}

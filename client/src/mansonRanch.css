@@ -1,152 +1,143 @@
 .mapMR {
-    image-rendering: pixelated;
-    background-image: url("./assets/maps/MansonRanchtweaksnogrid.png");
-    background-size: 3840px;
-    width: calc(150 * var(--grid-cell));
-    height: calc(150 * var(--grid-cell));
-    position: absolute;
-    background-repeat: no-repeat;
-    overflow: visible;
-    /* display: grid;
+  image-rendering: pixelated;
+  background-image: url('./assets/maps/MansonRanchtweaksnogrid.png');
+  background-size: 3840px;
+  width: calc(150 * var(--grid-cell));
+  height: calc(150 * var(--grid-cell));
+  position: absolute;
+  background-repeat: no-repeat;
+  overflow: visible;
+  /* display: grid;
     grid-template-columns: repeat(60, 64px);
     grid-template-rows: repeat(60, 64px); */
 }
-
 
 /* .numbers {
     size: 100%;
     background: transparent;
 } */
 
- .crazyGuyMR {
-     position: absolute;
-     width: calc(var(--grid-cell)* 2.5);
-     height: calc(var(--grid-cell)* 2.5);
-     overflow: hidden;
- }
+.crazyGuyMR {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
+}
 
- .crazyGuyMR_spritesheet {
-     background: url("./assets/images/MansonRanchCrazyGuy.png") no-repeat no-repeat;
-     background-size: 100%;
-     width: calc(var(--grid-cell)* 7);
-     height: calc(var(--grid-cell)* 3);
- }
+.crazyGuyMR_spritesheet {
+  background: url('./assets/images/MansonRanchCrazyGuy.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 7);
+  height: calc(var(--grid-cell) * 3);
+}
 
- .crazyGuyMR .crazyGuyMR_spritesheet {
-     animation: walkAnimation .6s steps(3) infinite;
- }
+.crazyGuyMR .crazyGuyMR_spritesheet {
+  animation: walkAnimation 0.6s steps(3) infinite;
+}
 
+.faceCrazyGuyMR {
+  background: url('./assets/images/MansonRanchCrazyGuyFace.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}
 
- .faceCrazyGuyMR {
-     background: url("./assets/images/MansonRanchCrazyGuyFace.png") no-repeat no-repeat;
-     background-position: left top;
-     background-size: 12%;
-     background-size: content-box;
- }
+.girlShiekMR {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
+}
 
+.girlShiekMR_spritesheet {
+  background: url('./assets/images/MansonRanchShiek.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 7);
+  height: calc(var(--grid-cell) * 3);
+}
 
-  .girlShiekMR {
-    position: absolute;
-    width: calc(var(--grid-cell)* 2.5);
-    height: calc(var(--grid-cell)* 2.5);
-    overflow: hidden;
-  }
+.girlShiekMR .girlShiekMR_spritesheet {
+  animation: walkAnimation 2s steps(3) infinite;
+}
 
-  .girlShiekMR_spritesheet {
-      background: url("./assets/images/MansonRanchShiek.png") no-repeat no-repeat;
-      background-size: 100%;
-      width: calc(var(--grid-cell)* 7);
-      height: calc(var(--grid-cell)* 3);
-  }
+.faceGirlShiekMR {
+  background: url('./assets/images/ShiekGirlFace.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}
 
-  .girlShiekMR .girlShiekMR_spritesheet {
-    animation: walkAnimation 2.0s steps(3) infinite;
-  }
+.girlHippyPrettyMR {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
+}
 
+.girlHippyPrettyMR_spritesheet {
+  background: url('./assets/images/MansonRanchHippyGirlPretty.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 7);
+  height: calc(var(--grid-cell) * 3);
+}
 
-  .faceGirlShiekMR {
-      background: url("./assets/images/ShiekGirlFace.png") no-repeat no-repeat;
-      background-position: left top;
-      background-size: 12%;
-      background-size: content-box;
-  }
+.girlHippyPrettyMR .girlHippyPrettyMR_spritesheet {
+  animation: walkAnimation 6.6s steps(3) infinite;
+}
 
+.faceGirlHippyPrettyMR {
+  background: url('./assets/images/MansonRanchPrettyGIrl.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}
 
-   .girlHippyPrettyMR {
-    position: absolute;
-    width: calc(var(--grid-cell)* 2.5);
-    height: calc(var(--grid-cell)* 2.5);
-    overflow: hidden;
-   }
+.girlLaughingMR {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
+}
 
-   .girlHippyPrettyMR_spritesheet {
-       background: url("./assets/images/MansonRanchHippyGirlPretty.png") no-repeat no-repeat;
-       background-size: 100%;
-       width: calc(var(--grid-cell)* 7);
-        height: calc(var(--grid-cell)* 3);
-   }
+.girlLaughingMR_spritesheet {
+  background: url('./assets/images/MansonRanchLaughingGirl.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 7);
+  height: calc(var(--grid-cell) * 3);
+}
 
-   .girlHippyPrettyMR .girlHippyPrettyMR_spritesheet {
-    animation: walkAnimation 6.6s steps(3) infinite;
-   }
+.girlLaughingMR .girlLaughingMR_spritesheet {
+  animation: walkAnimation 0.6s steps(3) infinite;
+}
 
-   .faceGirlHippyPrettyMR {
-       background: url("./assets/images/MansonRanchPrettyGIrl.png") no-repeat no-repeat;
-       background-position: left top;
-       background-size: 12%;
-       background-size: content-box;
-   }
+.faceGirlLaughingMR {
+  background: url('./assets/images/IndoorHouse3girl2face.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}
 
+.girlHippy1MR {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
+}
 
-    .girlLaughingMR {
-        position: absolute;
-        width: calc(var(--grid-cell)* 2.5);
-        height: calc(var(--grid-cell)* 2.5);
-        overflow: hidden;
-    }
-    
-    .girlLaughingMR_spritesheet {
-        background: url("./assets/images/MansonRanchLaughingGirl.png") no-repeat no-repeat;
-        background-size: 100%;
-         width: calc(var(--grid-cell)* 7);
-        height: calc(var(--grid-cell)* 3);
-    }
-    
-    .girlLaughingMR .girlLaughingMR_spritesheet {
-            animation: walkAnimation .6s steps(3) infinite;
-        }
-    
-    
-    .faceGirlLaughingMR {
-        background: url("./assets/images/IndoorHouse3girl2face.png") no-repeat no-repeat;
-        background-position: left top;
-        background-size: 12%;
-        background-size: content-box;
-        }
+.girlHippy1MR_spritesheet {
+  background: url('./assets/images/MansonRanchHippyGirl1.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 7);
+  height: calc(var(--grid-cell) * 3);
+}
 
+.girlHippy1MR .girlHippy1MR_spritesheet {
+  animation: walkAnimation 0.6s steps(3) infinite;
+}
 
-    .girlHippy1MR {
-        position: absolute;
-        width: calc(var(--grid-cell)* 2.5);
-        height: calc(var(--grid-cell)* 2.5);
-       overflow: hidden;
-   }
-
-   .girlHippy1MR_spritesheet {
-       background: url("./assets/images/MansonRanchHippyGirl1.png") no-repeat no-repeat;
-       background-size: 100%;
-        width: calc(var(--grid-cell)* 7);
-        height: calc(var(--grid-cell)* 3);
-   }
-
-   .girlHippy1MR .girlHippy1MR_spritesheet {
-    animation: walkAnimation .6s steps(3) infinite;
-   }
-
-
-   .facegirlHippy1MR {
-       background: url("./assets/images/MansonRanchHippyFace.png") no-repeat no-repeat;
-       background-position: left top;
-       background-size: 12%;
-       background-size: content-box;
-   }
+.facegirlHippy1MR {
+  background: url('./assets/images/MansonRanchHippyFace.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}

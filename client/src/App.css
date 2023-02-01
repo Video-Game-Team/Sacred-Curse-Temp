@@ -9,7 +9,6 @@ body {
   height: 100%;
 }
 
-
 body {
   position: relative;
   background: var(--bg);
@@ -36,10 +35,10 @@ body {
   justify-content: center;
   position: absolute;
   z-index: 999;
-  font-size: calc(1rem + .4vw);
+  font-size: calc(1rem + 0.4vw);
   top: -10rem;
   left: -17rem;
-  padding: .5em .5em;
+  padding: 0.5em 0.5em;
   background-color: rgb(55, 255, 0);
   color: rgb(0, 0, 0);
   font-weight: 900;
@@ -53,10 +52,10 @@ body {
   justify-content: center;
   position: absolute;
   z-index: 999;
-  font-size: calc(1rem + .4vw);
+  font-size: calc(1rem + 0.4vw);
   top: -10rem;
   left: 7rem;
-  padding: .5em .5em;
+  padding: 0.5em 0.5em;
   background-color: rgb(0, 8, 255);
   color: rgb(0, 2, 12);
   font-weight: 900;
@@ -72,12 +71,12 @@ body {
   background-color: #40ff00;
   border: none;
   color: rgb(5, 0, 0);
-  padding: .5em .5em;
+  padding: 0.5em 0.5em;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: calc(1rem + .01vw);
-   z-index: 999;
+  font-size: calc(1rem + 0.01vw);
+  z-index: 999;
   top: 3rem;
   left: 3rem;
   font-weight: 900;
@@ -86,32 +85,32 @@ body {
 
 .successMessage {
   display: flex;
-    align-self: center;
-    justify-content: center;
-    position: absolute;
-    background-color: #4CAF50;
-    border: none;
-    color: rgb(12, 0, 0);
-    padding: .5em .5em;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: calc(1rem + .7vw);
-    z-index: 999;
-    top: 20rem;
-    left: 10rem;
-    font-family: Pokemon-Classic;
+  align-self: center;
+  justify-content: center;
+  position: absolute;
+  background-color: #4caf50;
+  border: none;
+  color: rgb(12, 0, 0);
+  padding: 0.5em 0.5em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: calc(1rem + 0.7vw);
+  z-index: 999;
+  top: 20rem;
+  left: 10rem;
+  font-family: Pokemon-Classic;
 }
 
 .createNewRecordMessage {
-   display: flex;
+  display: flex;
   align-self: center;
   justify-content: center;
   position: absolute;
   width: 65%;
   top: -3rem;
   left: -7.5rem;
-  font-size: calc(1rem + .1vw);
+  font-size: calc(1rem + 0.1vw);
   white-space: nowrap;
   color: rgb(255, 0, 0);
   font-family: Pokemon-Classic;
@@ -125,7 +124,7 @@ body {
   width: 65%;
   top: 3rem;
   left: -7.5rem;
-  font-size: calc(1rem + .1vw);
+  font-size: calc(1rem + 0.1vw);
   white-space: nowrap;
   color: rgb(255, 0, 0);
   font-family: Pokemon-Classic;
@@ -142,8 +141,8 @@ body {
   border-radius: 5px;
   width: 65%;
   top: 12rem;
-  left: 11.0rem;
-  font-size: calc(1rem + .1vw);
+  left: 11rem;
+  font-size: calc(1rem + 0.1vw);
   white-space: wrap;
   color: rgb(255, 0, 0);
   font-family: Pokemon-Classic;
@@ -156,8 +155,8 @@ body {
   position: absolute;
   width: 65%;
   top: -0.7rem;
-  left: -0.0rem;
-  font-size: calc(1rem + .1vw);
+  left: -0rem;
+  font-size: calc(1rem + 0.1vw);
   white-space: nowrap;
   color: rgb(255, 0, 0);
   font-family: Pokemon-Classic;
@@ -169,9 +168,9 @@ body {
   justify-content: center;
   position: absolute;
   width: 65%;
-  top: 3.0rem;
+  top: 3rem;
   left: -7.8rem;
-  font-size: calc(1rem + .1vw);
+  font-size: calc(1rem + 0.1vw);
   white-space: nowrap;
   color: rgb(255, 0, 0);
   font-family: Pokemon-Classic;
@@ -184,8 +183,8 @@ body {
   position: absolute;
   width: 65%;
   top: 18.7rem;
-  left: -0.0rem;
-  font-size: calc(1rem + .1vw);
+  left: -0rem;
+  font-size: calc(1rem + 0.1vw);
   white-space: nowrap;
   color: rgb(255, 0, 0);
   font-family: Pokemon-Classic;
@@ -199,25 +198,25 @@ body {
   background: rgb(7, 0, 0);
   top: 16.3rem;
   left: 67.3rem;
-  font-size: calc(1rem + .5vw);
+  font-size: calc(1rem + 0.5vw);
   color: rgb(254, 253, 253);
   font-family: Pokemon-Classic;
 }
 
 .closeOutButton2 {
-    display: flex;
-      align-self: center;
-      justify-content: center;
-      position: absolute;
-      background: rgb(255, 111, 0);
-      top: 18.5rem;
-      left: -3.0rem;
-      font-size: calc(1rem + .2vw);
-      color: rgb(9, 0, 0);
-      font-family: Pokemon-Classic;
-      z-index: 999;
-      font-weight: 900;
-      white-space: nowrap;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  position: absolute;
+  background: rgb(255, 111, 0);
+  top: 18.5rem;
+  left: -3rem;
+  font-size: calc(1rem + 0.2vw);
+  color: rgb(9, 0, 0);
+  font-family: Pokemon-Classic;
+  z-index: 999;
+  font-weight: 900;
+  white-space: nowrap;
 }
 
 .eraseGame {
@@ -227,8 +226,8 @@ body {
   position: absolute;
   background: rgb(255, 111, 0);
   top: 18.5rem;
-  left: 18.0rem;
-  font-size: calc(1rem + .2vw);
+  left: 18rem;
+  font-size: calc(1rem + 0.2vw);
   color: rgb(9, 0, 0);
   font-family: Pokemon-Classic;
   z-index: 999;
@@ -242,7 +241,7 @@ body {
 
 .loadingScreen {
   image-rendering: pixelated;
-  background-image: url("./assets/maps/LoadingScreen.png");
+  background-image: url('./assets/maps/LoadingScreen.png');
   background-size: 3840px;
   width: calc(150 * var(--grid-cell));
   height: calc(150 * var(--grid-cell));
@@ -267,63 +266,62 @@ body {
   image-rendering: pixelated;
   display: grid;
   grid-template-columns: repeat(20, 64px);
-  grid-template-rows: repeat(12, 64px); 
+  grid-template-rows: repeat(12, 64px);
   max-height: 50000px;
   min-width: 50000px;
-  background-image: url("./assets/maps/map40x40wgrid.png");
-  background-size: 2560px; 
+  background-image: url('./assets/maps/map40x40wgrid.png');
+  background-size: 2560px;
   width: calc(40 * var(--grid-cell));
-  height: calc(40 * var(--grid-cell)); 
-  background-repeat:no-repeat
+  height: calc(40 * var(--grid-cell));
+  background-repeat: no-repeat;
 }
 
- .character {
+.character {
   position: absolute;
-  width: calc(var(--grid-cell)* 2);
-  height: calc(var(--grid-cell)* 2);
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 2);
   overflow: hidden;
   grid-column-start: 10;
   grid-row-start: 5;
 }
 
 .character_spritesheet {
-  background: url("./assets/images/AjFP5.png") no-repeat no-repeat;
+  background: url('./assets/images/AjFP5.png') no-repeat no-repeat;
   background-size: 100%;
-  width: calc(var(--grid-cell)* 8);
-  height: calc(var(--grid-cell)* 8);
+  width: calc(var(--grid-cell) * 8);
+  height: calc(var(--grid-cell) * 8);
 }
 
 .character_spritesheet2 {
-  background: url("./assets/images/MainGuyLift.png") no-repeat no-repeat;
+  background: url('./assets/images/MainGuyLift.png') no-repeat no-repeat;
   background-size: 100%;
-  width: calc(var(--grid-cell)* 2);
-  height: calc(var(--grid-cell)* 2);
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 2);
 }
 
-.character[facing="right"] .character_spritesheet {
+.character[facing='right'] .character_spritesheet {
   background-position-y: calc(var(--pixel-size) * -48);
 }
 
-.character[facing="up"] .character_spritesheet {
+.character[facing='up'] .character_spritesheet {
   background-position-y: calc(var(--pixel-size) * -72);
 }
 
-.character[facing="left"] .character_spritesheet {
+.character[facing='left'] .character_spritesheet {
   background-position-y: calc(var(--pixel-size) * -24);
 }
 
-.character[walking="true"] .character_spritesheet {
+.character[walking='true'] .character_spritesheet {
   animation: walkAnimation 0.6s steps(4) infinite;
 }
 
-
 @keyframes walkAnimation {
   from {
-      transform: translate3d(0%, 0%, 0);
+    transform: translate3d(0%, 0%, 0);
   }
 
   to {
-      transform: translate3d(-100%, 0%, 0);
+    transform: translate3d(-100%, 0%, 0);
   }
 }
 
@@ -345,7 +343,6 @@ body {
   background: rgb(173, 173, 173);
   background: linear-gradient(0deg, rgba(173, 173, 173, 1) 0%, rgba(212, 218, 217, 1) 55%);
 }
-
 
 p {
   position: absolute;
@@ -376,10 +373,10 @@ p {
 
 @keyframes typing {
   from {
-    width: 0
+    width: 0;
   }
   to {
-    width: 100%
+    width: 100%;
   }
 }
 
@@ -390,7 +387,6 @@ p {
   -o-animation: fadeIn ease 1s;
   -ms-animation: fadeIn ease 1s;
 }
-
 
 @keyframes fadeIn {
   0% {
@@ -442,7 +438,6 @@ p {
   }
 }
 
-
 /* .mainMenu {
   border-radius: 15px;
   border: 3px solid;
@@ -457,84 +452,76 @@ p {
   background: linear-gradient(0deg, rgba(173, 173, 173, 1) 0%, rgba(212, 218, 217, 1) 55%);
 } */
 
+.clockTime {
+  z-index: 999;
+  top: -1;
+  position: absolute;
+  font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: calc(1rem + 0.4vw);
+  font-weight: 500;
+  max-width: 100%;
+  color: rgb(254, 252, 252);
+  left: 3rem;
+}
 
-    .clockTime {
-       z-index: 999;
-       top: -1;
-       position: absolute;
-        font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
-        font-size: calc(1rem + .4vw);
-        font-weight: 500;
-        max-width: 100%;
-        color: rgb(254, 252, 252);
-        left: 3rem;
-    }
-    
-    .clock {
-        z-index: 999;
-        top: -1;
-        position: absolute;
-        padding-left: 20px;
-        color: rgb(254, 254, 254);
-        font-size: calc(1rem + .0vw);
-        font-weight: 500;
-        left: 15rem;
-        max-width: 100%;
-    }
+.clock {
+  z-index: 999;
+  top: -1;
+  position: absolute;
+  padding-left: 20px;
+  color: rgb(254, 254, 254);
+  font-size: calc(1rem + 0vw);
+  font-weight: 500;
+  left: 15rem;
+  max-width: 100%;
+}
 
+/* ////////////////////////////////// */
 
-    /* ////////////////////////////////// */
-      
-        /* Bootstrap standards for best practice breakpoint/media query sizes below here */
+/* Bootstrap standards for best practice breakpoint/media query sizes below here */
 
-         /* 1400 px */
-         /* @media only screen and (max-width: 87.5em) {
+/* 1400 px */
+/* @media only screen and (max-width: 87.5em) {
             } */
 
-
-        /* 1200 px */
-         /* @media only screen and (max-width: 75em) {
+/* 1200 px */
+/* @media only screen and (max-width: 75em) {
             } */
 
-
-         /* 992 px */
-        /* @media only screen and (max-width: 62em) {
+/* 992 px */
+/* @media only screen and (max-width: 62em) {
             } */
 
-
-        /* 768 px */
-        /* @media only screen and (max-width: 48em) {
+/* 768 px */
+/* @media only screen and (max-width: 48em) {
            } 
 
 
         /* 576 px */
-        /* @media only screen and (max-width: 36em) {
+/* @media only screen and (max-width: 36em) {
            } 
      */
 
+/* //////////////////////////////////// */
 
-     /* //////////////////////////////////// */
+/* Personal media queries below this line */
 
+/* 2560px for really large monitors*/
+@media only screen and (min-width: 160em) {
+  img {
+    width: 100%;
+  }
+  .titleTextLogin {
+    font-size: calc(1rem + 8.3vw);
+  }
 
-     /* Personal media queries below this line */
+  .titleTextSignup {
+    font-size: calc(1rem + 8.3vw);
+  }
+}
 
-    
-        /* 2560px for really large monitors*/
-        @media only screen and (min-width: 160em) {
-          img {
-            width: 100%;
-          }
-           .titleTextLogin {
-              font-size: calc(1rem + 8.3vw);
-            }
-            
-            .titleTextSignup {
-              font-size: calc(1rem + 8.3vw);
-            }
-        }
-    
-        /* Arcade 1up Screen Resolution */
-        /* @media only screen and (min-width: 1600px) and (max-width: 1610px){
+/* Arcade 1up Screen Resolution */
+/* @media only screen and (min-width: 1600px) and (max-width: 1610px){
           :root {
               --bg: #fc0000;
             }
@@ -544,68 +531,65 @@ p {
           }
         }  */
 
+/* Ipad Pro 11 3rd gen  1194px - 834px */
+@media only screen and (max-width: 74.625em) and (min-width: 52.125em) {
+  .camera {
+    width: calc(var(--pixel-size) * 284);
+    height: calc(var(--pixel-size) * 155);
+  }
+  .titleTextLogin {
+    top: -7rem;
+  }
+  .titleTextSignup {
+    top: -1.5rem;
+  }
+}
 
-        /* Ipad Pro 11 3rd gen  1194px - 834px */
-         @media only screen and (max-width: 74.625em) and (min-width: 52.125em) { 
-          .camera {
-              width: calc(var(--pixel-size) * 284);
-              height: calc(var(--pixel-size) * 155);
-          } 
-          .titleTextLogin {
-              top: -7rem;
-          }
-          .titleTextSignup {
-              top: -1.5rem;
-          }   
-          }  
+/* Iphone 11 Pro Max (Portrait Mode)    897px */
+@media only screen and (max-width: 56.0625em) and (orientation: portrait) {
+  .camera {
+    width: calc(var(--pixel-size) * 200);
+    height: calc(var(--pixel-size) * 65);
+  }
+  .otherTextSignup {
+    font-size: 2vw;
+  }
+  .otherText {
+    font-size: 2vw;
+  }
+  .title {
+    font-size: 2vw;
+  }
+}
 
-    
-        /* Iphone 11 Pro Max (Portrait Mode)    897px */
-        @media only screen and (max-width: 56.0625em) and (orientation: portrait) {  
-          .camera {
-             width: calc(var(--pixel-size) * 200);
-            height: calc(var(--pixel-size) * 65);
-          }
-            .otherTextSignup {
-              font-size: 2vw;
-          }
-            .otherText {
-              font-size: 2vw;
-            }
-            .title {
-              font-size: 2vw;
-            }  
-          }  
+/* Iphone 11 Pro Max (Landscape Mode)    897px */
+@media only screen and (max-width: 56.063em) and (orientation: landscape) {
+  .camera {
+    width: calc(var(--pixel-size) * 200);
+    height: calc(var(--pixel-size) * 65);
+  }
+  .otherTextSignup {
+    font-size: 2vw;
+  }
+  .otherText {
+    font-size: 2vw;
+  }
+  .title {
+    top: 0rem;
+    font-size: 2vw;
+  }
+  .titleTextLogin {
+    top: 1rem;
+  }
+  .wholeContainer {
+    top: -6.5rem;
+  }
+  .titleTextSignup {
+    top: 6.5rem;
+  }
+  .mainContainerSignup {
+    top: -3rem;
+  }
+}
 
-        /* Iphone 11 Pro Max (Landscape Mode)    897px */
-        @media only screen and (max-width: 56.063em) and (orientation: landscape) {  
-          .camera {
-              width: calc(var(--pixel-size) * 200);
-              height: calc(var(--pixel-size) * 65);
-            }
-            .otherTextSignup {
-                  font-size: 2vw;
-          }
-            .otherText {
-              font-size: 2vw;
-            }
-            .title {
-              top: 0rem;
-              font-size: 2vw;
-            }
-            .titleTextLogin {
-              top: 1rem;
-            }
-            .wholeContainer {
-              top: -6.5rem;
-            }
-            .titleTextSignup {
-              top: 6.5rem;
-            }
-            .mainContainerSignup {
-              top: -3rem;
-            }
-          }  
-
-          
 /* //////////////////////////////////////////////////// */

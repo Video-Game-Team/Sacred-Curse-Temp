@@ -1,74 +1,68 @@
 .mapRH1 {
-    image-rendering: pixelated;
-    background-image: url("./assets/maps/RanchHouse1wgridnpc.png");
-    background-size: 960px;
-    width: calc(37.5 * var(--grid-cell));
-    height: calc(37.5 * var(--grid-cell));
-    position: absolute;
-    background-repeat: no-repeat;
-    overflow: visible;
-    /* display: grid;
+  image-rendering: pixelated;
+  background-image: url('./assets/maps/RanchHouse1wgridnpc.png');
+  background-size: 960px;
+  width: calc(37.5 * var(--grid-cell));
+  height: calc(37.5 * var(--grid-cell));
+  position: absolute;
+  background-repeat: no-repeat;
+  overflow: visible;
+  /* display: grid;
     grid-template-columns: repeat(15, 64px);
     grid-template-rows: repeat(15, 64px); */
 }
-
 
 /* .numbers {
     size: 100%;
     background: transparent;
 } */
 
+.guy1RH1 {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
+}
 
-    .guy1RH1 {
-        position: absolute;
-        width: calc(var(--grid-cell)* 2.5);
-        height: calc(var(--grid-cell)* 2.5);
-       overflow: hidden;
-   }
+.guy1RH1_spritesheet {
+  background: url('./assets/images/RanchHouse1guy.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 7);
+  height: calc(var(--grid-cell) * 3);
+}
 
-   .guy1RH1_spritesheet {
-       background: url("./assets/images/RanchHouse1guy.png") no-repeat no-repeat;
-       background-size: 100%;
-        width: calc(var(--grid-cell)* 7);
-        height: calc(var(--grid-cell)* 3);
-   }
+.guy1RH1 .guy1RH1_spritesheet {
+  animation: walkAnimation 1.6s steps(3) infinite;
+}
 
-   .guy1RH1 .guy1RH1_spritesheet {
-    animation: walkAnimation 1.6s steps(3) infinite;
-   }
+.faceGuy1RH1 {
+  background: url('./assets/images/RanchHouse1guyface.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}
 
+.girl1RH1 {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
+}
 
-   .faceGuy1RH1 {
-       background: url("./assets/images/RanchHouse1guyface.png") no-repeat no-repeat;
-       background-position: left top;
-       background-size: 12%;
-       background-size: content-box;
-   }
+.girl1RH1_spritesheet {
+  background: url('./assets/images/RanchHouse1girl.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 7);
+  height: calc(var(--grid-cell) * 3);
+}
 
+.girl1RH1 .girl1RH1_spritesheet {
+  animation: walkAnimation 3s steps(3) infinite;
+}
 
-
-   .girl1RH1 {
-    position: absolute;
-        width: calc(var(--grid-cell)* 2.5);
-        height: calc(var(--grid-cell)* 2.5);
-       overflow: hidden;
-   }
-
-   .girl1RH1_spritesheet {
-       background: url("./assets/images/RanchHouse1girl.png") no-repeat no-repeat;
-       background-size: 100%;
-        width: calc(var(--grid-cell)* 7);
-        height: calc(var(--grid-cell)* 3);
-   }
-
-   .girl1RH1 .girl1RH1_spritesheet {
-    animation: walkAnimation 3s steps(3) infinite;
-   }
-
-
-   .faceGirl1RH1 {
-       background: url("./assets/images/RanchHouse1Girlface.png") no-repeat no-repeat;
-       background-position: left top;
-       background-size: 12%;
-       background-size: content-box;
-   }
+.faceGirl1RH1 {
+  background: url('./assets/images/RanchHouse1Girlface.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}

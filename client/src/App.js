@@ -53,6 +53,10 @@ import CrystalCavernsRight from './components/maps/crystalCavernsRight.js';
 import LoadingMap from './components/maps/loadingMap.js';
 import Login from './pages/Login.jsx';
 
+////////////////////////////
+import MansonVoucher from './components/supportObjects/itemList.jsx';
+import ButtPlug from './components/supportObjects/itemList.jsx';
+
 import DemoMap from './battleMaps/demoMap.jsx';
 import DemonObjects from './demonObjects.js';
 
@@ -66,6 +70,7 @@ const parse = require('html-react-parser');
 const URL = require('url-parse');
 
 //Main function
+
 function App(props) {
   //AXIOS retry logic
   axiosRetry(axios, { retries: 3 });
@@ -87,6 +92,8 @@ function App(props) {
   const [stGwenBM3, setStGwenBM3] = useState(false);
   const [stGwenBM4, setStGwenBM4] = useState(false);
 
+  console.log(<MansonVoucher />);
+  console.log(<ButtPlug />);
   /////////////////////////////////////////////////////////
 
   //START OF TEMP STATE//////////////////////////////////////////
@@ -214,7 +221,12 @@ function App(props) {
     window.sessionStorage.setItem('tempMongoID', JSON.stringify(tempMongoID));
   }, [tempMongoID]);
 
-  //END OF TEMP STATE/;///////////////////z///////////////////////
+  //////////////////////////////////////////////////////////////
+
+  //Item bag state for saving item objects
+  const [itemBag, setItemBag] = [];
+
+  //END OF TEMP STATE/;//////////////////////////////////////////
 
   const [finalEmail, setFinalEmail] = useState('');
   const [finalUserName, setFinalUserName] = useState('');
@@ -266,7 +278,7 @@ function App(props) {
     setCurrent(JSON.parse(data));
   }, []);
   useEffect(() => {
-    window.sessionStorage.setItem('CurrentMap', JSON.stringify(current));
+    window.sessionStorage.setItem('CurrentMap', JSON.stringify('trainTracksToTortous'));
   }, [current]);
 
   const [tempCurrent, setTempCurrent] = useState(null);
@@ -363,7 +375,7 @@ function App(props) {
     } else {
       setLockButton(true);
       // window.location.replace('http://localhost:3000/');
-       window.location.replace('https://www.sacredcurse.com/');
+      window.location.replace('https://www.sacredcurse.com/');
       return null;
     }
     console.log('NEW GAME PRESSED');
@@ -406,7 +418,7 @@ function App(props) {
       axios
         .get(
           // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
-          "https://www.sacredcurse.com/state"
+          'https://www.sacredcurse.com/state'
         )
         .then((res) => {
           {
@@ -474,7 +486,7 @@ function App(props) {
       axios
         .get(
           // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
-          "https://www.sacredcurse.com/state"
+          'https://www.sacredcurse.com/state'
         )
         .then((res) => {
           {
@@ -498,7 +510,7 @@ function App(props) {
       axios
         .post(
           // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state/new`,
-          "https://www.sacredcurse.com/state/new",
+          'https://www.sacredcurse.com/state/new',
           {
             name: '',
             email: finalEmail,

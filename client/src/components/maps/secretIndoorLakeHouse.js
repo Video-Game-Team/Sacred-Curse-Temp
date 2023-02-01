@@ -76,43 +76,26 @@ const SecretIndoorLakeHouse = (props) => {
   // ];
 
   let currentMap = [
-    [
-      5216, 5211, 5215, 5216, 2464, 2465, 5216, 2436, 5215, 2461, 5217, 5215,
-      2455, 2456, 5216,
-    ],
-    [
-      5216, 2334, 2334, 2432, 2555, 2556, 5216, 2452, 5215, 2552, 2550, 0, 2471,
-      2472, 5216,
-    ],
+    [5216, 5211, 5215, 5216, 2464, 2465, 5216, 2436, 5215, 2461, 5217, 5215, 2455, 2456, 5216],
+    [5216, 2334, 2334, 2432, 2555, 2556, 5216, 2452, 5215, 2552, 2550, 0, 2471, 2472, 5216],
     [5216, 0, 0, 0, 2571, 2572, 0, 0, 0, 2568, 2566, 0, 0, 0, 5216],
     [5216, 2510, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2354, 0, 5216],
     [5216, 2526, 2532, 0, 0, 0, 5525, 5526, 0, 0, 0, 2541, 2370, 2543, 5216],
     [5216, 2510, 0, 0, 0, 0, 5544, 5545, 0, 0, 0, 2557, 2558, 2559, 5216],
-    [
-      5216, 2526, 0, 0, 0, 5346, 2684359914, 2684359914, 5427, 0, 0, 2573, 2354,
-      2575, 5216,
-    ],
+    [5216, 2526, 0, 0, 0, 5346, 2684359914, 2684359914, 5427, 0, 0, 2573, 2354, 2575, 5216],
     [5216, 2510, 0, 0, 0, 5322, 5392, 5392, 3221230826, 0, 0, 0, 2370, 0, 5216],
     [5216, 2526, 0, 0, 0, 5322, 5392, 5392, 3221230826, 0, 0, 0, 0, 0, 5216],
-    [
-      5216, 2510, 0, 0, 0, 5378, 1610618090, 1610618090, 5490, 0, 0, 2354, 0, 0,
-      5216,
-    ],
+    [5216, 2510, 0, 0, 0, 5378, 1610618090, 1610618090, 5490, 0, 0, 2354, 0, 0, 5216],
     [5216, 2526, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2370, 0, 0, 5216],
     [5216, 2510, 0, 0, 0, 0, 0, 0, 0, 0, 2344, 2488, 2346, 0, 5216],
     [5216, 2526, 0, 0, 0, 0, 0, 0, 0, 0, 2360, 2354, 2362, 0, 5216],
     [5216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2370, 0, 0, 5216],
     [5216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5216],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
   ];
 
-
-  
   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  console.log(
-    'VALUE Right',
-    currentMap[yPlayerIndex.current][xPlayerIndex.current]
-  );
+  console.log('VALUE Right', currentMap[yPlayerIndex.current][xPlayerIndex.current]);
 
   // useEffect(() => {
   //   let tempGrid = [];
@@ -238,9 +221,9 @@ const SecretIndoorLakeHouse = (props) => {
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 8) ||
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 8)
           ) {
-                             setNpcFace('faceWizardSILH');
-         setTextValue('My dad is mad at me');
-         clickAudio2();
+            setNpcFace('faceWizardSILH');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
           //YO Mama NPC
           // if (
@@ -271,9 +254,9 @@ const SecretIndoorLakeHouse = (props) => {
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 5) ||
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 5)
           ) {
-          setNpcFace('faceWizardSILH');
-         setTextValue('My dad is mad at me');
-         clickAudio2();
+            setNpcFace('faceWizardSILH');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
           //YO Mama NPC
           // if (
@@ -312,27 +295,23 @@ const SecretIndoorLakeHouse = (props) => {
         if (facing.current === 'up') {
           if (
             xBank.current + 32 > 64 &&
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
-              'door1'
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] === 'door1'
           ) {
           }
           if (
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
-              'sign1' &&
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 'sign1' &&
             64 - xBank.current > 32
           ) {
             // console.log('sign1');
           }
           if (
             xBank.current + 32 > 64 &&
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
-              'sign2'
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] === 'sign2'
           ) {
             // console.log('sign2');
           }
           if (
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
-              'sign2' &&
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 'sign2' &&
             64 - xBank.current > 32
           ) {
             // console.log('sign2');
@@ -340,21 +319,16 @@ const SecretIndoorLakeHouse = (props) => {
         }
         if (facing.current == null) {
           if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
-              'sign1' &&
+            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 'sign1' &&
             xBank.current + 32 < 64
           ) {
             // console.log('sign1');
           }
-          if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current + 1] ===
-            'sign2'
-          ) {
+          if (currentMap[yPlayerIndex.current + 1][xPlayerIndex.current + 1] === 'sign2') {
             // console.log('poopshit');
           }
           if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
-              'sign2' &&
+            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 'sign2' &&
             xBank.current + 32 < 64
           ) {
             // console.log('sign2');
@@ -423,10 +397,7 @@ const SecretIndoorLakeHouse = (props) => {
     //if current key is d, the x cordinate becomes  the previous state + the speed
 
     if (dirArr.current[0] === 'ArrowRight') {
-      if (
-        currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] === 0 ||
-        xBank.current < 0
-      )
+      if (currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] === 0 || xBank.current < 0)
         if (
           yBank.current + 32 < 64 ||
           currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
@@ -447,10 +418,7 @@ const SecretIndoorLakeHouse = (props) => {
     //if current key is a, the x cordinate becomes  the previous state - the speed
 
     if (dirArr.current[0] === 'ArrowLeft') {
-      if (
-        currentMap[yPlayerIndex.current][xPlayerIndex.current - 1] === 0 ||
-        xBank.current > 0
-      )
+      if (currentMap[yPlayerIndex.current][xPlayerIndex.current - 1] === 0 || xBank.current > 0)
         if (
           yBank.current + 32 < 64 ||
           currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] == 0
@@ -474,10 +442,7 @@ const SecretIndoorLakeHouse = (props) => {
 
     //if current key is w, the y cordinate becomes  the previous state + the speed
     if (dirArr.current[0] === 'ArrowUp') {
-      if (
-        currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 0 ||
-        yBank.current < 0
-      ) {
+      if (currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 0 || yBank.current < 0) {
         if (
           xBank.current + 48 < 64 ||
           currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
@@ -495,15 +460,9 @@ const SecretIndoorLakeHouse = (props) => {
     //if current key is s, the y cordinate becomes  the previous state - the speed
 
     if (dirArr.current[0] === 'ArrowDown') {
-      if (
-        currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 0 ||
-        yBank.current > 0
-      ) {
+      if (currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 0 || yBank.current > 0) {
         // if (xBank.current+32<64 || newMap[yPlayerIndex.current+1][xPlayerIndex.current+1]==0)
-        if (
-          xBank.current < 16 ||
-          currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] == 0
-        ) {
+        if (xBank.current < 16 || currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] == 0) {
           setYTransformVar((prevCount) => prevCount - speedRef.current);
           yBank.current = yBank.current - speedRef.current;
           if (yBank.current < 0) {
@@ -538,48 +497,37 @@ const SecretIndoorLakeHouse = (props) => {
 
   //update the style for the mpa character by transforming it according the new x and y variables
   //map and character share the varaibles since they move together
-return (
+  return (
     <div>
       <div className="camera fade-in">
         <div>
           <div
             className="mapSLIH pixel-art"
             style={{
-              transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`,
-            }}
-          >
+              transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`
+            }}>
             {gridArray}
             <div
               className="character pixel-art"
               facing={facing.current}
               walking={walker}
               style={{
-                transform: `translate3d( ${600 - xTransformVar}px, ${
-                  272 - yTransformVar
-                }px, 0 )`,
-              }}
-            >
+                transform: `translate3d( ${600 - xTransformVar}px, ${272 - yTransformVar}px, 0 )`
+              }}>
               <div className="character_spritesheet pixel-art"></div>
             </div>
 
             <div
               className="wizardSILH pixel-art"
               style={{
-                transform: `translate3d( ${369}px, ${216}px, 0 )`,
-              }}
-            >
+                transform: `translate3d( ${369}px, ${216}px, 0 )`
+              }}>
               <div className="wizardSILH_spritesheet pixel-art"></div>
             </div>
-
-
           </div>
         </div>
         {textValue ? (
-          <dialog
-            id="dialogStyle"
-            className={`${npcFace} textBox typewriter`}
-            open
-          >
+          <dialog id="dialogStyle" className={`${npcFace} textBox typewriter`} open>
             <p>{textValue}</p>
           </dialog>
         ) : null}
@@ -587,6 +535,5 @@ return (
     </div>
   );
 };
-
 
 export default SecretIndoorLakeHouse;

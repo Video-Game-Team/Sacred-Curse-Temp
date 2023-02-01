@@ -1,16 +1,16 @@
- .mapT {
-     image-rendering: pixelated;
-     background-image: url("./assets/maps/Tortoustweaksnogrid.png");
-     background-size: 6656px;
-     width: calc(260 * var(--grid-cell));
-     height: calc(250 * var(--grid-cell));
-     position: relative;
-     background-repeat: no-repeat;
-     overflow: visible;
-     /* display: grid;
+.mapT {
+  image-rendering: pixelated;
+  background-image: url('./assets/maps/Tortoustweaksnogrid.png');
+  background-size: 6656px;
+  width: calc(260 * var(--grid-cell));
+  height: calc(250 * var(--grid-cell));
+  position: relative;
+  background-repeat: no-repeat;
+  overflow: visible;
+  /* display: grid;
     grid-template-columns: repeat(104, 64px);
     grid-template-rows: repeat(100, 64px); */
- }
+}
 
 /* .numbers {
     size: 100%;
@@ -18,379 +18,354 @@
 }  */
 
 .cameraTT {
-    position: relative;
-    width: calc(var(--pixel-size) * 254);
-    height: calc(var(--pixel-size) * 145);
-    max-width: 100%;
-    max-height: 100%;
-    overflow: hidden;
-    background: #000a0b;
-    max-width: 100%;
+  position: relative;
+  width: calc(var(--pixel-size) * 254);
+  height: calc(var(--pixel-size) * 145);
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  background: #000a0b;
+  max-width: 100%;
 }
 
- 
- @keyframes walkAnimation {
-     from {
-         transform: translate3d(0%, 0%, 0);
-     }
-
-     to {
-         transform: translate3d(-100%, 0%, 0);
-     }
- }
-
-
-  .demon {
-    /* z-index: -1; */
-    position: relative;
-    /*display: inline-block; */
-    width: calc(var(--grid-cell)* 2);
-    height: calc(var(--grid-cell)* 2);
-    overflow: hidden;
+@keyframes walkAnimation {
+  from {
+    transform: translate3d(0%, 0%, 0);
   }
 
-  .demon_spritesheet {
-      background: url("./assets/images/0.png") no-repeat no-repeat;
-      background-size: 100%;
-      width: calc(var(--grid-cell)* 2);
-      height: calc(var(--grid-cell)* 2);
+  to {
+    transform: translate3d(-100%, 0%, 0);
   }
+}
 
+.demon {
+  /* z-index: -1; */
+  position: relative;
+  /*display: inline-block; */
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 2);
+  overflow: hidden;
+}
+
+.demon_spritesheet {
+  background: url('./assets/images/0.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 2);
+}
 
 .sweeperGuyTT {
-    position: absolute;
-    width: calc(var(--grid-cell)* 2.5);
-    height: calc(var(--grid-cell)* 2.5);
-    overflow: hidden;
-    max-width: 100%;
-   }
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
+  max-width: 100%;
+}
 
-   .sweeperGuyTT_spritesheet {
-       background: url("./assets/images/Tortoussweeperguy.png") no-repeat no-repeat;
-       background-size: 100%;
-       width: calc(var(--grid-cell)* 7);
-       height: calc(var(--grid-cell)* 3);
-   }
+.sweeperGuyTT_spritesheet {
+  background: url('./assets/images/Tortoussweeperguy.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 7);
+  height: calc(var(--grid-cell) * 3);
+}
 
-   .sweeperGuyTT .sweeperGuyTT_spritesheet {
-    animation: walkAnimation 1.6s steps(3) infinite;
-   }
+.sweeperGuyTT .sweeperGuyTT_spritesheet {
+  animation: walkAnimation 1.6s steps(3) infinite;
+}
 
-
-   .facesweeperGuyTT {
-       position: absolute;
-       display: flex;
-       align-items: absolute;
-       background: url("./assets/images/IndoorHouse4face.png") no-repeat no-repeat;
-       background-position: left top;
-       background-size: 12%;
-       background-size: content-box;
-   }
-
+.facesweeperGuyTT {
+  position: absolute;
+  display: flex;
+  align-items: absolute;
+  background: url('./assets/images/IndoorHouse4face.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}
 
 .brideTT {
-    position: absolute;
-    width: calc(var(--grid-cell)* 2.5);
-    height: calc(var(--grid-cell)* 2.5);
-    overflow: hidden;
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
 }
 
 .brideTT_spritesheet {
-    background: url("./assets/images/Tortousbride.png") no-repeat no-repeat;
-    background-size: 100%;
-    width: calc(var(--grid-cell)* 7);
-    height: calc(var(--grid-cell)* 3);
+  background: url('./assets/images/Tortousbride.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 7);
+  height: calc(var(--grid-cell) * 3);
 }
 
 .brideTT .brideTT_spritesheet {
-    animation: walkAnimation 1.6s steps(3) infinite;
+  animation: walkAnimation 1.6s steps(3) infinite;
 }
-
 
 .faceBrideTT {
-    background: url("./assets/images/Tortousbrideface.png") no-repeat no-repeat;
-    background-position: left top;
-    background-size: 12%;
-    background-size: content-box;
+  background: url('./assets/images/Tortousbrideface.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
 }
 
-
 .redheadTT {
-    position: absolute;
-    width: calc(var(--grid-cell)* 2);
-    height: calc(var(--grid-cell)* 3);
-    overflow: hidden;
+  position: absolute;
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 3);
+  overflow: hidden;
 }
 
 .redheadTT_spritesheet {
-    background: url("./assets/images/Indoorhouse1girl.png") no-repeat no-repeat;
-    background-size: 100%;
-    width: calc(var(--grid-cell)* 36);
-    height: calc(var(--grid-cell)* 3);
+  background: url('./assets/images/Indoorhouse1girl.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 36);
+  height: calc(var(--grid-cell) * 3);
 }
 
 .redheadTT .redheadTT_spritesheet {
-    animation: walkAnimation 3.6s steps(15) infinite;
+  animation: walkAnimation 3.6s steps(15) infinite;
 }
 
-
 .faceRedheadTT {
-    background: url("./assets/images/Indoorhouse3girlface.png") no-repeat no-repeat;
-    background-position: left top;
-    background-size: 12%;
-    background-size: content-box;
+  background: url('./assets/images/Indoorhouse3girlface.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
 }
 
 .brunetteTT {
-    position: absolute;
-    width: calc(var(--grid-cell)* 2);
-    height: calc(var(--grid-cell)* 3);
-    overflow: hidden;
+  position: absolute;
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 3);
+  overflow: hidden;
 }
 
 .brunetteTT_spritesheet {
-    background: url("./assets/images/IndoorHouse3Girl1.png") no-repeat no-repeat;
-    background-size: 100%;
-    width: calc(var(--grid-cell)* 36);
-    height: calc(var(--grid-cell)* 3);
+  background: url('./assets/images/IndoorHouse3Girl1.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 36);
+  height: calc(var(--grid-cell) * 3);
 }
 
 .brunetteTT .brunetteTT_spritesheet {
-    animation: walkAnimation 3.6s steps(15) infinite;
+  animation: walkAnimation 3.6s steps(15) infinite;
 }
-
 
 .faceBrunetteTT {
-    background: url("./assets/images/IndoorHouse3girl1face.png") no-repeat no-repeat;
-    background-position: left top;
-    background-size: 12%;
-    background-size: content-box;
+  background: url('./assets/images/IndoorHouse3girl1face.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
 }
 
-
 .crazyGuyTT {
-    position: absolute;
-    width: calc(var(--grid-cell)* 2);
-    height: calc(var(--grid-cell)* 3);
-    overflow: hidden;
+  position: absolute;
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 3);
+  overflow: hidden;
 }
 
 .crazyGuyTT_spritesheet {
-    background: url("./assets/images/TortousCrazyguy.png") no-repeat no-repeat;
-    background-size: 100%;
-    width: calc(var(--grid-cell)* 7);
-    height: calc(var(--grid-cell)* 3);
+  background: url('./assets/images/TortousCrazyguy.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 7);
+  height: calc(var(--grid-cell) * 3);
 }
 
 .crazyGuyTT .crazyGuyTT_spritesheet {
-    animation: walkAnimation 1.6s steps(3) infinite;
+  animation: walkAnimation 1.6s steps(3) infinite;
 }
-
 
 .faceCrazyGuyTT {
-    background: url("./assets/images/IndoorHouse3girl2face.png") no-repeat no-repeat;
-    background-position: left top;
-    background-size: 12%;
-    background-size: content-box;
+  background: url('./assets/images/IndoorHouse3girl2face.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
 }
 
-
 .coinFlipperTT {
-    position: absolute;
-    width: calc(var(--grid-cell)* 2);
-    height: calc(var(--grid-cell)* 3);
-    overflow: hidden;
+  position: absolute;
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 3);
+  overflow: hidden;
 }
 
 .coinFlipperTT_spritesheet {
-    background: url("./assets/images/TortousCoinFlipper.png") no-repeat no-repeat;
-    background-size: 100%;
-    width: calc(var(--grid-cell)* 7);
-    height: calc(var(--grid-cell)* 3);
+  background: url('./assets/images/TortousCoinFlipper.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 7);
+  height: calc(var(--grid-cell) * 3);
 }
 
 .coinFlipperTT .coinFlipperTT_spritesheet {
-    animation: walkAnimation .7s steps(3) infinite;
+  animation: walkAnimation 0.7s steps(3) infinite;
 }
-
 
 .faceCoinFlipperTT {
-    background: url("./assets/images/TortousCoinFlipperface.png") no-repeat no-repeat;
-    background-position: left top;
-    background-size: 12%;
-    background-size: content-box;
+  background: url('./assets/images/TortousCoinFlipperface.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
 }
 
-
 .blackSmithTT {
-    position: absolute;
-    width: calc(var(--grid-cell)* 2);
-    height: calc(var(--grid-cell)* 3);
-    overflow: hidden;
+  position: absolute;
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 3);
+  overflow: hidden;
 }
 
 .blackSmithTT_spritesheet {
-    background: url("./assets/images/TortousBlacksmith.png") no-repeat no-repeat;
-    background-size: 100%;
-    width: calc(var(--grid-cell)* 7);
-    height: calc(var(--grid-cell)* 3);
+  background: url('./assets/images/TortousBlacksmith.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 7);
+  height: calc(var(--grid-cell) * 3);
 }
 
 .blackSmithTT .blackSmithTT_spritesheet {
-    animation: walkAnimation .7s steps(3) infinite;
+  animation: walkAnimation 0.7s steps(3) infinite;
 }
 
-
-.faceBlackSmithTT{
-    background: url("./assets/images/IndoorHouse3girl2face.png") no-repeat no-repeat;
-    background-position: left top;
-    background-size: 12%;
-    background-size: content-box;
-} 
+.faceBlackSmithTT {
+  background: url('./assets/images/IndoorHouse3girl2face.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}
 
 .guard1TT {
-    position: absolute;
-    width: calc(var(--grid-cell)* 2);
-    height: calc(var(--grid-cell)* 3);
-    overflow: hidden;
+  position: absolute;
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 3);
+  overflow: hidden;
 }
 
 .guard1TT_spritesheet {
-    background: url("./assets/images/Tortousguard1.png") no-repeat no-repeat;
-    background-size: 100%;
-    width: calc(var(--grid-cell)* 7);
-    height: calc(var(--grid-cell)* 3);
+  background: url('./assets/images/Tortousguard1.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 7);
+  height: calc(var(--grid-cell) * 3);
 }
 
 .guard1TT .guard1TT_spritesheet {
-    animation: walkAnimation 4.7s steps(3) infinite;
+  animation: walkAnimation 4.7s steps(3) infinite;
 }
 
-
 .faceGuard1TT {
-    background: url("./assets/images/Tortousguard1face.png") no-repeat no-repeat;
-    background-position: left top;
-    background-size: 12%;
-    background-size: content-box;
-} 
-
+  background: url('./assets/images/Tortousguard1face.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}
 
 .roofGuardTT {
-    position: absolute;
-    width: calc(var(--grid-cell)* 5);
-    height: calc(var(--grid-cell)* 10);
-    overflow: hidden;
+  position: absolute;
+  width: calc(var(--grid-cell) * 5);
+  height: calc(var(--grid-cell) * 10);
+  overflow: hidden;
 }
 
 .roofGuardTT_spritesheet {
-    background: url("./assets/images/Tortousroofguard.png") no-repeat no-repeat;
-    background-size: 100%;
-    width: calc(var(--grid-cell)* 20);
-    height: calc(var(--grid-cell)* 10);
+  background: url('./assets/images/Tortousroofguard.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 20);
+  height: calc(var(--grid-cell) * 10);
 }
 
 .roofGuardTT .roofGuardTT_spritesheet {
-    animation: walkAnimation 0.7s steps(3) infinite;
+  animation: walkAnimation 0.7s steps(3) infinite;
 }
 
-
 .faceRoofGuardTT {
-    background: url("./assets/images/Tortousguard1face.png") no-repeat no-repeat;
-    background-position: left top;
-    background-size: 12%;
-    background-size: content-box;
-} 
+  background: url('./assets/images/Tortousguard1face.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}
 
+.dogTT {
+  /* z-index: -1; */
+  position: absolute;
+  /* display: inline-block; */
+  width: calc(var(--grid-cell) * 2.2);
+  height: calc(var(--grid-cell) * 2);
+  overflow: hidden;
+  animation-name: square;
+  animation: square 8s linear infinite;
+}
 
-         .dogTT {
-             /* z-index: -1; */
-             position: absolute;
-            /* display: inline-block; */
-             width: calc(var(--grid-cell) * 2.2);
-             height: calc(var(--grid-cell) * 2);
-             overflow: hidden;
-             animation-name: square;
-             animation: square 8s linear infinite;
-         }
-    
-         .dogTT_spritesheet {
-             background: url("./assets/images/Dog3walk.png") no-repeat no-repeat;
-             background-size: 100%;
-             width: calc(var(--grid-cell) * 96);
-             height: calc(var(--grid-cell)* 2);
-             background-position-y: calc(var(--pixel-size) * -0);
-             background-position-x: calc(var(--pixel-size) * -0);
-    
-         }
-    
-         .dogTT .dogTT_spritesheet {
-             animation: walkAnimation 8s steps(48) infinite;
-         } 
-    
-    
-         @keyframes square {
-             0% {
-                 margin-left: 0px;
-                 margin-top: 0px;
-             }
-    
-             25% {
-                 margin-left: 100px;
-                 margin-top: 0px;
-             }
-    
-             50% {
-                 margin-left: 100px;
-                 margin-top: 100px;
-             }
-    
-             75% {
-                 margin-top: 100px;
-                 margin-left: 0px;
-             }
-    
-             100% {
-                 margin-left: 0px;
-                 margin-top: 0px;
-             }
-         }
+.dogTT_spritesheet {
+  background: url('./assets/images/Dog3walk.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 96);
+  height: calc(var(--grid-cell) * 2);
+  background-position-y: calc(var(--pixel-size) * -0);
+  background-position-x: calc(var(--pixel-size) * -0);
+}
 
+.dogTT .dogTT_spritesheet {
+  animation: walkAnimation 8s steps(48) infinite;
+}
 
+@keyframes square {
+  0% {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+
+  25% {
+    margin-left: 100px;
+    margin-top: 0px;
+  }
+
+  50% {
+    margin-left: 100px;
+    margin-top: 100px;
+  }
+
+  75% {
+    margin-top: 100px;
+    margin-left: 0px;
+  }
+
+  100% {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+}
 
 /* NPC WALKING DRONE TRY BELOW */
 
 .npcWalkerDrone1 {
-    z-index: -1;
-    position: absolute;
-    /* display: inline-block; */
-    width: calc(var(--grid-cell)* 2);
-    height: calc(var(--grid-cell)* 2);
-    overflow: hidden;
-    grid-column-start: 10;
-    grid-row-start: 5;
+  z-index: -1;
+  position: absolute;
+  /* display: inline-block; */
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 2);
+  overflow: hidden;
+  grid-column-start: 10;
+  grid-row-start: 5;
 }
 
 .npcWalkerDrone1_spritesheet {
-    background: url("./assets/images/NPCWALKERDRONE.png") no-repeat no-repeat;
-    background-size: 100%;
-    width: calc(var(--grid-cell)* 8);
-    height: calc(var(--grid-cell)* 8);
+  background: url('./assets/images/NPCWALKERDRONE.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 8);
+  height: calc(var(--grid-cell) * 8);
 }
 
-
-.npcWalkerDrone1[npcfacing="right"] .npcWalkerDrone1_spritesheet {
-    background-position-y: calc(var(--pixel-size) * -48);
+.npcWalkerDrone1[npcfacing='right'] .npcWalkerDrone1_spritesheet {
+  background-position-y: calc(var(--pixel-size) * -48);
 }
 
-.npcWalkerDrone1[npcfacing="left"] .npcWalkerDrone1_spritesheet {
-    background-position-y: calc(var(--pixel-size) * -24);
+.npcWalkerDrone1[npcfacing='left'] .npcWalkerDrone1_spritesheet {
+  background-position-y: calc(var(--pixel-size) * -24);
 }
 
-.npcWalkerDrone1[npcfacing="up"] .npcWalkerDrone1_spritesheet {
-    background-position-y: calc(var(--pixel-size) * -72);
+.npcWalkerDrone1[npcfacing='up'] .npcWalkerDrone1_spritesheet {
+  background-position-y: calc(var(--pixel-size) * -72);
 }
 
-
-.npcWalkerDrone1[npcwalking = 'true'] .npcWalkerDrone1_spritesheet {
-    animation: walkAnimation 1.0s steps(4) infinite;
+.npcWalkerDrone1[npcwalking='true'] .npcWalkerDrone1_spritesheet {
+  animation: walkAnimation 1s steps(4) infinite;
 }

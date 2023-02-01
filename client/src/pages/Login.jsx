@@ -73,14 +73,13 @@ function Login(props) {
   //Auth 0 logic
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
 
-  
   // GET Request for Checking to see if user exists or if we need to create a new database record for them
   useEffect(() => {
     if (isAuthenticated === true) {
       axios
         .get(
           // `${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`
-           "https://www.sacredcurse.com/state",
+          'https://www.sacredcurse.com/state'
         )
         .then((res) => {
           setEmailSessionStorage(user.email);
@@ -153,7 +152,7 @@ function Login(props) {
 
   // Handleclick for Load Game
   const enterGame = () => {
-    isMounted.current = true,
+    (isMounted.current = true),
       setAuthTrigger(true),
       clearTempQuest1(),
       clearTempQuest2(),
@@ -170,22 +169,20 @@ function Login(props) {
     }, 1000);
   };
 
-
-   useEffect(() => {
-     console.log;
-     if (isMounted.current === true) {
-       fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {
-         method: 'PUT',
-         headers: {
-           'Content-Type': 'application/json'
-         },
-         body: JSON.stringify({
-           auth: false
-         })
-       }).then((res) => res.json());
-     }
-   }, []);
-
+  useEffect(() => {
+    console.log;
+    if (isMounted.current === true) {
+      fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          auth: false
+        })
+      }).then((res) => res.json());
+    }
+  }, []);
 
   // PUT Request for updating Auth and unlocking state endpoint
   useEffect(() => {

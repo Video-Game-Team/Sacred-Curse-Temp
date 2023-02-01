@@ -1,17 +1,16 @@
 .mapTTTT {
-    image-rendering: pixelated;
-    background-image: url("./assets/maps/TraintracktoTortousnogridnpc.png");
-    background-size: 3840px;
-    width: calc(150 * var(--grid-cell));
-    height: calc(750 * var(--grid-cell));
-    position: absolute;
-    background-repeat: no-repeat;
-    overflow: visible;
-    /* display: grid;
+  image-rendering: pixelated;
+  background-image: url('./assets/maps/TraintracktoTortousnogridnpc.png');
+  background-size: 3840px;
+  width: calc(150 * var(--grid-cell));
+  height: calc(750 * var(--grid-cell));
+  position: absolute;
+  background-repeat: no-repeat;
+  overflow: visible;
+  /* display: grid;
     grid-template-columns: repeat(60, 64px);
     grid-template-rows: repeat(300, 64px); */
 }
-
 
 /* .numbers {
     size: 100%;
@@ -19,56 +18,51 @@
 }  */
 
 .blondeTTTV {
-    position: absolute;
-    width: calc(var(--grid-cell)* 2);
-    height: calc(var(--grid-cell)* 3);
-    overflow: hidden;
+  position: absolute;
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 3);
+  overflow: hidden;
 }
 
 .blondeTTTV_spritesheet {
-    background: url("./assets/images/TrainTracksToTortousBlonde.png") no-repeat no-repeat;
-    background-size: 100%;
-    width: calc(var(--grid-cell)* 40);
-    height: calc(var(--grid-cell)* 3);
+  background: url('./assets/images/TrainTracksToTortousBlonde.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 40);
+  height: calc(var(--grid-cell) * 3);
 }
 
 .blondeTTTV .blondeTTTV_spritesheet {
-    animation: walkAnimation 2.7s steps(15) infinite;
+  animation: walkAnimation 2.7s steps(15) infinite;
 }
-
 
 .faceBlondeTTTV {
-    background: url("./assets/images/IndoorHouse6girlface.png") no-repeat no-repeat;
-    background-position: left top;
-    background-size: 12%;
-    background-size: content-box;
+  background: url('./assets/images/IndoorHouse6girlface.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
 }
 
-
-
-
 .brunnetteTTTV {
-    position: absolute;
-    width: calc(var(--grid-cell)* 2);
-    height: calc(var(--grid-cell)* 3);
-    overflow: hidden;
+  position: absolute;
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 3);
+  overflow: hidden;
 }
 
 .brunnetteTTTV_spritesheet {
-    background: url("./assets/images/TrainTracksToTortousBrunnette.png") no-repeat no-repeat;
-    background-size: 100%;
-    width: calc(var(--grid-cell)* 40);
-    height: calc(var(--grid-cell)* 3);
+  background: url('./assets/images/TrainTracksToTortousBrunnette.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 40);
+  height: calc(var(--grid-cell) * 3);
 }
 
 .brunnetteTTTV .brunnetteTTTV_spritesheet {
-    animation: walkAnimation 2.2s steps(15) infinite;
+  animation: walkAnimation 2.2s steps(15) infinite;
 }
 
-
 .faceBrunnetteTTTV {
-    background: url("./assets/images/IndoorHouse3girl2face.png") no-repeat no-repeat;
-    background-position: left top;
-    background-size: 12%;
-    background-size: content-box;
+  background: url('./assets/images/IndoorHouse3girl2face.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
 }

@@ -1,194 +1,168 @@
-  .mapMT {
-     image-rendering: pixelated;
-     background-image: url("./assets/maps/MountainTowntweaksnogrid.png");
-     background-size: 7424px;
-     width: calc(290 * var(--grid-cell));
-     height: calc(200 * var(--grid-cell));
-     position: absolute;
-     background-repeat: no-repeat;
-     overflow: visible;
-     /* display: grid;
+.mapMT {
+  image-rendering: pixelated;
+  background-image: url('./assets/maps/MountainTowntweaksnogrid.png');
+  background-size: 7424px;
+  width: calc(290 * var(--grid-cell));
+  height: calc(200 * var(--grid-cell));
+  position: absolute;
+  background-repeat: no-repeat;
+  overflow: visible;
+  /* display: grid;
     grid-template-columns: repeat(116, 64px);
     grid-template-rows: repeat(80, 64px); */
- }
+}
 
-
- /* .numbers {
+/* .numbers {
     size: 100%;
     background: transparent;
 }   */
 
-
 .girl1MT {
-    position: absolute;
-    width: calc(var(--grid-cell)* 2.5);
-    height: calc(var(--grid-cell)* 2.5);
-    overflow: hidden;
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
 }
 
 .girl1MT_spritesheet {
-    background: url("./assets/images/IndoorHouse6girl.png") no-repeat no-repeat;
-    background-size: 100%;
-    width: calc(var(--grid-cell)*34);
-    height: calc(var(--grid-cell)* 3);
+  background: url('./assets/images/IndoorHouse6girl.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 34);
+  height: calc(var(--grid-cell) * 3);
 }
 
 .girl1MT .girl1MT_spritesheet {
-    animation: walkAnimation 1.6s steps(15) infinite;
+  animation: walkAnimation 1.6s steps(15) infinite;
 }
-
 
 .faceGirl1MT {
-    background: url("./assets/images/IndoorHouse3girl2face.png") no-repeat no-repeat;
-    background-position: left top;
-    background-size: 12%;
-    background-size: content-box;
+  background: url('./assets/images/IndoorHouse3girl2face.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
 }
 
-
-
-
 .girl2MT {
-    position: absolute;
-    width: calc(var(--grid-cell)* 2.5);
-    height: calc(var(--grid-cell)* 2.5);
-    overflow: hidden;
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
 }
 
 .girl2MT_spritesheet {
-    background: url("./assets/images/IndoorHouse3Girl1.png") no-repeat no-repeat;
-    background-size: 100%;
-    width: calc(var(--grid-cell)* 34);
-    height: calc(var(--grid-cell)* 3);
+  background: url('./assets/images/IndoorHouse3Girl1.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 34);
+  height: calc(var(--grid-cell) * 3);
 }
 
 .girl2MT .girl2MT_spritesheet {
-    animation: walkAnimation 1.6s steps(15) infinite;
+  animation: walkAnimation 1.6s steps(15) infinite;
 }
-
 
 .faceGirl2MT {
-    background: url("./assets/images/IndoorHouse3girl1face.png") no-repeat no-repeat;
-    background-position: left top;
-    background-size: 12%;
-    background-size: content-box;
+  background: url('./assets/images/IndoorHouse3girl1face.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
 }
 
-
-
-
-
 .guy1MT {
-    position: absolute;
-    width: calc(var(--grid-cell)* 2);
-    height: calc(var(--grid-cell)* 3);
-    overflow: hidden;
+  position: absolute;
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 3);
+  overflow: hidden;
 }
 
 .guy1MT_spritesheet {
-    background: url("./assets/images/IndoorHouse4guy.png") no-repeat no-repeat;
-    background-size: 100%;
-    width: calc(var(--grid-cell)* 7);
-    height: calc(var(--grid-cell)* 3);
+  background: url('./assets/images/IndoorHouse4guy.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 7);
+  height: calc(var(--grid-cell) * 3);
 }
 
 .guy1MT .guy1MT_spritesheet {
-    animation: walkAnimation 5.6s steps(3) infinite;
+  animation: walkAnimation 5.6s steps(3) infinite;
 }
 
-
-.faceGuy1MT{
-    background: url("./assets/images/IndoorHouse4face.png") no-repeat no-repeat;
-    background-position: left top;
-    background-size: 12%;
-    background-size: content-box;
+.faceGuy1MT {
+  background: url('./assets/images/IndoorHouse4face.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
 }
-
-
-
 
 .guyBaldMT {
-    position: absolute;
-    width: calc(var(--grid-cell)* 2);
-    height: calc(var(--grid-cell)* 3);
-    overflow: hidden;
+  position: absolute;
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 3);
+  overflow: hidden;
 }
 
 .guyBaldMT_spritesheet {
-    background: url("./assets/images/IndoorHouse9guy2.png") no-repeat no-repeat;
-    background-size: 100%;
-    width: calc(var(--grid-cell)* 36);
-    height: calc(var(--grid-cell)* 3);
+  background: url('./assets/images/IndoorHouse9guy2.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 36);
+  height: calc(var(--grid-cell) * 3);
 }
 
 .guyBaldMT .guyBaldMT_spritesheet {
-    animation: walkAnimation 3.6s steps(15) infinite;
+  animation: walkAnimation 3.6s steps(15) infinite;
 }
 
-
-.faceGuyBaldMT{
-    background: url("./assets/images/IndoorHouse9guyface.png") no-repeat no-repeat;
-    background-position: left top;
-    background-size: 12%;
-    background-size: content-box;
+.faceGuyBaldMT {
+  background: url('./assets/images/IndoorHouse9guyface.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
 }
-
-
-
-
 
 .rancherMT {
-    position: absolute;
-    width: calc(var(--grid-cell)* 2);
-    height: calc(var(--grid-cell)* 3);
-    overflow: hidden;
+  position: absolute;
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 3);
+  overflow: hidden;
 }
 
 .rancherMT_spritesheet {
-    background: url("./assets/images/IndoorHouse2guy.png") no-repeat no-repeat;
-    background-size: 100%;
-    width: calc(var(--grid-cell)* 34);
-    height: calc(var(--grid-cell)* 3);
+  background: url('./assets/images/IndoorHouse2guy.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 34);
+  height: calc(var(--grid-cell) * 3);
 }
 
 .rancherMT .rancherMT_spritesheet {
-    animation: walkAnimation 1.6s steps(15) infinite;
+  animation: walkAnimation 1.6s steps(15) infinite;
 }
-
 
 .faceRancherMT {
-    background: url("./assets/images/IndoorHouse2guyface.png") no-repeat no-repeat;
-    background-position: left top;
-    background-size: 12%;
-    background-size: content-box;
+  background: url('./assets/images/IndoorHouse2guyface.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
 }
 
-
-
-
-
 .eaterMT {
-    position: absolute;
-    width: calc(var(--grid-cell)* 2);
-    height: calc(var(--grid-cell)* 2.5);
-    overflow: hidden;
+  position: absolute;
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
 }
 
 .eaterMT_spritesheet {
-    background: url("./assets/images/IndoorHouse7guy.png") no-repeat no-repeat;
-    background-size: 100%;
-    width: calc(var(--grid-cell)* 7);
-    height: calc(var(--grid-cell)* 3);
+  background: url('./assets/images/IndoorHouse7guy.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 7);
+  height: calc(var(--grid-cell) * 3);
 }
 
 .eaterMT .eaterMT_spritesheet {
-    animation: walkAnimation 5.6s steps(3) infinite;
+  animation: walkAnimation 5.6s steps(3) infinite;
 }
 
-
 .faceEaterMT {
-    background: url("./assets/images/IndoorHouse7guyface.png") no-repeat no-repeat;
-    background-position: left top;
-    background-size: 12%;
-    background-size: content-box;
+  background: url('./assets/images/IndoorHouse7guyface.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
 }

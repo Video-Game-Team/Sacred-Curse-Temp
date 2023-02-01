@@ -1,85 +1,79 @@
 .mapME {
-    image-rendering: pixelated;
-    background-image: url("./assets/maps/MountainEntrancetweaksnogrid.png");
-    background-size: 4544px;
-    width: calc(150 * var(--grid-cell));
-    height: calc(177.50 * var(--grid-cell));
-    position: absolute;
-    background-repeat: no-repeat;
-    overflow: visible;
-    /* display: grid;
+  image-rendering: pixelated;
+  background-image: url('./assets/maps/MountainEntrancetweaksnogrid.png');
+  background-size: 4544px;
+  width: calc(150 * var(--grid-cell));
+  height: calc(177.5 * var(--grid-cell));
+  position: absolute;
+  background-repeat: no-repeat;
+  overflow: visible;
+  /* display: grid;
     grid-template-columns: repeat(71, 64px);
     grid-template-rows: repeat(60, 64px); */
 }
-
 
 /* .numbers {
     size: 100%;
     background: transparent;
 } */
 
+.mech1ME {
+  position: absolute;
+  width: calc(var(--grid-cell) * 4);
+  height: calc(var(--grid-cell) * 4);
+  overflow: hidden;
+}
 
-   .mech1ME {
-         position: absolute;
-       width: calc(var(--grid-cell) * 4);
-       height: calc(var(--grid-cell) * 4);
-       overflow: hidden;
-   }
+.mech1ME_spritesheet {
+  background: url('./assets/images/mech1.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 12);
+  height: calc(var(--grid-cell) * 4);
+}
 
-   .mech1ME_spritesheet {
-       background: url("./assets/images/mech1.png") no-repeat no-repeat;
-       background-size: 100%;
-       width: calc(var(--grid-cell) * 12);
-       height: calc(var(--grid-cell) * 4);
-   }
+.mech1ME .mech1ME_spritesheet {
+  animation: walkAnimation 1.2s steps(3) infinite;
+}
 
-   .mech1ME .mech1ME_spritesheet {
-       animation: walkAnimation 1.2s steps(3) infinite;
-   }
+.mech2ME {
+  width: calc(var(--grid-cell) * 4);
+  height: calc(var(--grid-cell) * 4);
+  overflow: hidden;
+}
 
+.mech2ME_spritesheet {
+  position: absolute;
+  background: url('./assets/images/mech2.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 12);
+  height: calc(var(--grid-cell) * 12);
+}
 
-    .mech2ME {
-       width: calc(var(--grid-cell) * 4);
-       height: calc(var(--grid-cell) * 4);
-       overflow: hidden;
-   }
+.mech2ME .mech2ME_spritesheet {
+  animation: walkAnimation 0.6s steps(3) infinite;
+}
 
-   .mech2ME_spritesheet {
-       position: absolute;
-       background: url("./assets/images/mech2.png") no-repeat no-repeat;
-       background-size: 100%;
-       width: calc(var(--grid-cell) * 12);
-       height: calc(var(--grid-cell) * 12);
-   }
+.mainGuardME {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
+}
 
-   .mech2ME .mech2ME_spritesheet {
-       animation: walkAnimation 0.6s steps(3) infinite;
-   }
+.mainGuardME_spritesheet {
+  background: url('./assets/images/MountainEntranceMainGuard.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 7);
+  height: calc(var(--grid-cell) * 3);
+}
 
+.mainGuardME .mainGuardME_spritesheet {
+  animation: walkAnimation 1.6s steps(3) infinite;
+}
 
-
-    .mainGuardME {
-        position: absolute;
-        width: calc(var(--grid-cell)* 2.5);
-        height: calc(var(--grid-cell)* 2.5);
-       overflow: hidden;
-   }
-
-   .mainGuardME_spritesheet {
-       background: url("./assets/images/MountainEntranceMainGuard.png") no-repeat no-repeat;
-       background-size: 100%;
-        width: calc(var(--grid-cell)* 7);
-        height: calc(var(--grid-cell)* 3);
-   }
-
-   .mainGuardME .mainGuardME_spritesheet {
-    animation: walkAnimation 1.6s steps(3) infinite;
-   }
-
-
-   .faceMainGuardME {
-       background: url("./assets/images/MountainEntranceMainGuardFace.png") no-repeat no-repeat;
-       background-position: left top;
-       background-size: 12%;
-       background-size: content-box;
-   }
+.faceMainGuardME {
+  background: url('./assets/images/MountainEntranceMainGuardFace.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}

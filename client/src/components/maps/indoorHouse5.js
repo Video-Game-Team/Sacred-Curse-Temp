@@ -73,60 +73,42 @@ const IndoorHouse5 = (props) => {
 
   let currentMap = [
     [
-      3, 298, 299, 300, 436, 437, 2645, 2646, 2581, 2582, 2583, 2645, 2646, 442,
-      443, 1097, 1098, 1099, 1100, 13,
+      3, 298, 299, 300, 436, 437, 2645, 2646, 2581, 2582, 2583, 2645, 2646, 442, 443, 1097, 1098,
+      1099, 1100, 13
     ],
     [
-      17, 312, 313, 314, 452, 453, 2661, 2662, 2597, 2598, 2599, 2661, 2662,
-      458, 459, 1113, 1114, 1115, 1116, 27,
+      17, 312, 313, 314, 452, 453, 2661, 2662, 2597, 2598, 2599, 2661, 2662, 458, 459, 1113, 1114,
+      1115, 1116, 27
     ],
-    [
-      3221225513, 0, 0, 0, 0, 0, 0, 0, 2613, 2614, 2615, 1049, 0, 0, 0, 1129,
-      1130, 1131, 1132, 41,
-    ],
-    [
-      3221225513, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3635, 3636, 1148,
-      41,
-    ],
-    [
-      3221225513, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3654, 3655, 237,
-      41,
-    ],
+    [3221225513, 0, 0, 0, 0, 0, 0, 0, 2613, 2614, 2615, 1049, 0, 0, 0, 1129, 1130, 1131, 1132, 41],
+    [3221225513, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3635, 3636, 1148, 41],
+    [3221225513, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3654, 3655, 237, 41],
     [3221225513, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 251, 41],
     [3221225513, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 265, 41],
     [
-      3221225513, 1610613283, 1610613299, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 2684355393, 2684355377, 41,
+      3221225513, 1610613283, 1610613299, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2684355393,
+      2684355377, 41
     ],
     [
-      3221225513, 1610613282, 1610613298, 0, 0, 1894, 402, 403, 1929, 0, 0, 0,
-      0, 0, 0, 0, 0, 2684355394, 2684355378, 41,
+      3221225513, 1610613282, 1610613298, 0, 0, 1894, 402, 403, 1929, 0, 0, 0, 0, 0, 0, 0, 0,
+      2684355394, 2684355378, 41
     ],
     [
-      3221225513, 1610613283, 1610613299, 0, 0, 0, 418, 419, 0, 0, 0, 0, 0, 0,
-      0, 2076, 1610614708, 2684355395, 2684355379, 41,
+      3221225513, 1610613283, 1610613299, 0, 0, 0, 418, 419, 0, 0, 0, 0, 0, 0, 0, 2076, 1610614708,
+      2684355395, 2684355379, 41
     ],
     [
-      3221225513, 1610613282, 1610613298, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      2092, 1610614707, 2684355393, 2684355377, 41,
+      3221225513, 1610613282, 1610613298, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2092, 1610614707,
+      2684355393, 2684355377, 41
     ],
-    [
-      3221225513, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2684355394,
-      2684355378, 41,
-    ],
-    [
-      3221225513, 237, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2684355395,
-      2684355379, 41,
-    ],
+    [3221225513, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2684355394, 2684355378, 41],
+    [3221225513, 237, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2684355395, 2684355379, 41],
     [3221225513, 251, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41],
     [3221225513, 265, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
   ];
   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  console.log(
-    'VALUE Right',
-    currentMap[yPlayerIndex.current][xPlayerIndex.current]
-  );
+  console.log('VALUE Right', currentMap[yPlayerIndex.current][xPlayerIndex.current]);
 
   // useEffect(() => {
   //   let tempGrid = [];
@@ -191,7 +173,7 @@ const IndoorHouse5 = (props) => {
           ) {
             clickAudio2();
             setNpcFace('faceGirlgirlIH5');
-             setTextValue('Hi, welcome to our sex chamber');
+            setTextValue('Hi, welcome to our sex chamber');
           }
           //YO Mama NPC
           // if (
@@ -287,7 +269,7 @@ const IndoorHouse5 = (props) => {
           ) {
             clickAudio2();
             setNpcFace('faceGirlgirlIH5');
-             setTextValue('Hi, welcome to our sex chamber');
+            setTextValue('Hi, welcome to our sex chamber');
           }
           //YO Mama NPC
           // if (
@@ -326,27 +308,23 @@ const IndoorHouse5 = (props) => {
         if (facing.current === 'up') {
           if (
             xBank.current + 32 > 64 &&
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
-              'door1'
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] === 'door1'
           ) {
           }
           if (
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
-              'sign1' &&
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 'sign1' &&
             64 - xBank.current > 32
           ) {
             console.log('sign1');
           }
           if (
             xBank.current + 32 > 64 &&
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
-              'sign2'
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] === 'sign2'
           ) {
             console.log('sign2');
           }
           if (
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
-              'sign2' &&
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 'sign2' &&
             64 - xBank.current > 32
           ) {
             console.log('sign2');
@@ -354,21 +332,16 @@ const IndoorHouse5 = (props) => {
         }
         if (facing.current == null) {
           if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
-              'sign1' &&
+            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 'sign1' &&
             xBank.current + 32 < 64
           ) {
             console.log('sign1');
           }
-          if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current + 1] ===
-            'sign2'
-          ) {
+          if (currentMap[yPlayerIndex.current + 1][xPlayerIndex.current + 1] === 'sign2') {
             console.log('poopshit');
           }
           if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
-              'sign2' &&
+            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 'sign2' &&
             xBank.current + 32 < 64
           ) {
             console.log('sign2');
@@ -437,10 +410,7 @@ const IndoorHouse5 = (props) => {
     //if current key is d, the x cordinate becomes  the previous state + the speed
 
     if (dirArr.current[0] === 'ArrowRight') {
-      if (
-        currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] === 0 ||
-        xBank.current < 0
-      )
+      if (currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] === 0 || xBank.current < 0)
         if (
           yBank.current + 32 < 64 ||
           currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
@@ -461,10 +431,7 @@ const IndoorHouse5 = (props) => {
     //if current key is a, the x cordinate becomes  the previous state - the speed
 
     if (dirArr.current[0] === 'ArrowLeft') {
-      if (
-        currentMap[yPlayerIndex.current][xPlayerIndex.current - 1] === 0 ||
-        xBank.current > 0
-      )
+      if (currentMap[yPlayerIndex.current][xPlayerIndex.current - 1] === 0 || xBank.current > 0)
         if (
           yBank.current + 32 < 64 ||
           currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] == 0
@@ -488,10 +455,7 @@ const IndoorHouse5 = (props) => {
 
     //if current key is w, the y cordinate becomes  the previous state + the speed
     if (dirArr.current[0] === 'ArrowUp') {
-      if (
-        currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 0 ||
-        yBank.current < 0
-      ) {
+      if (currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 0 || yBank.current < 0) {
         if (
           xBank.current + 48 < 64 ||
           currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
@@ -509,15 +473,9 @@ const IndoorHouse5 = (props) => {
     //if current key is s, the y cordinate becomes  the previous state - the speed
 
     if (dirArr.current[0] === 'ArrowDown') {
-      if (
-        currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 0 ||
-        yBank.current > 0
-      ) {
+      if (currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 0 || yBank.current > 0) {
         // if (xBank.current+32<64 || newMap[yPlayerIndex.current+1][xPlayerIndex.current+1]==0)
-        if (
-          xBank.current < 16 ||
-          currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] == 0
-        ) {
+        if (xBank.current < 16 || currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] == 0) {
           setYTransformVar((prevCount) => prevCount - speedRef.current);
           yBank.current = yBank.current - speedRef.current;
           if (yBank.current < 0) {
@@ -559,40 +517,31 @@ const IndoorHouse5 = (props) => {
           <div
             className="mapIH5 pixel-art"
             style={{
-              transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`,
-            }}
-          >
+              transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`
+            }}>
             {gridArray}
             <div
               className="character pixel-art"
               facing={facing.current}
               walking={walker}
               style={{
-                transform: `translate3d( ${600 - xTransformVar}px, ${
-                  272 - yTransformVar
-                }px, 0 )`,
-              }}
-            >
+                transform: `translate3d( ${600 - xTransformVar}px, ${272 - yTransformVar}px, 0 )`
+              }}>
               <div className="character_spritesheet pixel-art"></div>
             </div>
 
             <div
               className="girlIH5 pixel-art"
               style={{
-                transform: `translate3d( ${1030}px, ${190}px, 0 )`,
-              }}
-            >
+                transform: `translate3d( ${1030}px, ${190}px, 0 )`
+              }}>
               <div className="girlIH5_spritesheet pixel-art"></div>
             </div>
           </div>
         </div>
 
         {textValue ? (
-          <dialog
-            id="dialogStyle"
-            className={`${npcFace} textBox typewriter`}
-            open
-          >
+          <dialog id="dialogStyle" className={`${npcFace} textBox typewriter`} open>
             <p>{textValue}</p>
           </dialog>
         ) : null}

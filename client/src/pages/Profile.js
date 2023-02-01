@@ -4,7 +4,7 @@ const Profile = () => {
   const { user, isAuthenticated } = useAuth0();
 
   console.log('User Email:', user);
-// console.log('User Email:', user.email, 'UserSub:', user.sub);
+  // console.log('User Email:', user.email, 'UserSub:', user.sub);
 
   return (
     isAuthenticated && (

@@ -1,178 +1,152 @@
 .mapSA {
-    z-index: 3;
-    image-rendering: pixelated;
-    max-height: 50000px;
-    min-width: 50000px;
-    background-image: url("./assets/maps/SaintAnnaMapwwaternogrid.png");
-    background-size: 6720px;
-    width: calc(262.5 * var(--grid-cell));
-    height: calc(125 * var(--grid-cell));
-    position: absolute;
-    background-repeat: no-repeat;
-    overflow: visible;
-    /* display: grid;
+  z-index: 3;
+  image-rendering: pixelated;
+  max-height: 50000px;
+  min-width: 50000px;
+  background-image: url('./assets/maps/SaintAnnaMapwwaternogrid.png');
+  background-size: 6720px;
+  width: calc(262.5 * var(--grid-cell));
+  height: calc(125 * var(--grid-cell));
+  position: absolute;
+  background-repeat: no-repeat;
+  overflow: visible;
+  /* display: grid;
     grid-template-columns: repeat(71, 64px);
     grid-template-rows: repeat(86, 64px); */
 }
-
 
 /* .numbers {
     size: 100%;
     background: transparent;
 } */
 
-
 @keyframes waterAnimation {
-    from {
-        transform: translate3d(0%, 0%, 0);
-    }
+  from {
+    transform: translate3d(0%, 0%, 0);
+  }
 
-    to {
-        transform: translate3d(-100%, 0%, 0);
-    }
+  to {
+    transform: translate3d(-100%, 0%, 0);
+  }
 }
 
-
 .dockguy1SA {
-    position: absolute;
-    width: calc(var(--grid-cell)* 2.5);
-    height: calc(var(--grid-cell)* 3);
-    overflow: hidden;
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 3);
+  overflow: hidden;
 }
 
 .dockguy1SA_spritesheet {
-    background: url("./assets/images/IndoorHouse2guy.png") no-repeat no-repeat;
-    background-size: 100%;
-    width: calc(var(--grid-cell)* 34);
-    height: calc(var(--grid-cell)* 3);
+  background: url('./assets/images/IndoorHouse2guy.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 34);
+  height: calc(var(--grid-cell) * 3);
 }
 
 .dockguy1SA .dockguy1SA_spritesheet {
-    animation: walkAnimation 1.6s steps(5) infinite;
+  animation: walkAnimation 1.6s steps(5) infinite;
 }
 
 .faceDockguy1SA {
-    background: url("./assets/images/IndoorHouse2guyface.png") no-repeat no-repeat;
-    background-position: left top;
-    background-size: 12%;
-    background-size: content-box;
+  background: url('./assets/images/IndoorHouse2guyface.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
 }
 
-
 .brunetteSA {
-    position: absolute;
-    width: calc(var(--grid-cell)* 2.5);
-    height: calc(var(--grid-cell)* 2.5);
-    overflow: hidden;
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
 }
 
 .brunetteSA_spritesheet {
-    background: url("./assets/images/IndoorHouse5girl.png") no-repeat no-repeat;
-    background-size: 100%;
-    width: calc(var(--grid-cell)* 34);
-    height: calc(var(--grid-cell)* 3);
+  background: url('./assets/images/IndoorHouse5girl.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 34);
+  height: calc(var(--grid-cell) * 3);
 }
 
 .brunetteSA .brunetteSA_spritesheet {
-    animation: walkAnimation 1.6s steps(15) infinite;
+  animation: walkAnimation 1.6s steps(15) infinite;
 }
-
 
 .faceBrunetteSA {
-    background: url("./assets/images/IndoorHouse3girl2face.png") no-repeat no-repeat;
-    background-position: left top;
-    background-size: 12%;
-    background-size: content-box;
+  background: url('./assets/images/IndoorHouse3girl2face.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
 }
 
-
 .squatterSA {
-    position: absolute;
-    width: calc(var(--grid-cell)* 2);
-    height: calc(var(--grid-cell)* 3);
-    overflow: hidden;
+  position: absolute;
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 3);
+  overflow: hidden;
 }
 
 .squatterSA_spritesheet {
-    background: url("./assets/images/SaintAnnaSquatter.png") no-repeat no-repeat;
-    background-size: 100%;
-    width: calc(var(--grid-cell)* 7);
-    height: calc(var(--grid-cell)* 3);
+  background: url('./assets/images/SaintAnnaSquatter.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 7);
+  height: calc(var(--grid-cell) * 3);
 }
 
 .squatterSA .squatterSA_spritesheet {
-    animation: walkAnimation 2.6s steps(3) infinite;
+  animation: walkAnimation 2.6s steps(3) infinite;
 }
 
-
-.faceSquatterSA{
-    background: url("./assets/images/SaintAnnasquatterface.png") no-repeat no-repeat;
-    background-position: left top;
-    background-size: 12%;
-    background-size: content-box;
+.faceSquatterSA {
+  background: url('./assets/images/SaintAnnasquatterface.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
 }
-
 
 .pizzaGuySA {
-    position: absolute;
-    width: calc(var(--grid-cell)* 2);
-    height: calc(var(--grid-cell)* 3);
-    overflow: hidden;
+  position: absolute;
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 3);
+  overflow: hidden;
 }
 
 .pizzaGuySA_spritesheet {
-    background: url("./assets/images/SaintAnnaPizzaGuy.png") no-repeat no-repeat;
-    background-size: 100%;
-    width: calc(var(--grid-cell)* 7);
-    height: calc(var(--grid-cell)* 3);
+  background: url('./assets/images/SaintAnnaPizzaGuy.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 7);
+  height: calc(var(--grid-cell) * 3);
 }
 
 .pizzaGuySA .pizzaGuySA_spritesheet {
-    animation: walkAnimation 0.5s steps(3) infinite;
+  animation: walkAnimation 0.5s steps(3) infinite;
 }
-
 
 .facePizzaGuySA {
-    background: url("./assets/images/SaintAnnaPizzaGuyface.png") no-repeat no-repeat;
-    background-position: left top;
-    background-size: 12%;
-    background-size: content-box;
+  background: url('./assets/images/SaintAnnaPizzaGuyface.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
 }
 
-
 .waterSA {
-    width: calc(var(--grid-cell) * 2000);
-    height: calc(var(--grid-cell)* 2000);
-    overflow: hidden;
+  width: calc(var(--grid-cell) * 2000);
+  height: calc(var(--grid-cell) * 2000);
+  overflow: hidden;
 }
 
 .waterSA_spritesheet {
-    opacity: 0.2;
-    /* filter: blur(2px); */
-    /* filter: hue-rotate(180deg); */
-    position: absolute;
-    background: url("./assets/maps/justwater1.png") no-repeat no-repeat;
-    background-size: 100%;
-    width: calc(var(--grid-cell)* 136);
-    height: calc(var(--grid-cell)* 136);
+  opacity: 0.2;
+  /* filter: blur(2px); */
+  /* filter: hue-rotate(180deg); */
+  position: absolute;
+  background: url('./assets/maps/justwater1.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 136);
+  height: calc(var(--grid-cell) * 136);
 }
 
 .waterSA .waterSA_spritesheet {
-    animation: waterAnimation .6s steps(4) infinite;
+  animation: waterAnimation 0.6s steps(4) infinite;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

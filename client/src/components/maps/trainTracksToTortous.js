@@ -1618,7 +1618,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -1680,7 +1680,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -1742,7 +1742,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -1804,7 +1804,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -1866,7 +1866,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -1928,7 +1928,7 @@ const TrainTracksToTortous = (props) => {
       0,
       409,
       410,
-      0,
+      0
     ],
     [
       0,
@@ -1990,7 +1990,7 @@ const TrainTracksToTortous = (props) => {
       0,
       435,
       436,
-      0,
+      0
     ],
     [
       0,
@@ -2052,7 +2052,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       577,
@@ -2114,7 +2114,7 @@ const TrainTracksToTortous = (props) => {
       592,
       593,
       591,
-      592,
+      592
     ],
     [
       0,
@@ -2176,7 +2176,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -2238,7 +2238,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -2300,7 +2300,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -2362,7 +2362,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -2424,7 +2424,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -2486,7 +2486,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -2548,7 +2548,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -2610,7 +2610,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -2672,7 +2672,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -2734,7 +2734,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -2796,7 +2796,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -2858,7 +2858,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -2920,7 +2920,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -2982,7 +2982,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -3044,7 +3044,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -3106,7 +3106,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -3168,7 +3168,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -3230,7 +3230,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -3292,7 +3292,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -3354,7 +3354,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -3416,7 +3416,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -3478,7 +3478,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -3540,7 +3540,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -3602,7 +3602,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -3664,7 +3664,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -3726,7 +3726,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -3788,7 +3788,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -3850,7 +3850,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -3912,7 +3912,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -3974,7 +3974,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -4036,7 +4036,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -4098,7 +4098,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -4160,7 +4160,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -4222,7 +4222,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -4284,7 +4284,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -4346,7 +4346,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -4408,7 +4408,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -4470,7 +4470,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -4532,7 +4532,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -4594,7 +4594,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -4656,7 +4656,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -4718,7 +4718,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -4780,7 +4780,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -4842,7 +4842,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -4904,7 +4904,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -4966,7 +4966,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -5028,7 +5028,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -5090,7 +5090,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -5152,7 +5152,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -5214,7 +5214,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -5276,7 +5276,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -5338,7 +5338,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -5400,7 +5400,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -5462,7 +5462,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -5524,7 +5524,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -5586,7 +5586,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -5648,7 +5648,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -5710,7 +5710,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -5772,7 +5772,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -5834,7 +5834,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -5896,7 +5896,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -5958,7 +5958,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -6020,7 +6020,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -6082,7 +6082,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -6144,7 +6144,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -6206,7 +6206,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -6268,7 +6268,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -6330,7 +6330,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -6392,7 +6392,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -6454,7 +6454,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -6516,7 +6516,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -6578,7 +6578,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -6640,7 +6640,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -6702,7 +6702,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -6764,7 +6764,7 @@ const TrainTracksToTortous = (props) => {
       3355,
       3356,
       3357,
-      3355,
+      3355
     ],
     [
       0,
@@ -6826,7 +6826,7 @@ const TrainTracksToTortous = (props) => {
       3363,
       3364,
       3365,
-      3363,
+      3363
     ],
     [
       0,
@@ -6888,7 +6888,7 @@ const TrainTracksToTortous = (props) => {
       3371,
       3372,
       3373,
-      3371,
+      3371
     ],
     [
       0,
@@ -6950,7 +6950,7 @@ const TrainTracksToTortous = (props) => {
       3379,
       3380,
       3381,
-      3379,
+      3379
     ],
     [
       0,
@@ -7012,7 +7012,7 @@ const TrainTracksToTortous = (props) => {
       3387,
       3388,
       3389,
-      3387,
+      3387
     ],
     [
       0,
@@ -7074,7 +7074,7 @@ const TrainTracksToTortous = (props) => {
       3395,
       3396,
       3397,
-      3395,
+      3395
     ],
     [
       0,
@@ -7136,7 +7136,7 @@ const TrainTracksToTortous = (props) => {
       3403,
       3404,
       3405,
-      3403,
+      3403
     ],
     [
       0,
@@ -7198,7 +7198,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -7260,7 +7260,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -7322,7 +7322,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -7384,7 +7384,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -7446,7 +7446,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -7508,7 +7508,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -7570,7 +7570,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -7632,7 +7632,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -7694,7 +7694,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -7756,7 +7756,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -7818,7 +7818,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -7880,7 +7880,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -7942,7 +7942,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -8004,7 +8004,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -8066,7 +8066,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -8128,7 +8128,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -8190,7 +8190,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -8252,7 +8252,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -8314,7 +8314,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -8376,7 +8376,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -8438,7 +8438,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -8500,7 +8500,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -8562,7 +8562,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -8624,7 +8624,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -8686,7 +8686,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -8748,7 +8748,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -8810,7 +8810,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -8872,7 +8872,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -8934,7 +8934,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -8996,7 +8996,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -9058,7 +9058,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -9120,7 +9120,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -9182,7 +9182,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -9244,7 +9244,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -9306,7 +9306,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -9368,7 +9368,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -9430,7 +9430,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -9492,7 +9492,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -9554,7 +9554,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -9616,7 +9616,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -9678,7 +9678,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -9740,7 +9740,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -9802,7 +9802,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -9864,7 +9864,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -9926,7 +9926,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -9988,7 +9988,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -10050,7 +10050,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -10112,7 +10112,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -10174,7 +10174,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -10236,7 +10236,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -10298,7 +10298,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -10360,7 +10360,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -10422,7 +10422,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -10484,7 +10484,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -10546,7 +10546,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -10608,7 +10608,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -10670,7 +10670,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -10732,7 +10732,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -10794,7 +10794,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -10856,7 +10856,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -10918,7 +10918,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       3357,
@@ -10980,7 +10980,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       3365,
@@ -11042,7 +11042,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       3373,
@@ -11104,7 +11104,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       3381,
@@ -11166,7 +11166,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       3389,
@@ -11228,7 +11228,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       3397,
@@ -11290,7 +11290,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       3405,
@@ -11352,7 +11352,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -11414,7 +11414,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -11476,7 +11476,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -11538,7 +11538,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -11600,7 +11600,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -11662,7 +11662,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -11724,7 +11724,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -11786,7 +11786,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -11848,7 +11848,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -11910,7 +11910,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -11972,7 +11972,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -12034,7 +12034,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -12096,7 +12096,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -12158,7 +12158,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -12220,7 +12220,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -12282,7 +12282,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -12344,7 +12344,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -12406,7 +12406,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -12468,7 +12468,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -12530,7 +12530,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -12592,7 +12592,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -12654,7 +12654,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -12716,7 +12716,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -12778,7 +12778,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -12840,7 +12840,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -12902,7 +12902,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -12964,7 +12964,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -13026,7 +13026,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -13088,7 +13088,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -13150,7 +13150,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -13212,7 +13212,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -13274,7 +13274,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -13336,7 +13336,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -13398,7 +13398,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -13460,7 +13460,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -13522,7 +13522,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -13584,7 +13584,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -13646,7 +13646,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -13708,7 +13708,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -13770,7 +13770,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -13832,7 +13832,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -13894,7 +13894,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -13956,7 +13956,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -14018,7 +14018,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -14080,7 +14080,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -14142,7 +14142,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -14204,7 +14204,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -14266,7 +14266,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -14328,7 +14328,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -14390,7 +14390,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -14452,7 +14452,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -14514,7 +14514,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -14576,7 +14576,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -14638,7 +14638,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -14700,7 +14700,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -14762,7 +14762,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -14824,7 +14824,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -14886,7 +14886,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -14948,7 +14948,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -15010,7 +15010,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -15072,7 +15072,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -15134,7 +15134,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -15196,7 +15196,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -15258,7 +15258,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -15320,7 +15320,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -15382,7 +15382,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -15444,7 +15444,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -15506,7 +15506,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -15568,7 +15568,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -15630,7 +15630,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -15692,7 +15692,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -15754,7 +15754,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -15816,7 +15816,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -15878,7 +15878,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -15940,7 +15940,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -16002,7 +16002,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -16064,7 +16064,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -16126,7 +16126,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -16188,7 +16188,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -16250,7 +16250,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -16312,7 +16312,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -16374,7 +16374,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -16436,7 +16436,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -16498,7 +16498,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -16560,7 +16560,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -16622,7 +16622,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -16684,7 +16684,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -16746,7 +16746,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -16808,7 +16808,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -16870,7 +16870,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -16932,7 +16932,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -16994,7 +16994,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -17056,7 +17056,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -17118,7 +17118,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -17180,7 +17180,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -17242,7 +17242,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -17304,7 +17304,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -17366,7 +17366,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -17428,7 +17428,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -17490,7 +17490,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -17552,7 +17552,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -17614,7 +17614,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -17676,7 +17676,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -17738,7 +17738,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -17800,7 +17800,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -17862,7 +17862,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -17924,7 +17924,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -17986,7 +17986,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -18048,7 +18048,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -18110,7 +18110,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -18172,7 +18172,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -18234,7 +18234,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -18296,7 +18296,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -18358,7 +18358,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -18420,7 +18420,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -18482,7 +18482,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -18544,7 +18544,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -18606,7 +18606,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -18668,7 +18668,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -18730,7 +18730,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -18792,7 +18792,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -18854,7 +18854,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -18916,7 +18916,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -18978,7 +18978,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -19040,7 +19040,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -19102,7 +19102,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -19164,7 +19164,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -19226,7 +19226,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -19288,7 +19288,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -19350,7 +19350,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -19412,7 +19412,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -19474,7 +19474,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -19536,7 +19536,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -19598,7 +19598,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -19660,7 +19660,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -19722,7 +19722,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -19784,7 +19784,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -19846,7 +19846,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -19908,7 +19908,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -19970,7 +19970,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -20032,7 +20032,7 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -20094,21 +20094,17 @@ const TrainTracksToTortous = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 508, 576, 577, 575, 576, 508, 575, 576, 577,
-      691, 576, 508, 575, 576, 577, 575, 576, 508, 0, 0, 0, 576, 576, 508, 575,
-      576, 577, 575, 576, 508, 575, 576, 577, 575, 576, 508, 575, 576, 577, 625,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    ],
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 508, 576, 577, 575, 576, 508, 575, 576, 577, 691, 576, 508, 575,
+      576, 577, 575, 576, 508, 0, 0, 0, 576, 576, 508, 575, 576, 577, 575, 576, 508, 575, 576, 577,
+      575, 576, 508, 575, 576, 577, 625, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    ]
   ];
 
   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  console.log(
-    'VALUE Right',
-    currentMap[yPlayerIndex.current][xPlayerIndex.current]
-  );
+  console.log('VALUE Right', currentMap[yPlayerIndex.current][xPlayerIndex.current]);
 
   // useEffect(()=>{
   //   let tempGrid=[]
@@ -20175,12 +20171,19 @@ const TrainTracksToTortous = (props) => {
   useEffect(() => {
     //yPlayerIndex up and down values
     // Manson Map check conditions
+
     if (
       (yPlayerIndex.current === 154 && xPlayerIndex.current === 9) ||
       (yPlayerIndex.current === 155 && xPlayerIndex.current === 9) ||
       (yPlayerIndex.current === 156 && xPlayerIndex.current === 9)
     ) {
       props.active('mansonRanch', 'trainTracksToTortous');
+    }
+
+    if (itemBag.filter((c) => c.name === 'Manson Voucher').length > 0) {
+      console.log('HELLO');
+    } else {
+      console.log('GOODBYE');
     }
 
     // Lulu Mountain Pass conditions
@@ -20205,9 +20208,6 @@ const TrainTracksToTortous = (props) => {
       props.active('tortous', 'trainTracksToTortous');
     }
   }, [yPlayerIndex.current]);
-
-
-
 
   //CHARACTER DIALOGUE USE EFFECT
   useEffect(() => {
@@ -20261,9 +20261,9 @@ const TrainTracksToTortous = (props) => {
             (yPlayerIndex.current === 238 && xPlayerIndex.current === 17) ||
             (yPlayerIndex.current === 238 && xPlayerIndex.current === 18)
           ) {
-             setNpcFace('faceBrunnetteTTTV');
-             setTextValue('My dad is mad at me');
-             clickAudio2();
+            setNpcFace('faceBrunnetteTTTV');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
           //Hot Girl
           // if (
@@ -20279,45 +20279,45 @@ const TrainTracksToTortous = (props) => {
           // ) {
           //   console.log("Hi I'm guard 4");
           // }
-          }
+        }
 
-          //Facing left
-      if (facing.current === 'left') {
-        //Guard 1 Lower left NPC
-        if (
-          (yPlayerIndex.current === 247 && xPlayerIndex.current === 21) ||
-          (yPlayerIndex.current === 248 && xPlayerIndex.current === 21)
-        ) {
-          setNpcFace('faceBlondeTTTV');
-          setTextValue('My dad is mad at me');
-          clickAudio2();
+        //Facing left
+        if (facing.current === 'left') {
+          //Guard 1 Lower left NPC
+          if (
+            (yPlayerIndex.current === 247 && xPlayerIndex.current === 21) ||
+            (yPlayerIndex.current === 248 && xPlayerIndex.current === 21)
+          ) {
+            setNpcFace('faceBlondeTTTV');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
+          // //YO Mama NPC
+          if (
+            (yPlayerIndex.current === 240 && xPlayerIndex.current === 21) ||
+            (yPlayerIndex.current === 241 && xPlayerIndex.current === 21)
+          ) {
+            setNpcFace('faceGirl2');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
+          }
+          // //Hot Girl
+          // if (
+          //   (yPlayerIndex.current === 24 && xPlayerIndex.current === 23) ||
+          //   (yPlayerIndex.current === 24 && xPlayerIndex.current === 24)
+          // ) {
+          //   console.log("Hi I'm Guard 3");
+          // }
+          // //Hot Girl
+          // if (
+          //   (yPlayerIndex.current === 24 && xPlayerIndex.current === 33) ||
+          //   (yPlayerIndex.current === 24 && xPlayerIndex.current === 34)
+          // ) {
+          //   console.log("Hi I'm guard 4");
+          // }
         }
-        // //YO Mama NPC
-        if (
-          (yPlayerIndex.current === 240 && xPlayerIndex.current === 21) ||
-          (yPlayerIndex.current === 241 && xPlayerIndex.current === 21)
-        ) {
-           setNpcFace('faceGirl2');
-           setTextValue('My dad is mad at me');
-           clickAudio2();
-        }
-        // //Hot Girl
-        // if (
-        //   (yPlayerIndex.current === 24 && xPlayerIndex.current === 23) ||
-        //   (yPlayerIndex.current === 24 && xPlayerIndex.current === 24)
-        // ) {
-        //   console.log("Hi I'm Guard 3");
-        // }
-        // //Hot Girl
-        // if (
-        //   (yPlayerIndex.current === 24 && xPlayerIndex.current === 33) ||
-        //   (yPlayerIndex.current === 24 && xPlayerIndex.current === 34)
-        // ) {
-        //   console.log("Hi I'm guard 4");
-        // }
-      }
-          //Facing right
-          if (facing.current === 'right') {
+        //Facing right
+        if (facing.current === 'right') {
           //   if (
           //     (yPlayerIndex.current === 36 && xPlayerIndex.current === 31) ||
           //     (yPlayerIndex.current === 37 && xPlayerIndex.current === 31)
@@ -20393,27 +20393,23 @@ const TrainTracksToTortous = (props) => {
         if (facing.current === 'up') {
           if (
             xBank.current + 32 > 64 &&
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
-              'door1'
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] === 'door1'
           ) {
           }
           if (
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
-              'sign1' &&
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 'sign1' &&
             64 - xBank.current > 32
           ) {
             console.log('sign1');
           }
           if (
             xBank.current + 32 > 64 &&
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
-              'sign2'
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] === 'sign2'
           ) {
             console.log('sign2');
           }
           if (
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
-              'sign2' &&
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 'sign2' &&
             64 - xBank.current > 32
           ) {
             console.log('sign2');
@@ -20421,21 +20417,16 @@ const TrainTracksToTortous = (props) => {
         }
         if (facing.current == null) {
           if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
-              'sign1' &&
+            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 'sign1' &&
             xBank.current + 32 < 64
           ) {
             console.log('sign1');
           }
-          if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current + 1] ===
-            'sign2'
-          ) {
+          if (currentMap[yPlayerIndex.current + 1][xPlayerIndex.current + 1] === 'sign2') {
             console.log('poopshit');
           }
           if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
-              'sign2' &&
+            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 'sign2' &&
             xBank.current + 32 < 64
           ) {
             console.log('sign2');
@@ -20499,107 +20490,89 @@ const TrainTracksToTortous = (props) => {
     ? (facing.current = null)
     : null;
 
-
-
   //animate is a reccursive function that takes the current key and updates the cordinate variables depending on which direction is pushed. It also sets which way the character is facing
-  
+
   let fps = 15;
-  
-  
+
   const animate = () => {
-      //if current key is d, the x cordinate becomes  the previous state + the speed
-      if (dirArr.current[0] === 'ArrowRight') {
+    //if current key is d, the x cordinate becomes  the previous state + the speed
+    if (dirArr.current[0] === 'ArrowRight') {
+      if (currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] === 0 || xBank.current < 0)
         if (
-          currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] === 0 ||
-          xBank.current < 0
-        )
-          if (
-            yBank.current + 32 < 64 ||
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
-          ) {
-            {
-              setXTransformVar((prevCount) => prevCount - speedRef.current);
-              // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current+1])
-              xBank.current = xBank.current + speedRef.current;
-              // console.log(yPlayerIndex.current,xPlayerIndex.current)
-              if (xBank.current === 64) {
-                xPlayerIndex.current = xPlayerIndex.current + 1;
-
-                xBank.current = 0;
-              }
-            }
-          }
-      }
-      //if current key is a, the x cordinate becomes  the previous state - the speed
-
-      if (dirArr.current[0] === 'ArrowLeft') {
-        if (
-          currentMap[yPlayerIndex.current][xPlayerIndex.current - 1] === 0 ||
-          xBank.current > 0
-        )
-          if (
-            yBank.current + 32 < 64 ||
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] == 0
-          ) {
-            {
-              setXTransformVar((prevCount) => prevCount + speedRef.current);
-              xBank.current = xBank.current - speedRef.current;
-              // console.log(yPlayerIndex.current,xPlayerIndex.current)
-
-              if (xBank.current < 0) {
-                // console.log("this one",xBank.current)
-
-                xPlayerIndex.current = xPlayerIndex.current - 1;
-                // console.log(yPlayerIndex.current, xPlayerIndex.current);
-                // alert(xPlayerIndex.current)
-                xBank.current = 60;
-              }
-            }
-          }
-      }
-
-      //if current key is w, the y cordinate becomes  the previous state + the speed
-      if (dirArr.current[0] === 'ArrowUp') {
-        if (
-          currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 0 ||
-          yBank.current < 0
+          yBank.current + 32 < 64 ||
+          currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
         ) {
-          if (
-            xBank.current + 48 < 64 ||
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
-          ) {
-            setYTransformVar((prevCount) => prevCount + speedRef.current);
+          {
+            setXTransformVar((prevCount) => prevCount - speedRef.current);
+            // console.log(newMap[yPlayerIndex.current][xPlayerIndex.current+1])
+            xBank.current = xBank.current + speedRef.current;
             // console.log(yPlayerIndex.current,xPlayerIndex.current)
-            yBank.current = yBank.current + speedRef.current;
-            if (yBank.current === 64) {
-              yPlayerIndex.current = yPlayerIndex.current - 1;
-              yBank.current = 0;
-            }
-          }
-        }
-      }
-      //if current key is s, the y cordinate becomes  the previous state - the speed
+            if (xBank.current === 64) {
+              xPlayerIndex.current = xPlayerIndex.current + 1;
 
-      if (dirArr.current[0] === 'ArrowDown') {
-        if (
-          currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 0 ||
-          yBank.current > 0
-        ) {
-          // if (xBank.current+32<64 || newMap[yPlayerIndex.current+1][xPlayerIndex.current+1]==0)
-          if (
-            xBank.current < 16 ||
-            currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] == 0
-          ) {
-            setYTransformVar((prevCount) => prevCount - speedRef.current);
-            yBank.current = yBank.current - speedRef.current;
-            if (yBank.current < 0) {
-              yPlayerIndex.current = yPlayerIndex.current + 1;
-              yBank.current = 60;
+              xBank.current = 0;
             }
           }
         }
+    }
+    //if current key is a, the x cordinate becomes  the previous state - the speed
+
+    if (dirArr.current[0] === 'ArrowLeft') {
+      if (currentMap[yPlayerIndex.current][xPlayerIndex.current - 1] === 0 || xBank.current > 0)
+        if (
+          yBank.current + 32 < 64 ||
+          currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] == 0
+        ) {
+          {
+            setXTransformVar((prevCount) => prevCount + speedRef.current);
+            xBank.current = xBank.current - speedRef.current;
+            // console.log(yPlayerIndex.current,xPlayerIndex.current)
+
+            if (xBank.current < 0) {
+              // console.log("this one",xBank.current)
+
+              xPlayerIndex.current = xPlayerIndex.current - 1;
+              // console.log(yPlayerIndex.current, xPlayerIndex.current);
+              // alert(xPlayerIndex.current)
+              xBank.current = 60;
+            }
+          }
+        }
+    }
+
+    //if current key is w, the y cordinate becomes  the previous state + the speed
+    if (dirArr.current[0] === 'ArrowUp') {
+      if (currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 0 || yBank.current < 0) {
+        if (
+          xBank.current + 48 < 64 ||
+          currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
+        ) {
+          setYTransformVar((prevCount) => prevCount + speedRef.current);
+          // console.log(yPlayerIndex.current,xPlayerIndex.current)
+          yBank.current = yBank.current + speedRef.current;
+          if (yBank.current === 64) {
+            yPlayerIndex.current = yPlayerIndex.current - 1;
+            yBank.current = 0;
+          }
+        }
       }
-      requestRef.current = requestAnimationFrame(animate);
+    }
+    //if current key is s, the y cordinate becomes  the previous state - the speed
+
+    if (dirArr.current[0] === 'ArrowDown') {
+      if (currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 0 || yBank.current > 0) {
+        // if (xBank.current+32<64 || newMap[yPlayerIndex.current+1][xPlayerIndex.current+1]==0)
+        if (xBank.current < 16 || currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] == 0) {
+          setYTransformVar((prevCount) => prevCount - speedRef.current);
+          yBank.current = yBank.current - speedRef.current;
+          if (yBank.current < 0) {
+            yPlayerIndex.current = yPlayerIndex.current + 1;
+            yBank.current = 60;
+          }
+        }
+      }
+    }
+    requestRef.current = requestAnimationFrame(animate);
   };
 
   // Matt Birnholtz is going to go bald
@@ -20632,48 +20605,38 @@ const TrainTracksToTortous = (props) => {
           <div
             className="mapTTTT pixel-art"
             style={{
-              transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`,
-            }}
-          >
+              transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`
+            }}>
             {gridArray}
             <div
               className="character pixel-art"
               facing={facing.current}
               walking={walker}
               style={{
-                transform: `translate3d( ${600 - xTransformVar}px, ${
-                  272 - yTransformVar
-                }px, 0 )`,
-              }}
-            >
+                transform: `translate3d( ${600 - xTransformVar}px, ${272 - yTransformVar}px, 0 )`
+              }}>
               <div className="character_spritesheet pixel-art"></div>
             </div>
 
             <div
               className="blondeTTTV pixel-art"
               style={{
-                transform: `translate3d( ${1086}px, ${15720}px, 0 )`,
-              }}
-            >
+                transform: `translate3d( ${1086}px, ${15720}px, 0 )`
+              }}>
               <div className="blondeTTTV_spritesheet pixel-art"></div>
             </div>
 
             <div
               className="brunnetteTTTV pixel-art"
               style={{
-                transform: `translate3d( ${1086}px, ${15288}px, 0 )`,
-              }}
-            >
+                transform: `translate3d( ${1086}px, ${15288}px, 0 )`
+              }}>
               <div className="brunnetteTTTV_spritesheet pixel-art"></div>
             </div>
           </div>
         </div>
         {textValue ? (
-          <dialog
-            id="dialogStyle"
-            className={`${npcFace} textBox typewriter`}
-            open
-          >
+          <dialog id="dialogStyle" className={`${npcFace} textBox typewriter`} open>
             <p>{textValue}</p>
           </dialog>
         ) : null}

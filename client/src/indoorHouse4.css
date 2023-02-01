@@ -1,46 +1,43 @@
-
 .mapIH4 {
-    image-rendering: pixelated;
-    background-image: url("./assets/maps/IndoorHouse4nogridnpc.png");
-    background-size: 960px;
-    width: calc(37.5 * var(--grid-cell));
-    height: calc(37.5 * var(--grid-cell));
-    position: absolute;
-    background-repeat: no-repeat;
-    overflow: visible;
-    /* display: grid;
+  image-rendering: pixelated;
+  background-image: url('./assets/maps/IndoorHouse4nogridnpc.png');
+  background-size: 960px;
+  width: calc(37.5 * var(--grid-cell));
+  height: calc(37.5 * var(--grid-cell));
+  position: absolute;
+  background-repeat: no-repeat;
+  overflow: visible;
+  /* display: grid;
     grid-template-columns: repeat(15, 64px);
     grid-template-rows: repeat(15, 64px); */
 }
-
 
 /* .numbers {
     size: 100%;
     background: transparent;
 }  */
 
-  .guyIH4 {
-    position: absolute;
-      width: calc(var(--grid-cell)* 2);
-      height: calc(var(--grid-cell)* 3);
-      overflow: hidden;
-  }
+.guyIH4 {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 3);
+  overflow: hidden;
+}
 
-  .guyIH4_spritesheet {
-      background: url("./assets/images/IndoorHouse4guy.png") no-repeat no-repeat;
-      background-size: 100%;
-      width: calc(var(--grid-cell)* 7);
-      height: calc(var(--grid-cell)* 3);
-  }
+.guyIH4_spritesheet {
+  background: url('./assets/images/IndoorHouse4guy.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 7);
+  height: calc(var(--grid-cell) * 3);
+}
 
-  .guyIH4 .guyIH4_spritesheet {
-      animation: walkAnimation 13s steps(3) infinite;
-  }
+.guyIH4 .guyIH4_spritesheet {
+  animation: walkAnimation 13s steps(3) infinite;
+}
 
-
-  .faceGuyIH4 {
-      background: url("./assets/images/IndoorHouse4face.png") no-repeat no-repeat;
-      background-position: left top;
-      background-size: 12%;
-      background-size: content-box;
-  }
+.faceGuyIH4 {
+  background: url('./assets/images/IndoorHouse4face.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}

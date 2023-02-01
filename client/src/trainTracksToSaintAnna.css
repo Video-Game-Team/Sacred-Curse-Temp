@@ -1,100 +1,93 @@
-  .mapTTTSA {
-     image-rendering: pixelated;
-     background-image: url("./assets/maps/TraintracktoStAnnanogridnpc.png");
-     background-size: 2560px;
-     width: calc(100 * var(--grid-cell));
-     height: calc(375 * var(--grid-cell));
-     position: absolute;
-     background-repeat: no-repeat;
-     overflow: visible;
-     /* display: grid;
+.mapTTTSA {
+  image-rendering: pixelated;
+  background-image: url('./assets/maps/TraintracktoStAnnanogridnpc.png');
+  background-size: 2560px;
+  width: calc(100 * var(--grid-cell));
+  height: calc(375 * var(--grid-cell));
+  position: absolute;
+  background-repeat: no-repeat;
+  overflow: visible;
+  /* display: grid;
     grid-template-columns: repeat(40, 64px);
     grid-template-rows: repeat(150, 64px); */
- }
+}
 
-
- /* .numbers {
+/* .numbers {
     size: 100%;
     background: transparent;
 }   */
 
+.guardRTTSA {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
+}
 
- .guardRTTSA {
-     position: absolute;
-     width: calc(var(--grid-cell)* 2.5);
-     height: calc(var(--grid-cell)* 2.5);
-     overflow: hidden;
- }
+.guardRTTSA_spritesheet {
+  background: url('./assets/images/TrainTracksToSaintAnnaguardR.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 34);
+  height: calc(var(--grid-cell) * 3);
+}
 
- .guardRTTSA_spritesheet {
-     background: url("./assets/images/TrainTracksToSaintAnnaguardR.png") no-repeat no-repeat;
-     background-size: 100%;
-     width: calc(var(--grid-cell)* 34);
-     height: calc(var(--grid-cell)* 3);
- }
+.guardRTTSA .guardRTTSA_spritesheet {
+  animation: walkAnimation 3.6s steps(15) infinite;
+}
 
- .guardRTTSA .guardRTTSA_spritesheet {
-     animation: walkAnimation 3.6s steps(15) infinite;
- }
+.faceGuardRTTSA {
+  background: url('./assets/images/RanchHouse1guyface.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}
 
- .faceGuardRTTSA {
-      background: url("./assets/images/RanchHouse1guyface.png") no-repeat no-repeat;
-     background-position: left top;
-     background-size: 12%;
-     background-size: content-box;
- }
+.guardLTTSA {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
+}
 
+.guardLTTSA_spritesheet {
+  background: url('./assets/images/TrainTracksToSaintAnnaguardL.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 34);
+  height: calc(var(--grid-cell) * 3);
+}
 
+.guardLTTSA .guardLTTSA_spritesheet {
+  animation: walkAnimation 3.6s steps(15) infinite;
+}
 
-
- .guardLTTSA {
-     position: absolute;
-     width: calc(var(--grid-cell)* 2.5);
-     height: calc(var(--grid-cell)* 2.5);
-     overflow: hidden;
- }
-
- .guardLTTSA_spritesheet {
-   background: url("./assets/images/TrainTracksToSaintAnnaguardL.png") no-repeat no-repeat;
-     background-size: 100%;
-     width: calc(var(--grid-cell)* 34);
-     height: calc(var(--grid-cell)* 3);
- }
-
- .guardLTTSA .guardLTTSA_spritesheet {
-     animation: walkAnimation 3.6s steps(15) infinite;
- }
-
- .faceGuardLTTSA {
-     background: url("./assets/images/RanchHouse1guyface.png") no-repeat no-repeat;
-     background-position: left top;
-     background-size: 12%;
-     background-size: content-box;
- }
-
-
+.faceGuardLTTSA {
+  background: url('./assets/images/RanchHouse1guyface.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}
 
 .dockguyTTSA {
-    position: absolute;
-    width: calc(var(--grid-cell)* 2.5);
-    height: calc(var(--grid-cell)* 3);
-    overflow: hidden;
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 3);
+  overflow: hidden;
 }
 
 .dockguyTTSA_spritesheet {
-    background: url("./assets/images/IndoorHouse2guy.png") no-repeat no-repeat;
-    background-size: 100%;
-    width: calc(var(--grid-cell)* 34);
-    height: calc(var(--grid-cell)* 3);
+  background: url('./assets/images/IndoorHouse2guy.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 34);
+  height: calc(var(--grid-cell) * 3);
 }
 
 .dockguyTTSA .dockguyTTSA_spritesheet {
-    animation: walkAnimation 2.6s steps(5) infinite;
+  animation: walkAnimation 2.6s steps(5) infinite;
 }
 
 .faceDockguyTTSA {
-    background: url("./assets/images/IndoorHouse2guyface.png") no-repeat no-repeat;
-    background-position: left top;
-    background-size: 12%;
-    background-size: content-box;
+  background: url('./assets/images/IndoorHouse2guyface.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
 }

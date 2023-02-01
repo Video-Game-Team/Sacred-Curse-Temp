@@ -1,48 +1,46 @@
 .mapCC {
-    image-rendering: pixelated;
-    background-image: url("./assets/maps/CrystalCavernstweaksnogrid.png");
-    background-size: 3840px;
-    width: calc(150 * var(--grid-cell));
-    height: calc(150 * var(--grid-cell));
-    position: absolute;
-    background-repeat: no-repeat;
-    overflow: visible;
-    /* display: grid;
+  image-rendering: pixelated;
+  background-image: url('./assets/maps/CrystalCavernstweaksnogrid.png');
+  background-size: 3840px;
+  width: calc(150 * var(--grid-cell));
+  height: calc(150 * var(--grid-cell));
+  position: absolute;
+  background-repeat: no-repeat;
+  overflow: visible;
+  /* display: grid;
     grid-template-columns: repeat(71, 64px);
     grid-template-rows: repeat(60, 64px); */
 }
-
 
 /* .numbers {
     size: 100%;
     background: transparent;
 }  */
 
-
 @keyframes waterAnimation {
-    from {
-        transform: translate3d(0%, 0%, 0);
-    }
+  from {
+    transform: translate3d(0%, 0%, 0);
+  }
 
-    to {
-        transform: translate3d(0%, -1%, 0);
-    }
+  to {
+    transform: translate3d(0%, -1%, 0);
+  }
 }
 
- .water {
-    position: absolute;
-     width: calc(var(--grid-cell) * 6.8);
-     height: calc(var(--grid-cell)* 62.7);
-     overflow: hidden;
- }
+.water {
+  position: absolute;
+  width: calc(var(--grid-cell) * 6.8);
+  height: calc(var(--grid-cell) * 62.7);
+  overflow: hidden;
+}
 
- .water_spritesheet {
-     background: url("./assets/images/rivernogrid.png") no-repeat no-repeat;
-     background-size: 100%;
-     width: calc(var(--grid-cell)* 8);
-     height: calc(var(--grid-cell)* 80);
- }
+.water_spritesheet {
+  background: url('./assets/images/rivernogrid.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 8);
+  height: calc(var(--grid-cell) * 80);
+}
 
- .water .water_spritesheet {
-     animation: waterAnimation .5s steps(4) infinite;
- }
+.water .water_spritesheet {
+  animation: waterAnimation 0.5s steps(4) infinite;
+}

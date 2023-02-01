@@ -1,49 +1,43 @@
 .mapTown1 {
-    image-rendering: pixelated;
-    background-image: url("./assets/maps/TownRockPathnogridnpc.png");
-    background-size: 4544px;
-    width: calc(215 * var(--grid-cell));
-    height: calc(177.5 * var(--grid-cell));
-    position: absolute;
-    background-repeat: no-repeat;
-    overflow: visible;
-    /* display: grid;
+  image-rendering: pixelated;
+  background-image: url('./assets/maps/TownRockPathnogridnpc.png');
+  background-size: 4544px;
+  width: calc(215 * var(--grid-cell));
+  height: calc(177.5 * var(--grid-cell));
+  position: absolute;
+  background-repeat: no-repeat;
+  overflow: visible;
+  /* display: grid;
     grid-template-columns: repeat(71, 64px);
     grid-template-rows: repeat(86, 64px);  */
 }
-
 
 /* .numbers{
       size: 100%;
       background: transparent;
     }   */
 
-  
-   .mainGuardTM {
-      position: absolute;
-        width: calc(var(--grid-cell)* 2.5);
-        height: calc(var(--grid-cell)* 2.5);
-       overflow: hidden;
-   }
+.mainGuardTM {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
+}
 
-   .mainGuardTM_spritesheet {
-       background: url("./assets/images/MountainEntranceMainGuard.png") no-repeat no-repeat;
-       background-size: 100%;
-        width: calc(var(--grid-cell)* 7);
-        height: calc(var(--grid-cell)* 3);
-   }
+.mainGuardTM_spritesheet {
+  background: url('./assets/images/MountainEntranceMainGuard.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 7);
+  height: calc(var(--grid-cell) * 3);
+}
 
-   .mainGuardTM .mainGuardTM_spritesheet {
-    animation: walkAnimation 1.6s steps(3) infinite;
-   }
+.mainGuardTM .mainGuardTM_spritesheet {
+  animation: walkAnimation 1.6s steps(3) infinite;
+}
 
-
-   .faceMainGuardTM {
-       background: url("./assets/images/MountainEntranceMainGuardFace.png") no-repeat no-repeat;
-       background-position: left top;
-       background-size: 12%;
-       background-size: content-box;
-   }
-
-
-
+.faceMainGuardTM {
+  background: url('./assets/images/MountainEntranceMainGuardFace.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}

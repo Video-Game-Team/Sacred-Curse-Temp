@@ -1,99 +1,82 @@
-  .mapTTS {
-     image-rendering: pixelated;
-     background-image: url("./assets/maps/TortousTrainStationtweaksnogrid.png");
-     background-size: 6400px;
-     width: calc(250 * var(--grid-cell));
-     height: calc(100 * var(--grid-cell));
-     position: absolute;
-     background-repeat: no-repeat;
-     overflow: visible;
-     /* display: grid;
+.mapTTS {
+  image-rendering: pixelated;
+  background-image: url('./assets/maps/TortousTrainStationtweaksnogrid.png');
+  background-size: 6400px;
+  width: calc(250 * var(--grid-cell));
+  height: calc(100 * var(--grid-cell));
+  position: absolute;
+  background-repeat: no-repeat;
+  overflow: visible;
+  /* display: grid;
     grid-template-columns: repeat(100, 64px);
     grid-template-rows: repeat(40, 64px); */
- }
-
+}
 
 /* .numbers {
     size: 100%;
     background: transparent;
 }    */
 
- .guard1TTTS {
-     position: absolute;
-     width: calc(var(--grid-cell)* 2.5);
-     height: calc(var(--grid-cell)* 2.5);
-     overflow: hidden;
- }
+.guard1TTTS {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
+}
 
- .guard1TTTS_spritesheet {
-     background: url("./assets/images/TortousTrainStationarmy1.png") no-repeat no-repeat;
-     background-size: 100%;
-     width: calc(var(--grid-cell)* 7);
-     height: calc(var(--grid-cell)* 3);
- }
+.guard1TTTS_spritesheet {
+  background: url('./assets/images/TortousTrainStationarmy1.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 7);
+  height: calc(var(--grid-cell) * 3);
+}
 
- .guard1TTTS .guard1TTTS_spritesheet {
-     animation: walkAnimation 0.6s steps(3) infinite;
- }
+.guard1TTTS .guard1TTTS_spritesheet {
+  animation: walkAnimation 0.6s steps(3) infinite;
+}
 
+.faceGuard1TTTS {
+  background: url('./assets/images/TrainStationguard1.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}
 
- .faceGuard1TTTS {
-     background: url("./assets/images/TrainStationguard1.png") no-repeat no-repeat;
-     background-position: left top;
-     background-size: 12%;
-     background-size: content-box;
- }
+.generalTTTS {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
+}
 
+.generalTTTS_spritesheet {
+  background: url('./assets/images/TortousTrainStationGeneral.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 7);
+  height: calc(var(--grid-cell) * 3);
+}
 
+.generalTTTS .generalTTTS_spritesheet {
+  animation: walkAnimation 0.5s steps(3) infinite;
+}
 
+.faceGeneralTTTS {
+  background: url('./assets/images/TrainStationGeneralface.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}
 
- .generalTTTS {
-     position: absolute;
-     width: calc(var(--grid-cell)* 2.5);
-     height: calc(var(--grid-cell)* 2.5);
-     overflow: hidden;
- }
+.fountainTTTS {
+  position: absolute;
+  width: calc(var(--grid-cell) * 24);
+  height: calc(var(--grid-cell) * 24);
+  overflow: hidden;
+}
 
- .generalTTTS_spritesheet {
-     background: url("./assets/images/TortousTrainStationGeneral.png") no-repeat no-repeat;
-     background-size: 100%;
-     width: calc(var(--grid-cell)* 7);
-     height: calc(var(--grid-cell)* 3);
- }
-
- .generalTTTS .generalTTTS_spritesheet {
-     animation: walkAnimation .5s steps(3) infinite;
- }
-
-
- .faceGeneralTTTS {
-     background: url("./assets/images/TrainStationGeneralface.png") no-repeat no-repeat;
-     background-position: left top;
-     background-size: 12%;
-     background-size: content-box;
- }
-
-
-  .fountainTTTS {
-     position: absolute;
-     width: calc(var(--grid-cell)* 24);
-     height: calc(var(--grid-cell)* 24);
-     overflow: hidden;
- }
-
- .fountainTTTS_spritesheet {
-     background: url("./assets/images/Fountain.gif") no-repeat no-repeat;
-     background-size: 100%;
-     width: calc(var(--grid-cell)* 2.7);
-     height: calc(var(--grid-cell)* 4.2);
- }
-
-
-
-
-
-
-
-
-
-
+.fountainTTTS_spritesheet {
+  background: url('./assets/images/Fountain.gif') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 2.7);
+  height: calc(var(--grid-cell) * 4.2);
+}

@@ -1,22 +1,21 @@
 .mapF {
   image-rendering: pixelated;
-  background-image: url("./assets/maps/Farmmapnogridnpc.png");
-  background-size: 3840px; 
+  background-image: url('./assets/maps/Farmmapnogridnpc.png');
+  background-size: 3840px;
   width: calc(150 * var(--grid-cell));
-  height: calc(115 * var(--grid-cell)); 
+  height: calc(115 * var(--grid-cell));
   position: absolute;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   overflow: visible;
   /* display: grid;
   grid-template-columns: repeat(46, 64px);
   grid-template-rows: repeat(60, 64px); */
-} 
-    
+}
+
 /* .numbers {
     size: 100%;
     background: transparent;
 } */
-
 
 @keyframes walkAnimationFarmer {
   from {
@@ -28,101 +27,96 @@
   }
 }
 
-     .farmer1FM {
-      position: absolute;
-       width: calc(var(--grid-cell)* 2.5);
-       height: calc(var(--grid-cell)* 2.5);
-       overflow: hidden;
-     }
-  
-     .farmer1FM_spritesheet {
-       background: url("./assets/images/farmer.png") no-repeat no-repeat;
-       background-size: 100%;
-       width: calc(var(--grid-cell) * 34);
-       height: calc(var(--grid-cell)* 3);
-       background-position-x: calc(var(--pixel-size) * -99);
-     }
-  
-     .farmer1FM .farmer1FM_spritesheet {
-      animation: walkAnimationFarmer 3.0s steps(2) infinite;
-     }
-  
-  
-     .facefarmer1FM {
-       background: url("./assets/images/InddorHouse2guyface.png") no-repeat no-repeat;
-       background-position: left top;
-       background-size: 12%;
-       background-size: content-box;
-     }
+.farmer1FM {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
+}
 
+.farmer1FM_spritesheet {
+  background: url('./assets/images/farmer.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 34);
+  height: calc(var(--grid-cell) * 3);
+  background-position-x: calc(var(--pixel-size) * -99);
+}
 
-     .farmer2FM {
-      position: absolute;
-      width: calc(var(--grid-cell)* 2.5);
-      height: calc(var(--grid-cell)* 2.5);
-      overflow: hidden;
-     }
-  
-     .farmer2FM_spritesheet {
-       background: url("./assets/images/farmer2.png") no-repeat no-repeat;
-       background-size: 100%;
-       width: calc(var(--grid-cell) * 34);
-       height: calc(var(--grid-cell)* 3);
-       background-position-y: calc(var(--pixel-size) * -160);
-       background-position-x: calc(var(--pixel-size) * -99);
-     }
-  
-     .farmer2FM .farmer2FM_spritesheet {
-       animation: walkAnimationFarmer 2.0s steps(2) infinite;
-     }
-  
+.farmer1FM .farmer1FM_spritesheet {
+  animation: walkAnimationFarmer 3s steps(2) infinite;
+}
 
+.facefarmer1FM {
+  background: url('./assets/images/InddorHouse2guyface.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}
 
-    .girlFM {
-      position: absolute;
-       width: calc(var(--grid-cell)* 2.5);
-       height: calc(var(--grid-cell)* 2.5);
-       overflow: hidden;
-     }
-  
-     .girlFM_spritesheet {
-       background: url("./assets/images/FarmMapflowergirl.png") no-repeat no-repeat;
-       background-size: 100%;
-       width: calc(var(--grid-cell) * 7);
-       height: calc(var(--grid-cell)* 3);
-     }
-  
-     .girlFM .girlFM_spritesheet {
-      animation: walkAnimationFarmer 2.0s steps(3) infinite;
-     }
-  
-     .faceGirlFM {
-       background: url("./assets/images/IndoorHouse8girlface.png") no-repeat no-repeat;
-       background-position: left top;
-       background-size: 12%;
-       background-size: content-box;
-     }
-  
+.farmer2FM {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
+}
+
+.farmer2FM_spritesheet {
+  background: url('./assets/images/farmer2.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 34);
+  height: calc(var(--grid-cell) * 3);
+  background-position-y: calc(var(--pixel-size) * -160);
+  background-position-x: calc(var(--pixel-size) * -99);
+}
+
+.farmer2FM .farmer2FM_spritesheet {
+  animation: walkAnimationFarmer 2s steps(2) infinite;
+}
+
+.girlFM {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
+}
+
+.girlFM_spritesheet {
+  background: url('./assets/images/FarmMapflowergirl.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 7);
+  height: calc(var(--grid-cell) * 3);
+}
+
+.girlFM .girlFM_spritesheet {
+  animation: walkAnimationFarmer 2s steps(3) infinite;
+}
+
+.faceGirlFM {
+  background: url('./assets/images/IndoorHouse8girlface.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}
 
 @keyframes square {
-  0%
-  {
-    margin-left: 0px; margin-top: 0px;
+  0% {
+    margin-left: 0px;
+    margin-top: 0px;
   }
-  25%
-  {
-    margin-left: 200px; margin-top: 0px;
+  25% {
+    margin-left: 200px;
+    margin-top: 0px;
   }
-  50%
-  {
-    margin-left: 200px; margin-top: 200px;
+  50% {
+    margin-left: 200px;
+    margin-top: 200px;
   }
-  75%
-  {
-    margin-top: 200px; margin-left: 0px;
+  75% {
+    margin-top: 200px;
+    margin-left: 0px;
   }
-  100%
-  {
-    margin-left: 0px; margin-top: 0px;
+  100% {
+    margin-left: 0px;
+    margin-top: 0px;
   }
 }

@@ -1,16 +1,16 @@
-  .mapLMP {
-     image-rendering: pixelated;
-     background-image: url("./assets/maps/LuLuMountainPassnewtweaksnogrid.png");
-     background-size: 4352px;
-     width: calc(290 * var(--grid-cell));
-     height: calc(170 * var(--grid-cell));
-     position: absolute;
-     background-repeat: no-repeat;
-     overflow: visible;
-     /* display: grid;
+.mapLMP {
+  image-rendering: pixelated;
+  background-image: url('./assets/maps/LuLuMountainPassnewtweaksnogrid.png');
+  background-size: 4352px;
+  width: calc(290 * var(--grid-cell));
+  height: calc(170 * var(--grid-cell));
+  position: absolute;
+  background-repeat: no-repeat;
+  overflow: visible;
+  /* display: grid;
     grid-template-columns: repeat(68, 64px);
     grid-template-rows: repeat(36, 64px); */
- }
+}
 
 /* 
  .numbers {

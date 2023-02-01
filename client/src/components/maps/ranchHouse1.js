@@ -41,18 +41,18 @@ const RanchHouse1 = (props) => {
   const [textValue, setTextValue] = useState(null);
   const [npcFace, setNpcFace] = useState();
 
-    //Music Playing
-    const clickAudio1 = () => new Audio(SnowMan).play();
+  //Music Playing
+  const clickAudio1 = () => new Audio(SnowMan).play();
 
-    // //NPC Dialogue sound effect
-    const clickAudio2 = () => new Audio(text).play();
+  // //NPC Dialogue sound effect
+  const clickAudio2 = () => new Audio(text).play();
 
-    //Starts off Music Loop
-    useEffect(() => {
-      {
-        clickAudio1();
-      }
-    }, []);
+  //Starts off Music Loop
+  useEffect(() => {
+    {
+      clickAudio1();
+    }
+  }, []);
 
   // let currentMap2 = [
   //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -77,18 +77,9 @@ const RanchHouse1 = (props) => {
     [17, 397, 398, 2003, 447, 448, 312, 313, 314, 447, 448, 2003, 397, 398, 27],
     [3221225513, 6309, 6310, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6014, 6015, 41],
     [3221225513, 6328, 6329, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6033, 6034, 41],
-    [
-      3221225513, 3103, 3104, 3105, 3053, 3054, 0, 0, 0, 3053, 3054, 3055, 3056,
-      3057, 41,
-    ],
-    [
-      3221225513, 3119, 3120, 3121, 3069, 3070, 0, 0, 0, 3069, 3070, 3071, 3072,
-      3073, 41,
-    ],
-    [
-      3221225513, 3135, 3136, 3137, 2130, 0, 0, 0, 0, 0, 2129, 1954, 3088, 3089,
-      41,
-    ],
+    [3221225513, 3103, 3104, 3105, 3053, 3054, 0, 0, 0, 3053, 3054, 3055, 3056, 3057, 41],
+    [3221225513, 3119, 3120, 3121, 3069, 3070, 0, 0, 0, 3069, 3070, 3071, 3072, 3073, 41],
+    [3221225513, 3135, 3136, 3137, 2130, 0, 0, 0, 0, 0, 2129, 1954, 3088, 3089, 41],
     [3221225513, 2979, 0, 1969, 1970, 0, 0, 0, 0, 0, 1969, 1970, 0, 2979, 41],
     [3221225513, 2995, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2995, 41],
     [3221225513, 3011, 0, 0, 0, 0, 3236, 2923, 3238, 0, 0, 0, 0, 3011, 41],
@@ -97,14 +88,11 @@ const RanchHouse1 = (props) => {
     [3221225513, 1989, 1990, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1989, 1990, 41],
     [3221225513, 2005, 2006, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2005, 2006, 41],
     [3221225513, 2021, 2022, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2021, 2022, 41],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
   ];
 
   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  console.log(
-    'VALUE Right',
-    currentMap[yPlayerIndex.current][xPlayerIndex.current]
-  );
+  console.log('VALUE Right', currentMap[yPlayerIndex.current][xPlayerIndex.current]);
 
   // useEffect(() => {
   //   let tempGrid = [];
@@ -230,9 +218,9 @@ const RanchHouse1 = (props) => {
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 3) ||
             (yPlayerIndex.current === 2 && xPlayerIndex.current === 3)
           ) {
-             setNpcFace('faceGuy1RH1');
-             setTextValue('Kids, what a handfull!');
-             clickAudio2();
+            setNpcFace('faceGuy1RH1');
+            setTextValue('Kids, what a handfull!');
+            clickAudio2();
           }
           //YO Mama NPC
           // if (
@@ -263,9 +251,9 @@ const RanchHouse1 = (props) => {
             (yPlayerIndex.current === 3 && xPlayerIndex.current === 11) ||
             (yPlayerIndex.current === 4 && xPlayerIndex.current === 11)
           ) {
-             setNpcFace('faceGirl1RH1');
-             setTextValue('My dad is mad at me');
-             clickAudio2();
+            setNpcFace('faceGirl1RH1');
+            setTextValue('My dad is mad at me');
+            clickAudio2();
           }
           //YO Mama NPC
           // if (
@@ -304,27 +292,23 @@ const RanchHouse1 = (props) => {
         if (facing.current === 'up') {
           if (
             xBank.current + 32 > 64 &&
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
-              'door1'
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] === 'door1'
           ) {
           }
           if (
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
-              'sign1' &&
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 'sign1' &&
             64 - xBank.current > 32
           ) {
             // console.log('sign1');
           }
           if (
             xBank.current + 32 > 64 &&
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
-              'sign2'
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] === 'sign2'
           ) {
             // console.log('sign2');
           }
           if (
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
-              'sign2' &&
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 'sign2' &&
             64 - xBank.current > 32
           ) {
             // console.log('sign2');
@@ -332,21 +316,16 @@ const RanchHouse1 = (props) => {
         }
         if (facing.current == null) {
           if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
-              'sign1' &&
+            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 'sign1' &&
             xBank.current + 32 < 64
           ) {
             // console.log('sign1');
           }
-          if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current + 1] ===
-            'sign2'
-          ) {
+          if (currentMap[yPlayerIndex.current + 1][xPlayerIndex.current + 1] === 'sign2') {
             // console.log('poopshit');
           }
           if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
-              'sign2' &&
+            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 'sign2' &&
             xBank.current + 32 < 64
           ) {
             // console.log('sign2');
@@ -415,10 +394,7 @@ const RanchHouse1 = (props) => {
     //if current key is d, the x cordinate becomes  the previous state + the speed
 
     if (dirArr.current[0] === 'ArrowRight') {
-      if (
-        currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] === 0 ||
-        xBank.current < 0
-      )
+      if (currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] === 0 || xBank.current < 0)
         if (
           yBank.current + 32 < 64 ||
           currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
@@ -439,10 +415,7 @@ const RanchHouse1 = (props) => {
     //if current key is a, the x cordinate becomes  the previous state - the speed
 
     if (dirArr.current[0] === 'ArrowLeft') {
-      if (
-        currentMap[yPlayerIndex.current][xPlayerIndex.current - 1] === 0 ||
-        xBank.current > 0
-      )
+      if (currentMap[yPlayerIndex.current][xPlayerIndex.current - 1] === 0 || xBank.current > 0)
         if (
           yBank.current + 32 < 64 ||
           currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] == 0
@@ -466,10 +439,7 @@ const RanchHouse1 = (props) => {
 
     //if current key is w, the y cordinate becomes  the previous state + the speed
     if (dirArr.current[0] === 'ArrowUp') {
-      if (
-        currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 0 ||
-        yBank.current < 0
-      ) {
+      if (currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 0 || yBank.current < 0) {
         if (
           xBank.current + 48 < 64 ||
           currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
@@ -487,15 +457,9 @@ const RanchHouse1 = (props) => {
     //if current key is s, the y cordinate becomes  the previous state - the speed
 
     if (dirArr.current[0] === 'ArrowDown') {
-      if (
-        currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 0 ||
-        yBank.current > 0
-      ) {
+      if (currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 0 || yBank.current > 0) {
         // if (xBank.current+32<64 || newMap[yPlayerIndex.current+1][xPlayerIndex.current+1]==0)
-        if (
-          xBank.current < 16 ||
-          currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] == 0
-        ) {
+        if (xBank.current < 16 || currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] == 0) {
           setYTransformVar((prevCount) => prevCount - speedRef.current);
           yBank.current = yBank.current - speedRef.current;
           if (yBank.current < 0) {
@@ -537,52 +501,38 @@ const RanchHouse1 = (props) => {
           <div
             className="mapRH1 pixel-art"
             style={{
-              transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`,
-            }}
-          >
+              transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`
+            }}>
             {gridArray}
             <div
               className="character pixel-art"
               facing={facing.current}
               walking={walker}
               style={{
-                transform: `translate3d( ${600 - xTransformVar}px, ${
-                  272 - yTransformVar
-                }px, 0 )`,
-              }}
-            >
+                transform: `translate3d( ${600 - xTransformVar}px, ${272 - yTransformVar}px, 0 )`
+              }}>
               <div className="character_spritesheet pixel-art"></div>
             </div>
-
 
             <div
               className="guy1RH1 pixel-art"
               style={{
-                transform: `translate3d( ${85}px, ${133}px, 0 )`,
-              }}
-            >
+                transform: `translate3d( ${85}px, ${133}px, 0 )`
+              }}>
               <div className="guy1RH1_spritesheet pixel-art"></div>
             </div>
 
             <div
               className="girl1RH1 pixel-art"
               style={{
-                transform: `translate3d( ${755}px, ${150}px, 0 )`,
-              }}
-            >
+                transform: `translate3d( ${755}px, ${150}px, 0 )`
+              }}>
               <div className="girl1RH1_spritesheet pixel-art"></div>
             </div>
-
-
-
           </div>
         </div>
         {textValue ? (
-          <dialog
-            id="dialogStyle"
-            className={`${npcFace} textBox typewriter`}
-            open
-          >
+          <dialog id="dialogStyle" className={`${npcFace} textBox typewriter`} open>
             <p>{textValue}</p>
           </dialog>
         ) : null}

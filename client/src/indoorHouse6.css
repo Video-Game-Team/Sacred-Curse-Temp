@@ -1,13 +1,13 @@
 .mapIH6 {
-    image-rendering: pixelated;
-    background-image: url("./assets/maps/IndoorHouse6nogridnpc.png");
-    background-size: 960px;
-    width: calc(37.5 * var(--grid-cell));
-    height: calc(37.5 * var(--grid-cell));
-    position: absolute;
-    background-repeat: no-repeat;
-    overflow: visible;
-    /* display: grid;
+  image-rendering: pixelated;
+  background-image: url('./assets/maps/IndoorHouse6nogridnpc.png');
+  background-size: 960px;
+  width: calc(37.5 * var(--grid-cell));
+  height: calc(37.5 * var(--grid-cell));
+  position: absolute;
+  background-repeat: no-repeat;
+  overflow: visible;
+  /* display: grid;
     grid-template-columns: repeat(15, 64px);
     grid-template-rows: repeat(15, 64px); */
 }
@@ -17,29 +17,27 @@
     background: transparent;
 }   */
 
+.girlIH6 {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 3);
+  overflow: hidden;
+}
 
- .girlIH6 {
-    position: absolute;
-     width: calc(var(--grid-cell)* 2);
-     height: calc(var(--grid-cell)* 3);
-     overflow: hidden;
- }
+.girlIH6_spritesheet {
+  background: url('./assets/images/IndoorHouse6girl.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 34);
+  height: calc(var(--grid-cell) * 3);
+}
 
- .girlIH6_spritesheet {
-     background: url("./assets/images/IndoorHouse6girl.png") no-repeat no-repeat;
-     background-size: 100%;
-     width: calc(var(--grid-cell)*34);
-     height: calc(var(--grid-cell)* 3);
- }
+.girlIH6 .girlIH6_spritesheet {
+  animation: walkAnimation 3.5s steps(15) infinite;
+}
 
- .girlIH6 .girlIH6_spritesheet {
-     animation: walkAnimation 3.5s steps(15) infinite;
- }
-
-
- .faceGirlIH6 {
-     background: url("./assets/images/IndoorHouse6girlface.png") no-repeat no-repeat;
-     background-position: left top;
-     background-size: 12%;
-     background-size: content-box;
- }
+.faceGirlIH6 {
+  background: url('./assets/images/IndoorHouse6girlface.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}

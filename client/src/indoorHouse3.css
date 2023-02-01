@@ -1,72 +1,68 @@
 .mapIH3 {
-    image-rendering: pixelated;
-    background-image: url("./assets/maps/IndoorHouse3nogridnpc.png");
-    background-size: 960px;
-    width: calc(37.5 * var(--grid-cell));
-    height: calc(37.5 * var(--grid-cell));
-    position: absolute;
-    background-repeat: no-repeat;
-    overflow: visible;
-    /* display: grid;
+  image-rendering: pixelated;
+  background-image: url('./assets/maps/IndoorHouse3nogridnpc.png');
+  background-size: 960px;
+  width: calc(37.5 * var(--grid-cell));
+  height: calc(37.5 * var(--grid-cell));
+  position: absolute;
+  background-repeat: no-repeat;
+  overflow: visible;
+  /* display: grid;
     grid-template-columns: repeat(15, 64px);
     grid-template-rows: repeat(15, 64px); */
 }
-
 
 /* .numbers {
     size: 100%;
     background: transparent;
 }  */
 
-   .girl1 {
-       position: absolute;
-       width: calc(var(--grid-cell)* 2);
-       height: calc(var(--grid-cell)* 3);
-       overflow: hidden;
-   }
+.girl1 {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 3);
+  overflow: hidden;
+}
 
-   .girl1_spritesheet {
-       background: url("./assets/images/IndoorHouse3Girl1.png") no-repeat no-repeat;
-       background-size: 100%;
-       width: calc(var(--grid-cell)*34);
-       height: calc(var(--grid-cell)* 3);
-   }
+.girl1_spritesheet {
+  background: url('./assets/images/IndoorHouse3Girl1.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 34);
+  height: calc(var(--grid-cell) * 3);
+}
 
-   .girl1 .girl1_spritesheet {
-       animation: walkAnimation 3.5s steps(15) infinite;
-   }
+.girl1 .girl1_spritesheet {
+  animation: walkAnimation 3.5s steps(15) infinite;
+}
 
+.faceGirl1 {
+  background: url('./assets/images/IndoorHouse3girl1face.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}
 
-   .faceGirl1 {
-       background: url("./assets/images/IndoorHouse3girl1face.png") no-repeat no-repeat;
-       background-position: left top;
-       background-size: 12%;
-       background-size: content-box;
-   }
+.girl2 {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.2);
+  height: calc(var(--grid-cell) * 2.2);
+  overflow: hidden;
+}
 
+.girl2_spritesheet {
+  background: url('./assets/images/IndoorHouse3Girl2.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 9);
+  height: calc(var(--grid-cell) * 9);
+}
 
-   .girl2 {
-    position: absolute;
-       width: calc(var(--grid-cell)* 2.2);
-       height: calc(var(--grid-cell)* 2.2);
-       overflow: hidden;
-   }
+.girl2 .girl2_spritesheet {
+  animation: walkAnimation 20s steps(4) infinite;
+}
 
-   .girl2_spritesheet {
-       background: url("./assets/images/IndoorHouse3Girl2.png") no-repeat no-repeat;
-       background-size: 100%;
-       width: calc(var(--grid-cell)* 9);
-       height: calc(var(--grid-cell)* 9);
-   }
-
-   .girl2 .girl2_spritesheet {
-       animation: walkAnimation 20s steps(4) infinite;
-   }
-
-
-   .faceGirl2 {
-       background: url("./assets/images/IndoorHouse3girl2face.png") no-repeat no-repeat;
-       background-position: left top;
-       background-size: 12%;
-       background-size: content-box;
-   }
+.faceGirl2 {
+  background: url('./assets/images/IndoorHouse3girl2face.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}

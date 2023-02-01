@@ -1,17 +1,16 @@
 .mapS {
-    image-rendering: pixelated;
-    background-image: url("./assets/maps/Sigelenogrid.png");
-    background-size: 14080px;
-    width: calc(550 * var(--grid-cell));
-    height: calc(220 * var(--grid-cell));
-    position: absolute;
-    background-repeat: no-repeat;
-    overflow: visible;
-    /* display: grid;
+  image-rendering: pixelated;
+  background-image: url('./assets/maps/Sigelenogrid.png');
+  background-size: 14080px;
+  width: calc(550 * var(--grid-cell));
+  height: calc(220 * var(--grid-cell));
+  position: absolute;
+  background-repeat: no-repeat;
+  overflow: visible;
+  /* display: grid;
     grid-template-columns: repeat(220, 64px);
     grid-template-rows: repeat(88, 64px); */
 }
-
 
 /* .numbers {
     size: 100%;

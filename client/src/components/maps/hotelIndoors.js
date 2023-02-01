@@ -80,61 +80,37 @@ const HotelIndoors = (props) => {
 
   let currentMap = [
     [
-      6991, 6991, 6991, 7450, 7451, 7454, 7453, 7454, 7455, 7456, 6932, 7641,
-      7642, 6935, 6936, 6937,
+      6991, 6991, 6991, 7450, 7451, 7454, 7453, 7454, 7455, 7456, 6932, 7641, 7642, 6935, 6936, 6937
     ],
     [
-      6991, 6991, 6940, 7639, 7467, 7470, 7469, 7470, 7471, 7472, 6948, 7661,
-      7662, 6951, 7639, 6953,
+      6991, 6991, 6940, 7639, 7467, 7470, 7469, 7470, 7471, 7472, 6948, 7661, 7662, 6951, 7639, 6953
     ],
     [
-      6991, 6991, 6956, 7659, 7483, 7486, 7485, 7486, 7487, 7488, 6964, 7681,
-      7682, 6967, 7659, 6969,
+      6991, 6991, 6956, 7659, 7483, 7486, 7485, 7486, 7487, 7488, 6964, 7681, 7682, 6967, 7659, 6969
     ],
-    [
-      6991, 6991, 6972, 7498, 0, 0, 0, 7502, 7503, 7504, 0, 6304, 6305, 6983,
-      6984, 6985,
-    ],
+    [6991, 6991, 6972, 7498, 0, 0, 0, 7502, 7503, 7504, 0, 6304, 6305, 6983, 6984, 6985],
     [6991, 6991, 6988, 0, 0, 0, 0, 0, 0, 0, 0, 6323, 6324, 7344, 7345, 7001],
     [6991, 6991, 7004, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 7360, 7361, 7017],
     [6991, 6991, 7020, 0, 7554, 1, 7554, 1, 7554, 0, 0, 0, 0, 7376, 7377, 7033],
     [6991, 6991, 7036, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 7049],
     [6991, 6991, 7052, 0, 7554, 1, 7554, 1, 7554, 1, 0, 0, 0, 0, 0, 7065],
     [6991, 6991, 7068, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7081],
-    [
-      6991, 6991, 7084, 8455, 8456, 8457, 8458, 0, 0, 0, 0, 8455, 8456, 8457,
-      8458, 7097,
-    ],
-    [
-      7098, 7099, 7639, 7101, 7818, 7103, 7104, 7105, 0, 0, 7108, 7109, 7110,
-      7111, 7112, 7113,
-    ],
-    [
-      7114, 7910, 7659, 7117, 7838, 7119, 7910, 7121, 0, 0, 7124, 7125, 7126,
-      7127, 7128, 7129,
-    ],
+    [6991, 6991, 7084, 8455, 8456, 8457, 8458, 0, 0, 0, 0, 8455, 8456, 8457, 8458, 7097],
+    [7098, 7099, 7639, 7101, 7818, 7103, 7104, 7105, 0, 0, 7108, 7109, 7110, 7111, 7112, 7113],
+    [7114, 7910, 7659, 7117, 7838, 7119, 7910, 7121, 0, 0, 7124, 7125, 7126, 7127, 7128, 7129],
     [0, 1, 0, 0, 0, 0, 1, 7137, 0, 0, 7140, 7141, 7142, 7143, 7144, 7145],
     [0, 0, 0, 0, 0, 0, 0, 7153, 0, 0, 7156, 7157, 7158, 7159, 7159, 7160],
     [7162, 0, 0, 8115, 8116, 0, 0, 0, 0, 0, 7172, 7173, 7174, 7175, 7175, 7176],
     [0, 0, 0, 8131, 8132, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [7194, 0, 0, 8147, 8148, 0, 0, 7201, 0, 0, 0, 0, 0, 0, 0, 0],
     [7210, 1, 1, 1, 1, 1, 1, 7217, 0, 0, 7220, 7221, 7222, 7223, 7224, 7224],
-    [
-      7226, 8224, 8225, 0, 0, 8224, 8225, 7233, 0, 0, 7236, 7237, 7238, 7239,
-      7240, 7241,
-    ],
-    [
-      7242, 8240, 8241, 0, 0, 8240, 8241, 7249, 0, 0, 7252, 7253, 7254, 7255,
-      7256, 7257,
-    ],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [7226, 8224, 8225, 0, 0, 8224, 8225, 7233, 0, 0, 7236, 7237, 7238, 7239, 7240, 7241],
+    [7242, 8240, 8241, 0, 0, 8240, 8241, 7249, 0, 0, 7252, 7253, 7254, 7255, 7256, 7257],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   ];
 
   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  console.log(
-    'VALUE Right',
-    currentMap[yPlayerIndex.current][xPlayerIndex.current]
-  );
+  console.log('VALUE Right', currentMap[yPlayerIndex.current][xPlayerIndex.current]);
 
   // useEffect(() => {
   //   let tempGrid = [];
@@ -196,8 +172,8 @@ const HotelIndoors = (props) => {
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 11) ||
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 12)
           ) {
-             setNpcFace('faceGuard');
-             clickAudio2();
+            setNpcFace('faceGuard');
+            clickAudio2();
             setTextValue("Please don't come any closer to this painting");
           }
           //YO Mama NPC
@@ -335,27 +311,23 @@ const HotelIndoors = (props) => {
         if (facing.current === 'up') {
           if (
             xBank.current + 32 > 64 &&
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
-              'door1'
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] === 'door1'
           ) {
           }
           if (
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
-              'sign1' &&
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 'sign1' &&
             64 - xBank.current > 32
           ) {
             // console.log('sign1');
           }
           if (
             xBank.current + 32 > 64 &&
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
-              'sign2'
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] === 'sign2'
           ) {
             // console.log('sign2');
           }
           if (
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
-              'sign2' &&
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 'sign2' &&
             64 - xBank.current > 32
           ) {
             // console.log('sign2');
@@ -363,21 +335,16 @@ const HotelIndoors = (props) => {
         }
         if (facing.current == null) {
           if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
-              'sign1' &&
+            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 'sign1' &&
             xBank.current + 32 < 64
           ) {
             // console.log('sign1');
           }
-          if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current + 1] ===
-            'sign2'
-          ) {
+          if (currentMap[yPlayerIndex.current + 1][xPlayerIndex.current + 1] === 'sign2') {
             // console.log('poopshit');
           }
           if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
-              'sign2' &&
+            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 'sign2' &&
             xBank.current + 32 < 64
           ) {
             // console.log('sign2');
@@ -446,10 +413,7 @@ const HotelIndoors = (props) => {
     //if current key is d, the x cordinate becomes  the previous state + the speed
 
     if (dirArr.current[0] === 'ArrowRight') {
-      if (
-        currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] === 0 ||
-        xBank.current < 0
-      )
+      if (currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] === 0 || xBank.current < 0)
         if (
           yBank.current + 32 < 64 ||
           currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
@@ -470,10 +434,7 @@ const HotelIndoors = (props) => {
     //if current key is a, the x cordinate becomes  the previous state - the speed
 
     if (dirArr.current[0] === 'ArrowLeft') {
-      if (
-        currentMap[yPlayerIndex.current][xPlayerIndex.current - 1] === 0 ||
-        xBank.current > 0
-      )
+      if (currentMap[yPlayerIndex.current][xPlayerIndex.current - 1] === 0 || xBank.current > 0)
         if (
           yBank.current + 32 < 64 ||
           currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] == 0
@@ -497,10 +458,7 @@ const HotelIndoors = (props) => {
 
     //if current key is w, the y cordinate becomes  the previous state + the speed
     if (dirArr.current[0] === 'ArrowUp') {
-      if (
-        currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 0 ||
-        yBank.current < 0
-      ) {
+      if (currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 0 || yBank.current < 0) {
         if (
           xBank.current + 48 < 64 ||
           currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
@@ -518,15 +476,9 @@ const HotelIndoors = (props) => {
     //if current key is s, the y cordinate becomes  the previous state - the speed
 
     if (dirArr.current[0] === 'ArrowDown') {
-      if (
-        currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 0 ||
-        yBank.current > 0
-      ) {
+      if (currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 0 || yBank.current > 0) {
         // if (xBank.current+32<64 || newMap[yPlayerIndex.current+1][xPlayerIndex.current+1]==0)
-        if (
-          xBank.current < 16 ||
-          currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] == 0
-        ) {
+        if (xBank.current < 16 || currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] == 0) {
           setYTransformVar((prevCount) => prevCount - speedRef.current);
           yBank.current = yBank.current - speedRef.current;
           if (yBank.current < 0) {
@@ -568,39 +520,30 @@ const HotelIndoors = (props) => {
           <div
             className="mapHI pixel-art"
             style={{
-              transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`,
-            }}
-          >
+              transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`
+            }}>
             {gridArray}
             <div
               className="character pixel-art"
               facing={facing.current}
               walking={walker}
               style={{
-                transform: `translate3d( ${600 - xTransformVar}px, ${
-                  272 - yTransformVar
-                }px, 0 )`,
-              }}
-            >
+                transform: `translate3d( ${600 - xTransformVar}px, ${272 - yTransformVar}px, 0 )`
+              }}>
               <div className="character_spritesheet pixel-art"></div>
             </div>
 
             <div
               className="guard pixel-art"
               style={{
-                transform: `translate3d( ${700}px, ${165}px, 0 )`,
-              }}
-            >
+                transform: `translate3d( ${700}px, ${165}px, 0 )`
+              }}>
               <div className="guard_spritesheet pixel-art"></div>
             </div>
           </div>
         </div>
         {textValue ? (
-          <dialog
-            id="dialogStyle"
-            className={`${npcFace} textBox typewriter`}
-            open
-          >
+          <dialog id="dialogStyle" className={`${npcFace} textBox typewriter`} open>
             <p>{textValue}</p>
           </dialog>
         ) : null}

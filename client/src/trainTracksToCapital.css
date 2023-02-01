@@ -1,46 +1,43 @@
- .mapTTTC {
-     image-rendering: pixelated;
-     background-image: url("./assets/maps/TraintracktoCapitalnogridnpc.png");
-     background-size: 3840px;
-     width: calc(150 * var(--grid-cell));
-     height: calc(375 * var(--grid-cell));
-     position: absolute;
-     background-repeat: no-repeat;
-     overflow: visible;
-     /* display: grid;
+.mapTTTC {
+  image-rendering: pixelated;
+  background-image: url('./assets/maps/TraintracktoCapitalnogridnpc.png');
+  background-size: 3840px;
+  width: calc(150 * var(--grid-cell));
+  height: calc(375 * var(--grid-cell));
+  position: absolute;
+  background-repeat: no-repeat;
+  overflow: visible;
+  /* display: grid;
     grid-template-columns: repeat(60, 64px);
     grid-template-rows: repeat(150, 64px); */
- }
+}
 
-
- /* .numbers {
+/* .numbers {
     size: 100%;
     background: transparent;
 }  */
 
+.guard1TTTC {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
+}
 
- .guard1TTTC {
-     position: absolute;
-     width: calc(var(--grid-cell)* 2.5);
-     height: calc(var(--grid-cell)* 2.5);
-     overflow: hidden;
- }
+.guard1TTTC_spritesheet {
+  background: url('./assets/images/MountainEntranceMainGuard.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 7);
+  height: calc(var(--grid-cell) * 3);
+}
 
- .guard1TTTC_spritesheet {
-     background: url("./assets/images/MountainEntranceMainGuard.png") no-repeat no-repeat;
-     background-size: 100%;
-     width: calc(var(--grid-cell)* 7);
-     height: calc(var(--grid-cell)* 3);
- }
+.guard1TTTC .guard1TTTC_spritesheet {
+  animation: walkAnimation 1.6s steps(3) infinite;
+}
 
- .guard1TTTC .guard1TTTC_spritesheet {
-     animation: walkAnimation 1.6s steps(3) infinite;
- }
-
-
- .faceGuard1TTTC {
-     background: url("./assets/images/IndoorHouse3girl2face.png") no-repeat no-repeat;
-     background-position: left top;
-     background-size: 12%;
-     background-size: content-box;
- }
+.faceGuard1TTTC {
+  background: url('./assets/images/IndoorHouse3girl2face.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}

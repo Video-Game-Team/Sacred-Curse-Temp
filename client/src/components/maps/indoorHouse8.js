@@ -73,10 +73,7 @@ const IndoorHouse8 = (props) => {
 
   let currentMap = [
     [3, 2645, 2646, 6, 6, 6, 6, 6, 5, 6, 4, 2597, 2598, 2599, 13],
-    [
-      17, 2661, 2662, 20, 1140, 2128, 2129, 611, 2128, 2129, 18, 2613, 2614,
-      2615, 27,
-    ],
+    [17, 2661, 2662, 20, 1140, 2128, 2129, 611, 2128, 2129, 18, 2613, 2614, 2615, 27],
     [3221225513, 2527, 2747, 2748, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41],
     [3221225513, 2527, 2763, 2764, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41],
     [3221225513, 2527, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2739, 0, 41],
@@ -90,14 +87,11 @@ const IndoorHouse8 = (props) => {
     [3221225513, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41],
     [3221225513, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41],
     [3221225513, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
   ];
 
   console.log('COORDINATE', yPlayerIndex.current, xPlayerIndex.current);
-  console.log(
-    'VALUE Right',
-    currentMap[yPlayerIndex.current][xPlayerIndex.current]
-  );
+  console.log('VALUE Right', currentMap[yPlayerIndex.current][xPlayerIndex.current]);
 
   // useEffect(() => {
   //   let tempGrid = [];
@@ -159,9 +153,9 @@ const IndoorHouse8 = (props) => {
             (yPlayerIndex.current === 8 && xPlayerIndex.current === 5) ||
             (yPlayerIndex.current === 8 && xPlayerIndex.current === 6)
           ) {
-              setNpcFace('faceGirlIH8');
-              setTextValue('Hi I am not blonde');
-              clickAudio2();
+            setNpcFace('faceGirlIH8');
+            setTextValue('Hi I am not blonde');
+            clickAudio2();
           }
           //YO Mama NPC
           // if (
@@ -193,9 +187,9 @@ const IndoorHouse8 = (props) => {
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 6) ||
             (yPlayerIndex.current === 5 && xPlayerIndex.current === 7)
           ) {
-             setNpcFace('faceGirlIH8');
-             setTextValue('Hi I am not blonde.');
-             clickAudio2();
+            setNpcFace('faceGirlIH8');
+            setTextValue('Hi I am not blonde.');
+            clickAudio2();
           }
           // //YO Mama NPC
           // if (
@@ -226,9 +220,9 @@ const IndoorHouse8 = (props) => {
             (yPlayerIndex.current === 7 && xPlayerIndex.current === 7) ||
             (yPlayerIndex.current === 7 && xPlayerIndex.current === 8)
           ) {
-             setNpcFace('faceGirlIH8');
-             setTextValue('Hi I am not blonde.');
-             clickAudio2();
+            setNpcFace('faceGirlIH8');
+            setTextValue('Hi I am not blonde.');
+            clickAudio2();
           }
           //YO Mama NPC
           // if (
@@ -259,9 +253,9 @@ const IndoorHouse8 = (props) => {
             (yPlayerIndex.current === 6 && xPlayerIndex.current === 5) ||
             (yPlayerIndex.current === 7 && xPlayerIndex.current === 5)
           ) {
-             setNpcFace('faceGirlIH8');
-             setTextValue('Hi I am not blonde.');
-             clickAudio2();
+            setNpcFace('faceGirlIH8');
+            setTextValue('Hi I am not blonde.');
+            clickAudio2();
           }
           //YO Mama NPC
           // if (
@@ -300,27 +294,23 @@ const IndoorHouse8 = (props) => {
         if (facing.current === 'up') {
           if (
             xBank.current + 32 > 64 &&
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
-              'door1'
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] === 'door1'
           ) {
           }
           if (
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
-              'sign1' &&
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 'sign1' &&
             64 - xBank.current > 32
           ) {
             console.log('sign1');
           }
           if (
             xBank.current + 32 > 64 &&
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
-              'sign2'
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] === 'sign2'
           ) {
             console.log('sign2');
           }
           if (
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
-              'sign2' &&
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 'sign2' &&
             64 - xBank.current > 32
           ) {
             console.log('sign2');
@@ -328,21 +318,16 @@ const IndoorHouse8 = (props) => {
         }
         if (facing.current == null) {
           if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
-              'sign1' &&
+            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 'sign1' &&
             xBank.current + 32 < 64
           ) {
             console.log('sign1');
           }
-          if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current + 1] ===
-            'sign2'
-          ) {
+          if (currentMap[yPlayerIndex.current + 1][xPlayerIndex.current + 1] === 'sign2') {
             console.log('poopshit');
           }
           if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
-              'sign2' &&
+            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 'sign2' &&
             xBank.current + 32 < 64
           ) {
             console.log('sign2');
@@ -411,10 +396,7 @@ const IndoorHouse8 = (props) => {
     //if current key is d, the x cordinate becomes  the previous state + the speed
 
     if (dirArr.current[0] === 'ArrowRight') {
-      if (
-        currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] === 0 ||
-        xBank.current < 0
-      )
+      if (currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] === 0 || xBank.current < 0)
         if (
           yBank.current + 32 < 64 ||
           currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
@@ -435,10 +417,7 @@ const IndoorHouse8 = (props) => {
     //if current key is a, the x cordinate becomes  the previous state - the speed
 
     if (dirArr.current[0] === 'ArrowLeft') {
-      if (
-        currentMap[yPlayerIndex.current][xPlayerIndex.current - 1] === 0 ||
-        xBank.current > 0
-      )
+      if (currentMap[yPlayerIndex.current][xPlayerIndex.current - 1] === 0 || xBank.current > 0)
         if (
           yBank.current + 32 < 64 ||
           currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] == 0
@@ -462,10 +441,7 @@ const IndoorHouse8 = (props) => {
 
     //if current key is w, the y cordinate becomes  the previous state + the speed
     if (dirArr.current[0] === 'ArrowUp') {
-      if (
-        currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 0 ||
-        yBank.current < 0
-      ) {
+      if (currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 0 || yBank.current < 0) {
         if (
           xBank.current + 48 < 64 ||
           currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
@@ -483,15 +459,9 @@ const IndoorHouse8 = (props) => {
     //if current key is s, the y cordinate becomes  the previous state - the speed
 
     if (dirArr.current[0] === 'ArrowDown') {
-      if (
-        currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 0 ||
-        yBank.current > 0
-      ) {
+      if (currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 0 || yBank.current > 0) {
         // if (xBank.current+32<64 || newMap[yPlayerIndex.current+1][xPlayerIndex.current+1]==0)
-        if (
-          xBank.current < 16 ||
-          currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] == 0
-        ) {
+        if (xBank.current < 16 || currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] == 0) {
           setYTransformVar((prevCount) => prevCount - speedRef.current);
           yBank.current = yBank.current - speedRef.current;
           if (yBank.current < 0) {
@@ -533,40 +503,31 @@ const IndoorHouse8 = (props) => {
           <div
             className="mapIH8 pixel-art"
             style={{
-              transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`,
-            }}
-          >
+              transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`
+            }}>
             {gridArray}
             <div
               className="character pixel-art"
               facing={facing.current}
               walking={walker}
               style={{
-                transform: `translate3d( ${600 - xTransformVar}px, ${
-                  272 - yTransformVar
-                }px, 0 )`,
-              }}
-            >
+                transform: `translate3d( ${600 - xTransformVar}px, ${272 - yTransformVar}px, 0 )`
+              }}>
               <div className="character_spritesheet pixel-art"></div>
             </div>
 
             <div
               className="girlIH8 pixel-art"
               style={{
-                transform: `translate3d( ${365}px, ${280}px, 0 )`,
-              }}
-            >
+                transform: `translate3d( ${365}px, ${280}px, 0 )`
+              }}>
               <div className="girlIH8_spritesheet pixel-art"></div>
             </div>
           </div>
         </div>
 
         {textValue ? (
-          <dialog
-            id="dialogStyle"
-            className={`${npcFace} textBox typewriter`}
-            open
-          >
+          <dialog id="dialogStyle" className={`${npcFace} textBox typewriter`} open>
             <p>{textValue}</p>
           </dialog>
         ) : null}

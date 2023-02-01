@@ -1,17 +1,16 @@
 .mapCCR {
-    image-rendering: pixelated;
-    background-image: url("./assets/maps/CrystalCavernstweaksRightnogridcopy.png");
-    background-size: 3840px;
-    width: calc(150 * var(--grid-cell));
-    height: calc(150 * var(--grid-cell));
-    position: absolute;
-    background-repeat: no-repeat;
-    overflow: visible;
-    /* display: grid;
+  image-rendering: pixelated;
+  background-image: url('./assets/maps/CrystalCavernstweaksRightnogridcopy.png');
+  background-size: 3840px;
+  width: calc(150 * var(--grid-cell));
+  height: calc(150 * var(--grid-cell));
+  position: absolute;
+  background-repeat: no-repeat;
+  overflow: visible;
+  /* display: grid;
     grid-template-columns: repeat(71, 64px);
     grid-template-rows: repeat(60, 64px); */
 }
-
 
 /* .numbers {
     size: 100%;
@@ -19,26 +18,26 @@
 }  */
 
 .faceMainGuy {
-    background: url("./assets/images/MainGuyFace.png") no-repeat no-repeat;
-    background-position: left top;
-    background-size: 12%;
-    background-size: content-box;     
+  background: url('./assets/images/MainGuyFace.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
 }
 
- .waterR {
-    position: absolute;
-     width: calc(var(--grid-cell) * 6.8);
-     height: calc(var(--grid-cell)* 62.7);
-     overflow: hidden;
- }
+.waterR {
+  position: absolute;
+  width: calc(var(--grid-cell) * 6.8);
+  height: calc(var(--grid-cell) * 62.7);
+  overflow: hidden;
+}
 
- .waterR_spritesheet {
-     background: url("./assets/images/rivernogrid.png") no-repeat no-repeat;
-     background-size: 100%;
-     width: calc(var(--grid-cell)* 8);
-     height: calc(var(--grid-cell)* 80);
- }
+.waterR_spritesheet {
+  background: url('./assets/images/rivernogrid.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 8);
+  height: calc(var(--grid-cell) * 80);
+}
 
- .waterR .waterR_spritesheet {
-     animation: waterAnimation .5s steps(4) infinite;
- }
+.waterR .waterR_spritesheet {
+  animation: waterAnimation 0.5s steps(4) infinite;
+}

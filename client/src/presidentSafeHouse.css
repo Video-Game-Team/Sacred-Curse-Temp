@@ -1,123 +1,111 @@
 .mapPSH {
-    image-rendering: pixelated;
-    background-image: url("./assets/maps/PresidentSafeHousenogridnpc.png");
-    background-size: 960px;
-    width: calc(37.5 * var(--grid-cell));
-    height: calc(37.5 * var(--grid-cell));
-    position: absolute;
-    background-repeat: no-repeat;
-    overflow: visible;
-    /* display: grid;
+  image-rendering: pixelated;
+  background-image: url('./assets/maps/PresidentSafeHousenogridnpc.png');
+  background-size: 960px;
+  width: calc(37.5 * var(--grid-cell));
+  height: calc(37.5 * var(--grid-cell));
+  position: absolute;
+  background-repeat: no-repeat;
+  overflow: visible;
+  /* display: grid;
     grid-template-columns: repeat(15, 64px);
     grid-template-rows: repeat(15, 64px); */
-} 
-
+}
 
 /* .numbers {
     size: 100%;
     background: transparent;
 } */
 
- .guard1PSH {
-    position: absolute;
-     width: calc(var(--grid-cell)* 2.5);
-     height: calc(var(--grid-cell)* 2.5);
-     overflow: hidden;
- }
+.guard1PSH {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
+}
 
- .guard1PSH_spritesheet {
-   
-     background: url("./assets/images/PresidentSafeHouseguard1.png") no-repeat no-repeat;
-     background-size: 100%;
-     width: calc(var(--grid-cell)* 34);
-     height: calc(var(--grid-cell)* 3);
- }
+.guard1PSH_spritesheet {
+  background: url('./assets/images/PresidentSafeHouseguard1.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 34);
+  height: calc(var(--grid-cell) * 3);
+}
 
- .guard1PSH .guard1PSH_spritesheet {
-     animation: walkAnimation 2.6s steps(15) infinite;
- }
+.guard1PSH .guard1PSH_spritesheet {
+  animation: walkAnimation 2.6s steps(15) infinite;
+}
 
+.faceGuard1PSH {
+  background: url('./assets/images/PresidentGuard1Face.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}
 
- .faceGuard1PSH {
-     background: url("./assets/images/PresidentGuard1Face.png") no-repeat no-repeat;
-     background-position: left top;
-     background-size: 12%;
-     background-size: content-box;
- }
+.guard2PSH {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
+}
 
+.guard2PSH_spritesheet {
+  background: url('./assets/images/PresidentSafeHouseguard1.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 34);
+  height: calc(var(--grid-cell) * 3);
+}
 
+.guard2PSH .guard2PSH_spritesheet {
+  animation: walkAnimation 4.6s steps(15) infinite;
+}
 
-  .guard2PSH {
-      position: absolute;
-      width: calc(var(--grid-cell)* 2.5);
-      height: calc(var(--grid-cell)* 2.5);
-      overflow: hidden;
-  }
+.general1RH2 {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
+}
 
-  .guard2PSH_spritesheet {
-      background: url("./assets/images/PresidentSafeHouseguard1.png") no-repeat no-repeat;
-      background-size: 100%;
-      width: calc(var(--grid-cell)* 34);
-      height: calc(var(--grid-cell)* 3);
-  }
+.general1RH2_spritesheet {
+  background: url('./assets/images/PresidentSafeHouseGeneral1.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 34);
+  height: calc(var(--grid-cell) * 3);
+}
 
-  .guard2PSH .guard2PSH_spritesheet {
-      animation: walkAnimation 4.6s steps(15) infinite;
-  }
+.general1RH2 .general1RH2_spritesheet {
+  animation: walkAnimation 3s steps(15) infinite;
+}
 
+.faceGeneral1RH2 {
+  background: url('./assets/images/PresidentGuard2Face.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}
 
+.presidentRH2 {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2.5);
+  height: calc(var(--grid-cell) * 2.5);
+  overflow: hidden;
+}
 
+.presidentRH2_spritesheet {
+  background: url('./assets/images/PresidentSafeHousePresident.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 34);
+  height: calc(var(--grid-cell) * 3);
+}
 
- .general1RH2 {
-     position: absolute;
-     width: calc(var(--grid-cell)* 2.5);
-     height: calc(var(--grid-cell)* 2.5);
-     overflow: hidden;
- }
+.presidentRH2 .presidentRH2_spritesheet {
+  animation: walkAnimation 2.7s steps(15) infinite;
+}
 
- .general1RH2_spritesheet {
-     background: url("./assets/images/PresidentSafeHouseGeneral1.png") no-repeat no-repeat;
-     background-size: 100%;
-     width: calc(var(--grid-cell)* 34);
-     height: calc(var(--grid-cell)* 3);
- }
-
- .general1RH2 .general1RH2_spritesheet {
-     animation: walkAnimation 3s steps(15) infinite;
- }
-
-
- .faceGeneral1RH2 {
-     background: url("./assets/images/PresidentGuard2Face.png") no-repeat no-repeat;
-     background-position: left top;
-     background-size: 12%;
-     background-size: content-box;
- }
-
-
-
-  .presidentRH2 {
-      position: absolute;
-      width: calc(var(--grid-cell)* 2.5);
-      height: calc(var(--grid-cell)* 2.5);
-      overflow: hidden;
-  }
-
-  .presidentRH2_spritesheet {
-      background: url("./assets/images/PresidentSafeHousePresident.png") no-repeat no-repeat;
-      background-size: 100%;
-      width: calc(var(--grid-cell)* 34);
-      height: calc(var(--grid-cell)* 3);
-  }
-
-  .presidentRH2 .presidentRH2_spritesheet {
-      animation: walkAnimation 2.7s steps(15) infinite;
-  }
-
-
-  .facePresidentRH2 {
-      background: url("./assets/images/MansonRanchCrazyGuyFace.png") no-repeat no-repeat;
-      background-position: left top;
-      background-size: 12%;
-      background-size: content-box;
-  }
+.facePresidentRH2 {
+  background: url('./assets/images/MansonRanchCrazyGuyFace.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}

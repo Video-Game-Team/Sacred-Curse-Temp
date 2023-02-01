@@ -8,23 +8,18 @@ const DOMPurify = createDOMPurify(window);
 const parse = require('html-react-parser');
 import '../signupPage.css';
 
-
 // SALT should be created ONE TIME upon sign up
-const salt = bcrypt.genSaltSync(10)
+const salt = bcrypt.genSaltSync(10);
 // example =>  $2a$10$CwTycUXWue0Thq9StjUM0u => to be added always to the password hash
-
 
 function Signup(props) {
   const navigate = useNavigate();
 
+  const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
 
-
-    const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
-
-
-   if (isAuthenticated) {
-     console.log('User Email:', user.email, "User Sub:", user.sub);
-    }
+  if (isAuthenticated) {
+    console.log('User Email:', user.email, 'User Sub:', user.sub);
+  }
 
   // States for registration
   const [name, setName] = useState('');
@@ -33,11 +28,7 @@ function Signup(props) {
   const [userName, setUserName] = useState('');
   let data = "Hello!<img src='unicorns.png' onerror='alert(1)'>";
 
-  const hashedPassword = bcrypt.hashSync(
-    password,
-    '$2a$10$CwTycUXWue0Thq9StjUM0u'
-  ); // hash created previously created upon sign up
-
+  const hashedPassword = bcrypt.hashSync(password, '$2a$10$CwTycUXWue0Thq9StjUM0u'); // hash created previously created upon sign up
 
   // States for checking the errors
   const [submitted, setSubmitted] = useState(false);
@@ -87,9 +78,8 @@ function Signup(props) {
       <div
         className="success"
         style={{
-          display: submitted ? '' : 'none',
-        }}
-      >
+          display: submitted ? '' : 'none'
+        }}>
         <h1>User {name} successfully registered!!</h1>
       </div>
     );
@@ -101,9 +91,8 @@ function Signup(props) {
       <div
         className="error"
         style={{
-          display: error ? '' : 'none',
-        }}
-      >
+          display: error ? '' : 'none'
+        }}>
         <h1>Please enter all the fields</h1>
       </div>
     );
@@ -125,7 +114,7 @@ function Signup(props) {
         quest2: false,
         quest3: false,
         quest4: false,
-        timeStamp: '',
+        timeStamp: ''
       })
       .then((res) => {
         console.log(res);
@@ -155,8 +144,10 @@ function Signup(props) {
       <div className="containerSignup">
         {browserWarning === true ? (
           <h1
-            style={{ fontSize: '30px', color: 'white' }}
-          >{`This browser is incompatible with this game. Please use Google Chrome or Safari`}</h1>
+            style={{
+              fontSize: '30px',
+              color: 'white'
+            }}>{`This browser is incompatible with this game. Please use Google Chrome or Safari`}</h1>
         ) : (
           <div className="fade-in">
             <h1 className="titleTextSignup">Sacred Curse</h1>
@@ -179,20 +170,10 @@ function Signup(props) {
                   <form>
                     {/* Labels and inputs for form data */}
                     <label className="label otherTextSignup">Name</label>
-                    <input
-                      onChange={handleName}
-                      className="input"
-                      value={name}
-                      type="text"
-                    />
+                    <input onChange={handleName} className="input" value={name} type="text" />
 
                     <label className="label otherTextSignup">Email</label>
-                    <input
-                      onChange={handleEmail}
-                      className="input"
-                      value={email}
-                      type="email"
-                    />
+                    <input onChange={handleEmail} className="input" value={email} type="email" />
 
                     <label className="label otherTextSignup">UserName</label>
                     <input
@@ -210,11 +191,7 @@ function Signup(props) {
                       type="password"
                     />
 
-                    <button
-                      onClick={handleSubmit}
-                      className="btn"
-                      type="submit"
-                    >
+                    <button onClick={handleSubmit} className="btn" type="submit">
                       Submit
                     </button>
                   </form>

@@ -1,15 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import {
-  HashRouter,
-  Routes,
-  Route,
-  Link,
-  useLocation,
-  Outlet,
-  Navigate
-} from 'react-router-dom';
+import { HashRouter, Routes, Route, Link, useLocation, Outlet, Navigate } from 'react-router-dom';
 import Navbar from './Navbar';
 
 const Layout = () => {

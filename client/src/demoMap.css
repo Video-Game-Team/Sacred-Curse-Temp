@@ -1,29 +1,21 @@
-
-.sidePanel{
-    display: grid;
-    grid-template-rows: 5fr 2fr 1fr;
-    width: 95%;
-    margin-top: 10px;
-    row-gap: 7%;
-    
-
+.sidePanel {
+  display: grid;
+  grid-template-rows: 5fr 2fr 1fr;
+  width: 95%;
+  margin-top: 10px;
+  row-gap: 7%;
 }
 
-.displayCard{
-    display: grid;
-    grid-template-rows: 3fr 2fr 1fr;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 3%;
+.displayCard {
+  display: grid;
+  grid-template-rows: 3fr 2fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3%;
 
-    box-shadow: 0 2px 8px 4px white;
-    color: black;
+  box-shadow: 0 2px 8px 4px white;
+  color: black;
 
-
-    background-color: rgb(207, 207, 207);
-   
-
-    
-
+  background-color: rgb(207, 207, 207);
 }
 /* .summonsList{
 display: flex;
@@ -37,87 +29,70 @@ background-color: rgb(31, 32, 32);
 
 } */
 
- .summonsList{
-
+.summonsList {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(8, 1fr);
   box-shadow: 0 2px 8px 4px white;
   background-color: rgb(31, 32, 32);
   column-gap: 15px;
-     
-  
-  
-  }
-
-
-
-.actionButtonContainer{
-
-    display: flex;
-    justify-content: center;
-    gap: 5%;
-    color: white;
-    
-
 }
 
-.actionButton{
-    border-radius: 5;
-    background-color: rgb(43,44,45);
-    height: 30%;
-    width: 30%;
-    color: white;
-    border-radius: 5%;
-
-
+.actionButtonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  color: white;
 }
 
-  .battleMap{
-    background-image: url("./assets/warMaps/New map.jpg");
-    display: grid;
-    size: 100%;
+.actionButton {
+  border-radius: 5;
+  background-color: rgb(43, 44, 45);
+  height: 30%;
+  width: 30%;
+  color: white;
+  border-radius: 5%;
+}
+
+.battleMap {
+  background-image: url('./assets/warMaps/New map.jpg');
+  display: grid;
+  size: 100%;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 1fr); 
-    width: calc(var(--pixel-size) * 180);
-    height: calc(var(--pixel-size) * 180);
-    background-size: 720px; 
-    background-repeat: no-repeat;
+  grid-template-rows: repeat(8, 1fr);
+  width: calc(var(--pixel-size) * 180);
+  height: calc(var(--pixel-size) * 180);
+  background-size: 720px;
+  background-repeat: no-repeat;
+}
 
-
-  }
-
-  .demon{
-    /* background-image: url("./assets/demonSprites/even-more-retro-dragonite-dragonite-sprite-gen-1212525.png"); */
-background-size: 80%;
-background-position: center;
-background-color: transparent;
-background-repeat: no-repeat;
-border-color: transparent;
-border-style: solid;
+.demon {
+  /* background-image: url("./assets/demonSprites/even-more-retro-dragonite-dragonite-sprite-gen-1212525.png"); */
+  background-size: 80%;
+  background-position: center;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border-color: transparent;
+  border-style: solid;
 }
 
 /* .demon:active {
   } */
-.demon:focus {     
-    box-shadow: 2px 2px 10px green;
+.demon:focus {
+  box-shadow: 2px 2px 10px green;
 }
-.playerStart:focus {     
-    box-shadow: 2px 2px 10px green;
-}
-
-.playerStart{
-    background-image: url("./assets/demonSprites/even-more-retro-dragonite-dragonite-sprite-gen-1212525.png");
-background-size: 100%;
-background-color: transparent;
-background-repeat: no-repeat;
-grid-column: 5;
-border-color: transparent;
-border-style: solid;
+.playerStart:focus {
+  box-shadow: 2px 2px 10px green;
 }
 
-
-
+.playerStart {
+  background-image: url('./assets/demonSprites/even-more-retro-dragonite-dragonite-sprite-gen-1212525.png');
+  background-size: 100%;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  grid-column: 5;
+  border-color: transparent;
+  border-style: solid;
+}
 
 /* url("./assets/demonSprites/clipart31964.png"), red; */
-

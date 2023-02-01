@@ -1,78 +1,74 @@
-  .mapTF {
-     image-rendering: pixelated;
-     background-image: url("./assets/maps/TortousForknofountainsnogrid.png");
-     background-size: 3840px;
-     width: calc(150 * var(--grid-cell));
-     height: calc(105 * var(--grid-cell));
-     position: absolute;
-     background-repeat: no-repeat;
-     overflow: visible;
-     /* display: grid;
+.mapTF {
+  image-rendering: pixelated;
+  background-image: url('./assets/maps/TortousForknofountainsnogrid.png');
+  background-size: 3840px;
+  width: calc(150 * var(--grid-cell));
+  height: calc(105 * var(--grid-cell));
+  position: absolute;
+  background-repeat: no-repeat;
+  overflow: visible;
+  /* display: grid;
     grid-template-columns: repeat(60, 64px);
     grid-template-rows: repeat(42, 64px); */
- }
+}
 
-
- /* .numbers {
+/* .numbers {
     size: 100%;
     background: transparent;
 }   */
 
-
 .fountainTTF {
-     position: absolute;
-     width: calc(var(--grid-cell)* 24);
-     height: calc(var(--grid-cell)* 24);
-     overflow: hidden;
- }
+  position: absolute;
+  width: calc(var(--grid-cell) * 24);
+  height: calc(var(--grid-cell) * 24);
+  overflow: hidden;
+}
 
- .fountainTTF_spritesheet {
-     background: url("./assets/images/Fountain.gif") no-repeat no-repeat;
-     background-size: 100%;
-     width: calc(var(--grid-cell)* 2.7);
-     height: calc(var(--grid-cell)* 4.2);
- }
-
+.fountainTTF_spritesheet {
+  background: url('./assets/images/Fountain.gif') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 2.7);
+  height: calc(var(--grid-cell) * 4.2);
+}
 
 .pigeon1TTF {
-     position: absolute;
-     width: calc(var(--grid-cell)* 2);
-     height: calc(var(--grid-cell)* 2);
-     overflow: hidden;
- }
+  position: absolute;
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 2);
+  overflow: hidden;
+}
 
- .pigeon1TTF_spritesheet {
-     background: url("./assets/images/Pigeon1.gif") no-repeat no-repeat;
-     background-size: 100%;
-     width: calc(var(--grid-cell)* 1);
-     height: calc(var(--grid-cell)* 1);
- }
+.pigeon1TTF_spritesheet {
+  background: url('./assets/images/Pigeon1.gif') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 1);
+  height: calc(var(--grid-cell) * 1);
+}
 
+.pigeon2TTF {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 2);
+  overflow: hidden;
+}
 
- .pigeon2TTF {
-     position: absolute;
-     width: calc(var(--grid-cell)* 2);
-     height: calc(var(--grid-cell)* 2);
-     overflow: hidden;
- }
+.pigeon2TTF_spritesheet {
+  background: url('./assets/images/Pigeon2.gif') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 1);
+  height: calc(var(--grid-cell) * 1);
+}
 
- .pigeon2TTF_spritesheet {
-     background: url("./assets/images/Pigeon2.gif") no-repeat no-repeat;
-     background-size: 100%;
-     width: calc(var(--grid-cell)* 1);
-     height: calc(var(--grid-cell)* 1);
- }
+.statue1TTF {
+  position: absolute;
+  width: calc(var(--grid-cell) * 6);
+  height: calc(var(--grid-cell) * 8);
+  overflow: hidden;
+}
 
- .statue1TTF {
-     position: absolute;
-     width: calc(var(--grid-cell) * 6);
-     height: calc(var(--grid-cell)* 8);
-     overflow: hidden;
- }
-
- .statue1TTF_spritesheet {
-     background: url("./assets/images/bossstatuewest1.png") no-repeat no-repeat;
-     background-size: 100%;
-     width: calc(var(--grid-cell)* 25);
-     height: calc(var(--grid-cell)* 20);
- }
+.statue1TTF_spritesheet {
+  background: url('./assets/images/bossstatuewest1.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 25);
+  height: calc(var(--grid-cell) * 20);
+}

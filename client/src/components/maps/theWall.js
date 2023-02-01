@@ -203,46 +203,41 @@ const TheWall = (props) => {
 
   let currentMap = [
     [
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4000, 4000, 4000,
-      4000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4000, 4000, 4000, 4000, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     ],
     [
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4000, 4000, 4000,
-      4000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4000, 4000, 4000, 4000, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     ],
     [
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4000, 4000, 4000,
-      4000, 891, 892, 893, 894, 895, 896, 897, 898, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4000, 4000, 4000, 4000, 891, 892, 893,
+      894, 895, 896, 897, 898, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     ],
     [
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4000, 4000, 4000,
-      4000, 907, 908, 909, 910, 911, 912, 913, 914, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4000, 4000, 4000, 4000, 907, 908, 909,
+      910, 911, 912, 913, 914, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     ],
     [
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 660, 661, 4000, 4000,
-      4000, 4000, 923, 924, 925, 926, 927, 928, 929, 930, 632, 633, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 660, 661, 4000, 4000, 4000, 4000, 923, 924,
+      925, 926, 927, 928, 929, 930, 632, 633, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     ],
     [
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 676, 677, 4000, 4000,
-      4000, 4000, 939, 940, 941, 942, 943, 944, 945, 946, 648, 649, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 676, 677, 4000, 4000, 4000, 4000, 939, 940,
+      941, 942, 943, 944, 945, 946, 648, 649, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     ],
     [
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 691, 692, 693, 4000, 4000,
-      4000, 4000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 691, 692, 693, 4000, 4000, 4000, 4000, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     ],
     [
-      492, 0, 0, 0, 0, 492, 0, 0, 0, 0, 0, 492, 0, 0, 0, 0, 0, 1340, 4000, 4000,
-      4000, 4000, 0, 1340, 0, 0, 0, 0, 0, 492, 0, 0, 0, 0, 0, 492, 0, 0, 0, 0,
-      0, 492,
+      492, 0, 0, 0, 0, 492, 0, 0, 0, 0, 0, 492, 0, 0, 0, 0, 0, 1340, 4000, 4000, 4000, 4000, 0,
+      1340, 0, 0, 0, 0, 0, 492, 0, 0, 0, 0, 0, 492, 0, 0, 0, 0, 0, 492
     ],
     [
-      508, 576, 577, 575, 576, 508, 575, 576, 577, 575, 576, 508, 575, 576, 577,
-      575, 576, 508, 575, 576, 575, 576, 577, 508, 575, 576, 577, 575, 576, 508,
-      575, 576, 577, 575, 576, 508, 575, 576, 577, 575, 576, 508,
+      508, 576, 577, 575, 576, 508, 575, 576, 577, 575, 576, 508, 575, 576, 577, 575, 576, 508, 575,
+      576, 575, 576, 577, 508, 575, 576, 577, 575, 576, 508, 575, 576, 577, 575, 576, 508, 575, 576,
+      577, 575, 576, 508
     ],
     [
       0,
@@ -286,7 +281,7 @@ const TheWall = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -330,7 +325,7 @@ const TheWall = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -374,7 +369,7 @@ const TheWall = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -418,7 +413,7 @@ const TheWall = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -462,7 +457,7 @@ const TheWall = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -506,7 +501,7 @@ const TheWall = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -550,7 +545,7 @@ const TheWall = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -594,7 +589,7 @@ const TheWall = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -638,7 +633,7 @@ const TheWall = (props) => {
       1344,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -682,7 +677,7 @@ const TheWall = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -726,7 +721,7 @@ const TheWall = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -770,7 +765,7 @@ const TheWall = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -814,7 +809,7 @@ const TheWall = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -858,7 +853,7 @@ const TheWall = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -902,7 +897,7 @@ const TheWall = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -946,7 +941,7 @@ const TheWall = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -990,7 +985,7 @@ const TheWall = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -1034,7 +1029,7 @@ const TheWall = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -1078,7 +1073,7 @@ const TheWall = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
       0,
@@ -1122,43 +1117,37 @@ const TheWall = (props) => {
       0,
       0,
       0,
-      0,
+      0
     ],
     [
-      691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691,
-      691, 691, 691, 0, 1889, 1890, 4000, 1, 691, 691, 691, 691, 691, 691, 691,
-      691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691,
+      691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 0,
+      1889, 1890, 4000, 1, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691, 691,
+      691, 691, 691, 691, 691
     ],
     [
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1720, 4000, 1555, 1889,
-      1890, 4000, 4000, 4000, 1717, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1720, 4000, 1555, 1889, 1890, 4000, 4000,
+      4000, 1717, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     ],
     [
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4000, 4000, 4000, 1889,
-      1890, 4000, 4000, 4000, 4000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4000, 4000, 4000, 1889, 1890, 4000, 4000,
+      4000, 4000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     ],
     [
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4000, 4000, 4000, 1889,
-      1812, 4000, 4000, 4000, 4000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4000, 4000, 4000, 1889, 1812, 4000, 4000,
+      4000, 4000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     ],
     [
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4000, 4000, 4000, 1889,
-      4000, 4000, 4000, 4000, 4000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4000, 4000, 4000, 1889, 4000, 4000, 4000,
+      4000, 4000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     ],
     [
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4000, 4000, 4000, 1889,
-      4000, 4000, 4000, 4000, 4000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4000, 4000, 4000, 1889, 4000, 4000, 4000,
+      4000, 4000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     ],
     [
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4000, 4000, 4000, 1889,
-      4000, 4000, 4000, 4000, 4000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0,
-    ],
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4000, 4000, 4000, 1889, 4000, 4000, 4000,
+      4000, 4000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    ]
   ];
 
   console.log(yPlayerIndex.current, xPlayerIndex.current);
@@ -1223,9 +1212,9 @@ const TheWall = (props) => {
             (yPlayerIndex.current === 14 && xPlayerIndex.current === 19) ||
             (yPlayerIndex.current === 14 && xPlayerIndex.current === 20)
           ) {
-             setNpcFace('faceMainGuardTW');
-             setTextValue('Eat lead villager!');
-             clickAudio2();
+            setNpcFace('faceMainGuardTW');
+            setTextValue('Eat lead villager!');
+            clickAudio2();
           }
           // //YO Mama NPC
           // if (
@@ -1387,27 +1376,23 @@ const TheWall = (props) => {
         if (facing.current === 'up') {
           if (
             xBank.current + 32 > 64 &&
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
-              'door1'
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] === 'door1'
           ) {
           }
           if (
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
-              'sign1' &&
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 'sign1' &&
             64 - xBank.current > 32
           ) {
             console.log('sign1');
           }
           if (
             xBank.current + 32 > 64 &&
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] ===
-              'sign2'
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] === 'sign2'
           ) {
             console.log('sign2');
           }
           if (
-            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] ===
-              'sign2' &&
+            currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 'sign2' &&
             64 - xBank.current > 32
           ) {
             console.log('sign2');
@@ -1415,21 +1400,16 @@ const TheWall = (props) => {
         }
         if (facing.current == null) {
           if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
-              'sign1' &&
+            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 'sign1' &&
             xBank.current + 32 < 64
           ) {
             console.log('sign1');
           }
-          if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current + 1] ===
-            'sign2'
-          ) {
+          if (currentMap[yPlayerIndex.current + 1][xPlayerIndex.current + 1] === 'sign2') {
             console.log('poopshit');
           }
           if (
-            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] ===
-              'sign2' &&
+            currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 'sign2' &&
             xBank.current + 32 < 64
           ) {
             console.log('sign2');
@@ -1497,10 +1477,7 @@ const TheWall = (props) => {
   const animate = () => {
     //if current key is d, the x cordinate becomes  the previous state + the speed
     if (dirArr.current[0] === 'ArrowRight') {
-      if (
-        currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] === 0 ||
-        xBank.current < 0
-      )
+      if (currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] === 0 || xBank.current < 0)
         if (
           yBank.current + 32 < 64 ||
           currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
@@ -1521,10 +1498,7 @@ const TheWall = (props) => {
     //if current key is a, the x cordinate becomes  the previous state - the speed
 
     if (dirArr.current[0] === 'ArrowLeft') {
-      if (
-        currentMap[yPlayerIndex.current][xPlayerIndex.current - 1] === 0 ||
-        xBank.current > 0
-      )
+      if (currentMap[yPlayerIndex.current][xPlayerIndex.current - 1] === 0 || xBank.current > 0)
         if (
           yBank.current + 32 < 64 ||
           currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] == 0
@@ -1548,10 +1522,7 @@ const TheWall = (props) => {
 
     //if current key is w, the y cordinate becomes  the previous state + the speed
     if (dirArr.current[0] === 'ArrowUp') {
-      if (
-        currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 0 ||
-        yBank.current < 0
-      ) {
+      if (currentMap[yPlayerIndex.current - 1][xPlayerIndex.current] === 0 || yBank.current < 0) {
         if (
           xBank.current + 48 < 64 ||
           currentMap[yPlayerIndex.current - 1][xPlayerIndex.current + 1] == 0
@@ -1569,15 +1540,9 @@ const TheWall = (props) => {
     //if current key is s, the y cordinate becomes  the previous state - the speed
 
     if (dirArr.current[0] === 'ArrowDown') {
-      if (
-        currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 0 ||
-        yBank.current > 0
-      ) {
+      if (currentMap[yPlayerIndex.current + 1][xPlayerIndex.current] === 0 || yBank.current > 0) {
         // if (xBank.current+32<64 || newMap[yPlayerIndex.current+1][xPlayerIndex.current+1]==0)
-        if (
-          xBank.current < 16 ||
-          currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] == 0
-        ) {
+        if (xBank.current < 16 || currentMap[yPlayerIndex.current][xPlayerIndex.current + 1] == 0) {
           setYTransformVar((prevCount) => prevCount - speedRef.current);
           yBank.current = yBank.current - speedRef.current;
           if (yBank.current < 0) {
@@ -1620,47 +1585,40 @@ const TheWall = (props) => {
           <div
             className="mapTW pixel-art"
             style={{
-              transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`,
-            }}
-          >
+              transform: `translate3d( ${xTransformVar}px, ${yTransformVar}px, 0 )`
+            }}>
             {gridArray}
             <div
               className="character pixel-art"
               facing={facing.current}
               walking={walker}
               style={{
-                transform: `translate3d( ${600 - xTransformVar}px, ${
-                  272 - yTransformVar
-                }px, 0 )`,
-              }}
-            >
+                transform: `translate3d( ${600 - xTransformVar}px, ${272 - yTransformVar}px, 0 )`
+              }}>
               <div className="character_spritesheet pixel-art"></div>
             </div>
 
             <div
               className="mech1TW pixel-art"
               style={{
-                transform: `translate3d( ${1355}px, ${575}px, 0 )`,
-              }}
-            >
+                transform: `translate3d( ${1355}px, ${575}px, 0 )`
+              }}>
               <div className="mech1TW_spritesheet pixel-art"></div>
             </div>
 
             <div
               className="mech2TW pixel-art"
               style={{
-                transform: `translate3d( ${1035}px, ${585}px, 0 )`,
-              }}
-            >
+                transform: `translate3d( ${1035}px, ${585}px, 0 )`
+              }}>
               <div className="mech2TW_spritesheet pixel-art"></div>
             </div>
 
             <div
               className="mainGuardTW pixel-art"
               style={{
-                transform: `translate3d( ${1235}px, ${745}px, 0 )`,
-              }}
-            >
+                transform: `translate3d( ${1235}px, ${745}px, 0 )`
+              }}>
               <div className="mainGuardTW_spritesheet pixel-art"></div>
             </div>
 
@@ -1672,16 +1630,10 @@ const TheWall = (props) => {
             >
               <div className="shots1TW_spritesheet pixel-art"></div>
             </div> */}
-
-
           </div>
         </div>
         {textValue ? (
-          <dialog
-            id="dialogStyle"
-            className={`${npcFace} textBox typewriter`}
-            open
-          >
+          <dialog id="dialogStyle" className={`${npcFace} textBox typewriter`} open>
             <p>{textValue}</p>
           </dialog>
         ) : null}

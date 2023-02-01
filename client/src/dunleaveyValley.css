@@ -1,17 +1,16 @@
 .mapDV {
-    image-rendering: pixelated;
-    background-image: url("./assets/maps/DunleaveyValleynogrid.png");
-    background-size: 13440px;
-    width: calc(525 * var(--grid-cell));
-    height: calc(550 * var(--grid-cell));
-    position: absolute;
-    background-repeat: no-repeat;
-    overflow: visible;
-    /* display: grid;
+  image-rendering: pixelated;
+  background-image: url('./assets/maps/DunleaveyValleynogrid.png');
+  background-size: 13440px;
+  width: calc(525 * var(--grid-cell));
+  height: calc(550 * var(--grid-cell));
+  position: absolute;
+  background-repeat: no-repeat;
+  overflow: visible;
+  /* display: grid;
     grid-template-columns: repeat(210, 64px);
     grid-template-rows: repeat(220, 64px); */
 }
-
 
 /* .numbers {
     size: 100%;

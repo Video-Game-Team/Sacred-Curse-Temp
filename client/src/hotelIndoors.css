@@ -1,51 +1,50 @@
- .mapHI {
-     image-rendering: pixelated;
-     background-image: url("./assets/maps/HotelIndoorsnogridnpc.png");
-     background-size: 1024px;
-     width: calc(40 * var(--grid-cell));
-     height: calc(55 * var(--grid-cell));
-     position: absolute;
-     background-repeat: no-repeat;
-     overflow: visible;
-     /* display: grid;
+.mapHI {
+  image-rendering: pixelated;
+  background-image: url('./assets/maps/HotelIndoorsnogridnpc.png');
+  background-size: 1024px;
+  width: calc(40 * var(--grid-cell));
+  height: calc(55 * var(--grid-cell));
+  position: absolute;
+  background-repeat: no-repeat;
+  overflow: visible;
+  /* display: grid;
     grid-template-columns: repeat(16, 64px);
     grid-template-rows: repeat(22, 64px); */
- }
+}
 
-
- /* .numbers {
+/* .numbers {
     size: 100%;
     background: transparent;
 }   */
 
-   .guard {
-       position: absolute;
-       width: calc(var(--grid-cell)* 3);
-       height: calc(var(--grid-cell)* 3);
-       overflow: hidden;
-   }
+.guard {
+  position: absolute;
+  width: calc(var(--grid-cell) * 3);
+  height: calc(var(--grid-cell) * 3);
+  overflow: hidden;
+}
 
-   .guard_spritesheet {
-       background: url("./assets/images/HotelIndoorsguard1.png") no-repeat no-repeat;
-       background-size: 100%;
-       width: calc(var(--grid-cell)* 5);
-       height: calc(var(--grid-cell)* 5);
-   }
+.guard_spritesheet {
+  background: url('./assets/images/HotelIndoorsguard1.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 5);
+  height: calc(var(--grid-cell) * 5);
+}
 
-   .guard .guard_spritesheet {
-       animation: walkAnimation 8s steps(2) infinite;
-   }
+.guard .guard_spritesheet {
+  animation: walkAnimation 8s steps(2) infinite;
+}
 
-   .faceGuard {
-       background: url("./assets/images/HotelIndoorsFace1.png") no-repeat no-repeat;
-       background-position: left top;
-       background-size: 12%;
-       background-size: content-box;
-   }
+.faceGuard {
+  background: url('./assets/images/HotelIndoorsFace1.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}
 
-   .faceGirlHI {
-       background: url("./assets/images/IndoorHouse3girl1face.png") no-repeat no-repeat;
-       background-position: left top;
-       background-size: 12%;
-       background-size: content-box;
-   }
+.faceGirlHI {
+  background: url('./assets/images/IndoorHouse3girl1face.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}

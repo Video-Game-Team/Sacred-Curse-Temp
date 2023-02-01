@@ -1,480 +1,474 @@
 html {
-    font-size: 16px;
-    /* font-size: 62.5% */
+  font-size: 16px;
+  /* font-size: 62.5% */
 }
 
 @font-face {
-    font-family: Clip;
-    src: url("https://acupoftee.github.io/fonts/Clip.ttf");
+  font-family: Clip;
+  src: url('https://acupoftee.github.io/fonts/Clip.ttf');
 }
 
 body {
-    background-color: #141114;
-    background-image: linear-gradient(335deg, black 23px, transparent 23px),
-        linear-gradient(155deg, black 23px, transparent 23px),
-        linear-gradient(335deg, black 23px, transparent 23px),
-        linear-gradient(155deg, black 23px, transparent 23px);
-    background-size: 58px 58px;
-    background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+  background-color: #141114;
+  background-image: linear-gradient(335deg, black 23px, transparent 23px),
+    linear-gradient(155deg, black 23px, transparent 23px),
+    linear-gradient(335deg, black 23px, transparent 23px),
+    linear-gradient(155deg, black 23px, transparent 23px);
+  background-size: 58px 58px;
+  background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
 }
 
 .sign {
-    position: relative;
-    White-space: nowrap; 
-    font-size: calc(1rem + 6.3vw);
-    z-index: 999;
-    width: 0%;
-    top: -1rem;
-    height: 20%;
-    background-image: radial-gradient(ellipse 50% 35% at 50% 50%,
-            #6b1839,
-            transparent);
-    transform: translate(-50%, -50%);
-    font-family: "Clip";
-    text-transform: uppercase;
-
-    color: #ffe6ff;
-    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
-        -0.2rem 0.1rem 1rem #5f3780, 0.2rem 0.1rem 1rem #5f3780,
-        0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
-    animation: shine 2s forwards, flicker 3s infinite;
+  position: absolute;
+  white-space: nowrap;
+  z-index: 999;
+  width: 0%;
+  /* font-size: calc(1rem + 6.3vw); */
+  font-size: 143px;
+  top: 350px;
+  left: 440px;
+  height: -35px;
+  background-image: radial-gradient(ellipse 50% 35% at 50% 50%, #6b1839, transparent);
+  transform: translate(-50%, -50%);
+  font-family: 'Clip';
+  text-transform: uppercase;
+  color: #ffe6ff;
+  text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd, -0.2rem 0.1rem 1rem #5f3780,
+    0.2rem 0.1rem 1rem #5f3780, 0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  animation: shine 2s forwards, flicker 3s infinite;
 }
 
 @keyframes blink {
+  0%,
+  22%,
+  36%,
+  75% {
+    color: #e6e6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd, -0.2rem 0.1rem 1rem #5f3780,
+      0.2rem 0.1rem 1rem #5f3780, 0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  }
 
-    0%,
-    22%,
-    36%,
-    75% {
-        color: #e6e6ff;
-        text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
-            -0.2rem 0.1rem 1rem #5f3780, 0.2rem 0.1rem 1rem #5f3780,
-            0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
-    }
+  28%,
+  33% {
+    color: #ff65bd;
+    text-shadow: none;
+  }
 
-    28%,
-    33% {
-        color: #ff65bd;
-        text-shadow: none;
-    }
-
-    82%,
-    97% {
-        color: #ff2483;
-        text-shadow: none;
-    }
+  82%,
+  97% {
+    color: #ff2483;
+    text-shadow: none;
+  }
 }
 
 .flicker {
-    animation: shine 2s forwards, blink 3s 2s infinite;
+  animation: shine 2s forwards, blink 3s 2s infinite;
 }
 
 .fast-flicker {
-    animation: shine 2s forwards, blink 10s 1s infinite;
+  animation: shine 2s forwards, blink 10s 1s infinite;
 }
 
 @keyframes shine {
-    0% {
-        color: #6b1839;
-        text-shadow: none;
-    }
+  0% {
+    color: #6b1839;
+    text-shadow: none;
+  }
 
-    100% {
-        color: rgb(23, 2, 23);
-        text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem ,
-            -0.2rem 0.1rem 1rem #5f3780, 0.2rem 0.1rem 1rem #5f3780,
-            0 -0.5rem 2rem white, 0 0.5rem 3rem #ff2483;
-    }
+  100% {
+    color: rgb(23, 2, 23);
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem, -0.2rem 0.1rem 1rem #5f3780,
+      0.2rem 0.1rem 1rem #5f3780, 0 -0.5rem 2rem white, 0 0.5rem 3rem #ff2483;
+  }
 }
 
 @keyframes flicker {
-    from {
-        opacity: 1;
-    }
+  from {
+    opacity: 1;
+  }
 
-    4% {
-        opacity: 0.9;
-    }
+  4% {
+    opacity: 0.9;
+  }
 
-    6% {
-        opacity: 0.85;
-    }
+  6% {
+    opacity: 0.85;
+  }
 
-    8% {
-        opacity: 0.95;
-    }
+  8% {
+    opacity: 0.95;
+  }
 
-    10% {
-        opacity: 0.9;
-    }
+  10% {
+    opacity: 0.9;
+  }
 
-    11% {
-        opacity: 0.922;
-    }
+  11% {
+    opacity: 0.922;
+  }
 
-    12% {
-        opacity: 0.9;
-    }
+  12% {
+    opacity: 0.9;
+  }
 
-    14% {
-        opacity: 0.95;
-    }
+  14% {
+    opacity: 0.95;
+  }
 
-    16% {
-        opacity: 0.98;
-    }
+  16% {
+    opacity: 0.98;
+  }
 
-    17% {
-        opacity: 0.9;
-    }
+  17% {
+    opacity: 0.9;
+  }
 
-    19% {
-        opacity: 0.93;
-    }
+  19% {
+    opacity: 0.93;
+  }
 
-    20% {
-        opacity: 0.99;
-    }
+  20% {
+    opacity: 0.99;
+  }
 
-    24% {
-        opacity: 1;
-    }
+  24% {
+    opacity: 1;
+  }
 
-    26% {
-        opacity: 0.94;
-    }
+  26% {
+    opacity: 0.94;
+  }
 
-    28% {
-        opacity: 0.98;
-    }
+  28% {
+    opacity: 0.98;
+  }
 
-    37% {
-        opacity: 0.93;
-    }
+  37% {
+    opacity: 0.93;
+  }
 
-    38% {
-        opacity: 0.5;
-    }
+  38% {
+    opacity: 0.5;
+  }
 
-    39% {
-        opacity: 0.96;
-    }
+  39% {
+    opacity: 0.96;
+  }
 
-    42% {
-        opacity: 1;
-    }
+  42% {
+    opacity: 1;
+  }
 
-    44% {
-        opacity: 0.97;
-    }
+  44% {
+    opacity: 0.97;
+  }
 
-    46% {
-        opacity: 0.94;
-    }
+  46% {
+    opacity: 0.94;
+  }
 
-    56% {
-        opacity: 0.9;
-    }
+  56% {
+    opacity: 0.9;
+  }
 
-    58% {
-        opacity: 0.9;
-    }
+  58% {
+    opacity: 0.9;
+  }
 
-    60% {
-        opacity: 0.99;
-    }
+  60% {
+    opacity: 0.99;
+  }
 
-    68% {
-        opacity: 1;
-    }
+  68% {
+    opacity: 1;
+  }
 
-    70% {
-        opacity: 0.9;
-    }
+  70% {
+    opacity: 0.9;
+  }
 
-    72% {
-        opacity: 0.95;
-    }
+  72% {
+    opacity: 0.95;
+  }
 
-    93% {
-        opacity: 0.93;
-    }
+  93% {
+    opacity: 0.93;
+  }
 
-    95% {
-        opacity: 0.95;
-    }
+  95% {
+    opacity: 0.95;
+  }
 
-    97% {
-        opacity: 0.93;
-    }
+  97% {
+    opacity: 0.93;
+  }
 
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 
 @font-face {
-    font-family: 'Pokemon-Classic';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: local("Pokemon-Classic"),
-        url("../../fonts/Pokemon-Classic.ttf") format("truetype");
+  font-family: 'Pokemon-Classic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Pokemon-Classic'), url('../../fonts/Pokemon-Classic.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Halo3';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: local("Halo3"),
-        url("../../fonts/Halo3.ttf") format("truetype");
+  font-family: 'Halo3';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Halo3'), url('../../fonts/Halo3.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'zig';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: local("zig"),
-        url("../../fonts/zig.ttf") format("truetype");
+  font-family: 'zig';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('zig'), url('../../fonts/zig.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'aurora';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: local("aurora"),
-        url("../../fonts/aurora.ttf") format("truetype");
+  font-family: 'aurora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('aurora'), url('../../fonts/aurora.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'rexlia';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: local("rexlia"),
-        url("../../fonts/rexlia.otf") format("truetype");
+  font-family: 'rexlia';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('rexlia'), url('../../fonts/rexlia.otf') format('truetype');
 }
 
 @font-face {
-    font-family: 'joystix monospace';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: local("joystix monospace"),
-        url("../../fonts/joystix monospace.ttf") format("truetype");
+  font-family: 'joystix monospace';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('joystix monospace'), url('../../fonts/joystix monospace.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Gasalt-Regular';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: local("Gasalt-Regular"),
-        url("../../fonts/Gasalt-Regular.ttf") format("truetype");
+  font-family: 'Gasalt-Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Gasalt-Regular'), url('../../fonts/Gasalt-Regular.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Gasalt-Black';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: local("Gasalt-Black"),
-        url("../../fonts/Gasalt-Black.ttf") format("truetype");
+  font-family: 'Gasalt-Black';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Gasalt-Black'), url('../../fonts/Gasalt-Black.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Gasalt-Thin';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: local("Gasalt-Thin"),
-        url("../../fonts/Gasalt-Thin.ttf") format("truetype");
+  font-family: 'Gasalt-Thin';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Gasalt-Thin'), url('../../fonts/Gasalt-Thin.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Pixeboy-z8XGD';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: local("Pixeboy-z8XGD"),
-        url("../../fonts/Pixeboy-z8XGD.ttf") format("truetype");
+  font-family: 'Pixeboy-z8XGD';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Pixeboy-z8XGD'), url('../../fonts/Pixeboy-z8XGD.ttf') format('truetype');
 }
 
 .containerLogin {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .titleTextLogin {
-    position: relative;
-    White-space: nowrap;
-    top: -19rem;
-    left: 0%;
-    border: none;
-    color: rgb(255, 0, 0);
-    font-size: calc(1rem + 11.3vw);
-    z-index: 999;
-    font-family: Clip;
+  position: relative;
+  white-space: nowrap;
+  top: -19rem;
+  left: 0%;
+  border: none;
+  color: rgb(255, 0, 0);
+  font-size: calc(1rem + 11.3vw);
+  z-index: 999;
+  font-family: Clip;
 }
 
 .title {
-    font-size: calc(1rem + 1.2vw);
-    color: white;
-    z-index: 999;
+  font-size: calc(1rem + 1.2vw);
+  color: white;
+  z-index: 999;
 }
 
 .glow-on-hover {
-    White-space: nowrap;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 999;
-    font-size: calc(1rem + .4vw);
-    top: 27rem;
-    left: 26.5rem;
-    background-color: black;
-    color: rgb(141, 137, 137);  
-    /* font-family: Pokemon-Classic; */
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 999;
+  /* font-size: calc(1rem + 0.4vw); */
+  font-size: 23px;
+  top: 750px;
+  left: 846px;
+  background-color: black;
+  color: rgb(141, 137, 137);
+  /* font-family: Pokemon-Classic; */
 }
 
 .glow-on-hover {
-    width: 220px;
-    height: 50px;
-    border: none;
-    outline: none;
-    color: #fff;
-    background: #111;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: absolute;
+  z-index: 0;
+  border-radius: 10px;
 }
 
 .glow-on-hover:before {
-    content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    border-radius: 10px;
+  content: '';
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
 }
 
 .glow-on-hover:active {
-    color: #000
+  color: #000;
 }
 
 .glow-on-hover:active:after {
-    background: transparent;
+  background: transparent;
 }
 
 .glow-on-hover:hover:before {
-    opacity: 1;
+  opacity: 1;
 }
 
 .glow-on-hover:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #111;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
 }
 
 @keyframes glowing {
-    0% {
-        background-position: 0 0;
-    }
+  0% {
+    background-position: 0 0;
+  }
 
-    50% {
-        background-position: 400% 0;
-    }
+  50% {
+    background-position: 400% 0;
+  }
 
-    100% {
-        background-position: 0 0;
-    }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 .enterGame {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 999;
-    font-size: calc(1rem + .4vw);
-    top: 21rem;
-    left: 24.5rem;
-    background-color: black;
-    color: rgb(141, 137, 137);
-    /* font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;  */
-    font-family: Pokemon-Classic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 999;
+  font-size: calc(1rem + 0.4vw);
+  top: 21rem;
+  left: 24.5rem;
+  background-color: black;
+  color: rgb(141, 137, 137);
+  /* font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;  */
+  font-family: Pokemon-Classic;
 }
 
 .purpleSky {
-    background-image: url('./assets/images/PurpleSky.jpeg');
-    opacity: .8;
-    background-size: cover;
-    /* Set rules to fill background this is  set to 1024px*/
-    min-height: 100%;
-    min-width: 64rem;
-    /* Set up proportionate scaling */
-    width: 100%;
-    height: auto;
-    /* Set up positioning */
-    position: fixed;
-    top: 0rem;
-    left: 0rem;
-    z-index: -1
+  background-image: url('./assets/images/PurpleSky.jpeg');
+  opacity: 0.8;
+  background-size: cover;
+  /* Set rules to fill background this is  set to 1024px*/
+  min-height: 1000px;
+  min-width: 64px;
+  /* Set up proportionate scaling */
+  width: 2000px;
+  height: auto;
+  /* Set up positioning */
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
 }
 
 .darkSkyGif {
-    background-image: url('./assets/images/lightning.gif');
-    opacity: .9;
-    background-size: cover;
-    /* Set rules to fill background this is  set to 1024px*/
-    min-height: 100%;
-    min-width: 64rem;
-    /* Set up proportionate scaling */
-    width: 100%;
-    height: auto;
-    /* Set up positioning */
-    position: fixed;
-    top: 0rem;
-    left: 0rem;
-    z-index: -1
+  background-image: url('./assets/images/lightning.gif');
+  opacity: 0.9;
+  background-size: cover;
+  /* Set rules to fill background this is  set to 1024px*/
+  min-height: 100%;
+  min-width: 64rem;
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+  /* Set up positioning */
+  position: fixed;
+  top: 0rem;
+  left: 0rem;
+  z-index: -1;
 }
 
 .cityline {
-    background-image: url('./assets/maps/LuLuMountainPassnewtweaksnogrid.png');
-    opacity: .5;
-    background-size: cover;
-    /* Set rules to fill background this is  set to 1024px*/
-    min-height: 100%;
-    min-width: 64rem;
-    /* Set up proportionate scaling */
-    width: 100%;
-    height: auto;
-    /* Set up positioning */
-    position: fixed;
-    top: 0rem;
-    left: 0rem;
+  background-image: url('./assets/maps/LuLuMountainPassnewtweaksnogrid.png');
+  opacity: 0.5;
+  background-size: cover;
+  /* Set rules to fill background this is  set to 1024px*/
+  min-height: 100%;
+  min-width: 64rem;
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+  /* Set up positioning */
+  position: fixed;
+  top: 0rem;
+  left: 0rem;
 }
-
-
-

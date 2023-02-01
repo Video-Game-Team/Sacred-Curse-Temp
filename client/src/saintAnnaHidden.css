@@ -1,19 +1,18 @@
-  .mapSAH {
-     image-rendering: pixelated;
-     background-image: url("./assets/maps/SaintAnnaHiddenMaptweaksnogrid.png");
-     background-size: 2880px;
-     width: calc(112.5 * var(--grid-cell));
-     height: calc(125 * var(--grid-cell));
-     position: absolute;
-     background-repeat: no-repeat;
-     overflow: visible;
-     /* display: grid;
+.mapSAH {
+  image-rendering: pixelated;
+  background-image: url('./assets/maps/SaintAnnaHiddenMaptweaksnogrid.png');
+  background-size: 2880px;
+  width: calc(112.5 * var(--grid-cell));
+  height: calc(125 * var(--grid-cell));
+  position: absolute;
+  background-repeat: no-repeat;
+  overflow: visible;
+  /* display: grid;
     grid-template-columns: repeat(45, 64px);
     grid-template-rows: repeat(50, 64px); */
- }
+}
 
-
- /* .numbers {
+/* .numbers {
     size: 100%;
     background: transparent;
 }    */

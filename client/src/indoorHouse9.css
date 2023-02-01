@@ -1,65 +1,61 @@
-  .mapIH9 {
-     image-rendering: pixelated;
-     background-image: url("./assets/maps/IndoorHouse9nogridnpc.png");
-     background-size: 960px;
-     width: calc(37.5 * var(--grid-cell));
-     height: calc(37.5 * var(--grid-cell));
-     position: absolute;
-     background-repeat: no-repeat;
-     overflow: visible;
-     /* display: grid;
+.mapIH9 {
+  image-rendering: pixelated;
+  background-image: url('./assets/maps/IndoorHouse9nogridnpc.png');
+  background-size: 960px;
+  width: calc(37.5 * var(--grid-cell));
+  height: calc(37.5 * var(--grid-cell));
+  position: absolute;
+  background-repeat: no-repeat;
+  overflow: visible;
+  /* display: grid;
     grid-template-columns: repeat(15, 64px);
     grid-template-rows: repeat(15, 64px); */
- }
+}
 
- /* .numbers {
+/* .numbers {
     size: 100%;
     background: transparent;
 }   */
 
-        .guy1IH9 {
-            position: absolute;
-            width: calc(var(--grid-cell)* 2);
-            height: calc(var(--grid-cell)* 3);
-            overflow: hidden;
-        }
-    
-        .guy1IH9_spritesheet {
-            
-            background: url("./assets/images/IndoorHouse9guy1.png") no-repeat no-repeat;
-            background-size: 100%;
-            width: calc(var(--grid-cell)*34);
-            height: calc(var(--grid-cell)* 3);
-        }
-    
-        .guy1IH9 .guy1IH9_spritesheet {
-            animation: walkAnimation 3.5s steps(15) infinite;
-        }
-    
-    
-        .faceGuy1IH9 {
-            background: url("./assets/images/IndoorHouse9guyface.png") no-repeat no-repeat;
-            background-position: left top;
-            background-size: 12%;
-            background-size: content-box;
-        }
-    
-    
-        .guy2IH9 {
-            position: absolute;
-             width: calc(var(--grid-cell)* 2);
-            height: calc(var(--grid-cell)* 3);
-            overflow: hidden;
-        }
-    
-        .guy2IH9_spritesheet {
-            background: url("./assets/images/IndoorHouse9guy2.png") no-repeat no-repeat;
-            background-size: 100%;
-            width: calc(var(--grid-cell)*34);
-            height: calc(var(--grid-cell)* 3);
-        }
+.guy1IH9 {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 3);
+  overflow: hidden;
+}
 
-        .guy2IH9 .guy2IH9_spritesheet {
-            animation: walkAnimation 3.5s steps(15) infinite;
-        }
-    
+.guy1IH9_spritesheet {
+  background: url('./assets/images/IndoorHouse9guy1.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 34);
+  height: calc(var(--grid-cell) * 3);
+}
+
+.guy1IH9 .guy1IH9_spritesheet {
+  animation: walkAnimation 3.5s steps(15) infinite;
+}
+
+.faceGuy1IH9 {
+  background: url('./assets/images/IndoorHouse9guyface.png') no-repeat no-repeat;
+  background-position: left top;
+  background-size: 12%;
+  background-size: content-box;
+}
+
+.guy2IH9 {
+  position: absolute;
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 3);
+  overflow: hidden;
+}
+
+.guy2IH9_spritesheet {
+  background: url('./assets/images/IndoorHouse9guy2.png') no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 34);
+  height: calc(var(--grid-cell) * 3);
+}
+
+.guy2IH9 .guy2IH9_spritesheet {
+  animation: walkAnimation 3.5s steps(15) infinite;
+}
