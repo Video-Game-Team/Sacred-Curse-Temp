@@ -37,8 +37,12 @@ function Index(props) {
 
   // Redirect back to home page when Login is pressed in NavBar
   function HomePage() {
+<<<<<<< HEAD
+    fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {
+=======
     // fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {
     fetch('https://www.sacredcurse.com/state', {
+>>>>>>> b51c73c5f1b5aa257696a441b271d4ac59d8e735
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -47,8 +51,13 @@ function Index(props) {
         auth: false
       })
     }).then((res) => res.json());
+<<<<<<< HEAD
+    window.location.replace('http://localhost:3000/');
+    // window.location.replace('https://www.sacredcurse.com/');
+=======
     // window.location.replace('http://localhost:3000/');
     window.location.replace('https://www.sacredcurse.com/');
+>>>>>>> b51c73c5f1b5aa257696a441b271d4ac59d8e735
     return null;
   }
 
