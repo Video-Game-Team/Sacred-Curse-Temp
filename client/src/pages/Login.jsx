@@ -172,12 +172,8 @@ function Login(props) {
   useEffect(() => {
     console.log;
     if (isMounted.current === true) {
-<<<<<<< HEAD
-      fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {
-=======
       // fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {
       fetch('https://www.sacredcurse.com/state', {
->>>>>>> b51c73c5f1b5aa257696a441b271d4ac59d8e735
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -193,23 +189,15 @@ function Login(props) {
   useEffect(() => {
     console.log;
     if (isMounted.current === true) {
-<<<<<<< HEAD
-      fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {
-=======
       // fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {
       fetch('https://www.sacredcurse.com/state', {
->>>>>>> b51c73c5f1b5aa257696a441b271d4ac59d8e735
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-<<<<<<< HEAD
-          auth: true
-=======
           auth: true,
-          authID: user.sub,
->>>>>>> b51c73c5f1b5aa257696a441b271d4ac59d8e735
+          authID: user.sub
         })
       }).then((res) => res.json());
     }
