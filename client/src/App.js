@@ -360,6 +360,7 @@ function App(props) {
       window.location.replace('https://www.sacredcurse.com/');
       return null;
     }
+    console.log('LOAD GAME PRESSED');
   }
 
   //Function for Checking for current saved game records
