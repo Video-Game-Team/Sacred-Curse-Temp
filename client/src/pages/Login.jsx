@@ -170,7 +170,6 @@ function Login(props) {
   };
 
   useEffect(() => {
-    console.log;
     if (isMounted.current === true) {
       fetch(`${process.env.APPJS_GET_REQUEST_ENDPOINT}/state`, {
         method: 'PUT',
