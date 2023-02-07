@@ -231,9 +231,12 @@ function Login(props) {
             }}>{`This browser is incompatible with this game. Please use Google Chrome or Safari.`}</h1>
         ) : (
           <div className="fade-in">
-            <h1 className="sign">Sacred Curse</h1>
-            <div className="purpleSky"></div>
-            <div className="darkSkyPic"></div>
+            <div className="Login__wrapper">
+              <div className="purpleSky"></div>
+              <h1 className="sign">Sacred Curse</h1>
+            </div>
+
+            {/* <div className="darkSkyPic"></div> */}
           </div>
         )}
       </div>
