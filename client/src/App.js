@@ -55,7 +55,6 @@ import Login from './pages/Login.jsx';
 
 ////////////////////////////
 // import MansonVoucher from './components/supportObjects/itemList.jsx';
-// import ButtPlug from './components/supportObjects/itemList.jsx';
 
 import DemoMap from './battleMaps/demoMap.jsx';
 import DemonObjects from './demonObjects.js';
@@ -93,7 +92,6 @@ function App(props) {
   const [stGwenBM4, setStGwenBM4] = useState(false);
 
   // console.log(<MansonVoucher />);
-  // console.log(<ButtPlug />);
   /////////////////////////////////////////////////////////
 
   //START OF TEMP STATE//////////////////////////////////////////
